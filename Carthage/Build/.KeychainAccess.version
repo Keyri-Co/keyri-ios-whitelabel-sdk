@@ -1,0 +1,19 @@
+{
+  "commitish" : "v4.2.2",
+  "iOS" : [
+    {
+      "swiftToolchainVersion" : "5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)",
+      "hash" : "f0e1b3b1df32f87908281823b335a79eb12d159867818b7cd96b9183de0993b9",
+      "name" : "KeychainAccess",
+      "container" : "KeychainAccess.xcframework",
+      "identifier" : "ios-arm64_i386_x86_64-simulator"
+    },
+    {
+      "swiftToolchainVersion" : "5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)",
+      "hash" : "b2ae12f954a124a40a26e7671a8737a19364102af3f397489d3da0f2261b4068",
+      "name" : "KeychainAccess",
+      "container" : "KeychainAccess.xcframework",
+      "identifier" : "ios-arm64_armv7"
+    }
+  ]
+}

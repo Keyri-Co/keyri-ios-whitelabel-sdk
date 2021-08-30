@@ -1,0 +1,5 @@
+github "daltoniam/Starscream" "4.0.4"
+github "jedisct1/swift-sodium" "0.9.1"
+github "kishikawakatsumi/KeychainAccess" "v4.2.2"
+github "socketio/socket.io-client-swift" "v16.0.1"
+github "yannickl/QRCodeReader.swift" "10.1.1"

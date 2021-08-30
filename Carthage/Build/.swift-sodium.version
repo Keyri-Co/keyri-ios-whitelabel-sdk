@@ -1,0 +1,19 @@
+{
+  "commitish" : "0.9.1",
+  "iOS" : [
+    {
+      "swiftToolchainVersion" : "5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)",
+      "hash" : "dcd91a4c0a5e6b7c0cb49edaa606c570087960dcd4bffbffe35a109ecaa710ce",
+      "name" : "Sodium",
+      "container" : "Sodium.xcframework",
+      "identifier" : "ios-arm64_x86_64-simulator"
+    },
+    {
+      "swiftToolchainVersion" : "5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)",
+      "hash" : "78762a1bd68b2a137bbae2b3bf2ab6c1789d81ba94784fae5979d18bfb8a489c",
+      "name" : "Sodium",
+      "container" : "Sodium.xcframework",
+      "identifier" : "ios-arm64"
+    }
+  ]
+}

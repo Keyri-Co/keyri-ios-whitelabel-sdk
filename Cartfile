@@ -1,0 +1,4 @@
+github "jedisct1/swift-sodium"
+github "yannickl/QRCodeReader.swift" >= 10.1.0
+github "kishikawakatsumi/KeychainAccess"
+github "socketio/socket.io-client-swift"

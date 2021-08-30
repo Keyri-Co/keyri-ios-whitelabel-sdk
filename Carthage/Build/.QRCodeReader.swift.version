@@ -1,0 +1,19 @@
+{
+  "commitish" : "10.1.1",
+  "iOS" : [
+    {
+      "swiftToolchainVersion" : "5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)",
+      "hash" : "5b7da74234e76f97b29109898b0da5adc3638725a66106401e4a7b92c7b8cc0c",
+      "name" : "QRCodeReader",
+      "container" : "QRCodeReader.xcframework",
+      "identifier" : "ios-arm64_i386_x86_64-simulator"
+    },
+    {
+      "swiftToolchainVersion" : "5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)",
+      "hash" : "0c303fed5cfffeada2634f1ad66398375647019396e1df871924fb40b0c709fc",
+      "name" : "QRCodeReader",
+      "container" : "QRCodeReader.xcframework",
+      "identifier" : "ios-arm64_armv7"
+    }
+  ]
+}
