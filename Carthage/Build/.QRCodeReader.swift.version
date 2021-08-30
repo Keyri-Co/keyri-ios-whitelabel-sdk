@@ -3,14 +3,14 @@
   "iOS" : [
     {
       "swiftToolchainVersion" : "5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)",
-      "hash" : "5b7da74234e76f97b29109898b0da5adc3638725a66106401e4a7b92c7b8cc0c",
+      "hash" : "d354e55bea6e76528f70a57f6d24e9d755b954bfe045035c0916a7b79717681e",
       "name" : "QRCodeReader",
       "container" : "QRCodeReader.xcframework",
       "identifier" : "ios-arm64_i386_x86_64-simulator"
     },
     {
       "swiftToolchainVersion" : "5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)",
-      "hash" : "0c303fed5cfffeada2634f1ad66398375647019396e1df871924fb40b0c709fc",
+      "hash" : "b4b46bafee3362542fb5283fd0201ee8d73e57c82d27cea0a0c89b5abed9951d",
       "name" : "QRCodeReader",
       "container" : "QRCodeReader.xcframework",
       "identifier" : "ios-arm64_armv7"

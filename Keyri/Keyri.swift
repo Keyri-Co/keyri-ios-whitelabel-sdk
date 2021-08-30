@@ -40,54 +40,6 @@ public final class Keyri {
         self.logoUrl = logoUrl
         
         let _ = KeychainService.shared.getCryptoBox()
-        
-        
-        
-        let sodium = Sodium()
-        let aliceKeyPair = sodium.box.keyPair()!
-        let bobKeyPair = sodium.box.keyPair()!
-        let message = "My Test Message".bytes
-        
-        let pk = "0JWazrdDbLA+MwbqHjF9Mmo+3w2oh6IPBrgEFNLUfUw="
-        let sk = "EdnAMTx0CvQ/c1fovJbpcJ2KuJwJaFWmjZGGOnTL7oU="
-        let pkBytes = [UInt8](Data(base64Encoded: pk)!)
-        let skBytes = [UInt8](Data(base64Encoded: sk)!)
-        
-        let newBobKeyPair = Box.KeyPair(publicKey: pkBytes, secretKey: skBytes)
-        
-
-        let encryptedMessageFromAliceToBob: (authenticatedCipherText: Bytes, nonce: Box.Nonce) =
-            sodium.box.seal(message: message,
-                            recipientPublicKey: newBobKeyPair.publicKey,
-                            senderSecretKey: aliceKeyPair.secretKey)!
-
-//        let messageVerifiedAndDecryptedByBob =
-//            sodium.box.open(nonceAndAuthenticatedCipherText: encryptedMessageFromAliceToBob,
-//                            senderPublicKey: aliceKeyPair.publicKey,
-//                            recipientSecretKey: newBobKeyPair.secretKey)
-//
-//        let res = sodium.utils.bin2base64(messageVerifiedAndDecryptedByBob!)?.fromBase64()
-        
-        
-//        let sodium = Sodium()
-//        let aliceKeyPair = sodium.box.keyPair()!
-////        let bobKeyPair = sodium.box.keyPair()!
-//        let message = "My Test Message".bytes
-//
-//        let pk = "0JWazrdDbLA+MwbqHjF9Mmo+3w2oh6IPBrgEFNLUfUw="
-//        let sk = "EdnAMTx0CvQ/c1fovJbpcJ2KuJwJaFWmjZGGOnTL7oU="
-//        let pkBytes = pk.bytes
-//        let skBytes = sk.bytes
-//
-//        let encryptedMessageFromAliceToBob: Bytes =
-//            sodium.box.seal(message: message,
-//                            recipientPublicKey: pkBytes,
-//                            senderSecretKey: aliceKeyPair.secretKey)!
-//
-//        let messageVerifiedAndDecryptedByBob =
-//            sodium.box.open(authenticatedCipherText: "qRrrjrl6/j8rLyHXpZrhzMTMWw==".bytes, senderPublicKey: "SRXk4jMeLk6GC35p3m3+lRsHE7AVDv3YO1CgKNHLyvE=".sodiumBytes(), recipientSecretKey: "0JWazrdDbLA+MwbqHjF9Mmo+3w2oh6IPBrgEFNLUfUw=".sodiumBytes(), nonce: "2p7feALHfdEx0/FoOSSEBFhR8eCTOSZX".sodiumBytes())
-        
-        print("")
     }
                         
     public func onReadSessionId(_ sessionId: String, completion: @escaping (Result<Session, Error>) -> Void) {

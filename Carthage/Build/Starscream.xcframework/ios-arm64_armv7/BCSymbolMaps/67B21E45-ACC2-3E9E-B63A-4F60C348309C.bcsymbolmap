@@ -2,8 +2,8 @@ BCSymbolMap Version: 2.0
 Apple clang version 12.0.5 (clang-1205.0.22.11)
 /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk
 iPhoneOS14.5.sdk
-/Users/nov_os/Library/Caches/org.carthage.CarthageKit/DerivedData/12.5.1_12E507/Starscream/4.0.4/Build/Intermediates.noindex/ArchiveIntermediates/Starscream/IntermediateBuildFilesPath/Starscream.build/Release-iphoneos/Starscream.build/DerivedSources/Starscream_vers.c
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/Starscream
+/Users/artemiitkachuk/Library/Caches/org.carthage.CarthageKit/DerivedData/12.5.1_12E507/Starscream/4.0.4/Build/Intermediates.noindex/ArchiveIntermediates/Starscream/IntermediateBuildFilesPath/Starscream.build/Release-iphoneos/Starscream.build/DerivedSources/Starscream_vers.c
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/Starscream
 _$s10Starscream16HTTPUpgradeErrorOs0C0AAsADP7_domainSSvgTW
 _$s10Starscream16HTTPUpgradeErrorOs0C0AAsADP5_codeSivgTW
 _$s10Starscream16HTTPUpgradeErrorOs0C0AAsADP9_userInfoyXlSgvgTW
@@ -260,7 +260,7 @@ ___swift_reflection_version
 Apple clang version 12.0.5 (clang-1205.0.19.57)
 <swift-imported-modules>
 Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/Starscream/Sources/Framer/HTTPHandler.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/Starscream/Sources/Framer/HTTPHandler.swift
 $sSo10CFErrorRefaMa
 <compiler-generated>
 $ss10ArraySliceVys5UInt8VGMa
@@ -581,7 +581,7 @@ _$s10Starscream14FrameCollectorC18needsDecompressionSbvsTq
 _$s10Starscream14FrameCollectorC18needsDecompressionSbvMTq
 _$s10Starscream14FrameCollectorC5resetyyFTq
 _$s10Starscream14FrameCollectorCACycfCTq
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/Starscream/Sources/Framer/FrameCollector.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/Starscream/Sources/Framer/FrameCollector.swift
 $s10Starscream14FrameCollectorC5EventOMa
 $s10Starscream14FrameCollectorC5EventOwui
 $s10Starscream14FrameCollectorC5EventOwup
@@ -658,7 +658,7 @@ _symbolic $s10Starscream18CertificatePinningP
 _$s10Starscream18CertificatePinning_pMF
 _symbolic $s10Starscream15HeaderValidatorP
 _$s10Starscream15HeaderValidator_pMF
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/Starscream/Sources/Security/Security.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/Starscream/Sources/Security/Security.swift
 $s10Starscream12PinningStateOMa
 $s10Starscream12PinningStateOwui
 $s10Starscream12PinningStateOwup
@@ -786,7 +786,7 @@ _$s7Network7NWErrorOACs5ErrorAAWL
 _symbolic SbIeyBy_
 _symbolic _____SgXw 10Starscream12TCPTransportC
 -private-discriminator _E12DE33E22E5E5B6C9C9F526587B799A
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/Starscream/Sources/Transport/TCPTransport.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/Starscream/Sources/Transport/TCPTransport.swift
 $s10Starscream12TCPTransportC8readLoop013_E12DE33E22E5h4B6C9J12F526587B799ALLyyFy10Foundation4DataVSg_7Network12NWConnectionC14ContentContextCSgSbAJ7NWErrorOSgtcfU_TA.14
 $s10Starscream12TCPTransportC8readLoop013_E12DE33E22E5h4B6C9J12F526587B799ALLyyFy10Foundation4DataVSg_7Network12NWConnectionC14ContentContextCSgSbAJ7NWErrorOSgtcfU_TA
 $s10Starscream12TCPTransportC5start013_E12DE33E22E5g4B6C9I12F526587B799ALLyyFySbcfU1_TA
@@ -892,7 +892,7 @@ _$s10Starscream18FoundationSecurityC15allowSelfSignedSbvgTq
 _$s10Starscream18FoundationSecurityC15allowSelfSignedSbvsTq
 _$s10Starscream18FoundationSecurityC15allowSelfSignedSbvMTq
 -private-discriminator _83C391ACB50AC8CA3F89E8D692C78632
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/Starscream/Sources/Security/FoundationSecurity.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/Starscream/Sources/Security/FoundationSecurity.swift
 $sSo8NSStringCMa
 $sS2SSysWl
 $s10Starscream18FoundationSecurityCMa
@@ -1039,7 +1039,7 @@ __PROTOCOL_INSTANCE_METHODS_OPT_NSObject
 __PROTOCOL_PROPERTIES_NSObject
 __PROTOCOL_METHOD_TYPES_NSObject
 -private-discriminator _EADD54DCCDA4AFDB2E8CF46711CBEF76
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/Starscream/Sources/Transport/FoundationTransport.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/Starscream/Sources/Transport/FoundationTransport.swift
 $s10Foundation4DataV10StarscreamE9ByteErrorVAFs0E0ADWl
 $sypWOb
 $s10Foundation4DataVACSTAAWl
@@ -1245,7 +1245,7 @@ _got.$s10Starscream11HTTPHandlerMp
 _symbolic ______p 10Starscream11HTTPHandlerP
 _$s10Starscream11HTTPHandler_pMD
 -private-discriminator _E91840E7069A0D2D302D042308E9D928
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/Starscream/Sources/Starscream/WebSocket.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/Starscream/Sources/Starscream/WebSocket.swift
 $s10Starscream6Engine_pWOc
 $s10Starscream6Engine_pWOb
 $s10Starscream9WebSocketCMr
@@ -1356,7 +1356,7 @@ _$s10Starscream17StringHTTPHandlerC8delegateAA0C8Delegate_pSgvsTq
 _$s10Starscream17StringHTTPHandlerC8delegateAA0C8Delegate_pSgvMTq
 _$s10Starscream17StringHTTPHandlerC12parseContent4dataSb10Foundation4DataV_tFTq
 -private-discriminator _6ACD8FB8A25EE4BAE9E46BB2830AA336
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/Starscream/Sources/Framer/StringHTTPHandler.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/Starscream/Sources/Framer/StringHTTPHandler.swift
 $sSnySS5IndexVGSgWOb
 $sSsWOs
 $sS2sSysWl
@@ -1424,7 +1424,7 @@ _symbolic $s10Starscream14EngineDelegateP
 _$s10Starscream14EngineDelegate_pMF
 _symbolic $s10Starscream6EngineP
 _$s10Starscream6Engine_pMF
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/Starscream/Sources/Engine/Engine.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/Starscream/Sources/Engine/Engine.swift
 _$sSa9repeating5countSayxGx_SitcfCs5UInt8V_Tg5
 _$s10Starscream9CloseCodeOSQAASQ2eeoiySbx_xtFZTW
 _$s10Starscream9CloseCodeOSHAASH9hashValueSivgTW
@@ -1576,7 +1576,7 @@ _symbolic ______Sit 10Starscream5FrameV
 _$s10Starscream8WSFramerC12ProcessEventOMF
 _$s10Starscream8WSFramerC12ProcessEventON
 -private-discriminator _152F7B853C3325A337FE1390FE6C026F
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/Starscream/Sources/Framer/Framer.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/Starscream/Sources/Framer/Framer.swift
 $s10Starscream8WSFramerC12ProcessEventOMa
 $s10Starscream8WSFramerC12ProcessEventOwui
 $s10Starscream8WSFramerC12ProcessEventOwup
@@ -1752,7 +1752,7 @@ _$s10Starscream27FoundationHTTPServerHandlerC8delegateAA0C8Delegate_pSgvsTq
 _$s10Starscream27FoundationHTTPServerHandlerC8delegateAA0C8Delegate_pSgvMTq
 _$s10Starscream27FoundationHTTPServerHandlerC12parseContent4dataSb0B04DataV_tFTq
 _$s10Starscream27FoundationHTTPServerHandlerCACycfCTq
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/Starscream/Sources/Framer/FoundationHTTPServerHandler.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/Starscream/Sources/Framer/FoundationHTTPServerHandler.swift
 __swift_destroy_boxed_opaque_existential_0
 $syp3key_yp5valuetSgWOb
 $sSo12NSDictionaryC10FoundationE8IteratorCAEStACWl
@@ -1836,7 +1836,7 @@ _$s10Starscream8WSEngineC8delegateAA14EngineDelegate_pSgvgTq
 _$s10Starscream8WSEngineC8delegateAA14EngineDelegate_pSgvsTq
 _$s10Starscream8WSEngineC8delegateAA14EngineDelegate_pSgvMTq
 -private-discriminator _6D6F499CC89D0D0366E4B0F04AAFDDB7
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/Starscream/Sources/Engine/WSEngine.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/Starscream/Sources/Engine/WSEngine.swift
 $s10Foundation10URLRequestVSgWOb
 $s10Foundation10URLRequestVSgWOc
 $sSay8Dispatch0A13WorkItemFlagsVGMa
@@ -1909,7 +1909,7 @@ _symbolic $s10Starscream20TransportEventClientP
 _$s10Starscream20TransportEventClient_pMF
 _symbolic $s10Starscream9TransportP
 _$s10Starscream9Transport_pMF
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/Starscream/Sources/Transport/Transport.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/Starscream/Sources/Transport/Transport.swift
 $s10Starscream15ConnectionStateOMa
 $s10Starscream15ConnectionStateOwui
 $s10Starscream15ConnectionStateOwup
@@ -1941,7 +1941,7 @@ _$s10Foundation4DataV10StarscreamE9ByteErrorVMf
 _symbolic _____ 10Foundation4DataV10StarscreamE9ByteErrorV
 _$s10Foundation4DataV10StarscreamE9ByteErrorVMF
 _$s10Foundation4DataV10StarscreamE9ByteErrorVs0E0ADMcMK
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/Starscream/Sources/DataBytes/Data+Extensions.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/Starscream/Sources/DataBytes/Data+Extensions.swift
 $s10Foundation4DataV10StarscreamE9ByteErrorVMa
 $s10Starscream12DecompressorC10decompress_6finish10Foundation4DataVAH_SbtKFAHSPys5UInt8VGKXEfU_TA
 $s10Starscream10CompressorC8compressy10Foundation4DataVAGKFySPys5UInt8VGXEfU_TA
@@ -1980,7 +1980,7 @@ _$s10Starscream21FoundationHTTPHandlerC8delegateAA0C8Delegate_pSgvsTq
 _$s10Starscream21FoundationHTTPHandlerC8delegateAA0C8Delegate_pSgvMTq
 _$s10Starscream21FoundationHTTPHandlerC12parseContent4dataSb0B04DataV_tFTq
 -private-discriminator _334434B56D7AC32509CD1F6E43CC8AE4
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/Starscream/Sources/Framer/FoundationHTTPHandler.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/Starscream/Sources/Framer/FoundationHTTPHandler.swift
 $s10Starscream21FoundationHTTPHandlerCMa
 $s10Starscream21FoundationHTTPHandlerC13findEndOfHTTP33_334434B56D7AC32509CD1F6E43CC8AE4LL4dataSi0B04DataV_tFySWXEfU_
 $s10Starscream21FoundationHTTPHandlerC12parseContent4dataSb0B04DataV_tFySWXEfU_
@@ -2069,7 +2069,7 @@ _$ss18_DictionaryStorageCySS10Starscream16ServerConnectionCGMD
 _$s10Starscream16ServerConnectionC4uuidSSvgTq
 _$s10Starscream16ServerConnectionC9transportAcA12TCPTransportC_tcfCTq
 -private-discriminator _9F52BD6CF7EFCD3767CAE09047A80F01
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/Starscream/Sources/Server/WebSocketServer.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/Starscream/Sources/Server/WebSocketServer.swift
 $s10Starscream15WebSocketServerCMa
 $s10Starscream18ConnectionDelegate_pSgXwWOh
 Swift runtime failure: Dictionary literal contains duplicate keys
@@ -2163,7 +2163,7 @@ _symbolic ______p______Sgt 10Starscream10ConnectionP 10Foundation4DataV
 _$s10Starscream11ServerEventOMF
 _symbolic $s10Starscream6ServerP
 _$s10Starscream6Server_pMF
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/Starscream/Sources/Server/Server.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/Starscream/Sources/Server/Server.swift
 $s10Starscream11ServerEventOMa
 $s10Starscream11ServerEventOwui
 $s10Starscream11ServerEventOwup
@@ -2188,7 +2188,7 @@ $s10Starscream15ConnectionEventOwcp
 $s10Starscream15ConnectionEventOwxx
 _symbolic $s10Starscream18CompressionHandlerP
 _$s10Starscream18CompressionHandler_pMF
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/Starscream/Sources/Compression/Compression.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/Starscream/Sources/Compression/Compression.swift
 _$s10Starscream13WSCompressionCAA18CompressionHandlerA2aDP4load7headersySDyS2SG_tFTW
 _$s10Starscream13WSCompressionCAA18CompressionHandlerA2aDP10decompress4data7isFinal10Foundation4DataVSgAK_SbtFTW
 _$s10Starscream13WSCompressionCAA18CompressionHandlerA2aDP8compress4data10Foundation4DataVSgAJ_tFTW
@@ -2282,7 +2282,7 @@ _$s10Starscream10CompressorC5resetyyKFTq
 _$s10Starscream10CompressorC8compressy10Foundation4DataVAGKFTq
 _$s10Starscream10CompressorCN
 -private-discriminator _C6251FBF08BE324875D2CDC04E1E70A3
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/Starscream/Sources/Compression/WSCompression.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/Starscream/Sources/Compression/WSCompression.swift
 $ss5UInt8VABSUsWl
 $sSS8UTF8ViewVABSlsWl
 $ss16IndexingIteratorVySS8UTF8ViewVGMa
@@ -2405,7 +2405,7 @@ _$s10Starscream12NativeEngineC8delegateAA0C8Delegate_pSgvgTq
 _$s10Starscream12NativeEngineC8delegateAA0C8Delegate_pSgvsTq
 _$s10Starscream12NativeEngineC8delegateAA0C8Delegate_pSgvMTq
 -private-discriminator _2D2A33380337B5EBE48BD9833E669011
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/Starscream/Sources/Engine/NativeEngine.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/Starscream/Sources/Engine/NativeEngine.swift
 $s10Starscream12NativeEngineC6doRead33_2D2A33380337B5EBE48BD9833E669011LLyyFys6ResultOySo25NSURLSessionWebSocketTaskC10FoundationE7MessageOs5Error_pGcfU_TA.16
 $ss6ResultOySo25NSURLSessionWebSocketTaskC10FoundationE7MessageOs5Error_pGWOc
 $s10Starscream12NativeEngineCMa

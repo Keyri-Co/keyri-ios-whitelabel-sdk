@@ -13,23 +13,6 @@ final class UserService {
     private init() {}
     
     func signUp(username: String, sessionId: String, service: Service, custom: String?) {
-//        guard let deviceId = UIDevice.current.identifierForVendor?.uuidString else {
-//            fatalError(KeyriErrors.generic.errorDescription ?? "")
-//        }
-//
-//        let uniqueId = String.random()
-//
-//        let encryptTarget = "\(deviceId)\(uniqueId)"
-//
-//        let box = KeychainService.shared.getCryptoBox()
-//
-//        let userIdData = AES.encryptionAESModeECB(messageData: encryptTarget.data(using: .utf8)!, key: box.privateKey)!
-//        let encUserIdData = AES.encryptionAESModeECB(messageData: userIdData, key: box.privateKey)!
-//        let encUserId = String(data: encUserIdData, encoding: .utf8)!
-//
-//        let account = Account(userId: encUserId, username: username, custom: custom)
-//        StorageService.shared.set(service: service)
-//        StorageService.shared.add(account: account, serviceId: service.id)
         
         let encUserId = createUser(username: username, service: service, custom: custom).encUserId!
         

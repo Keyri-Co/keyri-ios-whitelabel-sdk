@@ -615,9 +615,9 @@ Apple clang version 12.0.5 (clang-1205.0.19.57)
 /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk
 iPhoneSimulator14.5.sdk
 <swift-imported-modules>
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/KeychainAccess/Lib
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/KeychainAccess/Lib
 Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/KeychainAccess/Lib/KeychainAccess/Keychain.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/KeychainAccess/Lib/KeychainAccess/Keychain.swift
 $sypSgWOh
 <compiler-generated>
 $s10Foundation3URLVSgWOc

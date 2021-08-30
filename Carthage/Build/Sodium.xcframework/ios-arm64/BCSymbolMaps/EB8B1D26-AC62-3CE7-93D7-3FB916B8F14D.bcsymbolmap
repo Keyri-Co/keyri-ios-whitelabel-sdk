@@ -2,8 +2,8 @@ BCSymbolMap Version: 2.0
 Apple clang version 12.0.5 (clang-1205.0.22.11)
 /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk
 iPhoneOS14.5.sdk
-/Users/nov_os/Library/Caches/org.carthage.CarthageKit/DerivedData/12.5.1_12E507/swift-sodium/0.9.1/Build/Intermediates.noindex/ArchiveIntermediates/Sodium/IntermediateBuildFilesPath/Sodium.build/Release-iphoneos/Sodium_iOS.build/DerivedSources/Sodium_vers.c
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/swift-sodium
+/Users/artemiitkachuk/Library/Caches/org.carthage.CarthageKit/DerivedData/12.5.1_12E507/swift-sodium/0.9.1/Build/Intermediates.noindex/ArchiveIntermediates/Sodium_iOS/IntermediateBuildFilesPath/Sodium.build/Release-iphoneos/Sodium_iOS.build/DerivedSources/Sodium_vers.c
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/swift-sodium
 _$sSpys5UInt8VGSgADSPyABGA2Es5Int32VIegyyyyyd_A2c3eGIegyyyyyd_TR038$sSo29crypto_kx_client_session_keysys5b6VSpys5A20VGSg_AGSPyAEGA2HtFTOTf3nnnnnpf_n
 _$sSpys5UInt8VGSgADSPyABGA2Es5Int32VIegyyyyyd_A2c3eGIegyyyyyd_TR038$sSo29crypto_kx_server_session_keysys5b6VSpys5A20VGSg_AGSPyAEGA2HtFTOTf3nnnnnpf_n
 _$s6Sodium11KeyExchangeV4SideOSQAASQ2eeoiySbx_xtFZTW
@@ -137,7 +137,7 @@ ___swift_reflection_version
 Apple clang version 12.0.5 (clang-1205.0.19.57)
 <swift-imported-modules>
 Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/swift-sodium/Sodium/KeyExchange.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/swift-sodium/Sodium/KeyExchange.swift
 __swift_instantiateConcreteTypeFromMangledName
 <compiler-generated>
 $sSo43crypto_secretstream_xchacha20poly1305_stateVMa
@@ -314,7 +314,7 @@ _symbolic _____ 6Sodium12SecretStreamV
 _symbolic _____ 6Sodium4AeadV
 _$s6SodiumAAVMF
 -private-discriminator _A1ABCDA94C5763FBD4C0F0FC62D7DC21
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/swift-sodium/Sodium/Sodium.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/swift-sodium/Sodium/Sodium.swift
 $s6SodiumAAVMa
 $s6SodiumAAVwst
 $s6SodiumAAVwet
@@ -379,7 +379,7 @@ _$s6Sodium6PWHashV3AlgOWV
 _$s6Sodium6PWHashV3AlgOMf
 _symbolic _____ 6Sodium6PWHashV3AlgO
 _$s6Sodium6PWHashV3AlgOMF
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/swift-sodium/Sodium/PWHash.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/swift-sodium/Sodium/PWHash.swift
 $s6Sodium6PWHashV3AlgOMa
 $s6Sodium6PWHashV3AlgOwui
 $s6Sodium6PWHashV3AlgOwup
@@ -462,7 +462,7 @@ OpsLimitInteractive.get
 StrPrefix.get
 StrBytes.get
 SaltBytes.get
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/swift-sodium/Sodium/ExitCode.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/swift-sodium/Sodium/ExitCode.swift
 _$s6Sodium9SecretBoxVAA14NonceGeneratorA2aDP0D5BytesSivgTW
 _$s6Sodium9SecretBoxV6keygen_WZ
 _$sSo23crypto_secretbox_keygenyySpys5UInt8VGFTO
@@ -476,7 +476,7 @@ _symbolic $s6Sodium18SecretKeyGeneratorP
 _$s6Sodium9SecretBoxVAA0B12KeyGeneratorAAMA
 _$s6Sodium9SecretBoxVMf
 _$s6Sodium9SecretBoxVMF
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/swift-sodium/Sodium/SecretBox.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/swift-sodium/Sodium/SecretBox.swift
 $s6Sodium9SecretBoxVMa
 $ss32_copyCollectionToContiguousArrayys0dE0Vy7ElementQzGxSlRzlFs0E5SliceVys5UInt8VG_Tg5Tf4x_n
 $ss10ArraySliceVyxGSlsSl5countSivgTWs5UInt8V_Tg5
@@ -561,7 +561,7 @@ _$s6Sodium5UtilsVMF
 _$s6Sodium5UtilsV13Base64VariantOWV
 _$s6Sodium5UtilsV13Base64VariantOMf
 _$s6Sodium5UtilsV13Base64VariantOMF
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/swift-sodium/Sodium/Utils.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/swift-sodium/Sodium/Utils.swift
 $s6Sodium5UtilsV13Base64VariantOMa
 $s6Sodium5UtilsV13Base64VariantOwui
 $s6Sodium5UtilsV13Base64VariantOwup
@@ -597,7 +597,7 @@ $ss5Int32VSHsSH9hashValueSivgTW
 $ss5Int32VSQsSQ2eeoiySbx_xtFZTW
 _$s6Sodium18SecretKeyGenerator_pMF
 _symbolic 3Key_____Qz 6Sodium18SecretKeyGeneratorP
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/swift-sodium/Sodium/Generators/SecretKeyGenerator.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/swift-sodium/Sodium/Generators/SecretKeyGenerator.swift
 key
 _$s6Sodium4SignV10newKeypair_WZ
 _$sSo19crypto_sign_keypairys5Int32VSpys5UInt8VG_AFtFTO
@@ -639,7 +639,7 @@ _$s6Sodium4SignVMF
 _$s6Sodium4SignV7KeyPairVWV
 _$s6Sodium4SignV7KeyPairVMf
 _$s6Sodium4SignV7KeyPairVMF
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/swift-sodium/Sodium/Sign.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/swift-sodium/Sodium/Sign.swift
 $s6Sodium4SignV7KeyPairVMa
 $s6Sodium4SignV7KeyPairVwst
 $s6Sodium4SignV7KeyPairVwet
@@ -673,7 +673,7 @@ _$s6Sodium16KeyPairGenerator_pMF
 _symbolic 7KeyPair_____Qz 6Sodium16KeyPairGeneratorP
 _symbolic 9PublicKey_____Qz 6Sodium16KeyPairGeneratorP
 _symbolic 9SecretKey_____Qz 6Sodium16KeyPairGeneratorP
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/swift-sodium/Sodium/Generators/KeyPairGenerator.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/swift-sodium/Sodium/Generators/KeyPairGenerator.swift
 keyPair
 _$s6Sodium4AuthV6keygen_WZ
 _$sSo18crypto_auth_keygenyySpys5UInt8VGFTO
@@ -682,7 +682,7 @@ _$s6Sodium4AuthVAA18SecretKeyGeneratorA2aDP6keygenyySpys5UInt8VGcvgZTW
 _$s6Sodium4AuthVAA18SecretKeyGeneratorAAMA
 _$s6Sodium4AuthVMf
 _$s6Sodium4AuthVMF
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/swift-sodium/Sodium/Auth.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/swift-sodium/Sodium/Auth.swift
 $s6Sodium4AuthVMa
 $s6Sodium4AuthV6keygenyySpys5UInt8VGcvau
 crypto_auth_keygen
@@ -706,7 +706,7 @@ _$s6Sodium6StreamVAA18SecretKeyGeneratorAAMA
 _$s6Sodium6StreamVWV
 _$s6Sodium6StreamVMf
 _$s6Sodium6StreamVMF
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/swift-sodium/Sodium/Stream.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/swift-sodium/Sodium/Stream.swift
 $s6Sodium6StreamVMa
 $s6Sodium6StreamVwst
 $s6Sodium6StreamVwet
@@ -731,7 +731,7 @@ _$s6Sodium13KeyDerivationVAA06SecretB9GeneratorAAMA
 _$s6Sodium13KeyDerivationVWV
 _$s6Sodium13KeyDerivationVMf
 _$s6Sodium13KeyDerivationVMF
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/swift-sodium/Sodium/KeyDerivation.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/swift-sodium/Sodium/KeyDerivation.swift
 $s6Sodium13KeyDerivationVMa
 $s6Sodium13KeyDerivationVwst
 $s6Sodium13KeyDerivationVwet
@@ -762,7 +762,7 @@ ___swift_destroy_boxed_opaque_existential_1
 _$sSays5UInt8VGMD
 _$sSays5UInt8VGSayxG10Foundation15ContiguousBytesAeBRszlWL
 _$sSays5UInt8VGML
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/swift-sodium/Sodium/Bytes.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/swift-sodium/Sodium/Bytes.swift
 __swift_destroy_boxed_opaque_existential_1
 __swift_project_boxed_opaque_existential_1
 $sSays5UInt8VGMa
@@ -847,7 +847,7 @@ _objc_classes
 _$s6Sodium12SecretStreamV17XChaCha20Poly1305V04PushC0C9secretKeyAGSgSays5UInt8VG_tcfCTq
 _$s6Sodium12SecretStreamV17XChaCha20Poly1305V04PullC0C9secretKey6headerAGSgSays5UInt8VG_AMtcfCTq
 -private-discriminator _A86FFFA7E87DB380FB8EF70CE5E57712
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/swift-sodium/Sodium/SecretStream.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/swift-sodium/Sodium/SecretStream.swift
 $s6Sodium12SecretStreamV17XChaCha20Poly1305V3TagOMa
 $s6Sodium12SecretStreamV17XChaCha20Poly1305V3TagOwui
 $s6Sodium12SecretStreamV17XChaCha20Poly1305V3TagOwup
@@ -884,7 +884,7 @@ $s6Sodium12SecretStreamV17XChaCha20Poly1305V6ABytes_WZ
 xchacha20poly1305.get
 _$s6Sodium14NonceGenerator_pMF
 _symbolic 5Nonce_____Qz 6Sodium14NonceGeneratorP
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/swift-sodium/Sodium/Generators/NonceGenerator.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/swift-sodium/Sodium/Generators/NonceGenerator.swift
 _$s6Sodium9ShortHashV6keygen_WZ
 _$sSo23crypto_shorthash_keygenyySpys5UInt8VGFTO
 _$s6Sodium9ShortHashV6keygenyySpys5UInt8VGcvMZ.resume.0
@@ -894,14 +894,14 @@ _$s6Sodium9ShortHashVXMtSpys5UInt8VGIegy_IetMAyYl_TC
 _$s6Sodium9ShortHashVAA18SecretKeyGeneratorAAMA
 _$s6Sodium9ShortHashVMf
 _$s6Sodium9ShortHashVMF
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/swift-sodium/Sodium/ShortHash.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/swift-sodium/Sodium/ShortHash.swift
 $s6Sodium9ShortHashVMa
 $s6Sodium9ShortHashV6keygenyySpys5UInt8VGcvau
 crypto_shorthash_keygen
 $s6Sodium9ShortHashV6keygen_WZ
 _$s6Sodium11RandomBytesVMf
 _$s6Sodium11RandomBytesVMF
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/swift-sodium/Sodium/RandomBytes.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/swift-sodium/Sodium/RandomBytes.swift
 $s6Sodium11RandomBytesVMa
 deterministic
 uniform
@@ -941,7 +941,7 @@ _symbolic _____ s13OpaquePointerV
 _$s6Sodium11GenericHashV6StreamCMF
 _$s6Sodium11GenericHashV6StreamC3key12outputLengthAESgSays5UInt8VGSg_SitcfCTq
 -private-discriminator _6AF6B94D4EB45951D8F227E8334AF941
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/swift-sodium/Sodium/GenericHash.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/swift-sodium/Sodium/GenericHash.swift
 $s6Sodium11GenericHashVMa
 $s6Sodium11GenericHashVwst
 $s6Sodium11GenericHashVwet
@@ -968,7 +968,7 @@ KeyBytesMin.get
 _$s6Sodium15KeyPairProtocol_pMF
 _symbolic 9PublicKey_____Qz 6Sodium15KeyPairProtocolP
 _symbolic 9SecretKey_____Qz 6Sodium15KeyPairProtocolP
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/swift-sodium/Sodium/Generators/KeyPairProtocol.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/swift-sodium/Sodium/Generators/KeyPairProtocol.swift
 _$s6Sodium4AeadV21XChaCha20Poly1305IetfVAA14NonceGeneratorA2aFP0G5BytesSivgTW
 _$s6Sodium4AeadV21XChaCha20Poly1305IetfV6keygen_WZ
 _$sSo41crypto_aead_xchacha20poly1305_ietf_keygenyySpys5UInt8VGFTO
@@ -983,7 +983,7 @@ _$s6Sodium4AeadVMf
 _$s6Sodium4AeadVMF
 _$s6Sodium4AeadV21XChaCha20Poly1305IetfVMf
 _$s6Sodium4AeadV21XChaCha20Poly1305IetfVMF
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/swift-sodium/Sodium/Aead.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/swift-sodium/Sodium/Aead.swift
 $s6Sodium4AeadV21XChaCha20Poly1305IetfVMa
 $s6Sodium4AeadVMa
 $s6Sodium4AeadV21XChaCha20Poly1305IetfV6keygenyySpys5UInt8VGcvau
@@ -1038,7 +1038,7 @@ _$s6Sodium3BoxVMF
 _$s6Sodium3BoxV7KeyPairVWV
 _$s6Sodium3BoxV7KeyPairVMf
 _$s6Sodium3BoxV7KeyPairVMF
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/swift-sodium/Sodium/Box.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/swift-sodium/Sodium/Box.swift
 $s6Sodium3BoxV7KeyPairVMa
 $s6Sodium3BoxV7KeyPairVwst
 $s6Sodium3BoxV7KeyPairVwet

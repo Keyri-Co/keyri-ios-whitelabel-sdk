@@ -14,23 +14,23 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		m4HzvLMy2Cj87j3ONQ2cvWDHRnU=
+		XPghz6vP9kj+P0FjJ4TxvUAYRDg=
 		</data>
 		<key>Modules/Sodium.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		HqVCAm9oG5otH4K5zPTDXgZ8HV4=
+		5vAmuTCgsZhSEOcWYcCpd0L0m0I=
 		</data>
 		<key>Modules/Sodium.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<data>
-		HqVCAm9oG5otH4K5zPTDXgZ8HV4=
+		5vAmuTCgsZhSEOcWYcCpd0L0m0I=
 		</data>
 		<key>Modules/Sodium.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		N18A5pqyugtajZlSWnydMWu9bjM=
+		N3xglteZWZKiTOrno3Z+GRG7ipQ=
 		</data>
 		<key>Modules/Sodium.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<data>
-		N18A5pqyugtajZlSWnydMWu9bjM=
+		N3xglteZWZKiTOrno3Z+GRG7ipQ=
 		</data>
 		<key>Modules/Sodium.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/Sodium.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		S7rRobmzTuIWXi77H/dXboOmsdA=
+		pgAuITbFF5xdzxbpOR3Qk1B1SIM=
 		</data>
 		<key>Modules/Sodium.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>Modules/Sodium.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		S7rRobmzTuIWXi77H/dXboOmsdA=
+		pgAuITbFF5xdzxbpOR3Qk1B1SIM=
 		</data>
 		<key>Modules/Sodium.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Modules/Sodium.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Sbju09763SfqB0D+bdZQesi2KR4=
+		Cm6tncip0/0D3M/Lo92KCzOGHaM=
 		</data>
 		<key>Modules/Sodium.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Modules/Sodium.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		Sbju09763SfqB0D+bdZQesi2KR4=
+		Cm6tncip0/0D3M/Lo92KCzOGHaM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -89,28 +89,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nOlf/1wM3jwpx7M1uq+KZnDfym1Z2AyrX6O76GQrLfQ=
+			rW3A7xbUpYI6bbQi2uR7HgfGK6oF1JxdM5ywRyQGGNU=
 			</data>
 		</dict>
 		<key>Modules/Sodium.swiftmodule/Project/arm64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nOlf/1wM3jwpx7M1uq+KZnDfym1Z2AyrX6O76GQrLfQ=
+			rW3A7xbUpYI6bbQi2uR7HgfGK6oF1JxdM5ywRyQGGNU=
 			</data>
 		</dict>
 		<key>Modules/Sodium.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HfKzSkJuJX0tia3rGdyWl5vYFSbee2xmI6gVCFGMqXA=
+			0niM0Aecm2Vi4pP/MlDIOXuwbs7BZIbxiW0bc1oPToU=
 			</data>
 		</dict>
 		<key>Modules/Sodium.swiftmodule/Project/x86_64.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HfKzSkJuJX0tia3rGdyWl5vYFSbee2xmI6gVCFGMqXA=
+			0niM0Aecm2Vi4pP/MlDIOXuwbs7BZIbxiW0bc1oPToU=
 			</data>
 		</dict>
 		<key>Modules/Sodium.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -124,7 +124,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bMCei4M1KIB2Zcp3BgqpFRpJMNhg7jnxCYfKeI5LsU4=
+			Dz43Biu+FCeJFeK+rVAa9Md8ZecogXSLCfJ9JZK+r50=
 			</data>
 		</dict>
 		<key>Modules/Sodium.swiftmodule/arm64.swiftdoc</key>
@@ -138,7 +138,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bMCei4M1KIB2Zcp3BgqpFRpJMNhg7jnxCYfKeI5LsU4=
+			Dz43Biu+FCeJFeK+rVAa9Md8ZecogXSLCfJ9JZK+r50=
 			</data>
 		</dict>
 		<key>Modules/Sodium.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -152,7 +152,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xkRG8sn45yw5IbL+iUAvVBbA8Ep0vTIaSMhhIH6cOgw=
+			AYtOzTi7bEvJJQsd3bawl3raMu5dYx21obN8hMK6mQE=
 			</data>
 		</dict>
 		<key>Modules/Sodium.swiftmodule/x86_64.swiftdoc</key>
@@ -166,7 +166,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xkRG8sn45yw5IbL+iUAvVBbA8Ep0vTIaSMhhIH6cOgw=
+			AYtOzTi7bEvJJQsd3bawl3raMu5dYx21obN8hMK6mQE=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

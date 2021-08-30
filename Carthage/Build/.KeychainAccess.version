@@ -3,14 +3,14 @@
   "iOS" : [
     {
       "swiftToolchainVersion" : "5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)",
-      "hash" : "f0e1b3b1df32f87908281823b335a79eb12d159867818b7cd96b9183de0993b9",
+      "hash" : "cba5b4961857f837ea1dffc7735344cf23ba995c94cdd086419c81a2255f80c8",
       "name" : "KeychainAccess",
       "container" : "KeychainAccess.xcframework",
       "identifier" : "ios-arm64_i386_x86_64-simulator"
     },
     {
       "swiftToolchainVersion" : "5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)",
-      "hash" : "b2ae12f954a124a40a26e7671a8737a19364102af3f397489d3da0f2261b4068",
+      "hash" : "08035b08db90071a16b00b16c871b62aad6578c0842b9b327147192cd0c13ed9",
       "name" : "KeychainAccess",
       "container" : "KeychainAccess.xcframework",
       "identifier" : "ios-arm64_armv7"

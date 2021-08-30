@@ -2,8 +2,8 @@ BCSymbolMap Version: 2.0
 Apple clang version 12.0.5 (clang-1205.0.22.11)
 /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.5.sdk
 iPhoneOS14.5.sdk
-/Users/nov_os/Library/Caches/org.carthage.CarthageKit/DerivedData/12.5.1_12E507/QRCodeReader.swift/10.1.1/Build/Intermediates.noindex/ArchiveIntermediates/QRCodeReader/IntermediateBuildFilesPath/QRCodeReader.swift.build/Release-iphoneos/QRCodeReader.build/DerivedSources/QRCodeReader_vers.c
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/QRCodeReader.swift/Example
+/Users/artemiitkachuk/Library/Caches/org.carthage.CarthageKit/DerivedData/12.5.1_12E507/QRCodeReader.swift/10.1.1/Build/Intermediates.noindex/ArchiveIntermediates/QRCodeReader/IntermediateBuildFilesPath/QRCodeReader.swift.build/Release-iphoneos/QRCodeReader.build/DerivedSources/QRCodeReader_vers.c
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/QRCodeReader.swift/Example
 _$s12QRCodeReader0aB16ViewOverlayStateOSQAASQ2eeoiySbx_xtFZTW
 _$s12QRCodeReader0aB16ViewOverlayStateOSHAASH9hashValueSivgTW
 _$s12QRCodeReader0aB16ViewOverlayStateOSHAASH4hash4intoys6HasherVz_tFTW
@@ -230,7 +230,7 @@ Apple clang version 12.0.5 (clang-1205.0.19.57)
 -private-discriminator _5AAD9DCCFC004D1BE63D04F02C0951AD
 <swift-imported-modules>
 Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/QRCodeReader.swift/Sources/ReaderOverlayView.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/QRCodeReader.swift/Sources/ReaderOverlayView.swift
 $sSo16UIStatusBarStyleVMa
 <compiler-generated>
 $sSo6CGSizeVwst
@@ -302,7 +302,7 @@ $s12QRCodeReader0aB4ViewC30$__lazy_storage_$_cancelButton33_D094F03D57E92751DA2B
 $s12QRCodeReader0aB4ViewC06cameraC0So6UIViewCvpfi
 $s12QRCodeReader0aB4ViewC06cameraC0So6UIViewCvpfiAFyXEfU_
 Sources/QRCodeReaderView.swift
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/QRCodeReader.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/QRCodeReader.swift
 $s12QRCodeReader0aB4ViewC025$__lazy_storage_$_overlayC033_D094F03D57E92751DA2BF00E54386D3ELLAA0abC7Overlay_pSgSgvpfi
 $s12QRCodeReaderAAC15didFailDecodingyycSgvpfi
 $s12QRCodeReaderAAC11didFindCodeyAA0aB6ResultVcSgvpfi
@@ -420,7 +420,7 @@ _$s12QRCodeReader0aB14ViewControllerC12cancelActionyySo8UIButtonCFTq
 _$s12QRCodeReader0aB14ViewControllerC18switchCameraActionyyAA06SwitchF6ButtonCFTq
 _$s12QRCodeReader0aB14ViewControllerC17toggleTorchActionyyAA06ToggleF6ButtonCFTq
 -private-discriminator _D71C11C28A37674179BA2155B47EBBF6
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/QRCodeReader.swift/Sources/QRCodeReaderViewController.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/QRCodeReader.swift/Sources/QRCodeReaderViewController.swift
 $s12QRCodeReader0aB14ViewControllerC7builderAcA0abcD7BuilderC_tcfcyycfU0_TA
 $s12QRCodeReader0aB14ViewControllerC7builderAcA0abcD7BuilderC_tcfcyAA0aB6ResultVcfU_TA
 objectdestroy.2
@@ -485,7 +485,7 @@ _$s12QRCodeReader0aB9ContainerVWV
 _$s12QRCodeReader0aB9ContainerVMf
 _symbolic _____ 12QRCodeReader0aB9ContainerV
 _$s12QRCodeReader0aB9ContainerVMF
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/QRCodeReader.swift/Sources/QRCodeReaderViewContainer.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/QRCodeReader.swift/Sources/QRCodeReaderViewContainer.swift
 $s12QRCodeReader0aB9ContainerVMa
 $s12QRCodeReader0aB9ContainerVwst
 $s12QRCodeReader0aB9ContainerVwet
@@ -528,7 +528,7 @@ _symbolic _____Sg So16UIStatusBarStyleV
 _$s12QRCodeReader0aB21ViewControllerBuilderCMF
 _$s12QRCodeReaderAAC14metadataOutputSo017AVCaptureMetadataD0CvpWvd
 -private-discriminator _0639312C6ECFD5076AD0C2E9B22B0A86
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/QRCodeReader.swift/Sources/QRCodeReaderViewControllerBuilder.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/QRCodeReader.swift/Sources/QRCodeReaderViewControllerBuilder.swift
 $s12QRCodeReader0aB21ViewControllerBuilderCMa
 $s12QRCodeReader0aB9ContainerVWOd
 rectOfInterest.modify
@@ -572,7 +572,7 @@ cancelButtonTitle.set
 cancelButtonTitle.get
 _symbolic $s12QRCodeReader0aB22ViewControllerDelegateP
 _$s12QRCodeReader0aB22ViewControllerDelegate_pMF
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/QRCodeReader.swift/Sources/QRCodeReaderViewControllerDelegate.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/QRCodeReader.swift/Sources/QRCodeReaderViewControllerDelegate.swift
 reader
 _$s12QRCodeReaderAAC12stopScanningyyFTm
 _$s12QRCodeReaderAAC18defaultDeviceInputSo09AVCapturedE0CSgvg
@@ -718,7 +718,7 @@ __PROTOCOL_PROPERTIES_NSObject
 __PROTOCOL_METHOD_TYPES_NSObject
 _$s12QRCodeReader0aB17LifeCycleDelegateTL
 -private-discriminator _B9DC3D797F478C8B92B825BD13CC6026
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/QRCodeReader.swift/Sources/QRCodeReader.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/QRCodeReader.swift/Sources/QRCodeReader.swift
 $s12QRCodeReaderAAC12stopScanningyyFyycfU_yycfU_TA
 $s12QRCodeReaderAAC12stopScanningyyFyycfU_yycfU_
 $s12QRCodeReaderAAC13startScanningyyFyycfU_yycfU_TA
@@ -945,7 +945,7 @@ _$s12QRCodeReader18SwitchCameraButtonCMf
 _symbolic _____ 12QRCodeReader18SwitchCameraButtonC
 _$s12QRCodeReader18SwitchCameraButtonCMF
 -private-discriminator _BFF6182C1B847AB3C352E162558175B7
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/QRCodeReader.swift/Sources/SwitchCameraButton.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/QRCodeReader.swift/Sources/SwitchCameraButton.swift
 $s12QRCodeReader18SwitchCameraButtonCMa
 $sSo7UITouchCSo8NSObjectCSH10ObjectiveCWl
 $sSo7UITouchCMa
@@ -1022,7 +1022,7 @@ _$sSS3key_yp5valuetSgMD
 _symbolic _____ySSSo6UIViewCG s18_DictionaryStorageC
 _$ss18_DictionaryStorageCySSSo6UIViewCGMD
 -private-discriminator _D094F03D57E92751DA2BF00E54386D3E
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/QRCodeReader.swift/Sources/QRCodeReaderView.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/QRCodeReader.swift/Sources/QRCodeReaderView.swift
 $s12QRCodeReader0aB4ViewC24startTimerForBorderResetyyFyycfU_TA
 $s12QRCodeReader0aB4ViewC24startTimerForBorderResetyyFyycfU_
 $sypWOb
@@ -1121,7 +1121,7 @@ _$s12QRCodeReader17ToggleTorchButtonCMf
 _symbolic _____ 12QRCodeReader17ToggleTorchButtonC
 _$s12QRCodeReader17ToggleTorchButtonCMF
 -private-discriminator _F3D229CBEA1099C0DF8590966FB767C3
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/QRCodeReader.swift/Sources/ToggleTorchButton.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/QRCodeReader.swift/Sources/ToggleTorchButton.swift
 $s12QRCodeReader17ToggleTorchButtonCMa
 $s12QRCodeReader17ToggleTorchButtonCfETo
 linePathWithStartPoint
@@ -1135,7 +1135,7 @@ _$s12QRCodeReader0aB6ResultVwst
 _$s12QRCodeReader0aB6ResultVWV
 _$s12QRCodeReader0aB6ResultVMf
 _$s12QRCodeReader0aB6ResultVMF
-/Users/nov_os/Documents/Ivory/keyri/Carthage/Checkouts/QRCodeReader.swift/Sources/QRCodeReaderResult.swift
+/Users/artemiitkachuk/Desktop/Keyri/keyri-ios-sdk/Carthage/Checkouts/QRCodeReader.swift/Sources/QRCodeReaderResult.swift
 $s12QRCodeReader0aB6ResultVMa
 $s12QRCodeReader0aB6ResultVwst
 $s12QRCodeReader0aB6ResultVwet

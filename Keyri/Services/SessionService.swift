@@ -55,15 +55,12 @@ final class SessionService {
                     return
                 }
                                 
-                //0JWazrdDbLA+MwbqHjF9Mmo+3w2oh6IPBrgEFNLUfUw=
                 guard let encryptResult = EncryptionService.shared.encryptSodium(string: tryUserId, publicKey: publicKey, privateKey: Data(box.privateBuffer).base64EncodedString()) else {
-//                guard let encryptResult = EncryptionService.shared.encryptSodium(string: "1234", publicKey: "0JWazrdDbLA+MwbqHjF9Mmo+3w2oh6IPBrgEFNLUfUw=", privateKey: Data(box.privateBuffer).base64EncodedString()) else {
                     return
                 }
                 
                 let sessionApproveData = SessionApproveData(cipher: encryptResult.authenticatedCipherText, nonce: encryptResult.nonce, publicKey: Data(box.publicBuffer).base64EncodedString())
                 
-//                SocketService.shared.emit(event: "SESSION_VERIFY_APPROVE", data: sessionApproveData) { result in
                 SocketService.shared.emit(event: "message", data: sessionApproveData) { result in
                     print(result)
                 }
