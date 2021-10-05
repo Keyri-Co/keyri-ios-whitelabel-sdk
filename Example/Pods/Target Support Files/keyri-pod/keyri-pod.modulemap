@@ -1,0 +1,6 @@
+framework module keyri_pod {
+  umbrella header "keyri-pod-umbrella.h"
+
+  export *
+  module * { export * }
+}

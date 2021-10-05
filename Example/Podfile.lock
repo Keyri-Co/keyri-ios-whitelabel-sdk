@@ -1,0 +1,35 @@
+PODS:
+  - KeychainAccess (4.2.2)
+  - keyri-pod (0.1.0):
+    - KeychainAccess
+    - Socket.IO-Client-Swift
+    - Sodium-Fork
+  - Socket.IO-Client-Swift (15.2.0):
+    - Starscream (~> 3.1)
+  - Sodium-Fork (0.8.2)
+  - Starscream (3.1.1)
+
+DEPENDENCIES:
+  - keyri-pod (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - KeychainAccess
+    - Socket.IO-Client-Swift
+    - Sodium-Fork
+    - Starscream
+
+EXTERNAL SOURCES:
+  keyri-pod:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
+  keyri-pod: f0424e9129258ae4132b310cffeed795b3362f49
+  Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
+  Sodium-Fork: 45fe3a7c675898ca0635af4eadcb34985477e868
+  Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
+
+PODFILE CHECKSUM: f5f182337f1141dd7f257c5c6ce5ca55bff97f66
+
+COCOAPODS: 1.10.1

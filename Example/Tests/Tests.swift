@@ -1,5 +1,5 @@
 import XCTest
-import keyri-pod
+//import keyri-pod
 
 class Tests: XCTestCase {
     
