@@ -1,30 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="keyri-pod_Example" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KeyriExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRN-mj-wZU">
+                                <rect key="frame" x="189.5" y="832" width="35" height="30"/>
+                                <state key="normal" title="Scan"/>
+                                <connections>
+                                    <action selector="scanAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="odH-QF-LA6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHs-1v-AgQ">
+                                <rect key="frame" x="164" y="794" width="86" height="30"/>
+                                <state key="normal" title="All Accounts"/>
+                                <connections>
+                                    <action selector="getAllAccounts:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KOq-9p-uij"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="luW-Kc-M4I">
+                                <rect key="frame" x="188" y="756" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BwO-Lc-GGI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6NQ-FG-6iV">
+                                <rect key="frame" x="155" y="718" width="104" height="30"/>
+                                <state key="normal" title="Mobile Sign Up"/>
+                                <connections>
+                                    <action selector="mobileSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MQL-xt-c9i"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIj-GR-DA0">
+                                <rect key="frame" x="158.5" y="680" width="97" height="30"/>
+                                <state key="normal" title="Mobile Sign In"/>
+                                <connections>
+                                    <action selector="mobileSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KS2-Jk-jTB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6NQ-FG-6iV" firstAttribute="top" secondItem="uIj-GR-DA0" secondAttribute="bottom" constant="8" symbolic="YES" id="AAK-yq-dbc"/>
+                            <constraint firstItem="qRN-mj-wZU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B3P-ZD-9HN"/>
+                            <constraint firstItem="zHs-1v-AgQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G77-wH-B38"/>
+                            <constraint firstItem="6NQ-FG-6iV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GYU-44-UNc"/>
+                            <constraint firstItem="uIj-GR-DA0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W5B-w7-kBB"/>
+                            <constraint firstItem="qRN-mj-wZU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ZCG-VB-beC"/>
+                            <constraint firstItem="luW-Kc-M4I" firstAttribute="top" secondItem="6NQ-FG-6iV" secondAttribute="bottom" constant="8" symbolic="YES" id="fiE-E1-3FD"/>
+                            <constraint firstItem="qRN-mj-wZU" firstAttribute="top" secondItem="zHs-1v-AgQ" secondAttribute="bottom" constant="8" symbolic="YES" id="gaK-g2-4Hp"/>
+                            <constraint firstItem="zHs-1v-AgQ" firstAttribute="top" secondItem="luW-Kc-M4I" secondAttribute="bottom" constant="8" symbolic="YES" id="lHW-W9-0r1"/>
+                            <constraint firstItem="luW-Kc-M4I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ma3-H0-RZx"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

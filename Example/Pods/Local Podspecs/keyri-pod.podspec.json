@@ -1,7 +1,7 @@
 {
   "name": "keyri-pod",
-  "version": "0.1.0",
-  "summary": "A short description of keyri-pod.",
+  "version": "0.1.1",
+  "summary": "Library for autorization",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/anovoselskyi/keyri-pod",
   "license": {
@@ -13,11 +13,12 @@
   },
   "source": {
     "git": "https://github.com/anovoselskyi/keyri-pod.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "10.0"
   },
+  "swift_versions": "5.3",
   "source_files": "keyri-pod/Classes/**/*",
   "dependencies": {
     "Sodium-Fork": [
@@ -35,5 +36,6 @@
   },
   "user_target_xcconfig": {
     "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
-  }
+  },
+  "swift_version": "5.3"
 }

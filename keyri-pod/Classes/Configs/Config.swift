@@ -22,21 +22,39 @@ struct Config {
     let wsUrl: String
     
     init() {
-        let bundle = Bundle(for: Keyri.self)
         #if DEBUG
-        let path = bundle.path(forResource: "dev", ofType: "json")!
+        let jsonData = Self.devRawConfig.data(using: .utf8)!
         #else
-        let path = bundle.path(forResource: "prod", ofType: "json")!
+        let jsonData = Self.prodRawConfig.data(using: .utf8)!
         #endif
-        
+
         do {
-            let jsonData = try Data(contentsOf: URL(fileURLWithPath: path))
             let config = try JSONDecoder().decode(ConfigData.self, from: jsonData)
-            
+
             apiUrl = config.apiUrl
             wsUrl = config.wsUrl
         } catch {
             fatalError(error.localizedDescription)
         }
+    }
+}
+
+extension Config {
+    static var devRawConfig: String {
+        """
+            {
+                "API_URL": "https://dev-api.keyri.co",
+                "WS_URL": "wss://dev-api.keyri.co",
+            }
+        """
+    }
+    
+    static var prodRawConfig: String {
+        """
+            {
+                "API_URL": "https://dev-api.keyri.co",
+                "WS_URL": "wss://dev-api.keyri.co",
+            }
+        """
     }
 }
