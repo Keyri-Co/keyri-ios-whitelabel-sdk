@@ -13,6 +13,8 @@ public final class Keyri {
     private var appkey: String!
     private var rpPublicKey: String?
     private var callbackUrl: URL!
+    
+    private var scanner: Scanner?
 
     public static let shared = Keyri()
 
@@ -100,18 +102,18 @@ public final class Keyri {
             }
         }
     }
-
-    public func mobileLogin(account: PublicAccount, custom: String?, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+    
+    public func mobileSignUp(username: String, custom: String?, completion: @escaping (Result<[String: Any], Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
             guard let self = self else { return }
 
             switch result {
             case .success(let service):
-                ApiService.shared.permissions(service: service, permissions: [.mobileLogin]) { result in
+                ApiService.shared.permissions(service: service, permissions: [.mobileSignUp]) { result in
                     switch result {
                     case .success(let permissions):
-                        if permissions[.mobileLogin] == true {
-                            UserService.shared.mobileLogin(account: account, service: service, callbackUrl: self.callbackUrl, custom: custom, completion: completion)
+                        if permissions[.mobileSignUp] == true {
+                            UserService.shared.mobileSignUp(username: username, service: service, callbackUrl: self.callbackUrl, custom: custom, completion: completion)
                         } else {
                             completion(.failure(KeyriErrors.serviceAccessDenied))
                         }
@@ -125,17 +127,17 @@ public final class Keyri {
         }
     }
 
-    public func mobileSignUp(username: String, custom: String?, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+    public func mobileLogin(account: PublicAccount, custom: String?, completion: @escaping (Result<[String: Any], Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
             guard let self = self else { return }
 
             switch result {
             case .success(let service):
-                ApiService.shared.permissions(service: service, permissions: [.mobileSignUp]) { result in
+                ApiService.shared.permissions(service: service, permissions: [.mobileLogin]) { result in
                     switch result {
                     case .success(let permissions):
-                        if permissions[.mobileSignUp] == true {
-                            UserService.shared.mobileSignUp(username: username, service: service, callbackUrl: self.callbackUrl, custom: custom, completion: completion)
+                        if permissions[.mobileLogin] == true {
+                            UserService.shared.mobileLogin(account: account, service: service, callbackUrl: self.callbackUrl, custom: custom, completion: completion)
                         } else {
                             completion(.failure(KeyriErrors.serviceAccessDenied))
                         }
@@ -171,6 +173,32 @@ public final class Keyri {
                 completion(.failure(error))
             }
         }
+    }
+    
+    public func authWithScanner(from viewController: UIViewController, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
+        scanner = Scanner()
+        scanner?.completion = { [weak self] result in
+            self?.onReadSessionId(result, completion: { sessionResult in
+                switch sessionResult {
+                case .success(let session):
+                    if session.isNewUser {
+                        guard let username = session.username else { return }
+                        self?.signUp(username: username, service: session.service, custom: custom, completion: completion)
+                    } else {
+                        self?.accounts() { result in
+                            if case .success(let accounts) = result, let account = accounts.first {
+                                Keyri.shared.login(account: account, service: session.service, custom: custom, completion: completion)
+                            } else {
+                                completion(.failure(KeyriErrors.accountNotFound))
+                            }
+                        }
+                    }
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            })
+        }
+        scanner?.show()
     }
 }
 

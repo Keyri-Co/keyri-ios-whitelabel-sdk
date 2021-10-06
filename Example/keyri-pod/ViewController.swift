@@ -23,9 +23,9 @@ class ViewController: UIViewController {
             $0.reader = QRCodeReader(metadataObjectTypes: [.qr], captureDevicePosition: .back)
             
             // Configure the view controller (optional)
-            $0.showTorchButton        = false
-            $0.showSwitchCameraButton = false
-            $0.showCancelButton       = false
+            $0.showTorchButton        = true
+            $0.showSwitchCameraButton = true
+            $0.showCancelButton       = true
             $0.showOverlayView        = true
             $0.rectOfInterest         = CGRect(x: 0.2, y: 0.2, width: 0.6, height: 0.6)
         }
@@ -35,18 +35,9 @@ class ViewController: UIViewController {
 
     @IBAction func scanAction(_ sender: Any) {
         state = .signup
-        // Retrieve the QRCode content
-        // By using the delegate pattern
+        
         readerVC.delegate = self
-
-        // Or by using the closure pattern
-        readerVC.completionBlock = { (result: QRCodeReaderResult?) in
-          print(result)
-        }
-
-        // Presents the readerVC as modal form sheet
         readerVC.modalPresentationStyle = .formSheet
-       
         present(readerVC, animated: true, completion: nil)
     }
     
@@ -65,15 +56,7 @@ class ViewController: UIViewController {
         state = .login
         
         readerVC.delegate = self
-
-        // Or by using the closure pattern
-        readerVC.completionBlock = { (result: QRCodeReaderResult?) in
-          print(result)
-        }
-
-        // Presents the readerVC as modal form sheet
         readerVC.modalPresentationStyle = .formSheet
-       
         present(readerVC, animated: true, completion: nil)
     }
     
@@ -103,9 +86,15 @@ class ViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBAction func authWithScanner(_ sender: Any) {
+        Keyri.shared.authWithScanner(from: self, custom: "custom auth with scanner") { result in
+            switch result {
+            case .success():
+                print()
+            case .failure(let error):
+                fatalError(error.localizedDescription)
+            }
+        }
     }
 }
 
@@ -151,17 +140,8 @@ extension ViewController: QRCodeReaderViewControllerDelegate {
         dismiss(animated: true, completion: nil)
     }
 
-    //This is an optional delegate method, that allows you to be notified when the user switches the cameraName
-    //By pressing on the switch camera button
-    func reader(_ reader: QRCodeReaderViewController, didSwitchCamera newCaptureDevice: AVCaptureDeviceInput) {
-        let cameraName = newCaptureDevice.device.localizedName
-        print("Switching capture to: \(cameraName)")
-
-    }
-
     func readerDidCancel(_ reader: QRCodeReaderViewController) {
-      reader.stopScanning()
-
-      dismiss(animated: true, completion: nil)
+        reader.stopScanning()
+        dismiss(animated: true, completion: nil)
     }
 }

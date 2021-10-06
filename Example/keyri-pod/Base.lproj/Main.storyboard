@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -11,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KeyriExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="keyri_pod_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,14 +52,23 @@
                                     <action selector="mobileSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KS2-Jk-jTB"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NM2-wY-Fxh">
+                                <rect key="frame" x="143" y="642" width="128" height="30"/>
+                                <state key="normal" title="Auth With Scanner"/>
+                                <connections>
+                                    <action selector="authWithScanner:" destination="BYZ-38-t0r" eventType="touchUpInside" id="91L-eX-dmh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6NQ-FG-6iV" firstAttribute="top" secondItem="uIj-GR-DA0" secondAttribute="bottom" constant="8" symbolic="YES" id="AAK-yq-dbc"/>
                             <constraint firstItem="qRN-mj-wZU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="B3P-ZD-9HN"/>
+                            <constraint firstItem="NM2-wY-Fxh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BIl-V2-7tK"/>
                             <constraint firstItem="zHs-1v-AgQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G77-wH-B38"/>
                             <constraint firstItem="6NQ-FG-6iV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GYU-44-UNc"/>
+                            <constraint firstItem="uIj-GR-DA0" firstAttribute="top" secondItem="NM2-wY-Fxh" secondAttribute="bottom" constant="8" symbolic="YES" id="Gtt-Jf-6iV"/>
                             <constraint firstItem="uIj-GR-DA0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W5B-w7-kBB"/>
                             <constraint firstItem="qRN-mj-wZU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ZCG-VB-beC"/>
                             <constraint firstItem="luW-Kc-M4I" firstAttribute="top" secondItem="6NQ-FG-6iV" secondAttribute="bottom" constant="8" symbolic="YES" id="fiE-E1-3FD"/>

@@ -41,9 +41,10 @@ TODO: Add long description of the pod here.
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
   
-  s.dependency 'Sodium-Fork'
-  s.dependency 'KeychainAccess'
-  s.dependency 'Socket.IO-Client-Swift'
+  s.dependency 'Sodium-Fork', '~> 0.8.2'
+  s.dependency 'KeychainAccess', '~> 4.2.2'
+  s.dependency 'Socket.IO-Client-Swift', '~> 16.0.1'
+  s.dependency 'QRCodeReader.swift', '10.1.0'
 
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }

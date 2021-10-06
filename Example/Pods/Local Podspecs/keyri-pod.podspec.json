@@ -1,6 +1,6 @@
 {
   "name": "keyri-pod",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "summary": "Library for autorization",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/anovoselskyi/keyri-pod",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/anovoselskyi/keyri-pod.git",
-    "tag": "0.1.1"
+    "tag": "0.1.2"
   },
   "platforms": {
     "ios": "10.0"
@@ -22,13 +22,16 @@
   "source_files": "keyri-pod/Classes/**/*",
   "dependencies": {
     "Sodium-Fork": [
-
+      "~> 0.8.2"
     ],
     "KeychainAccess": [
-
+      "~> 4.2.2"
     ],
     "Socket.IO-Client-Swift": [
-
+      "~> 16.0.1"
+    ],
+    "QRCodeReader.swift": [
+      "10.1.0"
     ]
   },
   "pod_target_xcconfig": {
