@@ -87,7 +87,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func authWithScanner(_ sender: Any) {
-        Keyri.shared.authWithScanner(from: self, custom: "custom auth with scanner") { result in
+        Keyri.shared.authWithScanner(custom: "custom auth with scanner") { result in
             switch result {
             case .success():
                 print()

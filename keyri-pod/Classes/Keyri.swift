@@ -175,7 +175,7 @@ public final class Keyri {
         }
     }
     
-    public func authWithScanner(from viewController: UIViewController, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
+    public func authWithScanner(from viewController: UIViewController? = nil, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
         scanner = Scanner()
         scanner?.completion = { [weak self] result in
             self?.onReadSessionId(result, completion: { sessionResult in
