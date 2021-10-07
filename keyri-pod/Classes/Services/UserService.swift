@@ -14,7 +14,7 @@ final class UserService {
     
     func signUp(username: String, sessionId: String, service: Service, rpPublicKey: String?, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
         let encUserId = createUser(username: username, service: service, custom: custom).encUserId
-        SessionService.shared.verifyUserSession(encUserId: encUserId, sessionId: sessionId, rpPublicKey: rpPublicKey, completion: completion)
+        SessionService.shared.verifyUserSession(encUserId: encUserId, sessionId: sessionId, rpPublicKey: rpPublicKey, custom: custom, usePublicKey: true, completion: completion)
     }
     
     func login(sessionId: String, service: Service, account: PublicAccount, rpPublicKey: String?, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
@@ -24,10 +24,10 @@ final class UserService {
             return
         }
         
-        SessionService.shared.verifyUserSession(encUserId: sessionAccount.userId, sessionId: sessionId, rpPublicKey: rpPublicKey, completion: completion)
+        SessionService.shared.verifyUserSession(encUserId: sessionAccount.userId, sessionId: sessionId, rpPublicKey: rpPublicKey, custom: custom, completion: completion)
     }
     
-    func mobileLogin(account: PublicAccount, service: Service, callbackUrl: URL, custom: String?, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+    func mobileLogin(account: PublicAccount, service: Service, callbackUrl: URL, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
         guard
             let sessionAccount = StorageService.shared.getAllAccounts(serviceId: service.id).first(where: { $0.username == account.username })
         else {
@@ -42,16 +42,16 @@ final class UserService {
         let userIdData = AES.decryptionAESModeECB(messageData: encUserId.data(using: .utf8)!, key: box.privateKey)!
         let userId = String(data: userIdData, encoding: .utf8)!
         
-        ApiService.shared.authMobile(url: callbackUrl, userId: userId, username: sessionAccount.username, completion: completion)
+        ApiService.shared.authMobile(url: callbackUrl, userId: userId, username: sessionAccount.username, clientPublicKey: box.publicKey, extendedHeaders: extendedHeaders, completion: completion)
     }
     
-    func mobileSignUp(username: String, service: Service, callbackUrl: URL, custom: String?, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+    func mobileSignUp(username: String, service: Service, callbackUrl: URL, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
         let account = createUser(username: username, service: service, custom: custom).account
         let box = KeychainService.shared.getCryptoBox()
         let userIdData = AES.decryptionAESModeECB(messageData: account.userId.data(using: .utf8)!, key: box.privateKey)!
         let userId = String(data: userIdData, encoding: .utf8)!
         
-        ApiService.shared.authMobile(url: callbackUrl, userId: userId, username: username, completion: completion)
+        ApiService.shared.authMobile(url: callbackUrl, userId: userId, username: username, clientPublicKey: box.publicKey, extendedHeaders: extendedHeaders, completion: completion)
     }
 }
 

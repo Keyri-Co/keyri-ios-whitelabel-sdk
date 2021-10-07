@@ -31,7 +31,7 @@ final class EncryptionService {
     
     func generateCryproBox() -> CryptoBox {
         let sodium = Sodium()
-        let keyPair = sodium.box.keyPair()!
+        let keyPair = sodium.sign.keyPair()!
         let publicKeyString = keyPair.publicKey.base64EncodedString()
         let privateKeyString = keyPair.secretKey.base64EncodedString()
         
@@ -52,6 +52,28 @@ final class EncryptionService {
         }
         
         return (authenticatedCipherText: sealResult.authenticatedCipherText.base64EncodedString(), nonce: sealResult.nonce.base64EncodedString())
+    }
+    
+    func encryptSeal(string: String, publicKey: String) -> String? {
+        let stringBytes = string.bytes
+        let sodium = Sodium()
+        
+        let publicKeyBytes = [UInt8](Data(base64Encoded: publicKey)!)
+        
+        let sealResult = sodium.box.seal(message: stringBytes, recipientPublicKey: publicKeyBytes)
+        
+        return sealResult?.base64EncodedString()
+    }
+    
+    func createSignature(string: String, privateKey: String) -> String? {
+        let stringBytes = string.bytes
+        let sodium = Sodium()
+        
+        let privateKeyBytes = [UInt8](Data(base64Encoded: privateKey)!)
+        
+        let signature = sodium.sign.signature(message: stringBytes, secretKey: privateKeyBytes)
+        
+        return signature?.base64EncodedString()
     }
 }
 

@@ -10,12 +10,12 @@ import SocketIO
 
 struct SessionApproveData: SocketData {
     let cipher: String
-    let nonce: String
-    let publicKey: String
+    let signature: String
+    var publicKey: String?
     let action = "SESSION_VERIFY_APPROVE"
     
     func socketRepresentation() -> SocketData {
-        return ["cipher": cipher, "nonce": nonce, "publicKey": publicKey, "action": action]
+        return ["cipher": cipher, "signature": signature, "publicKey": publicKey, "action": action]
     }
 }
 
@@ -25,7 +25,7 @@ final class SessionService {
     
     var sessionId: String?
     
-    func verifyUserSession(encUserId: String, sessionId: String, rpPublicKey: String?, completion: @escaping (Result<Void, Error>) -> Void) {
+    func verifyUserSession(encUserId: String, sessionId: String, rpPublicKey: String?, custom: String?, usePublicKey: Bool = false, completion: @escaping (Result<Void, Error>) -> Void) {
         let box = KeychainService.shared.getCryptoBox()
         
         let userIdData = AES.decryptionAESModeECB(messageData: encUserId.data(using: .utf8)!, key: box.privateKey)!
@@ -66,14 +66,33 @@ final class SessionService {
                     assertionFailure("User id for session key not found")
                     return
                 }
-                                
-                guard let encryptResult = EncryptionService.shared.encryptSodium(string: tryUserId, publicKey: rpPublicKey ?? publicKey, privateKey: box.privateBuffer.base64EncodedString()) else {
-                    completion(.failure(KeyriErrors.generic))
-                    assertionFailure("Sodium encrypt fails")
+                
+                let jsonDict = [
+                    "userId": tryUserId,
+                    "custom": custom,
+                    "timestamp": "\(Date().timeIntervalSince1970)"
+                ]
+                
+                guard let theJSONData = try? JSONSerialization.data( withJSONObject: jsonDict, options: []) else {
+                    assertionFailure("TODO")
                     return
                 }
                 
-                let sessionApproveData = SessionApproveData(cipher: encryptResult.authenticatedCipherText, nonce: encryptResult.nonce, publicKey: box.publicBuffer.base64EncodedString())
+                let theJSONText = String(data: theJSONData, encoding: .ascii)!
+                
+                guard let encryptResult = EncryptionService.shared.encryptSeal(string: theJSONText, publicKey: rpPublicKey ?? publicKey) else {
+                    assertionFailure("Sodium encrypt fails")
+                    return
+                }
+                guard let signature = EncryptionService.shared.createSignature(string: theJSONText, privateKey: box.privateKey) else {
+                    assertionFailure("Create signature fails")
+                    return
+                }
+                
+                var sessionApproveData = SessionApproveData(cipher: encryptResult, signature: signature, publicKey: nil)
+                if usePublicKey {
+                    sessionApproveData.publicKey = box.publicBuffer.base64EncodedString()
+                }
                 
                 SocketService.shared.emit(event: "message", data: sessionApproveData) { result in
                     // callback doesn't reaching

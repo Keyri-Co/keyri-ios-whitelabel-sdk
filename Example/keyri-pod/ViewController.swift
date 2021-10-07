@@ -61,7 +61,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func mobileSignUp(_ sender: Any) {
-        Keyri.shared.mobileSignUp(username: "tester 1", custom: "custom mobile signup") { result in
+        Keyri.shared.mobileSignUp(username: "tester 1", custom: "custom mobile signup", extendedHeaders: ["TestKey1": "TestVal1", "TestKey2": "TestVal2"]) { result in
             switch result {
             case .success(let response):
                 print(response)
@@ -74,7 +74,7 @@ class ViewController: UIViewController {
     @IBAction func mobileSignIn(_ sender: Any) {
         Keyri.shared.accounts() { result in
             if case .success(let accounts) = result, let account = accounts.first {
-                Keyri.shared.mobileLogin(account: account, custom: "custom mobile signin") { result in
+                Keyri.shared.mobileLogin(account: account, custom: "custom mobile signin", extendedHeaders: ["TestKey1": "TestVal1", "TestKey2": "TestVal2"]) { result in
                     switch result {
                     case .success(let response):
                         print(response)

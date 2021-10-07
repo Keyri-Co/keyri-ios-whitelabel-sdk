@@ -69,14 +69,16 @@ final class ApiService {
         task.resume()
     }
     
-    func authMobile(url: URL, userId: String, username: String?, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+    func authMobile(url: URL, userId: String, username: String?, clientPublicKey: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
         var parameterDictionary = ["userId": userId]
         if let username = username {
             parameterDictionary["username"] = username
+            parameterDictionary["clientPublicKey"] = clientPublicKey
         }
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        extendedHeaders?.forEach { request.addValue($1, forHTTPHeaderField: $0) }
         guard let httpBody = try? JSONSerialization.data(withJSONObject: parameterDictionary, options: []) else {
             assertionFailure("Invalid parameters in auth mobile request")
             return
