@@ -32,10 +32,10 @@ public final class Keyri {
         whitelabelInitIfNeeded { result in
             switch result {
             case .success(let service):
-                ApiService.shared.permissions(service: service, permissions: [.getSession]) { result in
-                    switch result {
-                    case .success(let permissions):
-                        if permissions[.getSession] == true {
+//                ApiService.shared.permissions(service: service, permissions: [.getSession]) { result in
+//                    switch result {
+//                    case .success(let permissions):
+//                        if permissions[.getSession] == true {
                             ApiService.shared.getSession(sessionId: sessionId) { result in
                                 switch result {
                                 case .success(let session):
@@ -46,13 +46,13 @@ public final class Keyri {
                                     completion(.failure(error))
                                 }
                             }
-                        } else {
-                            completion(.failure(KeyriErrors.serviceAccessDenied))
-                        }
-                    case .failure(let error):
-                        completion(.failure(error))
-                    }
-                }
+//                        } else {
+//                            completion(.failure(KeyriErrors.serviceAccessDenied))
+//                        }
+//                    case .failure(let error):
+//                        completion(.failure(error))
+//                    }
+//                }
             case .failure(let error):
                 completion(.failure(error))
             }
@@ -66,18 +66,18 @@ public final class Keyri {
                 assertionFailure(KeyriErrors.sessionNotFound.localizedDescription)
                 return
             }
-            ApiService.shared.permissions(service: service, permissions: [.signUp]) { result in
-                switch result {
-                case .success(let permissions):
-                    if permissions[.signUp] == true {
+//            ApiService.shared.permissions(service: service, permissions: [.signUp]) { result in
+//                switch result {
+//                case .success(let permissions):
+//                    if permissions[.signUp] == true {
                         UserService.shared.signUp(username: username, sessionId: sessionId, service: service, rpPublicKey: self?.rpPublicKey, custom: custom, completion: completion)
-                    } else {
-                        completion(.failure(KeyriErrors.serviceAccessDenied))
-                    }
-                case .failure(let error):
-                    completion(.failure(error))
-                }
-            }
+//                    } else {
+//                        completion(.failure(KeyriErrors.serviceAccessDenied))
+//                    }
+//                case .failure(let error):
+//                    completion(.failure(error))
+//                }
+//            }
         }
     }
 
@@ -88,22 +88,22 @@ public final class Keyri {
                 assertionFailure(KeyriErrors.sessionNotFound.localizedDescription)
                 return
             }
-            ApiService.shared.permissions(service: service, permissions: [.login]) { result in
-                switch result {
-                case .success(let permissions):
-                    if permissions[.login] == true {
+//            ApiService.shared.permissions(service: service, permissions: [.login]) { result in
+//                switch result {
+//                case .success(let permissions):
+//                    if permissions[.login] == true {
                         UserService.shared.login(sessionId: sessionId, service: service, account: account, rpPublicKey: self?.rpPublicKey, custom: custom, completion: completion)
-                    } else {
-                        completion(.failure(KeyriErrors.serviceAccessDenied))
-                    }
-                case .failure(let error):
-                    completion(.failure(error))
-                }
-            }
+//                    } else {
+//                        completion(.failure(KeyriErrors.serviceAccessDenied))
+//                    }
+//                case .failure(let error):
+//                    completion(.failure(error))
+//                }
+//            }
         }
     }
     
-    public func mobileSignUp(username: String, custom: String?, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+    public func mobileSignUp(username: String, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
             guard let self = self else { return }
 
@@ -113,7 +113,7 @@ public final class Keyri {
                     switch result {
                     case .success(let permissions):
                         if permissions[.mobileSignUp] == true {
-                            UserService.shared.mobileSignUp(username: username, service: service, callbackUrl: self.callbackUrl, custom: custom, completion: completion)
+                            UserService.shared.mobileSignUp(username: username, service: service, callbackUrl: self.callbackUrl, custom: custom, extendedHeaders: extendedHeaders, completion: completion)
                         } else {
                             completion(.failure(KeyriErrors.serviceAccessDenied))
                         }
@@ -127,7 +127,7 @@ public final class Keyri {
         }
     }
 
-    public func mobileLogin(account: PublicAccount, custom: String?, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+    public func mobileLogin(account: PublicAccount, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
             guard let self = self else { return }
 
@@ -137,7 +137,7 @@ public final class Keyri {
                     switch result {
                     case .success(let permissions):
                         if permissions[.mobileLogin] == true {
-                            UserService.shared.mobileLogin(account: account, service: service, callbackUrl: self.callbackUrl, custom: custom, completion: completion)
+                            UserService.shared.mobileLogin(account: account, service: service, callbackUrl: self.callbackUrl, custom: custom, extendedHeaders: extendedHeaders, completion: completion)
                         } else {
                             completion(.failure(KeyriErrors.serviceAccessDenied))
                         }
@@ -155,20 +155,20 @@ public final class Keyri {
         whitelabelInitIfNeeded { result in
             switch result {
             case .success(let service):
-                ApiService.shared.permissions(service: service, permissions: [.accounts]) { result in
-                    switch result {
-                    case .success(let permissions):
-                        if permissions[.accounts] == true {
+//                ApiService.shared.permissions(service: service, permissions: [.accounts]) { result in
+//                    switch result {
+//                    case .success(let permissions):
+//                        if permissions[.accounts] == true {
                             completion(.success(
                                 StorageService.shared.getAllAccounts(serviceId: service.id).map { PublicAccount(username: $0.username, custom: $0.custom) }
                             ))
-                        } else {
-                            completion(.failure(KeyriErrors.serviceAccessDenied))
-                        }
-                    case .failure(let error):
-                        completion(.failure(error))
-                    }
-                }
+//                        } else {
+//                            completion(.failure(KeyriErrors.serviceAccessDenied))
+//                        }
+//                    case .failure(let error):
+//                        completion(.failure(error))
+//                    }
+//                }
             case .failure(let error):
                 completion(.failure(error))
             }
