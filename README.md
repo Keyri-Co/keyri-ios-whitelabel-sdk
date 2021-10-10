@@ -6,10 +6,10 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
-`keyri-pod` is distributing as private pod, so be able using it consumer must have access to the [spec repo](https://github.com/anovoselskyi/keyri-specs), and must add the private repo to local Cocoapods installation with the command:
+`keyri-pod` is distributing as private pod, so be able using it consumer must have access to the [spec repo](https://github.com/Keyri-Co/keyri-ios-specs), and must add the private repo to local Cocoapods installation with the command:
 
 ```ruby
-pod repo add keyri-specs https://github.com/anovoselskyi/keyri-specs.git
+pod repo add keyri-specs https://github.com/Keyri-Co/keyri-ios-specs.git
 ```
 
 ## Installation
@@ -19,7 +19,7 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'
-source 'https://github.com/anovoselskyi/keyri-specs.git'
+source 'https://github.com/Keyri-Co/keyri-ios-specs.git'
 
 pod 'keyri-pod'
 ```
