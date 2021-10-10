@@ -1,9 +1,9 @@
 {
   "name": "keyri-pod",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "summary": "Library for autorization",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/anovoselskyi/keyri-pod",
+  "homepage": "https://github.com/Keyri-Co/keyri-ios-whitelabel-sdk",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,8 +12,8 @@
     "anovoselskyi": "anovoselskyi@gmail.com"
   },
   "source": {
-    "git": "https://github.com/anovoselskyi/keyri-pod.git",
-    "tag": "0.1.5"
+    "git": "https://github.com/Keyri-Co/keyri-ios-whitelabel-sdk.git",
+    "tag": "0.1.6"
   },
   "platforms": {
     "ios": "10.0"
