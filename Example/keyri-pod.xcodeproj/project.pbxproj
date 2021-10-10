@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		8271B135C62C423685AAB453 /* Pods_keyri_pod_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B70766740C564E5F95DC551 /* Pods_keyri_pod_Tests.framework */; };
+		D34E11D827131ABE00FA95F1 /* KeyriHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D34E11D727131ABE00FA95F1 /* KeyriHeader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,9 @@
 		833BFFE48A9E443248AE958F /* Pods-keyri-pod_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keyri-pod_Example.release.xcconfig"; path = "Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A284E45D59765515B354E3A4 /* Pods_keyri_pod_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_keyri_pod_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3573E7206A0ED431EA60092 /* Pods-keyri-pod_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keyri-pod_Example.debug.xcconfig"; path = "Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		D34E11D527131ABD00FA95F1 /* keyri-pod_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "keyri-pod_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		D34E11D627131ABE00FA95F1 /* KeyriHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyriHeader.h; sourceTree = "<group>"; };
+		D34E11D727131ABE00FA95F1 /* KeyriHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyriHeader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,9 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				D34E11D627131ABE00FA95F1 /* KeyriHeader.h */,
+				D34E11D727131ABE00FA95F1 /* KeyriHeader.m */,
+				D34E11D527131ABD00FA95F1 /* keyri-pod_Example-Bridging-Header.h */,
 			);
 			name = "Example for keyri-pod";
 			path = "keyri-pod";
@@ -213,7 +220,7 @@
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = 6TTW5JRQCY;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1250;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -343,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D34E11D827131ABE00FA95F1 /* KeyriHeader.m in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
@@ -490,6 +498,7 @@
 			baseConfigurationReference = C3573E7206A0ED431EA60092 /* Pods-keyri-pod_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6TTW5JRQCY;
 				INFOPLIST_FILE = "keyri-pod/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -497,6 +506,8 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.keyri-pod-Example-n";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "keyri-pod/keyri-pod_Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -507,6 +518,7 @@
 			baseConfigurationReference = 833BFFE48A9E443248AE958F /* Pods-keyri-pod_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6TTW5JRQCY;
 				INFOPLIST_FILE = "keyri-pod/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -514,6 +526,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.keyri-pod-Example-n";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "keyri-pod/keyri-pod_Example-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};

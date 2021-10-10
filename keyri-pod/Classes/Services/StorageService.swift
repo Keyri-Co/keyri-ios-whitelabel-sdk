@@ -30,9 +30,17 @@ struct Account: Codable {
     let custom: String?
 }
 
-public struct PublicAccount {
+public class PublicAccount: NSObject {
     let username: String
     let custom: String?
+    
+    @objc
+    public init(username: String, custom: String?) {
+        self.username = username
+        self.custom = custom
+        
+        super.init()
+    }
 }
 
 final class StorageService {

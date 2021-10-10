@@ -7,13 +7,13 @@
 
 import Foundation
 
-public struct Session: Codable {
+public class Session: NSObject, Codable {
     public let service: Service
     public let isNewUser: Bool
     public let username: String?
 }
 
-public struct Service: Codable {
+public class Service: NSObject, Codable {
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case name

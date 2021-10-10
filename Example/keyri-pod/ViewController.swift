@@ -87,7 +87,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func authWithScanner(_ sender: Any) {
-        Keyri.shared.authWithScanner(custom: "custom auth with scanner") { result in
+        Keyri.shared.authWithScanner(custom: "custom auth with scanner") { (result: Result<Void, Error>) in
             switch result {
             case .success():
                 print()
@@ -108,8 +108,8 @@ extension ViewController: QRCodeReaderViewControllerDelegate {
                 case .signup:
                     guard let username = session.username else {
                         return
-                    }
-                    Keyri.shared.signUp(username: username, service: session.service, custom: "test custom signup") { result in
+                    }                
+                    Keyri.shared.signUp(username: username, service: session.service, custom: "test custom signup") { (result: Result<Void, Error>) in
                         switch result {
                         case .success(_):
                             print("Signup successfully completed")
@@ -120,7 +120,7 @@ extension ViewController: QRCodeReaderViewControllerDelegate {
                 case .login:
                     Keyri.shared.accounts() { result in
                         if case .success(let accounts) = result, let account = accounts.first {
-                            Keyri.shared.login(account: account, service: session.service, custom: "test custom login") { result in
+                            Keyri.shared.login(account: account, service: session.service, custom: "test custom login") { (result: Result<Void, Error>) in
                                 switch result {
                                 case .success(_):
                                     print("Login successfully completed")

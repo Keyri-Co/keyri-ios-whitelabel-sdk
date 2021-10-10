@@ -9,17 +9,19 @@ import Foundation
 import Sodium
 import UIKit
 
-public final class Keyri {
+public final class Keyri: NSObject {
     private var appkey: String!
     private var rpPublicKey: String?
     private var callbackUrl: URL!
     
     private var scanner: Scanner?
 
+    @objc
     public static let shared = Keyri()
 
-    private init() {}
+    private override init() {}
 
+    @objc
     public func initialize(appkey: String, rpPublicKey: String? = nil, callbackUrl: URL) {
         self.appkey = appkey
         self.rpPublicKey = rpPublicKey
@@ -210,6 +212,93 @@ extension Keyri {
 
         ApiService.shared.whitelabelInit(appKey: appkey, deviceId: deviceId) { result in
             completion(result)
+        }
+    }
+}
+
+extension Keyri {
+    
+    @objc
+    public func onReadSessionId(_ sessionId: String, completion: @escaping (Session?, Error?) -> Void) {
+        onReadSessionId(sessionId) { (result: Result<Session, Error>) in
+            switch result {
+            case .success(let service):
+                completion(service, nil)
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
+    
+    @objc
+    public func signUp(username: String, service: Service, custom: String?, completion: @escaping (Error?) -> Void) {
+        signUp(username: username, service: service, custom: custom) { (result: Result<Void, Error>) in
+            switch result {
+            case .success():
+                completion(nil)
+            case .failure(let error):
+                completion(error)
+            }
+        }
+    }
+    
+    @objc
+    public func login(account: PublicAccount, service: Service, custom: String?, completion: @escaping (Error?) -> Void) {
+        login(account: account, service: service, custom: custom) { (result: Result<Void, Error>) in
+            switch result {
+            case .success():
+                completion(nil)
+            case .failure(let error):
+                completion(error)
+            }
+        }
+    }
+    
+    @objc
+    public func mobileSignUp(username: String, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping ([String: Any]?, Error?) -> Void) {
+        mobileSignUp(username: username, custom: custom, extendedHeaders: extendedHeaders) { (result: Result<[String : Any], Error>) in
+            switch result {
+            case .success(let json):
+                completion(json, nil)
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
+    
+    @objc
+    public func mobileLogin(account: PublicAccount, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping ([String: Any]?, Error?) -> Void) {
+        mobileLogin(account: account, custom: custom, extendedHeaders: extendedHeaders) { (result: Result<[String : Any], Error>) in
+            switch result {
+            case .success(let json):
+                completion(json, nil)
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
+    
+    @objc
+    public func accounts(completion: @escaping ([PublicAccount]?, Error?) -> Void) {
+        accounts { (result: Result<[PublicAccount], Error>) in
+            switch result {
+            case .success(let account):
+                completion(account, nil)
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
+    
+    @objc
+    public func authWithScanner(from viewController: UIViewController? = nil, custom: String?, completion: @escaping (Error?) -> Void) {
+        authWithScanner(from: viewController, custom: custom) { (result: Result<Void, Error>) in
+            switch result {
+            case .success():
+                completion(nil)
+            case .failure(let error):
+                completion(error)
+            }
         }
     }
 }
