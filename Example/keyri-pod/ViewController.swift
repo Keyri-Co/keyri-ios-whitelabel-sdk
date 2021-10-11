@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         
         return QRCodeReaderViewController(builder: builder)
     }()
+    
 
     @IBAction func scanAction(_ sender: Any) {
         state = .signup
