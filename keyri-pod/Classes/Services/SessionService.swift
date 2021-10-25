@@ -50,7 +50,7 @@ final class SessionService {
             
             SocketService.shared.emit(event: "SESSION_VALIDATE", data: payload) { result in
                 guard
-                    let publicKey = result["publicKey"],
+                    let publicKey = rpPublicKey ?? result["publicKey"],
                     let sessionKey = result["sessionKey"]
                 else {
                     completion(.failure(KeyriErrors.socketEmitionFails))
@@ -80,7 +80,7 @@ final class SessionService {
                 
                 let theJSONText = String(data: theJSONData, encoding: .ascii)!
                 
-                guard let encryptResult = EncryptionService.shared.encryptSeal(string: theJSONText, publicKey: rpPublicKey ?? publicKey) else {
+                guard let encryptResult = EncryptionService.shared.encryptSeal(string: theJSONText, publicKey: publicKey) else {
                     assertionFailure("Sodium encrypt fails")
                     return
                 }
