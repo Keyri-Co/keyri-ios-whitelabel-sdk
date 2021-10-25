@@ -52,8 +52,8 @@ extension Config {
     static var prodRawConfig: String {
         """
             {
-                "API_URL": "https://api.keyri.co/api",
-                "WS_URL": "wss://api.keyri.co",
+                "API_URL": "https://api.keyri.co",
+                "WS_URL": "https://api.keyri.co"
             }
         """
     }
