@@ -15,6 +15,19 @@ public final class Keyri: NSObject {
     private var callbackUrl: URL!
     
     private var scanner: Scanner?
+    
+    static let resourceBundle: Bundle = {
+        let bundle = Bundle(for: Keyri.self)
+
+        guard let resourceBundleURL = bundle.url(
+            forResource: "keyri-pod", withExtension: "bundle")
+            else { fatalError("keyri-pod.bundle not found!") }
+
+        guard let resourceBundle = Bundle(url: resourceBundleURL)
+            else { fatalError("Cannot access keyri-pod.bundle!") }
+
+        return resourceBundle
+    }()
 
     @objc
     public static let shared = Keyri()

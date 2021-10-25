@@ -2,10 +2,8 @@ PODS:
   - KeychainAccess (4.2.2)
   - keyri-pod (0.1.8):
     - KeychainAccess (~> 4.2.2)
-    - QRCodeReader.swift (= 10.1.0)
     - Socket.IO-Client-Swift (~> 16.0.1)
     - Sodium-Fork (~> 0.8.2)
-  - QRCodeReader.swift (10.1.0)
   - Socket.IO-Client-Swift (16.0.1):
     - Starscream (~> 4.0)
   - Sodium-Fork (0.8.2)
@@ -13,12 +11,10 @@ PODS:
 
 DEPENDENCIES:
   - keyri-pod (from `../`)
-  - QRCodeReader.swift
 
 SPEC REPOS:
   trunk:
     - KeychainAccess
-    - QRCodeReader.swift
     - Socket.IO-Client-Swift
     - Sodium-Fork
     - Starscream
@@ -29,12 +25,11 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
-  keyri-pod: 2570f001c5fd0b688224152a3e939dc3b615f067
-  QRCodeReader.swift: 373a389fe9a22d513c879a32a6f647c58f4ef572
+  keyri-pod: a07fc0145a093a28c3b4037019eb54acea825f15
   Socket.IO-Client-Swift: c116d6dc9fd6be9c259bacfe143f8725bce7d79e
   Sodium-Fork: 45fe3a7c675898ca0635af4eadcb34985477e868
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
 
-PODFILE CHECKSUM: c9d1db494185e581923ddc0ee629c3a7155e369a
+PODFILE CHECKSUM: 2c9d952fad11299a73b1b43f7e35c103fe7be064
 
 COCOAPODS: 1.10.1

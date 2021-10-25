@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import QRCodeReader
+//import QRCodeReader
 import AVFoundation
 import keyri_pod
 
@@ -18,27 +18,30 @@ class ViewController: UIViewController {
     
     var state: State = .idle
 
-    lazy var readerVC: QRCodeReaderViewController = {
-        let builder = QRCodeReaderViewControllerBuilder {
-            $0.reader = QRCodeReader(metadataObjectTypes: [.qr], captureDevicePosition: .back)
-            
-            // Configure the view controller (optional)
-            $0.showTorchButton        = true
-            $0.showSwitchCameraButton = true
-            $0.showCancelButton       = true
-            $0.showOverlayView        = true
-            $0.rectOfInterest         = CGRect(x: 0.2, y: 0.2, width: 0.6, height: 0.6)
-        }
+    lazy var scanner: QRCodeScannerController = {
+        let scanner = QRCodeScannerController(
+            cameraImage: UIImage(named: "switch-camera-button"),
+            cancelImage: nil,
+            flashOnImage: UIImage(named: "flash"),
+            flashOffImage: UIImage(named: "flash-off")
+        )
+        scanner.delegate = self
         
-        return QRCodeReaderViewController(builder: builder)
+        let label = UILabel()
+        label.text = "Powered by Keyri"
+        label.sizeToFit()
+        scanner.view.addSubview(label)
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.bottomAnchor.constraint(equalTo: scanner.view.bottomAnchor, constant: -100).isActive = true
+        label.centerXAnchor.constraint(equalTo: scanner.view.centerXAnchor).isActive = true
+        
+        return scanner
     }()
 
     @IBAction func scanAction(_ sender: Any) {
         state = .signup
-        
-        readerVC.delegate = self
-        readerVC.modalPresentationStyle = .formSheet
-        present(readerVC, animated: true, completion: nil)
+        present(scanner, animated: true, completion: nil)
     }
     
     @IBAction func getAllAccounts(_ sender: Any) {
@@ -54,10 +57,7 @@ class ViewController: UIViewController {
     
     @IBAction func login(_ sender: Any) {
         state = .login
-        
-        readerVC.delegate = self
-        readerVC.modalPresentationStyle = .formSheet
-        present(readerVC, animated: true, completion: nil)
+        present(scanner, animated: true, completion: nil)
     }
     
     @IBAction func mobileSignUp(_ sender: Any) {
@@ -98,17 +98,15 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: QRCodeReaderViewControllerDelegate {
-    func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
-        reader.stopScanning()
-        let sessionId = result.value
-        Keyri.shared.onReadSessionId(sessionId) { result in
+extension ViewController: QRScannerCodeDelegate {
+    func qrScanner(_ controller: UIViewController, scanDidComplete result: String) {
+        Keyri.shared.onReadSessionId(result) { result in
             if case .success(let session) = result {
                 switch self.state {
                 case .signup:
                     guard let username = session.username else {
                         return
-                    }                
+                    }
                     Keyri.shared.signUp(username: username, service: session.service, custom: "test custom signup") { (result: Result<Void, Error>) in
                         switch result {
                         case .success(_):
@@ -139,9 +137,12 @@ extension ViewController: QRCodeReaderViewControllerDelegate {
         }
         dismiss(animated: true, completion: nil)
     }
-
-    func readerDidCancel(_ reader: QRCodeReaderViewController) {
-        reader.stopScanning()
+    
+    func qrScannerDidFail(_ controller: UIViewController, error: String) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func qrScannerDidCancel(_ controller: UIViewController) {
         dismiss(animated: true, completion: nil)
     }
 }

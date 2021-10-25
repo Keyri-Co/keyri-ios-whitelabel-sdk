@@ -33,9 +33,9 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'keyri-pod/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'keyri-pod' => ['keyri-pod/Assets/*.png']
-  # }
+   s.resource_bundles = {
+     'keyri-pod' => ['keyri-pod/Assets/**/*']
+   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
@@ -44,7 +44,6 @@ TODO: Add long description of the pod here.
   s.dependency 'Sodium-Fork', '~> 0.8.2'
   s.dependency 'KeychainAccess', '~> 4.2.2'
   s.dependency 'Socket.IO-Client-Swift', '~> 16.0.1'
-  s.dependency 'QRCodeReader.swift', '10.1.0'
 
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }

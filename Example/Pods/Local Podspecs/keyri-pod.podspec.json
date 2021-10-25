@@ -20,6 +20,11 @@
   },
   "swift_versions": "5.3",
   "source_files": "keyri-pod/Classes/**/*",
+  "resource_bundles": {
+    "keyri-pod": [
+      "keyri-pod/Assets/**/*"
+    ]
+  },
   "dependencies": {
     "Sodium-Fork": [
       "~> 0.8.2"
@@ -29,9 +34,6 @@
     ],
     "Socket.IO-Client-Swift": [
       "~> 16.0.1"
-    ],
-    "QRCodeReader.swift": [
-      "10.1.0"
     ]
   },
   "pod_target_xcconfig": {
