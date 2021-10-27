@@ -38,6 +38,7 @@ class ViewController: UIViewController {
         
         return scanner
     }()
+    
 
     @IBAction func scanAction(_ sender: Any) {
         state = .signup
