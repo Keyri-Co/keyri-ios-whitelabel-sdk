@@ -23,10 +23,10 @@ class Scanner {
     func show(from viewController: UIViewController? = nil) {
         targetViewController = viewController
         let scanner = QRCodeScannerController(
-            cameraImage: UIImage(named: "switch-camera-button", in: Keyri.resourceBundle, compatibleWith: nil),
+            cameraImage: UIImage(named: "switch-camera-button"),
             cancelImage: nil,
-            flashOnImage: UIImage(named: "flash", in: Keyri.resourceBundle, compatibleWith: nil),
-            flashOffImage: UIImage(named: "flash-off", in: Keyri.resourceBundle, compatibleWith: nil)
+            flashOnImage: UIImage(named: "flash"),
+            flashOffImage: UIImage(named: "flash-off")
         )
         scanner.delegate = self
         presentationController?.present(scanner, animated: true, completion: nil)

@@ -33,9 +33,9 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'keyri-pod/Classes/**/*'
   
-   s.resource_bundles = {
-     'keyri-pod' => ['keyri-pod/Assets/**/*']
-   }
+  #  s.resource_bundles = {
+  #    'keyri-pod' => ['keyri-pod/Assets/**/*']
+  #  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

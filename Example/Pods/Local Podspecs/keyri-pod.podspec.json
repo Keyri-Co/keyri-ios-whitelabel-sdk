@@ -1,6 +1,6 @@
 {
   "name": "keyri-pod",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "summary": "Library for autorization",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/Keyri-Co/keyri-ios-whitelabel-sdk",
@@ -13,18 +13,13 @@
   },
   "source": {
     "git": "https://github.com/Keyri-Co/keyri-ios-whitelabel-sdk.git",
-    "tag": "0.1.8"
+    "tag": "0.1.9"
   },
   "platforms": {
     "ios": "10.0"
   },
   "swift_versions": "5.3",
   "source_files": "keyri-pod/Classes/**/*",
-  "resource_bundles": {
-    "keyri-pod": [
-      "keyri-pod/Assets/**/*"
-    ]
-  },
   "dependencies": {
     "Sodium-Fork": [
       "~> 0.8.2"
