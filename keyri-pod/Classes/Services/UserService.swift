@@ -13,7 +13,11 @@ final class UserService {
     private init() {}
     
     func signUp(username: String, sessionId: String, service: Service, rpPublicKey: String?, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
-        let encUserId = createUser(username: username, service: service, custom: custom).encUserId
+        guard let encUserId = createUser(username: username, service: service, custom: custom).encUserId else {
+            assertionFailure(KeyriErrors.accountCreationFails.errorDescription ?? "")
+            completion(.failure(KeyriErrors.accountCreationFails))
+            return
+        }
         SessionService.shared.verifyUserSession(encUserId: encUserId, sessionId: sessionId, rpPublicKey: rpPublicKey, custom: custom, usePublicKey: true, completion: completion)
     }
     
@@ -46,7 +50,11 @@ final class UserService {
     }
     
     func mobileSignUp(username: String, service: Service, callbackUrl: URL, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
-        let account = createUser(username: username, service: service, custom: custom).account
+        guard let account = createUser(username: username, service: service, custom: custom).account else {
+            assertionFailure(KeyriErrors.accountCreationFails.errorDescription ?? "")
+            completion(.failure(KeyriErrors.accountCreationFails))
+            return
+        }
         let box = KeychainService.shared.getCryptoBox()
         let userIdData = AES.decryptionAESModeECB(messageData: account.userId.data(using: .utf8)!, key: box.privateKey)!
         let userId = String(data: userIdData, encoding: .utf8)!
@@ -56,9 +64,10 @@ final class UserService {
 }
 
 extension UserService {
-    private func createUser(username: String, service: Service, custom: String?) -> (account: Account, encUserId: String) {
+    private func createUser(username: String, service: Service, custom: String?) -> (account: Account?, encUserId: String?) {
         guard let deviceId = UIDevice.current.identifierForVendor?.uuidString else {
-            fatalError(KeyriErrors.generic.errorDescription ?? "")
+            assertionFailure(KeyriErrors.identifierForVendorNotFound.errorDescription ?? "")
+            return (nil, nil)
         }
         
         let uniqueId = String.random()

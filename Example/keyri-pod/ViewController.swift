@@ -9,6 +9,7 @@ import UIKit
 //import QRCodeReader
 import AVFoundation
 import keyri_pod
+import Toaster
 
 class ViewController: UIViewController {
     
@@ -52,6 +53,7 @@ class ViewController: UIViewController {
                 print(allAccounts)
             case .failure(let error):
                 print(error)
+                Toast(text: error.localizedDescription, duration: Delay.long).show()
             }
         }
     }
@@ -67,7 +69,7 @@ class ViewController: UIViewController {
             case .success(let response):
                 print(response)
             case .failure(let error):
-                fatalError(error.localizedDescription)
+                Toast(text: error.localizedDescription, duration: Delay.long).show()
             }
         }
     }
@@ -80,7 +82,7 @@ class ViewController: UIViewController {
                     case .success(let response):
                         print(response)
                     case .failure(let error):
-                        fatalError(error.localizedDescription)
+                        Toast(text: error.localizedDescription, duration: Delay.long).show()
                     }
                 }
             }
@@ -93,7 +95,7 @@ class ViewController: UIViewController {
             case .success():
                 print()
             case .failure(let error):
-                fatalError(error.localizedDescription)
+                Toast(text: error.localizedDescription, duration: Delay.long).show()
             }
         }
     }
@@ -102,7 +104,8 @@ class ViewController: UIViewController {
 extension ViewController: QRScannerCodeDelegate {
     func qrScanner(_ controller: UIViewController, scanDidComplete result: String) {
         Keyri.shared.onReadSessionId(result) { result in
-            if case .success(let session) = result {
+            switch result {
+            case .success(let session):
                 switch self.state {
                 case .signup:
                     guard let username = session.username else {
@@ -114,6 +117,7 @@ extension ViewController: QRScannerCodeDelegate {
                             print("Signup successfully completed")
                         case .failure(let error):
                             print("Signup failed: \(error.localizedDescription)")
+                            Toast(text: error.localizedDescription, duration: Delay.long).show()
                         }
                     }
                 case .login:
@@ -125,15 +129,19 @@ extension ViewController: QRScannerCodeDelegate {
                                     print("Login successfully completed")
                                 case .failure(let error):
                                     print("Login failed: \(error.localizedDescription)")
+                                    Toast(text: error.localizedDescription, duration: Delay.long).show()
                                 }
                             }
                         } else {
                             print("no accounts found")
+                            Toast(text: "no accounts found", duration: Delay.long).show()
                         }
                     }
                 default:
                     break
                 }
+            case .failure(let error):
+                Toast(text: error.localizedDescription, duration: Delay.long).show()
             }
         }
         dismiss(animated: true, completion: nil)

@@ -16,19 +16,6 @@ public final class Keyri: NSObject {
     
     private var scanner: Scanner?
     
-    static let resourceBundle: Bundle = {
-        let bundle = Bundle(for: Keyri.self)
-
-        guard let resourceBundleURL = bundle.url(
-            forResource: "keyri-pod", withExtension: "bundle")
-            else { fatalError("keyri-pod.bundle not found!") }
-
-        guard let resourceBundle = Bundle(url: resourceBundleURL)
-            else { fatalError("Cannot access keyri-pod.bundle!") }
-
-        return resourceBundle
-    }()
-
     @objc
     public static let shared = Keyri()
 
@@ -220,7 +207,9 @@ public final class Keyri: NSObject {
 extension Keyri {
     private func whitelabelInitIfNeeded(completion: @escaping ((Result<Service, Error>) -> Void)) {
         guard let deviceId = UIDevice.current.identifierForVendor?.uuidString else {
-            fatalError(KeyriErrors.generic.errorDescription ?? "")
+            assertionFailure(KeyriErrors.identifierForVendorNotFound.errorDescription ?? "")
+            completion(.failure(KeyriErrors.identifierForVendorNotFound))
+            return
         }
 
         ApiService.shared.whitelabelInit(appKey: appkey, deviceId: deviceId) { result in
