@@ -1,6 +1,6 @@
 PODS:
   - KeychainAccess (4.2.2)
-  - keyri-pod (0.1.10):
+  - keyri-pod (0.1.11):
     - KeychainAccess (~> 4.2.2)
     - Socket.IO-Client-Swift (~> 16.0.1)
     - Sodium-Fork (~> 0.8.2)
@@ -28,7 +28,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
-  keyri-pod: 05cd15b12b390cf9e76ee0520ac7823dc2b73af9
+  keyri-pod: 77cda61a2a854c7d8b9b62df182da9e5feb901ea
   Socket.IO-Client-Swift: c116d6dc9fd6be9c259bacfe143f8725bce7d79e
   Sodium-Fork: 45fe3a7c675898ca0635af4eadcb34985477e868
   Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
