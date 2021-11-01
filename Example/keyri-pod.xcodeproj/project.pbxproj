@@ -15,14 +15,9 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		8271B135C62C423685AAB453 /* Pods_keyri_pod_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B70766740C564E5F95DC551 /* Pods_keyri_pod_Tests.framework */; };
+		BE80469D27306CA900141851 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE80469C27306CA900141851 /* Images.xcassets */; };
 		D34E11D827131ABE00FA95F1 /* KeyriHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D34E11D727131ABE00FA95F1 /* KeyriHeader.m */; };
-		D3F6F9BC2727215A005A13C1 /* flash-off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3F6F9B42727215A005A13C1 /* flash-off@2x.png */; };
-		D3F6F9BD2727215A005A13C1 /* flash.png in Resources */ = {isa = PBXBuildFile; fileRef = D3F6F9B52727215A005A13C1 /* flash.png */; };
-		D3F6F9BE2727215A005A13C1 /* switch-camera-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3F6F9B62727215A005A13C1 /* switch-camera-button@2x.png */; };
 		D3F6F9BF2727215A005A13C1 /* SwiftQRScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F6F9B72727215A005A13C1 /* SwiftQRScanner.swift */; };
-		D3F6F9C02727215A005A13C1 /* flash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D3F6F9B82727215A005A13C1 /* flash@2x.png */; };
-		D3F6F9C12727215A005A13C1 /* switch-camera-button.png in Resources */ = {isa = PBXBuildFile; fileRef = D3F6F9B92727215A005A13C1 /* switch-camera-button.png */; };
-		D3F6F9C22727215A005A13C1 /* flash-off.png in Resources */ = {isa = PBXBuildFile; fileRef = D3F6F9BA2727215A005A13C1 /* flash-off.png */; };
 		D3F6F9C32727215A005A13C1 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F6F9BB2727215A005A13C1 /* SquareView.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,17 +50,12 @@
 		7F0FD9EDEBA586B63CA87F14 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		833BFFE48A9E443248AE958F /* Pods-keyri-pod_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keyri-pod_Example.release.xcconfig"; path = "Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A284E45D59765515B354E3A4 /* Pods_keyri_pod_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_keyri_pod_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE80469C27306CA900141851 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C3573E7206A0ED431EA60092 /* Pods-keyri-pod_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keyri-pod_Example.debug.xcconfig"; path = "Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D34E11D527131ABD00FA95F1 /* keyri-pod_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "keyri-pod_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		D34E11D627131ABE00FA95F1 /* KeyriHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyriHeader.h; sourceTree = "<group>"; };
 		D34E11D727131ABE00FA95F1 /* KeyriHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyriHeader.m; sourceTree = "<group>"; };
-		D3F6F9B42727215A005A13C1 /* flash-off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flash-off@2x.png"; sourceTree = "<group>"; };
-		D3F6F9B52727215A005A13C1 /* flash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flash.png; sourceTree = "<group>"; };
-		D3F6F9B62727215A005A13C1 /* switch-camera-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switch-camera-button@2x.png"; sourceTree = "<group>"; };
 		D3F6F9B72727215A005A13C1 /* SwiftQRScanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftQRScanner.swift; sourceTree = "<group>"; };
-		D3F6F9B82727215A005A13C1 /* flash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flash@2x.png"; sourceTree = "<group>"; };
-		D3F6F9B92727215A005A13C1 /* switch-camera-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switch-camera-button.png"; sourceTree = "<group>"; };
-		D3F6F9BA2727215A005A13C1 /* flash-off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flash-off.png"; sourceTree = "<group>"; };
 		D3F6F9BB2727215A005A13C1 /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,12 +176,7 @@
 		D3F6F9B32727215A005A13C1 /* Scanner */ = {
 			isa = PBXGroup;
 			children = (
-				D3F6F9BA2727215A005A13C1 /* flash-off.png */,
-				D3F6F9B42727215A005A13C1 /* flash-off@2x.png */,
-				D3F6F9B52727215A005A13C1 /* flash.png */,
-				D3F6F9B82727215A005A13C1 /* flash@2x.png */,
-				D3F6F9B92727215A005A13C1 /* switch-camera-button.png */,
-				D3F6F9B62727215A005A13C1 /* switch-camera-button@2x.png */,
+				BE80469C27306CA900141851 /* Images.xcassets */,
 				D3F6F9BB2727215A005A13C1 /* SquareView.swift */,
 				D3F6F9B72727215A005A13C1 /* SwiftQRScanner.swift */,
 			);
@@ -288,14 +273,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				BE80469D27306CA900141851 /* Images.xcassets in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
-				D3F6F9C02727215A005A13C1 /* flash@2x.png in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
-				D3F6F9C12727215A005A13C1 /* switch-camera-button.png in Resources */,
-				D3F6F9C22727215A005A13C1 /* flash-off.png in Resources */,
-				D3F6F9BE2727215A005A13C1 /* switch-camera-button@2x.png in Resources */,
-				D3F6F9BD2727215A005A13C1 /* flash.png in Resources */,
-				D3F6F9BC2727215A005A13C1 /* flash-off@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
