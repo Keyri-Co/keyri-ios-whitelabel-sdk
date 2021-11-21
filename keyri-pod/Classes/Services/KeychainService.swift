@@ -19,9 +19,11 @@ final class KeychainService {
         keychain["privateKey"] = box.privateKey
     }
     
-    func getCryptoBox() -> CryptoBox {
+    func getCryptoBox() -> CryptoBox? {
         guard let publicKey = getPublicKey(), let privateKey = getPrivateKey() else {
-            let box = EncryptionService.shared.generateCryproBox()
+            guard let box = EncryptionService.shared.generateCryproBox() else {
+                return nil
+            }
             setCryptoBox(box)
             return box
         }

@@ -52,7 +52,11 @@ final class ApiService {
     }
     
     func getSession(sessionId: String, completion: @escaping ((Result<Session, Error>) -> Void)) {
-        let task = URLSession.shared.dataTask(with: URL(string: "\(baseUrl)/api/session/\(sessionId)")!) { data, response, error in
+        guard let url = URL(string: "\(baseUrl)/api/session/\(sessionId)") else {
+            completion(.failure(KeyriErrors.wrongUrl))
+            return
+        }
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
                 print(error?.localizedDescription ?? "")
                 completion(.failure(KeyriErrors.sessionNotFound))
@@ -103,7 +107,11 @@ final class ApiService {
     
     func whitelabelInit(appKey: String, deviceId: String, completion: @escaping ((Result<Service, Error>) -> Void)) {
         guard let service = service else {
-            var request = URLRequest(url: URL(string: "\(baseUrl)/api/sdk/whitelabel-init")!)
+            guard let url = URL(string: "\(baseUrl)/api/sdk/whitelabel-init") else {
+                completion(.failure(KeyriErrors.wrongUrl))
+                return
+            }
+            var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
             let parameterDictionary = ["mobileAppKey": appKey, "device_id": deviceId]

@@ -16,6 +16,10 @@ enum KeyriErrors: LocalizedError {
     case socketEmitionFails
     case serviceAccessDenied
     case identifierForVendorNotFound
+    case initializationFails
+    case configFormatIncorrect
+    case wrongUrl
+    case keychainFails
     
     var errorDescription: String? {
         switch self {
@@ -35,6 +39,14 @@ enum KeyriErrors: LocalizedError {
             return "Service access denied"
         case .identifierForVendorNotFound:
             return "Identifier for vendor not found"
+        case .initializationFails:
+            return "Initialization Fails"
+        case .configFormatIncorrect:
+            return "Config Format Incorrect"
+        case .wrongUrl:
+            return "Wrong URL"
+        case .keychainFails:
+            return "Keychain Fails"
         }
     }
 }

@@ -219,10 +219,11 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
         //Torch button
         if let flashOffImg = flashOffImage {
             let flashButtonFrame = CGRect(x: 16, y: self.view.bounds.size.height - (bottomSpace + height + 10), width: width, height: height)
-            flashButton = createButtons(flashButtonFrame, height: height)
-            flashButton!.addTarget(self, action: #selector(toggleTorch), for: .touchUpInside)
-            flashButton!.setImage(flashOffImg, for: .normal)
-            view.addSubview(flashButton!)
+            let flashButton = createButtons(flashButtonFrame, height: height)
+            flashButton.addTarget(self, action: #selector(toggleTorch), for: .touchUpInside)
+            flashButton.setImage(flashOffImg, for: .normal)
+            view.addSubview(flashButton)
+            self.flashButton = flashButton
         }
         
         //Camera button
@@ -259,11 +260,11 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
                 defaultDevice.torchMode = defaultDevice.torchMode == .on ? .off : .on
                 if defaultDevice.torchMode == .on {
                     if let flashOnImage = flashOnImage {
-                        flashButton!.setImage(flashOnImage, for: .normal)
+                        flashButton?.setImage(flashOnImage, for: .normal)
                     }
                 } else {
                     if let flashOffImage = flashOffImage {
-                        flashButton!.setImage(flashOffImage, for: .normal)
+                        flashButton?.setImage(flashOffImage, for: .normal)
                     }
                 }
                 
@@ -280,8 +281,9 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
             captureSession.beginConfiguration()
             if let currentInput = getCurrentInput() {
                 captureSession.removeInput(currentInput)
-                let newDeviceInput = (currentInput.device.position == .front) ? defaultCaptureInput : frontDeviceInput
-                captureSession.addInput(newDeviceInput!)
+                if let newDeviceInput = (currentInput.device.position == .front) ? defaultCaptureInput : frontDeviceInput {
+                    captureSession.addInput(newDeviceInput)
+                }
             }
             captureSession.commitConfiguration()
         }

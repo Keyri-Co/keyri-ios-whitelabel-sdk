@@ -23,10 +23,14 @@ struct Config {
     
     init() {
         #if DEBUG
-        let jsonData = Self.prodRawConfig.data(using: .utf8)!
+        let jsonData = Self.prodRawConfig.data(using: .utf8)
         #else
-        let jsonData = Self.prodRawConfig.data(using: .utf8)!
+        let jsonData = Self.prodRawConfig.data(using: .utf8)
         #endif
+        
+        guard let jsonData = jsonData else {
+            fatalError(KeyriErrors.configFormatIncorrect.localizedDescription)
+        }
 
         do {
             let config = try JSONDecoder().decode(ConfigData.self, from: jsonData)

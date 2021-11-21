@@ -12,14 +12,10 @@ struct CryptoBox {
     let publicKey: String
     let privateKey: String
 
-    var publicBuffer: [UInt8] {
-        let nsData = NSData(base64Encoded: publicKey, options: .ignoreUnknownCharacters)!
-        let bytes = [UInt8](nsData as Data)
-        return bytes
-    }
-
-    var privateBuffer: [UInt8] {
-        let nsData = NSData(base64Encoded: privateKey, options: .ignoreUnknownCharacters)!
+    var publicBuffer: [UInt8]? {
+        guard let nsData = NSData(base64Encoded: publicKey, options: .ignoreUnknownCharacters) else {
+            return nil
+        }
         let bytes = [UInt8](nsData as Data)
         return bytes
     }
@@ -29,9 +25,11 @@ final class EncryptionService {
     static let shared = EncryptionService()
     private init() {}
     
-    func generateCryproBox() -> CryptoBox {
+    func generateCryproBox() -> CryptoBox? {
         let sodium = Sodium()
-        let keyPair = sodium.sign.keyPair()!
+        guard let keyPair = sodium.sign.keyPair() else {
+            return nil
+        }
         let publicKeyString = keyPair.publicKey.base64EncodedString()
         let privateKeyString = keyPair.secretKey.base64EncodedString()
         
@@ -41,11 +39,10 @@ final class EncryptionService {
     func encryptSodium(string: String, publicKey: String, privateKey: String) -> (authenticatedCipherText: String, nonce: String)? {
         let stringBytes = string.bytes
         let sodium = Sodium()
-        
-        let publicKeyBytes = [UInt8](Data(base64Encoded: publicKey)!)
-        let privateKeyBytes = [UInt8](Data(base64Encoded: privateKey)!)
                 
         guard
+            let publicKeyBytes = publicKey.base64EncodedData(),
+            let privateKeyBytes = privateKey.base64EncodedData(),
             let sealResult: (authenticatedCipherText: Bytes, nonce: Box.Nonce) = sodium.box.seal(message: stringBytes, recipientPublicKey: publicKeyBytes, senderSecretKey: privateKeyBytes)
         else {
             return nil
@@ -58,7 +55,9 @@ final class EncryptionService {
         let stringBytes = string.bytes
         let sodium = Sodium()
         
-        let publicKeyBytes = [UInt8](Data(base64Encoded: publicKey)!)
+        guard let publicKeyBytes = publicKey.base64EncodedData() else {
+            return nil
+        }
         
         let sealResult = sodium.box.seal(message: stringBytes, recipientPublicKey: publicKeyBytes)
         
@@ -69,7 +68,9 @@ final class EncryptionService {
         let stringBytes = string.bytes
         let sodium = Sodium()
         
-        let privateKeyBytes = [UInt8](Data(base64Encoded: privateKey)!)
+        guard let privateKeyBytes = privateKey.base64EncodedData() else {
+            return nil
+        }
         
         let signature = sodium.sign.signature(message: stringBytes, secretKey: privateKeyBytes)
         
@@ -80,5 +81,14 @@ final class EncryptionService {
 extension Bytes {
     func base64EncodedString() -> String {
         Data(self).base64EncodedString()
+    }
+}
+
+extension String {
+    func base64EncodedData() -> [UInt8]? {
+        guard let data = Data(base64Encoded: self) else {
+            return nil
+        }
+        return [UInt8](data)
     }
 }

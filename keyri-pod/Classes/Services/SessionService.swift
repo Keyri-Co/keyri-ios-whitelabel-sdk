@@ -26,14 +26,27 @@ final class SessionService {
     var sessionId: String?
     
     func verifyUserSession(encUserId: String, sessionId: String, rpPublicKey: String?, custom: String?, usePublicKey: Bool = false, completion: @escaping (Result<Void, Error>) -> Void) {
-        let box = KeychainService.shared.getCryptoBox()
+        guard let box = KeychainService.shared.getCryptoBox() else {
+            completion(.failure(KeyriErrors.keychainFails))
+            return
+        }
         
-        let userIdData = AES.decryptionAESModeECB(messageData: encUserId.data(using: .utf8)!, key: box.privateKey)!
-        let userId = String(data: userIdData, encoding: .utf8)!
+        guard
+            let userIdData = AES.decryptionAESModeECB(messageData: encUserId.data(using: .utf8), key: box.privateKey),
+            let userId = String(data: userIdData, encoding: .utf8)
+        else {
+            completion(.failure(KeyriErrors.generic))
+            return
+        }
 
         let sessionKey = String.random(length: 32)
-        let encSessionKeyData = AES.encryptionAESModeECB(messageData: sessionKey.data(using: .utf8)!, key: box.privateKey)!
-        let encSessionKey = String(data: encSessionKeyData, encoding: .utf8)!
+        guard
+            let encSessionKeyData = AES.encryptionAESModeECB(messageData: sessionKey.data(using: .utf8), key: box.privateKey),
+            let encSessionKey = String(data: encSessionKeyData, encoding: .utf8)
+        else {
+            completion(.failure(KeyriErrors.generic))
+            return
+        }
         
         KeychainService.shared.set(value: userId, forKey: sessionKey)
                 
@@ -58,8 +71,13 @@ final class SessionService {
                     return
                 }
                 
-                let sessionKeyData = AES.decryptionAESModeECB(messageData: sessionKey.data(using: .utf8)!, key: box.privateKey)!
-                let trySessionKey = String(data: sessionKeyData, encoding: .utf8)!
+                guard
+                    let sessionKeyData = AES.decryptionAESModeECB(messageData: sessionKey.data(using: .utf8), key: box.privateKey),
+                    let trySessionKey = String(data: sessionKeyData, encoding: .utf8)
+                else {
+                    completion(.failure(KeyriErrors.generic))
+                    return
+                }
                 
                 guard let tryUserId = KeychainService.shared.get(valueForKey: trySessionKey) else {
                     completion(.failure(KeyriErrors.generic))
@@ -78,9 +96,10 @@ final class SessionService {
                     return
                 }
                 
-                let theJSONText = String(data: theJSONData, encoding: .ascii)!
-                
-                guard let encryptResult = EncryptionService.shared.encryptSeal(string: theJSONText, publicKey: publicKey) else {
+                guard
+                    let theJSONText = String(data: theJSONData, encoding: .ascii),
+                    let encryptResult = EncryptionService.shared.encryptSeal(string: theJSONText, publicKey: publicKey)
+                else {
                     assertionFailure("Sodium encrypt fails")
                     return
                 }
@@ -91,7 +110,7 @@ final class SessionService {
                 
                 var sessionApproveData = SessionApproveData(cipher: encryptResult, signature: signature, publicKey: nil)
                 if usePublicKey {
-                    sessionApproveData.publicKey = box.publicBuffer.base64EncodedString()
+                    sessionApproveData.publicKey = box.publicBuffer?.base64EncodedString()
                 }
                 
                 SocketService.shared.emit(event: "message", data: sessionApproveData) { result in

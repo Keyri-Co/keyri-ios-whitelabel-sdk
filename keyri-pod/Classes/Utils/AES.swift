@@ -9,7 +9,8 @@ import Foundation
 import CommonCrypto
 
 final class AES {
-    static func encryptionAESModeECB(messageData data: Data, key: String) -> Data? {
+    static func encryptionAESModeECB(messageData data: Data?, key: String) -> Data? {
+        guard let data = data else { return nil }
         guard let keyData = key.data(using: String.Encoding.utf8) else { return nil }
         guard let cryptData = NSMutableData(length: Int((data.count)) + kCCBlockSizeAES128) else { return nil }
         
@@ -39,7 +40,8 @@ final class AES {
         }
     }
 
-    static func decryptionAESModeECB(messageData: Data, key: String) -> Data? {
+    static func decryptionAESModeECB(messageData: Data?, key: String) -> Data? {
+        guard let messageData = messageData else { return nil }
         guard let messageString = String(data: messageData, encoding: .utf8) else { return nil }
         guard let data = Data(base64Encoded: messageString, options: .ignoreUnknownCharacters) else { return nil }
         guard let keyData = key.data(using: String.Encoding.utf8) else { return nil }

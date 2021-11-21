@@ -27,7 +27,7 @@ final class SocketService {
     
     private let socketUrl: String
     private var manager: SocketManager?
-    private var socket: SocketIOClient!
+    private var socket: SocketIOClient?
     private var completion: (SocketEventCompletion)?
     
     private init() {
@@ -50,12 +50,12 @@ final class SocketService {
         socket = manager?.defaultSocket
                         
         disconnectSocket()
-        socket.on(clientEvent: .connect) { (data, ack) in
+        socket?.on(clientEvent: .connect) { (data, ack) in
             print("socket connected")
             completion(true)
         }
         
-        socket.on("SESSION_VERIFY_REQUEST") { [weak self] data, ack in
+        socket?.on("SESSION_VERIFY_REQUEST") { [weak self] data, ack in
             print("socket SESSION_VERIFY_REQUEST")
             guard
                 let array = data as? [[String: String]],
@@ -69,20 +69,20 @@ final class SocketService {
             self?.completion?(dict)
         }
         
-        socket.on("disconnect") { data, ack in
+        socket?.on("disconnect") { data, ack in
         }
                 
-        socket.connect()
+        socket?.connect()
     }
     
     func emit(event: String, data: SocketData, completion: @escaping SocketEventCompletion) {
         self.completion = completion
-        socket.emit(event, data)
+        socket?.emit(event, data)
     }
     
     func disconnectSocket() {
-        socket.removeAllHandlers()
-        socket.disconnect()
+        socket?.removeAllHandlers()
+        socket?.disconnect()
         print("socket Disconnected")
     }
 }

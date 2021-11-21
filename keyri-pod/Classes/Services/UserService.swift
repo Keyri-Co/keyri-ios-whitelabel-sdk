@@ -42,9 +42,17 @@ final class UserService {
         
         let encUserId = sessionAccount.userId
         
-        let box = KeychainService.shared.getCryptoBox()
-        let userIdData = AES.decryptionAESModeECB(messageData: encUserId.data(using: .utf8)!, key: box.privateKey)!
-        let userId = String(data: userIdData, encoding: .utf8)!
+        guard let box = KeychainService.shared.getCryptoBox() else {
+            completion(.failure(KeyriErrors.keychainFails))
+            return
+        }
+        guard
+            let userIdData = AES.decryptionAESModeECB(messageData: encUserId.data(using: .utf8), key: box.privateKey),
+            let userId = String(data: userIdData, encoding: .utf8)
+        else {
+            completion(.failure(KeyriErrors.keychainFails))
+            return
+        }
         
         ApiService.shared.authMobile(url: callbackUrl, userId: userId, username: sessionAccount.username, clientPublicKey: box.publicKey, extendedHeaders: extendedHeaders, completion: completion)
     }
@@ -55,9 +63,16 @@ final class UserService {
             completion(.failure(KeyriErrors.accountCreationFails))
             return
         }
-        let box = KeychainService.shared.getCryptoBox()
-        let userIdData = AES.decryptionAESModeECB(messageData: account.userId.data(using: .utf8)!, key: box.privateKey)!
-        let userId = String(data: userIdData, encoding: .utf8)!
+        guard let box = KeychainService.shared.getCryptoBox() else {
+            completion(.failure(KeyriErrors.keychainFails))
+            return
+        }
+        guard
+            let userIdData = AES.decryptionAESModeECB(messageData: account.userId.data(using: .utf8), key: box.privateKey),
+            let userId = String(data: userIdData, encoding: .utf8) else {
+            completion(.failure(KeyriErrors.keychainFails))
+            return
+        }
         
         ApiService.shared.authMobile(url: callbackUrl, userId: userId, username: username, clientPublicKey: box.publicKey, extendedHeaders: extendedHeaders, completion: completion)
     }
@@ -73,10 +88,18 @@ extension UserService {
         let uniqueId = String.random()
         let encryptTarget = "\(deviceId)\(uniqueId)"
         
-        let box = KeychainService.shared.getCryptoBox()
-        let userIdData = AES.encryptionAESModeECB(messageData: encryptTarget.data(using: .utf8)!, key: box.privateKey)!
-        let encUserIdData = AES.encryptionAESModeECB(messageData: userIdData, key: box.privateKey)!
-        let encUserId = String(data: encUserIdData, encoding: .utf8)!
+        guard let box = KeychainService.shared.getCryptoBox() else {
+            assertionFailure(KeyriErrors.keychainFails.errorDescription ?? "")
+            return (nil, nil)
+        }
+        guard
+            let userIdData = AES.encryptionAESModeECB(messageData: encryptTarget.data(using: .utf8), key: box.privateKey),
+            let encUserIdData = AES.encryptionAESModeECB(messageData: userIdData, key: box.privateKey),
+            let encUserId = String(data: encUserIdData, encoding: .utf8)
+        else {
+            assertionFailure(KeyriErrors.keychainFails.errorDescription ?? "")
+            return (nil, nil)
+        }
                     
         let account = Account(userId: encUserId, username: username, custom: custom)
         StorageService.shared.set(service: service)

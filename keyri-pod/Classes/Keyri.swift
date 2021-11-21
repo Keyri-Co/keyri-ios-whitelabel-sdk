@@ -10,9 +10,9 @@ import Sodium
 import UIKit
 
 public final class Keyri: NSObject {
-    private var appkey: String!
+    private var appkey: String?
     private var rpPublicKey: String?
-    private var callbackUrl: URL!
+    private var callbackUrl: URL?
     
     private var scanner: Scanner?
     
@@ -112,10 +112,15 @@ public final class Keyri: NSObject {
             switch result {
             case .success(let service):
                 ApiService.shared.permissions(service: service, permissions: [.mobileSignUp]) { result in
+                    guard let callbackUrl = self.callbackUrl else {
+                        completion(.failure(KeyriErrors.generic))
+                        assertionFailure(KeyriErrors.generic.localizedDescription)
+                        return
+                    }
                     switch result {
                     case .success(let permissions):
                         if permissions[.mobileSignUp] == true {
-                            UserService.shared.mobileSignUp(username: username, service: service, callbackUrl: self.callbackUrl, custom: custom, extendedHeaders: extendedHeaders, completion: completion)
+                            UserService.shared.mobileSignUp(username: username, service: service, callbackUrl: callbackUrl, custom: custom, extendedHeaders: extendedHeaders, completion: completion)
                         } else {
                             completion(.failure(KeyriErrors.serviceAccessDenied))
                         }
@@ -139,7 +144,12 @@ public final class Keyri: NSObject {
                     switch result {
                     case .success(let permissions):
                         if permissions[.mobileLogin] == true {
-                            UserService.shared.mobileLogin(account: account, service: service, callbackUrl: self.callbackUrl, custom: custom, extendedHeaders: extendedHeaders, completion: completion)
+                            guard let callbackUrl = self.callbackUrl else {
+                                completion(.failure(KeyriErrors.generic))
+                                assertionFailure(KeyriErrors.generic.localizedDescription)
+                                return
+                            }
+                            UserService.shared.mobileLogin(account: account, service: service, callbackUrl: callbackUrl, custom: custom, extendedHeaders: extendedHeaders, completion: completion)
                         } else {
                             completion(.failure(KeyriErrors.serviceAccessDenied))
                         }
@@ -206,6 +216,10 @@ public final class Keyri: NSObject {
 
 extension Keyri {
     private func whitelabelInitIfNeeded(completion: @escaping ((Result<Service, Error>) -> Void)) {
+        guard let appkey = appkey, let _ = callbackUrl else {
+            completion(.failure(KeyriErrors.initializationFails))
+            return
+        }
         guard let deviceId = UIDevice.current.identifierForVendor?.uuidString else {
             assertionFailure(KeyriErrors.identifierForVendorNotFound.errorDescription ?? "")
             completion(.failure(KeyriErrors.identifierForVendorNotFound))
