@@ -39,13 +39,15 @@ public final class Keyri: NSObject {
 //                    case .success(let permissions):
 //                        if permissions[.getSession] == true {
                             ApiService.shared.getSession(sessionId: sessionId) { result in
-                                switch result {
-                                case .success(let session):
-                                    SessionService.shared.sessionId = sessionId
-                                    completion(.success(session))
-                                case .failure(let error):
-                                    SessionService.shared.sessionId = nil
-                                    completion(.failure(error))
+                                DispatchQueue.main.async {
+                                    switch result {
+                                    case .success(let session):
+                                        SessionService.shared.sessionId = sessionId
+                                        completion(.success(session))
+                                    case .failure(let error):
+                                        SessionService.shared.sessionId = nil
+                                        completion(.failure(error))
+                                    }
                                 }
                             }
 //                        } else {
@@ -117,15 +119,17 @@ public final class Keyri: NSObject {
                         assertionFailure(KeyriErrors.keyriSdkError.localizedDescription)
                         return
                     }
-                    switch result {
-                    case .success(let permissions):
-                        if permissions[.mobileSignUp] == true {
-                            UserService.shared.mobileSignUp(username: username, service: service, callbackUrl: callbackUrl, custom: custom, extendedHeaders: extendedHeaders, completion: completion)
-                        } else {
-                            completion(.failure(KeyriErrors.keyriSdkError))
+                    DispatchQueue.main.async {
+                        switch result {
+                        case .success(let permissions):
+                            if permissions[.mobileSignUp] == true {
+                                UserService.shared.mobileSignUp(username: username, service: service, callbackUrl: callbackUrl, custom: custom, extendedHeaders: extendedHeaders, completion: completion)
+                            } else {
+                                completion(.failure(KeyriErrors.keyriSdkError))
+                            }
+                        case .failure(let error):
+                            completion(.failure(error))
                         }
-                    case .failure(let error):
-                        completion(.failure(error))
                     }
                 }
             case .failure(let error):
@@ -141,20 +145,22 @@ public final class Keyri: NSObject {
             switch result {
             case .success(let service):
                 ApiService.shared.permissions(service: service, permissions: [.mobileLogin]) { result in
-                    switch result {
-                    case .success(let permissions):
-                        if permissions[.mobileLogin] == true {
-                            guard let callbackUrl = self.callbackUrl else {
+                    DispatchQueue.main.async {
+                        switch result {
+                        case .success(let permissions):
+                            if permissions[.mobileLogin] == true {
+                                guard let callbackUrl = self.callbackUrl else {
+                                    completion(.failure(KeyriErrors.keyriSdkError))
+                                    assertionFailure(KeyriErrors.keyriSdkError.localizedDescription)
+                                    return
+                                }
+                                UserService.shared.mobileLogin(account: account, service: service, callbackUrl: callbackUrl, custom: custom, extendedHeaders: extendedHeaders, completion: completion)
+                            } else {
                                 completion(.failure(KeyriErrors.keyriSdkError))
-                                assertionFailure(KeyriErrors.keyriSdkError.localizedDescription)
-                                return
                             }
-                            UserService.shared.mobileLogin(account: account, service: service, callbackUrl: callbackUrl, custom: custom, extendedHeaders: extendedHeaders, completion: completion)
-                        } else {
-                            completion(.failure(KeyriErrors.keyriSdkError))
+                        case .failure(let error):
+                            completion(.failure(error))
                         }
-                    case .failure(let error):
-                        completion(.failure(error))
                     }
                 }
             case .failure(let error):
@@ -227,7 +233,9 @@ extension Keyri {
         }
 
         ApiService.shared.whitelabelInit(appKey: appkey, deviceId: deviceId) { result in
-            completion(result)
+            DispatchQueue.main.async {
+                completion(result)
+            }
         }
     }
 }
