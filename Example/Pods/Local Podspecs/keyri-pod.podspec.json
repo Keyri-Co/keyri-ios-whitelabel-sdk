@@ -29,9 +29,6 @@
     "Sodium-Fork": [
       "~> 0.8.2"
     ],
-    "KeychainAccess": [
-      "~> 4.2.2"
-    ],
     "Socket.IO-Client-Swift": [
       "~> 16.0.1"
     ]
