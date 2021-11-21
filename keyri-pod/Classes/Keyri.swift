@@ -22,12 +22,20 @@ public final class Keyri: NSObject {
     private override init() {}
 
     @objc
-    public func initialize(appkey: String, rpPublicKey: String? = nil, callbackUrl: URL) {
+    @discardableResult
+    public func initialize(appkey: String, rpPublicKey: String? = nil, callbackUrl: URL) -> Error? {
         self.appkey = appkey
         self.rpPublicKey = rpPublicKey
         self.callbackUrl = callbackUrl
 
-        let _ = KeychainService.shared.getCryptoBox()
+        do {
+            let _ = try KeychainService.shared.getCryptoBox()
+            print("KeyriSDK initialized successfully")
+        } catch {
+            print("KeyriSDK initialization failed with error - \(error.localizedDescription)")
+            return error
+        }
+        return nil
     }
 
     public func onReadSessionId(_ sessionId: String, completion: @escaping (Result<Session, Error>) -> Void) {

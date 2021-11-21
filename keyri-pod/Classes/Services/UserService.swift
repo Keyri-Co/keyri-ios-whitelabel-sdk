@@ -42,7 +42,7 @@ final class UserService {
         
         let encUserId = sessionAccount.userId
         
-        guard let box = KeychainService.shared.getCryptoBox() else {
+        guard let box = try? KeychainService.shared.getCryptoBox() else {
             completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
@@ -63,7 +63,7 @@ final class UserService {
             completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
-        guard let box = KeychainService.shared.getCryptoBox() else {
+        guard let box = try? KeychainService.shared.getCryptoBox() else {
             completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
@@ -88,7 +88,7 @@ extension UserService {
         let uniqueId = String.random()
         let encryptTarget = "\(deviceId)\(uniqueId)"
         
-        guard let box = KeychainService.shared.getCryptoBox() else {
+        guard let box = try? KeychainService.shared.getCryptoBox() else {
             assertionFailure(KeyriErrors.keyriSdkError.errorDescription ?? "")
             return (nil, nil)
         }

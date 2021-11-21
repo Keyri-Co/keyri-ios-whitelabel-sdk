@@ -26,7 +26,7 @@ final class SessionService {
     var sessionId: String?
     
     func verifyUserSession(encUserId: String, sessionId: String, rpPublicKey: String?, custom: String?, usePublicKey: Bool = false, completion: @escaping (Result<Void, Error>) -> Void) {
-        guard let box = KeychainService.shared.getCryptoBox() else {
+        guard let box = try? KeychainService.shared.getCryptoBox() else {
             completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
@@ -48,7 +48,12 @@ final class SessionService {
             return
         }
         
-        KeychainService.shared.set(value: userId, forKey: sessionKey)
+        do {
+            try KeychainService.shared.set(value: userId, forKey: sessionKey)
+        } catch {
+            completion(.failure(error))
+            return
+        }
                 
         let payload = Payload(sessionId: sessionId, sessionKey: encSessionKey)
         
@@ -79,9 +84,16 @@ final class SessionService {
                     return
                 }
                 
-                guard let tryUserId = KeychainService.shared.get(valueForKey: trySessionKey) else {
+                guard let tryUserId = try? KeychainService.shared.get(valueForKey: trySessionKey) else {
                     completion(.failure(KeyriErrors.keyriSdkError))
                     assertionFailure("User id for session key not found")
+                    return
+                }
+                
+                do {
+                    try KeychainService.shared.remove(valueForKey: trySessionKey)
+                } catch {
+                    completion(.failure(error))
                     return
                 }
                 

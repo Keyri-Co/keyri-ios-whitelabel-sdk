@@ -13,37 +13,41 @@ final class KeychainService {
 
     private lazy var keychain = Keychain(service: "com.novos.keyri.Keyri")
     
-    func setCryptoBox(_ box: CryptoBox) {
-        keychain["publicKey"] = box.publicKey
-        keychain["privateKey"] = box.privateKey
+    private func setCryptoBox(_ box: CryptoBox) throws {
+        try keychain.save(key: "publicKey", value: box.publicKey)
+        try keychain.save(key: "privateKey", value: box.privateKey)
     }
     
-    func getCryptoBox() -> CryptoBox? {
-        guard let publicKey = getPublicKey(), let privateKey = getPrivateKey() else {
+    func getCryptoBox() throws -> CryptoBox? {
+        guard let publicKey = try getPublicKey(), let privateKey = try getPrivateKey() else {
             guard let box = EncryptionService.shared.generateCryproBox() else {
                 return nil
             }
-            setCryptoBox(box)
+            try setCryptoBox(box)
             return box
         }
         return CryptoBox(publicKey: publicKey, privateKey: privateKey)
     }
     
-    func set(value: String, forKey key: String) {
-        keychain[key] = value
+    func set(value: String, forKey key: String) throws {
+        try keychain.save(key: key, value: value)
     }
     
-    func get(valueForKey key: String) -> String? {
-        keychain[key]
+    func get(valueForKey key: String) throws -> String? {
+        try keychain.load(key: key)
+    }
+    
+    func remove(valueForKey key: String) throws {
+        try keychain.remove(key: key)
     }
 }
 
 extension KeychainService {
-    private func getPublicKey() -> String? {
-        keychain["publicKey"]
+    private func getPublicKey() throws -> String? {
+        try keychain.load(key: "publicKey")
     }
 
-    private func getPrivateKey() -> String? {
-        keychain["privateKey"]
+    private func getPrivateKey() throws -> String? {
+        try keychain.load(key: "privateKey")
     }
 }

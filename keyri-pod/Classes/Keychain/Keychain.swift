@@ -14,7 +14,7 @@ final class Keychain {
         self.service = service
     }
 
-    func save(key: String, data: Data) -> OSStatus {
+    func save(key: String, data: Data) throws {
         let query = [
             kSecClass as String       : kSecClassGenericPassword as String,
             kSecAttrService as String : service,
@@ -23,10 +23,20 @@ final class Keychain {
 
         SecItemDelete(query as CFDictionary)
 
-        return SecItemAdd(query as CFDictionary, nil)
+        let status = SecItemAdd(query as CFDictionary, nil)
+        
+        if status != noErr {
+            throw KeyriErrors.keyriSdkError
+        }
+    }
+    
+    func save(key: String, value: String) throws {
+        if let data = value.data(using: .utf8) {
+            try save(key: key, data: data)
+        }
     }
 
-    func load(key: String) -> Data? {
+    func load(key: String) throws -> Data {
         let query = [
             kSecClass as String       : kSecClassGenericPassword,
             kSecAttrService as String : service,
@@ -36,36 +46,32 @@ final class Keychain {
 
         var dataTypeRef: AnyObject? = nil
 
-        let status: OSStatus = SecItemCopyMatching(query as CFDictionary, &dataTypeRef)
+        let status = SecItemCopyMatching(query as CFDictionary, &dataTypeRef)
 
         if status == noErr {
-            return dataTypeRef as! Data?
+            if let data = dataTypeRef as? Data {
+                return data
+            } else {
+                throw KeyriErrors.keyriSdkError
+            }
         } else {
-            return nil
+            throw KeyriErrors.keyriSdkError
         }
     }
     
-    func remove(key: String) {
+    func load(key: String) throws -> String? {
+        return try load(key: key).utf8String()
+    }
+    
+    func remove(key: String) throws {
         let query = [
             kSecClass       : kSecClassGenericPassword,
             kSecAttrService : service,
             kSecAttrAccount : key ] as [String : Any]
         
-        SecItemDelete(query as CFDictionary)
-    }
-}
-
-extension Keychain {
-    subscript(key: String) -> String? {
-        get {
-            load(key: key)?.utf8String()
-        }
-        set {
-            if let data = newValue?.data(using: .utf8) {
-                _ = save(key: key, data: data)
-            } else {
-                remove(key: key)
-            }
+        let status = SecItemDelete(query as CFDictionary)
+        if status != noErr {
+            throw KeyriErrors.keyriSdkError
         }
     }
 }
