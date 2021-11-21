@@ -27,7 +27,7 @@ final class SessionService {
     
     func verifyUserSession(encUserId: String, sessionId: String, rpPublicKey: String?, custom: String?, usePublicKey: Bool = false, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let box = KeychainService.shared.getCryptoBox() else {
-            completion(.failure(KeyriErrors.keychainFails))
+            completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
         
@@ -35,7 +35,7 @@ final class SessionService {
             let userIdData = AES.decryptionAESModeECB(messageData: encUserId.data(using: .utf8), key: box.privateKey),
             let userId = String(data: userIdData, encoding: .utf8)
         else {
-            completion(.failure(KeyriErrors.generic))
+            completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
 
@@ -44,7 +44,7 @@ final class SessionService {
             let encSessionKeyData = AES.encryptionAESModeECB(messageData: sessionKey.data(using: .utf8), key: box.privateKey),
             let encSessionKey = String(data: encSessionKeyData, encoding: .utf8)
         else {
-            completion(.failure(KeyriErrors.generic))
+            completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
         
@@ -56,7 +56,7 @@ final class SessionService {
 
         SocketService.shared.initializeSocket { result in
             guard result else {
-                completion(.failure(KeyriErrors.socketInitializationFails))
+                completion(.failure(KeyriErrors.keyriSdkError))
                 assertionFailure("Socket didn't initialized")
                 return
             }
@@ -66,7 +66,7 @@ final class SessionService {
                     let publicKey = rpPublicKey ?? result["publicKey"],
                     let sessionKey = result["sessionKey"]
                 else {
-                    completion(.failure(KeyriErrors.socketEmitionFails))
+                    completion(.failure(KeyriErrors.keyriSdkError))
                     assertionFailure("Socket emition result error")
                     return
                 }
@@ -75,12 +75,12 @@ final class SessionService {
                     let sessionKeyData = AES.decryptionAESModeECB(messageData: sessionKey.data(using: .utf8), key: box.privateKey),
                     let trySessionKey = String(data: sessionKeyData, encoding: .utf8)
                 else {
-                    completion(.failure(KeyriErrors.generic))
+                    completion(.failure(KeyriErrors.keyriSdkError))
                     return
                 }
                 
                 guard let tryUserId = KeychainService.shared.get(valueForKey: trySessionKey) else {
-                    completion(.failure(KeyriErrors.generic))
+                    completion(.failure(KeyriErrors.keyriSdkError))
                     assertionFailure("User id for session key not found")
                     return
                 }

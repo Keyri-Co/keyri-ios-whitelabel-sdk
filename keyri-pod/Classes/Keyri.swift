@@ -64,8 +64,8 @@ public final class Keyri: NSObject {
     public func signUp(username: String, service: Service, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
             guard let sessionId = SessionService.shared.sessionId else {
-                completion(.failure(KeyriErrors.sessionNotFound))
-                assertionFailure(KeyriErrors.sessionNotFound.localizedDescription)
+                completion(.failure(KeyriErrors.keyriSdkError))
+                assertionFailure(KeyriErrors.keyriSdkError.localizedDescription)
                 return
             }
 //            ApiService.shared.permissions(service: service, permissions: [.signUp]) { result in
@@ -86,8 +86,8 @@ public final class Keyri: NSObject {
     public func login(account: PublicAccount, service: Service, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
             guard let sessionId = SessionService.shared.sessionId else {
-                completion(.failure(KeyriErrors.sessionNotFound))
-                assertionFailure(KeyriErrors.sessionNotFound.localizedDescription)
+                completion(.failure(KeyriErrors.keyriSdkError))
+                assertionFailure(KeyriErrors.keyriSdkError.localizedDescription)
                 return
             }
 //            ApiService.shared.permissions(service: service, permissions: [.login]) { result in
@@ -113,8 +113,8 @@ public final class Keyri: NSObject {
             case .success(let service):
                 ApiService.shared.permissions(service: service, permissions: [.mobileSignUp]) { result in
                     guard let callbackUrl = self.callbackUrl else {
-                        completion(.failure(KeyriErrors.generic))
-                        assertionFailure(KeyriErrors.generic.localizedDescription)
+                        completion(.failure(KeyriErrors.keyriSdkError))
+                        assertionFailure(KeyriErrors.keyriSdkError.localizedDescription)
                         return
                     }
                     switch result {
@@ -122,7 +122,7 @@ public final class Keyri: NSObject {
                         if permissions[.mobileSignUp] == true {
                             UserService.shared.mobileSignUp(username: username, service: service, callbackUrl: callbackUrl, custom: custom, extendedHeaders: extendedHeaders, completion: completion)
                         } else {
-                            completion(.failure(KeyriErrors.serviceAccessDenied))
+                            completion(.failure(KeyriErrors.keyriSdkError))
                         }
                     case .failure(let error):
                         completion(.failure(error))
@@ -145,13 +145,13 @@ public final class Keyri: NSObject {
                     case .success(let permissions):
                         if permissions[.mobileLogin] == true {
                             guard let callbackUrl = self.callbackUrl else {
-                                completion(.failure(KeyriErrors.generic))
-                                assertionFailure(KeyriErrors.generic.localizedDescription)
+                                completion(.failure(KeyriErrors.keyriSdkError))
+                                assertionFailure(KeyriErrors.keyriSdkError.localizedDescription)
                                 return
                             }
                             UserService.shared.mobileLogin(account: account, service: service, callbackUrl: callbackUrl, custom: custom, extendedHeaders: extendedHeaders, completion: completion)
                         } else {
-                            completion(.failure(KeyriErrors.serviceAccessDenied))
+                            completion(.failure(KeyriErrors.keyriSdkError))
                         }
                     case .failure(let error):
                         completion(.failure(error))
@@ -217,12 +217,12 @@ public final class Keyri: NSObject {
 extension Keyri {
     private func whitelabelInitIfNeeded(completion: @escaping ((Result<Service, Error>) -> Void)) {
         guard let appkey = appkey, let _ = callbackUrl else {
-            completion(.failure(KeyriErrors.initializationFails))
+            completion(.failure(KeyriErrors.notInitialized))
             return
         }
         guard let deviceId = UIDevice.current.identifierForVendor?.uuidString else {
-            assertionFailure(KeyriErrors.identifierForVendorNotFound.errorDescription ?? "")
-            completion(.failure(KeyriErrors.identifierForVendorNotFound))
+            assertionFailure(KeyriErrors.notInitialized.errorDescription ?? "")
+            completion(.failure(KeyriErrors.notInitialized))
             return
         }
 

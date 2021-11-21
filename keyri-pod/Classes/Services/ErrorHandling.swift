@@ -8,45 +8,39 @@
 import Foundation
 
 enum KeyriErrors: LocalizedError {
-    case generic
+    case keyriSdkError
+    case networkError
+    case serverUnreachable
+    case internalServerError
+    case serverError
+    case illegalState
+    case notInitialized
+    case wrongConfig
     case accountNotFound
-    case accountCreationFails
-    case sessionNotFound
-    case socketInitializationFails
-    case socketEmitionFails
-    case serviceAccessDenied
-    case identifierForVendorNotFound
-    case initializationFails
-    case configFormatIncorrect
-    case wrongUrl
-    case keychainFails
+    case multipleAccountsNotAllowed
     
     var errorDescription: String? {
         switch self {
-        case .generic:
-            return "Generic"
+        case .keyriSdkError:
+            return "Basic SDK Error"
+        case .networkError:
+            return "No internet connection"
+        case .serverUnreachable:
+            return "Server is unreachable"
+        case .internalServerError:
+            return "Internal server error"
+        case .serverError:
+            return "Internal server error. Service is unreachable"
+        case .illegalState:
+            return "Service is nill"
+        case .notInitialized:
+            return "Keyri SDK is not initialized"
+        case .wrongConfig:
+            return "New service id doesn't match with current"
         case .accountNotFound:
-            return "Account not found"
-        case .accountCreationFails:
-            return "Account creation fails"
-        case .sessionNotFound:
-            return "Session not found"
-        case .socketInitializationFails:
-            return "Socket initialization fails"
-        case .socketEmitionFails:
-            return "Socket emition fails"
-        case .serviceAccessDenied:
-            return "Service access denied"
-        case .identifierForVendorNotFound:
-            return "Identifier for vendor not found"
-        case .initializationFails:
-            return "Initialization Fails"
-        case .configFormatIncorrect:
-            return "Config Format Incorrect"
-        case .wrongUrl:
-            return "Wrong URL"
-        case .keychainFails:
-            return "Keychain Fails"
+            return "The account that makes the login was not found"
+        case .multipleAccountsNotAllowed:
+            return "Multiple accounts not allowed"
         }
     }
 }

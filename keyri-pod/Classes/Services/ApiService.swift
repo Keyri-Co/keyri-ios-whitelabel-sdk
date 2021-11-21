@@ -53,13 +53,13 @@ final class ApiService {
     
     func getSession(sessionId: String, completion: @escaping ((Result<Session, Error>) -> Void)) {
         guard let url = URL(string: "\(baseUrl)/api/session/\(sessionId)") else {
-            completion(.failure(KeyriErrors.wrongUrl))
+            completion(.failure(KeyriErrors.networkError))
             return
         }
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
                 print(error?.localizedDescription ?? "")
-                completion(.failure(KeyriErrors.sessionNotFound))
+                completion(.failure(KeyriErrors.networkError))
                 return
             }
             do {
@@ -94,7 +94,7 @@ final class ApiService {
             if let data = data {
                 do {
                     guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
-                        completion(.failure(KeyriErrors.generic))
+                        completion(.failure(KeyriErrors.networkError))
                         return
                     }
                     completion(.success(json))
@@ -108,7 +108,7 @@ final class ApiService {
     func whitelabelInit(appKey: String, deviceId: String, completion: @escaping ((Result<Service, Error>) -> Void)) {
         guard let service = service else {
             guard let url = URL(string: "\(baseUrl)/api/sdk/whitelabel-init") else {
-                completion(.failure(KeyriErrors.wrongUrl))
+                completion(.failure(KeyriErrors.networkError))
                 return
             }
             var request = URLRequest(url: url)
@@ -145,18 +145,18 @@ final class ApiService {
         permissions.forEach { queryItems.append(URLQueryItem(name: "queryPermissions", value: $0.rawValue)) }
         components?.queryItems = queryItems
         guard let permissionsUrl = components?.url else {
-            completion(.failure(KeyriErrors.serviceAccessDenied))
+            completion(.failure(KeyriErrors.networkError))
             return
         }
         
         let task = URLSession.shared.dataTask(with: permissionsUrl) { data, response, error in
             guard let data = data else {
-                completion(.failure(KeyriErrors.serviceAccessDenied))
+                completion(.failure(KeyriErrors.networkError))
                 return
             }
             do {
                 guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
-                    completion(.failure(KeyriErrors.serviceAccessDenied))
+                    completion(.failure(KeyriErrors.networkError))
                     return
                 }
                 var results: [Permissions: Bool] = [:]

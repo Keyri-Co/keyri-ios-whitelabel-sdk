@@ -14,8 +14,8 @@ final class UserService {
     
     func signUp(username: String, sessionId: String, service: Service, rpPublicKey: String?, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let encUserId = createUser(username: username, service: service, custom: custom).encUserId else {
-            assertionFailure(KeyriErrors.accountCreationFails.errorDescription ?? "")
-            completion(.failure(KeyriErrors.accountCreationFails))
+            assertionFailure(KeyriErrors.keyriSdkError.errorDescription ?? "")
+            completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
         SessionService.shared.verifyUserSession(encUserId: encUserId, sessionId: sessionId, rpPublicKey: rpPublicKey, custom: custom, usePublicKey: true, completion: completion)
@@ -43,14 +43,14 @@ final class UserService {
         let encUserId = sessionAccount.userId
         
         guard let box = KeychainService.shared.getCryptoBox() else {
-            completion(.failure(KeyriErrors.keychainFails))
+            completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
         guard
             let userIdData = AES.decryptionAESModeECB(messageData: encUserId.data(using: .utf8), key: box.privateKey),
             let userId = String(data: userIdData, encoding: .utf8)
         else {
-            completion(.failure(KeyriErrors.keychainFails))
+            completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
         
@@ -59,18 +59,18 @@ final class UserService {
     
     func mobileSignUp(username: String, service: Service, callbackUrl: URL, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
         guard let account = createUser(username: username, service: service, custom: custom).account else {
-            assertionFailure(KeyriErrors.accountCreationFails.errorDescription ?? "")
-            completion(.failure(KeyriErrors.accountCreationFails))
+            assertionFailure(KeyriErrors.keyriSdkError.errorDescription ?? "")
+            completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
         guard let box = KeychainService.shared.getCryptoBox() else {
-            completion(.failure(KeyriErrors.keychainFails))
+            completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
         guard
             let userIdData = AES.decryptionAESModeECB(messageData: account.userId.data(using: .utf8), key: box.privateKey),
             let userId = String(data: userIdData, encoding: .utf8) else {
-            completion(.failure(KeyriErrors.keychainFails))
+            completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
         
@@ -81,7 +81,7 @@ final class UserService {
 extension UserService {
     private func createUser(username: String, service: Service, custom: String?) -> (account: Account?, encUserId: String?) {
         guard let deviceId = UIDevice.current.identifierForVendor?.uuidString else {
-            assertionFailure(KeyriErrors.identifierForVendorNotFound.errorDescription ?? "")
+            assertionFailure(KeyriErrors.keyriSdkError.errorDescription ?? "")
             return (nil, nil)
         }
         
@@ -89,7 +89,7 @@ extension UserService {
         let encryptTarget = "\(deviceId)\(uniqueId)"
         
         guard let box = KeychainService.shared.getCryptoBox() else {
-            assertionFailure(KeyriErrors.keychainFails.errorDescription ?? "")
+            assertionFailure(KeyriErrors.keyriSdkError.errorDescription ?? "")
             return (nil, nil)
         }
         guard
@@ -97,7 +97,7 @@ extension UserService {
             let encUserIdData = AES.encryptionAESModeECB(messageData: userIdData, key: box.privateKey),
             let encUserId = String(data: encUserIdData, encoding: .utf8)
         else {
-            assertionFailure(KeyriErrors.keychainFails.errorDescription ?? "")
+            assertionFailure(KeyriErrors.keyriSdkError.errorDescription ?? "")
             return (nil, nil)
         }
                     
