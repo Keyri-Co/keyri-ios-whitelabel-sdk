@@ -42,18 +42,18 @@ class Scanner {
     }
 }
 
-extension Scanner: QRScannerCodeDelegate {
+extension Scanner: QRCodeScannerDelegate {
     
-    func qrScanner(_ controller: UIViewController, scanDidComplete result: String) {
+    func qrCodeScanner(_ controller: UIViewController, scanDidComplete result: String) {
         completion?(result)
         presentationController?.dismiss(animated: true, completion: nil)
     }
     
-    func qrScannerDidFail(_ controller: UIViewController, error: String) {
+    func qrCodeScannerDidFail(_ controller: UIViewController, error: String) {
         presentationController?.dismiss(animated: true, completion: nil)
     }
     
-    func qrScannerDidCancel(_ controller: UIViewController) {
+    func qrCodeScannerDidCancel(_ controller: UIViewController) {
         presentationController?.dismiss(animated: true, completion: nil)
     }
 }

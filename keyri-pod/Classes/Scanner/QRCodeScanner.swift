@@ -1,33 +1,18 @@
-//
-//  SwiftQRScanner.swift
-//  SwiftQRScanner
-//
-//  Created by Vinod Jagtap on 12/5/17.
-//
-
 import UIKit
 import CoreGraphics
 import AVFoundation
 
-/*
- This protocol defines methods which get called when some events occures.
- */
-public protocol QRScannerCodeDelegate: class {
+public protocol QRCodeScannerDelegate: AnyObject {
     
-    func qrScanner(_ controller: UIViewController, scanDidComplete result: String)
-    func qrScannerDidFail(_ controller: UIViewController,  error: String)
-    func qrScannerDidCancel(_ controller: UIViewController)
+    func qrCodeScanner(_ controller: UIViewController, scanDidComplete result: String)
+    func qrCodeScannerDidFail(_ controller: UIViewController,  error: String)
+    func qrCodeScannerDidCancel(_ controller: UIViewController)
 }
-
-/*
- QRCodeScannerController is ViewController which calls up method which presents view with AVCaptureSession and previewLayer
- to scan QR and other codes.
- */
 
 public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, UIImagePickerControllerDelegate, UINavigationBarDelegate {
     
     var squareView: SquareView? = nil
-    public weak var delegate: QRScannerCodeDelegate?
+    public weak var delegate: QRCodeScannerDelegate?
     private var flashButton: UIButton? = nil
     
     //Extra images for adding extra features
@@ -298,7 +283,7 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
     
     @objc func dismissVC() {
         self.dismiss(animated: true, completion: nil)
-        delegate?.qrScannerDidCancel(self)
+        delegate?.qrCodeScannerDidCancel(self)
     }
     
     //MARK: - Setup and start capturing session
@@ -315,7 +300,7 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
         case .front:
             if let frontDeviceInput = frontCaptureInput {
                 if !captureSession.canAddInput(frontDeviceInput) {
-                    delegate?.qrScannerDidFail(self, error: "Failed to add Input")
+                    delegate?.qrCodeScannerDidFail(self, error: "Failed to add Input")
                     self.dismiss(animated: true, completion: nil)
                     return
                 }
@@ -325,7 +310,7 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
         case .back, .unspecified :
             if let defaultDeviceInput = defaultCaptureInput {
                 if !captureSession.canAddInput(defaultDeviceInput) {
-                    delegate?.qrScannerDidFail(self, error: "Failed to add Input")
+                    delegate?.qrCodeScannerDidFail(self, error: "Failed to add Input")
                     self.dismiss(animated: true, completion: nil)
                     return
                 }
@@ -336,7 +321,7 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
         }
         
         if !captureSession.canAddOutput(dataOutput) {
-            delegate?.qrScannerDidFail(self, error: "Failed to add Output")
+            delegate?.qrCodeScannerDidFail(self, error: "Failed to add Output")
             self.dismiss(animated: true, completion: nil)
             return
         }
@@ -362,9 +347,9 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
                     delCnt = delCnt + 1
                     if delCnt > delayCount {
                         if let unwrapedStringValue = unwraped.stringValue {
-                            delegate?.qrScanner(self, scanDidComplete: unwrapedStringValue)
+                            delegate?.qrCodeScanner(self, scanDidComplete: unwrapedStringValue)
                         } else {
-                            delegate?.qrScannerDidFail(self, error: "Empty string found")
+                            delegate?.qrCodeScannerDidFail(self, error: "Empty string found")
                         }
                         captureSession.stopRunning()
                         self.dismiss(animated: true, completion: nil)
@@ -375,10 +360,7 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
     }
 }
 
-///Currently Scanner suppoerts only portrait mode.
-///This makes sure orientation is portrait
 extension QRCodeScannerController {
-    //Make orientations to portrait
     
     override public var shouldAutorotate: Bool {
         return false
