@@ -33,7 +33,7 @@ final class UserService {
     func login(sessionId: String, service: Service, account: PublicAccount, rpPublicKey: String?, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let sessionAccount = storageService.getAllAccounts(serviceId: service.id).first(where: { $0.username == account.username })  else {
             print("no account found")
-            completion(.failure(KeyriErrors.accountNotFound))
+            completion(.failure(KeyriErrors.accountNotFoundError))
             return
         }
         
@@ -45,7 +45,7 @@ final class UserService {
             let sessionAccount = storageService.getAllAccounts(serviceId: service.id).first(where: { $0.username == account.username })
         else {
             print("no account found")
-            completion(.failure(KeyriErrors.accountNotFound))
+            completion(.failure(KeyriErrors.accountNotFoundError))
             return
         }
         

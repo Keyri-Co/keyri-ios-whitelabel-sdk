@@ -10,14 +10,15 @@ import Foundation
 enum KeyriErrors: LocalizedError {
     case keyriSdkError
     case networkError
-    case serverUnreachable
+    case serverUnreachableError
     case internalServerError
     case serverError
-    case illegalState
-    case notInitialized
-    case wrongConfig
-    case accountNotFound
-    case multipleAccountsNotAllowed
+    case notInitializedError
+    case wrongConfigError
+    case accountNotFoundError
+    case multipleAccountsNotAllowedError
+    case permissionsError
+    case authorizationError
     
     var errorDescription: String? {
         switch self {
@@ -25,22 +26,24 @@ enum KeyriErrors: LocalizedError {
             return "Basic SDK Error"
         case .networkError:
             return "No internet connection"
-        case .serverUnreachable:
+        case .serverUnreachableError:
             return "Server is unreachable"
         case .internalServerError:
             return "Internal server error"
         case .serverError:
             return "Internal server error. Service is unreachable"
-        case .illegalState:
-            return "Service is nill"
-        case .notInitialized:
+        case .notInitializedError:
             return "Keyri SDK is not initialized"
-        case .wrongConfig:
+        case .wrongConfigError:
             return "New service id doesn't match with current"
-        case .accountNotFound:
+        case .accountNotFoundError:
             return "The account that makes the login was not found"
-        case .multipleAccountsNotAllowed:
+        case .multipleAccountsNotAllowedError:
             return "Multiple accounts not allowed"
+        case .permissionsError:
+            return "Permissions are not granted"
+        case .authorizationError:
+            return "Unable to authorize"
         }
     }
 }

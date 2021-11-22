@@ -50,6 +50,18 @@ final class ApiService {
         self.service = service
     }
     
+    static func handleResponseStatusCode(_ response: URLResponse?) -> Error? {
+        guard let response = response as? HTTPURLResponse else { return nil }
+        switch response.statusCode {
+        case 400...499:
+            return KeyriErrors.serverError
+        case 500...599:
+            return KeyriErrors.internalServerError
+        default:
+            return nil
+        }
+    }
+    
     func getSession(sessionId: String, completion: @escaping ((Result<Session, Error>) -> Void)) {
         guard let url = URL(string: "\(baseUrl)/api/session/\(sessionId)") else {
             completion(.failure(KeyriErrors.networkError))
@@ -57,8 +69,9 @@ final class ApiService {
         }
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
-                print(error?.localizedDescription ?? "")
-                completion(.failure(KeyriErrors.networkError))
+                let _error = Self.handleResponseStatusCode(response) ?? error ?? KeyriErrors.networkError
+                print(_error.localizedDescription)
+                completion(.failure(_error))
                 return
             }
             do {
@@ -93,13 +106,15 @@ final class ApiService {
             if let data = data {
                 do {
                     guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
-                        completion(.failure(KeyriErrors.networkError))
+                        completion(.failure(KeyriErrors.authorizationError))
                         return
                     }
                     completion(.success(json))
                 } catch {
                     completion(.failure(error))
                 }
+            } else {
+                completion(.failure(KeyriErrors.authorizationError))
             }
         }.resume()
     }
@@ -129,6 +144,10 @@ final class ApiService {
                 } catch {
                     completion(.failure(error))
                 }
+            } else {
+                let _error = Self.handleResponseStatusCode(response) ?? error ?? KeyriErrors.networkError
+                print(_error.localizedDescription)
+                completion(.failure(_error))
             }
         }.resume()
     }
@@ -145,7 +164,9 @@ final class ApiService {
         
         let task = URLSession.shared.dataTask(with: permissionsUrl) { data, response, error in
             guard let data = data else {
-                completion(.failure(KeyriErrors.networkError))
+                let _error = Self.handleResponseStatusCode(response) ?? error ?? KeyriErrors.networkError
+                print(_error.localizedDescription)
+                completion(.failure(_error))
                 return
             }
             do {

@@ -57,6 +57,10 @@ public final class Keyri: NSObject {
                                 DispatchQueue.main.async {
                                     switch result {
                                     case .success(let session):
+                                        if self?.sessionService?.sessionId != sessionId {
+                                            completion(.failure(KeyriErrors.wrongConfigError))
+                                            return
+                                        }
                                         self?.sessionService?.sessionId = sessionId
                                         completion(.success(session))
                                     case .failure(let error):
@@ -128,8 +132,8 @@ public final class Keyri: NSObject {
             case .success(let service):
                 self?.apiService?.permissions(service: service, permissions: [.mobileSignUp]) { result in
                     guard let callbackUrl = self?.callbackUrl else {
-                        completion(.failure(KeyriErrors.keyriSdkError))
-                        assertionFailure(KeyriErrors.keyriSdkError.localizedDescription)
+                        completion(.failure(KeyriErrors.permissionsError))
+                        assertionFailure(KeyriErrors.permissionsError.localizedDescription)
                         return
                     }
                     DispatchQueue.main.async {
@@ -138,7 +142,7 @@ public final class Keyri: NSObject {
                             if permissions[.mobileSignUp] == true {
                                 self?.userService?.mobileSignUp(username: username, service: service, callbackUrl: callbackUrl, custom: custom, extendedHeaders: extendedHeaders, completion: completion)
                             } else {
-                                completion(.failure(KeyriErrors.keyriSdkError))
+                                completion(.failure(KeyriErrors.permissionsError))
                             }
                         case .failure(let error):
                             completion(.failure(error))
@@ -218,7 +222,7 @@ public final class Keyri: NSObject {
                             if case .success(let accounts) = result, let account = accounts.first {
                                 Keyri.shared.login(account: account, service: session.service, custom: custom, completion: completion)
                             } else {
-                                completion(.failure(KeyriErrors.accountNotFound))
+                                completion(.failure(KeyriErrors.accountNotFoundError))
                             }
                         }
                     }
@@ -234,12 +238,12 @@ public final class Keyri: NSObject {
 extension Keyri {
     private func whitelabelInitIfNeeded(completion: @escaping ((Result<Service, Error>) -> Void)) {
         guard let appkey = appkey, let _ = callbackUrl else {
-            completion(.failure(KeyriErrors.notInitialized))
+            completion(.failure(KeyriErrors.notInitializedError))
             return
         }
         guard let deviceId = UIDevice.current.identifierForVendor?.uuidString else {
-            assertionFailure(KeyriErrors.notInitialized.errorDescription ?? "")
-            completion(.failure(KeyriErrors.notInitialized))
+            assertionFailure(KeyriErrors.notInitializedError.errorDescription ?? "")
+            completion(.failure(KeyriErrors.notInitializedError))
             return
         }
         
