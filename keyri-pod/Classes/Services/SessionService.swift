@@ -20,13 +20,20 @@ struct SessionApproveData: SocketData {
 }
 
 final class SessionService {
-    static let shared = SessionService()
-    private init() {}
+    let keychainService: KeychainService
+    let socketService: SocketService
+    let encryptionService: EncryptionService
     
     var sessionId: String?
+        
+    init(keychainService: KeychainService, encryptionService: EncryptionService) {
+        self.keychainService = keychainService
+        self.socketService = SocketService()
+        self.encryptionService = encryptionService
+    }
     
     func verifyUserSession(encUserId: String, sessionId: String, rpPublicKey: String?, custom: String?, usePublicKey: Bool = false, completion: @escaping (Result<Void, Error>) -> Void) {
-        guard let box = try? KeychainService.shared.getCryptoBox() else {
+        guard let box = try? keychainService.getCryptoBox() else {
             completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
@@ -49,7 +56,7 @@ final class SessionService {
         }
         
         do {
-            try KeychainService.shared.set(value: userId, forKey: sessionKey)
+            try keychainService.set(value: userId, forKey: sessionKey)
         } catch {
             completion(.failure(error))
             return
@@ -57,16 +64,16 @@ final class SessionService {
                 
         let payload = Payload(sessionId: sessionId, sessionKey: encSessionKey)
         
-        SocketService.shared.extraHeaders = ["userSuffix": String(encUserId.prefix(15))]
+        socketService.extraHeaders = ["userSuffix": String(encUserId.prefix(15))]
 
-        SocketService.shared.initializeSocket { result in
+        socketService.initializeSocket { [weak self] result in
             guard result else {
                 completion(.failure(KeyriErrors.keyriSdkError))
                 assertionFailure("Socket didn't initialized")
                 return
             }
             
-            SocketService.shared.emit(event: "SESSION_VALIDATE", data: payload) { result in
+            self?.socketService.emit(event: "SESSION_VALIDATE", data: payload) { result in
                 guard
                     let publicKey = rpPublicKey ?? result["publicKey"],
                     let sessionKey = result["sessionKey"]
@@ -84,14 +91,14 @@ final class SessionService {
                     return
                 }
                 
-                guard let tryUserId = try? KeychainService.shared.get(valueForKey: trySessionKey) else {
+                guard let tryUserId = try? self?.keychainService.get(valueForKey: trySessionKey) else {
                     completion(.failure(KeyriErrors.keyriSdkError))
                     assertionFailure("User id for session key not found")
                     return
                 }
                 
                 do {
-                    try KeychainService.shared.remove(valueForKey: trySessionKey)
+                    try self?.keychainService.remove(valueForKey: trySessionKey)
                 } catch {
                     completion(.failure(error))
                     return
@@ -110,12 +117,12 @@ final class SessionService {
                 
                 guard
                     let theJSONText = String(data: theJSONData, encoding: .ascii),
-                    let encryptResult = EncryptionService.shared.encryptSeal(string: theJSONText, publicKey: publicKey)
+                    let encryptResult = self?.encryptionService.encryptSeal(string: theJSONText, publicKey: publicKey)
                 else {
                     assertionFailure("Sodium encrypt fails")
                     return
                 }
-                guard let signature = EncryptionService.shared.createSignature(string: theJSONText, privateKey: box.privateKey) else {
+                guard let signature = self?.encryptionService.createSignature(string: theJSONText, privateKey: box.privateKey) else {
                     assertionFailure("Create signature fails")
                     return
                 }
@@ -125,7 +132,7 @@ final class SessionService {
                     sessionApproveData.publicKey = box.publicBuffer?.base64EncodedString()
                 }
                 
-                SocketService.shared.emit(event: "message", data: sessionApproveData) { result in
+                self?.socketService.emit(event: "message", data: sessionApproveData) { result in
                     // callback doesn't reaching
                     print(result)
                 }

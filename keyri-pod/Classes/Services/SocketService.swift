@@ -21,8 +21,6 @@ struct Payload: SocketData {
 final class SocketService {
     typealias SocketEventCompletion = ([String: String]) -> Void
     
-    static let shared = SocketService()
-    
     var extraHeaders: [String : String]?
     
     private let socketUrl: String
@@ -30,7 +28,7 @@ final class SocketService {
     private var socket: SocketIOClient?
     private var completion: (SocketEventCompletion)?
     
-    private init() {
+    init() {
         let config = Config()
         socketUrl = config.wsUrl
     }

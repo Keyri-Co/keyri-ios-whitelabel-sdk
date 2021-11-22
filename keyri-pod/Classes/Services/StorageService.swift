@@ -31,8 +31,8 @@ struct Account: Codable {
 }
 
 public class PublicAccount: NSObject {
-    let username: String
-    let custom: String?
+    public let username: String
+    public let custom: String?
     
     @objc
     public init(username: String, custom: String?) {
@@ -44,9 +44,6 @@ public class PublicAccount: NSObject {
 }
 
 final class StorageService {
-    static let shared = StorageService()
-    private init() {}
-    
     private let storage = UserDefaults.standard
         
     func set(service: Service) {

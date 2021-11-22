@@ -22,9 +22,6 @@ struct CryptoBox {
 }
 
 final class EncryptionService {
-    static let shared = EncryptionService()
-    private init() {}
-    
     func generateCryproBox() -> CryptoBox? {
         let sodium = Sodium()
         guard let keyPair = sodium.sign.keyPair() else {

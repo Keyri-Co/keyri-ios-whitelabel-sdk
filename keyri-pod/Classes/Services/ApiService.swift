@@ -39,16 +39,15 @@ final class ApiService {
         case mobileSignUp
         case accounts
     }
-    
-    static let shared = ApiService()
         
     private let baseUrl: String
     
-    private var service: Service?
+    let service: Service
     
-    private init() {
+    init(service: Service) {
         let config = Config()
         baseUrl = config.apiUrl
+        self.service = service
     }
     
     func getSession(sessionId: String, completion: @escaping ((Result<Session, Error>) -> Void)) {
@@ -105,38 +104,33 @@ final class ApiService {
         }.resume()
     }
     
-    func whitelabelInit(appKey: String, deviceId: String, completion: @escaping ((Result<Service, Error>) -> Void)) {
-        guard let service = service else {
-            guard let url = URL(string: "\(baseUrl)/api/sdk/whitelabel-init") else {
-                completion(.failure(KeyriErrors.networkError))
-                return
-            }
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
-            let parameterDictionary = ["mobileAppKey": appKey, "device_id": deviceId]
-            guard let httpBody = try? JSONSerialization.data(withJSONObject: parameterDictionary, options: []) else {
-                assertionFailure("Invalid parameters in auth mobile request")
-                return
-            }
-            request.httpBody = httpBody
-            
-            let session = URLSession.shared
-            session.dataTask(with: request) { [weak self] data, response, error in
-                if let data = data {
-                    do {
-                        let response = try JSONDecoder().decode(WhitelabelInitResponse.self, from: data)
-                        self?.service = response.service
-                        completion(.success(response.service))
-                    } catch {
-                        completion(.failure(error))
-                    }
-                }
-            }.resume()
+    static func whitelabelInit(appKey: String, deviceId: String, completion: @escaping ((Result<ApiService, Error>) -> Void)) {
+        let baseUrl = Config().apiUrl
+        guard let url = URL(string: "\(baseUrl)/api/sdk/whitelabel-init") else {
+            completion(.failure(KeyriErrors.networkError))
             return
         }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        let parameterDictionary = ["mobileAppKey": appKey, "device_id": deviceId]
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: parameterDictionary, options: []) else {
+            assertionFailure("Invalid parameters in auth mobile request")
+            return
+        }
+        request.httpBody = httpBody
         
-        completion(.success(service))
+        let session = URLSession.shared
+        session.dataTask(with: request) { data, response, error in
+            if let data = data {
+                do {
+                    let response = try JSONDecoder().decode(WhitelabelInitResponse.self, from: data)
+                    completion(.success(ApiService(service: response.service)))
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+        }.resume()
     }
     
     func permissions(service: Service, permissions: [Permissions], completion: @escaping ((Result<[Permissions: Bool], Error>) -> Void)) {

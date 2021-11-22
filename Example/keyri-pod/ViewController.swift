@@ -49,7 +49,7 @@ class ViewController: UIViewController {
         Keyri.shared.accounts() { result in
             switch result {
             case .success(let allAccounts):
-                print(allAccounts)
+                print(allAccounts.map { $0.username })
             case .failure(let error):
                 print(error)
                 Toast(text: error.localizedDescription, duration: Delay.long).show()

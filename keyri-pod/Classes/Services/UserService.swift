@@ -9,8 +9,17 @@ import Foundation
 import UIKit
 
 final class UserService {
-    static let shared = UserService()
-    private init() {}
+    let apiService: ApiService
+    let sessionService: SessionService
+    let storageService: StorageService
+    let keychainService: KeychainService
+    
+    init(apiService: ApiService, sessionService: SessionService, storageService: StorageService, keychainService: KeychainService) {
+        self.apiService = apiService
+        self.sessionService = sessionService
+        self.storageService = storageService
+        self.keychainService = keychainService
+    }
     
     func signUp(username: String, sessionId: String, service: Service, rpPublicKey: String?, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let encUserId = createUser(username: username, service: service, custom: custom).encUserId else {
@@ -18,22 +27,22 @@ final class UserService {
             completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
-        SessionService.shared.verifyUserSession(encUserId: encUserId, sessionId: sessionId, rpPublicKey: rpPublicKey, custom: custom, usePublicKey: true, completion: completion)
+        sessionService.verifyUserSession(encUserId: encUserId, sessionId: sessionId, rpPublicKey: rpPublicKey, custom: custom, usePublicKey: true, completion: completion)
     }
     
     func login(sessionId: String, service: Service, account: PublicAccount, rpPublicKey: String?, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
-        guard let sessionAccount = StorageService.shared.getAllAccounts(serviceId: service.id).first(where: { $0.username == account.username })  else {
+        guard let sessionAccount = storageService.getAllAccounts(serviceId: service.id).first(where: { $0.username == account.username })  else {
             print("no account found")
             completion(.failure(KeyriErrors.accountNotFound))
             return
         }
         
-        SessionService.shared.verifyUserSession(encUserId: sessionAccount.userId, sessionId: sessionId, rpPublicKey: rpPublicKey, custom: custom, completion: completion)
+        sessionService.verifyUserSession(encUserId: sessionAccount.userId, sessionId: sessionId, rpPublicKey: rpPublicKey, custom: custom, completion: completion)
     }
     
     func mobileLogin(account: PublicAccount, service: Service, callbackUrl: URL, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
         guard
-            let sessionAccount = StorageService.shared.getAllAccounts(serviceId: service.id).first(where: { $0.username == account.username })
+            let sessionAccount = storageService.getAllAccounts(serviceId: service.id).first(where: { $0.username == account.username })
         else {
             print("no account found")
             completion(.failure(KeyriErrors.accountNotFound))
@@ -42,7 +51,7 @@ final class UserService {
         
         let encUserId = sessionAccount.userId
         
-        guard let box = try? KeychainService.shared.getCryptoBox() else {
+        guard let box = try? keychainService.getCryptoBox() else {
             completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
@@ -54,7 +63,7 @@ final class UserService {
             return
         }
         
-        ApiService.shared.authMobile(url: callbackUrl, userId: userId, username: sessionAccount.username, clientPublicKey: box.publicKey, extendedHeaders: extendedHeaders, completion: completion)
+        apiService.authMobile(url: callbackUrl, userId: userId, username: sessionAccount.username, clientPublicKey: box.publicKey, extendedHeaders: extendedHeaders, completion: completion)
     }
     
     func mobileSignUp(username: String, service: Service, callbackUrl: URL, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
@@ -63,7 +72,7 @@ final class UserService {
             completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
-        guard let box = try? KeychainService.shared.getCryptoBox() else {
+        guard let box = try? keychainService.getCryptoBox() else {
             completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
@@ -74,7 +83,7 @@ final class UserService {
             return
         }
         
-        ApiService.shared.authMobile(url: callbackUrl, userId: userId, username: username, clientPublicKey: box.publicKey, extendedHeaders: extendedHeaders, completion: completion)
+        apiService.authMobile(url: callbackUrl, userId: userId, username: username, clientPublicKey: box.publicKey, extendedHeaders: extendedHeaders, completion: completion)
     }
 }
 
@@ -88,7 +97,7 @@ extension UserService {
         let uniqueId = String.random()
         let encryptTarget = "\(deviceId)\(uniqueId)"
         
-        guard let box = try? KeychainService.shared.getCryptoBox() else {
+        guard let box = try? keychainService.getCryptoBox() else {
             assertionFailure(KeyriErrors.keyriSdkError.errorDescription ?? "")
             return (nil, nil)
         }
@@ -102,8 +111,8 @@ extension UserService {
         }
                     
         let account = Account(userId: encUserId, username: username, custom: custom)
-        StorageService.shared.set(service: service)
-        StorageService.shared.add(account: account, serviceId: service.id)
+        storageService.set(service: service)
+        storageService.add(account: account, serviceId: service.id)
         
         return (account, encUserId)
     }

@@ -16,6 +16,13 @@ public final class Keyri: NSObject {
     
     private var scanner: Scanner?
     
+    private var apiService: ApiService?
+    private var userService: UserService?
+    private var sessionService: SessionService?
+    private var storageService: StorageService?
+    private var keychainService: KeychainService?
+    private var encryptionService: EncryptionService?
+    
     @objc
     public static let shared = Keyri()
 
@@ -29,7 +36,7 @@ public final class Keyri: NSObject {
         self.callbackUrl = callbackUrl
 
         do {
-            let _ = try KeychainService.shared.getCryptoBox()
+            let _ = try keychainService?.getCryptoBox()
             print("KeyriSDK initialized successfully")
         } catch {
             print("KeyriSDK initialization failed with error - \(error.localizedDescription)")
@@ -39,21 +46,21 @@ public final class Keyri: NSObject {
     }
 
     public func onReadSessionId(_ sessionId: String, completion: @escaping (Result<Session, Error>) -> Void) {
-        whitelabelInitIfNeeded { result in
+        whitelabelInitIfNeeded { [weak self] result in
             switch result {
-            case .success(let service):
+            case .success(_):
 //                ApiService.shared.permissions(service: service, permissions: [.getSession]) { result in
 //                    switch result {
 //                    case .success(let permissions):
 //                        if permissions[.getSession] == true {
-                            ApiService.shared.getSession(sessionId: sessionId) { result in
+                            self?.apiService?.getSession(sessionId: sessionId) { result in
                                 DispatchQueue.main.async {
                                     switch result {
                                     case .success(let session):
-                                        SessionService.shared.sessionId = sessionId
+                                        self?.sessionService?.sessionId = sessionId
                                         completion(.success(session))
                                     case .failure(let error):
-                                        SessionService.shared.sessionId = nil
+                                        self?.sessionService?.sessionId = nil
                                         completion(.failure(error))
                                     }
                                 }
@@ -73,7 +80,7 @@ public final class Keyri: NSObject {
 
     public func signUp(username: String, service: Service, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
-            guard let sessionId = SessionService.shared.sessionId else {
+            guard let sessionId = self?.sessionService?.sessionId else {
                 completion(.failure(KeyriErrors.keyriSdkError))
                 assertionFailure(KeyriErrors.keyriSdkError.localizedDescription)
                 return
@@ -82,7 +89,7 @@ public final class Keyri: NSObject {
 //                switch result {
 //                case .success(let permissions):
 //                    if permissions[.signUp] == true {
-                        UserService.shared.signUp(username: username, sessionId: sessionId, service: service, rpPublicKey: self?.rpPublicKey, custom: custom, completion: completion)
+                        self?.userService?.signUp(username: username, sessionId: sessionId, service: service, rpPublicKey: self?.rpPublicKey, custom: custom, completion: completion)
 //                    } else {
 //                        completion(.failure(KeyriErrors.serviceAccessDenied))
 //                    }
@@ -95,7 +102,7 @@ public final class Keyri: NSObject {
 
     public func login(account: PublicAccount, service: Service, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
-            guard let sessionId = SessionService.shared.sessionId else {
+            guard let sessionId = self?.sessionService?.sessionId else {
                 completion(.failure(KeyriErrors.keyriSdkError))
                 assertionFailure(KeyriErrors.keyriSdkError.localizedDescription)
                 return
@@ -104,7 +111,7 @@ public final class Keyri: NSObject {
 //                switch result {
 //                case .success(let permissions):
 //                    if permissions[.login] == true {
-                        UserService.shared.login(sessionId: sessionId, service: service, account: account, rpPublicKey: self?.rpPublicKey, custom: custom, completion: completion)
+                        self?.userService?.login(sessionId: sessionId, service: service, account: account, rpPublicKey: self?.rpPublicKey, custom: custom, completion: completion)
 //                    } else {
 //                        completion(.failure(KeyriErrors.serviceAccessDenied))
 //                    }
@@ -117,12 +124,10 @@ public final class Keyri: NSObject {
     
     public func mobileSignUp(username: String, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
-            guard let self = self else { return }
-
             switch result {
             case .success(let service):
-                ApiService.shared.permissions(service: service, permissions: [.mobileSignUp]) { result in
-                    guard let callbackUrl = self.callbackUrl else {
+                self?.apiService?.permissions(service: service, permissions: [.mobileSignUp]) { result in
+                    guard let callbackUrl = self?.callbackUrl else {
                         completion(.failure(KeyriErrors.keyriSdkError))
                         assertionFailure(KeyriErrors.keyriSdkError.localizedDescription)
                         return
@@ -131,7 +136,7 @@ public final class Keyri: NSObject {
                         switch result {
                         case .success(let permissions):
                             if permissions[.mobileSignUp] == true {
-                                UserService.shared.mobileSignUp(username: username, service: service, callbackUrl: callbackUrl, custom: custom, extendedHeaders: extendedHeaders, completion: completion)
+                                self?.userService?.mobileSignUp(username: username, service: service, callbackUrl: callbackUrl, custom: custom, extendedHeaders: extendedHeaders, completion: completion)
                             } else {
                                 completion(.failure(KeyriErrors.keyriSdkError))
                             }
@@ -148,21 +153,19 @@ public final class Keyri: NSObject {
 
     public func mobileLogin(account: PublicAccount, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
-            guard let self = self else { return }
-
             switch result {
             case .success(let service):
-                ApiService.shared.permissions(service: service, permissions: [.mobileLogin]) { result in
+                self?.apiService?.permissions(service: service, permissions: [.mobileLogin]) { result in
                     DispatchQueue.main.async {
                         switch result {
                         case .success(let permissions):
                             if permissions[.mobileLogin] == true {
-                                guard let callbackUrl = self.callbackUrl else {
+                                guard let callbackUrl = self?.callbackUrl else {
                                     completion(.failure(KeyriErrors.keyriSdkError))
                                     assertionFailure(KeyriErrors.keyriSdkError.localizedDescription)
                                     return
                                 }
-                                UserService.shared.mobileLogin(account: account, service: service, callbackUrl: callbackUrl, custom: custom, extendedHeaders: extendedHeaders, completion: completion)
+                                self?.userService?.mobileLogin(account: account, service: service, callbackUrl: callbackUrl, custom: custom, extendedHeaders: extendedHeaders, completion: completion)
                             } else {
                                 completion(.failure(KeyriErrors.keyriSdkError))
                             }
@@ -178,7 +181,7 @@ public final class Keyri: NSObject {
     }
 
     public func accounts(completion: @escaping (Result<[PublicAccount], Error>) -> Void) {
-        whitelabelInitIfNeeded { result in
+        whitelabelInitIfNeeded { [weak self] result in
             switch result {
             case .success(let service):
 //                ApiService.shared.permissions(service: service, permissions: [.accounts]) { result in
@@ -186,7 +189,7 @@ public final class Keyri: NSObject {
 //                    case .success(let permissions):
 //                        if permissions[.accounts] == true {
                             completion(.success(
-                                StorageService.shared.getAllAccounts(serviceId: service.id).map { PublicAccount(username: $0.username, custom: $0.custom) }
+                                self?.storageService?.getAllAccounts(serviceId: service.id).map { PublicAccount(username: $0.username, custom: $0.custom) } ?? []
                             ))
 //                        } else {
 //                            completion(.failure(KeyriErrors.serviceAccessDenied))
@@ -239,10 +242,30 @@ extension Keyri {
             completion(.failure(KeyriErrors.notInitialized))
             return
         }
+        
+        if let service = apiService?.service {
+            completion(.success(service))
+            return
+        }
 
-        ApiService.shared.whitelabelInit(appKey: appkey, deviceId: deviceId) { result in
+        ApiService.whitelabelInit(appKey: appkey, deviceId: deviceId) { result in
             DispatchQueue.main.async {
-                completion(result)
+                switch result {
+                case .success(let apiService):
+                    self.apiService = apiService
+                    let encryptionService = EncryptionService()
+                    self.encryptionService = encryptionService
+                    let keychainService = KeychainService(encryptionService: encryptionService)
+                    self.keychainService = keychainService
+                    let sessionService = SessionService(keychainService: keychainService, encryptionService: encryptionService)
+                    self.sessionService = sessionService
+                    let storageService = StorageService()
+                    self.storageService = storageService
+                    self.userService = UserService(apiService: apiService, sessionService: sessionService, storageService: storageService, keychainService: keychainService)
+                    completion(.success(apiService.service))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
             }
         }
     }
