@@ -49,33 +49,22 @@ public final class Keyri: NSObject {
         whitelabelInitIfNeeded { [weak self] result in
             switch result {
             case .success(_):
-//                ApiService.shared.permissions(service: service, permissions: [.getSession]) { result in
-//                    switch result {
-//                    case .success(let permissions):
-//                        if permissions[.getSession] == true {
-                            self?.apiService?.getSession(sessionId: sessionId) { result in
-                                DispatchQueue.main.async {
-                                    switch result {
-                                    case .success(let session):
-                                        if self?.sessionService?.sessionId != sessionId {
-                                            completion(.failure(KeyriErrors.wrongConfigError))
-                                            return
-                                        }
-                                        self?.sessionService?.sessionId = sessionId
-                                        completion(.success(session))
-                                    case .failure(let error):
-                                        self?.sessionService?.sessionId = nil
-                                        completion(.failure(error))
-                                    }
-                                }
+                self?.apiService?.getSession(sessionId: sessionId) { result in
+                    DispatchQueue.main.async {
+                        switch result {
+                        case .success(let session):
+                            if self?.sessionService?.sessionId != sessionId {
+                                completion(.failure(KeyriErrors.wrongConfigError))
+                                return
                             }
-//                        } else {
-//                            completion(.failure(KeyriErrors.serviceAccessDenied))
-//                        }
-//                    case .failure(let error):
-//                        completion(.failure(error))
-//                    }
-//                }
+                            self?.sessionService?.sessionId = sessionId
+                            completion(.success(session))
+                        case .failure(let error):
+                            self?.sessionService?.sessionId = nil
+                            completion(.failure(error))
+                        }
+                    }
+                }
             case .failure(let error):
                 completion(.failure(error))
             }
@@ -89,18 +78,7 @@ public final class Keyri: NSObject {
                 assertionFailure(KeyriErrors.keyriSdkError.localizedDescription)
                 return
             }
-//            ApiService.shared.permissions(service: service, permissions: [.signUp]) { result in
-//                switch result {
-//                case .success(let permissions):
-//                    if permissions[.signUp] == true {
-                        self?.userService?.signUp(username: username, sessionId: sessionId, service: service, rpPublicKey: self?.rpPublicKey, custom: custom, completion: completion)
-//                    } else {
-//                        completion(.failure(KeyriErrors.serviceAccessDenied))
-//                    }
-//                case .failure(let error):
-//                    completion(.failure(error))
-//                }
-//            }
+            self?.userService?.signUp(username: username, sessionId: sessionId, service: service, rpPublicKey: self?.rpPublicKey, custom: custom, completion: completion)
         }
     }
 
@@ -111,18 +89,7 @@ public final class Keyri: NSObject {
                 assertionFailure(KeyriErrors.keyriSdkError.localizedDescription)
                 return
             }
-//            ApiService.shared.permissions(service: service, permissions: [.login]) { result in
-//                switch result {
-//                case .success(let permissions):
-//                    if permissions[.login] == true {
-                        self?.userService?.login(sessionId: sessionId, service: service, account: account, rpPublicKey: self?.rpPublicKey, custom: custom, completion: completion)
-//                    } else {
-//                        completion(.failure(KeyriErrors.serviceAccessDenied))
-//                    }
-//                case .failure(let error):
-//                    completion(.failure(error))
-//                }
-//            }
+            self?.userService?.login(sessionId: sessionId, service: service, account: account, rpPublicKey: self?.rpPublicKey, custom: custom, completion: completion)
         }
     }
     
@@ -188,20 +155,9 @@ public final class Keyri: NSObject {
         whitelabelInitIfNeeded { [weak self] result in
             switch result {
             case .success(let service):
-//                ApiService.shared.permissions(service: service, permissions: [.accounts]) { result in
-//                    switch result {
-//                    case .success(let permissions):
-//                        if permissions[.accounts] == true {
-                            completion(.success(
-                                self?.storageService?.getAllAccounts(serviceId: service.id).map { PublicAccount(username: $0.username, custom: $0.custom) } ?? []
-                            ))
-//                        } else {
-//                            completion(.failure(KeyriErrors.serviceAccessDenied))
-//                        }
-//                    case .failure(let error):
-//                        completion(.failure(error))
-//                    }
-//                }
+                completion(.success(
+                    self?.storageService?.getAllAccounts(serviceId: service.id).map { PublicAccount(username: $0.username, custom: $0.custom) } ?? []
+                ))
             case .failure(let error):
                 completion(.failure(error))
             }
