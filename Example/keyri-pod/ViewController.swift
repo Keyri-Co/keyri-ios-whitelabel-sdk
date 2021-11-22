@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     
     var state: State = .idle
 
-    lazy var scanner: QRCodeScannerController = {
+    var scanner: QRCodeScannerController {
         let scanner = QRCodeScannerController(
             cameraImage: UIImage(named: "switch-camera-button"),
             cancelImage: nil,
@@ -37,8 +37,9 @@ class ViewController: UIViewController {
         label.centerXAnchor.constraint(equalTo: scanner.view.centerXAnchor).isActive = true
         
         return scanner
-    }()
+    }
     
+    var keyri: Keyri?
 
     @IBAction func scanAction(_ sender: Any) {
         state = .signup
@@ -46,7 +47,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func getAllAccounts(_ sender: Any) {
-        Keyri.shared.accounts() { result in
+        keyri = Keyri()
+        keyri?.accounts() { [weak self] result in
+            self?.keyri = nil
             switch result {
             case .success(let allAccounts):
                 print(allAccounts.map { $0.username })
@@ -63,7 +66,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func mobileSignUp(_ sender: Any) {
-        Keyri.shared.mobileSignUp(username: "tester 1", custom: "custom mobile signup", extendedHeaders: ["TestKey1": "TestVal1", "TestKey2": "TestVal2"]) { result in
+        keyri = Keyri()
+        keyri?.mobileSignUp(username: "tester 1", custom: "custom mobile signup", extendedHeaders: ["TestKey1": "TestVal1", "TestKey2": "TestVal2"]) { [weak self] result in
+            self?.keyri = nil
             switch result {
             case .success(let response):
                 print(response)
@@ -74,9 +79,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func mobileSignIn(_ sender: Any) {
-        Keyri.shared.accounts() { result in
+        keyri = Keyri()
+        keyri?.accounts() { [weak self] result in
             if case .success(let accounts) = result, let account = accounts.first {
-                Keyri.shared.mobileLogin(account: account, custom: "custom mobile signin", extendedHeaders: ["TestKey1": "TestVal1", "TestKey2": "TestVal2"]) { result in
+                self?.keyri?.mobileLogin(account: account, custom: "custom mobile signin", extendedHeaders: ["TestKey1": "TestVal1", "TestKey2": "TestVal2"]) { result in
+                    self?.keyri = nil
                     switch result {
                     case .success(let response):
                         print(response)
@@ -84,12 +91,16 @@ class ViewController: UIViewController {
                         Toast(text: error.localizedDescription, duration: Delay.long).show()
                     }
                 }
+            } else {
+                self?.keyri = nil
             }
         }
     }
     
     @IBAction func authWithScanner(_ sender: Any) {
-        Keyri.shared.authWithScanner(custom: "custom auth with scanner") { (result: Result<Void, Error>) in
+        keyri = Keyri()
+        keyri?.authWithScanner(custom: "custom auth with scanner") { [weak self] (result: Result<Void, Error>) in
+            self?.keyri = nil
             switch result {
             case .success():
                 print()
@@ -102,15 +113,19 @@ class ViewController: UIViewController {
 
 extension ViewController: QRScannerCodeDelegate {
     func qrScanner(_ controller: UIViewController, scanDidComplete result: String) {
-        Keyri.shared.onReadSessionId(result) { result in
+        keyri = Keyri()
+        keyri?.onReadSessionId(result) { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success(let session):
                 switch self.state {
                 case .signup:
                     guard let username = session.username else {
+                        self.keyri = nil
                         return
                     }
-                    Keyri.shared.signUp(username: username, service: session.service, custom: "test custom signup") { (result: Result<Void, Error>) in
+                    self.keyri?.signUp(username: username, service: session.service, custom: "test custom signup") { (result: Result<Void, Error>) in
+                        self.keyri = nil
                         switch result {
                         case .success(_):
                             print("Signup successfully completed")
@@ -120,9 +135,10 @@ extension ViewController: QRScannerCodeDelegate {
                         }
                     }
                 case .login:
-                    Keyri.shared.accounts() { result in
+                    self.keyri?.accounts() { result in
                         if case .success(let accounts) = result, let account = accounts.first {
-                            Keyri.shared.login(account: account, service: session.service, custom: "test custom login") { (result: Result<Void, Error>) in
+                            self.keyri?.login(account: account, service: session.service, custom: "test custom login") { (result: Result<Void, Error>) in
+                                self.keyri = nil
                                 switch result {
                                 case .success(_):
                                     print("Login successfully completed")
@@ -132,6 +148,7 @@ extension ViewController: QRScannerCodeDelegate {
                                 }
                             }
                         } else {
+                            self.keyri = nil
                             print("no accounts found")
                             Toast(text: "no accounts found", duration: Delay.long).show()
                         }
@@ -140,6 +157,7 @@ extension ViewController: QRScannerCodeDelegate {
                     break
                 }
             case .failure(let error):
+                self.keyri = nil
                 Toast(text: error.localizedDescription, duration: Delay.long).show()
             }
         }

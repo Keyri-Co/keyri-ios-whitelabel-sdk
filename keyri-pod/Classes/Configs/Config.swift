@@ -29,7 +29,7 @@ struct Config {
         #endif
         
         guard let jsonData = jsonData else {
-            fatalError(KeyriErrors.wrongConfig.localizedDescription)
+            fatalError(KeyriErrors.wrongConfigError.localizedDescription)
         }
 
         do {

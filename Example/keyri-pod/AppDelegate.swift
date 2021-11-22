@@ -17,11 +17,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        Keyri.shared.initialize(
+//        Keyri.shared.initialize(
+//            appkey: "qUQ9DX176JT9JdQwK7N2XhRJ35GfJLzv",
+//            rpPublicKey: "00uVMpjv0sxLPMovInfRCB5kSX3WPKpx9RKNe3HFnTE=",
+//            callbackUrl: URL(string: "http://18.234.201.114:5000/users/session-mobile")!
+//        )
+        
+        Keyri.configure(
             appkey: "qUQ9DX176JT9JdQwK7N2XhRJ35GfJLzv",
             rpPublicKey: "00uVMpjv0sxLPMovInfRCB5kSX3WPKpx9RKNe3HFnTE=",
             callbackUrl: URL(string: "http://18.234.201.114:5000/users/session-mobile")!
         )
+        
+//        Keyri.configure(
+//            appkey: "raB7SFWt27VoKqkPhaUrmWAsCJIO8Moj",
+//            rpPublicKey: "00uVMpjv0sxLPMovInfRCB5kSX3WPKpx9RKNe3HFnTE=",
+//            callbackUrl: URL(string: "http://18.234.201.114:5000/users/session-mobile")!
+//        )
         return true
     }
 

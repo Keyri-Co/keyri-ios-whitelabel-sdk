@@ -14,11 +14,11 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        Keyri *keyri = [Keyri shared];
-
-        [keyri initializeWithAppkey:@"raB7SFWt27VoKqkPhaUrmWAsCJIO8Moj"
+        [Keyri configureWithAppkey:@"raB7SFWt27VoKqkPhaUrmWAsCJIO8Moj"
                         rpPublicKey:@"00uVMpjv0sxLPMovInfRCB5kSX3WPKpx9RKNe3HFnTE="
                         callbackUrl:[NSURL URLWithString:@"http://18.234.201.114:5000/users/session-mobile"]];
+        
+        Keyri *keyri = [[Keyri alloc] init];
         
         [keyri onReadSessionId:@"" completion:^(Session * _Nullable session, NSError * _Nullable error) {
             

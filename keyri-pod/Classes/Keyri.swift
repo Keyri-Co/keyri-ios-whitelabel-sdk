@@ -10,9 +10,9 @@ import Sodium
 import UIKit
 
 public final class Keyri: NSObject {
-    private var appkey: String?
-    private var rpPublicKey: String?
-    private var callbackUrl: URL?
+    private static var appkey: String?
+    private static var rpPublicKey: String?
+    private static var callbackUrl: URL?
     
     private var scanner: Scanner?
     
@@ -24,25 +24,10 @@ public final class Keyri: NSObject {
     private var encryptionService: EncryptionService?
     
     @objc
-    public static let shared = Keyri()
-
-    private override init() {}
-
-    @objc
-    @discardableResult
-    public func initialize(appkey: String, rpPublicKey: String? = nil, callbackUrl: URL) -> Error? {
-        self.appkey = appkey
-        self.rpPublicKey = rpPublicKey
-        self.callbackUrl = callbackUrl
-
-        do {
-            let _ = try keychainService?.getCryptoBox()
-            print("KeyriSDK initialized successfully")
-        } catch {
-            print("KeyriSDK initialization failed with error - \(error.localizedDescription)")
-            return error
-        }
-        return nil
+    public static func configure(appkey: String, rpPublicKey: String? = nil, callbackUrl: URL) {
+        Self.appkey = appkey
+        Self.rpPublicKey = rpPublicKey
+        Self.callbackUrl = callbackUrl
     }
 
     public func onReadSessionId(_ sessionId: String, completion: @escaping (Result<Session, Error>) -> Void) {
@@ -78,7 +63,7 @@ public final class Keyri: NSObject {
                 assertionFailure(KeyriErrors.keyriSdkError.localizedDescription)
                 return
             }
-            self?.userService?.signUp(username: username, sessionId: sessionId, service: service, rpPublicKey: self?.rpPublicKey, custom: custom, completion: completion)
+            self?.userService?.signUp(username: username, sessionId: sessionId, service: service, rpPublicKey: Self.rpPublicKey, custom: custom, completion: completion)
         }
     }
 
@@ -89,7 +74,7 @@ public final class Keyri: NSObject {
                 assertionFailure(KeyriErrors.keyriSdkError.localizedDescription)
                 return
             }
-            self?.userService?.login(sessionId: sessionId, service: service, account: account, rpPublicKey: self?.rpPublicKey, custom: custom, completion: completion)
+            self?.userService?.login(sessionId: sessionId, service: service, account: account, rpPublicKey: Self.rpPublicKey, custom: custom, completion: completion)
         }
     }
     
@@ -98,7 +83,7 @@ public final class Keyri: NSObject {
             switch result {
             case .success(let service):
                 self?.apiService?.permissions(service: service, permissions: [.mobileSignUp]) { result in
-                    guard let callbackUrl = self?.callbackUrl else {
+                    guard let callbackUrl = Self.callbackUrl else {
                         completion(.failure(KeyriErrors.permissionsError))
                         assertionFailure(KeyriErrors.permissionsError.localizedDescription)
                         return
@@ -131,7 +116,7 @@ public final class Keyri: NSObject {
                         switch result {
                         case .success(let permissions):
                             if permissions[.mobileLogin] == true {
-                                guard let callbackUrl = self?.callbackUrl else {
+                                guard let callbackUrl = Self.callbackUrl else {
                                     completion(.failure(KeyriErrors.keyriSdkError))
                                     assertionFailure(KeyriErrors.keyriSdkError.localizedDescription)
                                     return
@@ -176,7 +161,7 @@ public final class Keyri: NSObject {
                     } else {
                         self?.accounts() { result in
                             if case .success(let accounts) = result, let account = accounts.first {
-                                Keyri.shared.login(account: account, service: session.service, custom: custom, completion: completion)
+                                self?.login(account: account, service: session.service, custom: custom, completion: completion)
                             } else {
                                 completion(.failure(KeyriErrors.accountNotFoundError))
                             }
@@ -193,7 +178,7 @@ public final class Keyri: NSObject {
 
 extension Keyri {
     private func whitelabelInitIfNeeded(completion: @escaping ((Result<Service, Error>) -> Void)) {
-        guard let appkey = appkey, let _ = callbackUrl else {
+        guard let appkey = Self.appkey, let _ = Self.callbackUrl else {
             completion(.failure(KeyriErrors.notInitializedError))
             return
         }
