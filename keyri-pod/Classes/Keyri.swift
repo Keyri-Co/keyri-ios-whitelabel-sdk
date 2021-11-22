@@ -49,15 +49,15 @@ public final class Keyri: NSObject {
         whitelabelInitIfNeeded { [weak self] result in
             switch result {
             case .success(_):
+                self?.sessionService?.sessionId = sessionId
                 self?.apiService?.getSession(sessionId: sessionId) { result in
                     DispatchQueue.main.async {
                         switch result {
                         case .success(let session):
-                            if self?.sessionService?.sessionId != sessionId {
+                            if let currentSessionId = self?.sessionService?.sessionId, currentSessionId != sessionId {
                                 completion(.failure(KeyriErrors.wrongConfigError))
                                 return
                             }
-                            self?.sessionService?.sessionId = sessionId
                             completion(.success(session))
                         case .failure(let error):
                             self?.sessionService?.sessionId = nil
