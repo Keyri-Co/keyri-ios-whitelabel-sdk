@@ -75,11 +75,17 @@ final class SessionService {
             
             self?.socketService.emit(event: "SESSION_VALIDATE", data: payload) { result in
                 guard
-                    let publicKey = rpPublicKey ?? result["publicKey"],
-                    let sessionKey = result["sessionKey"]
+                    case let .success(dict) = result,
+                    let publicKey = rpPublicKey ?? dict["publicKey"],
+                    let sessionKey = dict["sessionKey"]
                 else {
-                    completion(.failure(KeyriErrors.keyriSdkError))
-                    assertionFailure("Socket emition result error")
+                    if case let .failure(error) = result {
+                        completion(.failure(error))
+                        assertionFailure(error.localizedDescription)
+                    } else {
+                        completion(.failure(KeyriErrors.keyriSdkError))
+                        assertionFailure("Socket emition result error")
+                    }
                     return
                 }
                 

@@ -19,7 +19,7 @@ struct Payload: SocketData {
 }
 
 final class SocketService {
-    typealias SocketEventCompletion = ([String: String]) -> Void
+    typealias SocketEventCompletion = (Result<[String: String], Error>) -> Void
     
     var extraHeaders: [String : String]?
     
@@ -60,14 +60,19 @@ final class SocketService {
                 let dict = array.first,
                 dict["action"] == "SESSION_VERIFY_REQUEST"
             else {
-                self?.completion?([:])
+                self?.completion?(.failure(KeyriErrors.networkError))
                 assertionFailure("SESSION_VERIFY_REQUEST data error")
                 return
             }
-            self?.completion?(dict)
+            self?.completion?(.success(dict))
+        }
+                
+        socket?.on("disconnect") { [weak self] data, ack in
+            self?.completion?(.failure(KeyriErrors.networkError))
         }
         
-        socket?.on("disconnect") { data, ack in
+        socket?.on("connect_error") { [weak self] data, ack in
+            self?.completion?(.failure(KeyriErrors.networkError))
         }
                 
         socket?.connect()
