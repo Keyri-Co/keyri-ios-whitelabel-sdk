@@ -116,7 +116,7 @@ final class SessionService {
                     "timestamp": "\(Date().timeIntervalSince1970)"
                 ]
                 
-                guard let theJSONData = try? JSONSerialization.data( withJSONObject: jsonDict, options: []) else {
+                guard let theJSONData = try? JSONSerialization.data(withJSONObject: jsonDict, options: []) else {
                     assertionFailure("TODO")
                     return
                 }

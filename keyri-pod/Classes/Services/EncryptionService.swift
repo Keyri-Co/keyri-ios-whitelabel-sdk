@@ -32,22 +32,7 @@ final class EncryptionService {
         
         return CryptoBox(publicKey: publicKeyString, privateKey: privateKeyString)
     }
-    
-    func encryptSodium(string: String, publicKey: String, privateKey: String) -> (authenticatedCipherText: String, nonce: String)? {
-        let stringBytes = string.bytes
-        let sodium = Sodium()
-                
-        guard
-            let publicKeyBytes = publicKey.base64EncodedData(),
-            let privateKeyBytes = privateKey.base64EncodedData(),
-            let sealResult: (authenticatedCipherText: Bytes, nonce: Box.Nonce) = sodium.box.seal(message: stringBytes, recipientPublicKey: publicKeyBytes, senderSecretKey: privateKeyBytes)
-        else {
-            return nil
-        }
         
-        return (authenticatedCipherText: sealResult.authenticatedCipherText.base64EncodedString(), nonce: sealResult.nonce.base64EncodedString())
-    }
-    
     func encryptSeal(string: String, publicKey: String) -> String? {
         let stringBytes = string.bytes
         let sodium = Sodium()
@@ -75,6 +60,60 @@ final class EncryptionService {
     }
 }
 
+extension EncryptionService {
+    private func loadKey() throws -> SecKey {
+        if let key = KeychainHelper.loadKey() {
+            return key
+        } else {
+            return (try KeychainHelper.makeAndStoreKey())
+        }
+    }
+    
+    private func publicKey(from privateKey: SecKey) -> SecKey {
+        SecKeyCopyPublicKey(privateKey)!
+    }
+    
+    func ecdhEncrypt(string: String) -> String? {
+        guard let privateKey = try? loadKey() else { return nil }
+        let publicKey = publicKey(from: privateKey)
+        guard let data = string.data(using: .utf8) else { return nil }
+        let encryptedData = SecKeyCreateEncryptedData(publicKey, .eciesEncryptionStandardX963SHA256AESGCM, data as CFData, nil) as Data?
+        return encryptedData?.base64EncodedString()
+    }
+    
+    func ecdhDecrypt(string: String) -> String? {
+        guard let privateKey = try? loadKey() else { return nil }
+        guard let data = Data(base64Encoded: string) else { return nil }
+        let decryptedData = SecKeyCreateDecryptedData(privateKey, .eciesEncryptionStandardX963SHA256AESGCM, data as CFData, nil) as Data?
+        return decryptedData?.utf8String()
+    }
+    
+    func ecdhCreateSignature(string: String) -> String? {
+        guard let privateKey = try? loadKey() else { return nil }
+        guard let data = string.data(using: .utf8) else { return nil }
+        let signature = SecKeyCreateSignature(privateKey, .ecdsaSignatureMessageX962SHA256, data as CFData, nil) as Data?
+        return signature?.base64EncodedString()
+    }
+    
+    func ecdhValidateSignature(string: String, signatureString: String) -> Bool {
+        guard let privateKey = try? loadKey() else { return false }
+        let publicKey = publicKey(from: privateKey)
+        let algorithm: SecKeyAlgorithm = .ecdsaSignatureMessageX962SHA256
+        guard
+            SecKeyIsAlgorithmSupported(publicKey, .verify, algorithm),
+            let clearTextData = string.data(using: .utf8),
+            let signatureData = Data(base64Encoded: signatureString)
+        else {
+            return false
+        }
+        guard SecKeyVerifySignature(publicKey, algorithm, clearTextData as CFData, signatureData as CFData, nil) else {
+            return false
+        }
+        
+        return true
+    }
+}
+
 extension Bytes {
     func base64EncodedString() -> String {
         Data(self).base64EncodedString()
@@ -87,5 +126,63 @@ extension String {
             return nil
         }
         return [UInt8](data)
+    }
+}
+
+final class KeychainHelper {
+    static func makeAndStoreKey(name: String = "com.novos.keyri.Keyri") throws -> SecKey {
+        removeKey(name: name)
+
+        let flags: SecAccessControlCreateFlags = .privateKeyUsage
+        guard
+            let access = SecAccessControlCreateWithFlags(kCFAllocatorDefault, kSecAttrAccessibleWhenUnlockedThisDeviceOnly, flags, nil),
+            let tag = name.data(using: .utf8)
+        else {
+            throw KeyriErrors.keyriSdkError
+        }
+        let attributes: [String: Any] = [
+            kSecAttrKeyType as String       : kSecAttrKeyTypeEC,
+            kSecAttrKeySizeInBits as String : 256,
+            kSecAttrTokenID as String       : kSecAttrTokenIDSecureEnclave,
+            kSecPrivateKeyAttrs as String : [
+                kSecAttrIsPermanent as String       : true,
+                kSecAttrApplicationTag as String    : tag,
+                kSecAttrAccessControl as String     : access
+            ]
+        ]
+        
+        var error: Unmanaged<CFError>?
+        guard let privateKey = SecKeyCreateRandomKey(attributes as CFDictionary, &error) else {
+            throw (error?.takeRetainedValue() ?? KeyriErrors.keyriSdkError) as Error
+        }
+        
+        return privateKey
+    }
+    
+    static func loadKey(name: String = "com.novos.keyri.Keyri") -> SecKey? {
+        guard let tag = name.data(using: .utf8) else { return nil }
+        let query: [String: Any] = [
+            kSecClass as String                 : kSecClassKey,
+            kSecAttrApplicationTag as String    : tag,
+            kSecAttrKeyType as String           : kSecAttrKeyTypeEC,
+            kSecReturnRef as String             : true
+        ]
+        
+        var item: CFTypeRef?
+        let status = SecItemCopyMatching(query as CFDictionary, &item)
+        guard status == errSecSuccess, let key = item else {
+            return nil
+        }
+        return (key as! SecKey)
+    }
+    
+    static func removeKey(name: String) {
+        let tag = name.data(using: .utf8)!
+        let query: [String: Any] = [
+            kSecClass as String                 : kSecClassKey,
+            kSecAttrApplicationTag as String    : tag
+        ]
+
+        SecItemDelete(query as CFDictionary)
     }
 }
