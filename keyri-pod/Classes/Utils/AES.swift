@@ -72,3 +72,13 @@ final class AES {
         }
     }
 }
+
+extension AES {
+    static func encryptionAESModeECBInUtf8(message: String?, key: String) -> String? {
+        Self.encryptionAESModeECB(messageData: message?.data(using: .utf8), key: key)?.utf8String()
+    }
+    
+    static func decryptionAESModeECBInUtf8(message: String?, key: String) -> String? {
+        Self.decryptionAESModeECB(messageData: message?.data(using: .utf8), key: key)?.utf8String()
+    }
+}

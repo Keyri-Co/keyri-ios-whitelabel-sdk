@@ -144,12 +144,17 @@ public final class Keyri: NSObject {
                 let serverPublicKey = "BOenio0DXyG31mAgUCwhdslelckmxzM7nNOyWAjkuo7skr1FhP7m2L8PaSRgIEH5ja9p+CwEIIKGqR4Hx5Ezam4="
                 let secret = try! self?.encryptionService?.keysExchange(publicKey: serverPublicKey)
                 
-                let orig = "hello"
-                let encData = AES.encryptionAESModeECB(messageData: orig.data(using: .utf8), key: secret!)!
-                let encString = encData.utf8String()!
+//                let orig = "hello"
+//                let encData = AES.encryptionAESModeECB(messageData: orig.data(using: .utf8), key: secret!)!
+//                let encString = encData.utf8String()!
+//
+//                let decData = AES.decryptionAESModeECB(messageData: encString.data(using: .utf8), key: secret!)!
+//                let decString = decData.utf8String()!
                 
-                let decData = AES.decryptionAESModeECB(messageData: encString.data(using: .utf8), key: secret!)!
-                let decString = decData.utf8String()!
+                let orig = "hello"
+                let encString = AES.encryptionAESModeECBInUtf8(message: orig, key: secret!)
+                
+                let decString = AES.decryptionAESModeECBInUtf8(message: encString, key: secret!)
                 
                 print("")
 
