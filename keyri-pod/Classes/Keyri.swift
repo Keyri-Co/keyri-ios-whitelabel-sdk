@@ -232,7 +232,7 @@ extension Keyri {
                     self.sessionService = sessionService
                     let storageService = StorageService()
                     self.storageService = storageService
-                    self.userService = UserService(apiService: apiService, sessionService: sessionService, storageService: storageService, keychainService: keychainService, encryptionService: encryptionService)
+                    self.userService = UserService(apiService: apiService, sessionService: sessionService, storageService: storageService, keychainService: keychainService)
                     completion(.success(apiService.service))
                 case .failure(let error):
                     completion(.failure(error))

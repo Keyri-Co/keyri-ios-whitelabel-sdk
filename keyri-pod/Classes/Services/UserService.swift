@@ -13,14 +13,12 @@ final class UserService {
     let sessionService: SessionService
     let storageService: StorageService
     let keychainService: KeychainService
-    let encryptionService: EncryptionService
     
-    init(apiService: ApiService, sessionService: SessionService, storageService: StorageService, keychainService: KeychainService, encryptionService: EncryptionService) {
+    init(apiService: ApiService, sessionService: SessionService, storageService: StorageService, keychainService: KeychainService) {
         self.apiService = apiService
         self.sessionService = sessionService
         self.storageService = storageService
         self.keychainService = keychainService
-        self.encryptionService = encryptionService
     }
     
     func signUp(username: String, sessionId: String, service: Service, rpPublicKey: String?, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
@@ -57,7 +55,10 @@ final class UserService {
             completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
-        guard let userId = encryptionService.aesDecrypt(string: encUserId) else {
+        guard
+            let userIdData = AES.decryptionAESModeECB(messageData: encUserId.data(using: .utf8), key: box.privateKey),
+            let userId = String(data: userIdData, encoding: .utf8)
+        else {
             completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
@@ -75,7 +76,9 @@ final class UserService {
             completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
-        guard let userId = encryptionService.aesDecrypt(string: account.userId) else {
+        guard
+            let userIdData = AES.decryptionAESModeECB(messageData: account.userId.data(using: .utf8), key: box.privateKey),
+            let userId = String(data: userIdData, encoding: .utf8) else {
             completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
@@ -94,9 +97,14 @@ extension UserService {
         let uniqueId = String.random()
         let encryptTarget = "\(deviceId)\(uniqueId)"
         
+        guard let box = try? keychainService.getCryptoBox() else {
+            assertionFailure(KeyriErrors.keyriSdkError.errorDescription ?? "")
+            return (nil, nil)
+        }
         guard
-            let userId = encryptionService.aesEncrypt(string: encryptTarget),
-            let encUserId = encryptionService.aesEncrypt(string: userId)
+            let userIdData = AES.encryptionAESModeECB(messageData: encryptTarget.data(using: .utf8), key: box.privateKey),
+            let encUserIdData = AES.encryptionAESModeECB(messageData: userIdData, key: box.privateKey),
+            let encUserId = String(data: encUserIdData, encoding: .utf8)
         else {
             assertionFailure(KeyriErrors.keyriSdkError.errorDescription ?? "")
             return (nil, nil)
