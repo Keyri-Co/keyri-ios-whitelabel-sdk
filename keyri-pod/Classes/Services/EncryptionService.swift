@@ -221,12 +221,12 @@ final class KeychainHelper {
                var pubKey, privKey: SecKey?
                let status = SecKeyGeneratePair(parameters as CFDictionary, &pubKey, &privKey)
                guard status == 0, let newPubKey = pubKey, let newPrivKey = privKey else {
-                   throw ECError.failedNativeKeyCreation
+                throw KeyriErrors.keyriSdkError
                }
                var error: Unmanaged<CFError>? = nil
                guard let pubBytes = SecKeyCopyExternalRepresentation(newPubKey, &error) else {
                    guard let error = error?.takeRetainedValue() else {
-                       throw ECError.failedNativeKeyCreation
+                       throw KeyriErrors.keyriSdkError
                    }
                    throw error
                }
