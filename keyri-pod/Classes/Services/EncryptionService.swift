@@ -61,7 +61,8 @@ final class EncryptionService {
 }
 
 extension EncryptionService {
-    private func loadKey(name: String = "com.novos.keyri.Keyri") throws -> SecKey {
+    func loadKey(name: String = "com.novos.keyri.Keyri") throws -> SecKey {
+//        return (try KeychainHelper.makeAndStoreKey(name: name))
         if let key = KeychainHelper.loadKey(name: name) {
             return key
         } else {
@@ -138,6 +139,59 @@ extension EncryptionService {
         let decryptedData = SecKeyCreateDecryptedData(privateKey, .eciesEncryptionStandardX963SHA256AESGCM, data as CFData, nil) as Data?
         return decryptedData?.utf8String()
     }
+    
+    func exchangeTest() throws {
+        let attributes: [String: Any] =
+            [kSecAttrKeySizeInBits as String:      256,
+             kSecAttrKeyType as String: kSecAttrKeyTypeEC,
+             kSecPrivateKeyAttrs as String:
+                [kSecAttrIsPermanent as String:    false]
+        ]
+
+        var error: Unmanaged<CFError>?
+        if #available(iOS 10.0, *) {
+            // generate a key for alice
+//            guard let privateKey1 = SecKeyCreateRandomKey(attributes as CFDictionary, &error) else {
+//                throw error!.takeRetainedValue() as Error
+//            }
+//            let publicKey1 = SecKeyCopyPublicKey(privateKey1)
+//
+//            // generate a key for bob
+//            guard let privateKey2 = SecKeyCreateRandomKey(attributes as CFDictionary, &error) else {
+//                throw error!.takeRetainedValue() as Error
+//            }
+//            let publicKey2 = SecKeyCopyPublicKey(privateKey2)
+//
+//            let dict: [String: Any] = [:]
+//
+//            // alice is calculating the shared secret
+//            guard let shared1 = SecKeyCopyKeyExchangeResult(privateKey1, SecKeyAlgorithm.ecdhKeyExchangeCofactor, publicKey2!, dict as CFDictionary, &error) else {
+//                throw error!.takeRetainedValue() as Error
+//            }
+//
+//            // bob is calculating the shared secret
+//            guard let shared2 = SecKeyCopyKeyExchangeResult(privateKey2, SecKeyAlgorithm.ecdhKeyExchangeCofactor, publicKey1!, dict as CFDictionary, &error) else {
+//                throw error!.takeRetainedValue() as Error
+//            }
+//
+//            print(shared1==shared2)
+            
+            let secKey = try loadKey()
+            let serverPublicKey = KeychainHelper.convertbase64StringToSecKey(stringKey: "BOenio0DXyG31mAgUCwhdslelckmxzM7nNOyWAjkuo7skr1FhP7m2L8PaSRgIEH5ja9p+CwEIIKGqR4Hx5Ezam4=")!
+            let dict: [String: Any] = [:]
+            // alice is calculating the shared secret
+            guard let shared1 = SecKeyCopyKeyExchangeResult(secKey, SecKeyAlgorithm.ecdhKeyExchangeCofactor, serverPublicKey, dict as CFDictionary, &error) as? Data else {
+                throw error!.takeRetainedValue() as Error
+            }
+            
+            print(shared1.base64EncodedString())
+
+
+        } else {
+            // Fallback on earlier versions
+            print("unsupported")
+        }
+    }
 }
 
 extension Bytes {
@@ -177,8 +231,18 @@ final class KeychainHelper {
             ]
         ]
         
+        let parameters: [String: Any] = [
+            kSecAttrKeyType as String:          kSecAttrKeyTypeECSECPrimeRandom,
+            kSecAttrKeySizeInBits as String:    256,
+            kSecPrivateKeyAttrs as String : [
+                kSecAttrIsPermanent as String       : true,
+                kSecAttrApplicationTag as String    : tag,
+//                kSecAttrAccessControl as String     : access
+            ]
+        ]
+        
         var error: Unmanaged<CFError>?
-        guard let privateKey = SecKeyCreateRandomKey(attributes as CFDictionary, &error) else {
+        guard let privateKey = SecKeyCreateRandomKey(parameters as CFDictionary, &error) else {
             throw (error?.takeRetainedValue() ?? KeyriErrors.keyriSdkError) as Error
         }
         

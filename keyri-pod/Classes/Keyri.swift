@@ -140,6 +140,32 @@ public final class Keyri: NSObject {
         whitelabelInitIfNeeded { [weak self] result in
             switch result {
             case .success(let service):
+//                let publicKey = try! self?.encryptionService?.loadPublicKey()!
+//                print(publicKey)
+                
+//                try! self?.encryptionService?.exchangeTest()
+//                try! self?.encryptionService?.testPrime256()
+                
+                if #available(iOS 11, *) {
+//                    let p256PrivateKey = try! ECPrivateKey.make(for: .prime256v1)
+//                    let privateKeyPEM = p256PrivateKey.pemString
+//                    let p256PublicKey = try! p256PrivateKey.extractPublicKey()
+//                    let publicKeyPEM = p256PublicKey.pemString
+//
+//                    print(privateKeyPEM)
+//                    print(publicKeyPEM)
+                    
+                    let privateSecKey = try! self?.encryptionService?.loadKey()
+                    let publicSecKey = try! self?.encryptionService?.loadPublicKey()
+                    
+                    let p256PrivateKey = try! ECPrivateKey(for: publicSecKey!, privateSecKey: privateSecKey!)
+                    let p256PublicKey = try! p256PrivateKey.extractPublicKey()
+                    let publicKeyPEM = p256PublicKey.pemString
+                    print(publicKeyPEM)
+                } else {
+                    // Fallback on earlier versions
+                }
+
                 completion(.success(
                     self?.storageService?.getAllAccounts(serviceId: service.id).map { PublicAccount(username: $0.username, custom: $0.custom) } ?? []
                 ))
