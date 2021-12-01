@@ -63,12 +63,11 @@ final class EncryptionService {
 
 extension EncryptionService {
     func loadKey(name: String = "com.novos.keyri.Keyri") throws -> SecKey {
-//        return (try KeychainHelper.makeAndStoreKey(name: name))
-//        if let key = KeychainHelper.loadKey(name: name) {
-//            return key
-//        } else {
+        if let key = KeychainHelper.loadKey(name: name) {
+            return key
+        } else {
             return (try KeychainHelper.makeAndStoreKey(name: name))
-//        }
+        }
     }
     
     func loadPublicKey(name: String = "com.novos.keyri.Keyri") throws -> SecKey? {
@@ -124,74 +123,17 @@ extension EncryptionService {
         return true
     }
     
-    func aesEncrypt(string: String) -> String? {
-        guard
-            let privateKey = try? loadKey(),
-            let publicKey = SecKeyCopyPublicKey(privateKey)
-        else { return nil }
-        guard let data = string.data(using: .utf8) else { return nil }
-        let encryptedData = SecKeyCreateEncryptedData(publicKey, .eciesEncryptionStandardX963SHA256AESGCM, data as CFData, nil) as Data?
-        return encryptedData?.base64EncodedString()
-    }
-    
-    func aesDecrypt(string: String) -> String? {
-        guard let privateKey = try? loadKey() else { return nil }
-        guard let data = Data(base64Encoded: string) else { return nil }
-        let decryptedData = SecKeyCreateDecryptedData(privateKey, .eciesEncryptionStandardX963SHA256AESGCM, data as CFData, nil) as Data?
-        return decryptedData?.utf8String()
-    }
-    
-    func exchangeTest() throws {
-        let attributes: [String: Any] =
-            [kSecAttrKeySizeInBits as String:      256,
-             kSecAttrKeyType as String: kSecAttrKeyTypeEC,
-             kSecPrivateKeyAttrs as String:
-                [kSecAttrIsPermanent as String:    false]
-        ]
+    func keysExchange(publicKey: String) throws -> String? {
+        let privateSecKey = try loadKey()
+        guard let publicSecKey = KeychainHelper.convertbase64StringToSecKey(stringKey: publicKey) else {
+            return nil
+        }
 
         var error: Unmanaged<CFError>?
-        if #available(iOS 10.0, *) {
-            // generate a key for alice
-//            guard let privateKey1 = SecKeyCreateRandomKey(attributes as CFDictionary, &error) else {
-//                throw error!.takeRetainedValue() as Error
-//            }
-//            let publicKey1 = SecKeyCopyPublicKey(privateKey1)
-//
-//            // generate a key for bob
-//            guard let privateKey2 = SecKeyCreateRandomKey(attributes as CFDictionary, &error) else {
-//                throw error!.takeRetainedValue() as Error
-//            }
-//            let publicKey2 = SecKeyCopyPublicKey(privateKey2)
-//
-//            let dict: [String: Any] = [:]
-//
-//            // alice is calculating the shared secret
-//            guard let shared1 = SecKeyCopyKeyExchangeResult(privateKey1, SecKeyAlgorithm.ecdhKeyExchangeCofactor, publicKey2!, dict as CFDictionary, &error) else {
-//                throw error!.takeRetainedValue() as Error
-//            }
-//
-//            // bob is calculating the shared secret
-//            guard let shared2 = SecKeyCopyKeyExchangeResult(privateKey2, SecKeyAlgorithm.ecdhKeyExchangeCofactor, publicKey1!, dict as CFDictionary, &error) else {
-//                throw error!.takeRetainedValue() as Error
-//            }
-//
-//            print(shared1==shared2)
-            
-            let secKey = try loadKey()
-            let serverPublicKey = KeychainHelper.convertbase64StringToSecKey(stringKey: "BOenio0DXyG31mAgUCwhdslelckmxzM7nNOyWAjkuo7skr1FhP7m2L8PaSRgIEH5ja9p+CwEIIKGqR4Hx5Ezam4=")!
-            let dict: [String: Any] = [:]
-            // alice is calculating the shared secret
-            guard let shared1 = SecKeyCopyKeyExchangeResult(secKey, SecKeyAlgorithm.ecdhKeyExchangeCofactor, serverPublicKey, dict as CFDictionary, &error) as? Data else {
-                throw error!.takeRetainedValue() as Error
-            }
-            
-            print(shared1.base64EncodedString())
-
-
-        } else {
-            // Fallback on earlier versions
-            print("unsupported")
+        guard let shared = SecKeyCopyKeyExchangeResult(privateSecKey, SecKeyAlgorithm.ecdhKeyExchangeCofactor, publicSecKey, [:] as CFDictionary, &error) as Data? else {
+            throw error!.takeRetainedValue() as Error
         }
+        return shared.base64EncodedString()
     }
 }
 
@@ -214,51 +156,35 @@ final class KeychainHelper {
     static func makeAndStoreKey(name: String) throws -> SecKey {
         removeKey(name: name)
 
-        let parameters: [String: AnyObject] = [
-            kSecAttrKeyType as String: kSecAttrKeyTypeEC,
-                   kSecAttrKeySizeInBits as String:    256 as AnyObject,
-                   ]
-               var pubKey, privKey: SecKey?
-               let status = SecKeyGeneratePair(parameters as CFDictionary, &pubKey, &privKey)
-               guard status == 0, let newPubKey = pubKey, let newPrivKey = privKey else {
-                throw KeyriErrors.keyriSdkError
-               }
-               var error: Unmanaged<CFError>? = nil
-               guard let pubBytes = SecKeyCopyExternalRepresentation(newPubKey, &error) else {
-                   guard let error = error?.takeRetainedValue() else {
-                       throw KeyriErrors.keyriSdkError
-                   }
-                   throw error
-               }
-       
-                let publicKeyNSData = NSData(data: pubBytes as Data)
-        
-        // Usage
-        let publicKeyDER = createSubjectPublicKeyInfo(rawPublicKeyData: publicKeyNSData as Data)
-        
-        let publicKeyBase64Str = publicKeyDER.base64EncodedString()
-        
-        let serverPublicKey = KeychainHelper.convertbase64StringToSecKey(stringKey: "BOenio0DXyG31mAgUCwhdslelckmxzM7nNOyWAjkuo7skr1FhP7m2L8PaSRgIEH5ja9p+CwEIIKGqR4Hx5Ezam4=")!
-        let dict: [String: Any] = [:]
-        // alice is calculating the shared secret
-        guard let shared1 = SecKeyCopyKeyExchangeResult(privKey!, SecKeyAlgorithm.ecdhKeyExchangeCofactor, serverPublicKey, dict as CFDictionary, &error) as? Data else {
-            throw error!.takeRetainedValue() as Error
+        let flags: SecAccessControlCreateFlags = .privateKeyUsage
+        guard
+            let access = SecAccessControlCreateWithFlags(kCFAllocatorDefault, kSecAttrAccessibleWhenUnlockedThisDeviceOnly, flags, nil),
+            let tag = name.data(using: .utf8)
+        else {
+            throw KeyriErrors.keyriSdkError
         }
-    
+        let attributes: [String: Any] = [
+            kSecAttrKeyType as String       : kSecAttrKeyTypeEC,
+            kSecAttrKeySizeInBits as String : 256,
+            kSecAttrTokenID as String       : kSecAttrTokenIDSecureEnclave,
+            kSecPrivateKeyAttrs as String : [
+                kSecAttrIsPermanent as String       : true,
+                kSecAttrApplicationTag as String    : tag,
+                kSecAttrAccessControl as String     : access
+            ]
+        ]
+                
+        var error: Unmanaged<CFError>?
+        guard let privateKey = SecKeyCreateRandomKey(attributes as CFDictionary, &error) else {
+            throw (error?.takeRetainedValue() ?? KeyriErrors.keyriSdkError) as Error
+        }
         
-        let secret = shared1.base64EncodedString()
-
-        
-        let enc = "hello"
-        let result = enc.AESEncryption(key: secret)
-        print(enc.AESEncryption(key: secret))
-        
-        return privKey!
+        return privateKey
     }
 
     
     static func createSubjectPublicKeyInfo(rawPublicKeyData: Data) -> Data {
-        let secp256r1Header = Data(bytes: [
+        let secp256r1Header = Data([
             0x30, 0x59, 0x30, 0x13, 0x06, 0x07, 0x2a, 0x86, 0x48, 0xce, 0x3d, 0x02, 0x01, 0x06, 0x08, 0x2a,
             0x86, 0x48, 0xce, 0x3d, 0x03, 0x01, 0x07, 0x03, 0x42, 0x00
             ])
@@ -312,44 +238,4 @@ final class KeychainHelper {
         
         return SecKeyCreateWithData(keyData as CFData, keyDict as CFDictionary, nil)
     }
-}
-
-
-extension String {
-    func AESEncryption(key: String) -> String? {
-            
-        let keyData: NSData! = (key as NSString).data(using: String.Encoding.utf8.rawValue) as NSData?
-            
-        let data: NSData! = (self as NSString).data(using: String.Encoding.utf8.rawValue) as NSData?
-            
-            let cryptData    = NSMutableData(length: Int(data.length) + kCCBlockSizeAES128)!
-            
-            let keyLength              = size_t(kCCKeySizeAES128)
-            let operation: CCOperation = UInt32(kCCEncrypt)
-            let algoritm:  CCAlgorithm = UInt32(kCCAlgorithmAES128)
-            let options:   CCOptions   = UInt32(kCCOptionECBMode + kCCOptionPKCS7Padding)
-            
-            var numBytesEncrypted :size_t = 0
-            
-            
-            let cryptStatus = CCCrypt(operation,
-                                      algoritm,
-                                      options,
-                                      keyData.bytes, keyLength,
-                                      nil,
-                                      data.bytes, data.length,
-                                      cryptData.mutableBytes, cryptData.length,
-                                      &numBytesEncrypted)
-            
-            if UInt32(cryptStatus) == UInt32(kCCSuccess) {
-                cryptData.length = Int(numBytesEncrypted)
-                
-                var bytes = [UInt8](repeating: 0, count: cryptData.length)
-                cryptData.getBytes(&bytes, length: cryptData.length)
-                
-                return bytes.base64EncodedString()
-            }
-            
-            return nil
-        }
 }
