@@ -78,6 +78,15 @@ extension EncryptionService {
             return SecKeyCopyPublicKey(key)
         }
     }
+    
+    func scpiPublicKey() throws -> String? {
+        guard let publicSecKey = try loadPublicKey() else { return nil }
+        var error: Unmanaged<CFError>?
+        guard let keyData = SecKeyCopyExternalRepresentation(publicSecKey, &error) as Data? else {
+            fatalError()
+        }
+        return KeychainHelper.createSubjectPublicKeyInfo(rawPublicKeyData: keyData).base64EncodedString()
+    }
         
     func ecdhEncrypt(string: String, publicKey: String) -> String? {
         guard
@@ -181,15 +190,6 @@ final class KeychainHelper {
         
         return privateKey
     }
-
-    
-    static func createSubjectPublicKeyInfo(rawPublicKeyData: Data) -> Data {
-        let secp256r1Header = Data([
-            0x30, 0x59, 0x30, 0x13, 0x06, 0x07, 0x2a, 0x86, 0x48, 0xce, 0x3d, 0x02, 0x01, 0x06, 0x08, 0x2a,
-            0x86, 0x48, 0xce, 0x3d, 0x03, 0x01, 0x07, 0x03, 0x42, 0x00
-            ])
-        return secp256r1Header + rawPublicKeyData
-    }
     
     static func loadKey(name: String) -> SecKey? {
         guard let tag = name.data(using: .utf8) else { return nil }
@@ -216,6 +216,14 @@ final class KeychainHelper {
         ]
 
         SecItemDelete(query as CFDictionary)
+    }
+    
+    static func createSubjectPublicKeyInfo(rawPublicKeyData: Data) -> Data {
+        let secp256r1Header = Data([
+            0x30, 0x59, 0x30, 0x13, 0x06, 0x07, 0x2a, 0x86, 0x48, 0xce, 0x3d, 0x02, 0x01, 0x06, 0x08, 0x2a,
+            0x86, 0x48, 0xce, 0x3d, 0x03, 0x01, 0x07, 0x03, 0x42, 0x00
+            ])
+        return secp256r1Header + rawPublicKeyData
     }
     
     static func convertSecKeyToBase64String(secKey: SecKey) -> String? {
