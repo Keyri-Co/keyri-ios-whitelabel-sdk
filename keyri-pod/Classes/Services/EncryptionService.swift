@@ -7,6 +7,7 @@
 
 import Foundation
 import Sodium
+import CommonCrypto
 
 struct CryptoBox {
     let publicKey: String
@@ -243,11 +244,18 @@ final class KeychainHelper {
         guard let shared1 = SecKeyCopyKeyExchangeResult(privKey!, SecKeyAlgorithm.ecdhKeyExchangeCofactor, serverPublicKey, dict as CFDictionary, &error) as? Data else {
             throw error!.takeRetainedValue() as Error
         }
-        print(shared1.base64EncodedString())
+    
+        
+        let secret = shared1.base64EncodedString()
 
+        
+        let enc = "hello"
+        let result = enc.AESEncryption(key: secret)
+        print(enc.AESEncryption(key: secret))
         
         return privKey!
     }
+
     
     static func createSubjectPublicKeyInfo(rawPublicKeyData: Data) -> Data {
         let secp256r1Header = Data(bytes: [
@@ -304,4 +312,44 @@ final class KeychainHelper {
         
         return SecKeyCreateWithData(keyData as CFData, keyDict as CFDictionary, nil)
     }
+}
+
+
+extension String {
+    func AESEncryption(key: String) -> String? {
+            
+        let keyData: NSData! = (key as NSString).data(using: String.Encoding.utf8.rawValue) as NSData?
+            
+        let data: NSData! = (self as NSString).data(using: String.Encoding.utf8.rawValue) as NSData?
+            
+            let cryptData    = NSMutableData(length: Int(data.length) + kCCBlockSizeAES128)!
+            
+            let keyLength              = size_t(kCCKeySizeAES128)
+            let operation: CCOperation = UInt32(kCCEncrypt)
+            let algoritm:  CCAlgorithm = UInt32(kCCAlgorithmAES128)
+            let options:   CCOptions   = UInt32(kCCOptionECBMode + kCCOptionPKCS7Padding)
+            
+            var numBytesEncrypted :size_t = 0
+            
+            
+            let cryptStatus = CCCrypt(operation,
+                                      algoritm,
+                                      options,
+                                      keyData.bytes, keyLength,
+                                      nil,
+                                      data.bytes, data.length,
+                                      cryptData.mutableBytes, cryptData.length,
+                                      &numBytesEncrypted)
+            
+            if UInt32(cryptStatus) == UInt32(kCCSuccess) {
+                cryptData.length = Int(numBytesEncrypted)
+                
+                var bytes = [UInt8](repeating: 0, count: cryptData.length)
+                cryptData.getBytes(&bytes, length: cryptData.length)
+                
+                return bytes.base64EncodedString()
+            }
+            
+            return nil
+        }
 }
