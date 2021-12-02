@@ -156,7 +156,7 @@ public final class Keyri: NSObject {
                 
                 let decString = AES.decryptionAESModeECBInUtf8(message: encString, key: secret!)
                 
-                let scpiKey = try! self?.encryptionService?.scpiPublicKey()
+                let spkiKey = try! self?.encryptionService?.spkiPublicKey()
                 
                 print("")
 

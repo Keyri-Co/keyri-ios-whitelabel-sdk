@@ -79,7 +79,7 @@ extension EncryptionService {
         }
     }
     
-    func scpiPublicKey() throws -> String? {
+    func spkiPublicKey() throws -> String? {
         guard let publicSecKey = try loadPublicKey() else { return nil }
         var error: Unmanaged<CFError>?
         guard let keyData = SecKeyCopyExternalRepresentation(publicSecKey, &error) as Data? else {
