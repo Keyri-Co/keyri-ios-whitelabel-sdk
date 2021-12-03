@@ -8,7 +8,7 @@
 import Foundation
 import CommonCrypto
 
-final class AES {
+final class AES_test {
     static func encryptionAESModeECB(messageData data: Data?, key: String) -> Data? {
         guard let data = data else { return nil }
         guard let keyData = key.data(using: String.Encoding.utf8) else { return nil }
@@ -73,7 +73,7 @@ final class AES {
     }
 }
 
-extension AES {
+extension AES_test {
     static func encryptionAESModeECBInUtf8(message: String?, key: String) -> String? {
         Self.encryptionAESModeECB(messageData: message?.data(using: .utf8), key: key)?.utf8String()
     }

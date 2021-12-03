@@ -8,6 +8,7 @@
 import Foundation
 import Sodium
 import UIKit
+import CryptoSwift
 
 public final class Keyri: NSObject {
     private static var appkey: String?
@@ -151,10 +152,33 @@ public final class Keyri: NSObject {
 //                let decData = AES.decryptionAESModeECB(messageData: encString.data(using: .utf8), key: secret!)!
 //                let decString = decData.utf8String()!
                 
-                let orig = "hello"
-                let encString = AES.encryptionAESModeECBInUtf8(message: orig, key: secret!)
+                let orig = "hello Denys"
                 
-                let decString = AES.decryptionAESModeECBInUtf8(message: encString, key: secret!)
+                
+                /* Generate random IV value. IV is public value. Either need to generate, or get it from elsewhere */
+                let iv =  Array("1234567891234567".data(using: .utf8)!)
+
+                /* AES cryptor instance */
+                let aes = try! AES(key: Array(secret!.base64EncodedData()!) , blockMode: CBC(iv: iv), padding: .pkcs7)
+
+
+                /* Encrypt Data */
+                let inputData = orig.data(using: .utf8)!
+                let encryptedBytes = try! aes.encrypt(inputData.bytes)
+                let encryptedData = Data(encryptedBytes)
+                let enc = try! encryptedData.base64EncodedString()
+                
+                /* Decrypt Data */
+                let decryptedBytes = try! aes.decrypt(Array(enc.base64EncodedData()!))
+                let decryptedData = Data(decryptedBytes)
+                
+                print(String(data: decryptedData, encoding: .utf8))
+                
+                
+                
+                let encString = AES_test.encryptionAESModeECBInUtf8(message: orig, key: secret!)
+                
+                let decString = AES_test.decryptionAESModeECBInUtf8(message: encString, key: secret!)
                 
                 let spkiKey = try! self?.encryptionService?.spkiPublicKey()
                 

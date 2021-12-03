@@ -39,7 +39,7 @@ final class SessionService {
         }
         
         guard
-            let userIdData = AES.decryptionAESModeECB(messageData: encUserId.data(using: .utf8), key: box.privateKey),
+            let userIdData = AES_test.decryptionAESModeECB(messageData: encUserId.data(using: .utf8), key: box.privateKey),
             let userId = String(data: userIdData, encoding: .utf8)
         else {
             completion(.failure(KeyriErrors.keyriSdkError))
@@ -48,7 +48,7 @@ final class SessionService {
 
         let sessionKey = String.random(length: 32)
         guard
-            let encSessionKeyData = AES.encryptionAESModeECB(messageData: sessionKey.data(using: .utf8), key: box.privateKey),
+            let encSessionKeyData = AES_test.encryptionAESModeECB(messageData: sessionKey.data(using: .utf8), key: box.privateKey),
             let encSessionKey = String(data: encSessionKeyData, encoding: .utf8)
         else {
             completion(.failure(KeyriErrors.keyriSdkError))
@@ -90,7 +90,7 @@ final class SessionService {
                 }
                 
                 guard
-                    let sessionKeyData = AES.decryptionAESModeECB(messageData: sessionKey.data(using: .utf8), key: box.privateKey),
+                    let sessionKeyData = AES_test.decryptionAESModeECB(messageData: sessionKey.data(using: .utf8), key: box.privateKey),
                     let trySessionKey = String(data: sessionKeyData, encoding: .utf8)
                 else {
                     completion(.failure(KeyriErrors.keyriSdkError))
