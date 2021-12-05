@@ -7,6 +7,35 @@
 
 import Foundation
 import CommonCrypto
+import CryptoSwift
+
+final class CryptoAES {
+//    private lazy var config = Config()
+//    private lazy var ivAes = config.ivAes
+
+    static func aesEncrypt(string: String, secret: String) -> String? {
+        guard
+            let ivData = Config().ivAes.data(using: .utf8),
+            let secretBase64EncodedData = secret.base64EncodedData(),
+            let stringData = string.data(using: .utf8),
+            let aes = try? AES(key: Array(secretBase64EncodedData), blockMode: CBC(iv: Array(ivData)), padding: .pkcs7)
+        else { return nil }
+        
+        return try? aes.encrypt(stringData.bytes).base64EncodedString()
+    }
+    
+    static func aesDecrypt(string: String, secret: String) -> String? {
+        guard
+            let ivData = Config().ivAes.data(using: .utf8),
+            let secretBase64EncodedData = secret.base64EncodedData(),
+            let stringData = string.base64EncodedData(),
+            let aes = try? AES(key: Array(secretBase64EncodedData), blockMode: CBC(iv: Array(ivData)), padding: .pkcs7),
+            let decryptedBytes = try? aes.decrypt(stringData)
+        else { return nil }
+                
+        return Data(decryptedBytes).utf8String()
+    }
+}
 
 final class AES_test {
     static func encryptionAESModeECB(messageData data: Data?, key: String) -> Data? {

@@ -22,7 +22,7 @@ final class KeychainService {
     }
     
     func getCryptoBox() throws -> CryptoBox? {
-        guard let publicKey = try getPublicKey(), let privateKey = try getPrivateKey() else {
+        guard let publicKey = try? getPublicKey(), let privateKey = try? getPrivateKey() else {
             guard let box = encryptionService.generateCryproBox() else {
                 return nil
             }

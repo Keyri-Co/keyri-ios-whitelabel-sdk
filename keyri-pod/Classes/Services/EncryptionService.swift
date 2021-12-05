@@ -7,7 +7,7 @@
 
 import Foundation
 import Sodium
-import CommonCrypto
+//import CryptoSwift
 
 struct CryptoBox {
     let publicKey: String
@@ -23,6 +23,9 @@ struct CryptoBox {
 }
 
 final class EncryptionService {
+//    private lazy var config = Config()
+//    private lazy var ivAes = config.ivAes
+    
     func generateCryproBox() -> CryptoBox? {
         let sodium = Sodium()
         guard let keyPair = sodium.sign.keyPair() else {
@@ -79,15 +82,6 @@ extension EncryptionService {
         }
     }
     
-    func spkiPublicKey() throws -> String? {
-        guard let publicSecKey = try loadPublicKey() else { return nil }
-        var error: Unmanaged<CFError>?
-        guard let keyData = SecKeyCopyExternalRepresentation(publicSecKey, &error) as Data? else {
-            fatalError()
-        }
-        return KeychainHelper.createSubjectPublicKeyInfo(rawPublicKeyData: keyData).base64EncodedString()
-    }
-        
     func ecdhEncrypt(string: String, publicKey: String) -> String? {
         guard
             let publicSecKey = KeychainHelper.convertbase64StringToSecKey(stringKey: publicKey)
@@ -216,14 +210,6 @@ final class KeychainHelper {
         ]
 
         SecItemDelete(query as CFDictionary)
-    }
-    
-    static func createSubjectPublicKeyInfo(rawPublicKeyData: Data) -> Data {
-        let secp256r1Header = Data([
-            0x30, 0x59, 0x30, 0x13, 0x06, 0x07, 0x2a, 0x86, 0x48, 0xce, 0x3d, 0x02, 0x01, 0x06, 0x08, 0x2a,
-            0x86, 0x48, 0xce, 0x3d, 0x03, 0x01, 0x07, 0x03, 0x42, 0x00
-            ])
-        return secp256r1Header + rawPublicKeyData
     }
     
     static func convertSecKeyToBase64String(secKey: SecKey) -> String? {

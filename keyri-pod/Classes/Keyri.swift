@@ -156,31 +156,21 @@ public final class Keyri: NSObject {
                 
                 
                 /* Generate random IV value. IV is public value. Either need to generate, or get it from elsewhere */
-                let iv =  Array("1234567891234567".data(using: .utf8)!)
+                let config = Config()
+                let iv =  Array(config.ivAes.data(using: .utf8)!)
 
                 /* AES cryptor instance */
                 let aes = try! AES(key: Array(secret!.base64EncodedData()!) , blockMode: CBC(iv: iv), padding: .pkcs7)
 
-
-                /* Encrypt Data */
-                let inputData = orig.data(using: .utf8)!
-                let encryptedBytes = try! aes.encrypt(inputData.bytes)
-                let encryptedData = Data(encryptedBytes)
-                let enc = try! encryptedData.base64EncodedString()
                 
-                /* Decrypt Data */
-                let decryptedBytes = try! aes.decrypt(Array(enc.base64EncodedData()!))
-                let decryptedData = Data(decryptedBytes)
-                
-                print(String(data: decryptedData, encoding: .utf8))
-                
-                
+                let cryptoAes = CryptoAES()
+                let crpEnc = CryptoAES.aesEncrypt(string: orig, secret: secret!)!
+                let crpDec = CryptoAES.aesDecrypt(string: crpEnc, secret: secret!)
+                print(crpDec)
                 
                 let encString = AES_test.encryptionAESModeECBInUtf8(message: orig, key: secret!)
                 
                 let decString = AES_test.decryptionAESModeECBInUtf8(message: encString, key: secret!)
-                
-                let spkiKey = try! self?.encryptionService?.spkiPublicKey()
                 
                 print("")
 

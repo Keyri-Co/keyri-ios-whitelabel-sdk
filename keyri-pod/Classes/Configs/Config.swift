@@ -11,15 +11,18 @@ struct ConfigData: Decodable {
     enum CodingKeys: String, CodingKey {
         case apiUrl = "API_URL"
         case wsUrl = "WS_URL"
+        case ivAes = "IV_AES"
     }
     
     let apiUrl: String
     let wsUrl: String
+    let ivAes: String
 }
 
 struct Config {
     let apiUrl: String
     let wsUrl: String
+    let ivAes: String
     
     init() {
         #if DEBUG
@@ -37,6 +40,7 @@ struct Config {
 
             apiUrl = config.apiUrl
             wsUrl = config.wsUrl
+            ivAes = config.ivAes
         } catch {
             fatalError(error.localizedDescription)
         }
@@ -49,6 +53,7 @@ extension Config {
             {
                 "API_URL": "https://dev-api.keyri.co",
                 "WS_URL": "wss://dev-api.keyri.co",
+                "IV_AES": "1234567891234567",
             }
         """
     }
@@ -57,7 +62,8 @@ extension Config {
         """
             {
                 "API_URL": "https://api.keyri.co",
-                "WS_URL": "https://api.keyri.co"
+                "WS_URL": "https://api.keyri.co",
+                "IV_AES": "1234567891234567",
             }
         """
     }

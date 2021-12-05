@@ -236,12 +236,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = B275BMKQL6;
+						DevelopmentTeam = 6TTW5JRQCY;
 						LastSwiftMigration = 1250;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = B275BMKQL6;
+						DevelopmentTeam = 6TTW5JRQCY;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -519,12 +519,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = B275BMKQL6;
+				DEVELOPMENT_TEAM = 6TTW5JRQCY;
 				INFOPLIST_FILE = "keyri-pod/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.keyri.whitelabelDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.keyri.whitelabelDemo-n";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "keyri-pod/keyri-pod_Example-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -539,12 +539,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = B275BMKQL6;
+				DEVELOPMENT_TEAM = 6TTW5JRQCY;
 				INFOPLIST_FILE = "keyri-pod/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.keyri.whitelabelDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.keyri.whitelabelDemo-n";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "keyri-pod/keyri-pod_Example-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -556,7 +556,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 699286101ED2C4A8D3F09D3B /* Pods-keyri-pod_Tests.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = B275BMKQL6;
+				DEVELOPMENT_TEAM = 6TTW5JRQCY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -579,7 +579,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 171B1BBCE16485635D0476B0 /* Pods-keyri-pod_Tests.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = B275BMKQL6;
+				DEVELOPMENT_TEAM = 6TTW5JRQCY;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
