@@ -21,14 +21,15 @@ struct SessionApproveData: SocketData {
 
 final class SessionService {
     let keychainService: KeychainService
-    let socketService: SocketService
+    let socketService: SocketService2
     let encryptionService: EncryptionService
     
     var sessionId: String?
         
     init(keychainService: KeychainService, encryptionService: EncryptionService) {
         self.keychainService = keychainService
-        self.socketService = SocketService()
+//        self.socketService = SocketService()
+        self.socketService = SocketService2()
         self.encryptionService = encryptionService
     }
     
@@ -63,6 +64,7 @@ final class SessionService {
         }
                 
         let payload = Payload(sessionId: sessionId, sessionKey: encSessionKey)
+        let validateMessage = ValidateMessage(sessionId: sessionId, sessionKey: encSessionKey)
         
         socketService.extraHeaders = ["userSuffix": String(encUserId.prefix(15))]
 
@@ -73,11 +75,11 @@ final class SessionService {
                 return
             }
             
-            self?.socketService.emit(event: "SESSION_VALIDATE", data: payload) { result in
+//            self?.socketService.emit(event: "SESSION_VALIDATE", data: payload) { result in
+            self?.socketService.sendEvent(message: validateMessage) { result in
                 guard
-                    case let .success(dict) = result,
-                    let publicKey = rpPublicKey ?? dict["publicKey"],
-                    let sessionKey = dict["sessionKey"]
+                    case let .success(message) = result,
+                    let publicKey = rpPublicKey ?? message.publicKey
                 else {
                     if case let .failure(error) = result {
                         completion(.failure(error))
@@ -90,7 +92,7 @@ final class SessionService {
                 }
                 
                 guard
-                    let sessionKeyData = AES_test.decryptionAESModeECB(messageData: sessionKey.data(using: .utf8), key: box.privateKey),
+                    let sessionKeyData = AES_test.decryptionAESModeECB(messageData: message.sessionKey.data(using: .utf8), key: box.privateKey),
                     let trySessionKey = String(data: sessionKeyData, encoding: .utf8)
                 else {
                     completion(.failure(KeyriErrors.keyriSdkError))
@@ -134,11 +136,14 @@ final class SessionService {
                 }
                 
                 var sessionApproveData = SessionApproveData(cipher: encryptResult, signature: signature, publicKey: nil)
+                var verifyApproveMessage = VerifyApproveMessage(cipher: encryptResult, signature: signature, publicKey: nil)
                 if usePublicKey {
                     sessionApproveData.publicKey = box.publicBuffer?.base64EncodedString()
+                    verifyApproveMessage.publicKey = box.publicBuffer?.base64EncodedString()
                 }
                 
-                self?.socketService.emit(event: "message", data: sessionApproveData) { result in
+//                self?.socketService.emit(event: "message", data: sessionApproveData) { result in
+                self?.socketService.sendEvent(message: verifyApproveMessage) { result in
                     // callback doesn't reaching
                     print(result)
                 }
