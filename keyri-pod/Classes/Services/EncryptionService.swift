@@ -138,6 +138,13 @@ extension EncryptionService {
         }
         return shared.base64EncodedString()
     }
+    
+    // should be private
+    func getSecretKey() -> String? {
+        let serverPublicKey = "BOenio0DXyG31mAgUCwhdslelckmxzM7nNOyWAjkuo7skr1FhP7m2L8PaSRgIEH5ja9p+CwEIIKGqR4Hx5Ezam4="
+        let secret = try! keysExchange(publicKey: serverPublicKey)
+        return secret
+    }
 }
 
 extension Bytes {

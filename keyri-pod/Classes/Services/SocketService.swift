@@ -120,7 +120,44 @@ final class SocketService2: WebSocketDelegate {
             request.addValue(value, forHTTPHeaderField: key)
         }
         socket = WebSocket(request: request)
-        socket?.delegate = self
+//        socket?.delegate = self
+        
+        socket?.onEvent = { [weak self] event in
+            guard let self = self else { return }
+            switch event {
+            case .connected(let headers):
+                self.isConnected = true
+                print("websocket is connected: \(headers)")
+                completion(true)
+            case .disconnected(let reason, let code):
+                self.isConnected = false
+                print("websocket is disconnected: \(reason) with code: \(code)")
+                self.completion?(.failure(KeyriErrors.networkError))
+            case .text(let string):
+                print("Received text: \(string)")
+                if let data = string.data(using: .utf8) {
+                    self.parseVerificationRequest(data: data)
+                }
+            case .binary(let data):
+                print("Received data: \(data.count)")
+                self.parseVerificationRequest(data: data)
+            case .ping(_):
+                break
+            case .pong(_):
+                break
+            case .viabilityChanged(_):
+                break
+            case .reconnectSuggested(_):
+                break
+            case .cancelled:
+                self.isConnected = false
+                self.completion?(.failure(KeyriErrors.networkError))
+            case .error(let error):
+                self.isConnected = false
+                self.handleError(error)
+                self.completion?(.failure(KeyriErrors.networkError))
+            }
+        }
         socket?.connect()
     }
     

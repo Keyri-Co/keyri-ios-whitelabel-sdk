@@ -34,14 +34,16 @@ final class SessionService {
     }
     
     func verifyUserSession(encUserId: String, sessionId: String, rpPublicKey: String?, custom: String?, usePublicKey: Bool = false, completion: @escaping (Result<Void, Error>) -> Void) {
-        guard let box = try? keychainService.getCryptoBox() else {
-            completion(.failure(KeyriErrors.keyriSdkError))
-            return
-        }
+//        guard let box = try? keychainService.getCryptoBox() else {
+//            completion(.failure(KeyriErrors.keyriSdkError))
+//            return
+//        }
         
         guard
-            let userIdData = AES_test.decryptionAESModeECB(messageData: encUserId.data(using: .utf8), key: box.privateKey),
-            let userId = String(data: userIdData, encoding: .utf8)
+            let secret = encryptionService.getSecretKey(),
+            let userId = CryptoAES.aesDecrypt(string: encUserId, secret: secret)
+//            let userIdData = AES_test.decryptionAESModeECB(messageData: encUserId.data(using: .utf8), key: box.privateKey),
+//            let userId = String(data: userIdData, encoding: .utf8)
         else {
             completion(.failure(KeyriErrors.keyriSdkError))
             return
@@ -49,8 +51,9 @@ final class SessionService {
 
         let sessionKey = String.random(length: 32)
         guard
-            let encSessionKeyData = AES_test.encryptionAESModeECB(messageData: sessionKey.data(using: .utf8), key: box.privateKey),
-            let encSessionKey = String(data: encSessionKeyData, encoding: .utf8)
+            let encSessionKey = CryptoAES.aesEncrypt(string: sessionKey, secret: secret)
+//            let encSessionKeyData = AES_test.encryptionAESModeECB(messageData: sessionKey.data(using: .utf8), key: box.privateKey),
+//            let encSessionKey = String(data: encSessionKeyData, encoding: .utf8)
         else {
             completion(.failure(KeyriErrors.keyriSdkError))
             return
@@ -92,8 +95,9 @@ final class SessionService {
                 }
                 
                 guard
-                    let sessionKeyData = AES_test.decryptionAESModeECB(messageData: message.sessionKey.data(using: .utf8), key: box.privateKey),
-                    let trySessionKey = String(data: sessionKeyData, encoding: .utf8)
+                    let trySessionKey = CryptoAES.aesDecrypt(string: message.sessionKey, secret: secret)
+//                    let sessionKeyData = AES_test.decryptionAESModeECB(messageData: message.sessionKey.data(using: .utf8), key: box.privateKey),
+//                    let trySessionKey = String(data: sessionKeyData, encoding: .utf8)
                 else {
                     completion(.failure(KeyriErrors.keyriSdkError))
                     return
@@ -125,12 +129,14 @@ final class SessionService {
                 
                 guard
                     let theJSONText = String(data: theJSONData, encoding: .ascii),
-                    let encryptResult = self?.encryptionService.encryptSeal(string: theJSONText, publicKey: publicKey)
+                    let encryptResult = self?.encryptionService.ecdhEncrypt(string: theJSONText, publicKey: publicKey)
+//                    let encryptResult = self?.encryptionService.encryptSeal(string: theJSONText, publicKey: publicKey)
                 else {
                     assertionFailure("Sodium encrypt fails")
                     return
                 }
-                guard let signature = self?.encryptionService.createSignature(string: theJSONText, privateKey: box.privateKey) else {
+                guard let signature = self?.encryptionService.ecdhCreateSignature(string: theJSONText) else {
+//                guard let signature = self?.encryptionService.createSignature(string: theJSONText, privateKey: box.privateKey) else {
                     assertionFailure("Create signature fails")
                     return
                 }
@@ -138,8 +144,12 @@ final class SessionService {
                 var sessionApproveData = SessionApproveData(cipher: encryptResult, signature: signature, publicKey: nil)
                 var verifyApproveMessage = VerifyApproveMessage(cipher: encryptResult, signature: signature, publicKey: nil)
                 if usePublicKey {
-                    sessionApproveData.publicKey = box.publicBuffer?.base64EncodedString()
-                    verifyApproveMessage.publicKey = box.publicBuffer?.base64EncodedString()
+                    if let publicSecKey = try? self?.encryptionService.loadPublicKey(), let publicKey = KeychainHelper.convertSecKeyToBase64String(secKey: publicSecKey) {
+                        sessionApproveData.publicKey = publicKey
+                        verifyApproveMessage.publicKey = publicKey
+                    }
+//                    sessionApproveData.publicKey = box.publicBuffer?.base64EncodedString()
+//                    verifyApproveMessage.publicKey = box.publicBuffer?.base64EncodedString()
                 }
                 
 //                self?.socketService.emit(event: "message", data: sessionApproveData) { result in

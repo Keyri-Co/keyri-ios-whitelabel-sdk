@@ -186,7 +186,11 @@ public final class Keyri: NSObject {
     public func authWithScanner(from viewController: UIViewController? = nil, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
         scanner = Scanner()
         scanner?.completion = { [weak self] result in
-            self?.onReadSessionId(result, completion: { sessionResult in
+            let url = URL(string: result)!
+            let components = URLComponents(string: result)
+            let sessionId = components?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
+            
+            self?.onReadSessionId(sessionId, completion: { sessionResult in
                 switch sessionResult {
                 case .success(let session):
                     if session.isNewUser {
@@ -240,7 +244,7 @@ extension Keyri {
                     self.sessionService = sessionService
                     let storageService = StorageService()
                     self.storageService = storageService
-                    self.userService = UserService(apiService: apiService, sessionService: sessionService, storageService: storageService, keychainService: keychainService)
+                    self.userService = UserService(apiService: apiService, sessionService: sessionService, storageService: storageService, keychainService: keychainService, encryptionService: encryptionService)
                     completion(.success(apiService.service))
                 case .failure(let error):
                     completion(.failure(error))

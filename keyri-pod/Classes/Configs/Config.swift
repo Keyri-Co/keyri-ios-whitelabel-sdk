@@ -26,7 +26,7 @@ struct Config {
     
     init() {
         #if DEBUG
-        let jsonData = Self.prodRawConfig.data(using: .utf8)
+        let jsonData = Self.devRawConfig.data(using: .utf8)
         #else
         let jsonData = Self.prodRawConfig.data(using: .utf8)
         #endif
