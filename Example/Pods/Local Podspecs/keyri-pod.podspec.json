@@ -25,14 +25,6 @@
       "keyri-pod/Assets/**/*"
     ]
   },
-  "dependencies": {
-    "Socket.IO-Client-Swift": [
-      "~> 16.0.1"
-    ],
-    "CryptoSwift": [
-      "~> 1.4.1"
-    ]
-  },
   "pod_target_xcconfig": {
     "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
   },

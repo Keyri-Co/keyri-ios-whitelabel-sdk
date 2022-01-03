@@ -6,18 +6,6 @@
 //
 
 import Foundation
-import SocketIO
-
-struct SessionApproveData: SocketData {
-    let cipher: String
-    let signature: String
-    var publicKey: String?
-    let action = "SESSION_VERIFY_APPROVE"
-    
-    func socketRepresentation() -> SocketData {
-        return ["cipher": cipher, "signature": signature, "publicKey": publicKey, "action": action]
-    }
-}
 
 final class SessionService {
     let keychainService: KeychainService

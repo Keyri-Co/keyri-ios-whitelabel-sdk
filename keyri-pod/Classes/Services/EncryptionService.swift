@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import CryptoSwift
 
 final class EncryptionService {
     private var rpPublicKey: String?

@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import CryptoSwift
 
 public final class Keyri: NSObject {
     private static var appkey: String?

@@ -6,8 +6,6 @@
 //
 
 import Foundation
-import SocketIO
-import Starscream
 
 enum SocketAction: String, Codable {
     case SESSION_VALIDATE

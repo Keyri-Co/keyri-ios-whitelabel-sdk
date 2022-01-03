@@ -1,11 +1,5 @@
 PODS:
-  - CryptoSwift (1.4.2)
-  - keyri-pod (0.1.12):
-    - CryptoSwift (~> 1.4.1)
-    - Socket.IO-Client-Swift (~> 16.0.1)
-  - Socket.IO-Client-Swift (16.0.1):
-    - Starscream (~> 4.0)
-  - Starscream (4.0.4)
+  - keyri-pod (0.1.12)
   - Toaster (2.3.0)
 
 DEPENDENCIES:
@@ -14,9 +8,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - CryptoSwift
-    - Socket.IO-Client-Swift
-    - Starscream
     - Toaster
 
 EXTERNAL SOURCES:
@@ -24,10 +15,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CryptoSwift: a532e74ed010f8c95f611d00b8bbae42e9fe7c17
-  keyri-pod: 7b602d7ec14020dede59915d58373593dcd99c41
-  Socket.IO-Client-Swift: c116d6dc9fd6be9c259bacfe143f8725bce7d79e
-  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
+  keyri-pod: fc0bf57fd005b3df4c772ef861670086567ef68e
   Toaster: c3473963c78e8cabbf6ea6f11ad0fdaae6f54987
 
 PODFILE CHECKSUM: 88ca32336612776c1cbddfbdedc9c1da0e23aa1f
