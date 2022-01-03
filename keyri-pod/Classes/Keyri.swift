@@ -64,7 +64,7 @@ public final class Keyri: NSObject {
                 assertionFailure(KeyriErrors.keyriSdkError.localizedDescription)
                 return
             }
-            self?.userService?.signUp(username: username, sessionId: sessionId, service: service, rpPublicKey: Self.rpPublicKey, custom: custom, completion: completion)
+            self?.userService?.signUp(username: username, sessionId: sessionId, service: service, custom: custom, completion: completion)
         }
     }
 
@@ -75,7 +75,7 @@ public final class Keyri: NSObject {
                 assertionFailure(KeyriErrors.keyriSdkError.localizedDescription)
                 return
             }
-            self?.userService?.login(sessionId: sessionId, service: service, account: account, rpPublicKey: Self.rpPublicKey, custom: custom, completion: completion)
+            self?.userService?.login(sessionId: sessionId, service: service, account: account, custom: custom, completion: completion)
         }
     }
     
@@ -141,39 +141,6 @@ public final class Keyri: NSObject {
         whitelabelInitIfNeeded { [weak self] result in
             switch result {
             case .success(let service):
-                
-                let serverPublicKey = "BOenio0DXyG31mAgUCwhdslelckmxzM7nNOyWAjkuo7skr1FhP7m2L8PaSRgIEH5ja9p+CwEIIKGqR4Hx5Ezam4="
-                let secret = try! self?.encryptionService?.keysExchange(publicKey: serverPublicKey)
-                
-//                let orig = "hello"
-//                let encData = AES.encryptionAESModeECB(messageData: orig.data(using: .utf8), key: secret!)!
-//                let encString = encData.utf8String()!
-//
-//                let decData = AES.decryptionAESModeECB(messageData: encString.data(using: .utf8), key: secret!)!
-//                let decString = decData.utf8String()!
-                
-                let orig = "hello Denys"
-                
-                
-                /* Generate random IV value. IV is public value. Either need to generate, or get it from elsewhere */
-                let config = Config()
-                let iv =  Array(config.ivAes.data(using: .utf8)!)
-
-                /* AES cryptor instance */
-                let aes = try! AES(key: Array(secret!.base64EncodedData()!) , blockMode: CBC(iv: iv), padding: .pkcs7)
-
-                
-                let cryptoAes = CryptoAES()
-                let crpEnc = CryptoAES.aesEncrypt(string: orig, secret: secret!)!
-                let crpDec = CryptoAES.aesDecrypt(string: crpEnc, secret: secret!)
-                print(crpDec)
-                
-                let encString = AES_test.encryptionAESModeECBInUtf8(message: orig, key: secret!)
-                
-                let decString = AES_test.decryptionAESModeECBInUtf8(message: encString, key: secret!)
-                
-                print("")
-
                 completion(.success(
                     self?.storageService?.getAllAccounts(serviceId: service.id).map { PublicAccount(username: $0.username, custom: $0.custom) } ?? []
                 ))
@@ -186,9 +153,7 @@ public final class Keyri: NSObject {
     public func authWithScanner(from viewController: UIViewController? = nil, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
         scanner = Scanner()
         scanner?.completion = { [weak self] result in
-            let url = URL(string: result)!
-            let components = URLComponents(string: result)
-            let sessionId = components?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
+            let sessionId = URLComponents(string: result)?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
             
             self?.onReadSessionId(sessionId, completion: { sessionResult in
                 switch sessionResult {
@@ -236,7 +201,7 @@ extension Keyri {
                 switch result {
                 case .success(let apiService):
                     self.apiService = apiService
-                    let encryptionService = EncryptionService()
+                    let encryptionService = EncryptionService(rpPublicKey: Self.rpPublicKey)
                     self.encryptionService = encryptionService
                     let keychainService = KeychainService(encryptionService: encryptionService)
                     self.keychainService = keychainService

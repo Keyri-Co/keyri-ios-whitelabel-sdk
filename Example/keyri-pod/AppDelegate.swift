@@ -17,23 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        Keyri.shared.initialize(
-//            appkey: "qUQ9DX176JT9JdQwK7N2XhRJ35GfJLzv",
-//            rpPublicKey: "00uVMpjv0sxLPMovInfRCB5kSX3WPKpx9RKNe3HFnTE=",
-//            callbackUrl: URL(string: "http://18.234.201.114:5000/users/session-mobile")!
-//        )
-        
         Keyri.configure(
-            appkey: "qUQ9DX176JT9JdQwK7N2XhRJ35GfJLzv",
-            rpPublicKey: "00uVMpjv0sxLPMovInfRCB5kSX3WPKpx9RKNe3HFnTE=",
-            callbackUrl: URL(string: "http://18.234.201.114:5000/users/session-mobile")!
+            appkey: "raB7SFWt27VoKqkPhaUrmWAsCJIO8Moj",
+            rpPublicKey: "BOenio0DXyG31mAgUCwhdslelckmxzM7nNOyWAjkuo7skr1FhP7m2L8PaSRgIEH5ja9p+CwEIIKGqR4Hx5Ezam4=",
+            callbackUrl: URL(string: "http://18.234.222.59:5000/users/session-mobile")!
         )
-        
-//        Keyri.configure(
-//            appkey: "raB7SFWt27VoKqkPhaUrmWAsCJIO8Moj",
-//            rpPublicKey: "00uVMpjv0sxLPMovInfRCB5kSX3WPKpx9RKNe3HFnTE=",
-//            callbackUrl: URL(string: "http://18.234.201.114:5000/users/session-mobile")!
-//        )
         return true
     }
 

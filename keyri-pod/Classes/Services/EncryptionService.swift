@@ -23,8 +23,11 @@ struct CryptoBox {
 }
 
 final class EncryptionService {
-//    private lazy var config = Config()
-//    private lazy var ivAes = config.ivAes
+    private var rpPublicKey: String?
+    
+    init(rpPublicKey: String?) {
+        self.rpPublicKey = rpPublicKey
+    }
     
     func generateCryproBox() -> CryptoBox? {
         let sodium = Sodium()
@@ -35,32 +38,6 @@ final class EncryptionService {
         let privateKeyString = keyPair.secretKey.base64EncodedString()
         
         return CryptoBox(publicKey: publicKeyString, privateKey: privateKeyString)
-    }
-        
-    func encryptSeal(string: String, publicKey: String) -> String? {
-        let stringBytes = string.bytes
-        let sodium = Sodium()
-        
-        guard let publicKeyBytes = publicKey.base64EncodedData() else {
-            return nil
-        }
-        
-        let sealResult = sodium.box.seal(message: stringBytes, recipientPublicKey: publicKeyBytes)
-        
-        return sealResult?.base64EncodedString()
-    }
-    
-    func createSignature(string: String, privateKey: String) -> String? {
-        let stringBytes = string.bytes
-        let sodium = Sodium()
-        
-        guard let privateKeyBytes = privateKey.base64EncodedData() else {
-            return nil
-        }
-        
-        let signature = sodium.sign.signature(message: stringBytes, secretKey: privateKeyBytes)
-        
-        return signature?.base64EncodedString()
     }
 }
 
@@ -139,9 +116,9 @@ extension EncryptionService {
         return shared.base64EncodedString()
     }
     
-    // should be private
+    //TODO: - Should be private
     func getSecretKey() -> String? {
-        let serverPublicKey = "BOenio0DXyG31mAgUCwhdslelckmxzM7nNOyWAjkuo7skr1FhP7m2L8PaSRgIEH5ja9p+CwEIIKGqR4Hx5Ezam4="
+        guard let serverPublicKey = rpPublicKey else { return nil }
         let secret = try! keysExchange(publicKey: serverPublicKey)
         return secret
     }
@@ -225,8 +202,13 @@ final class KeychainHelper {
         guard let keyData = SecKeyCopyExternalRepresentation(secKey, &error) as Data? else {
             fatalError()
         }
-        let keyString = keyData.base64EncodedString()
-        return keyString
+        let secp256r1Header = Data([
+            0x30, 0x59, 0x30, 0x13, 0x06, 0x07, 0x2a, 0x86, 0x48, 0xce, 0x3d, 0x02, 0x01,
+            0x06, 0x08, 0x2a, 0x86, 0x48, 0xce, 0x3d, 0x03, 0x01, 0x07, 0x03, 0x42, 0x00
+        ])
+        let completeData = secp256r1Header + keyData
+        let keyString = completeData.base64EncodedString(options: .lineLength64Characters)
+        return keyString.replacingOccurrences(of: "\r\n", with: "")
     }
     
     static func convertbase64StringToSecKey(stringKey: String) -> SecKey? {

@@ -21,29 +21,21 @@ struct SessionApproveData: SocketData {
 
 final class SessionService {
     let keychainService: KeychainService
-    let socketService: SocketService2
+    let socketService: SocketService
     let encryptionService: EncryptionService
     
     var sessionId: String?
         
     init(keychainService: KeychainService, encryptionService: EncryptionService) {
         self.keychainService = keychainService
-//        self.socketService = SocketService()
-        self.socketService = SocketService2()
+        self.socketService = SocketService()
         self.encryptionService = encryptionService
     }
     
-    func verifyUserSession(encUserId: String, sessionId: String, rpPublicKey: String?, custom: String?, usePublicKey: Bool = false, completion: @escaping (Result<Void, Error>) -> Void) {
-//        guard let box = try? keychainService.getCryptoBox() else {
-//            completion(.failure(KeyriErrors.keyriSdkError))
-//            return
-//        }
-        
+    func verifyUserSession(encUserId: String, sessionId: String, custom: String?, usePublicKey: Bool = false, completion: @escaping (Result<Void, Error>) -> Void) {
         guard
             let secret = encryptionService.getSecretKey(),
             let userId = CryptoAES.aesDecrypt(string: encUserId, secret: secret)
-//            let userIdData = AES_test.decryptionAESModeECB(messageData: encUserId.data(using: .utf8), key: box.privateKey),
-//            let userId = String(data: userIdData, encoding: .utf8)
         else {
             completion(.failure(KeyriErrors.keyriSdkError))
             return
@@ -52,8 +44,6 @@ final class SessionService {
         let sessionKey = String.random(length: 32)
         guard
             let encSessionKey = CryptoAES.aesEncrypt(string: sessionKey, secret: secret)
-//            let encSessionKeyData = AES_test.encryptionAESModeECB(messageData: sessionKey.data(using: .utf8), key: box.privateKey),
-//            let encSessionKey = String(data: encSessionKeyData, encoding: .utf8)
         else {
             completion(.failure(KeyriErrors.keyriSdkError))
             return
@@ -66,11 +56,9 @@ final class SessionService {
             return
         }
                 
-        let payload = Payload(sessionId: sessionId, sessionKey: encSessionKey)
         let validateMessage = ValidateMessage(sessionId: sessionId, sessionKey: encSessionKey)
         
         socketService.extraHeaders = ["userSuffix": String(encUserId.prefix(15))]
-
         socketService.initializeSocket { [weak self] result in
             guard result else {
                 completion(.failure(KeyriErrors.keyriSdkError))
@@ -78,12 +66,8 @@ final class SessionService {
                 return
             }
             
-//            self?.socketService.emit(event: "SESSION_VALIDATE", data: payload) { result in
             self?.socketService.sendEvent(message: validateMessage) { result in
-                guard
-                    case let .success(message) = result,
-                    let publicKey = rpPublicKey ?? message.publicKey
-                else {
+                guard case let .success(message) = result else {
                     if case let .failure(error) = result {
                         completion(.failure(error))
                         assertionFailure(error.localizedDescription)
@@ -96,8 +80,6 @@ final class SessionService {
                 
                 guard
                     let trySessionKey = CryptoAES.aesDecrypt(string: message.sessionKey, secret: secret)
-//                    let sessionKeyData = AES_test.decryptionAESModeECB(messageData: message.sessionKey.data(using: .utf8), key: box.privateKey),
-//                    let trySessionKey = String(data: sessionKeyData, encoding: .utf8)
                 else {
                     completion(.failure(KeyriErrors.keyriSdkError))
                     return
@@ -129,30 +111,18 @@ final class SessionService {
                 
                 guard
                     let theJSONText = String(data: theJSONData, encoding: .ascii),
-                    let encryptResult = self?.encryptionService.ecdhEncrypt(string: theJSONText, publicKey: publicKey)
-//                    let encryptResult = self?.encryptionService.encryptSeal(string: theJSONText, publicKey: publicKey)
+                    let encryptResult = CryptoAES.aesEncrypt(string: theJSONText, secret: secret)
                 else {
                     assertionFailure("Sodium encrypt fails")
                     return
                 }
-                guard let signature = self?.encryptionService.ecdhCreateSignature(string: theJSONText) else {
-//                guard let signature = self?.encryptionService.createSignature(string: theJSONText, privateKey: box.privateKey) else {
-                    assertionFailure("Create signature fails")
-                    return
-                }
-                
-                var sessionApproveData = SessionApproveData(cipher: encryptResult, signature: signature, publicKey: nil)
-                var verifyApproveMessage = VerifyApproveMessage(cipher: encryptResult, signature: signature, publicKey: nil)
+                var verifyApproveMessage = VerifyApproveMessage(cipher: encryptResult, publicKey: nil, iv: Config().ivAes)
                 if usePublicKey {
                     if let publicSecKey = try? self?.encryptionService.loadPublicKey(), let publicKey = KeychainHelper.convertSecKeyToBase64String(secKey: publicSecKey) {
-                        sessionApproveData.publicKey = publicKey
                         verifyApproveMessage.publicKey = publicKey
                     }
-//                    sessionApproveData.publicKey = box.publicBuffer?.base64EncodedString()
-//                    verifyApproveMessage.publicKey = box.publicBuffer?.base64EncodedString()
                 }
                 
-//                self?.socketService.emit(event: "message", data: sessionApproveData) { result in
                 self?.socketService.sendEvent(message: verifyApproveMessage) { result in
                     // callback doesn't reaching
                     print(result)

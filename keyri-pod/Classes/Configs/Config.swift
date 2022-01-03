@@ -53,7 +53,7 @@ extension Config {
             {
                 "API_URL": "https://dev-api.keyri.co",
                 "WS_URL": "wss://dev-api.keyri.co",
-                "IV_AES": "1234567891234567",
+                "IV_AES": "wZJmSGa5cdCkgpMlG3/2Bg==",
             }
         """
     }
@@ -63,7 +63,7 @@ extension Config {
             {
                 "API_URL": "https://api.keyri.co",
                 "WS_URL": "https://api.keyri.co",
-                "IV_AES": "1234567891234567",
+                "IV_AES": "wZJmSGa5cdCkgpMlG3/2Bg==",
             }
         """
     }
