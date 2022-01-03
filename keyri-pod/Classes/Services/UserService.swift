@@ -53,19 +53,14 @@ final class UserService {
         
         let encUserId = sessionAccount.userId
         
-        guard let box = try? keychainService.getCryptoBox() else {
-            completion(.failure(KeyriErrors.keyriSdkError))
-            return
-        }
         guard
-            let userIdData = AES_test.decryptionAESModeECB(messageData: encUserId.data(using: .utf8), key: box.privateKey),
-            let userId = String(data: userIdData, encoding: .utf8)
+            let userId = encryptionService.aesDecrypt(string: encUserId)
         else {
             completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
         
-        apiService.authMobile(url: callbackUrl, userId: userId, username: sessionAccount.username, clientPublicKey: box.publicKey, extendedHeaders: extendedHeaders, completion: completion)
+        apiService.authMobile(url: callbackUrl, userId: userId, username: sessionAccount.username, clientPublicKey: try? encryptionService.loadPublicKeyString(), extendedHeaders: extendedHeaders, completion: completion)
     }
     
     func mobileSignUp(username: String, service: Service, callbackUrl: URL, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
@@ -74,18 +69,14 @@ final class UserService {
             completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
-        guard let box = try? keychainService.getCryptoBox() else {
-            completion(.failure(KeyriErrors.keyriSdkError))
-            return
-        }
         guard
-            let userIdData = AES_test.decryptionAESModeECB(messageData: account.userId.data(using: .utf8), key: box.privateKey),
-            let userId = String(data: userIdData, encoding: .utf8) else {
+            let userId = encryptionService.aesDecrypt(string: account.userId)
+        else {
             completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
         
-        apiService.authMobile(url: callbackUrl, userId: userId, username: username, clientPublicKey: box.publicKey, extendedHeaders: extendedHeaders, completion: completion)
+        apiService.authMobile(url: callbackUrl, userId: userId, username: username, clientPublicKey: try? encryptionService.loadPublicKeyString(), extendedHeaders: extendedHeaders, completion: completion)
     }
 }
 
@@ -100,9 +91,8 @@ extension UserService {
         let encryptTarget = "\(deviceId)\(uniqueId)"
         
         guard
-            let secret = encryptionService.getSecretKey(),
-            let userId = CryptoAES.aesEncrypt(string: encryptTarget, secret: secret),
-            let encUserId = CryptoAES.aesEncrypt(string: userId, secret: secret)
+            let userId = encryptionService.aesEncrypt(string: encryptTarget),
+            let encUserId = encryptionService.aesEncrypt(string: userId)
         else {
             assertionFailure(KeyriErrors.keyriSdkError.errorDescription ?? "")
             return (nil, nil)

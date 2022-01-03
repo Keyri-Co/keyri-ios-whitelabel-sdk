@@ -1,6 +1,0 @@
-framework module Sodium {
-  umbrella header "Sodium-Fork-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -41,7 +41,6 @@ TODO: Add long description of the pod here.
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
   
-  s.dependency 'Sodium-Fork', '~> 0.8.2'
   s.dependency 'Socket.IO-Client-Swift', '~> 16.0.1'
   s.dependency 'CryptoSwift', '~> 1.4.1'
 

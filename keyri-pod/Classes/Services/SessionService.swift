@@ -34,8 +34,7 @@ final class SessionService {
     
     func verifyUserSession(encUserId: String, sessionId: String, custom: String?, usePublicKey: Bool = false, completion: @escaping (Result<Void, Error>) -> Void) {
         guard
-            let secret = encryptionService.getSecretKey(),
-            let userId = CryptoAES.aesDecrypt(string: encUserId, secret: secret)
+            let userId = encryptionService.aesDecrypt(string: encUserId)
         else {
             completion(.failure(KeyriErrors.keyriSdkError))
             return
@@ -43,7 +42,7 @@ final class SessionService {
 
         let sessionKey = String.random(length: 32)
         guard
-            let encSessionKey = CryptoAES.aesEncrypt(string: sessionKey, secret: secret)
+            let encSessionKey = encryptionService.aesEncrypt(string: sessionKey)
         else {
             completion(.failure(KeyriErrors.keyriSdkError))
             return
@@ -79,7 +78,7 @@ final class SessionService {
                 }
                 
                 guard
-                    let trySessionKey = CryptoAES.aesDecrypt(string: message.sessionKey, secret: secret)
+                    let trySessionKey = self?.encryptionService.aesDecrypt(string: message.sessionKey)
                 else {
                     completion(.failure(KeyriErrors.keyriSdkError))
                     return
@@ -111,14 +110,14 @@ final class SessionService {
                 
                 guard
                     let theJSONText = String(data: theJSONData, encoding: .ascii),
-                    let encryptResult = CryptoAES.aesEncrypt(string: theJSONText, secret: secret)
+                    let encryptResult = self?.encryptionService.aesEncrypt(string: theJSONText)
                 else {
                     assertionFailure("Sodium encrypt fails")
                     return
                 }
                 var verifyApproveMessage = VerifyApproveMessage(cipher: encryptResult, publicKey: nil, iv: Config().ivAes)
                 if usePublicKey {
-                    if let publicSecKey = try? self?.encryptionService.loadPublicKey(), let publicKey = KeychainHelper.convertSecKeyToBase64String(secKey: publicSecKey) {
+                    if let publicKey = try? self?.encryptionService.loadPublicKeyString() {
                         verifyApproveMessage.publicKey = publicKey
                     }
                 }

@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Sodium
 import UIKit
 import CryptoSwift
 
@@ -203,7 +202,7 @@ extension Keyri {
                     self.apiService = apiService
                     let encryptionService = EncryptionService(rpPublicKey: Self.rpPublicKey)
                     self.encryptionService = encryptionService
-                    let keychainService = KeychainService(encryptionService: encryptionService)
+                    let keychainService = KeychainService()
                     self.keychainService = keychainService
                     let sessionService = SessionService(keychainService: keychainService, encryptionService: encryptionService)
                     self.sessionService = sessionService

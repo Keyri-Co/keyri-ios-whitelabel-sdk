@@ -26,9 +26,6 @@
     ]
   },
   "dependencies": {
-    "Sodium-Fork": [
-      "~> 0.8.2"
-    ],
     "Socket.IO-Client-Swift": [
       "~> 16.0.1"
     ],

@@ -6,21 +6,7 @@
 //
 
 import Foundation
-import Sodium
-//import CryptoSwift
-
-struct CryptoBox {
-    let publicKey: String
-    let privateKey: String
-
-    var publicBuffer: [UInt8]? {
-        guard let nsData = NSData(base64Encoded: publicKey, options: .ignoreUnknownCharacters) else {
-            return nil
-        }
-        let bytes = [UInt8](nsData as Data)
-        return bytes
-    }
-}
+import CryptoSwift
 
 final class EncryptionService {
     private var rpPublicKey: String?
@@ -29,20 +15,34 @@ final class EncryptionService {
         self.rpPublicKey = rpPublicKey
     }
     
-    func generateCryproBox() -> CryptoBox? {
-        let sodium = Sodium()
-        guard let keyPair = sodium.sign.keyPair() else {
-            return nil
-        }
-        let publicKeyString = keyPair.publicKey.base64EncodedString()
-        let privateKeyString = keyPair.secretKey.base64EncodedString()
+    func aesEncrypt(string: String) -> String? {
+        guard
+            let ivData = Data(base64Encoded: Config().ivAes),
+            let secret = getSecretKey(),
+            let secretBase64EncodedData = secret.base64EncodedData(),
+            let stringData = string.data(using: .utf8),
+            let aes = try? AES(key: Array(secretBase64EncodedData), blockMode: CBC(iv: Array(ivData)), padding: .pkcs7)
+        else { return nil }
         
-        return CryptoBox(publicKey: publicKeyString, privateKey: privateKeyString)
+        return try? Data(aes.encrypt(stringData.bytes)).base64EncodedString()
+    }
+    
+    func aesDecrypt(string: String) -> String? {
+        guard
+            let ivData = Data(base64Encoded: Config().ivAes),
+            let secret = getSecretKey(),
+            let secretBase64EncodedData = secret.base64EncodedData(),
+            let stringData = string.base64EncodedData(),
+            let aes = try? AES(key: Array(secretBase64EncodedData), blockMode: CBC(iv: Array(ivData)), padding: .pkcs7),
+            let decryptedBytes = try? aes.decrypt(stringData)
+        else { return nil }
+                        
+        return Data(decryptedBytes).utf8String()
     }
 }
 
 extension EncryptionService {
-    func loadKey(name: String = "com.novos.keyri.Keyri") throws -> SecKey {
+    private func loadKey(name: String = "com.novos.keyri.Keyri") throws -> SecKey {
         if let key = KeychainHelper.loadKey(name: name) {
             return key
         } else {
@@ -50,7 +50,7 @@ extension EncryptionService {
         }
     }
     
-    func loadPublicKey(name: String = "com.novos.keyri.Keyri") throws -> SecKey? {
+    private func loadPublicKey(name: String = "com.novos.keyri.Keyri") throws -> SecKey? {
         if let key = KeychainHelper.loadKey(name: name) {
             return SecKeyCopyPublicKey(key)
         } else {
@@ -59,51 +59,15 @@ extension EncryptionService {
         }
     }
     
-    func ecdhEncrypt(string: String, publicKey: String) -> String? {
-        guard
-            let publicSecKey = KeychainHelper.convertbase64StringToSecKey(stringKey: publicKey)
-        else { return nil }
-        
-        guard let data = string.data(using: .utf8) else { return nil }
-        let encryptedData = SecKeyCreateEncryptedData(publicSecKey, .eciesEncryptionCofactorX963SHA256AESGCM, data as CFData, nil) as Data?
-        return encryptedData?.base64EncodedString()
-    }
-    
-    func ecdhDecrypt(string: String) -> String? {
-        guard let privateSecKey = try? loadKey() else { return nil }
-        guard let data = Data(base64Encoded: string) else { return nil }
-        let decryptedData = SecKeyCreateDecryptedData(privateSecKey, .eciesEncryptionCofactorX963SHA256AESGCM, data as CFData, nil) as Data?
-        return decryptedData?.utf8String()
-    }
-    
-    func ecdhCreateSignature(string: String) -> String? {
-        guard let privateKey = try? loadKey() else { return nil }
-        guard let data = string.data(using: .utf8) else { return nil }
-        let signature = SecKeyCreateSignature(privateKey, .ecdsaSignatureMessageX962SHA256, data as CFData, nil) as Data?
-        return signature?.base64EncodedString()
-    }
-    
-    func ecdhValidateSignature(string: String, signatureString: String) -> Bool {
-        guard
-            let privateKey = try? loadKey(),
-            let publicKey = SecKeyCopyPublicKey(privateKey)
-        else { return false }
-        let algorithm: SecKeyAlgorithm = .ecdsaSignatureMessageX962SHA256
-        guard
-            SecKeyIsAlgorithmSupported(publicKey, .verify, algorithm),
-            let clearTextData = string.data(using: .utf8),
-            let signatureData = Data(base64Encoded: signatureString)
-        else {
-            return false
+    func loadPublicKeyString(name: String = "com.novos.keyri.Keyri") throws -> String? {
+        if let publicSecKey = try loadPublicKey(), let publicKey = KeychainHelper.convertSecKeyToBase64String(secKey: publicSecKey) {
+            return publicKey
+        } else {
+            return nil
         }
-        guard SecKeyVerifySignature(publicKey, algorithm, clearTextData as CFData, signatureData as CFData, nil) else {
-            return false
-        }
-        
-        return true
     }
     
-    func keysExchange(publicKey: String) throws -> String? {
+    private func keysExchange(publicKey: String) throws -> String? {
         let privateSecKey = try loadKey()
         guard let publicSecKey = KeychainHelper.convertbase64StringToSecKey(stringKey: publicKey) else {
             return nil
@@ -116,17 +80,10 @@ extension EncryptionService {
         return shared.base64EncodedString()
     }
     
-    //TODO: - Should be private
-    func getSecretKey() -> String? {
+    private func getSecretKey() -> String? {
         guard let serverPublicKey = rpPublicKey else { return nil }
         let secret = try! keysExchange(publicKey: serverPublicKey)
         return secret
-    }
-}
-
-extension Bytes {
-    func base64EncodedString() -> String {
-        Data(self).base64EncodedString()
     }
 }
 
