@@ -199,10 +199,10 @@ extension Keyri {
                 switch result {
                 case .success(let apiService):
                     self.apiService = apiService
-                    let encryptionService = EncryptionService(rpPublicKey: Self.rpPublicKey)
-                    self.encryptionService = encryptionService
                     let keychainService = KeychainService()
                     self.keychainService = keychainService
+                    let encryptionService = EncryptionService(keychainService: keychainService, rpPublicKey: Self.rpPublicKey)
+                    self.encryptionService = encryptionService
                     let sessionService = SessionService(keychainService: keychainService, encryptionService: encryptionService)
                     self.sessionService = sessionService
                     let storageService = StorageService()

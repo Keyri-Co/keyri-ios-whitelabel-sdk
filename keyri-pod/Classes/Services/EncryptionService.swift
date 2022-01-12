@@ -8,15 +8,21 @@
 import Foundation
 
 final class EncryptionService {
+    private enum Constants {
+        static let ivKeyName = "IV_KEY_NAME"
+    }
+    
+    private let keychainService: KeychainService
     private var rpPublicKey: String?
     
-    init(rpPublicKey: String?) {
+    init(keychainService: KeychainService, rpPublicKey: String?) {
+        self.keychainService = keychainService
         self.rpPublicKey = rpPublicKey
     }
     
     func aesEncrypt(string: String) -> String? {
         guard
-            let ivData = Data(base64Encoded: Config().ivAes),
+            let ivData = Data(base64Encoded: getIV()),
             let secret = getSecretKey(),
             let secretBase64EncodedData = secret.base64EncodedData(),
             let stringData = string.data(using: .utf8),
@@ -28,7 +34,7 @@ final class EncryptionService {
     
     func aesDecrypt(string: String) -> String? {
         guard
-            let ivData = Data(base64Encoded: Config().ivAes),
+            let ivData = Data(base64Encoded: getIV()),
             let secret = getSecretKey(),
             let secretBase64EncodedData = secret.base64EncodedData(),
             let stringData = string.base64EncodedData(),
@@ -37,6 +43,21 @@ final class EncryptionService {
         else { return nil }
                         
         return Data(decryptedBytes).utf8String()
+    }
+    
+    func getIV() -> String {
+        if let iv = try? keychainService.get(valueForKey: Constants.ivKeyName) {
+            return iv
+        } else {
+            let iv = AES.randomIV(AES.blockSize)
+            let ivString = Data(iv).base64EncodedString()
+            do {
+                try keychainService.set(value: ivString, forKey: Constants.ivKeyName)
+            } catch {
+                print(error)
+            }
+            return ivString
+        }
     }
 }
 
