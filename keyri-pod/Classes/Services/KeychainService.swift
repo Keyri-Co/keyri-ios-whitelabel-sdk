@@ -8,7 +8,7 @@
 import Foundation
 
 final class KeychainService {
-    private lazy var keychain = Keychain(service: "com.novos.keyri.Keyri")
+    private lazy var keychain = Keychain(service: "com.keyri.whitelabelsdk")
     
     func set(value: String, forKey key: String) throws {
         try keychain.save(key: key, value: value)

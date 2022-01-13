@@ -8,15 +8,22 @@
 import Foundation
 
 final class EncryptionService {
+    private enum Constants {
+        static let ivKeyName = "IV_KEY_NAME"
+        static let secKeyName = "com.keyri.whitelabelsdk"
+    }
+    
+    private let keychainService: KeychainService
     private var rpPublicKey: String?
     
-    init(rpPublicKey: String?) {
+    init(keychainService: KeychainService, rpPublicKey: String?) {
+        self.keychainService = keychainService
         self.rpPublicKey = rpPublicKey
     }
     
     func aesEncrypt(string: String) -> String? {
         guard
-            let ivData = Data(base64Encoded: Config().ivAes),
+            let ivData = Data(base64Encoded: getIV()),
             let secret = getSecretKey(),
             let secretBase64EncodedData = secret.base64EncodedData(),
             let stringData = string.data(using: .utf8),
@@ -28,7 +35,7 @@ final class EncryptionService {
     
     func aesDecrypt(string: String) -> String? {
         guard
-            let ivData = Data(base64Encoded: Config().ivAes),
+            let ivData = Data(base64Encoded: getIV()),
             let secret = getSecretKey(),
             let secretBase64EncodedData = secret.base64EncodedData(),
             let stringData = string.base64EncodedData(),
@@ -38,10 +45,25 @@ final class EncryptionService {
                         
         return Data(decryptedBytes).utf8String()
     }
+    
+    func getIV() -> String {
+        if let iv = try? keychainService.get(valueForKey: Constants.ivKeyName) {
+            return iv
+        } else {
+            let iv = AES.randomIV(AES.blockSize)
+            let ivString = Data(iv).base64EncodedString()
+            do {
+                try keychainService.set(value: ivString, forKey: Constants.ivKeyName)
+            } catch {
+                print(error)
+            }
+            return ivString
+        }
+    }
 }
 
 extension EncryptionService {
-    private func loadKey(name: String = "com.novos.keyri.Keyri") throws -> SecKey {
+    private func loadKey(name: String = Constants.secKeyName) throws -> SecKey {
         if let key = KeychainHelper.loadKey(name: name) {
             return key
         } else {
@@ -49,7 +71,7 @@ extension EncryptionService {
         }
     }
     
-    private func loadPublicKey(name: String = "com.novos.keyri.Keyri") throws -> SecKey? {
+    private func loadPublicKey(name: String = Constants.secKeyName) throws -> SecKey? {
         if let key = KeychainHelper.loadKey(name: name) {
             return SecKeyCopyPublicKey(key)
         } else {
@@ -58,7 +80,7 @@ extension EncryptionService {
         }
     }
     
-    func loadPublicKeyString(name: String = "com.novos.keyri.Keyri") throws -> String? {
+    func loadPublicKeyString() throws -> String? {
         if let publicSecKey = try loadPublicKey(), let publicKey = KeychainHelper.convertSecKeyToBase64String(secKey: publicSecKey) {
             return publicKey
         } else {

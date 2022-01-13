@@ -97,20 +97,21 @@ final class SessionService {
                 }
                 
                 guard
+                    let self = self,
                     let theJSONText = String(data: theJSONData, encoding: .ascii),
-                    let encryptResult = self?.encryptionService.aesEncrypt(string: theJSONText)
+                    let encryptResult = self.encryptionService.aesEncrypt(string: theJSONText)
                 else {
                     assertionFailure("Sodium encrypt fails")
                     return
                 }
-                var verifyApproveMessage = VerifyApproveMessage(cipher: encryptResult, publicKey: nil, iv: Config().ivAes)
+                var verifyApproveMessage = VerifyApproveMessage(cipher: encryptResult, publicKey: nil, iv: self.encryptionService.getIV())
                 if usePublicKey {
-                    if let publicKey = try? self?.encryptionService.loadPublicKeyString() {
+                    if let publicKey = try? self.encryptionService.loadPublicKeyString() {
                         verifyApproveMessage.publicKey = publicKey
                     }
                 }
                 
-                self?.socketService.sendEvent(message: verifyApproveMessage) { result in
+                self.socketService.sendEvent(message: verifyApproveMessage) { result in
                     // callback doesn't reaching
                     print(result)
                 }
