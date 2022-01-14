@@ -67,7 +67,7 @@ class ViewController: UIViewController {
     
     @IBAction func mobileSignUp(_ sender: Any) {
         keyri = Keyri()
-        keyri?.mobileSignUp(username: "tester 1", custom: "custom mobile signup", extendedHeaders: ["TestKey1": "TestVal1", "TestKey2": "TestVal2"]) { [weak self] result in
+        keyri?.mobileSignup(username: "tester 1", custom: "custom mobile signup", extendedHeaders: ["TestKey1": "TestVal1", "TestKey2": "TestVal2"]) { [weak self] result in
             self?.keyri = nil
             switch result {
             case .success(let response):
@@ -124,7 +124,7 @@ extension ViewController: QRScannerCodeDelegate {
                         self.keyri = nil
                         return
                     }
-                    self.keyri?.signUp(username: username, service: session.service, custom: "test custom signup") { (result: Result<Void, Error>) in
+                    self.keyri?.signup(username: username, service: session.service, custom: "test custom signup") { (result: Result<Void, Error>) in
                         self.keyri = nil
                         switch result {
                         case .success(_):

@@ -84,7 +84,7 @@ public final class Keyri: NSObject {
      *  - custom: custom argument
      *  - completion: returns Void if success or keyriSdkError if something went wrong
      */
-    public func signUp(username: String, service: Service, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
+    public func signup(username: String, service: Service, custom: String? = nil, completion: @escaping (Result<Void, Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
             guard let sessionId = self?.sessionService?.sessionId else {
                 completion(.failure(KeyriErrors.keyriSdkError))
@@ -106,7 +106,7 @@ public final class Keyri: NSObject {
      *  - custom: custom argument
      *  - completion: returns Void if success or keyriSdkError if something went wrong
      */
-    public func login(account: PublicAccount, service: Service, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
+    public func login(account: PublicAccount, service: Service, custom: String? = nil, completion: @escaping (Result<Void, Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
             guard let sessionId = self?.sessionService?.sessionId else {
                 completion(.failure(KeyriErrors.keyriSdkError))
@@ -127,7 +127,7 @@ public final class Keyri: NSObject {
      *  - extendedHeaders: custom headers
      *  - completion: returns response dictionary if success or keyriSdkError if something went wrong
      */
-    public func mobileSignUp(username: String, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+    public func mobileSignup(username: String, custom: String? = nil, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
             switch result {
             case .success(let service):
@@ -165,7 +165,7 @@ public final class Keyri: NSObject {
      *  - extendedHeaders: custom headers
      *  - completion: returns response dictionary if success or keyriSdkError if something went wrong
      */
-    public func mobileLogin(account: PublicAccount, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+    public func mobileLogin(account: PublicAccount, custom: String? = nil, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
             switch result {
             case .success(let service):
@@ -217,11 +217,11 @@ public final class Keyri: NSObject {
      * returns multipleAccountsNotAllowedError as failure result in completion
      *
      * - Parameters:
-     *  - viewController: root view controller from which scanner will be presented
+     *  - viewController: root view controller from which scanner will be presented or UIApplication keyWindow rootViewController in case if viewController argument is nil
      *  - custom: custom argument
      *  - completion: returns Void if success or accountNotFoundError if fails to login
      */
-    public func authWithScanner(from viewController: UIViewController? = nil, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
+    public func authWithScanner(from viewController: UIViewController? = nil, custom: String? = nil, completion: @escaping (Result<Void, Error>) -> Void) {
         scanner = Scanner()
         scanner?.completion = { [weak self] result in
             let sessionId = URLComponents(string: result)?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
@@ -231,7 +231,7 @@ public final class Keyri: NSObject {
                 case .success(let session):
                     if session.isNewUser {
                         guard let username = session.username else { return }
-                        self?.signUp(username: username, service: session.service, custom: custom, completion: completion)
+                        self?.signup(username: username, service: session.service, custom: custom, completion: completion)
                     } else {
                         self?.accounts() { result in
                             if case .success(let accounts) = result, let account = accounts.first {
@@ -246,7 +246,7 @@ public final class Keyri: NSObject {
                 }
             })
         }
-        scanner?.show()
+        scanner?.show(from: viewController)
     }
 }
 
@@ -324,8 +324,8 @@ extension Keyri {
      *  - completion: returns Void if success or keyriSdkError if something went wrong
      */
     @objc
-    public func signUp(username: String, service: Service, custom: String?, completion: @escaping (Error?) -> Void) {
-        signUp(username: username, service: service, custom: custom) { (result: Result<Void, Error>) in
+    public func signup(username: String, service: Service, custom: String? = nil, completion: @escaping (Error?) -> Void) {
+        signup(username: username, service: service, custom: custom) { (result: Result<Void, Error>) in
             switch result {
             case .success():
                 completion(nil)
@@ -347,7 +347,7 @@ extension Keyri {
      *  - completion: returns Void if success or keyriSdkError if something went wrong
      */
     @objc
-    public func login(account: PublicAccount, service: Service, custom: String?, completion: @escaping (Error?) -> Void) {
+    public func login(account: PublicAccount, service: Service, custom: String? = nil, completion: @escaping (Error?) -> Void) {
         login(account: account, service: service, custom: custom) { (result: Result<Void, Error>) in
             switch result {
             case .success():
@@ -369,8 +369,8 @@ extension Keyri {
      *  - completion: returns response dictionary if success or keyriSdkError if something went wrong
      */
     @objc
-    public func mobileSignUp(username: String, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping ([String: Any]?, Error?) -> Void) {
-        mobileSignUp(username: username, custom: custom, extendedHeaders: extendedHeaders) { (result: Result<[String : Any], Error>) in
+    public func mobileSignup(username: String, custom: String? = nil, extendedHeaders: [String: String]? = nil, completion: @escaping ([String: Any]?, Error?) -> Void) {
+        mobileSignup(username: username, custom: custom, extendedHeaders: extendedHeaders) { (result: Result<[String : Any], Error>) in
             switch result {
             case .success(let json):
                 completion(json, nil)
@@ -390,7 +390,7 @@ extension Keyri {
      *  - completion: returns response dictionary if success or keyriSdkError if something went wrong
      */
     @objc
-    public func mobileLogin(account: PublicAccount, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping ([String: Any]?, Error?) -> Void) {
+    public func mobileLogin(account: PublicAccount, custom: String? = nil, extendedHeaders: [String: String]? = nil, completion: @escaping ([String: Any]?, Error?) -> Void) {
         mobileLogin(account: account, custom: custom, extendedHeaders: extendedHeaders) { (result: Result<[String : Any], Error>) in
             switch result {
             case .success(let json):
@@ -426,7 +426,7 @@ extension Keyri {
      *  - completion: returns Void if success or accountNotFoundError if fails to login
      */
     @objc
-    public func authWithScanner(from viewController: UIViewController? = nil, custom: String?, completion: @escaping (Error?) -> Void) {
+    public func authWithScanner(from viewController: UIViewController? = nil, custom: String? = nil, completion: @escaping (Error?) -> Void) {
         authWithScanner(from: viewController, custom: custom) { (result: Result<Void, Error>) in
             switch result {
             case .success():
