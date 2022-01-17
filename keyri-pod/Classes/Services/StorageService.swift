@@ -79,6 +79,15 @@ final class StorageService {
         createOrUpdate(userServiceData: userServiceData)
     }
     
+    func remove(account: PublicAccount, from service: Service) {
+        guard var userServiceData = getService(serviceId: service.id) else {
+            assertionFailure("Service by serviceId not found")
+            return
+        }
+        userServiceData.accounts = userServiceData.accounts.filter { $0.value.username != account.username }
+        createOrUpdate(userServiceData: userServiceData)
+    }
+    
     func getAllAccounts(serviceId: String) -> [Account] {
         guard let userServiceData = getService(serviceId: serviceId) else {
             assertionFailure("Service by serviceId not found")

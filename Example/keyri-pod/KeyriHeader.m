@@ -25,7 +25,7 @@
         }];
         
         Service *service = [[Service alloc] init];
-        [keyri signUpWithUsername:@"" service:service custom:@"" completion:^(NSError * _Nullable error) {
+        [keyri signupWithUsername:@"" service:service custom:@"" completion:^(NSError * _Nullable error) {
             
         }];
         
@@ -34,7 +34,7 @@
             
         }];
         
-        [keyri mobileSignUpWithUsername:@"" custom:@"" extendedHeaders:@{} completion:^(NSDictionary<NSString *,id> * _Nullable json, NSError * _Nullable error) {
+        [keyri mobileSignupWithUsername:@"" custom:@"" extendedHeaders:@{} completion:^(NSDictionary<NSString *,id> * _Nullable json, NSError * _Nullable error) {
             
         }];
         

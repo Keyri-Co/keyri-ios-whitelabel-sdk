@@ -8,6 +8,9 @@
 import Foundation
 import UIKit
 
+/**
+ * Keyri SDK public API.
+ */
 public final class Keyri: NSObject {
     private static var appkey: String?
     private static var rpPublicKey: String?
@@ -22,6 +25,13 @@ public final class Keyri: NSObject {
     private var keychainService: KeychainService?
     private var encryptionService: EncryptionService?
     
+    /**
+     *  SDK configuration
+     * - Parameters:
+     *  - appkey: Application unique key
+     *  - rpPublicKey: server public key
+     *  - callbackUrl: Sever callback URL
+     */
     @objc
     public static func configure(appkey: String, rpPublicKey: String? = nil, callbackUrl: URL) {
         Self.appkey = appkey
@@ -29,6 +39,13 @@ public final class Keyri: NSObject {
         Self.callbackUrl = callbackUrl
     }
 
+    /**
+     * Retrieves user session by given sessionId.
+     * If session doesn't match Keyri configuration, returns wrongConfigError as failure result in completion
+     * - Parameters:
+     *  - sessionId: session id for user session
+     *  - completion: returns Session object or wrongConfigError
+     */
     public func onReadSessionId(_ sessionId: String, completion: @escaping (Result<Session, Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
             switch result {
@@ -55,7 +72,19 @@ public final class Keyri: NSObject {
         }
     }
 
-    public func signUp(username: String, service: Service, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
+    /**
+     * Create new user for Desktop agent
+     *
+     * If allowMultipleAccounts is false, returns multipleAccountsNotAllowedError as failure result in completion.
+     * Must be called after onReadSessionId, if isNewUser is true
+     *
+     * - Parameters:
+     *  - username: for new user
+     *  - service: obtained Session from onReadSessionId
+     *  - custom: custom argument
+     *  - completion: returns Void if success or keyriSdkError if something went wrong
+     */
+    public func signup(username: String, service: Service, custom: String? = nil, completion: @escaping (Result<Void, Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
             guard let sessionId = self?.sessionService?.sessionId else {
                 completion(.failure(KeyriErrors.keyriSdkError))
@@ -66,7 +95,18 @@ public final class Keyri: NSObject {
         }
     }
 
-    public func login(account: PublicAccount, service: Service, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
+    /**
+     * Login user for Desktop agent
+     *
+     * Must be called after onReadSessionId, if isNewUser is false
+     *
+     * - Parameters:
+     *  - account: pass created earlier publicAccount
+     *  - service: obtained Session from onReadSessionId
+     *  - custom: custom argument
+     *  - completion: returns Void if success or keyriSdkError if something went wrong
+     */
+    public func login(account: PublicAccount, service: Service, custom: String? = nil, completion: @escaping (Result<Void, Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
             guard let sessionId = self?.sessionService?.sessionId else {
                 completion(.failure(KeyriErrors.keyriSdkError))
@@ -77,7 +117,17 @@ public final class Keyri: NSObject {
         }
     }
     
-    public func mobileSignUp(username: String, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+    /**
+     * Create new user on mobile device. If allowMultipleAccounts is false,
+     * returns multipleAccountsNotAllowedError as failure result in completion
+     *
+     * - Parameters:
+     *  - username: for new user
+     *  - custom: custom argument
+     *  - extendedHeaders: custom headers
+     *  - completion: returns response dictionary if success or keyriSdkError if something went wrong
+     */
+    public func mobileSignup(username: String, custom: String? = nil, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
             switch result {
             case .success(let service):
@@ -106,7 +156,16 @@ public final class Keyri: NSObject {
         }
     }
 
-    public func mobileLogin(account: PublicAccount, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+    /**
+     * Login user on mobile device
+     *
+     * - Parameters:
+     *  - account: pass created earlier publicAccount
+     *  - custom: custom argument
+     *  - extendedHeaders: custom headers
+     *  - completion: returns response dictionary if success or keyriSdkError if something went wrong
+     */
+    public func mobileLogin(account: PublicAccount, custom: String? = nil, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
             switch result {
             case .success(let service):
@@ -135,6 +194,9 @@ public final class Keyri: NSObject {
         }
     }
 
+    /**
+     * Retrieves all public accounts on device.
+     */
     public func accounts(completion: @escaping (Result<[PublicAccount], Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
             switch result {
@@ -147,8 +209,32 @@ public final class Keyri: NSObject {
             }
         }
     }
+     
+    /**
+     * Removing passed account
+     */
+    public func removeAccount(account: PublicAccount, completion: @escaping (Result<Void, Error>) -> Void) {
+        whitelabelInitIfNeeded { [weak self] result in
+            switch result {
+            case .success(let service):
+                self?.storageService?.remove(account: account, from: service)
+                completion(.success(()))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
     
-    public func authWithScanner(from viewController: UIViewController? = nil, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
+    /**
+     * Create new user on mobile device or login if user already exist. If allowMultipleAccounts is false,
+     * returns multipleAccountsNotAllowedError as failure result in completion
+     *
+     * - Parameters:
+     *  - viewController: root view controller from which scanner will be presented or UIApplication keyWindow rootViewController in case if viewController argument is nil
+     *  - custom: custom argument
+     *  - completion: returns Void if success or accountNotFoundError if fails to login
+     */
+    public func authWithScanner(from viewController: UIViewController? = nil, custom: String? = nil, completion: @escaping (Result<Void, Error>) -> Void) {
         scanner = Scanner()
         scanner?.completion = { [weak self] result in
             let sessionId = URLComponents(string: result)?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
@@ -158,7 +244,7 @@ public final class Keyri: NSObject {
                 case .success(let session):
                     if session.isNewUser {
                         guard let username = session.username else { return }
-                        self?.signUp(username: username, service: session.service, custom: custom, completion: completion)
+                        self?.signup(username: username, service: session.service, custom: custom, completion: completion)
                     } else {
                         self?.accounts() { result in
                             if case .success(let accounts) = result, let account = accounts.first {
@@ -173,7 +259,7 @@ public final class Keyri: NSObject {
                 }
             })
         }
-        scanner?.show()
+        scanner?.show(from: viewController)
     }
 }
 
@@ -219,6 +305,13 @@ extension Keyri {
 
 extension Keyri {
     
+    /**
+     * Retrieves user session by given sessionId.
+     * If session doesn't match Keyri configuration, returns wrongConfigError as failure result in completion
+     * - Parameters:
+     *  - sessionId: session id for user session
+     *  - completion: returns Session object or wrongConfigError
+     */
     @objc
     public func onReadSessionId(_ sessionId: String, completion: @escaping (Session?, Error?) -> Void) {
         onReadSessionId(sessionId) { (result: Result<Session, Error>) in
@@ -231,9 +324,21 @@ extension Keyri {
         }
     }
     
+    /**
+     * Create new user for Desktop agent
+     *
+     * If allowMultipleAccounts is false, returns multipleAccountsNotAllowedError as failure result in completion.
+     * Must be called after onReadSessionId, if isNewUser is true
+     *
+     * - Parameters:
+     *  - username: for new user
+     *  - service: obtained Session from onReadSessionId
+     *  - custom: custom argument
+     *  - completion: returns Void if success or keyriSdkError if something went wrong
+     */
     @objc
-    public func signUp(username: String, service: Service, custom: String?, completion: @escaping (Error?) -> Void) {
-        signUp(username: username, service: service, custom: custom) { (result: Result<Void, Error>) in
+    public func signup(username: String, service: Service, custom: String? = nil, completion: @escaping (Error?) -> Void) {
+        signup(username: username, service: service, custom: custom) { (result: Result<Void, Error>) in
             switch result {
             case .success():
                 completion(nil)
@@ -243,8 +348,19 @@ extension Keyri {
         }
     }
     
+    /**
+     * Login user for Desktop agent
+     *
+     * Must be called after onReadSessionId, if isNewUser is false
+     *
+     * - Parameters:
+     *  - account: pass created earlier publicAccount
+     *  - service: obtained Session from onReadSessionId
+     *  - custom: custom argument
+     *  - completion: returns Void if success or keyriSdkError if something went wrong
+     */
     @objc
-    public func login(account: PublicAccount, service: Service, custom: String?, completion: @escaping (Error?) -> Void) {
+    public func login(account: PublicAccount, service: Service, custom: String? = nil, completion: @escaping (Error?) -> Void) {
         login(account: account, service: service, custom: custom) { (result: Result<Void, Error>) in
             switch result {
             case .success():
@@ -255,9 +371,19 @@ extension Keyri {
         }
     }
     
+    /**
+     * Create new user on mobile device. If allowMultipleAccounts is false,
+     * returns multipleAccountsNotAllowedError as failure result in completion
+     *
+     * - Parameters:
+     *  - username: for new user
+     *  - custom: custom argument
+     *  - extendedHeaders: custom headers
+     *  - completion: returns response dictionary if success or keyriSdkError if something went wrong
+     */
     @objc
-    public func mobileSignUp(username: String, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping ([String: Any]?, Error?) -> Void) {
-        mobileSignUp(username: username, custom: custom, extendedHeaders: extendedHeaders) { (result: Result<[String : Any], Error>) in
+    public func mobileSignup(username: String, custom: String? = nil, extendedHeaders: [String: String]? = nil, completion: @escaping ([String: Any]?, Error?) -> Void) {
+        mobileSignup(username: username, custom: custom, extendedHeaders: extendedHeaders) { (result: Result<[String : Any], Error>) in
             switch result {
             case .success(let json):
                 completion(json, nil)
@@ -267,8 +393,17 @@ extension Keyri {
         }
     }
     
+    /**
+     * Login user on mobile device
+     *
+     * - Parameters:
+     *  - account: pass created earlier publicAccount
+     *  - custom: custom argument
+     *  - extendedHeaders: custom headers
+     *  - completion: returns response dictionary if success or keyriSdkError if something went wrong
+     */
     @objc
-    public func mobileLogin(account: PublicAccount, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping ([String: Any]?, Error?) -> Void) {
+    public func mobileLogin(account: PublicAccount, custom: String? = nil, extendedHeaders: [String: String]? = nil, completion: @escaping ([String: Any]?, Error?) -> Void) {
         mobileLogin(account: account, custom: custom, extendedHeaders: extendedHeaders) { (result: Result<[String : Any], Error>) in
             switch result {
             case .success(let json):
@@ -279,6 +414,9 @@ extension Keyri {
         }
     }
     
+    /**
+     * Retrieves all public accounts on device.
+     */
     @objc
     public func accounts(completion: @escaping ([PublicAccount]?, Error?) -> Void) {
         accounts { (result: Result<[PublicAccount], Error>) in
@@ -291,8 +429,32 @@ extension Keyri {
         }
     }
     
+    /**
+     * Removing passed account
+     */
     @objc
-    public func authWithScanner(from viewController: UIViewController? = nil, custom: String?, completion: @escaping (Error?) -> Void) {
+    public func removeAccount(account: PublicAccount, completion: @escaping (Error?) -> Void) {
+        removeAccount(account: account) { (result: Result<Void, Error>) in
+            switch result {
+            case .success():
+                completion(nil)
+            case .failure(let error):
+                completion(error)
+            }
+        }
+    }
+    
+    /**
+     * Create new user on mobile device or login if user already exist. If allowMultipleAccounts is false,
+     * returns multipleAccountsNotAllowedError as failure result in completion
+     *
+     * - Parameters:
+     *  - viewController: root view controller from which scanner will be presented
+     *  - custom: custom argument
+     *  - completion: returns Void if success or accountNotFoundError if fails to login
+     */
+    @objc
+    public func authWithScanner(from viewController: UIViewController? = nil, custom: String? = nil, completion: @escaping (Error?) -> Void) {
         authWithScanner(from: viewController, custom: custom) { (result: Result<Void, Error>) in
             switch result {
             case .success():

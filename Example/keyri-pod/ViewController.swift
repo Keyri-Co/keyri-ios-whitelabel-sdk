@@ -60,6 +60,33 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func removeFirstAccounts(_ sender: Any) {
+        keyri = Keyri()
+        keyri?.accounts() { [weak self] result in
+            switch result {
+            case .success(let allAccounts):
+                guard let accountToRemove = allAccounts.first else {
+                    print("No account to remove")
+                    return
+                }
+                print("Account \(accountToRemove.username) will be removed")
+                self?.keyri?.removeAccount(account: accountToRemove) { (removeResult: Result<Void, Error>) in
+                    self?.keyri = nil
+                    switch removeResult {
+                    case .success():
+                        print("Account \(accountToRemove.username) has been successfully removed")
+                    case .failure(let error):
+                        print(error)
+                        Toast(text: error.localizedDescription, duration: Delay.long).show()
+                    }
+                }
+            case .failure(let error):
+                print(error)
+                Toast(text: error.localizedDescription, duration: Delay.long).show()
+            }
+        }
+    }
+    
     @IBAction func login(_ sender: Any) {
         state = .login
         present(scanner, animated: true, completion: nil)
@@ -67,7 +94,7 @@ class ViewController: UIViewController {
     
     @IBAction func mobileSignUp(_ sender: Any) {
         keyri = Keyri()
-        keyri?.mobileSignUp(username: "tester 1", custom: "custom mobile signup", extendedHeaders: ["TestKey1": "TestVal1", "TestKey2": "TestVal2"]) { [weak self] result in
+        keyri?.mobileSignup(username: "tester 1", custom: "custom mobile signup", extendedHeaders: ["TestKey1": "TestVal1", "TestKey2": "TestVal2"]) { [weak self] result in
             self?.keyri = nil
             switch result {
             case .success(let response):
@@ -124,7 +151,7 @@ extension ViewController: QRScannerCodeDelegate {
                         self.keyri = nil
                         return
                     }
-                    self.keyri?.signUp(username: username, service: session.service, custom: "test custom signup") { (result: Result<Void, Error>) in
+                    self.keyri?.signup(username: username, service: session.service, custom: "test custom signup") { (result: Result<Void, Error>) in
                         self.keyri = nil
                         switch result {
                         case .success(_):
