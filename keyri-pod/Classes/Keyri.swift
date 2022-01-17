@@ -209,8 +209,21 @@ public final class Keyri: NSObject {
             }
         }
     }
-    
-    //TODO: - func removeAccount(account: PublicAccount)
+     
+    /**
+     * Removing passed account
+     */
+    public func removeAccount(account: PublicAccount, completion: @escaping (Result<Void, Error>) -> Void) {
+        whitelabelInitIfNeeded { [weak self] result in
+            switch result {
+            case .success(let service):
+                self?.storageService?.remove(account: account, from: service)
+                completion(.success(()))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
     
     /**
      * Create new user on mobile device or login if user already exist. If allowMultipleAccounts is false,
@@ -412,6 +425,21 @@ extension Keyri {
                 completion(account, nil)
             case .failure(let error):
                 completion(nil, error)
+            }
+        }
+    }
+    
+    /**
+     * Removing passed account
+     */
+    @objc
+    public func removeAccount(account: PublicAccount, completion: @escaping (Error?) -> Void) {
+        removeAccount(account: account) { (result: Result<Void, Error>) in
+            switch result {
+            case .success():
+                completion(nil)
+            case .failure(let error):
+                completion(error)
             }
         }
     }
