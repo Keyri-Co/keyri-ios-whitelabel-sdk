@@ -51,6 +51,7 @@
 		833BFFE48A9E443248AE958F /* Pods-keyri-pod_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keyri-pod_Example.release.xcconfig"; path = "Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A284E45D59765515B354E3A4 /* Pods_keyri_pod_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_keyri_pod_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE80469C27306CA900141851 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BEFE0BBA27973ABD007C0EBB /* keyri-pod_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "keyri-pod_Example.entitlements"; sourceTree = "<group>"; };
 		C3573E7206A0ED431EA60092 /* Pods-keyri-pod_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keyri-pod_Example.debug.xcconfig"; path = "Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D34E11D527131ABD00FA95F1 /* keyri-pod_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "keyri-pod_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		D34E11D627131ABE00FA95F1 /* KeyriHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyriHeader.h; sourceTree = "<group>"; };
@@ -82,6 +83,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				BEFE0BBA27973ABD007C0EBB /* keyri-pod_Example.entitlements */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for keyri-pod */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -511,12 +513,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "keyri-pod_Example.entitlements";
 				DEVELOPMENT_TEAM = B275BMKQL6;
 				INFOPLIST_FILE = "keyri-pod/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.keyri.whitelabelDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.keyri.keyri-demo-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "keyri-pod/keyri-pod_Example-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -531,12 +534,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "keyri-pod_Example.entitlements";
 				DEVELOPMENT_TEAM = B275BMKQL6;
 				INFOPLIST_FILE = "keyri-pod/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = com.keyri.whitelabelDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.keyri.keyri-demo-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "keyri-pod/keyri-pod_Example-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
