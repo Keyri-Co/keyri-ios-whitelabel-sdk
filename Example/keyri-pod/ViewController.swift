@@ -40,6 +40,27 @@ class ViewController: UIViewController {
     }
     
     var keyri: Keyri?
+    
+    func showToast(message: String) {
+        Toast(text: message, duration: Delay.long).show()
+    }
+    
+    func process(url: URL) {
+        let sessionId = URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
+        keyri = Keyri()
+        keyri?.onReadSessionId(sessionId, completion: { [weak self] sessionResult in
+            switch sessionResult {
+            case .success(let session):
+                if session.isNewUser {
+                    self?.signup(session: session)
+                } else {
+                    self?.login(session: session)
+                }
+            case .failure(let error):
+                Toast(text: error.localizedDescription, duration: Delay.long).show()
+            }
+        })
+    }
 
     @IBAction func scanAction(_ sender: Any) {
         state = .signup
@@ -138,48 +159,57 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController {
+    private func signup(session: Session) {
+        guard let username = session.username else { return }
+        keyri?.signup(username: username, service: session.service, custom: nil, completion: { [weak self] (signupResult: Result<Void, Error>) in
+            self?.keyri = nil
+            switch signupResult {
+            case .success(let response):
+                print(response)
+                Toast(text: "Signup successfully completed", duration: Delay.long).show()
+            case .failure(let error):
+                Toast(text: error.localizedDescription, duration: Delay.long).show()
+            }
+        })
+    }
+    
+    private func login(session: Session) {
+        keyri?.accounts() { [weak self] result in
+            if case .success(let accounts) = result, let account = accounts.first {
+                self?.keyri?.login(account: account, service: session.service, custom: "test custom login") { (result: Result<Void, Error>) in
+                    self?.keyri = nil
+                    switch result {
+                    case .success(_):
+                        print("Login successfully completed")
+                        Toast(text: "Login successfully completed", duration: Delay.long).show()
+                    case .failure(let error):
+                        print("Login failed: \(error.localizedDescription)")
+                        Toast(text: error.localizedDescription, duration: Delay.long).show()
+                    }
+                }
+            } else {
+                self?.keyri = nil
+                print("no accounts found")
+                Toast(text: "no accounts found", duration: Delay.long).show()
+            }
+        }
+    }
+}
+
 extension ViewController: QRScannerCodeDelegate {
     func qrScanner(_ controller: UIViewController, scanDidComplete result: String) {
+        let sessionId = URLComponents(string: result)?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
         keyri = Keyri()
-        keyri?.onReadSessionId(result) { [weak self] result in
+        keyri?.onReadSessionId(sessionId) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let session):
                 switch self.state {
                 case .signup:
-                    guard let username = session.username else {
-                        self.keyri = nil
-                        return
-                    }
-                    self.keyri?.signup(username: username, service: session.service, custom: "test custom signup") { (result: Result<Void, Error>) in
-                        self.keyri = nil
-                        switch result {
-                        case .success(_):
-                            print("Signup successfully completed")
-                        case .failure(let error):
-                            print("Signup failed: \(error.localizedDescription)")
-                            Toast(text: error.localizedDescription, duration: Delay.long).show()
-                        }
-                    }
+                    self.signup(session: session)
                 case .login:
-                    self.keyri?.accounts() { result in
-                        if case .success(let accounts) = result, let account = accounts.first {
-                            self.keyri?.login(account: account, service: session.service, custom: "test custom login") { (result: Result<Void, Error>) in
-                                self.keyri = nil
-                                switch result {
-                                case .success(_):
-                                    print("Login successfully completed")
-                                case .failure(let error):
-                                    print("Login failed: \(error.localizedDescription)")
-                                    Toast(text: error.localizedDescription, duration: Delay.long).show()
-                                }
-                            }
-                        } else {
-                            self.keyri = nil
-                            print("no accounts found")
-                            Toast(text: "no accounts found", duration: Delay.long).show()
-                        }
-                    }
+                    self.login(session: session)
                 default:
                     break
                 }
