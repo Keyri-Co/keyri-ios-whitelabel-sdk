@@ -4,8 +4,6 @@
 <dict>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>applinks:dev.keyri.co.s3-website-us-east-1.amazonaws.com</string>
-		<string>applinks:keyri.com</string>
 		<string>applinks:dev-api.keyri.co</string>
 	</array>
 </dict>

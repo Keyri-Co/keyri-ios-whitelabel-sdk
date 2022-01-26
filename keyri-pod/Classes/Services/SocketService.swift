@@ -48,25 +48,30 @@ struct VerifyRequestMessage: Codable {
     let sessionKey: String
 }
 
-final class SocketService {
-    typealias SocketEventCompletion = (Result<VerifyRequestMessage, Error>) -> Void
-    
+protocol SocketServiceDelegate: AnyObject {
+    func socketServiceDidConnected()
+    func socketServiceDidConnectionFails()
+    func socketServiceDidDisconnected()
+    func socketServiceDidReceiveEvent(event: Result<VerifyRequestMessage, Error>)
+}
+
+final class SocketService: WebSocketDelegate {    
     var extraHeaders: [String : String]?
+    var isConnected = false
+    weak var delegate: SocketServiceDelegate?
 
     private let socketUrl: String
     private var socket: WebSocket?
-    private var completion: (SocketEventCompletion)?
-    var isConnected = false
     
     init() {
         let config = Config()
         socketUrl = config.wsUrl
     }
     
-    func initializeSocket(completion: @escaping (Bool) -> Void) {
+    func initializeSocket() {
         guard let socketUrl = URL(string: self.socketUrl) else {
             assertionFailure("Invalid socket url config")
-            completion(false)
+            delegate?.socketServiceDidConnectionFails()
             return
         }
 
@@ -76,52 +81,49 @@ final class SocketService {
             request.addValue(value, forHTTPHeaderField: key)
         }
         socket = WebSocket(request: request)
-        
-        socket?.onEvent = { [weak self] event in
-            guard let self = self else { return }
-            switch event {
-            case .connected(let headers):
-                self.isConnected = true
-                print("websocket is connected: \(headers)")
-                completion(true)
-            case .disconnected(let reason, let code):
-                self.isConnected = false
-                print("websocket is disconnected: \(reason) with code: \(code)")
-                self.completion?(.failure(KeyriErrors.networkError))
-            case .text(let string):
-                print("Received text: \(string)")
-                if let data = string.data(using: .utf8) {
-                    self.parseVerificationRequest(data: data)
-                }
-            case .binary(let data):
-                print("Received data: \(data.count)")
-                self.parseVerificationRequest(data: data)
-            case .cancelled:
-                self.isConnected = false
-                self.completion?(.failure(KeyriErrors.networkError))
-            case .error(let error):
-                self.isConnected = false
-                self.handleError(error)
-                self.completion?(.failure(KeyriErrors.networkError))
-            default:
-                break
-            }
-        }
+        socket?.delegate = self
+                        
         socket?.connect()
     }
     
-    func sendEvent(message: SocketRepresentation, completion: @escaping SocketEventCompletion) {
-        self.completion = completion
+    func didReceive(event: WebSocketEvent, client: WebSocketClient) {
+        switch event {
+        case .connected(let headers):
+            self.isConnected = true
+            print("websocket is connected: \(headers)")
+            delegate?.socketServiceDidConnected()
+        case .disconnected(let reason, let code):
+            self.isConnected = false
+            print("websocket is disconnected: \(reason) with code: \(code)")
+            delegate?.socketServiceDidDisconnected()
+        case .text(let string):
+            print("Received text: \(string)")
+            if let data = string.data(using: .utf8) {
+                self.parseVerificationRequest(data: data)
+            }
+        case .binary(let data):
+            print("Received data: \(data.count)")
+            self.parseVerificationRequest(data: data)
+        case .cancelled:
+            self.isConnected = false
+            delegate?.socketServiceDidDisconnected()
+        case .error(let error):
+            self.isConnected = false
+            self.handleError(error)
+            delegate?.socketServiceDidDisconnected()
+        default:
+            break
+        }
+    }
+    
+    func sendEvent(message: SocketRepresentation) {
         guard let messageString = message.socketRepresentation() else {
-            completion(.failure(KeyriErrors.networkError))
             return
         }
         print(messageString)
         socket?.write(string: messageString)
     }
-}
 
-extension SocketService {
     private func handleError(_ error: Error?) {
         if let e = error as? WSError {
             print("websocket encountered an error: \(e.message)")
@@ -135,7 +137,7 @@ extension SocketService {
     private func parseVerificationRequest(data: Data) {
         let message = try? JSONDecoder().decode(VerifyRequestMessage.self, from: data)
         if let message = message, message.action == .SESSION_VERIFY_REQUEST {
-            completion?(.success(message))
+            delegate?.socketServiceDidReceiveEvent(event: .success(message))
         }
     }
 }
