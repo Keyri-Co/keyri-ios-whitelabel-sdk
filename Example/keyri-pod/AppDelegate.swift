@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Keyri.configure(
             appkey: "raB7SFWt27VoKqkPhaUrmWAsCJIO8Moj",
             rpPublicKey: "BOenio0DXyG31mAgUCwhdslelckmxzM7nNOyWAjkuo7skr1FhP7m2L8PaSRgIEH5ja9p+CwEIIKGqR4Hx5Ezam4=",
-            callbackUrl: URL(string: "http://18.234.222.59:5000/users/session-mobile")!
+            callbackUrl: URL(string: "http://18.208.184.185:5000/users/session-mobile")!
         )
         return true
     }
