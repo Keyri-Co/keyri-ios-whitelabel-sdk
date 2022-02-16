@@ -14,40 +14,40 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        [Keyri configureWithAppkey:@"raB7SFWt27VoKqkPhaUrmWAsCJIO8Moj"
+        [Keyri initializeWithAppkey:@"raB7SFWt27VoKqkPhaUrmWAsCJIO8Moj"
                         rpPublicKey:@"00uVMpjv0sxLPMovInfRCB5kSX3WPKpx9RKNe3HFnTE="
                         callbackUrl:[NSURL URLWithString:@"http://18.234.201.114:5000/users/session-mobile"]];
         
         Keyri *keyri = [[Keyri alloc] init];
         
-        [keyri onReadSessionId:@"" completion:^(Session * _Nullable session, NSError * _Nullable error) {
+        [keyri handleSessionId:@"" completion:^(Session * _Nullable session, NSError * _Nullable error) {
             
         }];
         
         Service *service = [[Service alloc] init];
-        [keyri signupWithUsername:@"" service:service custom:@"" completion:^(NSError * _Nullable error) {
+        [keyri sessionSignupWithUsername:@"" service:service custom:@"" completion:^(NSError * _Nullable error) {
             
         }];
         
         PublicAccount *account = [[PublicAccount alloc] initWithUsername:@"" custom:@""];
-        [keyri loginWithAccount:account service:service custom:@"" completion:^(NSError * _Nullable error) {
+        [keyri sessionLoginWithAccount:account service:service custom:@"" completion:^(NSError * _Nullable error) {
             
         }];
         
-        [keyri mobileSignupWithUsername:@"" custom:@"" extendedHeaders:@{} completion:^(NSDictionary<NSString *,id> * _Nullable json, NSError * _Nullable error) {
+        [keyri directSignupWithUsername:@"" custom:@"" extendedHeaders:@{} completion:^(NSDictionary<NSString *,id> * _Nullable json, NSError * _Nullable error) {
             
         }];
         
-        [keyri mobileLoginWithAccount:account custom:@"" extendedHeaders:@{} completion:^(NSDictionary<NSString *,id> * _Nullable json, NSError * _Nullable error) {
+        [keyri directLoginWithAccount:account custom:@"" extendedHeaders:@{} completion:^(NSDictionary<NSString *,id> * _Nullable json, NSError * _Nullable error) {
             
         }];
         
-        [keyri accountsWithCompletion:^(NSArray<PublicAccount *> * _Nullable accounts, NSError * _Nullable error) {
+        [keyri getAccountsWithCompletion:^(NSArray<PublicAccount *> * _Nullable accounts, NSError * _Nullable error) {
             
         }];
         
         UIViewController *vc = [[UIViewController alloc] init];
-        [keyri authWithScannerFrom:vc custom:@"" completion:^(NSError * _Nullable error) {
+        [keyri easyKeyriAuthFrom:vc custom:@"" completion:^(NSError * _Nullable error) {
             
         }];
     }

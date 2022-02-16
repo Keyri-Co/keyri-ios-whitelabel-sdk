@@ -48,7 +48,7 @@ class ViewController: UIViewController {
     func process(url: URL) {
         let sessionId = URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
         keyri = Keyri()
-        keyri?.onReadSessionId(sessionId, completion: { [weak self] sessionResult in
+        keyri?.handleSessionId(sessionId, completion: { [weak self] sessionResult in
             switch sessionResult {
             case .success(let session):
                 if session.isNewUser {
@@ -69,7 +69,7 @@ class ViewController: UIViewController {
     
     @IBAction func getAllAccounts(_ sender: Any) {
         keyri = Keyri()
-        keyri?.accounts() { [weak self] result in
+        keyri?.getAccounts() { [weak self] result in
             self?.keyri = nil
             switch result {
             case .success(let allAccounts):
@@ -83,7 +83,7 @@ class ViewController: UIViewController {
     
     @IBAction func removeFirstAccounts(_ sender: Any) {
         keyri = Keyri()
-        keyri?.accounts() { [weak self] result in
+        keyri?.getAccounts() { [weak self] result in
             switch result {
             case .success(let allAccounts):
                 guard let accountToRemove = allAccounts.first else {
@@ -115,7 +115,7 @@ class ViewController: UIViewController {
     
     @IBAction func mobileSignUp(_ sender: Any) {
         keyri = Keyri()
-        keyri?.mobileSignup(username: "tester 1", custom: "custom mobile signup", extendedHeaders: ["TestKey1": "TestVal1", "TestKey2": "TestVal2"]) { [weak self] result in
+        keyri?.directSignup(username: "tester 1", custom: "custom mobile signup", extendedHeaders: ["TestKey1": "TestVal1", "TestKey2": "TestVal2"]) { [weak self] result in
             self?.keyri = nil
             switch result {
             case .success(let response):
@@ -128,9 +128,9 @@ class ViewController: UIViewController {
     
     @IBAction func mobileSignIn(_ sender: Any) {
         keyri = Keyri()
-        keyri?.accounts() { [weak self] result in
+        keyri?.getAccounts() { [weak self] result in
             if case .success(let accounts) = result, let account = accounts.first {
-                self?.keyri?.mobileLogin(account: account, custom: "custom mobile signin", extendedHeaders: ["TestKey1": "TestVal1", "TestKey2": "TestVal2"]) { result in
+                self?.keyri?.directLogin(account: account, custom: "custom mobile signin", extendedHeaders: ["TestKey1": "TestVal1", "TestKey2": "TestVal2"]) { result in
                     self?.keyri = nil
                     switch result {
                     case .success(let response):
@@ -147,7 +147,7 @@ class ViewController: UIViewController {
     
     @IBAction func authWithScanner(_ sender: Any) {
         keyri = Keyri()
-        keyri?.authWithScanner(custom: "custom auth with scanner") { [weak self] (result: Result<Void, Error>) in
+        keyri?.easyKeyriAuth(custom: "custom auth with scanner") { [weak self] (result: Result<Void, Error>) in
             self?.keyri = nil
             switch result {
             case .success():
@@ -162,7 +162,7 @@ class ViewController: UIViewController {
 extension ViewController {
     private func signup(session: Session) {
         guard let username = session.username else { return }
-        keyri?.signup(username: username, service: session.service, custom: nil, completion: { [weak self] (signupResult: Result<Void, Error>) in
+        keyri?.sessionSignup(username: username, service: session.service, custom: nil, completion: { [weak self] (signupResult: Result<Void, Error>) in
             self?.keyri = nil
             switch signupResult {
             case .success(let response):
@@ -175,9 +175,9 @@ extension ViewController {
     }
     
     private func login(session: Session) {
-        keyri?.accounts() { [weak self] result in
+        keyri?.getAccounts() { [weak self] result in
             if case .success(let accounts) = result, let account = accounts.first {
-                self?.keyri?.login(account: account, service: session.service, custom: "test custom login") { (result: Result<Void, Error>) in
+                self?.keyri?.sessionLogin(account: account, service: session.service, custom: "test custom login") { (result: Result<Void, Error>) in
                     self?.keyri = nil
                     switch result {
                     case .success(_):
@@ -201,7 +201,7 @@ extension ViewController: QRScannerCodeDelegate {
     func qrScanner(_ controller: UIViewController, scanDidComplete result: String) {
         let sessionId = URLComponents(string: result)?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
         keyri = Keyri()
-        keyri?.onReadSessionId(sessionId) { [weak self] result in
+        keyri?.handleSessionId(sessionId) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let session):
