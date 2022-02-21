@@ -24,7 +24,7 @@
             
         }];
         
-        Service *service = [[Service alloc] init];
+        Service *service = [[Service alloc] initWithId:@"" name:@"" logo:nil];
         [keyri sessionSignupWithUsername:@"" service:service custom:@"" completion:^(NSError * _Nullable error) {
             
         }];
