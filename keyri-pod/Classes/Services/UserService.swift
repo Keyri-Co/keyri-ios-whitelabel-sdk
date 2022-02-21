@@ -42,7 +42,7 @@ final class UserService {
         sessionService.verifyUserSession(encUserId: sessionAccount.userId, sessionId: sessionId, custom: custom, completion: completion)
     }
     
-    func mobileLogin(account: PublicAccount, service: Service, callbackUrl: URL, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+    func mobileLogin(account: PublicAccount, service: Service, callbackUrl: URL, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<AuthMobileResponse, Error>) -> Void) {
         guard
             let sessionAccount = storageService.getAllAccounts(serviceId: service.id).first(where: { $0.username == account.username })
         else {
@@ -63,7 +63,7 @@ final class UserService {
         apiService.authMobile(url: callbackUrl, userId: userId, username: sessionAccount.username, clientPublicKey: try? encryptionService.loadPublicKeyString(), extendedHeaders: extendedHeaders, completion: completion)
     }
     
-    func mobileSignUp(username: String, service: Service, callbackUrl: URL, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+    func mobileSignUp(username: String, service: Service, callbackUrl: URL, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<AuthMobileResponse, Error>) -> Void) {
         guard let account = createUser(username: username, service: service, custom: custom).account else {
             assertionFailure(KeyriErrors.keyriSdkError.errorDescription ?? "")
             completion(.failure(KeyriErrors.keyriSdkError))
