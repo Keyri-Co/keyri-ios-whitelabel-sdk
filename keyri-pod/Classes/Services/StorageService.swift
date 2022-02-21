@@ -31,8 +31,8 @@ struct Account: Codable {
 }
 
 public class PublicAccount: NSObject {
-    public let username: String
-    public let custom: String?
+    @objc public let username: String
+    @objc public let custom: String?
     
     @objc
     public init(username: String, custom: String?) {

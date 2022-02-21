@@ -8,9 +8,9 @@
 import Foundation
 
 public class Session: NSObject, Codable {
-    public let service: Service
-    public let isNewUser: Bool
-    public let username: String?
+    @objc public let service: Service
+    @objc public let isNewUser: Bool
+    @objc public let username: String?
 }
 
 public class Service: NSObject, Codable {
@@ -20,9 +20,18 @@ public class Service: NSObject, Codable {
         case logo
     }
 
-    public let id: String
-    public let name: String
-    public let logo: String?
+    @objc public let id: String
+    @objc public let name: String
+    @objc public let logo: String?
+    
+    @objc
+    public init(id: String, name: String, logo: String?) {
+        self.id = id
+        self.name = name
+        self.logo = logo
+        
+        super.init()
+    }
 }
 
 private struct WhitelabelInitResponse: Codable {
