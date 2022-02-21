@@ -34,11 +34,11 @@
             
         }];
         
-        [keyri directSignupWithUsername:@"" custom:@"" extendedHeaders:@{} completion:^(NSDictionary<NSString *,id> * _Nullable json, NSError * _Nullable error) {
+        [keyri directSignupWithUsername:@"" custom:@"" extendedHeaders:@{} completion:^(AuthMobileResponse * _Nullable response, NSError * _Nullable error) {
             
         }];
         
-        [keyri directLoginWithAccount:account custom:@"" extendedHeaders:@{} completion:^(NSDictionary<NSString *,id> * _Nullable json, NSError * _Nullable error) {
+        [keyri directLoginWithAccount:account custom:@"" extendedHeaders:@{} completion:^(AuthMobileResponse * _Nullable response, NSError * _Nullable error) {
             
         }];
         

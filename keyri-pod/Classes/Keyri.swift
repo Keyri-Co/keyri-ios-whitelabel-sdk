@@ -127,7 +127,7 @@ public final class Keyri: NSObject {
      *  - extendedHeaders: custom headers
      *  - completion: returns response dictionary if success or keyriSdkError if something went wrong
      */
-    public func directSignup(username: String, custom: String? = nil, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+    public func directSignup(username: String, custom: String? = nil, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<AuthMobileResponse, Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
             switch result {
             case .success(let service):
@@ -165,7 +165,7 @@ public final class Keyri: NSObject {
      *  - extendedHeaders: custom headers
      *  - completion: returns response dictionary if success or keyriSdkError if something went wrong
      */
-    public func directLogin(account: PublicAccount, custom: String? = nil, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+    public func directLogin(account: PublicAccount, custom: String? = nil, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<AuthMobileResponse, Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
             switch result {
             case .success(let service):
@@ -382,8 +382,8 @@ extension Keyri {
      *  - completion: returns response dictionary if success or keyriSdkError if something went wrong
      */
     @objc
-    public func directSignup(username: String, custom: String? = nil, extendedHeaders: [String: String]? = nil, completion: @escaping ([String: Any]?, Error?) -> Void) {
-        directSignup(username: username, custom: custom, extendedHeaders: extendedHeaders) { (result: Result<[String : Any], Error>) in
+    public func directSignup(username: String, custom: String? = nil, extendedHeaders: [String: String]? = nil, completion: @escaping (AuthMobileResponse?, Error?) -> Void) {
+        directSignup(username: username, custom: custom, extendedHeaders: extendedHeaders) { (result: Result<AuthMobileResponse, Error>) in
             switch result {
             case .success(let json):
                 completion(json, nil)
@@ -403,8 +403,8 @@ extension Keyri {
      *  - completion: returns response dictionary if success or keyriSdkError if something went wrong
      */
     @objc
-    public func directLogin(account: PublicAccount, custom: String? = nil, extendedHeaders: [String: String]? = nil, completion: @escaping ([String: Any]?, Error?) -> Void) {
-        directLogin(account: account, custom: custom, extendedHeaders: extendedHeaders) { (result: Result<[String : Any], Error>) in
+    public func directLogin(account: PublicAccount, custom: String? = nil, extendedHeaders: [String: String]? = nil, completion: @escaping (AuthMobileResponse?, Error?) -> Void) {
+        directLogin(account: account, custom: custom, extendedHeaders: extendedHeaders) { (result: Result<AuthMobileResponse, Error>) in
             switch result {
             case .success(let json):
                 completion(json, nil)

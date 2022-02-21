@@ -34,6 +34,47 @@ public class Service: NSObject, Codable {
     }
 }
 
+public class AuthMobileResponse: NSObject, Codable {
+    @objc public let token: String
+    @objc public let refreshToken: String
+    @objc public let keyriUserId: String
+    @objc public let user: AuthMobileUser
+    
+    public override var description: String {
+        let dictionary = [
+            "token": token,
+            "refreshToken": refreshToken,
+            "keyriUserId": keyriUserId,
+            "user": user.description
+        ]
+        return dictionary.description
+    }
+}
+
+public class AuthMobileUser: NSObject, Codable {
+    enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case name
+        case createdAt
+        case updatedAt
+    }
+
+    @objc public let id: String
+    @objc public let name: String
+    @objc public let createdAt: String
+    @objc public let updatedAt: String
+    
+    public override var description: String {
+        let dictionary = [
+            "id": id,
+            "name": name,
+            "createdAt": createdAt,
+            "updatedAt": updatedAt,
+        ]
+        return dictionary.description
+    }
+}
+
 private struct WhitelabelInitResponse: Codable {
     let token: String
     let service: Service
@@ -94,7 +135,7 @@ final class ApiService {
         task.resume()
     }
     
-    func authMobile(url: URL, userId: String, username: String?, clientPublicKey: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<[String: Any], Error>) -> Void) {
+    func authMobile(url: URL, userId: String, username: String?, clientPublicKey: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<AuthMobileResponse, Error>) -> Void) {
         var parameterDictionary = ["userId": userId]
         if let username = username {
             parameterDictionary["username"] = username
@@ -114,11 +155,8 @@ final class ApiService {
         session.dataTask(with: request) { data, response, error in
             if let data = data {
                 do {
-                    guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
-                        completion(.failure(KeyriErrors.authorizationError))
-                        return
-                    }
-                    completion(.success(json))
+                    let response = try JSONDecoder().decode(AuthMobileResponse.self, from: data)
+                    completion(.success(response))
                 } catch {
                     completion(.failure(error))
                 }
