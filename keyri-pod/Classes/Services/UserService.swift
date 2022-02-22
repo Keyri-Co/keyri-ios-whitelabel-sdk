@@ -25,7 +25,7 @@ final class UserService {
     
     func signUp(username: String, sessionId: String, service: Service, custom: String?, completion: @escaping (Result<Void, Error>) -> Void) {
         guard let encUserId = createUser(username: username, service: service, custom: custom).encUserId else {
-            assertionFailure(KeyriErrors.keyriSdkError.errorDescription ?? "")
+            Assertion.failure(KeyriErrors.keyriSdkError.errorDescription ?? "")
             completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
@@ -65,7 +65,7 @@ final class UserService {
     
     func mobileSignUp(username: String, service: Service, callbackUrl: URL, custom: String?, extendedHeaders: [String: String]? = nil, completion: @escaping (Result<AuthMobileResponse, Error>) -> Void) {
         guard let account = createUser(username: username, service: service, custom: custom).account else {
-            assertionFailure(KeyriErrors.keyriSdkError.errorDescription ?? "")
+            Assertion.failure(KeyriErrors.keyriSdkError.errorDescription ?? "")
             completion(.failure(KeyriErrors.keyriSdkError))
             return
         }
@@ -83,7 +83,7 @@ final class UserService {
 extension UserService {
     private func createUser(username: String, service: Service, custom: String?) -> (account: Account?, encUserId: String?) {
         guard let deviceId = UIDevice.current.identifierForVendor?.uuidString else {
-            assertionFailure(KeyriErrors.keyriSdkError.errorDescription ?? "")
+            Assertion.failure(KeyriErrors.keyriSdkError.errorDescription ?? "")
             return (nil, nil)
         }
         
@@ -94,7 +94,7 @@ extension UserService {
             let userId = encryptionService.aesEncrypt(string: encryptTarget),
             let encUserId = encryptionService.aesEncrypt(string: userId)
         else {
-            assertionFailure(KeyriErrors.keyriSdkError.errorDescription ?? "")
+            Assertion.failure(KeyriErrors.keyriSdkError.errorDescription ?? "")
             return (nil, nil)
         }
                     

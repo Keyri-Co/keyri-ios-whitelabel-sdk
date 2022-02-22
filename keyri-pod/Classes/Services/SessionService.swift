@@ -66,7 +66,7 @@ final class SessionService {
 
         guard let tryUserId = try? keychainService.get(valueForKey: trySessionKey) else {
             completion?(.failure(KeyriErrors.keyriSdkError))
-            assertionFailure("User id for session key not found")
+            Assertion.failure("User id for session key not found")
             return
         }
 
@@ -84,7 +84,7 @@ final class SessionService {
         ]
 
         guard let theJSONData = try? JSONSerialization.data(withJSONObject: jsonDict, options: []) else {
-            assertionFailure("TODO")
+            Assertion.failure("TODO")
             return
         }
 
@@ -92,7 +92,7 @@ final class SessionService {
             let theJSONText = String(data: theJSONData, encoding: .ascii),
             let encryptResult = self.encryptionService.aesEncrypt(string: theJSONText)
         else {
-            assertionFailure("Sodium encrypt fails")
+            Assertion.failure("Sodium encrypt fails")
             return
         }
         var verifyApproveMessage = VerifyApproveMessage(cipher: encryptResult, publicKey: nil, iv: self.encryptionService.getIV())
