@@ -146,7 +146,7 @@ final class ApiService {
         request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
         extendedHeaders?.forEach { request.addValue($1, forHTTPHeaderField: $0) }
         guard let httpBody = try? JSONSerialization.data(withJSONObject: parameterDictionary, options: []) else {
-            assertionFailure("Invalid parameters in auth mobile request")
+            Assertion.failure("Invalid parameters in auth mobile request")
             return
         }
         request.httpBody = httpBody
@@ -177,7 +177,7 @@ final class ApiService {
         request.setValue("Application/json", forHTTPHeaderField: "Content-Type")
         let parameterDictionary = ["mobileAppKey": appKey, "device_id": deviceId]
         guard let httpBody = try? JSONSerialization.data(withJSONObject: parameterDictionary, options: []) else {
-            assertionFailure("Invalid parameters in auth mobile request")
+            Assertion.failure("Invalid parameters in auth mobile request")
             return
         }
         request.httpBody = httpBody

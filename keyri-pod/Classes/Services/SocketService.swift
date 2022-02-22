@@ -70,7 +70,7 @@ final class SocketService: WebSocketDelegate {
     
     func initializeSocket() {
         guard let socketUrl = URL(string: self.socketUrl) else {
-            assertionFailure("Invalid socket url config")
+            Assertion.failure("Invalid socket url config")
             delegate?.socketServiceDidConnectionFails()
             return
         }

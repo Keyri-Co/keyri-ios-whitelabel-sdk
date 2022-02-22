@@ -62,7 +62,7 @@ final class StorageService {
     
     func add(account: Account, serviceId: String) {
         guard var userServiceData = getService(serviceId: serviceId) else {
-            assertionFailure("Service by serviceId not found")
+            Assertion.failure("Service by serviceId not found")
             return
         }
         
@@ -72,7 +72,7 @@ final class StorageService {
         
     func remove(account: Account, from service: Service) {
         guard var userServiceData = getService(serviceId: service.id) else {
-            assertionFailure("Service by serviceId not found")
+            Assertion.failure("Service by serviceId not found")
             return
         }
         userServiceData.accounts[account.userId] = nil
@@ -81,7 +81,7 @@ final class StorageService {
     
     func remove(account: PublicAccount, from service: Service) {
         guard var userServiceData = getService(serviceId: service.id) else {
-            assertionFailure("Service by serviceId not found")
+            Assertion.failure("Service by serviceId not found")
             return
         }
         userServiceData.accounts = userServiceData.accounts.filter { $0.value.username != account.username }
@@ -90,7 +90,7 @@ final class StorageService {
     
     func getAllAccounts(serviceId: String) -> [Account] {
         guard let userServiceData = getService(serviceId: serviceId) else {
-            assertionFailure("Service by serviceId not found")
+            Assertion.failure("Service by serviceId not found")
             return []
         }
         return Array(userServiceData.accounts.values)

@@ -15,6 +15,7 @@ public final class Keyri: NSObject {
     private static var appkey: String?
     private static var rpPublicKey: String?
     private static var callbackUrl: URL?
+    static var assertionEnabled: Bool = false
     
     private var scanner: Scanner?
     
@@ -88,7 +89,7 @@ public final class Keyri: NSObject {
         whitelabelInitIfNeeded { [weak self] result in
             guard let sessionId = self?.sessionService?.sessionId else {
                 completion(.failure(KeyriErrors.keyriSdkError))
-                assertionFailure(KeyriErrors.keyriSdkError.localizedDescription)
+                Assertion.failure(KeyriErrors.keyriSdkError.localizedDescription)
                 return
             }
             self?.userService?.signUp(username: username, sessionId: sessionId, service: service, custom: custom, completion: completion)
@@ -110,7 +111,7 @@ public final class Keyri: NSObject {
         whitelabelInitIfNeeded { [weak self] result in
             guard let sessionId = self?.sessionService?.sessionId else {
                 completion(.failure(KeyriErrors.keyriSdkError))
-                assertionFailure(KeyriErrors.keyriSdkError.localizedDescription)
+                Assertion.failure(KeyriErrors.keyriSdkError.localizedDescription)
                 return
             }
             self?.userService?.login(sessionId: sessionId, service: service, account: account, custom: custom, completion: completion)
@@ -134,7 +135,7 @@ public final class Keyri: NSObject {
                 self?.apiService?.permissions(service: service, permissions: [.mobileSignUp]) { result in
                     guard let callbackUrl = Self.callbackUrl else {
                         completion(.failure(KeyriErrors.permissionsError))
-                        assertionFailure(KeyriErrors.permissionsError.localizedDescription)
+                        Assertion.failure(KeyriErrors.permissionsError.localizedDescription)
                         return
                     }
                     DispatchQueue.main.async {
@@ -176,7 +177,7 @@ public final class Keyri: NSObject {
                             if permissions[.mobileLogin] == true {
                                 guard let callbackUrl = Self.callbackUrl else {
                                     completion(.failure(KeyriErrors.keyriSdkError))
-                                    assertionFailure(KeyriErrors.keyriSdkError.localizedDescription)
+                                    Assertion.failure(KeyriErrors.keyriSdkError.localizedDescription)
                                     return
                                 }
                                 self?.userService?.mobileLogin(account: account, service: service, callbackUrl: callbackUrl, custom: custom, extendedHeaders: extendedHeaders, completion: completion)
@@ -270,7 +271,7 @@ extension Keyri {
             return
         }
         guard let deviceId = UIDevice.current.identifierForVendor?.uuidString else {
-            assertionFailure(KeyriErrors.notInitializedError.errorDescription ?? "")
+            Assertion.failure(KeyriErrors.notInitializedError.errorDescription ?? "")
             completion(.failure(KeyriErrors.notInitializedError))
             return
         }
