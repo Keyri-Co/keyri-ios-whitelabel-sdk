@@ -47,7 +47,7 @@ final class StorageService {
     private let storage = UserDefaults.standard
         
     func set(service: Service) {
-        let userServiceData = UserServiceData(service: service)
+        let userServiceData = getService(serviceId: service.id) ?? UserServiceData(service: service)
         createOrUpdate(userServiceData: userServiceData)
     }
     
