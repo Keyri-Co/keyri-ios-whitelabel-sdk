@@ -1,5 +1,5 @@
 PODS:
-  - keyri-pod (0.1.18)
+  - keyri-pod (0.1.19)
   - Toaster (2.3.0)
 
 DEPENDENCIES:
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  keyri-pod: ff322c27b556302e89b9cd1e7c6db537dbc84d6d
+  keyri-pod: b618d5841451e5f4bdfe69a99bc33188a31878ed
   Toaster: c3473963c78e8cabbf6ea6f11ad0fdaae6f54987
 
 PODFILE CHECKSUM: 88ca32336612776c1cbddfbdedc9c1da0e23aa1f
