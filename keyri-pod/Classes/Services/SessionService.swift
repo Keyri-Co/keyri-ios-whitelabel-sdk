@@ -103,6 +103,8 @@ final class SessionService {
         }
         
         socketService.sendEvent(message: verifyApproveMessage)
+        completion?(.success(()))
+        completion = nil
     }
 }
 
