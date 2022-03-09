@@ -78,6 +78,10 @@ final class UserService {
         
         apiService.authMobile(url: callbackUrl, userId: userId, username: username, clientPublicKey: try? encryptionService.loadPublicKeyString(), extendedHeaders: extendedHeaders, completion: completion)
     }
+    
+    func whitelabelAuth(custom: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        sessionService.whitelabelAuth(custom: custom, completion: completion)
+    }
 }
 
 extension UserService {

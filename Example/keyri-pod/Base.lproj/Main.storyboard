@@ -66,6 +66,13 @@
                                     <action selector="removeFirstAccounts:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Gq4-5j-ANL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SsX-os-lBG">
+                                <rect key="frame" x="152.5" y="566" width="109" height="30"/>
+                                <state key="normal" title="Whitelabel Auth"/>
+                                <connections>
+                                    <action selector="whitelabelAuth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kVN-sv-9Ef"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -77,9 +84,11 @@
                             <constraint firstItem="zHs-1v-AgQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G77-wH-B38"/>
                             <constraint firstItem="6NQ-FG-6iV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GYU-44-UNc"/>
                             <constraint firstItem="uIj-GR-DA0" firstAttribute="top" secondItem="NM2-wY-Fxh" secondAttribute="bottom" constant="8" symbolic="YES" id="Gtt-Jf-6iV"/>
+                            <constraint firstItem="NM2-wY-Fxh" firstAttribute="top" secondItem="SsX-os-lBG" secondAttribute="bottom" constant="8" symbolic="YES" id="TAR-Lo-sDY"/>
                             <constraint firstItem="uIj-GR-DA0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W5B-w7-kBB"/>
                             <constraint firstItem="qRN-mj-wZU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="ZCG-VB-beC"/>
                             <constraint firstItem="luW-Kc-M4I" firstAttribute="top" secondItem="6NQ-FG-6iV" secondAttribute="bottom" constant="8" symbolic="YES" id="fiE-E1-3FD"/>
+                            <constraint firstItem="SsX-os-lBG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kp9-YQ-Sgo"/>
                             <constraint firstItem="zHs-1v-AgQ" firstAttribute="top" secondItem="luW-Kc-M4I" secondAttribute="bottom" constant="8" symbolic="YES" id="lHW-W9-0r1"/>
                             <constraint firstItem="luW-Kc-M4I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ma3-H0-RZx"/>
                             <constraint firstItem="pq7-yV-iLc" firstAttribute="top" secondItem="zHs-1v-AgQ" secondAttribute="bottom" constant="8" id="uce-ir-Weg"/>

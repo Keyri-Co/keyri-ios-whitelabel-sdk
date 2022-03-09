@@ -194,6 +194,19 @@ public final class Keyri: NSObject {
             }
         }
     }
+    
+    /**
+     * Login user for Desktop agent
+     *
+     * - Parameters:
+     *  - custom: custom argument
+     *  - completion: returns Void if success or keyriSdkError if something went wrong
+     */
+    public func whitelabelAuth(custom: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        whitelabelInitIfNeeded { [weak self] result in
+            self?.userService?.whitelabelAuth(custom: custom, completion: completion)
+        }
+    }
 
     /**
      * Retrieves all public accounts on device.

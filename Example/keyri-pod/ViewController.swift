@@ -157,6 +157,19 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func whitelabelAuth(_ sender: Any) {
+        keyri = Keyri()
+        keyri?.whitelabelAuth(custom: "some custom") { [weak self] (result: Result<Void, Error>) in
+            self?.keyri = nil
+            switch result {
+            case .success():
+                print()
+            case .failure(let error):
+                Toast(text: error.localizedDescription, duration: Delay.long).show()
+            }
+        }
+    }
 }
 
 extension ViewController {
