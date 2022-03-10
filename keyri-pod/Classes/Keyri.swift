@@ -204,7 +204,12 @@ public final class Keyri: NSObject {
      */
     public func whitelabelAuth(custom: String, completion: @escaping (Result<Void, Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
-            self?.userService?.whitelabelAuth(custom: custom, completion: completion)
+            guard let sessionId = self?.sessionService?.sessionId else {
+                completion(.failure(KeyriErrors.keyriSdkError))
+                Assertion.failure(KeyriErrors.keyriSdkError.localizedDescription)
+                return
+            }
+            self?.userService?.whitelabelAuth(sessionId: sessionId, custom: custom, completion: completion)
         }
     }
 

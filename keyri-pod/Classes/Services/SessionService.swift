@@ -116,10 +116,21 @@ final class SessionService {
         return tryUserId
     }
     
-    func whitelabelAuth(custom: String, completion: @escaping (Result<Void, Error>) -> Void) {
+    func whitelabelAuth(sessionId: String, custom: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        self.sessionId = sessionId
         self.verifyUserSessionCustom = custom
         self.isWhitelabelAuth = true
         self.completion = completion
+        
+        let sessionKey = String.random(length: 32)
+        guard
+            let encSessionKey = encryptionService.aesEncrypt(string: sessionKey)
+        else {
+            completion(.failure(KeyriErrors.keyriSdkError))
+            return
+        }
+        
+        self.encSessionKey = encSessionKey
         
         socketService.initializeSocket()
     }
