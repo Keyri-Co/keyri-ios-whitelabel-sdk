@@ -11,22 +11,29 @@ final class SessionService {
     let keychainService: KeychainService
     let socketService: SocketService
     let encryptionService: EncryptionService
+    let config: Config
     
     var sessionId: String?
     
     private var encSessionKey: String?
+    private var verifyUserSessionCustom: String?
+    private var isWhitelabelAuth = false
+    
     private var completion: ((Result<Void, Error>) -> Void)?
         
-    init(keychainService: KeychainService, encryptionService: EncryptionService) {
+    init(keychainService: KeychainService, encryptionService: EncryptionService, config: Config) {
         self.keychainService = keychainService
-        self.socketService = SocketService()
+        self.socketService = SocketService(config: config)
         self.encryptionService = encryptionService
+        self.config = config
         
         socketService.delegate = self
     }
     
     func verifyUserSession(encUserId: String, sessionId: String, custom: String?, usePublicKey: Bool = false, completion: @escaping (Result<Void, Error>) -> Void) {
         self.sessionId = sessionId
+        self.verifyUserSessionCustom = custom
+        self.isWhitelabelAuth = false
         self.completion = completion
         guard
             let userId = encryptionService.aesDecrypt(string: encUserId)
@@ -56,32 +63,16 @@ final class SessionService {
         socketService.initializeSocket()
     }
     
-    private func sessionVerifyRequest(message: VerifyRequestMessage) {
-        guard
-            let trySessionKey = encryptionService.aesDecrypt(string: message.sessionKey)
-        else {
-            completion?(.failure(KeyriErrors.keyriSdkError))
-            return
-        }
-
-        guard let tryUserId = try? keychainService.get(valueForKey: trySessionKey) else {
-            completion?(.failure(KeyriErrors.keyriSdkError))
-            Assertion.failure("User id for session key not found")
-            return
-        }
-
-        do {
-            try keychainService.remove(valueForKey: trySessionKey)
-        } catch {
-            completion?(.failure(error))
-            return
-        }
-
-        let jsonDict = [
-            "userId": tryUserId,
-            "custom": "custom",
+    private func sessionVerifyRequest(message: VerifyRequestMessage, custom: String?) {
+        var jsonDict = [
             "timestamp": "\(Date().timeIntervalSince1970)"
         ]
+        if let userId = retreiveUserId(sessionKey: message.sessionKey) {
+            jsonDict["userId"] = userId
+        }
+        if let custom = verifyUserSessionCustom {
+            jsonDict["custom"] = custom
+        }
 
         guard let theJSONData = try? JSONSerialization.data(withJSONObject: jsonDict, options: []) else {
             Assertion.failure("TODO")
@@ -106,11 +97,54 @@ final class SessionService {
         completion?(.success(()))
         completion = nil
     }
+    
+    private func retreiveUserId(sessionKey: String) -> String? {
+        guard !isWhitelabelAuth else { return nil }
+        guard let trySessionKey = encryptionService.aesDecrypt(string: sessionKey) else {
+            return nil
+        }
+
+        guard let tryUserId = try? keychainService.get(valueForKey: trySessionKey) else {
+            Assertion.failure("User id for session key not found")
+            return nil
+        }
+
+        do {
+            try keychainService.remove(valueForKey: trySessionKey)
+        } catch {
+            return nil
+        }
+        
+        return tryUserId
+    }
+    
+    func whitelabelAuth(sessionId: String, custom: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        self.sessionId = sessionId
+        self.verifyUserSessionCustom = custom
+        self.isWhitelabelAuth = true
+        self.completion = completion
+        
+        let sessionKey = String.random(length: 32)
+        guard
+            let encSessionKey = encryptionService.aesEncrypt(string: sessionKey)
+        else {
+            completion(.failure(KeyriErrors.keyriSdkError))
+            return
+        }
+        
+        self.encSessionKey = encSessionKey
+        
+        socketService.initializeSocket()
+    }
 }
 
 extension SessionService: SocketServiceDelegate {
     func socketServiceDidConnected() {
-        let validateMessage = ValidateMessage(sessionId: sessionId!, sessionKey: encSessionKey!)
+        guard let sessionId = sessionId, let encSessionKey = encSessionKey else {
+            Assertion.failure("sessionId and encSessionKey should not be nil")
+            return
+        }
+        let validateMessage = ValidateMessage(sessionId: sessionId, sessionKey: encSessionKey)
         socketService.sendEvent(message: validateMessage)
     }
     
@@ -126,7 +160,7 @@ extension SessionService: SocketServiceDelegate {
         switch event {
         case .success(let message):
             if message.action == .SESSION_VERIFY_REQUEST {
-                sessionVerifyRequest(message: message)
+                sessionVerifyRequest(message: message, custom: verifyUserSessionCustom)
             }
         case .failure(let error):
             completion?(.failure(error))

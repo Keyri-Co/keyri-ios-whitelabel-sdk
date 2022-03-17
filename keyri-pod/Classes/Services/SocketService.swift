@@ -59,12 +59,15 @@ final class SocketService: WebSocketDelegate {
     var extraHeaders: [String : String]?
     var isConnected = false
     weak var delegate: SocketServiceDelegate?
+    
+    let config: Config
 
     private let socketUrl: String
     private var socket: WebSocket?
     
-    init() {
-        let config = Config()
+    init(config: Config) {
+        self.config = config
+        
         socketUrl = config.wsUrl
     }
     

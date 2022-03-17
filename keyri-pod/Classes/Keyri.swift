@@ -26,6 +26,10 @@ public final class Keyri: NSObject {
     private var keychainService: KeychainService?
     private var encryptionService: EncryptionService?
     
+    private var config: Config {
+        return Config(appKey: Self.appkey)
+    }
+    
     /**
      *  SDK configuration
      * - Parameters:
@@ -194,6 +198,24 @@ public final class Keyri: NSObject {
             }
         }
     }
+    
+    /**
+     * Login user for Desktop agent
+     *
+     * - Parameters:
+     *  - custom: custom argument
+     *  - completion: returns Void if success or keyriSdkError if something went wrong
+     */
+    public func whitelabelAuth(custom: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        whitelabelInitIfNeeded { [weak self] result in
+            guard let sessionId = self?.sessionService?.sessionId else {
+                completion(.failure(KeyriErrors.keyriSdkError))
+                Assertion.failure(KeyriErrors.keyriSdkError.localizedDescription)
+                return
+            }
+            self?.userService?.whitelabelAuth(sessionId: sessionId, custom: custom, completion: completion)
+        }
+    }
 
     /**
      * Retrieves all public accounts on device.
@@ -290,7 +312,7 @@ extension Keyri {
                     self.keychainService = keychainService
                     let encryptionService = EncryptionService(keychainService: keychainService, rpPublicKey: Self.rpPublicKey)
                     self.encryptionService = encryptionService
-                    let sessionService = SessionService(keychainService: keychainService, encryptionService: encryptionService)
+                    let sessionService = SessionService(keychainService: keychainService, encryptionService: encryptionService, config: self.config)
                     self.sessionService = sessionService
                     let storageService = StorageService()
                     self.storageService = storageService

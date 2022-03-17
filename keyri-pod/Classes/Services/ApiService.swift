@@ -93,11 +93,13 @@ final class ApiService {
     private let baseUrl: String
     
     let service: Service
+    let config: Config
     
-    init(service: Service) {
-        let config = Config()
-        baseUrl = config.apiUrl
+    init(service: Service, config: Config) {
+        self.config = config
         self.service = service
+        
+        baseUrl = config.apiUrl
     }
     
     static func handleResponseStatusCode(_ response: URLResponse?) -> Error? {
@@ -167,7 +169,8 @@ final class ApiService {
     }
     
     static func whitelabelInit(appKey: String, deviceId: String, completion: @escaping ((Result<ApiService, Error>) -> Void)) {
-        let baseUrl = Config().apiUrl
+        let config = Config(appKey: appKey)
+        let baseUrl = config.apiUrl
         guard let url = URL(string: "\(baseUrl)/api/sdk/whitelabel-init") else {
             completion(.failure(KeyriErrors.networkError))
             return
@@ -187,7 +190,7 @@ final class ApiService {
             if let data = data {
                 do {
                     let response = try JSONDecoder().decode(WhitelabelInitResponse.self, from: data)
-                    completion(.success(ApiService(service: response.service)))
+                    completion(.success(ApiService(service: response.service, config: config)))
                 } catch {
                     completion(.failure(error))
                 }
