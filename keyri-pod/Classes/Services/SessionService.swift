@@ -11,6 +11,7 @@ final class SessionService {
     let keychainService: KeychainService
     let socketService: SocketService
     let encryptionService: EncryptionService
+    let config: Config
     
     var sessionId: String?
     
@@ -20,10 +21,11 @@ final class SessionService {
     
     private var completion: ((Result<Void, Error>) -> Void)?
         
-    init(keychainService: KeychainService, encryptionService: EncryptionService) {
+    init(keychainService: KeychainService, encryptionService: EncryptionService, config: Config) {
         self.keychainService = keychainService
-        self.socketService = SocketService()
+        self.socketService = SocketService(config: config)
         self.encryptionService = encryptionService
+        self.config = config
         
         socketService.delegate = self
     }

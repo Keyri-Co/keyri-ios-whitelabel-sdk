@@ -24,12 +24,17 @@ struct Config {
     let wsUrl: String
     let ivAes: String
     
-    init() {
-        #if DEBUG
-        let jsonData = Self.devRawConfig.data(using: .utf8)
-        #else
-        let jsonData = Self.devRawConfig.data(using: .utf8)
-        #endif
+    private let appKey: String?
+    
+    init(appKey: String?) {
+        self.appKey = appKey
+        
+        let jsonData: Data?
+        if appKey?.hasPrefix("dev") == true {
+            jsonData = Self.devRawConfig.data(using: .utf8)
+        } else {
+            jsonData = Self.prodRawConfig.data(using: .utf8)
+        }
         
         guard let jsonData = jsonData else {
             fatalError(KeyriErrors.wrongConfigError.localizedDescription)

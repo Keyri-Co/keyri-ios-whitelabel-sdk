@@ -26,6 +26,10 @@ public final class Keyri: NSObject {
     private var keychainService: KeychainService?
     private var encryptionService: EncryptionService?
     
+    private var config: Config {
+        return Config(appKey: Self.appkey)
+    }
+    
     /**
      *  SDK configuration
      * - Parameters:
@@ -308,7 +312,7 @@ extension Keyri {
                     self.keychainService = keychainService
                     let encryptionService = EncryptionService(keychainService: keychainService, rpPublicKey: Self.rpPublicKey)
                     self.encryptionService = encryptionService
-                    let sessionService = SessionService(keychainService: keychainService, encryptionService: encryptionService)
+                    let sessionService = SessionService(keychainService: keychainService, encryptionService: encryptionService, config: self.config)
                     self.sessionService = sessionService
                     let storageService = StorageService()
                     self.storageService = storageService
