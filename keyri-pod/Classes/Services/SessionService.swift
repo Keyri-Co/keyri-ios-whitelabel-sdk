@@ -94,8 +94,7 @@ final class SessionService {
         }
         
         socketService.sendEvent(message: verifyApproveMessage)
-        completion?(.success(()))
-        completion = nil
+        socketService.disconnect()
     }
     
     private func retreiveUserId(sessionKey: String) -> String? {
@@ -152,8 +151,13 @@ extension SessionService: SocketServiceDelegate {
         completion?(.failure(KeyriErrors.networkError))
     }
     
-    func socketServiceDidDisconnected() {
-        completion?(.failure(KeyriErrors.networkError))
+    func socketServiceDidDisconnected(error: Error?) {
+        if let _ = error {
+            completion?(.failure(KeyriErrors.networkError))
+        } else {
+            completion?(.success(()))
+            completion = nil
+        }
     }
     
     func socketServiceDidReceiveEvent(event: Result<VerifyRequestMessage, Error>) {
