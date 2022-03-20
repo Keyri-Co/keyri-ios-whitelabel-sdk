@@ -51,11 +51,11 @@ struct VerifyRequestMessage: Codable {
 protocol SocketServiceDelegate: AnyObject {
     func socketServiceDidConnected()
     func socketServiceDidConnectionFails()
-    func socketServiceDidDisconnected()
+    func socketServiceDidDisconnected(error: Error?)
     func socketServiceDidReceiveEvent(event: Result<VerifyRequestMessage, Error>)
 }
 
-final class SocketService: WebSocketDelegate {    
+final class SocketService: WebSocketDelegate {
     var extraHeaders: [String : String]?
     var isConnected = false
     weak var delegate: SocketServiceDelegate?
@@ -89,7 +89,11 @@ final class SocketService: WebSocketDelegate {
         socket?.connect()
     }
     
-    func didReceive(event: WebSocketEvent, client: WebSocketClient) {
+    func disconnect() {
+        socket?.disconnect()
+    }
+    
+    public func didReceive(event: WebSocketEvent, client: WebSocketClient) {
         switch event {
         case .connected(let headers):
             self.isConnected = true
@@ -98,7 +102,7 @@ final class SocketService: WebSocketDelegate {
         case .disconnected(let reason, let code):
             self.isConnected = false
             print("websocket is disconnected: \(reason) with code: \(code)")
-            delegate?.socketServiceDidDisconnected()
+            delegate?.socketServiceDidDisconnected(error: nil)
         case .text(let string):
             print("Received text: \(string)")
             if let data = string.data(using: .utf8) {
@@ -109,11 +113,11 @@ final class SocketService: WebSocketDelegate {
             self.parseVerificationRequest(data: data)
         case .cancelled:
             self.isConnected = false
-            delegate?.socketServiceDidDisconnected()
+            delegate?.socketServiceDidDisconnected(error: nil)
         case .error(let error):
             self.isConnected = false
             self.handleError(error)
-            delegate?.socketServiceDidDisconnected()
+            delegate?.socketServiceDidDisconnected(error: error)
         default:
             break
         }
