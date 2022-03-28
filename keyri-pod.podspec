@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'keyri-pod'
-  s.version          = '0.1.21'
+  s.version          = '0.1.22'
   s.summary          = 'Library for autorization'
 
 # This description is used to generate tags and improve search results.
