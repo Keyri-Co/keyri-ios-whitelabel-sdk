@@ -438,6 +438,25 @@ extension Keyri {
     }
     
     /**
+     * Login user for Desktop agent
+     *
+     * - Parameters:
+     *  - custom: custom argument
+     *  - completion: returns  keyriSdkError if something went wrong
+     */
+    @objc
+    public func whitelabelAuth(custom: String, completion: @escaping (Error?) -> Void) {
+        whitelabelAuth(custom: custom) { (result: Result<Void, Error>) in
+            switch result {
+            case .success():
+                completion(nil)
+            case .failure(let error):
+                completion(error)
+            }
+        }
+    }
+    
+    /**
      * Retrieves all public accounts on device.
      */
     @objc
