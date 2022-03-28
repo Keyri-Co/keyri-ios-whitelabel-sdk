@@ -70,7 +70,7 @@
                                 <rect key="frame" x="152.5" y="566" width="109" height="30"/>
                                 <state key="normal" title="Whitelabel Auth"/>
                                 <connections>
-                                    <action selector="whitelabelAuth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kVN-sv-9Ef"/>
+                                    <segue destination="9Mh-wV-QJV" kind="show" id="eC2-i4-vpZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -99,6 +99,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+        <!--Whitelabel Auth View Controller-->
+        <scene sceneID="WT4-CV-XYe">
+            <objects>
+                <viewController id="9Mh-wV-QJV" customClass="WhitelabelAuthViewController" customModule="keyri_pod_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e92-SO-9zx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Custom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qvF-G8-g18">
+                                <rect key="frame" x="20" y="20" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNv-1t-y8k">
+                                <rect key="frame" x="20" y="62" width="374" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Whitelabel Auth"/>
+                                <connections>
+                                    <action selector="whitelabelAuthAction:" destination="9Mh-wV-QJV" eventType="touchUpInside" id="MoF-7f-8RP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="AN0-e0-MBF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AN0-e0-MBF" firstAttribute="trailing" secondItem="fNv-1t-y8k" secondAttribute="trailing" constant="20" id="6oh-f8-EOb"/>
+                            <constraint firstItem="fNv-1t-y8k" firstAttribute="top" secondItem="qvF-G8-g18" secondAttribute="bottom" constant="8" symbolic="YES" id="Lcg-nL-ZLa"/>
+                            <constraint firstItem="fNv-1t-y8k" firstAttribute="leading" secondItem="AN0-e0-MBF" secondAttribute="leading" constant="20" id="a84-gj-sKy"/>
+                            <constraint firstItem="qvF-G8-g18" firstAttribute="leading" secondItem="AN0-e0-MBF" secondAttribute="leading" constant="20" id="aPu-dU-AXe"/>
+                            <constraint firstItem="qvF-G8-g18" firstAttribute="top" secondItem="AN0-e0-MBF" secondAttribute="top" constant="20" id="crH-hK-NGT"/>
+                            <constraint firstItem="AN0-e0-MBF" firstAttribute="trailing" secondItem="qvF-G8-g18" secondAttribute="trailing" constant="20" id="tPS-jH-aJd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="db8-WN-OMk"/>
+                    <connections>
+                        <outlet property="customTextField" destination="qvF-G8-g18" id="Adt-R4-3DJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n7F-Mg-iVS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="913.04347826086962" y="137.94642857142856"/>
         </scene>
     </scenes>
     <resources>
