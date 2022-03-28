@@ -206,15 +206,20 @@ public final class Keyri: NSObject {
      *  - custom: custom argument
      *  - completion: returns Void if success or keyriSdkError if something went wrong
      */
-    public func whitelabelAuth(custom: String, completion: @escaping (Result<Void, Error>) -> Void) {
-        whitelabelInitIfNeeded { [weak self] result in
-            guard let sessionId = self?.sessionService?.sessionId else {
-                completion(.failure(KeyriErrors.keyriSdkError))
-                Assertion.failure(KeyriErrors.keyriSdkError.localizedDescription)
-                return
+    public func whitelabelAuth(custom: String, from viewController: UIViewController? = nil, completion: @escaping (Result<Void, Error>) -> Void) {
+        scanner = Scanner()
+        scanner?.completion = { [weak self] result in
+            let sessionId = URLComponents(string: result)?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
+            self?.whitelabelInitIfNeeded { [weak self] result in
+                switch result {
+                case .success(_):
+                    self?.userService?.whitelabelAuth(sessionId: sessionId, custom: custom, completion: completion)
+                case .failure(let error):
+                    completion(.failure(error))
+                }
             }
-            self?.userService?.whitelabelAuth(sessionId: sessionId, custom: custom, completion: completion)
         }
+        scanner?.show(from: viewController)
     }
 
     /**
