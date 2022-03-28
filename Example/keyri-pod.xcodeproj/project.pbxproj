@@ -15,6 +15,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		8271B135C62C423685AAB453 /* Pods_keyri_pod_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B70766740C564E5F95DC551 /* Pods_keyri_pod_Tests.framework */; };
+		BE09891727F1C81E00A48587 /* WhitelabelAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE09891627F1C81E00A48587 /* WhitelabelAuthViewController.swift */; };
 		BE80469D27306CA900141851 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE80469C27306CA900141851 /* Images.xcassets */; };
 		D34E11D827131ABE00FA95F1 /* KeyriHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = D34E11D727131ABE00FA95F1 /* KeyriHeader.m */; };
 		D3F6F9BF2727215A005A13C1 /* SwiftQRScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F6F9B72727215A005A13C1 /* SwiftQRScanner.swift */; };
@@ -50,6 +51,7 @@
 		7F0FD9EDEBA586B63CA87F14 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		833BFFE48A9E443248AE958F /* Pods-keyri-pod_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keyri-pod_Example.release.xcconfig"; path = "Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A284E45D59765515B354E3A4 /* Pods_keyri_pod_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_keyri_pod_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE09891627F1C81E00A48587 /* WhitelabelAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhitelabelAuthViewController.swift; sourceTree = "<group>"; };
 		BE80469C27306CA900141851 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BEFE0BBA27973ABD007C0EBB /* keyri-pod_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "keyri-pod_Example.entitlements"; sourceTree = "<group>"; };
 		C3573E7206A0ED431EA60092 /* Pods-keyri-pod_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keyri-pod_Example.debug.xcconfig"; path = "Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				D3F6F9B32727215A005A13C1 /* Scanner */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				BE09891627F1C81E00A48587 /* WhitelabelAuthViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -365,6 +368,7 @@
 				D34E11D827131ABE00FA95F1 /* KeyriHeader.m in Sources */,
 				D3F6F9C32727215A005A13C1 /* SquareView.swift in Sources */,
 				D3F6F9BF2727215A005A13C1 /* SwiftQRScanner.swift in Sources */,
+				BE09891727F1C81E00A48587 /* WhitelabelAuthViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
