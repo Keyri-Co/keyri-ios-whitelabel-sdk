@@ -206,20 +206,15 @@ public final class Keyri: NSObject {
      *  - custom: custom argument
      *  - completion: returns Void if success or keyriSdkError if something went wrong
      */
-    public func whitelabelAuth(custom: String, from viewController: UIViewController? = nil, completion: @escaping (Result<Void, Error>) -> Void) {
-        scanner = Scanner()
-        scanner?.completion = { [weak self] result in
-            let sessionId = URLComponents(string: result)?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
-            self?.whitelabelInitIfNeeded { [weak self] result in
-                switch result {
-                case .success(_):
-                    self?.userService?.whitelabelAuth(sessionId: sessionId, custom: custom, completion: completion)
-                case .failure(let error):
-                    completion(.failure(error))
-                }
+    public func whitelabelAuth(sessionId: String, custom: String, from viewController: UIViewController? = nil, completion: @escaping (Result<Void, Error>) -> Void) {
+        whitelabelInitIfNeeded { [weak self] result in
+            switch result {
+            case .success(_):
+                self?.userService?.whitelabelAuth(sessionId: sessionId, custom: custom, completion: completion)
+            case .failure(let error):
+                completion(.failure(error))
             }
         }
-        scanner?.show(from: viewController)
     }
 
     /**
@@ -450,8 +445,8 @@ extension Keyri {
      *  - completion: returns  keyriSdkError if something went wrong
      */
     @objc
-    public func whitelabelAuth(custom: String, completion: @escaping (Error?) -> Void) {
-        whitelabelAuth(custom: custom) { (result: Result<Void, Error>) in
+    public func whitelabelAuth(sessionId: String, custom: String, completion: @escaping (Error?) -> Void) {
+        whitelabelAuth(sessionId: sessionId, custom: custom) { (result: Result<Void, Error>) in
             switch result {
             case .success():
                 completion(nil)

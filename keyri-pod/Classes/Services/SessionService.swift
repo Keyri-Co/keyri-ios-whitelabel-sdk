@@ -18,6 +18,7 @@ final class SessionService {
     private var encSessionKey: String?
     private var verifyUserSessionCustom: String?
     private var isWhitelabelAuth = false
+    private var usePublicKey = false
     
     private var completion: ((Result<Void, Error>) -> Void)?
         
@@ -33,6 +34,7 @@ final class SessionService {
     func verifyUserSession(encUserId: String, sessionId: String, custom: String?, usePublicKey: Bool = false, completion: @escaping (Result<Void, Error>) -> Void) {
         self.sessionId = sessionId
         self.verifyUserSessionCustom = custom
+        self.usePublicKey = usePublicKey
         self.isWhitelabelAuth = false
         self.completion = completion
         guard
@@ -87,7 +89,7 @@ final class SessionService {
             return
         }
         var verifyApproveMessage = VerifyApproveMessage(cipher: encryptResult, publicKey: nil, iv: self.encryptionService.getIV())
-        if true {
+        if usePublicKey || isWhitelabelAuth {
             if let publicKey = try? self.encryptionService.loadPublicKeyString() {
                 verifyApproveMessage.publicKey = publicKey
             }
