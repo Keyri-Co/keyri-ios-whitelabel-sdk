@@ -11,8 +11,8 @@ public class Session: NSObject, Codable {
     @objc public let service: Service
     @objc public let isNewUser: Bool
     @objc public let username: String?
-    @objc public let widgetIPData: String?
-    @objc public let mobileIPData: String?
+    @objc public let widgetIPData: IPData?
+    @objc public let mobileIPData: IPData?
     @objc public let sessionType: String?
     @objc public let custom: String?
 }
@@ -21,6 +21,72 @@ public class Domain: NSObject, Codable {
     @objc public let domainName: String?
     @objc public let verifiedRecord: String?
     @objc public var isDomainApproved: Bool = false
+}
+
+public class IPData: NSObject, Codable {
+    public class Asn: NSObject, Codable {
+        @objc public let asn: String?
+        @objc public let name: String?
+        @objc public let domain: String?
+        @objc public let route: String?
+        @objc public let type: String?
+    }
+    
+    public class Language: NSObject, Codable {
+        @objc public let name: String?
+        @objc public let native: String?
+        @objc public let code: String?
+    }
+    
+    public class Currency: NSObject, Codable {
+        @objc public let name: String?
+        @objc public let code: String?
+        @objc public let symbol: String?
+        @objc public let native: String?
+        @objc public let plural: String?
+    }
+    
+    public class TimeZone: NSObject, Codable {
+        @objc public let name: String?
+        @objc public let abbr: String?
+        @objc public let offset: String?
+        @objc public var is_dst: Bool = false
+        @objc public let current_time: String?
+    }
+    
+    public class Threat: NSObject, Codable {
+        @objc public let is_tor: Bool
+        @objc public let is_proxy: Bool
+        @objc public let is_anonymous: Bool
+        @objc public let is_known_attacker: Bool
+        @objc public let is_known_abuser: Bool
+        @objc public let is_threat: Bool
+        @objc public let is_bogon: Bool
+    }
+    
+    @objc public let id: String?
+    @objc public let is_eu: Bool
+    @objc public let city: String?
+    @objc public let region: String?
+    @objc public let region_code: String?
+    @objc public let country_name: String?
+    @objc public let country_code: String?
+    @objc public let continent_name: String?
+    @objc public let continent_code: String?
+    @objc public let latitude: Float
+    @objc public let longitude: Float
+    @objc public let postal: String?
+    @objc public let calling_code: String?
+    @objc public let flag: String?
+    @objc public let emoji_flag: String?
+    @objc public let emoji_unicode: String?
+    @objc public let count: String?
+    @objc public var status: Int
+    @objc public let asn: Asn?
+    @objc public let languages: Language?
+    @objc public let currency: Currency?
+    @objc public let time_zone: TimeZone?
+    @objc public let threat: Threat?
 }
 
 public class Service: NSObject, Codable {
