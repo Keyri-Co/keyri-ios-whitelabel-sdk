@@ -11,6 +11,16 @@ public class Session: NSObject, Codable {
     @objc public let service: Service
     @objc public let isNewUser: Bool
     @objc public let username: String?
+    @objc public let widgetIPData: String?
+    @objc public let mobileIPData: String?
+    @objc public let sessionType: String?
+    @objc public let custom: String?
+}
+
+public class Domain: NSObject, Codable {
+    @objc public let domainName: String?
+    @objc public let verifiedRecord: String?
+    @objc public var isDomainApproved: Bool = false
 }
 
 public class Service: NSObject, Codable {
@@ -18,17 +28,38 @@ public class Service: NSObject, Codable {
         case id = "_id"
         case name
         case logo
+        case key
+        case createdAt
+        case updatedAt
+        case v = "__v"
+        case ironPlansUUID
+        case qrLogo
+        case isValid
+        case qrCodeType
+        case subDomainName
+        case originalDomain
     }
 
     @objc public let id: String
     @objc public let name: String
     @objc public let logo: String?
-    
+    @objc public var key: String?
+    @objc public var createdAt: String?
+    @objc public var updatedAt: String?
+    @objc public var v: String?
+    @objc public var ironPlansUUID: String?
+    @objc public var qrLogo: String?
+    @objc public var isValid: Bool
+    @objc public var qrCodeType: String?
+    @objc public var subDomainName: String?
+    @objc public var originalDomain: Domain?
+
     @objc
     public init(id: String, name: String, logo: String?) {
         self.id = id
         self.name = name
         self.logo = logo
+        self.isValid = true
         
         super.init()
     }
