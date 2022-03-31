@@ -7,6 +7,16 @@
 
 import Foundation
 
+extension Encodable {
+    func asDictionary() throws -> [String: Any] {
+        let data = try JSONEncoder().encode(self)
+        guard let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
+            throw NSError()
+        }
+        return dictionary
+    }
+}
+
 public class Session: NSObject, Codable {
     @objc public let service: Service
     @objc public let isNewUser: Bool
@@ -15,6 +25,10 @@ public class Session: NSObject, Codable {
     @objc public let mobileIPData: IPData?
     @objc public let sessionType: String?
     @objc public let custom: String?
+    
+    @objc public func dictionary() -> [String: Any] {
+        (try? self.asDictionary()) ?? [:]
+    }
 }
 
 public class Domain: NSObject, Codable {
