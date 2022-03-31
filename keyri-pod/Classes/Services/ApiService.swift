@@ -64,7 +64,7 @@ public class IPData: NSObject, Codable {
         @objc public let is_bogon: Bool
     }
     
-    @objc public let id: String?
+    @objc public let ip: String?
     @objc public let is_eu: Bool
     @objc public let city: String?
     @objc public let region: String?
@@ -83,7 +83,7 @@ public class IPData: NSObject, Codable {
     @objc public let count: String?
     @objc public var status: Int
     @objc public let asn: Asn?
-    @objc public let languages: Language?
+    @objc public let languages: [Language]?
     @objc public let currency: Currency?
     @objc public let time_zone: TimeZone?
     @objc public let threat: Threat?
@@ -94,13 +94,11 @@ public class Service: NSObject, Codable {
         case id = "_id"
         case name
         case logo
-        case key
+        case isValid
         case createdAt
         case updatedAt
-        case v = "__v"
         case ironPlansUUID
         case qrLogo
-        case isValid
         case qrCodeType
         case subDomainName
         case originalDomain
@@ -109,13 +107,11 @@ public class Service: NSObject, Codable {
     @objc public let id: String
     @objc public let name: String
     @objc public let logo: String?
-    @objc public var key: String?
+    @objc public var isValid: Bool
     @objc public var createdAt: String?
     @objc public var updatedAt: String?
-    @objc public var v: String?
     @objc public var ironPlansUUID: String?
     @objc public var qrLogo: String?
-    @objc public var isValid: Bool
     @objc public var qrCodeType: String?
     @objc public var subDomainName: String?
     @objc public var originalDomain: Domain?
