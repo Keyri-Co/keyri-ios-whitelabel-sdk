@@ -38,6 +38,10 @@ class WhitelabelAuthViewController: UIViewController {
     @IBOutlet weak var customTextField: UITextField!
     
     @IBAction func whitelabelAuthAction(_ sender: Any) {
+        guard let custom = customTextField.text, !custom.isEmpty else {
+            Toast(text: "Custom should not be empty", duration: Delay.long).show()
+            return
+        }
         present(scanner, animated: true, completion: nil)
     }
     

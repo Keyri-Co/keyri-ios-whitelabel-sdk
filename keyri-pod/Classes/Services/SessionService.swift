@@ -72,7 +72,7 @@ final class SessionService {
         if let userId = retreiveUserId(sessionKey: message.sessionKey) {
             jsonDict["userId"] = userId
         }
-        if let custom = verifyUserSessionCustom {
+        if let custom = verifyUserSessionCustom, !custom.isEmpty {
             jsonDict["custom"] = custom
         }
 
