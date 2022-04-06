@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CryptoSwift
 
 final class EncryptionService {
     private enum Constants {
@@ -28,6 +29,17 @@ final class EncryptionService {
             let secretBase64EncodedData = secret.base64EncodedData(),
             let stringData = string.data(using: .utf8),
             let aes = try? AES(key: Array(secretBase64EncodedData), blockMode: CBC(iv: Array(ivData)), padding: .pkcs7)
+        else { return nil }
+        
+        return try? Data(aes.encrypt(stringData.bytes)).base64EncodedString()
+    }
+    
+    func aesEncrypt(string: String, aesKey: String) -> String? {
+        guard
+            let ivData = Data(base64Encoded: getIV()),
+            let newKeyBase64EncodedData = aesKey.base64EncodedData(),
+            let stringData = string.data(using: .utf8),
+            let aes = try? AES(key: Array(newKeyBase64EncodedData), blockMode: CBC(iv: Array(ivData)), padding: .pkcs7)
         else { return nil }
         
         return try? Data(aes.encrypt(stringData.bytes)).base64EncodedString()

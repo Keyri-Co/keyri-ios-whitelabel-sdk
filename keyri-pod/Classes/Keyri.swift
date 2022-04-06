@@ -206,11 +206,11 @@ public final class Keyri: NSObject {
      *  - custom: custom argument
      *  - completion: returns Void if success or keyriSdkError if something went wrong
      */
-    public func whitelabelAuth(sessionId: String, custom: String, from viewController: UIViewController? = nil, completion: @escaping (Result<Void, Error>) -> Void) {
+    public func whitelabelAuth(sessionId: String, externalAesKey: String? = nil, custom: String, from viewController: UIViewController? = nil, completion: @escaping (Result<Void, Error>) -> Void) {
         whitelabelInitIfNeeded { [weak self] result in
             switch result {
             case .success(_):
-                self?.userService?.whitelabelAuth(sessionId: sessionId, custom: custom, completion: completion)
+                self?.userService?.whitelabelAuth(sessionId: sessionId, externalAesKey: externalAesKey, custom: custom, completion: completion)
             case .failure(let error):
                 completion(.failure(error))
             }
@@ -446,7 +446,7 @@ extension Keyri {
      */
     @objc
     public func whitelabelAuth(sessionId: String, custom: String, completion: @escaping (Error?) -> Void) {
-        whitelabelAuth(sessionId: sessionId, custom: custom) { (result: Result<Void, Error>) in
+        whitelabelAuth(sessionId: sessionId, externalAesKey: "tx/8V5V8BQWh5u7IMVs7qRJ2D3bngZGDH1P8iaM74mM=", custom: custom) { (result: Result<Void, Error>) in
             switch result {
             case .success():
                 completion(nil)

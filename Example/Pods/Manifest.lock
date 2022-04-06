@@ -1,5 +1,7 @@
 PODS:
-  - keyri-pod (0.1.26)
+  - CryptoSwift (1.4.3)
+  - keyri-pod (0.1.26):
+    - CryptoSwift (~> 1.4.1)
   - Toaster (2.3.0)
 
 DEPENDENCIES:
@@ -8,6 +10,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - CryptoSwift
     - Toaster
 
 EXTERNAL SOURCES:
@@ -15,7 +18,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  keyri-pod: bdb73f8562459cd4b786e2612e5e481221a54f21
+  CryptoSwift: a0799ee936271bd2253a006f1e4523df21845000
+  keyri-pod: edccc20bde1473c1abe11593f6cacce61739a85a
   Toaster: c3473963c78e8cabbf6ea6f11ad0fdaae6f54987
 
 PODFILE CHECKSUM: 88ca32336612776c1cbddfbdedc9c1da0e23aa1f
