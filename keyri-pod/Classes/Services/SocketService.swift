@@ -34,6 +34,7 @@ struct VerifyApproveMessage: SocketRepresentation, Codable {
     var publicKey: String?
     var action = SocketAction.SESSION_VERIFY_APPROVE.rawValue
     var iv: String
+    var endToEnd: Bool?
     
     func socketRepresentation() -> String? {
         guard let jsonData = try? JSONEncoder().encode(self) else { return nil }

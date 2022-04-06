@@ -25,6 +25,11 @@
       "keyri-pod/Assets/**/*"
     ]
   },
+  "dependencies": {
+    "CryptoSwift": [
+      "~> 1.4.1"
+    ]
+  },
   "pod_target_xcconfig": {
     "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
   },

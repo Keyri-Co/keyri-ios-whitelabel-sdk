@@ -14,10 +14,12 @@ final class SessionService {
     let config: Config
     
     var sessionId: String?
+    var externalAesKey: String?
     
     private var encSessionKey: String?
     private var verifyUserSessionCustom: String?
     private var isWhitelabelAuth = false
+    private var isEndToEnd = false
     private var usePublicKey = false
     
     private var completion: ((Result<Void, Error>) -> Void)?
@@ -81,15 +83,26 @@ final class SessionService {
             return
         }
 
-        guard
-            let theJSONText = String(data: theJSONData, encoding: .ascii),
-            let encryptResult = self.encryptionService.aesEncrypt(string: theJSONText)
-        else {
+        guard let theJSONText = String(data: theJSONData, encoding: .ascii) else {
             Assertion.failure("Sodium encrypt fails")
             return
         }
+        
+        var encryptResult: String?
+        if let externalAesKey = externalAesKey {
+            encryptResult = self.encryptionService.aesEncrypt(string: theJSONText, aesKey: externalAesKey)
+        } else {
+            encryptResult = self.encryptionService.aesEncrypt(string: theJSONText)
+        }
+        
+        guard let encryptResult = encryptResult else {
+            Assertion.failure("Sodium encrypt fails")
+            return
+        }
+        
         var verifyApproveMessage = VerifyApproveMessage(cipher: encryptResult, publicKey: nil, iv: self.encryptionService.getIV())
-        if usePublicKey || isWhitelabelAuth {
+        if isEndToEnd { verifyApproveMessage.endToEnd = true }
+        if (usePublicKey || isWhitelabelAuth) && !isEndToEnd {
             if let publicKey = try? self.encryptionService.loadPublicKeyString() {
                 verifyApproveMessage.publicKey = publicKey
             }
@@ -119,16 +132,22 @@ final class SessionService {
         return tryUserId
     }
     
-    func whitelabelAuth(sessionId: String, custom: String, completion: @escaping (Result<Void, Error>) -> Void) {
+    func whitelabelAuth(sessionId: String, externalAesKey: String?, custom: String, completion: @escaping (Result<Void, Error>) -> Void) {
         self.sessionId = sessionId
+        self.externalAesKey = externalAesKey
         self.verifyUserSessionCustom = custom
         self.isWhitelabelAuth = true
         self.completion = completion
         
         let sessionKey = String.random(length: 32)
-        guard
-            let encSessionKey = encryptionService.aesEncrypt(string: sessionKey)
-        else {
+        var encSessionKey: String?
+        if let externalAesKey = externalAesKey {
+            encSessionKey = encryptionService.aesEncrypt(string: sessionKey, aesKey: externalAesKey)
+            isEndToEnd = true
+        } else {
+            encSessionKey = encryptionService.aesEncrypt(string: sessionKey)
+        }
+        guard encSessionKey != nil else {
             completion(.failure(KeyriErrors.keyriSdkError))
             return
         }

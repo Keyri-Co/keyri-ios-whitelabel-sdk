@@ -79,8 +79,8 @@ final class UserService {
         apiService.authMobile(url: callbackUrl, userId: userId, username: username, clientPublicKey: try? encryptionService.loadPublicKeyString(), extendedHeaders: extendedHeaders, completion: completion)
     }
     
-    func whitelabelAuth(sessionId: String, custom: String, completion: @escaping (Result<Void, Error>) -> Void) {
-        sessionService.whitelabelAuth(sessionId: sessionId, custom: custom, completion: completion)
+    func whitelabelAuth(sessionId: String, externalAesKey: String?, custom: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        sessionService.whitelabelAuth(sessionId: sessionId, externalAesKey: externalAesKey, custom: custom, completion: completion)
     }
 }
 

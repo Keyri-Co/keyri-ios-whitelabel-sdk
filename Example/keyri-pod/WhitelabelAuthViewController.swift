@@ -55,8 +55,10 @@ class WhitelabelAuthViewController: UIViewController {
 extension WhitelabelAuthViewController: QRScannerCodeDelegate {
     func qrScanner(_ controller: UIViewController, scanDidComplete result: String) {
         let sessionId = URLComponents(string: result)?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
+        let aesKey = URLComponents(string: result)?.queryItems?.first(where: { $0.name == "aesKey" })?.value ?? "tx/8V5V8BQWh5u7IMVs7qRJ2D3bngZGDH1P8iaM74mM="
+        print("Data from QR: sessionId - \(sessionId); aesKey: \(aesKey)")
         keyri = Keyri()
-        keyri?.whitelabelAuth(sessionId: sessionId, custom: customTextField.text ?? "", completion: { [weak self] (result: Result<Void, Error>) in
+        keyri?.whitelabelAuth(sessionId: sessionId, externalAesKey: aesKey, custom: customTextField.text ?? "", completion: { [weak self] (result: Result<Void, Error>) in
             self?.keyri = nil
             switch result {
             case .success():
