@@ -141,6 +141,7 @@ final class SessionService {
         
         let customAuthChallengeMessage = CustomAuthChallengeMessage(
             sessionId: sessionId,
+            timestamp: "\(Date().timeIntervalSince1970)",
             cipher: encryptResult,
             isWhitelabel: true
         )

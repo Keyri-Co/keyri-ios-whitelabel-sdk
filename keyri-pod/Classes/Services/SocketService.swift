@@ -37,12 +37,13 @@ struct VerifyApproveMessage: SocketRepresentation {
     var publicKey: String?
     var action = SocketAction.SESSION_VERIFY_APPROVE.rawValue
     var iv: String
-    var endToEnd: Bool?    
+    var endToEnd: Bool?
 }
 
 struct CustomAuthChallengeMessage: SocketRepresentation {
     var action: String = SocketAction.CUSTOM_AUTH_CHALLENGE.rawValue
     let sessionId: String
+    let timestamp: String
     let cipher: String
     let isWhitelabel: Bool
 }
