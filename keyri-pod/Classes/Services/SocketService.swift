@@ -45,6 +45,7 @@ struct CustomAuthChallengeMessage: SocketRepresentation {
     let sessionId: String
     let timestamp: String
     let cipher: String
+    var iv: String
     let isWhitelabel: Bool
 }
 

@@ -143,6 +143,7 @@ final class SessionService {
             sessionId: sessionId,
             timestamp: "\(Date().timeIntervalSince1970)",
             cipher: encryptResult,
+            iv: encryptionService.getIV(),
             isWhitelabel: true
         )
                         
