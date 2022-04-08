@@ -11,17 +11,14 @@ enum SocketAction: String, Codable {
     case SESSION_VALIDATE
     case SESSION_VERIFY_REQUEST
     case SESSION_VERIFY_APPROVE
+    case CUSTOM_AUTH_CHALLENGE
 }
 
-protocol SocketRepresentation {
+protocol SocketRepresentation: Codable {
     func socketRepresentation() -> String?
 }
 
-struct ValidateMessage: SocketRepresentation, Codable {
-    var action: String = SocketAction.SESSION_VALIDATE.rawValue
-    let sessionId: String
-    let sessionKey: String
-
+extension SocketRepresentation {
     func socketRepresentation() -> String? {
         guard let jsonData = try? JSONEncoder().encode(self) else { return nil }
         let jsonString = String(data: jsonData, encoding: .utf8)
@@ -29,18 +26,27 @@ struct ValidateMessage: SocketRepresentation, Codable {
     }
 }
 
-struct VerifyApproveMessage: SocketRepresentation, Codable {
+struct ValidateMessage: SocketRepresentation {
+    var action: String = SocketAction.SESSION_VALIDATE.rawValue
+    let sessionId: String
+    let sessionKey: String
+}
+
+struct VerifyApproveMessage: SocketRepresentation {
     let cipher: String
     var publicKey: String?
     var action = SocketAction.SESSION_VERIFY_APPROVE.rawValue
     var iv: String
     var endToEnd: Bool?
-    
-    func socketRepresentation() -> String? {
-        guard let jsonData = try? JSONEncoder().encode(self) else { return nil }
-        let jsonString = String(data: jsonData, encoding: .utf8)
-        return jsonString
-    }
+}
+
+struct CustomAuthChallengeMessage: SocketRepresentation {
+    var action: String = SocketAction.CUSTOM_AUTH_CHALLENGE.rawValue
+    let sessionId: String
+    let timestamp: String
+    let cipher: String
+    var iv: String
+    let isWhitelabel: Bool
 }
 
 struct VerifyRequestMessage: Codable {

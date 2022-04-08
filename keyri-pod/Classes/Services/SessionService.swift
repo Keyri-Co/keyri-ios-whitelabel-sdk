@@ -112,6 +112,45 @@ final class SessionService {
         socketService.disconnect()
     }
     
+    private func customAuthChallengeRequest(custom: String?) {
+        var jsonDict = [
+            "timestamp": "\(Date().timeIntervalSince1970)"
+        ]
+        if let custom = custom, !custom.isEmpty {
+            jsonDict["custom"] = custom
+        }
+
+        guard let theJSONData = try? JSONSerialization.data(withJSONObject: jsonDict, options: []) else {
+            Assertion.failure("TODO")
+            return
+        }
+
+        guard let theJSONText = String(data: theJSONData, encoding: .ascii) else {
+            Assertion.failure("Sodium encrypt fails")
+            return
+        }
+                
+        guard
+            let sessionId = sessionId,
+            let externalAesKey = externalAesKey,
+            let encryptResult = encryptionService.aesEncrypt(string: theJSONText, aesKey: externalAesKey)
+        else {
+            Assertion.failure("Sodium encrypt fails")
+            return
+        }
+        
+        let customAuthChallengeMessage = CustomAuthChallengeMessage(
+            sessionId: sessionId,
+            timestamp: "\(Date().timeIntervalSince1970)",
+            cipher: encryptResult,
+            iv: encryptionService.getIV(),
+            isWhitelabel: true
+        )
+                        
+        socketService.sendEvent(message: customAuthChallengeMessage)
+        socketService.disconnect()
+    }
+    
     private func retreiveUserId(sessionKey: String) -> String? {
         guard !isWhitelabelAuth else { return nil }
         guard let trySessionKey = encryptionService.aesDecrypt(string: sessionKey) else {
@@ -160,12 +199,16 @@ final class SessionService {
 
 extension SessionService: SocketServiceDelegate {
     func socketServiceDidConnected() {
-        guard let sessionId = sessionId, let encSessionKey = encSessionKey else {
-            Assertion.failure("sessionId and encSessionKey should not be nil")
-            return
+        if isWhitelabelAuth {
+            customAuthChallengeRequest(custom: verifyUserSessionCustom)
+        } else {
+            guard let sessionId = sessionId, let encSessionKey = encSessionKey else {
+                Assertion.failure("sessionId and encSessionKey should not be nil")
+                return
+            }
+            let validateMessage = ValidateMessage(sessionId: sessionId, sessionKey: encSessionKey)
+            socketService.sendEvent(message: validateMessage)
         }
-        let validateMessage = ValidateMessage(sessionId: sessionId, sessionKey: encSessionKey)
-        socketService.sendEvent(message: validateMessage)
     }
     
     func socketServiceDidConnectionFails() {
