@@ -203,18 +203,24 @@ public final class Keyri: NSObject {
      * Login user for Desktop agent
      *
      * - Parameters:
+     *  - sessionId: session id for user session
+     *  - externalAesKey: external aes key using to encrypt data
      *  - custom: custom argument
      *  - completion: returns Void if success or keyriSdkError if something went wrong
      */
     public func whitelabelAuth(sessionId: String, externalAesKey: String? = nil, custom: String, from viewController: UIViewController? = nil, completion: @escaping (Result<Void, Error>) -> Void) {
-        whitelabelInitIfNeeded { [weak self] result in
-            switch result {
-            case .success(_):
-                self?.userService?.whitelabelAuth(sessionId: sessionId, externalAesKey: externalAesKey, custom: custom, completion: completion)
+        handleSessionId(sessionId, completion: { [weak self] sessionResult in
+            switch sessionResult {
+            case .success(let session):
+                if session.service.id == self?.apiService?.service.id {
+                    self?.userService?.whitelabelAuth(sessionId: sessionId, externalAesKey: externalAesKey, custom: custom, completion: completion)
+                } else {
+                    completion(.failure(KeyriErrors.authorizationError))
+                }
             case .failure(let error):
                 completion(.failure(error))
             }
-        }
+        })
     }
 
     /**
