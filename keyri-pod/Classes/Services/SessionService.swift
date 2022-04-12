@@ -199,7 +199,7 @@ final class SessionService {
 
 extension SessionService: SocketServiceDelegate {
     func socketServiceDidConnected() {
-        if isWhitelabelAuth {
+        if isWhitelabelAuth && externalAesKey != nil {
             customAuthChallengeRequest(custom: verifyUserSessionCustom)
         } else {
             guard let sessionId = sessionId, let encSessionKey = encSessionKey else {
