@@ -1,6 +1,6 @@
 PODS:
   - CryptoSwift (1.4.3)
-  - keyri-pod (0.1.27):
+  - keyri-pod (0.1.28):
     - CryptoSwift (~> 1.4.1)
   - Toaster (2.3.0)
 
@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CryptoSwift: a0799ee936271bd2253a006f1e4523df21845000
-  keyri-pod: 26fd815aaf59d1dd916ab64c217d31a86905f791
+  keyri-pod: 2c00eca6a84cc7be287fa1dfdce38c8944786584
   Toaster: c3473963c78e8cabbf6ea6f11ad0fdaae6f54987
 
 PODFILE CHECKSUM: 88ca32336612776c1cbddfbdedc9c1da0e23aa1f
