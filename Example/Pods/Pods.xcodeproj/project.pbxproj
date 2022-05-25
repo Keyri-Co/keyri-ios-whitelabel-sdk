@@ -22,6 +22,9 @@
 		1C69EAC3F56DA086FD3A08EA63ADF06F /* BatchedCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1615D882EE280DC80DA5EADCF933E7 /* BatchedCollection.swift */; };
 		1D691C9D33B859BCF205B302404CF87E /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54D69EA25A1D182B71D6524AFEDEFBC7 /* Collection+Extension.swift */; };
 		1F6E4F2EDD2B0F667818F831EEB92FDF /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6004FE98779DB8A41F848D603B1EE5 /* Scanner.swift */; };
+		20551744283292C90010CC2F /* EncryptionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20551743283292C90010CC2F /* EncryptionUtil.swift */; };
+		205517452832A27C0010CC2F /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20551741283291BC0010CC2F /* UserManager.swift */; };
+		205517472832A2940010CC2F /* KeyriService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205517462832A2940010CC2F /* KeyriService.swift */; };
 		2084D75E97F44D8DAE091C7739B06E01 /* CBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CBE0A9258F1B12AFD853D795FFFB4E /* CBC.swift */; };
 		20B46048A49C3DD9704C96BCA4565A64 /* Checksum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D60CF0A2A277316250C7E46A48282 /* Checksum.swift */; };
 		226A5A3B11375CB5CD6C154B63B37FDE /* Pods-keyri-pod_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 000839599A6000CA812EFCA978915E2B /* Pods-keyri-pod_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -201,6 +204,9 @@
 		13222D3582F639129EBE7D9A9D77348C /* CompactMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompactMap.swift; path = Sources/CryptoSwift/CompactMap.swift; sourceTree = "<group>"; };
 		199971E9D1F36CBAA0EDF570E910EAE1 /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Sources/CryptoSwift/Operators.swift; sourceTree = "<group>"; };
 		1BD0C537681068D887A61F9C89BFBC88 /* StreamEncryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StreamEncryptor.swift; path = Sources/CryptoSwift/StreamEncryptor.swift; sourceTree = "<group>"; };
+		20551741283291BC0010CC2F /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		20551743283292C90010CC2F /* EncryptionUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionUtil.swift; sourceTree = "<group>"; };
+		205517462832A2940010CC2F /* KeyriService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyriService.swift; sourceTree = "<group>"; };
 		20C2294E212BA30AF7ED6CF4DEA3C31A /* keyri-pod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "keyri-pod.debug.xcconfig"; sourceTree = "<group>"; };
 		22285E5435E1200F5DD63B6142B0E9CC /* HKDF.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HKDF.swift; path = Sources/CryptoSwift/HKDF.swift; sourceTree = "<group>"; };
 		2288EF390C6D7E7F1573427FB0096A91 /* String+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Extension.swift"; path = "Sources/CryptoSwift/String+Extension.swift"; sourceTree = "<group>"; };
@@ -268,7 +274,7 @@
 		8456C2B56D5CCCA4633FE02DFA74C259 /* Keychain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		848F7357DABA6EC93FEEA98EA1CF049E /* Pods-keyri-pod_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-keyri-pod_Example-dummy.m"; sourceTree = "<group>"; };
 		84A9D095E2B53E4963078AB4262F863F /* ApiService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
-		8962A12A32DE36D47B97B04B46F0D6D1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		8962A12A32DE36D47B97B04B46F0D6D1 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		89CBE0A9258F1B12AFD853D795FFFB4E /* CBC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CBC.swift; path = Sources/CryptoSwift/BlockMode/CBC.swift; sourceTree = "<group>"; };
 		89CEDB7C18CFADE778762100A842631B /* Toaster.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Toaster.modulemap; sourceTree = "<group>"; };
 		8CE2AD31F00D0EF9C522211BDDBF6C3C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -282,7 +288,7 @@
 		9B4EBC4FCFFF7BAFAC9127AA2DF264AC /* Toaster-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toaster-prefix.pch"; sourceTree = "<group>"; };
 		9C601FF8B271342B4CC2B4522BC83B7A /* keyri-pod.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "keyri-pod.modulemap"; sourceTree = "<group>"; };
 		9C87997F77F55C4892EE6C2DEF11150E /* SHA1.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHA1.swift; path = Sources/CryptoSwift/SHA1.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F1727E5B87452F9F8A46DC45D863F76 /* ISO78164Padding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISO78164Padding.swift; path = Sources/CryptoSwift/ISO78164Padding.swift; sourceTree = "<group>"; };
 		9FD2D7099B751B8E521621B445397614 /* NoPadding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NoPadding.swift; path = Sources/CryptoSwift/NoPadding.swift; sourceTree = "<group>"; };
 		9FE46B11FEBCBB7C689EB07A5E57BD38 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -317,7 +323,7 @@
 		C2B1C22D86CF5012C1ADAE53BA8E522B /* ChaCha20+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ChaCha20+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/ChaCha20+Foundation.swift"; sourceTree = "<group>"; };
 		C30FFE564E089BADFA6980F7C9840DE9 /* Padding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Padding.swift; path = Sources/CryptoSwift/Padding.swift; sourceTree = "<group>"; };
 		C7AADDC38B25D2899F6C960AEBCC0AC8 /* Cryptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cryptor.swift; path = Sources/CryptoSwift/Cryptor.swift; sourceTree = "<group>"; };
-		C87A747AEA45C967AFD88EC745B4093E /* keyri-pod.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "keyri-pod.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C87A747AEA45C967AFD88EC745B4093E /* keyri-pod.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = "keyri-pod.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CDDDCAA20B63CBBDC7502498A8834C1B /* CFB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CFB.swift; path = Sources/CryptoSwift/BlockMode/CFB.swift; sourceTree = "<group>"; };
 		CDF5AC922ACA170FDCD459F31FDE4E76 /* Rabbit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Rabbit.swift; path = Sources/CryptoSwift/Rabbit.swift; sourceTree = "<group>"; };
 		CE8D165B2F4711127DCDCD60AEDD747E /* Toaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Toaster.debug.xcconfig; sourceTree = "<group>"; };
@@ -339,7 +345,7 @@
 		E0987E83575DEA40BC386F2D19E91DD6 /* Pods-keyri-pod_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-keyri-pod_Example-umbrella.h"; sourceTree = "<group>"; };
 		E207FD2195F0B8C09826046232A20E52 /* Pods-keyri-pod_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-keyri-pod_Tests-Info.plist"; sourceTree = "<group>"; };
 		E417122E06E5B9782E0C3DFB7C0715C0 /* Generics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Generics.swift; path = Sources/CryptoSwift/Generics.swift; sourceTree = "<group>"; };
-		E635EE5DDE32469DE40CCFCF86203E2E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		E635EE5DDE32469DE40CCFCF86203E2E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E6DF08BDAD8F1FF68A59660070F67E47 /* Pods-keyri-pod_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-keyri-pod_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E760A027E64F74382282551967F5D9E7 /* Utils+Foundation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Utils+Foundation.swift"; path = "Sources/CryptoSwift/Foundation/Utils+Foundation.swift"; sourceTree = "<group>"; };
 		E80E5322D77B95BEAD76B28E56959AD6 /* CryptoSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CryptoSwift.release.xcconfig; sourceTree = "<group>"; };
@@ -356,7 +362,7 @@
 		FC981CA86E2375FF766474B6014DDEDE /* Pods-keyri-pod_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-keyri-pod_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		FD089B4F579DA197CDBCBBCD7A527EE5 /* Toaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Toaster.release.xcconfig; sourceTree = "<group>"; };
 		FDC6E8B0B8D460529D9222F2EC01A581 /* PBKDF1.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PBKDF1.swift; path = Sources/CryptoSwift/PKCS/PBKDF1.swift; sourceTree = "<group>"; };
-		FF3FA24D715BC48516279ADFA21C8B14 /* keyri-pod */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "keyri-pod"; path = keyri_pod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF3FA24D715BC48516279ADFA21C8B14 /* keyri_pod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = keyri_pod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -423,6 +429,7 @@
 				A62638B0B692CE5322DC60E5BB4972D8 /* SocketService.swift */,
 				D2E8FA8B0371EF19665E6FF67FC0047C /* StorageService.swift */,
 				ABD9F48ACC27C16BE5AB8B8A24A1B19B /* UserService.swift */,
+				205517462832A2940010CC2F /* KeyriService.swift */,
 			);
 			name = Services;
 			path = "keyri-pod/Classes/Services";
@@ -432,7 +439,7 @@
 			isa = PBXGroup;
 			children = (
 				F81274EDB681F11E7CB05F7DCA2BB33C /* CryptoSwift */,
-				FF3FA24D715BC48516279ADFA21C8B14 /* keyri-pod */,
+				FF3FA24D715BC48516279ADFA21C8B14 /* keyri_pod.framework */,
 				DDA88F5C75F47ED0CE9919093C8D041D /* keyri-pod-keyri-pod */,
 				398EAD3853422FA751D4FB1DDA881E8F /* Pods-keyri-pod_Example */,
 				A65BEAF9583B41EB9B79935FABED612A /* Pods-keyri-pod_Tests */,
@@ -461,6 +468,7 @@
 		16A992745B7DA51D61D5470C833203EC /* keyri-pod */ = {
 			isa = PBXGroup;
 			children = (
+				20551740283291A70010CC2F /* Managers */,
 				A5AC6E8CBB68F8C0164E81AAA6DCB5DC /* Images.xcassets */,
 				560B593BEC1BB8D80C790658187A3AB5 /* Keyri.swift */,
 				0C2F2F9C934087C86074F2188922FD83 /* Configs */,
@@ -492,8 +500,15 @@
 				557543F14EBE3BC1FC7892C00A378B99 /* TCPTransport.swift */,
 				59D6DDC20ED01D0CEC2C8DB188C19447 /* Transport.swift */,
 			);
-			name = Transport;
 			path = Transport;
+			sourceTree = "<group>";
+		};
+		20551740283291A70010CC2F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				20551741283291BC0010CC2F /* UserManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		2B2A5D1954F2BD5554CBD545A5B3C4A2 /* Support Files */ = {
@@ -517,7 +532,6 @@
 				D71FEC39C8B0E6AF491AC92DB05E47B6 /* FoundationSecurity.swift */,
 				E8D3C7481A2B3C5B279D001962356A76 /* Security.swift */,
 			);
-			name = Security;
 			path = Security;
 			sourceTree = "<group>";
 		};
@@ -544,7 +558,6 @@
 			children = (
 				5B721F46A2FA3A25D2A1ABE49D9423CE /* Compression.swift */,
 			);
-			name = Compression;
 			path = Compression;
 			sourceTree = "<group>";
 		};
@@ -569,7 +582,6 @@
 				4DEFBC9AF9E82F8540749FDB65AA8AE5 /* UIApplication+Load.swift */,
 				2B2A5D1954F2BD5554CBD545A5B3C4A2 /* Support Files */,
 			);
-			name = Toaster;
 			path = Toaster;
 			sourceTree = "<group>";
 		};
@@ -669,7 +681,6 @@
 				50940607BC645E28F58F561801659742 /* ZeroPadding.swift */,
 				91ABD348FA7F29A6513A2FA38896FAE1 /* Support Files */,
 			);
-			name = CryptoSwift;
 			path = CryptoSwift;
 			sourceTree = "<group>";
 		};
@@ -720,7 +731,6 @@
 			children = (
 				C0890D70933D52CD7747AFC7B246D1A3 /* WebSocket.swift */,
 			);
-			name = Starscream;
 			path = Starscream;
 			sourceTree = "<group>";
 		};
@@ -730,6 +740,7 @@
 				EAA36381CB1CA8E61E5B28933EC99C01 /* Assertion.swift */,
 				83D27C433195EAF546739534E2EA1617 /* String+.swift */,
 				23C18D98EE9CADE6A5239C2C81B86D75 /* UIViewController+Extension.swift */,
+				20551743283292C90010CC2F /* EncryptionUtil.swift */,
 			);
 			name = Utils;
 			path = "keyri-pod/Classes/Utils";
@@ -797,7 +808,6 @@
 				A3E1AE8FF6EE618DFE8992AE37C64C55 /* Framer.swift */,
 				94AC12EF5DE4BFEEF127422345978EE3 /* HTTPHandler.swift */,
 			);
-			name = Framer;
 			path = Framer;
 			sourceTree = "<group>";
 		};
@@ -808,7 +818,6 @@
 				D98C07769F14F40CDB5F62568B8A2DD5 /* NativeEngine.swift */,
 				5BE33F4DF191CCD95148D0FA6624E32D /* WSEngine.swift */,
 			);
-			name = Engine;
 			path = Engine;
 			sourceTree = "<group>";
 		};
@@ -958,7 +967,7 @@
 			);
 			name = "keyri-pod";
 			productName = keyri_pod;
-			productReference = FF3FA24D715BC48516279ADFA21C8B14 /* keyri-pod */;
+			productReference = FF3FA24D715BC48516279ADFA21C8B14 /* keyri_pod.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D6F91558439DE4C1B4B746AA90F21BD3 /* Pods-keyri-pod_Example */ = {
@@ -1097,6 +1106,7 @@
 				CE7A68CDFD3FC58EF21CC7C08D24CA55 /* CFB.swift in Sources */,
 				97F86BC6C70FFFEA6793B21EF6A7BBFF /* ChaCha20.swift in Sources */,
 				D4135E6CF7800B813179A4DFB88BB112 /* ChaCha20+Foundation.swift in Sources */,
+				20551744283292C90010CC2F /* EncryptionUtil.swift in Sources */,
 				20B46048A49C3DD9704C96BCA4565A64 /* Checksum.swift in Sources */,
 				D3E9E3F249E8D3D98C4E51836BDC4954 /* Cipher.swift in Sources */,
 				56706731EFD3AF6092CDAF8359B039B8 /* CipherModeWorker.swift in Sources */,
@@ -1163,11 +1173,13 @@
 				B05249A5DB92FFAC0A7A11C045ABBAC4 /* Assertion.swift in Sources */,
 				8F52C0AE4B0C7F15ACA4AA20BF3E6240 /* Compression.swift in Sources */,
 				15CC16F87AA47398A9568575C7200A35 /* Config.swift in Sources */,
+				205517472832A2940010CC2F /* KeyriService.swift in Sources */,
 				558545690015FB552AB57AB47F8D6F42 /* EncryptionService.swift in Sources */,
 				4D9E2E26B6D52312669B877CA9E98602 /* Engine.swift in Sources */,
 				E0831EA63978F0F978E6F536EADC9FBB /* ErrorHandling.swift in Sources */,
 				36F212D3BBDBCA15EE01CD8C174DE8F3 /* FoundationHTTPHandler.swift in Sources */,
 				7980BA1B06BC6C0CCBB9B02F7761040C /* FoundationSecurity.swift in Sources */,
+				205517452832A27C0010CC2F /* UserManager.swift in Sources */,
 				1AB54BF848C94F4EDF2CFA36A9C3FA6C /* FoundationTransport.swift in Sources */,
 				B20B5D3A27C7F74B85850E925EBF16E4 /* FrameCollector.swift in Sources */,
 				EE0CE2B5780D6DB6235FE17D2C4F70E4 /* Framer.swift in Sources */,
@@ -1446,8 +1458,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

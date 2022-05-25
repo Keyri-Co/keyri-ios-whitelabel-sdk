@@ -9,8 +9,8 @@ import Foundation
 
 class Assertion {
     static func failure(_ message: String = String()) {
-        if Keyri.assertionEnabled {
-            assertionFailure(message)
-        }
+//        if Keyri.assertionEnabled {
+//            assertionFailure(message)
+//        }
     }
 }
