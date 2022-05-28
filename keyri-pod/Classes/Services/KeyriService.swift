@@ -15,13 +15,13 @@ public class KeyriService {
         let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
             guard let response = response else {
                 print("led")
-                completionHandler(.failure(ErrorType.serverError))
+                completionHandler(.failure(error!))
                 return
             }
 
             guard let data = data else {
                 print("no")
-                completionHandler(.failure(ErrorType.serverError))
+                completionHandler(.failure(error!))
                 return
                 
             }

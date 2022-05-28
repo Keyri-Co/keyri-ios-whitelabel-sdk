@@ -1,8 +1,8 @@
 //
-//  ErrorHandling.swift
-//  Keyri
+//  Errors.swift
+//  keyri-pod
 //
-//  Created by Andrii Novoselskyi on 28.08.2021.
+//  Created by Aditya Malladi on 5/25/22.
 //
 
 import Foundation

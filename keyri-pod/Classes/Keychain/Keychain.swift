@@ -7,14 +7,14 @@
 
 import Foundation
 
-final class Keychain {
+open class Keychain {
     let service: String
     
-    init(service: String) {
+    public init(service: String) {
         self.service = service
     }
 
-    func save(key: String, data: Data) throws {
+    public func save(key: String, data: Data) throws {
         let query = [
             kSecClass as String       : kSecClassGenericPassword as String,
             kSecAttrService as String : service,
@@ -30,13 +30,13 @@ final class Keychain {
         }
     }
     
-    func save(key: String, value: String) throws {
+    public func save(key: String, value: String) throws {
         if let data = value.data(using: .utf8) {
             try save(key: key, data: data)
         }
     }
 
-    func load(key: String) throws -> Data {
+    public func load(key: String) throws -> Data {
         let query = [
             kSecClass as String       : kSecClassGenericPassword,
             kSecAttrService as String : service,

@@ -25,6 +25,6 @@ open class KeyriRegistration {
 
 open class vm {
     public func abc() -> Int {
-        return 69
+        return 1
     }
 }
