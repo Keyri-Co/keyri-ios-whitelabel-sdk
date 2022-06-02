@@ -36,7 +36,8 @@ open class Keychain {
         }
     }
 
-    public func load(key: String) throws -> Data {
+
+    public func load(key: String) -> Data? {
         let query = [
             kSecClass as String       : kSecClassGenericPassword,
             kSecAttrService as String : service,
@@ -52,15 +53,15 @@ open class Keychain {
             if let data = dataTypeRef as? Data {
                 return data
             } else {
-                throw KeyriErrors.keyriSdkError
+                return nil
             }
         } else {
-            throw KeyriErrors.keyriSdkError
+            return nil
         }
     }
     
-    func load(key: String) throws -> String? {
-        return try load(key: key).utf8String()
+    func loadStr(key: String) throws -> String? {
+        return load(key: key)?.utf8String()
     }
     
     func remove(key: String) throws {

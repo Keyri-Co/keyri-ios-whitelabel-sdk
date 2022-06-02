@@ -1,4 +1,3 @@
-//
 //  ConfirmationScreen.swift
 //  keyri-pod
 //
