@@ -1,6 +1,6 @@
 {
   "name": "keyri-pod",
-  "version": "0.1.28",
+  "version": "0.1.33",
   "summary": "Library for autorization",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/Keyri-Co/keyri-ios-whitelabel-sdk",
@@ -9,25 +9,20 @@
     "file": "LICENSE"
   },
   "authors": {
-    "anovoselskyi": "anovoselskyi@gmail.com"
+    "amalladi94": "aditya@keyri.co"
   },
   "source": {
     "git": "https://github.com/Keyri-Co/keyri-ios-whitelabel-sdk.git",
-    "tag": "0.1.28"
+    "tag": "0.1.33"
   },
   "platforms": {
-    "ios": "10.0"
+    "ios": "14.0"
   },
   "swift_versions": "5.3",
   "source_files": "keyri-pod/Classes/**/*",
   "resource_bundles": {
     "keyri-pod": [
       "keyri-pod/Assets/**/*"
-    ]
-  },
-  "dependencies": {
-    "CryptoSwift": [
-      "~> 1.4.1"
     ]
   },
   "pod_target_xcconfig": {
