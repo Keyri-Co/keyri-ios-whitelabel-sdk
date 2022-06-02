@@ -1,30 +1,35 @@
-open class KeyriRegistration {
+open class Keyri {
     
     public init() {}
     
-    public func registerOrLogin(for username: String, sessionId: String, appKey: String, completionHandler: @escaping (Result<Data, Error>) -> Void) {
+    public func registerOrLogin(for username: String?, sessionId: String, appKey: String, completionHandler: @escaping (Result<Session, Error>) -> Void) {
+        let usrSvc = UserService()
+        let usr = username ?? "ANON"
         
-        // verify user
-        // make get
-        let keyriService = KeyriService()
-        keyriService.getSessionInfo { result in
-            switch result {
-                
-            case .success(let data):
-                print(data)
-                completionHandler(.success(data))
-            case .failure(_):
-                print("fail")
+        do {
+            let key = try usrSvc.verifyExistingUser(username: usr) ?? usrSvc.saveKey(for: usr)
+            
+            let keyriService = KeyriService()
+            keyriService.getSessionInfo { result in
+                switch result {
+                    
+                case .success(let data):
+                    do {
+                        var session = try JSONDecoder().decode(Session.self, from: data)
+                        session.userPublicKey = key.derRepresentation.base64EncodedString()
+                        completionHandler(.success(session))
+                    } catch {
+                        completionHandler(.failure(error))
+                    }
+                case .failure(let error):
+                    completionHandler(.failure(error))
+                }
             }
+            
+            
+        } catch {
+            completionHandler(.failure(error))
         }
-        // create session object
-        // return VM as result
-    }
-}
 
-
-open class vm {
-    public func abc() -> Int {
-        return 1
     }
 }

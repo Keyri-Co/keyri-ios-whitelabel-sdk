@@ -9,12 +9,13 @@ import Foundation
 import CryptoKit
 import CommonCrypto
 
-@available(iOS 13.0, *)
 public class EncryptionUtil {
+    public init() {}
+    
     public func deriveKeys(from keyString: String) -> (SharedSecret, P256.KeyAgreement.PublicKey)? {
         guard let data = Data(base64Encoded: keyString) else { return nil }
         do {
-            let browserPublic = try P256.KeyAgreement.PublicKey(rawRepresentation: data.bytes)
+            let browserPublic = try P256.KeyAgreement.PublicKey(rawRepresentation: data)
             let mobilePrivateKey = P256.KeyAgreement.PrivateKey()
             let mobilePublicKey = mobilePrivateKey.publicKey
             
