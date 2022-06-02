@@ -28,4 +28,3 @@ public struct browserData: Codable {
     public var iv: String
 }
 
-
