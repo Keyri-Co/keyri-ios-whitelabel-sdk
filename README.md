@@ -174,6 +174,31 @@ The session object is returned on successful initalizeQrSession calls, and is us
 
 *   Session.confirm() and Session.deny() - see descriptions in **Interacting with the API**
 
+## License
+
+This library is available under paid and free licenses. See the [LICENSE](LICENSE.txt) file for the
+full license text.
+
+* Details of licensing (pricing, etc) are available
+  at [https://keyri.com/pricing](https://keyri.com/pricing), or you can contact us
+  at [Sales@keyri.com](mailto:Sales@keyri.com).
+
+### Details
+
+What's allowed under the license:
+
+* Free use for any app under the Keyri Developer plan.
+* Any modifications as needed to work in your app
+
+What's not allowed under the license:
+
+* Redistribution under a different license
+* Removing attribution
+* Modifying logos
+* Indemnification: using this free software is ‘at your own risk’, so you can’t sue Keyri, Inc. for
+  problems caused by this library
+
+
 ### Disclaimer
 
 We care deeply about the quality of our product and rigorously test every piece of functionality we offer. That said, every integration is different. Every app on the App Store has a different permutation of build settings, compiler flags, processor requirements, compatability issues etc and it's impossible for us to cover all of those bases, so we strongly recommend thourough testing of your integration before shipping to production. Please feel free to file a bug or issue if you notice anything that seems wrong or weird on GitHub 🙂
