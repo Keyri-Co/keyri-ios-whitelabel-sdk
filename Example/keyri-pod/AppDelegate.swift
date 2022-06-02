@@ -25,71 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            callbackUrl: URL(string: "http://18.208.184.185:5000/users/session-mobile")!
 //        )
 //        return true
-        let keychain = Keychain(service: "test")
-        if #available(iOS 14.0, *) {
-            let secKey = try! SecureEnclave.P256.Signing.PrivateKey()
-            print("INITIAL SEC ENCLAVE PUBLIC KEY")
-            print(secKey.publicKey.derRepresentation.base64EncodedString())
-            print("\n")
-            let data = secKey.dataRepresentation
-            try! keychain.save(key: "key", data: data)
-        } else {
-            // Fallback on earlier versions
-        }
-        try! keychain.save(key: "amalladi", value: "leed")
-        let keyri = KeyriRegistration()
-        keyri.registerOrLogin(for: "", sessionId: "", appKey: "") { result in
-            switch result {
-                
-            case .success(let data):
-                print("LFGGGGGG")
-                print(data)
-            case .failure(_):
-                print("sad")
-            }
-        }
-    
-        let authContext = LAContext();
-
-        do {
-            let privateKey = try SecureEnclave.P256.KeyAgreement.PrivateKey(
-              authenticationContext: authContext)
-            
-            print(privateKey.dataRepresentation)
-            let derivedPrivateKey = try SecureEnclave.P256.KeyAgreement.PrivateKey(dataRepresentation: privateKey.dataRepresentation)
-            
-            let derivedPublicKey = derivedPrivateKey.publicKey
-            print("PUBLIC KEY")
-            print(derivedPublicKey.rawRepresentation)
-            
-            
-            print("derive private key")
-            let stored = try! keychain.load(key: "key")
-            let secEnclaevKey = try! SecureEnclave.P256.Signing.PrivateKey(dataRepresentation: stored)
-            print("DERIVED SECURE ENCLAVE KEY")
-            print(secEnclaevKey.publicKey.derRepresentation.base64EncodedString())
-            let data = "Hello world".data(using: .utf8)!
-            print("Data")
-            print(data.base64EncodedString())
-            let signature = try! secEnclaevKey.signature(for: data)
-            print("Signature")
-            print(signature.derRepresentation.base64EncodedString())
-
-            print("\n")
-            print(secEnclaevKey)
-        } catch {
-            print(error)
-        }
-        
         
 
-        let x = try! keychain.load(key: "amalladi")
-        print(x)
-        let str = String(decoding: x, as: UTF8.self)
-        print("trying to decode")
-        print(str)
-
-        
         return true
     }
 
@@ -126,3 +63,65 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+/*
+ let keychain = Keychain(service: "test")
+ let secKey = try! SecureEnclave.P256.Signing.PrivateKey()
+ print("INITIAL SEC ENCLAVE PUBLIC KEY")
+ print(secKey.publicKey.derRepresentation.base64EncodedString())
+ print("\n")
+ let data = secKey.dataRepresentation
+ try! keychain.save(key: "key", data: data)
+ 
+ try! keychain.save(key: "amalladi", value: "leed")
+ let keyri = Keyri()
+ keyri.registerOrLogin(for: "", sessionId: "", appKey: "") { result in
+     switch result {
+         
+     case .success(let session):
+         print(session)
+         
+     case .failure(_):
+         print("sad")
+     }
+ }
+
+ let authContext = LAContext();
+
+ do {
+     let privateKey = try SecureEnclave.P256.KeyAgreement.PrivateKey(
+       authenticationContext: authContext)
+     
+     print(privateKey.dataRepresentation)
+     let derivedPrivateKey = try SecureEnclave.P256.KeyAgreement.PrivateKey(dataRepresentation: privateKey.dataRepresentation)
+     
+     let derivedPublicKey = derivedPrivateKey.publicKey
+     print("PUBLIC KEY")
+     print(derivedPublicKey.rawRepresentation)
+     
+     
+     print("derive private key")
+     let stored = try! keychain.load(key: "key")
+     let secEnclaevKey = try! SecureEnclave.P256.Signing.PrivateKey(dataRepresentation: stored)
+     print("DERIVED SECURE ENCLAVE KEY")
+     print(secEnclaevKey.publicKey.derRepresentation.base64EncodedString())
+     let data = "Hello world".data(using: .utf8)!
+     print("Data")
+     print(data.base64EncodedString())
+     let signature = try! secEnclaevKey.signature(for: data)
+     print("Signature")
+     print(signature.derRepresentation.base64EncodedString())
+
+     print("\n")
+     print(secEnclaevKey)
+ } catch {
+     print(error)
+ }
+ 
+ 
+
+ let x = try! keychain.load(key: "amalladi")
+ print(x)
+ let str = String(decoding: x, as: UTF8.self)
+ print("trying to decode")
+ print(str)
+ */
