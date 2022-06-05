@@ -13,3 +13,4 @@ public struct RiskAnalytics: Codable {
     var riskFlagString: String
     var geoData: GeoDataPair?
 }
+
