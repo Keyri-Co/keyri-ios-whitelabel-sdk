@@ -25,22 +25,30 @@ public struct Session: Codable {
     private var __salt: String
     
     
-    public func deny() {
-        sendPOST(success: false)
+    public func deny() throws {
+        do {
+            try sendPOST(success: false)
+        } catch {
+            throw error
+        }    }
+    
+    public func confirm() throws {
+        do {
+            try sendPOST(success: true)
+        } catch {
+            throw error
+        }
     }
     
-    public func confirm() {
-        sendPOST(success: true)
-    }
-    
-    private func sendPOST(success: Bool) {
+    private func sendPOST(success: Bool) throws {
         let enc = EncryptionUtil()
         let keySet = enc.deriveKeys(from: browserPublicKey)
         guard let keySet = keySet else {
             return
         }
+    
         
-        enc.encrypt(message: payload ?? "", with: keySet.0, salt: __salt)
+        let cipher = enc.encrypt(message: payload ?? "", with: keySet.0, salt: __salt)
         
         let json: [String: Any] = [
             "__salt": __salt,
@@ -52,9 +60,19 @@ public struct Session: Codable {
                 "associationKey": userPublicKey
             ],
             "browserData": [
-                
+                "publicKey": keySet.1.rawRepresentation.base64EncodedString(),
+                "ciphertext": cipher?.base64EncodedString(),
+                "salt": __salt,
+                "iv": keySet.1.rawRepresentation.base64EncodedString()
             ]
         ]
+        
+        let svc = KeyriService()
+        do {
+            try svc.postSuccessfulAuth(sessionId: sessionId, sessionInfo: json)
+        } catch {
+            throw error
+        }
     }
     /*
      {

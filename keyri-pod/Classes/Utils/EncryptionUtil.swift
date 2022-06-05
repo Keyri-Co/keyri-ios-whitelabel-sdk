@@ -36,11 +36,11 @@ public class EncryptionUtil {
         let msgProtocol = message.data(using: .utf8)!
         do {
             let encrypted = try CryptoKit.AES.GCM.seal(msgProtocol, using: symKey)
+            return encrypted.combined
         } catch {
             print(error)
             return nil
         }
-        return protocolSalt
     }
     
 }
