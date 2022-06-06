@@ -10,7 +10,7 @@ open class Keyri {
             let key = try usrSvc.verifyExistingUser(username: usr) ?? usrSvc.saveKey(for: usr)
             
             let keyriService = KeyriService()
-            keyriService.getSessionInfo { result in
+            keyriService.getSessionInfo(appKey: appKey, sessionId: sessionId) { result in
                 switch result {
                     
                 case .success(let data):

@@ -8,24 +8,20 @@
 import Foundation
 
 public class KeyriService {
-    public func getSessionInfo(completionHandler: @escaping (Result<Data, Error>) -> Void) {
+    public func getSessionInfo(appKey: String, sessionId: String, completionHandler: @escaping (Result<Data, Error>) -> Void) {
         
-        let url = URL(string: "https://prod.api.keyri.com/api/session/2622074828-1654093096044-0-f3wci1qsqs?appKey=IT7VrTQ0r4InzsvCNJpRCRpi1qzfgpaj")!
+        guard let url = URL(string: "https://prod.api.keyri.com/api/session/\(sessionId)?appKey=\(appKey)") else {
+            completionHandler(.failure(KeyriErrors.keyriSdkError))
+            return
+        }
 
-        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-            guard let response = response else {
-                print("led")
-                completionHandler(.failure(error!))
-                return
-            }
-
+        let task = URLSession.shared.dataTask(with: url) {(data, _, error) in
             guard let data = data else {
-                print("no")
-                completionHandler(.failure(error!))
+                completionHandler(.failure(KeyriErrors.networkError))
                 return
                 
             }
-            print(String(data: data, encoding: .utf8)!)
+
             completionHandler(.success(data))
         }
 
@@ -34,11 +30,14 @@ public class KeyriService {
     }
     
     
-    public func postSuccessfulAuth(sessionInfo: [String: Any]) throws {
+    public func postSuccessfulAuth(sessionId: String, sessionInfo: [String: Any]) throws {
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: sessionInfo)
             
-            let url = URL(string: "http://httpbin.org/post")!
+            guard let url = URL(string: "https://prod.api.keyri.com/api/session/\(sessionId)") else {
+                throw KeyriErrors.keyriSdkError
+            }
+            
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
 
