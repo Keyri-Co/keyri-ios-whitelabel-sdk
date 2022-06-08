@@ -19,6 +19,7 @@ enum KeyriErrors: LocalizedError {
     case multipleAccountsNotAllowedError
     case permissionsError
     case authorizationError
+    case iOSInternalError
     
     var errorDescription: String? {
         switch self {
@@ -44,6 +45,8 @@ enum KeyriErrors: LocalizedError {
             return "Permissions are not granted"
         case .authorizationError:
             return "Unable to authorize"
+        case .iOSInternalError:
+            return "iOS Error"
         }
     }
 }

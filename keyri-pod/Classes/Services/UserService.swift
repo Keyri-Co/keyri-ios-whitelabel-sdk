@@ -17,15 +17,14 @@ open class UserService {
         keychainService = Keychain(service: "com.keyri")
     }
     
-    public func verifyExistingUser(username: String) -> P256.Signing.PublicKey? {
-        guard let data = keychainService.load(key: username) else { return nil }
+    public func verifyExistingUser(username: String) throws -> P256.Signing.PublicKey {
+        guard let data = keychainService.load(key: username) else { throw KeyriErrors.accountNotFoundError }
         
         do {
             let derivedPrivateKey = try SecureEnclave.P256.Signing.PrivateKey(dataRepresentation: data)
             return derivedPrivateKey.publicKey
         } catch {
-            print(error)
-            return nil
+            throw KeyriErrors.iOSInternalError
         }
     }
     
@@ -42,5 +41,14 @@ open class UserService {
         } catch {
             throw error
         }
+    }
+    
+    public func sign(username: String, data: Data) throws -> P256.Signing.ECDSASignature {
+        guard let data = keychainService.load(key: username) else { throw KeyriErrors.accountNotFoundError }
+        
+
+        let derivedPrivateKey = try SecureEnclave.P256.Signing.PrivateKey(dataRepresentation: data)
+        return try derivedPrivateKey.signature(for: data)
+        
     }
 }
