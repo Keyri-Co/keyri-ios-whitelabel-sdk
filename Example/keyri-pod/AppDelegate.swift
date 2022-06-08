@@ -49,7 +49,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         else {
             return false
         }
-                
+        
+        process(url: incomingURL)
+        
         return true
+    }
+
+    func process(url: URL) {
+        let sessionId = URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
+        let payload = "Custom payload here"
+        let appKey = "App key here" // Get this value from the Keyri Developer Portal
+
+        let keyri = Keyri() // Be sure to import the SDK at the top of the file
+        keyri.initializeQrSession(username: "TestUser", sessionId: sessionId, appKey: appKey) { res in
+            switch res {
+            case .success(var session):
+                // You can optionally create a custom screen and pass the session ID there. We recommend this approach for large enterprises
+                session.payload = payload
+
+                // In a real world example you’d wait for user confirmation first
+                do {
+                    try session.confirm() // or session.deny()
+                } catch {
+                    print(error)
+                }
+            case .failure(let error):
+                print(error)
+            }
+            
+        }
     }
 }

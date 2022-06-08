@@ -23,7 +23,13 @@ struct ConfirmationScreen: View {
 
         HStack {
             Spacer()
-            Button(action: {}, label: {
+            Button(action: {
+                do {
+                    try session.deny()
+                } catch {
+                    print(error)
+                }
+            }, label: {
                 HStack {
                     Image(systemName: "xmark").foregroundColor(Color(hex: "EF4D52"))
                     Text("No").foregroundColor(Color(hex: "EF4D52"))
@@ -35,7 +41,13 @@ struct ConfirmationScreen: View {
                         .stroke(Color(hex: "EF4D52"), lineWidth: 2)
                 )
             Spacer()
-            Button(action: {}, label: {
+            Button(action: {
+                do {
+                    try session.confirm()
+                } catch {
+                    print(error)
+                }
+            }, label: {
                 HStack {
                     Image(systemName: "checkmark").foregroundColor(Color(hex: "03A564"))
                     Text("Yes").foregroundColor(Color(hex: "03A564"))

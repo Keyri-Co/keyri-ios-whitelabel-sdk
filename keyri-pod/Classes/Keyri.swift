@@ -1,8 +1,9 @@
+import CryptoKit
 open class Keyri {
     
     public init() {}
     
-    public func registerOrLogin(for username: String?, sessionId: String, appKey: String, completionHandler: @escaping (Result<Session, Error>) -> Void) {
+    public func initializeQrSession(username: String?, sessionId: String, appKey: String, completionHandler: @escaping (Result<Session, Error>) -> Void) {
         let usrSvc = UserService()
         let usr = username ?? "ANON"
         
@@ -31,5 +32,20 @@ open class Keyri {
             completionHandler(.failure(error))
         }
 
+    }
+    
+    public func generateAssociationKey(username: String) throws -> P256.Signing.PublicKey {
+        let usrSvc = UserService()
+        return try usrSvc.saveKey(for: username)
+    }
+    
+    public func generateUserSignature(for username: String, data: Data) throws -> P256.Signing.ECDSASignature {
+        let usrSvc = UserService()
+        return try usrSvc.sign(username: username, data: data)
+    }
+    
+    public func getAssociationKey(username: String) throws -> P256.Signing.PublicKey {
+        let usrSvc = UserService()
+        return try usrSvc.verifyExistingUser(username: username)
     }
 }
