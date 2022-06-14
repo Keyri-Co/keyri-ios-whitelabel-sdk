@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'keyri-pod'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'Library for autorization'
 
   s.homepage         = 'https://github.com/Keyri-Co/keyri-ios-whitelabel-sdk'
