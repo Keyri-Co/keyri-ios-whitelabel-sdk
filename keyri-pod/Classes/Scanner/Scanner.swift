@@ -8,8 +8,10 @@
 import Foundation
 import AVFoundation
 
-class Scanner {
-    var completion: ((String) -> Void)?
+open class Scanner {
+    public var completion: ((String) -> Void)?
+    
+    public init() {}
     
     private var targetViewController: UIViewController?
     private var presentationController: UIViewController? {
@@ -20,7 +22,7 @@ class Scanner {
         }
     }
     
-    func show(from viewController: UIViewController? = nil) {
+    public func show(from viewController: UIViewController? = nil) {
         targetViewController = viewController
         let scanner = QRCodeScannerController(
             cameraImage: UIImage(named: "switch-camera-button"),
@@ -44,16 +46,16 @@ class Scanner {
 
 extension Scanner: QRCodeScannerDelegate {
     
-    func qrCodeScanner(_ controller: UIViewController, scanDidComplete result: String) {
+    public func qrCodeScanner(_ controller: UIViewController, scanDidComplete result: String) {
         completion?(result)
         presentationController?.dismiss(animated: true, completion: nil)
     }
     
-    func qrCodeScannerDidFail(_ controller: UIViewController, error: String) {
+    public func qrCodeScannerDidFail(_ controller: UIViewController, error: String) {
         presentationController?.dismiss(animated: true, completion: nil)
     }
     
-    func qrCodeScannerDidCancel(_ controller: UIViewController) {
+    public func qrCodeScannerDidCancel(_ controller: UIViewController) {
         presentationController?.dismiss(animated: true, completion: nil)
     }
 }

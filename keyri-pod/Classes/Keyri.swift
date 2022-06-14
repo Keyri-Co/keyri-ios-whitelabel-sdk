@@ -1,4 +1,5 @@
 import CryptoKit
+
 open class Keyri {
     
     public init() {}
@@ -8,7 +9,7 @@ open class Keyri {
         let usr = username ?? "ANON"
         
         do {
-            let key = try usrSvc.verifyExistingUser(username: usr) ?? usrSvc.saveKey(for: usr)
+            let key = try usrSvc.verifyExistingUser(username: usr)
             
             let keyriService = KeyriService()
             keyriService.getSessionInfo(appKey: appKey, sessionId: sessionId) { result in
