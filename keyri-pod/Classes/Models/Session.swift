@@ -30,7 +30,8 @@ public struct Session: Codable {
             try sendPOST(success: false)
         } catch {
             throw error
-        }    }
+        }
+    }
     
     public func confirm() throws {
         do {
