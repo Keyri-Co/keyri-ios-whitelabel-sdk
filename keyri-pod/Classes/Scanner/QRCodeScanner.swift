@@ -12,7 +12,7 @@ public protocol QRCodeScannerDelegate: AnyObject {
 public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, UIImagePickerControllerDelegate, UINavigationBarDelegate {
     
     var squareView: SquareView? = nil
-    public weak var delegate: QRCodeScannerDelegate?
+    public var delegate: QRCodeScannerDelegate?
     private var flashButton: UIButton? = nil
     
     //Extra images for adding extra features
@@ -283,6 +283,7 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
     
     @objc func dismissVC() {
         self.dismiss(animated: true, completion: nil)
+        print("dismissVC")
         delegate?.qrCodeScannerDidCancel(self)
     }
     
@@ -300,6 +301,7 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
         case .front:
             if let frontDeviceInput = frontCaptureInput {
                 if !captureSession.canAddInput(frontDeviceInput) {
+                    print("failed to add input")
                     delegate?.qrCodeScannerDidFail(self, error: "Failed to add Input")
                     self.dismiss(animated: true, completion: nil)
                     return
@@ -310,6 +312,7 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
         case .back, .unspecified :
             if let defaultDeviceInput = defaultCaptureInput {
                 if !captureSession.canAddInput(defaultDeviceInput) {
+                    print("failed to add input 2")
                     delegate?.qrCodeScannerDidFail(self, error: "Failed to add Input")
                     self.dismiss(animated: true, completion: nil)
                     return
@@ -321,6 +324,7 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
         }
         
         if !captureSession.canAddOutput(dataOutput) {
+            print("failed to add output")
             delegate?.qrCodeScannerDidFail(self, error: "Failed to add Output")
             self.dismiss(animated: true, completion: nil)
             return
@@ -347,8 +351,12 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
                     delCnt = delCnt + 1
                     if delCnt > delayCount {
                         if let unwrapedStringValue = unwraped.stringValue {
+                            print("ok")
+                            print(unwrapedStringValue)
+                            print(delegate)
                             delegate?.qrCodeScanner(self, scanDidComplete: unwrapedStringValue)
                         } else {
+                            print("prb not ok")
                             delegate?.qrCodeScannerDidFail(self, error: "Empty string found")
                         }
                         captureSession.stopRunning()
