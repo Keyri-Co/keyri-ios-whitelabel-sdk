@@ -12,6 +12,7 @@ import Toaster
 
 class ViewController: UIViewController {
     @IBAction func auth(_ sender: Any) {
+        print("calling scanner")
         let scanner = keyri_pod.Scanner()
         scanner.completion = { str in
             print(str)

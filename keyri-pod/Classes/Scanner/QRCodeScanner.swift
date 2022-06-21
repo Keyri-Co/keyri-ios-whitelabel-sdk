@@ -12,7 +12,7 @@ public protocol QRCodeScannerDelegate: AnyObject {
 public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputObjectsDelegate, UIImagePickerControllerDelegate, UINavigationBarDelegate {
     
     var squareView: SquareView? = nil
-    public weak var delegate: QRCodeScannerDelegate?
+    public var delegate: QRCodeScannerDelegate?
     private var flashButton: UIButton? = nil
     
     //Extra images for adding extra features
@@ -347,6 +347,8 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
                     delCnt = delCnt + 1
                     if delCnt > delayCount {
                         if let unwrapedStringValue = unwraped.stringValue {
+                            print(unwrapedStringValue)
+                            print(delegate)
                             delegate?.qrCodeScanner(self, scanDidComplete: unwrapedStringValue)
                         } else {
                             delegate?.qrCodeScannerDidFail(self, error: "Empty string found")
