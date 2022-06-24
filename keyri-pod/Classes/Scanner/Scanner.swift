@@ -47,6 +47,7 @@ open class Scanner {
 extension Scanner: QRCodeScannerDelegate {
     
     public func qrCodeScanner(_ controller: UIViewController, scanDidComplete result: String) {
+        print(completion)
         completion?(result)
         presentationController?.dismiss(animated: true, completion: nil)
     }

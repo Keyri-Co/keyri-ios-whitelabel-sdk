@@ -29,14 +29,14 @@ public class EncryptionUtil {
         }
     }
     
-    public func encrypt(message: String, with secret: SharedSecret, salt: String) -> Data? {
+    public func encrypt(message: String, with secret: SharedSecret, salt: String) -> AES.GCM.SealedBox? {
         let protocolSalt = salt.data(using: .utf8)!
         let symKey = secret.hkdfDerivedSymmetricKey(using: SHA256.self, salt: protocolSalt, sharedInfo: Data(), outputByteCount: 32)
         
         let msgProtocol = message.data(using: .utf8)!
         do {
             let encrypted = try CryptoKit.AES.GCM.seal(msgProtocol, using: symKey)
-            return encrypted.combined
+            return encrypted
         } catch {
             print(error)
             return nil
@@ -44,3 +44,4 @@ public class EncryptionUtil {
     }
     
 }
+

@@ -62,9 +62,9 @@ public struct Session: Codable {
             ],
             "browserData": [
                 "publicKey": keySet.1.rawRepresentation.base64EncodedString(),
-                "ciphertext": cipher?.base64EncodedString(),
+                "ciphertext": cipher?.combined,
                 "salt": __salt,
-                "iv": keySet.1.rawRepresentation.base64EncodedString()
+                "iv": cipher?.nonce
             ]
         ]
         
@@ -94,3 +94,4 @@ public struct Session: Codable {
      }
      */
 }
+
