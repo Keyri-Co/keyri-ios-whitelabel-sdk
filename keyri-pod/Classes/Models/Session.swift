@@ -54,7 +54,7 @@ public struct Session: Codable {
         let json: [String: Any] = [
             "__salt": __salt,
             "__hash": __hash,
-            "error": success.description,
+            "errors": success.description,
             "errorMsg": "",
             "apiData": [
                 "publicUserId": userID,
@@ -62,9 +62,9 @@ public struct Session: Codable {
             ],
             "browserData": [
                 "publicKey": keySet.1.rawRepresentation.base64EncodedString(),
-                "ciphertext": cipher?.combined,
+                "ciphertext": cipher?.combined?.base64EncodedString(),
                 "salt": __salt,
-                "iv": cipher?.nonce
+                "iv": cipher?.combined?.base64EncodedString()
             ]
         ]
         

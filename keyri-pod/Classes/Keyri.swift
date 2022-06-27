@@ -9,7 +9,10 @@ open class Keyri {
         let usr = username ?? "ANON"
         
         do {
-            let key = try usrSvc.verifyExistingUser(username: usr)
+            var key = try usrSvc.verifyExistingUser(username: usr)
+            if key == nil {
+                key = try usrSvc.saveKey(for: usr)
+            }
             
             let keyriService = KeyriService()
             keyriService.getSessionInfo(appKey: appKey, sessionId: sessionId) { result in
@@ -18,7 +21,7 @@ open class Keyri {
                 case .success(let data):
                     do {
                         var session = try JSONDecoder().decode(Session.self, from: data)
-                        session.userPublicKey = key.derRepresentation.base64EncodedString()
+                        session.userPublicKey = key!.derRepresentation.base64EncodedString()
                         completionHandler(.success(session))
                     } catch {
                         completionHandler(.failure(error))
@@ -45,7 +48,7 @@ open class Keyri {
         return try usrSvc.sign(username: username, data: data)
     }
     
-    public func getAssociationKey(username: String) throws -> P256.Signing.PublicKey {
+    public func getAssociationKey(username: String) throws -> P256.Signing.PublicKey? {
         let usrSvc = UserService()
         return try usrSvc.verifyExistingUser(username: username)
     }
