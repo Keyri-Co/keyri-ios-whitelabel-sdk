@@ -17,8 +17,8 @@ open class UserService {
         keychainService = Keychain(service: "com.keyri")
     }
     
-    public func verifyExistingUser(username: String) throws -> P256.Signing.PublicKey {
-        guard let data = keychainService.load(key: username) else { throw KeyriErrors.accountNotFoundError }
+    public func verifyExistingUser(username: String) throws -> P256.Signing.PublicKey? {
+        guard let data = keychainService.load(key: username) else { return nil }
         
         do {
             let derivedPrivateKey = try SecureEnclave.P256.Signing.PrivateKey(dataRepresentation: data)
@@ -52,3 +52,4 @@ open class UserService {
         
     }
 }
+
