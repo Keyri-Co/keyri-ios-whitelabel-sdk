@@ -105,7 +105,7 @@ public class IPData: NSObject, Codable {
 
 public class Service: NSObject, Codable {
     enum CodingKeys: String, CodingKey {
-        case id = "_id"
+        case id
         case name
         case logo
         case isValid
@@ -160,7 +160,7 @@ public class AuthMobileResponse: NSObject, Codable {
 
 public class AuthMobileUser: NSObject, Codable {
     enum CodingKeys: String, CodingKey {
-        case id = "_id"
+        case id
         case name
         case createdAt
         case updatedAt
