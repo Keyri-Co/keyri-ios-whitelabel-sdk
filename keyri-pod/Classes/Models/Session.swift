@@ -48,8 +48,18 @@ public struct Session: Codable {
             return
         }
     
+        let salt = Int.random(in: 0...9999).description
         
-        let cipher = enc.encrypt(message: payload ?? "", with: keySet.0, salt: __salt)
+        let cipher = enc.encrypt(message: payload ?? "", with: keySet.0, salt: salt)
+        print("\nENCRYPTED DATA::")
+        let cipherData = cipher?.combined
+        let cipherTruncated = cipherData?.dropFirst(12)
+        
+        
+        
+        let pubkey = keySet.1.rawRepresentation.base64EncodedString()
+        print(pubkey)
+
         
         let json: [String: Any] = [
             "__salt": __salt,
@@ -61,10 +71,10 @@ public struct Session: Codable {
                 "associationKey": userPublicKey
             ],
             "browserData": [
-                "publicKey": keySet.1.rawRepresentation.base64EncodedString(),
-                "ciphertext": cipher?.combined?.base64EncodedString(),
-                "salt": __salt,
-                "iv": cipher?.combined?.base64EncodedString()
+                "publicKey": pubkey,
+                "ciphertext": cipherTruncated?.base64EncodedString(),
+                "salt": salt.data(using: .utf8)!.base64EncodedString(),
+                "iv": cipher?.nonce.withUnsafeBytes({ Data(Array($0)).base64EncodedString() })
             ]
         ]
         
