@@ -35,6 +35,7 @@ open class Scanner {
         
         let label = UILabel()
         label.text = "Powered by Keyri"
+        label.textColor = UIColor.systemGray
         label.sizeToFit()
         scanner.view.addSubview(label)
         
