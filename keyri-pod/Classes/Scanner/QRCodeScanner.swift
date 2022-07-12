@@ -129,7 +129,7 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
         setupCaptureSession(devicePosition) //Default device capture position is rear
         addViedoPreviewLayer(view)
         createCornerFrame()
-        addButtons(view)
+        // addButtons(view)
     }
     
     //Creates corner rectagle frame with green coloe(default color)

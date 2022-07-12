@@ -144,7 +144,7 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
         setupCaptureSession(devicePosition) //Default device capture position is rear
         addViedoPreviewLayer(view)
         createCornerFrame()
-        addButtons(view)
+        // addButtons(view)
     }
     
     //Creates corner rectagle frame with green coloe(default color)
@@ -188,52 +188,52 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
         view.layer.insertSublayer(noteText, above: maskLayer)
     }
     
-    // Adds buttons to view which can we used as extra fearures
-    private func addButtons(_ view: UIView) {
-        
-        let height: CGFloat = 44.0
-        let width: CGFloat = 44.0
-        let btnWidthWhenCancelImageNil: CGFloat = 60.0
-        
-        //Cancel button
-        let cancelButton = UIButton()
-        if let cancelImg = cancelImage {
-            cancelButton.frame = CGRect(
-                x: view.frame.width/2 - width/2,
-                y: view.frame.height - 60,
-                width: width,
-                height: height)
-            cancelButton.setImage(cancelImg, for: .normal)
-        } else {
-            cancelButton.frame = CGRect(
-                x: view.frame.width/2 - btnWidthWhenCancelImageNil/2,
-                y: view.frame.height - 60,
-                width: btnWidthWhenCancelImageNil,
-                height: height)
-            cancelButton.setTitle("Cancel", for: .normal)
-        }
-        cancelButton.contentMode = .scaleAspectFit
-        cancelButton.addTarget(self, action: #selector(dismissVC), for:.touchUpInside)
-        view.addSubview(cancelButton)
-        
-        //Torch button
-        if let flashOffImg = flashOffImage {
-            let flashButtonFrame = CGRect(x: 16, y: self.view.bounds.size.height - (bottomSpace + height + 10), width: width, height: height)
-            flashButton = createButtons(flashButtonFrame, height: height)
-            flashButton!.addTarget(self, action: #selector(toggleTorch), for: .touchUpInside)
-            flashButton!.setImage(flashOffImg, for: .normal)
-            view.addSubview(flashButton!)
-        }
-        
-        //Camera button
-        if let cameraImg = cameraImage {
-            let frame = CGRect(x: self.view.bounds.width - (width + 16), y: self.view.bounds.size.height - (bottomSpace + height + 10), width: width, height: height)
-            let cameraSwitchButton = createButtons(frame, height: height)
-            cameraSwitchButton.setImage(cameraImg, for: .normal)
-            cameraSwitchButton.addTarget(self, action: #selector(switchCamera), for: .touchUpInside)
-            view.addSubview(cameraSwitchButton)
-        }
-    }
+//    // Adds buttons to view which can we used as extra fearures
+//    private func addButtons(_ view: UIView) {
+//
+//        let height: CGFloat = 44.0
+//        let width: CGFloat = 44.0
+//        let btnWidthWhenCancelImageNil: CGFloat = 60.0
+//
+//        //Cancel button
+//        let cancelButton = UIButton()
+//        if let cancelImg = cancelImage {
+//            cancelButton.frame = CGRect(
+//                x: view.frame.width/2 - width/2,
+//                y: view.frame.height - 60,
+//                width: width,
+//                height: height)
+//            cancelButton.setImage(cancelImg, for: .normal)
+//        } else {
+//            cancelButton.frame = CGRect(
+//                x: view.frame.width/2 - btnWidthWhenCancelImageNil/2,
+//                y: view.frame.height - 60,
+//                width: btnWidthWhenCancelImageNil,
+//                height: height)
+//            cancelButton.setTitle("Cancel", for: .normal)
+//        }
+//        cancelButton.contentMode = .scaleAspectFit
+//        cancelButton.addTarget(self, action: #selector(dismissVC), for:.touchUpInside)
+//        view.addSubview(cancelButton)
+//
+//        //Torch button
+//        if let flashOffImg = flashOffImage {
+//            let flashButtonFrame = CGRect(x: 16, y: self.view.bounds.size.height - (bottomSpace + height + 10), width: width, height: height)
+//            flashButton = createButtons(flashButtonFrame, height: height)
+//            flashButton!.addTarget(self, action: #selector(toggleTorch), for: .touchUpInside)
+//            flashButton!.setImage(flashOffImg, for: .normal)
+//            view.addSubview(flashButton!)
+//        }
+//
+//        //Camera button
+//        if let cameraImg = cameraImage {
+//            let frame = CGRect(x: self.view.bounds.width - (width + 16), y: self.view.bounds.size.height - (bottomSpace + height + 10), width: width, height: height)
+//            let cameraSwitchButton = createButtons(frame, height: height)
+//            cameraSwitchButton.setImage(cameraImg, for: .normal)
+//            cameraSwitchButton.addTarget(self, action: #selector(switchCamera), for: .touchUpInside)
+//            view.addSubview(cameraSwitchButton)
+//        }
+//    }
     
     func createButtons(_ frame: CGRect, height: CGFloat) -> UIButton {
         let button = UIButton()
