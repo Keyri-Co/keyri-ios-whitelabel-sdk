@@ -7,7 +7,7 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'keyri'
+  s.name             = 'keyri-pod'
   s.version          = '1.0.8'
   s.summary          = 'QR/Passwordless auth with in built risk analytics'
 
