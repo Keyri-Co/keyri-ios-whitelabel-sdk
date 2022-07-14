@@ -155,8 +155,8 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
     // Adds buttons to view which can we used as extra fearures
     private func addButtons(_ view: UIView) {
         
-        let height: CGFloat = 44.0
-        let width: CGFloat = 44.0
+        let height: CGFloat = 36.0
+        let width: CGFloat = 36.0
         let btnWidthWhenCancelImageNil: CGFloat = 60.0
         
         
@@ -175,8 +175,10 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
         button.frame = frame
         button.tintColor = UIColor.white
         button.layer.cornerRadius = height/2
-        button.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        button.backgroundColor = UIColor.white
         button.contentMode = .scaleAspectFit
+        button.setTitle("x", for: .normal)
+        button.setTitleColor(UIColor.systemGray, for: .normal)
         return button
     }
     
