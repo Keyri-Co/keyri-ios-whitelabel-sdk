@@ -7,7 +7,7 @@
 import Foundation
 import CryptoKit
 
-public struct Session: Codable {
+public class Session: NSObject, Codable {
     // configure this variabla to set a custom payload to be sent to the browser
     public var payload: String?
     

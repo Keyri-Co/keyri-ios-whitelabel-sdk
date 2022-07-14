@@ -13,13 +13,7 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
     
     var squareView: SquareView? = nil
     public var delegate: QRCodeScannerDelegate?
-    private var flashButton: UIButton? = nil
-    
-    //Extra images for adding extra features
-    public var cameraImage: UIImage? = nil
-    public var cancelImage: UIImage? = nil
-    public var flashOnImage: UIImage? = nil
-    public var flashOffImage: UIImage? = nil
+    private var xButton: UIButton? = nil
     
     //Default Properties
     private let bottomSpace: CGFloat = 80.0
@@ -93,14 +87,6 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
         super.init(nibName: nil, bundle: nil)
     }
     
-    //Convinience init for adding extra images (camera, torch, cancel)
-    convenience public init(cameraImage: UIImage?, cancelImage: UIImage?, flashOnImage: UIImage?, flashOffImage: UIImage?) {
-        self.init()
-        self.cameraImage = cameraImage
-        self.cancelImage = cancelImage
-        self.flashOnImage = flashOnImage
-        self.flashOffImage = flashOffImage
-    }
     
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -129,7 +115,7 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
         setupCaptureSession(devicePosition) //Default device capture position is rear
         addViedoPreviewLayer(view)
         createCornerFrame()
-        // addButtons(view)
+        addButtons(view)
     }
     
     //Creates corner rectagle frame with green coloe(default color)
@@ -173,45 +159,15 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
         let width: CGFloat = 44.0
         let btnWidthWhenCancelImageNil: CGFloat = 60.0
         
-        //Cancel button
-        let cancelButton = UIButton()
-        if let cancelImg = cancelImage {
-            cancelButton.frame = CGRect(
-                x: view.frame.width/2 - width/2,
-                y: view.frame.height - 60,
-                width: width,
-                height: height)
-            cancelButton.setImage(cancelImg, for: .normal)
-        } else {
-            cancelButton.frame = CGRect(
-                x: view.frame.width/2 - btnWidthWhenCancelImageNil/2,
-                y: view.frame.height - 60,
-                width: btnWidthWhenCancelImageNil,
-                height: height)
-            cancelButton.setTitle("Cancel", for: .normal)
-        }
-        cancelButton.contentMode = .scaleAspectFit
-        cancelButton.addTarget(self, action: #selector(dismissVC), for:.touchUpInside)
-        view.addSubview(cancelButton)
         
         //Torch button
-        if let flashOffImg = flashOffImage {
-            let flashButtonFrame = CGRect(x: 16, y: self.view.bounds.size.height - (bottomSpace + height + 10), width: width, height: height)
-            let flashButton = createButtons(flashButtonFrame, height: height)
-            flashButton.addTarget(self, action: #selector(toggleTorch), for: .touchUpInside)
-            flashButton.setImage(flashOffImg, for: .normal)
-            view.addSubview(flashButton)
-            self.flashButton = flashButton
-        }
+
+        let flashButtonFrame = CGRect(x: self.view.frame.width - 60, y: 20, width: width, height: height)
+        let x = createButtons(flashButtonFrame, height: height)
+        x.addTarget(self, action: #selector(dismissVC), for: .touchUpInside)
+        view.addSubview(x)
+        self.xButton = x
         
-        //Camera button
-        if let cameraImg = cameraImage {
-            let frame = CGRect(x: self.view.bounds.width - (width + 16), y: self.view.bounds.size.height - (bottomSpace + height + 10), width: width, height: height)
-            let cameraSwitchButton = createButtons(frame, height: height)
-            cameraSwitchButton.setImage(cameraImg, for: .normal)
-            cameraSwitchButton.addTarget(self, action: #selector(switchCamera), for: .touchUpInside)
-            view.addSubview(cameraSwitchButton)
-        }
     }
     
     func createButtons(_ frame: CGRect, height: CGFloat) -> UIButton {
@@ -224,34 +180,34 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
         return button
     }
     
-    //Toggle torch
-    @objc func toggleTorch() {
-        //If device postion is front then no need to torch
-        if let currentInput = getCurrentInput() {
-            if currentInput.device.position == .front { return }
-        }
-        
-        guard  let defaultDevice = defaultDevice else {return}
-        if defaultDevice.isTorchAvailable {
-            do {
-                try defaultDevice.lockForConfiguration()
-                defaultDevice.torchMode = defaultDevice.torchMode == .on ? .off : .on
-                if defaultDevice.torchMode == .on {
-                    if let flashOnImage = flashOnImage {
-                        flashButton?.setImage(flashOnImage, for: .normal)
-                    }
-                } else {
-                    if let flashOffImage = flashOffImage {
-                        flashButton?.setImage(flashOffImage, for: .normal)
-                    }
-                }
-                
-                defaultDevice.unlockForConfiguration()
-            } catch let error as NSError {
-                print(error)
-            }
-        }
-    }
+//    //Toggle torch
+//    @objc func toggleTorch() {
+//        //If device postion is front then no need to torch
+//        if let currentInput = getCurrentInput() {
+//            if currentInput.device.position == .front { return }
+//        }
+//        
+//        guard  let defaultDevice = defaultDevice else {return}
+//        if defaultDevice.isTorchAvailable {
+//            do {
+//                try defaultDevice.lockForConfiguration()
+//                defaultDevice.torchMode = defaultDevice.torchMode == .on ? .off : .on
+//                if defaultDevice.torchMode == .on {
+//                    if let flashOnImage = flashOnImage {
+//                        flashButton?.setImage(flashOnImage, for: .normal)
+//                    }
+//                } else {
+//                    if let flashOffImage = flashOffImage {
+//                        flashButton?.setImage(flashOffImage, for: .normal)
+//                    }
+//                }
+//
+//                defaultDevice.unlockForConfiguration()
+//            } catch let error as NSError {
+//                print(error)
+//            }
+//        }
+//    }
     
     //Switch camera
     @objc func switchCamera() {

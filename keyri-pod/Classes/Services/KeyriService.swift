@@ -21,7 +21,6 @@ public class KeyriService {
                 return
                 
             }
-
             completionHandler(.success(data))
         }
 

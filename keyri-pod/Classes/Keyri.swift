@@ -52,4 +52,9 @@ open class Keyri {
         let usrSvc = UserService()
         return try usrSvc.verifyExistingUser(username: username)
     }
+    
+    public func listAssociactionKeys() -> [String:String]? {
+        let keychain = Keychain(service: "com.keyri")
+        return keychain.listKeys()
+    }
 }
