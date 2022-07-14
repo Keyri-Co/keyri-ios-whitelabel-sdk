@@ -7,9 +7,9 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'keyri-pod'
+  s.name             = 'keyri'
   s.version          = '0.1.33'
-  s.summary          = 'Library for autorization'
+  s.summary          = 'QR/Passwordless auth with in built risk analytics'
 
   s.homepage         = 'https://github.com/Keyri-Co/keyri-ios-whitelabel-sdk'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
