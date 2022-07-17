@@ -9,8 +9,8 @@ import Foundation
 
 public struct RiskAnalytics: Codable {
     //var riskAttributes: RiskAttributes
-    var riskStatus: String
-    var riskFlagString: String
+    var riskStatus: String?
+    var riskFlagString: String?
     var geoData: GeoDataPair?
 }
 
