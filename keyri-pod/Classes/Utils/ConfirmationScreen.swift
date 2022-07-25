@@ -6,7 +6,6 @@
 //
 import SwiftUI
 
-@available(iOS 15.0, *)
 struct ConfirmationScreen: View {
     @Environment(\.colorScheme) var colorScheme
     @State var session: Session
@@ -17,18 +16,16 @@ struct ConfirmationScreen: View {
             Text(session.riskAnalytics?.riskFlagString ?? "")
         }
         List {
-            cell(image: "iphone", text: session.IPAddressMobile).listSectionSeparator(.hidden)
-            cell(image: "laptop", text: session.IPAddressWidget)
-        }.listStyle(.plain).lineSpacing(40)
+            cell(image: "laptopcomputer.and.arrow.down", text: session.IPAddressWidget)
+            cell(image: "iphone", text: session.IPAddressMobile)
+            cell(image: "laptopcomputer", text: "\(session.WidgetUserAgent.browser) on \(session.WidgetUserAgent.os)")
+            
+        }.listStyle(.sidebar).lineSpacing(40)
 
         HStack {
             Spacer()
             Button(action: {
-                do {
-                    try session.deny()
-                } catch {
-                    print(error)
-                }
+                session.deny()
             }, label: {
                 HStack {
                     Image(systemName: "xmark").foregroundColor(Color(hex: "EF4D52"))
@@ -42,11 +39,7 @@ struct ConfirmationScreen: View {
                 )
             Spacer()
             Button(action: {
-                do {
-                    try session.confirm()
-                } catch {
-                    print(error)
-                }
+                session.confirm()
             }, label: {
                 HStack {
                     Image(systemName: "checkmark").foregroundColor(Color(hex: "03A564"))
