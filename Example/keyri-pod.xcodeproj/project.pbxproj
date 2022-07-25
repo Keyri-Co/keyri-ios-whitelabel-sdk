@@ -47,7 +47,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		699286101ED2C4A8D3F09D3B /* Pods-keyri-pod_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keyri-pod_Tests.debug.xcconfig"; path = "Target Support Files/Pods-keyri-pod_Tests/Pods-keyri-pod_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		6E0AFCCB94E8EB404C072234 /* keyri-pod.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "keyri-pod.podspec"; path = "../keyri-pod.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		6E0AFCCB94E8EB404C072234 /* keyri.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = keyri.podspec; path = ../keyri.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7F0FD9EDEBA586B63CA87F14 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		833BFFE48A9E443248AE958F /* Pods-keyri-pod_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-keyri-pod_Example.release.xcconfig"; path = "Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A284E45D59765515B354E3A4 /* Pods_keyri_pod_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_keyri_pod_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,7 +151,7 @@
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				6E0AFCCB94E8EB404C072234 /* keyri-pod.podspec */,
+				6E0AFCCB94E8EB404C072234 /* keyri.podspec */,
 				37F7DDB7B4FF4BAA565DC0F3 /* README.md */,
 				7F0FD9EDEBA586B63CA87F14 /* LICENSE */,
 			);
