@@ -25,21 +25,21 @@ public class Session: NSObject, Codable {
     private var __salt: String
     
     
-    @objc public func deny() -> Bool {
+    @objc public func deny() -> String {
         do {
             try sendPOST(denial: true)
-            return true
+            return "success"
         } catch {
-            return false
+            return error.localizedDescription
         }
     }
     
-    @objc public func confirm() -> Bool {
+    @objc public func confirm() -> String {
         do {
             try sendPOST(denial: false)
-            return true
+            return "success"
         } catch {
-            return false
+            return error.localizedDescription
         }
     }
     
