@@ -25,7 +25,7 @@ public class Session: NSObject, Codable {
     private var __salt: String
     
     
-    public func deny() throws {
+    @objc public func deny() throws {
         do {
             try sendPOST(denial: true)
         } catch {
@@ -33,7 +33,7 @@ public class Session: NSObject, Codable {
         }
     }
     
-    public func confirm() throws {
+    @objc public func confirm() throws {
         do {
             try sendPOST(denial: false)
         } catch {
