@@ -21,17 +21,10 @@ class ViewController: UIViewController {
     
     
     @IBAction func auth(_ sender: Any) {
-//        print("calling scanner")
-//        let scanner = keyri_pod.Scanner()
-//        scanner.completion = { str in
-//            if let url = URL(string: str) {
-//                self.process(url: url)
-//            }
-//        }
-//        scanner.show()
-        
         let keyri = Keyri()
-        keyri.easyKeyriAuth(publicUserId: "test", appKey: "IT7VrTQ0r4InzsvCNJpRCRpi1qzfgpaj", payload: "hello")
+        keyri.easyKeyriAuth(publicUserId: "test", appKey: "IT7VrTQ0r4InzsvCNJpRCRpi1qzfgpaj", payload: "hello") { bool in
+            print(bool)
+        }
     }
     
     override func viewDidLoad() {
@@ -41,44 +34,6 @@ class ViewController: UIViewController {
         
         self.appKeySelector.delegate = self
         self.appKeySelector.dataSource = self
-        
-    }
-    
-    func process(url: URL) {
-        let sessionId = URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
-
-
-        let appKey = selectedAppKey // Get this value from the Keyri Developer Portal
-        print("\n In callback \n")
-        
-
-        let keyri = Keyri() // Be sure to import the SDK at the top of the file
-        keyri.initializeQrSession(username: username.text ?? "ANON", sessionId: sessionId, appKey: appKey) { res in
-            DispatchQueue.main.async {
-                switch res {
-                case .success(var session):
-                    // You can optionally create a custom screen and pass the session ID there. We recommend this approach for large enterprises
-                    session.payload = "\(self.username.text ?? "ANON") says \(self.message.text ?? "nothing")"
-
-                    // In a real world example you’d wait for user confirmation first
-                    do {
-                        print("confirming session")
-                        try session.confirm() // or session.deny()
-                        
-                            self.showAlert(title: "Success", message: "\(self.username.text) logged in" )
-                        
-                    } catch {
-                        print(error)
-                        self.showAlert(title: "Error", message: error.localizedDescription)
-                    }
-                case .failure(let error):
-                    print(error)
-                    self.showAlert(title: "Error", message: error.localizedDescription)
-                }
-            }
-        }
-
-        
         
     }
     

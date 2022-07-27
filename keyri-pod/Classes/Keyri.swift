@@ -38,20 +38,23 @@ open class Keyri {
 
     }
     
-    public func easyKeyriAuth(publicUserId: String, appKey: String, payload: String) {
+    public func easyKeyriAuth(publicUserId: String, appKey: String, payload: String, completion: @escaping ((Bool) -> ())) {
         let scanner = Scanner()
         scanner.completion = { str in
             if let url = URL(string: str) {
-                self.easyKeyriAuth(url: url, publicUserId: publicUserId, appKey: appKey, payload: payload)
+                self.easyKeyriAuth(url: url, publicUserId: publicUserId, appKey: appKey, payload: payload) { bool in
+                    completion(bool)
+                }
             }
         }
         scanner.show()
     }
     
-    public func easyKeyriAuth(url: URL, publicUserId: String, appKey: String, payload: String) {
+    public func easyKeyriAuth(url: URL, publicUserId: String, appKey: String, payload: String, completion: @escaping ((Bool) -> ())) {
         let sessionId = URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
 
         let keyri = Keyri() // Be sure to import the SDK at the top of the file
+        var ret: Bool
         keyri.initializeQrSession(username: publicUserId, sessionId: sessionId, appKey: appKey) { res in
             switch res {
             case .success(let session):
@@ -59,9 +62,9 @@ open class Keyri {
                     // You can optionally create a custom screen and pass the session ID there. We recommend this approach for large enterprises
                     session.payload = payload
                     let root = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController
-                    let cs = ConfirmationScreenUIView(session: session) { str in
-                        print(str)
+                    let cs = ConfirmationScreenUIView(session: session) { bool in
                         root?.dismiss(animated: true)
+                        completion(bool)
                     }
                     
                     root?.present(cs.vc, animated: true)

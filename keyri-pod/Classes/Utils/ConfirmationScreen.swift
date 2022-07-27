@@ -10,7 +10,7 @@ struct ConfirmationScreen: View {
     @Environment(\.colorScheme) var colorScheme
     @State var session: Session
     
-    public var dismissalAction: ((String) -> ())?
+    public var dismissalAction: ((Bool) -> ())?
     
     var body: some View {
         Text("Are you trying to log in?").foregroundColor(Color(hex: "595959")).font(.title3).fontWeight(.semibold).padding()
@@ -29,7 +29,7 @@ struct ConfirmationScreen: View {
             Button(action: {
                 let res = session.deny()
                 if let dismissalAction = dismissalAction {
-                    dismissalAction("deny success: \(res)")
+                    dismissalAction(false)
                 }
             }, label: {
                 HStack {
@@ -46,7 +46,7 @@ struct ConfirmationScreen: View {
             Button(action: {
                 let res = session.confirm()
                 if let dismissalAction = dismissalAction {
-                    dismissalAction("confirm success: \(res)")
+                    dismissalAction(true)
                 }
             }, label: {
                 HStack {

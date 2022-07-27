@@ -11,7 +11,7 @@ import SwiftUI
 @objcMembers class ConfirmationScreenUIView: NSObject {
     var vc: UIHostingController<ConfirmationScreen>
     
-    @objc public init(session: Session, dismissalDelegate: @escaping (String) -> ()) {
+    @objc public init(session: Session, dismissalDelegate: @escaping (Bool) -> ()) {
         var CS = ConfirmationScreen(session: session)
         CS.dismissalAction = dismissalDelegate
         vc = UIHostingController(rootView: CS)
