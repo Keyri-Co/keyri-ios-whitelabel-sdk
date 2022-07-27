@@ -66,7 +66,7 @@ public class Session: NSObject, Codable {
         let json: [String: Any] = [
             "__salt": __salt,
             "__hash": __hash,
-            "errors": "",
+            "errors": denial == true ? "true" : "",
             "errorMsg": "",
             "apiData": [
                 "publicUserId": userID,

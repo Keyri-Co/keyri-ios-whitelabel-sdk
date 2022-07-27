@@ -21,14 +21,17 @@ class ViewController: UIViewController {
     
     
     @IBAction func auth(_ sender: Any) {
-        print("calling scanner")
-        let scanner = keyri_pod.Scanner()
-        scanner.completion = { str in
-            if let url = URL(string: str) {
-                self.process(url: url)
-            }
-        }
-        scanner.show(from: self)
+//        print("calling scanner")
+//        let scanner = keyri_pod.Scanner()
+//        scanner.completion = { str in
+//            if let url = URL(string: str) {
+//                self.process(url: url)
+//            }
+//        }
+//        scanner.show()
+        
+        let keyri = Keyri()
+        keyri.easyKeyriAuth(publicUserId: "test", appKey: "IT7VrTQ0r4InzsvCNJpRCRpi1qzfgpaj", payload: "hello")
     }
     
     override func viewDidLoad() {

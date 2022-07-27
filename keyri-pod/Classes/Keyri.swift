@@ -38,6 +38,41 @@ open class Keyri {
 
     }
     
+    public func easyKeyriAuth(publicUserId: String, appKey: String, payload: String) {
+        let scanner = Scanner()
+        scanner.completion = { str in
+            if let url = URL(string: str) {
+                self.easyKeyriAuth(url: url, publicUserId: publicUserId, appKey: appKey, payload: payload)
+            }
+        }
+        scanner.show()
+    }
+    
+    public func easyKeyriAuth(url: URL, publicUserId: String, appKey: String, payload: String) {
+        let sessionId = URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
+
+        let keyri = Keyri() // Be sure to import the SDK at the top of the file
+        keyri.initializeQrSession(username: publicUserId, sessionId: sessionId, appKey: appKey) { res in
+            switch res {
+            case .success(let session):
+                DispatchQueue.main.async {
+                    // You can optionally create a custom screen and pass the session ID there. We recommend this approach for large enterprises
+                    session.payload = payload
+                    let root = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController
+                    let cs = ConfirmationScreenUIView(session: session) { str in
+                        print(str)
+                        root?.dismiss(animated: true)
+                    }
+                    
+                    root?.present(cs.vc, animated: true)
+                }
+            case .failure(let error):
+                print(error)
+            }
+            
+        }
+    }
+    
     public func generateAssociationKey(username: String) throws -> P256.Signing.PublicKey {
         let usrSvc = UserService()
         return try usrSvc.saveKey(for: username)
