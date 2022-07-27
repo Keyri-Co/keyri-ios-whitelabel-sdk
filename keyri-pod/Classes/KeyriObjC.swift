@@ -14,6 +14,18 @@ public class KeyriObjC: NSObject {
         keyri = Keyri()
     }
     
+    @objc public func easyKeyriAuth(publicUserId: String, appKey: String, payload: String, completion: @escaping ((Bool) -> ())) {
+        keyri.easyKeyriAuth(publicUserId: publicUserId, appKey: appKey, payload: payload) { bool in
+            completion(bool)
+        }
+    }
+    
+    @objc public func easyKeyriAuth(url: URL, publicUserId: String, appKey: String, payload: String, completion: @escaping ((Bool) -> ())) {
+        keyri.easyKeyriAuth(url: url, publicUserId: publicUserId, appKey: appKey, payload: payload) { bool in
+            completion(bool)
+        }
+    }
+    
     @objc public func initializeQrSession(username: String?, sessionId: String, appKey: String) -> Session? {
         var ret: Session?
         keyri.initializeQrSession(username: username, sessionId: sessionId, appKey: appKey) { result in

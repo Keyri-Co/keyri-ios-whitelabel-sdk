@@ -10,6 +10,8 @@ struct ConfirmationScreen: View {
     @Environment(\.colorScheme) var colorScheme
     @State var session: Session
     
+    public var dismissalAction: ((Bool) -> ())?
+    
     var body: some View {
         Text("Are you trying to log in?").foregroundColor(Color(hex: "595959")).font(.title3).fontWeight(.semibold).padding()
         if session.riskAnalytics?.riskStatus == "warn" {
@@ -25,7 +27,10 @@ struct ConfirmationScreen: View {
         HStack {
             Spacer()
             Button(action: {
-                session.deny()
+                _ = session.deny()
+                if let dismissalAction = dismissalAction {
+                    dismissalAction(false)
+                }
             }, label: {
                 HStack {
                     Image(systemName: "xmark").foregroundColor(Color(hex: "EF4D52"))
@@ -39,7 +44,10 @@ struct ConfirmationScreen: View {
                 )
             Spacer()
             Button(action: {
-                session.confirm()
+                _ = session.confirm()
+                if let dismissalAction = dismissalAction {
+                    dismissalAction(true)
+                }
             }, label: {
                 HStack {
                     Image(systemName: "checkmark").foregroundColor(Color(hex: "03A564"))

@@ -18,7 +18,8 @@ open class Scanner {
         if let targetViewController = targetViewController {
             return targetViewController
         } else {
-            return UIApplication.shared.keyWindow?.rootViewController?.topMostViewController()
+            print("hello")
+            return UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController
         }
     }
     
@@ -43,7 +44,6 @@ open class Scanner {
 extension Scanner: QRCodeScannerDelegate {
     
     public func qrCodeScanner(_ controller: UIViewController, scanDidComplete result: String) {
-        print(completion)
         completion?(result)
         presentationController?.dismiss(animated: true, completion: nil)
     }

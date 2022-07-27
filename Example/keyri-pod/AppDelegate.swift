@@ -63,16 +63,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let keyri = Keyri() // Be sure to import the SDK at the top of the file
         keyri.initializeQrSession(username: "TestUser", sessionId: sessionId, appKey: appKey) { res in
             switch res {
-            case .success(var session):
+            case .success(let session):
                 // You can optionally create a custom screen and pass the session ID there. We recommend this approach for large enterprises
                 session.payload = payload
 
                 // In a real world example you’d wait for user confirmation first
-                do {
-                    try session.confirm() // or session.deny()
-                } catch {
-                    print(error)
-                }
+
+                _ = session.confirm() // or session.deny()
+
             case .failure(let error):
                 print(error)
             }
