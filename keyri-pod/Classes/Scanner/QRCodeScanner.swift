@@ -157,7 +157,6 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
         
         let height: CGFloat = 36.0
         let width: CGFloat = 36.0
-        let btnWidthWhenCancelImageNil: CGFloat = 60.0
         
         
         //Torch button
@@ -298,8 +297,6 @@ public class QRCodeScannerController: UIViewController, AVCaptureMetadataOutputO
                     delCnt = delCnt + 1
                     if delCnt > delayCount {
                         if let unwrapedStringValue = unwraped.stringValue {
-                            print(unwrapedStringValue)
-                            print(delegate)
                             delegate?.qrCodeScanner(self, scanDidComplete: unwrapedStringValue)
                         } else {
                             delegate?.qrCodeScannerDidFail(self, error: "Empty string found")

@@ -27,7 +27,7 @@ struct ConfirmationScreen: View {
         HStack {
             Spacer()
             Button(action: {
-                let res = session.deny()
+                _ = session.deny()
                 if let dismissalAction = dismissalAction {
                     dismissalAction(false)
                 }
@@ -44,7 +44,7 @@ struct ConfirmationScreen: View {
                 )
             Spacer()
             Button(action: {
-                let res = session.confirm()
+                _ = session.confirm()
                 if let dismissalAction = dismissalAction {
                     dismissalAction(true)
                 }

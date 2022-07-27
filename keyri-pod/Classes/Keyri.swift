@@ -20,7 +20,7 @@ open class Keyri {
                     
                 case .success(let data):
                     do {
-                        var session = try JSONDecoder().decode(Session.self, from: data)
+                        let session = try JSONDecoder().decode(Session.self, from: data)
                         session.userPublicKey = key!.derRepresentation.base64EncodedString()
                         completionHandler(.success(session))
                     } catch {
@@ -54,7 +54,6 @@ open class Keyri {
         let sessionId = URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
 
         let keyri = Keyri() // Be sure to import the SDK at the top of the file
-        var ret: Bool
         keyri.initializeQrSession(username: publicUserId, sessionId: sessionId, appKey: appKey) { res in
             switch res {
             case .success(let session):

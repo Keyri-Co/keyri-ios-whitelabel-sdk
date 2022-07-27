@@ -12,7 +12,7 @@ import AVFoundation
 /*
  This protocol defines methods which get called when some events occures.
  */
-public protocol QRScannerCodeDelegate: class {
+public protocol QRScannerCodeDelegate: AnyObject {
     
     func qrScanner(_ controller: UIViewController, scanDidComplete result: String)
     func qrScannerDidFail(_ controller: UIViewController,  error: String)
