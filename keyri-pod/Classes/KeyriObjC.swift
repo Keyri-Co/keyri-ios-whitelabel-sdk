@@ -26,19 +26,15 @@ public class KeyriObjC: NSObject {
         }
     }
     
-    @objc public func initializeQrSession(username: String?, sessionId: String, appKey: String) -> Session? {
-        var ret: Session?
+    @objc public func initializeQrSession(username: String?, sessionId: String, appKey: String, completion: @escaping ((Session?, Error?) -> ())) {
         keyri.initializeQrSession(username: username, sessionId: sessionId, appKey: appKey) { result in
             switch result {
             case .success(let session):
-                ret = session
+                completion(session, nil)
             case .failure(let error):
-                print(error)
+                completion(nil, error)
             }
         }
-        
-        return ret
-        
     }
     
     @objc public func generateAssociationKey(username: String) -> String? {
