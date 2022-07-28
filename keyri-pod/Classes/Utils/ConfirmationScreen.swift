@@ -12,10 +12,15 @@ struct ConfirmationScreen: View {
     
     public var dismissalAction: ((Bool) -> ())?
     
+    init(session: Session) {
+        UITableView.appearance().backgroundColor = .systemBackground
+        _session = State(wrappedValue: session)
+    }
+    
     var body: some View {
-        Text("Are you trying to log in?").foregroundColor(Color(hex: "595959")).font(.title3).fontWeight(.semibold).padding()
+        Text("Are you trying to log in?").foregroundColor(.secondary).font(.title3).fontWeight(.semibold).padding()
         if session.riskAnalytics?.riskStatus == "warn" {
-            Text(session.riskAnalytics?.riskFlagString ?? "")
+            Text(session.riskAnalytics?.riskFlagString ?? "").foregroundColor(.orange)
         }
         List {
             cell(image: "laptopcomputer.and.arrow.down", text: session.IPAddressWidget)
@@ -72,7 +77,7 @@ struct cell: View {
     var body: some View {
         HStack {
             Image(systemName: image).frame(width: 20, height: 20, alignment: .center).padding(.leading)
-            Text(text).foregroundColor(Color(hex: "595959")).padding(.leading)
+            Text(text).foregroundColor(.secondary).padding(.leading)
 
         }.frame(height: 50)
     }
