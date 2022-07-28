@@ -42,7 +42,7 @@ open class Keyri {
         let scanner = Scanner()
         scanner.completion = { str in
             if let url = URL(string: str) {
-                self.easyKeyriAuth(url: url, publicUserId: publicUserId, appKey: appKey, payload: payload) { bool in
+                self.processLink(url: url, publicUserId: publicUserId, appKey: appKey, payload: payload) { bool in
                     completion(bool)
                 }
             }
@@ -50,7 +50,7 @@ open class Keyri {
         scanner.show()
     }
     
-    public func easyKeyriAuth(url: URL, publicUserId: String, appKey: String, payload: String, completion: @escaping ((Bool) -> ())) {
+    public func processLink(url: URL, publicUserId: String, appKey: String, payload: String, completion: @escaping ((Bool) -> ())) {
         let sessionId = URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
 
         let keyri = Keyri() // Be sure to import the SDK at the top of the file
