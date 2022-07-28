@@ -19,7 +19,7 @@ public class Session: NSObject, Codable {
     var userPublicKey: String?
     var userID: String?
     
-    private var sessionId: String
+    @objc public var sessionId: String
     private var browserPublicKey: String
     private var __hash: String
     private var __salt: String

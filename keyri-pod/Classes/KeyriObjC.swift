@@ -20,8 +20,8 @@ public class KeyriObjC: NSObject {
         }
     }
     
-    @objc public func easyKeyriAuth(url: URL, publicUserId: String, appKey: String, payload: String, completion: @escaping ((Bool) -> ())) {
-        keyri.easyKeyriAuth(url: url, publicUserId: publicUserId, appKey: appKey, payload: payload) { bool in
+    @objc public func processLink(url: URL, publicUserId: String, appKey: String, payload: String, completion: @escaping ((Bool) -> ())) {
+        keyri.processLink(url: url, publicUserId: publicUserId, appKey: appKey, payload: payload) { bool in
             completion(bool)
         }
     }
