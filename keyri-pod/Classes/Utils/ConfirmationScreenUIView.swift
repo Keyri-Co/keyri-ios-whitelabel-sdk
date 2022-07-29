@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-@objcMembers class ConfirmationScreenUIView: NSObject {
-    var vc: UIHostingController<ConfirmationScreen>
+@objcMembers open class ConfirmationScreenUIView: NSObject {
+    public var vc: UIHostingController<ConfirmationScreen>
     
     @objc public init(session: Session, dismissalDelegate: @escaping (Bool) -> ()) {
         var CS = ConfirmationScreen(session: session)
