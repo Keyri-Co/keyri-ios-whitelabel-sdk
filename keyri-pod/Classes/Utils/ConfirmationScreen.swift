@@ -6,18 +6,18 @@
 //
 import SwiftUI
 
-struct ConfirmationScreen: View {
+public struct ConfirmationScreen: View {
     @Environment(\.colorScheme) var colorScheme
     @State var session: Session
     
     public var dismissalAction: ((Bool) -> ())?
     
-    init(session: Session) {
+    public init(session: Session) {
         UITableView.appearance().backgroundColor = .systemBackground
         _session = State(wrappedValue: session)
     }
     
-    var body: some View {
+    public var body: some View {
         Text("Are you trying to log in?").foregroundColor(.secondary).font(.title3).fontWeight(.semibold).padding()
         if session.riskAnalytics?.riskStatus == "warn" {
             Text(session.riskAnalytics?.riskFlagString ?? "").foregroundColor(.orange)
