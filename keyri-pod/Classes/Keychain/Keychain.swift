@@ -90,14 +90,15 @@ open class Keychain {
                     
         var values = [String:String]()
         if lastResultCode == noErr {
-            let array = result as? Array<Dictionary<String, Any>>
-                        
-            for item in array! {
-                if let key = item[kSecAttrAccount as String] as? String,
-                   let value = item[kSecValueData as String] as? Data {
-                       values[key] = String(data: value, encoding:.utf8)
+            if let array = result as? Array<Dictionary<String, Any>> {
+                for item in array {
+                    if let key = item[kSecAttrAccount as String] as? String,
+                       let value = item[kSecValueData as String] as? Data {
+                           values[key] = String(data: value, encoding:.utf8)
+                     }
                  }
-             }
+            }
+                        
         }
                     
         return values

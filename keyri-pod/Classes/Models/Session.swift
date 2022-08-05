@@ -9,7 +9,7 @@ import CryptoKit
 
 public class Session: NSObject, Codable {
     // configure this variabla to set a custom payload to be sent to the browser
-    public var payload: String?
+    @objc public var payload: String?
     
     var WidgetUserAgent: WidgetUserAgent
     var IPAddressMobile: String
