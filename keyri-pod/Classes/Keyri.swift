@@ -75,17 +75,17 @@ open class Keyri {
         }
     }
     
-    public func generateAssociationKey(username: String) throws -> P256.Signing.PublicKey {
+    public func generateAssociationKey(username: String = "ANON") throws -> P256.Signing.PublicKey {
         let usrSvc = UserService()
         return try usrSvc.saveKey(for: username)
     }
     
-    public func generateUserSignature(for username: String, data: Data) throws -> P256.Signing.ECDSASignature {
+    public func generateUserSignature(for username: String = "ANON", data: Data) throws -> P256.Signing.ECDSASignature {
         let usrSvc = UserService()
         return try usrSvc.sign(username: username, data: data)
     }
     
-    public func getAssociationKey(username: String) throws -> P256.Signing.PublicKey? {
+    public func getAssociationKey(username: String = "ANON") throws -> P256.Signing.PublicKey? {
         let usrSvc = UserService()
         return try usrSvc.verifyExistingUser(username: username)
     }
