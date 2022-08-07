@@ -57,9 +57,13 @@ public class KeyriObjC: NSObject {
         }
     }
     
-    @objc public func getAssociationKey(username: String) -> String? {
+    @objc public func getAssociationKey(username: String?) -> String? {
         do {
-            return try keyri.getAssociationKey(username: username)?.pemRepresentation
+            if let username = username {
+                return try keyri.getAssociationKey(username: username)?.pemRepresentation
+            } else {
+                return try keyri.getAssociationKey()?.pemRepresentation
+            }
         } catch {
             return nil
         }
