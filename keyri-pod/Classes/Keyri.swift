@@ -2,6 +2,8 @@ import CryptoKit
 
 open class Keyri {
     
+    var activeSession: Session?
+    
     public init() {}
     
     public func initializeQrSession(username: String?, sessionId: String, appKey: String, completionHandler: @escaping (Result<Session, Error>) -> Void) {
@@ -22,6 +24,7 @@ open class Keyri {
                     do {
                         let session = try JSONDecoder().decode(Session.self, from: data)
                         session.userPublicKey = key!.derRepresentation.base64EncodedString()
+                        activeSession = session
                         completionHandler(.success(session))
                     } catch {
                         completionHandler(.failure(error))
@@ -73,6 +76,19 @@ open class Keyri {
             }
             
         }
+    }
+    
+    public func initializeDefaultScreen(sessionId: String, completion: @escaping (Bool) -> ()) {
+        if let activeSession = activeSession {
+            if sessionId == activeSession.sessionId {
+                let root = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController
+                let view = ConfirmationScreenUIView(session: activeSession, dismissalDelegate: completion)
+                
+                root?.present(view.vc, animated: true)
+                
+            }
+        }
+        
     }
     
     public func generateAssociationKey(username: String = "ANON") throws -> P256.Signing.PublicKey {

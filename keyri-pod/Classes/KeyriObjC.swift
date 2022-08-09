@@ -37,6 +37,10 @@ public class KeyriObjC: NSObject {
         }
     }
     
+    @objc public func initializeDefaultScreen(sessionId: String, completion: @escaping (Bool) -> ()) {
+        keyri.initializeDefaultScreen(sessionId: sessionId, completion: completion)
+    }
+    
     @objc public func generateAssociationKey(username: String?) -> String? {
         do {
             if let username = username {
