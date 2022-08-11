@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct GeoDataPair: Codable {
-    var mobile: LocationData?
-    var browser: LocationData?
+public class GeoDataPair: NSObject, Codable {
+    @objc var mobile: LocationData?
+    @objc var browser: LocationData?
 }

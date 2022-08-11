@@ -7,10 +7,10 @@
 
 import Foundation
 
-public struct RiskAnalytics: Codable {
+public class RiskAnalytics: NSObject, Codable {
     //var riskAttributes: RiskAttributes
-    var riskStatus: String?
-    var riskFlagString: String?
-    var geoData: GeoDataPair?
+    @objc var riskStatus: String?
+    @objc var riskFlagString: String?
+    @objc var geoData: GeoDataPair?
 }
 

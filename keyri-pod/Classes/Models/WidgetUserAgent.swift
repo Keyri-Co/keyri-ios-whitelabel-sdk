@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct WidgetUserAgent: Codable {
-    var os: String
-    var browser: String
+public class WidgetUserAgent: NSObject, Codable {
+    @objc var os: String
+    @objc var browser: String
 }

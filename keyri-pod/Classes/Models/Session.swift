@@ -11,13 +11,13 @@ public class Session: NSObject, Codable {
     // configure this variabla to set a custom payload to be sent to the browser
     @objc public var payload: String?
     
-    var WidgetUserAgent: WidgetUserAgent
-    var IPAddressMobile: String
-    var IPAddressWidget: String
-    var riskAnalytics: RiskAnalytics?
+    @objc var WidgetUserAgent: WidgetUserAgent
+    @objc var IPAddressMobile: String
+    @objc var IPAddressWidget: String
+    @objc var riskAnalytics: RiskAnalytics?
     
-    var userPublicKey: String?
-    var userID: String?
+    @objc var userPublicKey: String?
+    @objc var userID: String?
     
     @objc public var sessionId: String
     private var browserPublicKey: String
