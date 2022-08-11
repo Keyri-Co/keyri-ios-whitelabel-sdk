@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     @IBAction func auth(_ sender: Any) {
         let keyri = Keyri()
-        keyri.easyKeyriAuth(publicUserId: "test", appKey: "IT7VrTQ0r4InzsvCNJpRCRpi1qzfgpaj", payload: message.text ?? "no message") { bool in
+        keyri.easyKeyriAuth(publicUserId: username.text ?? "", appKey: selectedAppKey, payload: message.text ?? "no message") { bool in
             print(bool)
         }
     }

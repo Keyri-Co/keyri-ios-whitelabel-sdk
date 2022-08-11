@@ -6,16 +6,21 @@
 //
 
 import Foundation
+import CryptoKit
 
 public class KeyriService {
-    public func getSessionInfo(appKey: String, sessionId: String, completionHandler: @escaping (Result<Data, Error>) -> Void) {
+    public func getSessionInfo(appKey: String, sessionId: String, associationKey: P256.Signing.PublicKey, completionHandler: @escaping (Result<Data, Error>) -> Void) {
         
-        guard let url = URL(string: "https://prod.api.keyri.com/api/session/\(sessionId)?appKey=\(appKey)") else {
+        guard let url = URL(string: "https://prod.api.keyri.com/api/v1/session/\(sessionId)?appKey=\(appKey)") else {
             completionHandler(.failure(KeyriErrors.keyriSdkError))
             return
         }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue(associationKey.derRepresentation.base64EncodedString(), forHTTPHeaderField: "x-mobile-id")
 
-        let task = URLSession.shared.dataTask(with: url) {(data, _, error) in
+        let task = URLSession.shared.dataTask(with: request) {(data, _, error) in
             guard let data = data else {
                 completionHandler(.failure(KeyriErrors.networkError))
                 return
@@ -35,7 +40,7 @@ public class KeyriService {
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: sessionInfo)
             
-            guard let url = URL(string: "https://prod.api.keyri.com/api/session/\(sessionId)") else {
+            guard let url = URL(string: "https://prod.api.keyri.com/api/v1/session/\(sessionId)") else {
                 throw KeyriErrors.keyriSdkError
             }
             

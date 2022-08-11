@@ -16,15 +16,21 @@ open class Keyri {
                 key = try usrSvc.saveKey(for: usr)
             }
             
+            guard let key = key else {
+                completionHandler(.failure(KeyriErrors.keyriSdkError))
+                return
+            }
+
+            
             let keyriService = KeyriService()
-            keyriService.getSessionInfo(appKey: appKey, sessionId: sessionId) { result in
+            keyriService.getSessionInfo(appKey: appKey, sessionId: sessionId, associationKey: key) { result in
                 switch result {
                     
                 case .success(let data):
                     do {
                         let session = try JSONDecoder().decode(Session.self, from: data)
-                        session.userPublicKey = key!.derRepresentation.base64EncodedString()
-                        activeSession = session
+                        session.userPublicKey = key.derRepresentation.base64EncodedString()
+                        self.activeSession = session
                         completionHandler(.success(session))
                     } catch {
                         completionHandler(.failure(error))
