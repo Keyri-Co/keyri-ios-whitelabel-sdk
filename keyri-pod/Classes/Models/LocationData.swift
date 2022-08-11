@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct LocationData: Codable {
-    var country_code: String?
-    var city: String?
+public class LocationData: NSObject, Codable {
+    @objc var country_code: String?
+    @objc var city: String?
 }
