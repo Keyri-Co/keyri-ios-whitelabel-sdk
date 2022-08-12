@@ -23,9 +23,9 @@ public struct ConfirmationScreen: View {
             Text(session.riskAnalytics?.riskFlagString ?? "").foregroundColor(.orange)
         }
         List {
-            cell(image: "laptopcomputer.and.arrow.down", text: session.IPAddressWidget)
-            cell(image: "iphone", text: session.IPAddressMobile)
-            cell(image: "laptopcomputer", text: "\(session.WidgetUserAgent.browser) on \(session.WidgetUserAgent.os)")
+            cell(image: "laptopcomputer.and.arrow.down", text: session.iPAddressWidget)
+            cell(image: "iphone", text: session.iPAddressMobile)
+            cell(image: "laptopcomputer", text: "\(session.widgetUserAgent.browser) on \(session.widgetUserAgent.os)")
             
         }.listStyle(.sidebar).lineSpacing(40)
 

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		134D6CCF6AC3A701E58597C8F7166349 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE2AD31F00D0EF9C522211BDDBF6C3C /* UIKit.framework */; };
 		1AD87B37F5CC7D80CE08C4D0057F3134 /* keyri-pod-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1CCF8A7A2BF9A961ABCEC24007D88 /* keyri-pod-dummy.m */; };
+		20207C3A28A6744500D2EA22 /* UserParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20207C3928A6744500D2EA22 /* UserParameters.swift */; };
 		2024516B5CB46342AEBD9495DE097E98 /* PostBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A654DF7C135C1ED1F1479AF20E76B2 /* PostBody.swift */; };
 		204C25A4287F18A0002F96FD /* KeyriObjC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C25A3287F18A0002F96FD /* KeyriObjC.swift */; };
 		20A03FF9288EDE0B00398C70 /* ConfirmationScreenUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A03FF8288EDE0B00398C70 /* ConfirmationScreenUIView.swift */; };
@@ -92,6 +93,7 @@
 		1418CF13AC9FA458933B3244DFD7979E /* ToastWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToastWindow.swift; path = Sources/ToastWindow.swift; sourceTree = "<group>"; };
 		16FEDAAFA144A09E5BD1997929F72441 /* Toaster.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Toaster.modulemap; sourceTree = "<group>"; };
 		1FD1CCF8A7A2BF9A961ABCEC24007D88 /* keyri-pod-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "keyri-pod-dummy.m"; sourceTree = "<group>"; };
+		20207C3928A6744500D2EA22 /* UserParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserParameters.swift; sourceTree = "<group>"; };
 		204C25A3287F18A0002F96FD /* KeyriObjC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyriObjC.swift; path = "keyri-pod/Classes/KeyriObjC.swift"; sourceTree = "<group>"; };
 		20A03FF8288EDE0B00398C70 /* ConfirmationScreenUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationScreenUIView.swift; sourceTree = "<group>"; };
 		258CE692BC78D833F1C6E130D8CA3936 /* WidgetUserAgent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetUserAgent.swift; sourceTree = "<group>"; };
@@ -423,6 +425,7 @@
 				A2316C8708190557B7B51AB2A3762588 /* RiskAnalytics.swift */,
 				4B5F9CD1D63C16A89C01E21A1A08FC13 /* Session.swift */,
 				258CE692BC78D833F1C6E130D8CA3936 /* WidgetUserAgent.swift */,
+				20207C3928A6744500D2EA22 /* UserParameters.swift */,
 			);
 			name = Models;
 			path = "keyri-pod/Classes/Models";
@@ -713,6 +716,7 @@
 				A256C2E042A766CD8A094DE61BD201BF /* Scanner.swift in Sources */,
 				8E03C4831827DE416423536FE8ECA483 /* Session.swift in Sources */,
 				C06C63C73C197D91A0C03970DE2B3DBA /* SquareView.swift in Sources */,
+				20207C3A28A6744500D2EA22 /* UserParameters.swift in Sources */,
 				434745B4D3AE6F5FE349C80CEBCDDA8C /* String+.swift in Sources */,
 				20A03FF9288EDE0B00398C70 /* ConfirmationScreenUIView.swift in Sources */,
 				D9728B6B4341871129EC778AA91AECDB /* UIViewController+.swift in Sources */,

@@ -8,12 +8,31 @@ import Foundation
 import CryptoKit
 
 public class Session: NSObject, Codable {
+    enum CodingKeys: String, CodingKey {
+        case payload
+        
+        case widgetUserAgent = "WidgetUserAgent"
+        case iPAddressMobile = "IPAddressMobile"
+        case iPAddressWidget = "IPAddressWidget"
+        case riskAnalytics
+        
+        case userPublicKey
+        case userID
+        
+        case sessionId
+        case browserPublicKey
+        case __hash
+        case __salt
+        
+    }
+    
+    
     // configure this variabla to set a custom payload to be sent to the browser
     @objc public var payload: String?
     
-    @objc var WidgetUserAgent: WidgetUserAgent
-    @objc var IPAddressMobile: String
-    @objc var IPAddressWidget: String
+    @objc var widgetUserAgent: WidgetUserAgent
+    @objc var iPAddressMobile: String
+    @objc var iPAddressWidget: String
     @objc var riskAnalytics: RiskAnalytics?
     
     @objc var userPublicKey: String?
