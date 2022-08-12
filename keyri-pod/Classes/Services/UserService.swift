@@ -43,12 +43,12 @@ open class UserService {
         }
     }
     
-    public func sign(username: String, data: Data) throws -> P256.Signing.ECDSASignature {
+    public func sign(username: String, dataForSignature: Data) throws -> P256.Signing.ECDSASignature {
         guard let data = keychainService.load(key: username) else { throw KeyriErrors.accountNotFoundError }
         
 
         let derivedPrivateKey = try SecureEnclave.P256.Signing.PrivateKey(dataRepresentation: data)
-        return try derivedPrivateKey.signature(for: data)
+        return try derivedPrivateKey.signature(for: dataForSignature)
         
     }
 }

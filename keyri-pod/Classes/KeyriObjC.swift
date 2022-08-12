@@ -53,7 +53,7 @@ public class KeyriObjC: NSObject {
         }
     }
     
-    @objc public func generateUserSignature(username: String, data: Data) -> String? {
+    @objc public func generateUserSignature(username: String?, data: Data) -> String? {
         do {
             return try keyri.generateUserSignature(for: username, data: data).derRepresentation.base64EncodedString()
         } catch {
