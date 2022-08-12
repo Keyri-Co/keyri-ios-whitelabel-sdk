@@ -19,6 +19,8 @@ public class Session: NSObject, Codable {
         case userPublicKey
         case userID
         
+        case userParameters
+        
         case sessionId
         case browserPublicKey
         case __hash
@@ -37,6 +39,8 @@ public class Session: NSObject, Codable {
     
     @objc var userPublicKey: String?
     @objc var userID: String?
+    
+    @objc var userParameters: UserParameters?
     
     @objc public var sessionId: String
     private var browserPublicKey: String
