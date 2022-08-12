@@ -8,6 +8,11 @@
 import Foundation
 
 public class LocationData: NSObject, Codable {
-    @objc var country_code: String?
+    enum CodingKeys: String, CodingKey {
+        case countryCode = "country_code"
+        case city
+    }
+    
+    @objc var countryCode: String?
     @objc var city: String?
 }
