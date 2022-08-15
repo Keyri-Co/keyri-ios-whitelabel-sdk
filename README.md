@@ -61,24 +61,23 @@ func application(_ application: UIApplication, continue userActivity: NSUserActi
 func process(url: URL) {
     let sessionId = URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
     let payload = "Custom payload here"
-    let appKey = "App key here" // Get this value from the Keyri Developer Portal
+    let appKey = selectedAppKey // Get this value from the Keyri Developer Portal
 
     let keyri = Keyri() // Be sure to import the SDK at the top of the file
-    let res = keyri.initializeQrSession(appKey: appKey, sessionId: sessionId, payload: payload)
-
-    switch res {
-    case .success(let session):
-        // You can optionally create a custom screen and pass the session ID there. We recommend this approach for large enterprises
-        initializeDefaultScreen(session)
-
-        // In a real world example you’d wait for user confirmation first
-        session.confirm() // or session.deny()
-    case .failure(let error):
-        print(error)
-    }
+    let res = keyri.initializeQrSession(username: "lol", sessionId: sessionId, appKey: appKey) { result in
+        switch result {
+        case .success(let session):
+            DispatchQueue.main.async {
+                session.payload = payload
+                keyri.initializeDefaultScreen(sessionId: session.sessionId) { bool in
+                    print(bool)
+                }
+            }
+        case .failure(let error):
+            print(error.localizedDescription)
+        }
         
-    
-}
+    }
 ```
 
 **Note:** Keyri will set up the required `/.well-known/apple-app-site-association` JSON at your `https://{yourSubdomain}.onekey.to` page as required by Apple to handle Universal Link handling. Details on this mechanism are described here: <https://developer.apple.com/documentation/Xcode/supporting-associated-domains>

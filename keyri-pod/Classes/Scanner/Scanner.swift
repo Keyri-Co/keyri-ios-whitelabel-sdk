@@ -18,7 +18,6 @@ open class Scanner {
         if let targetViewController = targetViewController {
             return targetViewController
         } else {
-            print("hello")
             return UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController
         }
     }

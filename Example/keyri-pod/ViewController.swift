@@ -22,9 +22,42 @@ class ViewController: UIViewController {
     
     @IBAction func auth(_ sender: Any) {
         let keyri = Keyri()
-        keyri.easyKeyriAuth(publicUserId: username.text ?? "", appKey: selectedAppKey, payload: message.text ?? "no message") { bool in
-            print(bool)
+//        keyri.easyKeyriAuth(publicUserId: username.text ?? "", appKey: selectedAppKey, payload: message.text ?? "no message") { bool in
+//            print(bool)
+//        }
+        
+        let scanner = Scanner()
+        scanner.completion = { str in
+            guard let url = URL(string: str) else { return }
+            self.process(url: url)
         }
+        scanner.show()
+    }
+
+    func process(url: URL) {
+        let sessionId = URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
+        let payload = "Custom payload here"
+        let appKey = selectedAppKey // Get this value from the Keyri Developer Portal
+
+        let keyri = Keyri() // Be sure to import the SDK at the top of the file
+        let res = keyri.initializeQrSession(username: "lol", sessionId: sessionId, appKey: appKey) { result in
+            switch result {
+            case .success(let session):
+                DispatchQueue.main.async {
+                    session.payload = payload
+                    keyri.initializeDefaultScreen(sessionId: session.sessionId) { bool in
+                        print(bool)
+                    }
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+            
+        }
+
+
+            
+        
     }
     
     override func viewDidLoad() {
