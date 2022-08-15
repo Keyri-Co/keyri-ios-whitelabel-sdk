@@ -44,9 +44,9 @@ public class KeyriObjC: NSObject {
     @objc public func generateAssociationKey(username: String?) -> String? {
         do {
             if let username = username {
-                return try keyri.generateAssociationKey(username: username).pemRepresentation
+                return try keyri.generateAssociationKey(username: username).derRepresentation.base64EncodedString()
             } else {
-                return try keyri.generateAssociationKey().pemRepresentation
+                return try keyri.generateAssociationKey().derRepresentation.base64EncodedString()
             }
         } catch {
             return nil
@@ -68,9 +68,9 @@ public class KeyriObjC: NSObject {
     @objc public func getAssociationKey(username: String?) -> String? {
         do {
             if let username = username {
-                return try keyri.getAssociationKey(username: username)?.pemRepresentation
+                return try keyri.getAssociationKey(username: username)?.derRepresentation.base64EncodedString()
             } else {
-                return try keyri.getAssociationKey()?.pemRepresentation
+                return try keyri.getAssociationKey()?.derRepresentation.base64EncodedString()
             }
         } catch {
             return nil

@@ -19,6 +19,7 @@ public class KeyriService {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue(associationKey.derRepresentation.base64EncodedString(), forHTTPHeaderField: "x-mobile-id")
+        request.addValue("iOS", forHTTPHeaderField: "x-mobile-os")
 
         let task = URLSession.shared.dataTask(with: request) {(data, _, error) in
             guard let data = data else {
