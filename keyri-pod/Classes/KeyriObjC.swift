@@ -26,8 +26,8 @@ public class KeyriObjC: NSObject {
         }
     }
     
-    @objc public func initializeQrSession(username: String?, sessionId: String, appKey: String, completion: @escaping ((Session?, Error?) -> ())) {
-        keyri.initializeQrSession(username: username, sessionId: sessionId, appKey: appKey) { result in
+    @objc public func initiateQrSession(username: String?, sessionId: String, appKey: String, completion: @escaping ((Session?, Error?) -> ())) {
+        keyri.initiateQrSession(username: username, sessionId: sessionId, appKey: appKey) { result in
             switch result {
             case .success(let session):
                 completion(session, nil)
@@ -37,8 +37,8 @@ public class KeyriObjC: NSObject {
         }
     }
     
-    @objc public func initializeDefaultScreen(sessionId: String, completion: @escaping (Bool) -> ()) {
-        keyri.initializeDefaultScreen(sessionId: sessionId, completion: completion)
+    @objc public func initializeDefaultConfirmationScreen(session: Session, payload: String,  completion: @escaping (Bool) -> ()) {
+        keyri.initializeDefaulConfirmationtScreen(session: session, payload: payload, completion: completion)
     }
     
     @objc public func generateAssociationKey(username: String?) -> String? {

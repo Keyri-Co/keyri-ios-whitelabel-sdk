@@ -22,16 +22,16 @@ class ViewController: UIViewController {
     
     @IBAction func auth(_ sender: Any) {
         let keyri = Keyri()
-//        keyri.easyKeyriAuth(publicUserId: username.text ?? "", appKey: selectedAppKey, payload: message.text ?? "no message") { bool in
-//            print(bool)
-//        }
-        
-        let scanner = Scanner()
-        scanner.completion = { str in
-            guard let url = URL(string: str) else { return }
-            self.process(url: url)
+        keyri.easyKeyriAuth(publicUserId: username.text ?? "", appKey: selectedAppKey, payload: message.text ?? "no message") { bool in
+            print(bool)
         }
-        scanner.show()
+        
+//        let scanner = Scanner()
+//        scanner.completion = { str in
+//            guard let url = URL(string: str) else { return }
+//            self.process(url: url)
+//        }
+//        scanner.show()
     }
 
     func process(url: URL) {

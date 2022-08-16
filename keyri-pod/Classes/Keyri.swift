@@ -6,7 +6,7 @@ open class Keyri {
     
     public init() {}
     
-    public func initializeQrSession(username: String?, sessionId: String, appKey: String, completionHandler: @escaping (Result<Session, Error>) -> Void) {
+    public func initiateQrSession(username: String?, sessionId: String, appKey: String, completionHandler: @escaping (Result<Session, Error>) -> Void) {
         let usrSvc = UserService()
         let usr = username ?? "ANON"
         
@@ -84,16 +84,13 @@ open class Keyri {
         }
     }
     
-    public func initializeDefaultScreen(sessionId: String, completion: @escaping (Bool) -> ()) {
-        if let activeSession = activeSession {
-            if sessionId == activeSession.sessionId {
-                let root = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController
-                let view = ConfirmationScreenUIView(session: activeSession, dismissalDelegate: completion)
-                
-                root?.present(view.vc, animated: true)
-                
-            }
-        }
+    public func initializeDefaultConfirmationScreen(session: Session, payload: String, completion: @escaping (Bool) -> ()) {
+
+        let root = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController
+        let view = ConfirmationScreenUIView(session: session, dismissalDelegate: completion)
+        
+        root?.present(view.vc, animated: true)
+
         
     }
     

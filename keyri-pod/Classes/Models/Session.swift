@@ -11,13 +11,14 @@ public class Session: NSObject, Codable {
     enum CodingKeys: String, CodingKey {
         case payload
         
+        case widgetOrigin    = "WidgetOrigin"
         case widgetUserAgent = "WidgetUserAgent"
         case iPAddressMobile = "IPAddressMobile"
         case iPAddressWidget = "IPAddressWidget"
         case riskAnalytics
         
         case userPublicKey
-        case userID
+        case publicUserId
         
         case userParameters
         
@@ -32,13 +33,14 @@ public class Session: NSObject, Codable {
     // configure this variabla to set a custom payload to be sent to the browser
     @objc public var payload: String?
     
+    @objc var widgetOrigin: String?
     @objc var widgetUserAgent: WidgetUserAgent
     @objc var iPAddressMobile: String
     @objc var iPAddressWidget: String
     @objc var riskAnalytics: RiskAnalytics?
     
     @objc var userPublicKey: String?
-    @objc var userID: String?
+    @objc public var publicUserId: String?
     
     @objc var userParameters: UserParameters?
     
@@ -89,10 +91,10 @@ public class Session: NSObject, Codable {
         let json: [String: Any] = [
             "__salt": __salt,
             "__hash": __hash,
-            "errors": denial == true ? "true" : "",
+            "errors": denial == true ? true : false,
             "errorMsg": "",
             "apiData": [
-                "publicUserId": userID,
+                "publicUserId": publicUserId,
                 "associationKey": userPublicKey
             ],
             "browserData": [
