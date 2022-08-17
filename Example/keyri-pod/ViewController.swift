@@ -40,12 +40,11 @@ class ViewController: UIViewController {
         let appKey = selectedAppKey // Get this value from the Keyri Developer Portal
 
         let keyri = Keyri() // Be sure to import the SDK at the top of the file
-        let res = keyri.initializeQrSession(username: "lol", sessionId: sessionId, appKey: appKey) { result in
+        let res = keyri.initiateQrSession(username: "lol", sessionId: sessionId, appKey: appKey) { result in
             switch result {
             case .success(let session):
                 DispatchQueue.main.async {
-                    session.payload = payload
-                    keyri.initializeDefaultScreen(sessionId: session.sessionId) { bool in
+                    keyri.initializeDefaultConfirmationScreen(session: session, payload: payload) { bool in
                         print(bool)
                     }
                 }

@@ -38,7 +38,7 @@ public class KeyriObjC: NSObject {
     }
     
     @objc public func initializeDefaultConfirmationScreen(session: Session, payload: String,  completion: @escaping (Bool) -> ()) {
-        keyri.initializeDefaulConfirmationtScreen(session: session, payload: payload, completion: completion)
+        keyri.initializeDefaultConfirmationScreen(session: session, payload: payload, completion: completion)
     }
     
     @objc public func generateAssociationKey(username: String?) -> String? {

@@ -63,7 +63,7 @@ open class Keyri {
         let sessionId = URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
 
         let keyri = Keyri() // Be sure to import the SDK at the top of the file
-        keyri.initializeQrSession(username: publicUserId, sessionId: sessionId, appKey: appKey) { res in
+        keyri.initiateQrSession(username: publicUserId, sessionId: sessionId, appKey: appKey) { res in
             switch res {
             case .success(let session):
                 DispatchQueue.main.async {
@@ -86,6 +86,7 @@ open class Keyri {
     
     public func initializeDefaultConfirmationScreen(session: Session, payload: String, completion: @escaping (Bool) -> ()) {
 
+        session.payload = payload
         let root = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController
         let view = ConfirmationScreenUIView(session: session, dismissalDelegate: completion)
         
