@@ -6,5 +6,5 @@
 //
 
 public class UserParameters: NSObject, Codable {
-    @objc var custom: String?
+    @objc var base64EncodedData: String?
 }
