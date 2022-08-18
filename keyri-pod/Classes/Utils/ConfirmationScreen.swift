@@ -23,8 +23,16 @@ public struct ConfirmationScreen: View {
             Text(session.riskAnalytics?.riskFlagString ?? "").foregroundColor(.orange)
         }
         List {
-            cell(image: "laptopcomputer.and.arrow.down", text: session.iPAddressWidget)
-            cell(image: "iphone", text: session.iPAddressMobile)
+            if let geoData = session.riskAnalytics?.geoData,
+                let browserCity = geoData.browser?.city,
+                let mobileCity = geoData.mobile?.city,
+                let browserRegion = geoData.browser?.regionCode,
+                let mobileRegion = geoData.mobile?.regionCode,
+                let browserCountry = geoData.browser?.countryCode,
+                let mobileCountry = geoData.mobile?.countryCode {
+                cell(image: "laptopcomputer.and.arrow.down", text: "\(browserCity), \(browserRegion), \(browserCountry)")
+                cell(image: "iphone", text: "\(mobileCity), \(mobileRegion), \(mobileCountry)")
+            }
             cell(image: "laptopcomputer", text: "\(session.widgetUserAgent.browser) on \(session.widgetUserAgent.os)")
             
         }.listStyle(.sidebar).lineSpacing(40)
