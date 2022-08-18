@@ -19,7 +19,6 @@ class ViewController: UIViewController {
     var pickerData = [["IT7VrTQ0r4InzsvCNJpRCRpi1qzfgpaj", "GZuwAB3QQQ5eTD4st5KmDPDD9PO0xak2", "ZTj8bC8XUUDNEtNw0FBLR6KYbhi7JO9S", "1F3FAZaZ9pcH9DNxyUGoTfi5IF9iqhh6"]]
     var selectedAppKey = "IT7VrTQ0r4InzsvCNJpRCRpi1qzfgpaj"
     
-    
     @IBAction func auth(_ sender: Any) {
         let keyri = Keyri()
         keyri.easyKeyriAuth(publicUserId: username.text ?? "", appKey: selectedAppKey, payload: message.text ?? "no message") { bool in
