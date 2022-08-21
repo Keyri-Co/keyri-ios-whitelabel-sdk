@@ -18,7 +18,7 @@ public struct ConfirmationScreen: View {
     }
     
     public var body: some View {
-        Text("Are you trying to log in?").foregroundColor(.secondary).font(.title3).fontWeight(.semibold).padding(.top, 30)
+        Text("Are you trying to log in?").foregroundColor(.secondary).font(.title3).fontWeight(.semibold).padding(.top, 70)
         if session.riskAnalytics?.riskStatus == "warn" {
             Text(session.riskAnalytics?.riskFlagString ?? "").foregroundColor(.orange).padding(.top, 10)
         }
@@ -74,7 +74,7 @@ public struct ConfirmationScreen: View {
             )
             Spacer()
         }
-        Text("Powered by Keyri").font(.footnote).fontWeight(.light).padding(.bottom).padding(.top).foregroundColor(Color(hex: "595959"))
+        Text("Powered by Keyri").font(.footnote).fontWeight(.light).padding(.bottom, 10).padding(.top).foregroundColor(Color(hex: "595959"))
     }
 }
 
