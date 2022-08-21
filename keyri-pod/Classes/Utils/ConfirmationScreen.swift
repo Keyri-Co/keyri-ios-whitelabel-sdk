@@ -18,9 +18,9 @@ public struct ConfirmationScreen: View {
     }
     
     public var body: some View {
-        Text("Are you trying to log in?").foregroundColor(.secondary).font(.title3).fontWeight(.semibold).padding()
+        Text("Are you trying to log in?").foregroundColor(.secondary).font(.title3).fontWeight(.semibold).padding(.top, 30)
         if session.riskAnalytics?.riskStatus == "warn" {
-            Text(session.riskAnalytics?.riskFlagString ?? "").foregroundColor(.orange)
+            Text(session.riskAnalytics?.riskFlagString ?? "").foregroundColor(.orange).padding(.top, 10)
         }
         List {
             if let geoData = session.riskAnalytics?.geoData,
@@ -74,7 +74,7 @@ public struct ConfirmationScreen: View {
             )
             Spacer()
         }
-        Text("Powered by Keyri").font(.footnote).fontWeight(.light).padding(.bottom)
+        Text("Powered by Keyri").font(.footnote).fontWeight(.light).padding(.bottom).padding(.top).foregroundColor(Color(hex: "595959"))
     }
 }
 
