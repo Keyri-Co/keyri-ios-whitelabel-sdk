@@ -110,6 +110,11 @@ open class Keyri {
         return try usrSvc.verifyExistingUser(username: username)
     }
     
+    public func removeAssociationKey(publicUserId: String = "ANON") throws {
+        let keychain = Keychain(service: "com.keyri")
+        try keychain.remove(key: publicUserId)
+    }
+    
     public func listAssociactionKeys() -> [String:String]? {
         let keychain = Keychain(service: "com.keyri")
         return keychain.listKeys()
