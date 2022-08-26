@@ -77,6 +77,18 @@ public class KeyriObjC: NSObject {
         }
     }
     
+    @objc public func removeAssociationKey(publicUserId: String?) {
+        do {
+            if let publicUserId = publicUserId {
+                try keyri.removeAssociationKey(publicUserId: publicUserId)
+            } else {
+                try keyri.removeAssociationKey()
+            }
+        } catch {
+            return
+        }
+    }
+    
     @objc public func listAssociactionKeys() -> [String:String]? {
         return keyri.listAssociactionKeys()
     }

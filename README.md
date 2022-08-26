@@ -127,9 +127,9 @@ func process(url: URL) {
 
 The following methods are available to interact with the Keyri SDK API, which can be used to craft your own custom flows and leverage the SDK in different ways:
 
-*   `func initializeQrSession(sessionId: String, appKey: String): Result<Session, Error>` - call after obtaining the sessionId from QR-code or deep link. Returns Session object with Risk attributes (needed to show confirmation screen) or Exception.
+*   `func initiateQrSession(sessionId: String, appKey: String): Result<Session, Error>` - call after obtaining the sessionId from QR-code or deep link. Returns Session object with Risk attributes (needed to show confirmation screen) or Exception.
 
-*   `func initializeDefaultScreen(session: Session): Boolean` - to show Confirmation with default UI. Alternatively, you can implement a custom Confirmation Screen. The Default screen is built using SwiftUI, however the session object is designed to work seamlessly with UIKit as well should you prefer that route
+*   `func initializeDefaultConfirmationScreen(session: Session): Boolean` - to show Confirmation with default UI. Alternatively, you can implement a custom Confirmation Screen. The Default screen is built using SwiftUI, however the session object is designed to work seamlessly with UIKit as well should you prefer that route
 
 *   `func Session.confirm(publicUserId: String?, payload: String):Result<Bool, Error>` - call this function if user confirms the dialog. Returns authentication result.
 
@@ -140,6 +140,10 @@ The following methods are available to interact with the Keyri SDK API, which ca
 *   `func getUserSignature(publicUserId: String?, customSignedData: String?): String` - returns an ECDSA signature of the timestamp and optional customSignedData with the publicUserId's privateKey (or, if not provided, anonymous privateKey), customSignedData can be anything.
 
 *   `func getAssociationKey(publicUserId: String): String` - returns Base64 public key for the specified publicUserId.
+
+*   `func removeAssociationKey(publicUserId: String)` - removes key for given user, deleting their record
+
+*   `func listAssociationKeys(): [String: String]` - returns a map of username to association key, every such key on the device
 
 `payload` can be anything (session token or a stringified JSON containing multiple items. Can include things like publicUserId, timestamp, customSignedData and ECDSA signature).
 
