@@ -19,16 +19,20 @@ public class KeyriService {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue(associationKey.derRepresentation.base64EncodedString(), forHTTPHeaderField: "x-mobile-id")
+        request.addValue(UIDevice.current.identifierForVendor?.description ?? "", forHTTPHeaderField: "x-mobile-vendorId")
         request.addValue("iOS", forHTTPHeaderField: "x-mobile-os")
+        
+        TelemetryService.sendEvent(status: .success, code: .getTriggered, message: "Sending GET", sessionId: sessionId)
 
         let task = URLSession.shared.dataTask(with: request) {(data, _, error) in
             guard let data = data else {
                 completionHandler(.failure(KeyriErrors.networkError))
+                TelemetryService.sendEvent(status: .failure, code: .getResponseHandled, message: KeyriErrors.networkError.localizedDescription, sessionId: sessionId)
                 return
                 
             }
             
-            try! print(JSONSerialization.jsonObject(with: data))
+            TelemetryService.sendEvent(status: .success, code: .getResponseHandled, message: data.base64EncodedString(), sessionId: sessionId)
             completionHandler(.success(data))
         }
 
@@ -53,16 +57,21 @@ public class KeyriService {
 
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data, error == nil else {
+                    TelemetryService.sendEvent(status: .failure, code: .postResponseReceived, message: "Failed to POST", sessionId: sessionId)
                     print(error?.localizedDescription ?? "No data")
                     return
                 }
+                
                 let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
                 if let responseJSON = responseJSON as? [String: Any] {
                     print(responseJSON)
                 }
+                
+                TelemetryService.sendEvent(status: .success, code: .postResponseReceived, message: "POST success", sessionId: sessionId)
             }
 
             task.resume()
+            TelemetryService.sendEvent(status: .success, code: .postSent, message: "Sent POST", sessionId: sessionId)
         } catch {
             throw error
         }
