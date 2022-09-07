@@ -23,8 +23,4 @@ import SwiftUI
     public var view: UIView {
         return vc.view
     }
-    
-    
-    
-    
 }

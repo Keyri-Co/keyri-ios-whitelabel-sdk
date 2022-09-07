@@ -11,7 +11,10 @@ public struct ConfirmationScreen: View {
     @State var session: Session
     var status: String
     
+    @State var shouldCall = true
+    
     public var dismissalAction: ((Bool) -> ())?
+    public var shouldCallDismissOnDissappear = true
     
     public init(session: Session) {
         UITableView.appearance().backgroundColor = .systemBackground
@@ -45,6 +48,7 @@ public struct ConfirmationScreen: View {
                 Button(action: {
                     _ = session.deny()
                     if let dismissalAction = dismissalAction {
+                        shouldCall = false
                         dismissalAction(false)
                     }
                 }, label: {
@@ -62,6 +66,7 @@ public struct ConfirmationScreen: View {
                 Button(action: {
                     _ = session.confirm()
                     if let dismissalAction = dismissalAction {
+                        shouldCall = false
                         dismissalAction(true)
                     }
                 }, label: {
@@ -79,6 +84,12 @@ public struct ConfirmationScreen: View {
             }
         }
         Text("Powered by Keyri").font(.footnote).fontWeight(.light).padding(.bottom, 10).padding(.top).foregroundColor(Color(hex: "595959"))
+        
+            .onDisappear() {
+                if shouldCall {
+                    dismissalAction?(false)
+                }
+            }
     }
 }
 
