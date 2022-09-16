@@ -17,6 +17,8 @@ public class Session: NSObject, Codable {
         case iPAddressWidget = "IPAddressWidget"
         case riskAnalytics
         
+        case mobileTemplateResponse
+        
         case userPublicKey
         case publicUserId
         
@@ -38,6 +40,8 @@ public class Session: NSObject, Codable {
     @objc var iPAddressMobile: String
     @objc var iPAddressWidget: String
     @objc var riskAnalytics: RiskAnalytics?
+    
+    @objc var mobileTemplateResponse: MobileTemplateResponse
     
     @objc var userPublicKey: String?
     @objc public var publicUserId: String?
