@@ -10,6 +10,7 @@ public struct ConfirmationScreen: View {
     @Environment(\.colorScheme) var colorScheme
     @State var session: Session
     var status: String
+    var isDenial: Bool
     
     @State var shouldCall = true
     
@@ -20,29 +21,41 @@ public struct ConfirmationScreen: View {
         UITableView.appearance().backgroundColor = .systemBackground
         _session = State(wrappedValue: session)
         status = session.riskAnalytics?.riskStatus ?? ""
+        isDenial = status == "deny"
+        
     }
 
     public var body: some View {
-        Text("Are you trying to log in?").foregroundColor(.secondary).font(.title3).fontWeight(.semibold).padding(.top, 70)
-        if status == "warn" {
-            Text(session.riskAnalytics?.riskFlagString ?? "").foregroundColor(.orange).padding(.top, 10)
+        Text(session.mobileTemplateResponse.title).foregroundColor(colorScheme == .light ? Color(hex: "595959") : Color(hex: "F5F5F5")).font(.system(size: 24)).padding(.top, 50)
+        if let message = session.mobileTemplateResponse.message {
+            Text(message).padding(.top, 12).padding(.trailing).padding(.leading).padding(.top, 10).foregroundColor(colorScheme == .light ? Color(hex: "595959") : Color(hex: "F5F5F5")).font(.system(size: 16))
         }
-        List {
-            if let geoData = session.riskAnalytics?.geoData,
-                let browserCity = geoData.browser?.city,
-                let mobileCity = geoData.mobile?.city,
-                let browserRegion = geoData.browser?.regionCode,
-                let mobileRegion = geoData.mobile?.regionCode,
-                let browserCountry = geoData.browser?.countryCode,
-                let mobileCountry = geoData.mobile?.countryCode {
-                cell(image: "laptopcomputer.and.arrow.down", text: "\(browserCity), \(browserRegion), \(browserCountry)")
-                cell(image: "iphone", text: "\(mobileCity), \(mobileRegion), \(mobileCountry)")
-            }
-            cell(image: "laptopcomputer", text: "\(session.widgetUserAgent.browser) on \(session.widgetUserAgent.os)")
-            
-        }.listStyle(.sidebar).lineSpacing(40)
         
-        if status != "deny" {
+        List {
+            
+            if let issue = session.mobileTemplateResponse.widget.issue {
+                cellWithIssue(image: "laptopcomputer.and.arrow.down", text: session.mobileTemplateResponse.widget.location, issue: issue, isDenied: isDenial).padding(.top, -20)
+            } else  {
+                cell(image: "laptopcomputer.and.arrow.down", text: session.mobileTemplateResponse.widget.location).padding(.top, -20)
+            }
+            
+            
+            if let issue = session.mobileTemplateResponse.mobile.issue {
+                cellWithIssue(image: "iphone", text: session.mobileTemplateResponse.mobile.location, issue: issue, isDenied: isDenial)
+            } else  {
+                cell(image: "iphone", text: session.mobileTemplateResponse.mobile.location)
+            }
+            
+            
+            if let issue = session.mobileTemplateResponse.userAgent.issue {
+                cellWithIssue(image: "laptopcomputer", text: session.mobileTemplateResponse.userAgent.name, issue: issue, isDenied: isDenial)
+            } else {
+                cell(image: "laptopcomputer", text: session.mobileTemplateResponse.userAgent.name)
+            }
+            
+        }.listStyle(.sidebar).lineSpacing(40).padding(.leading, 10)
+        
+        if !isDenial {
             HStack {
                 Spacer()
                 Button(action: {
@@ -57,10 +70,10 @@ public struct ConfirmationScreen: View {
                         Text("No").foregroundColor(Color(hex: "EF4D52"))
                     }
                 })
-                    .buttonStyle(KeyriButton(color: Color(hex: "FEECED")))
+                    .buttonStyle(KeyriButton(color: Color(hex: "FCDADB")))
                     .overlay(
                         RoundedRectangle(cornerRadius: 6)
-                            .stroke(Color(hex: "EF4D52"), lineWidth: 2)
+                            .stroke(Color(hex: "EF4D52"), lineWidth: 1)
                     )
                 Spacer()
                 Button(action: {
@@ -75,15 +88,32 @@ public struct ConfirmationScreen: View {
                         Text("Yes").foregroundColor(Color(hex: "03A564"))
                     }
                 })
-                .buttonStyle(KeyriButton(color: Color(hex: "E1F4ED")))
+                .buttonStyle(KeyriButton(color: Color(hex: "D2EFE3")))
                 .overlay(
                     RoundedRectangle(cornerRadius: 6)
-                        .stroke(Color(hex: "03A564"), lineWidth: 2)
+                        .stroke(Color(hex: "03A564"), lineWidth: 1)
                 )
                 Spacer()
             }
+        } else {
+            Button(action: {
+                if let dismissalAction = dismissalAction {
+                    shouldCall = false
+                    dismissalAction(false)
+                }
+            }, label: {
+                HStack {
+                    Image(systemName: "xmark").foregroundColor(colorScheme == .light ? Color(hex: "595959") : Color(hex: "F5F5F5"))
+                    Text("Close").foregroundColor(colorScheme == .light ? Color(hex: "595959") : Color(hex: "F5F5F5"))
+                }
+            })
+            .buttonStyle(KeyriButton(color: colorScheme == .light ? .white : Color(hex: "1C1C1E"), isDenial: true))
+                .overlay(
+                    RoundedRectangle(cornerRadius: 6)
+                        .stroke(colorScheme == .light ? Color(hex: "595959") : Color(hex: "F5F5F5"), lineWidth: 1)
+                )
         }
-        Text("Powered by Keyri").font(.footnote).fontWeight(.light).padding(.bottom, 10).padding(.top).foregroundColor(Color(hex: "595959"))
+        Text("Powered by Keyri").font(.footnote).fontWeight(.light).padding(.bottom, 10).padding(.top).foregroundColor(colorScheme == .light ? Color(hex: "595959") : Color(hex: "F5F5F5"))
         
             .onDisappear() {
                 if shouldCall {
@@ -94,15 +124,44 @@ public struct ConfirmationScreen: View {
 }
 
 struct cell: View {
+    @Environment(\.colorScheme) var colorScheme
+
     var image: String
     var text: String
     
     var body: some View {
         HStack {
-            Image(systemName: image).frame(width: 20, height: 20, alignment: .center).padding(.leading)
-            Text(text).foregroundColor(.secondary).padding(.leading)
+            Image(systemName: image).frame(width: 18, height: 18, alignment: .center).foregroundColor(colorScheme == .light ? Color(hex: "595959") : Color(hex: "F5F5F5"))
+            Text(text).foregroundColor(colorScheme == .light ? Color(hex: "595959") : Color(hex: "F5F5F5")).padding(.leading).font(.system(size: 16))
 
-        }.frame(height: 50)
+        }.frame(height: 65)
+    }
+    
+    
+}
+
+struct cellWithIssue: View {
+    @Environment(\.colorScheme) var colorScheme
+    
+    var image: String
+    var text: String
+    var issue: String
+    
+    var isDenied: Bool
+    
+    var body: some View {
+        HStack {
+            Image(systemName: image).frame(width: 18, height: 18, alignment: .center).foregroundColor(Color(hex: isDenied ? "EF4D52" : "F5704C"))
+            VStack(spacing: 5) {
+                Text(text).foregroundColor(Color(hex: isDenied ? "EF4D52" : "F5704C")).padding(.leading).frame(maxWidth: .infinity, alignment: .leading).font(.system(size: 16))
+                HStack(spacing: 0) {
+                    Text(issue).foregroundColor(Color(hex: isDenied ? "F59598" : "FF9A73")).fixedSize(horizontal: true, vertical: false).padding(.leading).padding(.trailing, 10).frame(maxWidth: .infinity, alignment: .leading).font(.system(size: 16))
+                    Image(systemName: "exclamationmark.circle.fill").frame(width: 18, height: 18, alignment: .leading).foregroundColor(Color(hex: isDenied ? "F59598" : "FF9A73")).frame(maxWidth: .infinity, alignment: .leading)
+                    Spacer()
+                    Spacer()
+                }
+            }.padding(.top, 5)
+        }.frame(height: 65)
     }
     
     
@@ -110,15 +169,22 @@ struct cell: View {
 
 struct KeyriButton: ButtonStyle {
     var color: Color
-    public init(color: Color) {
+    var width: CGFloat
+    
+    public init(color: Color, isDenial: Bool = false) {
         self.color = color
+        if isDenial {
+            width = 320
+        } else {
+            width = 142
+        }
     }
     func makeBody(configuration: Configuration) -> some View {
         configuration
             .label
             .padding()
             .opacity(400)
-            .frame(width:100, height: 40, alignment: .center)
+            .frame(width: width, height: 51, alignment: .center)
             .background(
                 RoundedRectangle(
                     cornerRadius: 6,
