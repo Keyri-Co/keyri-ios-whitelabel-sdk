@@ -19,6 +19,8 @@ public struct ConfirmationScreen: View {
     
     public init(session: Session) {
         UITableView.appearance().backgroundColor = .systemBackground
+        UICollectionView.appearance().backgroundColor = .systemBackground
+        
         _session = State(wrappedValue: session)
         status = session.riskAnalytics?.riskStatus ?? ""
         isDenial = status == "deny"
@@ -31,29 +33,53 @@ public struct ConfirmationScreen: View {
             Text(message).padding(.top, 12).padding(.trailing).padding(.leading).padding(.top, 10).foregroundColor(colorScheme == .light ? Color(hex: "595959") : Color(hex: "F5F5F5")).font(.system(size: 16))
         }
         
-        List {
-            
-            if let issue = session.mobileTemplateResponse.widget.issue {
-                cellWithIssue(image: "laptopcomputer.and.arrow.down", text: session.mobileTemplateResponse.widget.location, issue: issue, isDenied: isDenial).padding(.top, -20)
-            } else  {
-                cell(image: "laptopcomputer.and.arrow.down", text: session.mobileTemplateResponse.widget.location).padding(.top, -20)
-            }
-            
-            
-            if let issue = session.mobileTemplateResponse.mobile.issue {
-                cellWithIssue(image: "iphone", text: session.mobileTemplateResponse.mobile.location, issue: issue, isDenied: isDenial)
-            } else  {
-                cell(image: "iphone", text: session.mobileTemplateResponse.mobile.location)
-            }
-            
-            
-            if let issue = session.mobileTemplateResponse.userAgent.issue {
-                cellWithIssue(image: "laptopcomputer", text: session.mobileTemplateResponse.userAgent.name, issue: issue, isDenied: isDenial)
-            } else {
-                cell(image: "laptopcomputer", text: session.mobileTemplateResponse.userAgent.name)
-            }
-            
-        }.listStyle(.sidebar).lineSpacing(40).padding(.leading, 10)
+        if #available(iOS 16.0, *) {
+            List {
+                if let issue = session.mobileTemplateResponse.widget.issue {
+                    cellWithIssue(image: "laptopcomputer.and.arrow.down", text: session.mobileTemplateResponse.widget.location, issue: issue, isDenied: isDenial).padding(.top, -20).listRowSeparator(.hidden)
+                } else  {
+                    cell(image: "laptopcomputer.and.arrow.down", text: session.mobileTemplateResponse.widget.location).padding(.top, -20).listRowSeparator(.hidden)
+                }
+                
+                
+                if let issue = session.mobileTemplateResponse.mobile.issue {
+                    cellWithIssue(image: "iphone", text: session.mobileTemplateResponse.mobile.location, issue: issue, isDenied: isDenial).listRowSeparator(.hidden)
+                } else  {
+                    cell(image: "iphone", text: session.mobileTemplateResponse.mobile.location).listRowSeparator(.hidden)
+                }
+                
+                
+                if let issue = session.mobileTemplateResponse.userAgent.issue {
+                    cellWithIssue(image: "laptopcomputer", text: session.mobileTemplateResponse.userAgent.name, issue: issue, isDenied: isDenial)
+                } else {
+                    cell(image: "laptopcomputer", text: session.mobileTemplateResponse.userAgent.name)
+                }
+                
+            }.listStyle(.plain).lineSpacing(40).padding(.leading, 15).padding(.top, 20).scrollContentBackground(.hidden)
+        } else {
+            List {
+                if let issue = session.mobileTemplateResponse.widget.issue {
+                    cellWithIssue(image: "laptopcomputer.and.arrow.down", text: session.mobileTemplateResponse.widget.location, issue: issue, isDenied: isDenial).padding(.top, -20)
+                } else  {
+                    cell(image: "laptopcomputer.and.arrow.down", text: session.mobileTemplateResponse.widget.location).padding(.top, -20)
+                }
+                
+                
+                if let issue = session.mobileTemplateResponse.mobile.issue {
+                    cellWithIssue(image: "iphone", text: session.mobileTemplateResponse.mobile.location, issue: issue, isDenied: isDenial)
+                } else  {
+                    cell(image: "iphone", text: session.mobileTemplateResponse.mobile.location)
+                }
+                
+                
+                if let issue = session.mobileTemplateResponse.userAgent.issue {
+                    cellWithIssue(image: "laptopcomputer", text: session.mobileTemplateResponse.userAgent.name, issue: issue, isDenied: isDenial)
+                } else {
+                    cell(image: "laptopcomputer", text: session.mobileTemplateResponse.userAgent.name)
+                }
+                
+            }.listStyle(.sidebar).lineSpacing(40).padding(.leading, 10)
+        }
         
         if !isDenial {
             HStack {
