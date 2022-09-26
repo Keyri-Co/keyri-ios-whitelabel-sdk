@@ -19,6 +19,8 @@ public struct ConfirmationScreen: View {
     
     public init(session: Session) {
         UITableView.appearance().backgroundColor = .systemBackground
+        UICollectionView.appearance().backgroundColor = .systemBackground
+        
         _session = State(wrappedValue: session)
         status = session.riskAnalytics?.riskStatus ?? ""
         isDenial = status == "deny"
@@ -33,7 +35,6 @@ public struct ConfirmationScreen: View {
         
         if #available(iOS 16.0, *) {
             List {
-                
                 if let issue = session.mobileTemplateResponse.widget.issue {
                     cellWithIssue(image: "laptopcomputer.and.arrow.down", text: session.mobileTemplateResponse.widget.location, issue: issue, isDenied: isDenial).padding(.top, -20).listRowSeparator(.hidden)
                 } else  {
@@ -54,7 +55,7 @@ public struct ConfirmationScreen: View {
                     cell(image: "laptopcomputer", text: session.mobileTemplateResponse.userAgent.name)
                 }
                 
-            }.listStyle(.sidebar).lineSpacing(40).padding(.leading, 10).scrollContentBackground(.hidden)
+            }.listStyle(.plain).lineSpacing(40).padding(.leading, 15).padding(.top, 20).scrollContentBackground(.hidden)
         } else {
             List {
                 if let issue = session.mobileTemplateResponse.widget.issue {
