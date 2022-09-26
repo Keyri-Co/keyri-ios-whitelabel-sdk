@@ -47,19 +47,21 @@ open class Keyri {
 
     }
     
-    public func easyKeyriAuth(publicUserId: String, appKey: String, payload: String, completion: @escaping ((Bool) -> ())) {
+    public func easyKeyriAuth(publicUserId: String, appKey: String, payload: String, completion: @escaping ((Result<Bool, Error>) -> ())) {
         let scanner = Scanner()
         scanner.completion = { str in
             if let url = URL(string: str) {
-                self.processLink(url: url, publicUserId: publicUserId, appKey: appKey, payload: payload) { bool in
-                    completion(bool)
+                self.processLink(url: url, publicUserId: publicUserId, appKey: appKey, payload: payload) { result in
+                    completion(result)
                 }
+            } else {
+                completion(.failure(KeyriErrors.keyriSdkError))
             }
         }
         scanner.show()
     }
     
-    public func processLink(url: URL, publicUserId: String, appKey: String, payload: String, completion: @escaping ((Bool) -> ())) {
+    public func processLink(url: URL, publicUserId: String, appKey: String, payload: String, completion: @escaping ((Result<Bool, Error>) -> ())) {
         let sessionId = URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
 
         let keyri = Keyri() // Be sure to import the SDK at the top of the file
@@ -72,13 +74,14 @@ open class Keyri {
                     let root = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController
                     let cs = ConfirmationScreenUIView(session: session) { bool in
                         root?.dismiss(animated: true)
-                        completion(bool)
+                        completion(.success(bool))
                     }
                     
                     root?.present(cs.vc, animated: true)
                 }
             case .failure(let error):
                 print(error)
+                completion(.failure(error))
             }
             
         }
