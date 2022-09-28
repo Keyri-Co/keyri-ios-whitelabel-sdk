@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum KeyriErrors: LocalizedError {
+@objc enum KeyriErrors: Int, LocalizedError {
     case keyriSdkError
     case networkError
     case serverUnreachableError
