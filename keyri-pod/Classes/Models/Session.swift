@@ -120,7 +120,8 @@ public class Session: NSObject, Codable {
             "errorMsg": "",
             "apiData": [
                 "publicUserId": publicUserId,
-                "associationKey": userPublicKey
+                "associationKey": userPublicKey,
+                "x-mobile-id": userPublicKey
             ],
             "browserData": [
                 "publicKey": pubkey,
