@@ -39,10 +39,12 @@ public class TelemetryService {
             }
             
             if let response = response {
+                print("SENT TO TELEMETRY: \(message)")
                 print(response)
             }
             
             if let error = error {
+                print("FAILED TO SEND: \(message)")
                 print(error)
             }
         }
@@ -61,6 +63,7 @@ public enum EventCode {
     case scannerLaunched
     case scannerClosed
     case getTriggered
+    case epdDetected
     case getResponseHandled
     case confirmationScreenLaunched
     case confirmationScreenDismissed
@@ -69,6 +72,7 @@ public enum EventCode {
     case payloadEncrypted
     case postSent
     case postResponseReceived
+    case failedToSaveKey
     case associationKeySaved
     case associationKeyQueried
     case edcsaDataSigned

@@ -72,6 +72,27 @@ public class Session: NSObject, Codable {
         }
     }
     
+    @objc public func setNewUserId(userId: String) -> Bool{
+        let usrSvc = UserService()
+        do {
+            var key = try usrSvc.verifyExistingUser(username: userId)
+            if key == nil {
+                key = try usrSvc.saveKey(for: userId)
+            }
+            
+            guard let key = key else {
+                return false
+            }
+            
+            publicUserId = userId
+            userPublicKey = key.derRepresentation.base64EncodedString()
+            return true
+        } catch {
+            TelemetryService.sendEvent(status: .failure, code: .failedToSaveKey, message: "Failed to save key", sessionId: sessionId)
+            return false
+        }
+    }
+    
     private func sendPOST(denial: Bool) throws {
         let enc = EncryptionUtil()
         let keySet = enc.deriveKeys(from: browserPublicKey)

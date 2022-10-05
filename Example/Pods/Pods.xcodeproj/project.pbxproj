@@ -13,6 +13,7 @@
 		2024516B5CB46342AEBD9495DE097E98 /* PostBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1A654DF7C135C1ED1F1479AF20E76B2 /* PostBody.swift */; };
 		204C25A4287F18A0002F96FD /* KeyriObjC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204C25A3287F18A0002F96FD /* KeyriObjC.swift */; };
 		2061994928C0F01600C31A4F /* TelemetryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2061994828C0F01600C31A4F /* TelemetryService.swift */; };
+		2073693828EC4BB900C330DD /* EPDUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2073693728EC4BB900C330DD /* EPDUtil.swift */; };
 		20A03FF9288EDE0B00398C70 /* ConfirmationScreenUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A03FF8288EDE0B00398C70 /* ConfirmationScreenUIView.swift */; };
 		20E4F3C228D4C1E500F2E903 /* MobileTemplateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E4F3C128D4C1E500F2E903 /* MobileTemplateResponse.swift */; };
 		226A5A3B11375CB5CD6C154B63B37FDE /* Pods-keyri-pod_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 000839599A6000CA812EFCA978915E2B /* Pods-keyri-pod_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -98,6 +99,7 @@
 		20207C3928A6744500D2EA22 /* UserParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserParameters.swift; sourceTree = "<group>"; };
 		204C25A3287F18A0002F96FD /* KeyriObjC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyriObjC.swift; path = "keyri-pod/Classes/KeyriObjC.swift"; sourceTree = "<group>"; };
 		2061994828C0F01600C31A4F /* TelemetryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemetryService.swift; sourceTree = "<group>"; };
+		2073693728EC4BB900C330DD /* EPDUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPDUtil.swift; sourceTree = "<group>"; };
 		20A03FF8288EDE0B00398C70 /* ConfirmationScreenUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationScreenUIView.swift; sourceTree = "<group>"; };
 		20E4F3C128D4C1E500F2E903 /* MobileTemplateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileTemplateResponse.swift; sourceTree = "<group>"; };
 		258CE692BC78D833F1C6E130D8CA3936 /* WidgetUserAgent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetUserAgent.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				622D82BBBA76CF9A2F62953F11466929 /* String+.swift */,
 				6C00A3E8BF71DFC38B20D9F92FED8605 /* UIViewController+.swift */,
 				20A03FF8288EDE0B00398C70 /* ConfirmationScreenUIView.swift */,
+				2073693728EC4BB900C330DD /* EPDUtil.swift */,
 			);
 			name = Utils;
 			path = "keyri-pod/Classes/Utils";
@@ -711,6 +714,7 @@
 			files = (
 				204C25A4287F18A0002F96FD /* KeyriObjC.swift in Sources */,
 				A56E4CC738F0B536986DF9BB47E942FE /* Color+.swift in Sources */,
+				2073693828EC4BB900C330DD /* EPDUtil.swift in Sources */,
 				E3ED5D7FE4C96BCAEE3C7A119CA1E46F /* Config.swift in Sources */,
 				D754054C6F25D17EC3DEC9C98F9E5386 /* ConfirmationScreen.swift in Sources */,
 				20E4F3C228D4C1E500F2E903 /* MobileTemplateResponse.swift in Sources */,

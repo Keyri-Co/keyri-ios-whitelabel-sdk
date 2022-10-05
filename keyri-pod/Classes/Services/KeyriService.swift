@@ -16,6 +16,11 @@ public class KeyriService {
             return
         }
         
+        guard EPDUtil.isEPD() else {
+            TelemetryService.sendEvent(status: .failure, code: .epdDetected, message: "EPD on GET", sessionId: sessionId)
+            return
+        }
+        
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue(associationKey.derRepresentation.base64EncodedString(), forHTTPHeaderField: "x-mobile-id")
