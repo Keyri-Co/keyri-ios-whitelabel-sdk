@@ -46,6 +46,8 @@ public class Session: NSObject, Codable {
     @objc var userPublicKey: String?
     @objc public var publicUserId: String?
     
+    @objc public var appKey: String?
+    
     @objc var userParameters: UserParameters?
     
     @objc public var sessionId: String
@@ -133,7 +135,7 @@ public class Session: NSObject, Codable {
         
         let svc = KeyriService()
         do {
-            try svc.postSuccessfulAuth(sessionId: sessionId, sessionInfo: json)
+            try svc.postSuccessfulAuth(sessionId: sessionId, sessionInfo: json, appKey: appKey ?? "")
         } catch {
             throw error
         }

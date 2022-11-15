@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var message: UITextField!
     @IBOutlet weak var appKeySelector: UIPickerView!
     
-    var pickerData = [["IT7VrTQ0r4InzsvCNJpRCRpi1qzfgpaj", "GZuwAB3QQQ5eTD4st5KmDPDD9PO0xak2", "ZTj8bC8XUUDNEtNw0FBLR6KYbhi7JO9S", "1F3FAZaZ9pcH9DNxyUGoTfi5IF9iqhh6"]]
+    var pickerData = [["IT7VrTQ0r4InzsvCNJpRCRpi1qzfgpaj", "GZuwAB3QQQ5eTD4st5KmDPDD9PO0xak2", "ZTj8bC8XUUDNEtNw0FBLR6KYbhi7JO9S", "1F3FAZaZ9pcH9DNxyUGoTfi5IF9iqhh6", "113ce3c2-5ed7-11ed-9b6a-0242ac120002", "22d37851-f1b6-4f4b-8229-0c791eb05f2a"]]
     var selectedAppKey = "IT7VrTQ0r4InzsvCNJpRCRpi1qzfgpaj"
     
     @IBAction func auth(_ sender: Any) {
