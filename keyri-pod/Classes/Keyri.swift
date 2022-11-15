@@ -30,6 +30,7 @@ open class Keyri {
                     do {
                         let session = try JSONDecoder().decode(Session.self, from: data)
                         session.userPublicKey = key.derRepresentation.base64EncodedString()
+                        session.appKey = appKey
                         self.activeSession = session
                         completionHandler(.success(session))
                     } catch {

@@ -11,7 +11,8 @@ import CryptoKit
 public class KeyriService {
     public func getSessionInfo(appKey: String, sessionId: String, associationKey: P256.Signing.PublicKey, completionHandler: @escaping (Result<Data, Error>) -> Void) {
         
-        guard let url = URL(string: "https://prod.api.keyri.com/api/v1/session/\(sessionId)?appKey=\(appKey)") else {
+        let prefix = urlPrefix(from: appKey)
+        guard let url = URL(string: "https://\(prefix).api.keyri.com/api/v1/session/\(sessionId)?appKey=\(appKey)") else {
             completionHandler(.failure(KeyriErrors.keyriSdkError))
             return
         }
@@ -51,11 +52,13 @@ public class KeyriService {
     }
     
     
-    public func postSuccessfulAuth(sessionId: String, sessionInfo: [String: Any]) throws {
+    public func postSuccessfulAuth(sessionId: String, sessionInfo: [String: Any], appKey: String) throws {
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: sessionInfo)
             
-            guard let url = URL(string: "https://prod.api.keyri.com/api/v1/session/\(sessionId)") else {
+            let prefix = urlPrefix(from: appKey)
+            
+            guard let url = URL(string: "https://\(prefix).api.keyri.com/api/v1/session/\(sessionId)") else {
                 throw KeyriErrors.keyriSdkError
             }
             
@@ -85,5 +88,16 @@ public class KeyriService {
         } catch {
             throw error
         }
+    }
+    
+    private func urlPrefix(from appKey: String) -> String {
+        guard let data = appKey.data(using: .utf8) else { return "prod" }
+        let hash = SHA256.hash(data: data).hashValue
+        
+        if hash == -7517014640307154636 { return "dev" }
+        else if hash == -285964041080602815 { return "test" }
+        
+        return "prod"
+
     }
 }
