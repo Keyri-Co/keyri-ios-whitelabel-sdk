@@ -7,8 +7,8 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'keyri'
-  s.version          = '0.1.33'
+  s.name             = 'keyri-pod'
+  s.version          = '0.0.0'
   s.summary          = 'QR/Passwordless auth with in built risk analytics'
 
   s.homepage         = 'https://github.com/Keyri-Co/keyri-ios-whitelabel-sdk'
@@ -22,10 +22,6 @@ Pod::Spec.new do |s|
   s.swift_versions = '5.3'
 
   s.source_files = 'keyri-pod/Classes/**/*'
-  
-  s.resource_bundles = {
-      'keyri-pod' => ['keyri-pod/Assets/**/*']
-  }
 
   s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }

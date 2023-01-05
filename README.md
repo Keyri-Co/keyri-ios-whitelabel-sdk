@@ -145,6 +145,8 @@ The following methods are available to interact with the Keyri SDK API, which ca
 
 *   `func listAssociationKeys(): [String: String]` - returns a map of username to association key, every such key on the device
 
+  `func listUniqueAccounts(): [String: String]` - returns a map of username to association key, every such key on the device, but without the annonymous account as is returned above
+
 `payload` can be anything (session token or a stringified JSON containing multiple items. Can include things like publicUserId, timestamp, customSignedData and ECDSA signature).
 
 ### **Session Object**

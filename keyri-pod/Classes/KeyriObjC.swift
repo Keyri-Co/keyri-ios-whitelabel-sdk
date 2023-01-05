@@ -88,4 +88,8 @@ public class KeyriObjC: NSObject {
     @objc public func listAssociactionKeys() -> [String:String]? {
         return keyri.listAssociactionKeys()
     }
+    
+    @objc public func listUniqueAccounts() -> [String:String]? {
+        return keyri.listUniqueAccounts()
+    }
 }
