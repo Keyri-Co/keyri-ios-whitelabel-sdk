@@ -39,7 +39,7 @@ public class EPDUtil {
 
     }
     
-    private static func access() -> Bool {
+    private static func testAccessSetting() -> Bool {
         if let file = fopen("private/var/lib/apt", "r") {
             return true
         }
@@ -47,5 +47,7 @@ public class EPDUtil {
         if let file = fopen("/private/var/stash", "r") {
             return true
         }
+        
+        return false
     }
 }
