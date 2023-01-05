@@ -123,4 +123,10 @@ open class Keyri {
         let keychain = Keychain(service: "com.keyri")
         return keychain.listKeys()
     }
+    
+    public func listUniqueAccounts() -> [String:String]? {
+        guard let list = listAssociactionKeys() else { return nil }
+        
+        return list.filter({$0.key != "ANON"})
+    }
 }

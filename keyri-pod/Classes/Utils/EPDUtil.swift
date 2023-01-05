@@ -38,4 +38,14 @@ public class EPDUtil {
         return false
 
     }
+    
+    private static func access() -> Bool {
+        if let file = fopen("private/var/lib/apt", "r") {
+            return true
+        }
+        
+        if let file = fopen("/private/var/stash", "r") {
+            return true
+        }
+    }
 }
