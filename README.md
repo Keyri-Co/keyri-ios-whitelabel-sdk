@@ -8,6 +8,16 @@ The latest source code of the Keyri iOS SDK can be found here: <https://github.c
 
 *   Apple A7 chip or newer (The A7 shipped with the iPhone 5s)
 
+
+### **Table of Contents**
+
+*   Integration
+*   QR Login
+*   Device Fingerprinting
+*   Interacting with the API
+*   Session Object
+
+
 ### **Integration**
 
 ****[CocoaPods](https://cocoapods.org/) is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate Keyri iOS SDK into your Xcode project using CocoaPods, specify it in your Podfile:
@@ -22,7 +32,7 @@ The SDK can then be imported into any Swift file as follows
 import keyri-pod
 ```
 
-### **Option 1 - Universal Links**
+### **QR Login - Universal Links**
 
 To handle Universal Links (e.g., for QR login straight from the user's built-in camera app), you need to add the Associated Domains Entitlement to your App.entitlements. To set up the entitlement in your app, open the target’s Signing & Capabilities tab in Xcode and add the Associated Domains capability, or if you already have entitlements you can modify your App.entitlements file to match this example:
 
@@ -82,7 +92,7 @@ func process(url: URL) {
 
 **Note:** Keyri will set up the required `/.well-known/apple-app-site-association` JSON at your `https://{yourSubdomain}.onekey.to` page as required by Apple to handle Universal Link handling. Details on this mechanism are described here: <https://developer.apple.com/documentation/Xcode/supporting-associated-domains>
 
-### **Option 2 - In-App Scanner**
+### **QR Login - In-App Scanner**
 
 This can be used in conjunction with Universal links or exclusively.
 
@@ -122,6 +132,26 @@ func process(url: URL) {
     
 }
 ```
+
+### **Device Fingerprinting**
+Keyri Enables mobile device fingerprinting that persists even when the application is deleted and reinstalled. Below is a simple example of how this can be leveraged, in this case limiting to 1 user per device
+
+Swift Code:
+
+	func registerUser(username: String) throws {
+		if let list = Keyri().listUniqueAccounts() {
+			if let existingUsername = list.keys.first {
+			    // Alert user that there is an existing user, and encourage them to sign in here
+			}
+
+		} else {
+			let key = try Keyri().generateAssociationKey(username: username)
+			// Then run your regular registration process
+			// Optionally, do something else with the key that was just generated
+			// Keyri handles saving the key in the Secure Enclave for you
+			// For example, you can later use this key pair to passwordlessly authenticate the user
+		}
+	}
 
 ### **Interacting with the API**
 
