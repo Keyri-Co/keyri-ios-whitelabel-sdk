@@ -22,6 +22,7 @@ public class TelemetryService {
         let json: [String: String] = ["OS": sysVersion,
                                       "Platform": os,
                                       "sdkVersion": sdkVersion,
+                                      "appId": Bundle.main.bundleIdentifier ?? "",
                                       "deviceID": deviceID?.description ?? "",
                                       "status": status.rawValue,
                                       "message": message
