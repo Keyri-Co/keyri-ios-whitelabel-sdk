@@ -129,4 +129,16 @@ open class Keyri {
         
         return list.filter({$0.key != "ANON"})
     }
+    
+    public func createDeviceFingerprint(username: String, appKey: String) throws {
+        guard let deviceInfo = deviceInfo().getDeviceInfo(username: username) else { throw KeyriErrors.accountNotFoundError }
+        
+        print("calling it")
+        print(KeyriService().createDevice(appKey: appKey, dict: deviceInfo))
+    }
+    
+    public func sendEvent(appKey: String, username: String = "ANON", eventType: String = "Default", success: Bool = true) {
+        print("SUPPPPPPP")
+        KeyriService().sendEvent(appKey: appKey, username: username)
+    }
 }

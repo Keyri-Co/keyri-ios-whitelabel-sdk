@@ -18,6 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        let keyri = Keyri()
+        let x = try? keyri.generateAssociationKey(username: "user34")
+
+        try? keyri.createDeviceFingerprint(username: "user34", appKey: "development_FE2fZlpOwydIcvlGGg3vtLJMCDvweuPe")
+        keyri.sendEvent(appKey: "development_FE2fZlpOwydIcvlGGg3vtLJMCDvweuPe", username: "user34")
+        
         return true
     }
 

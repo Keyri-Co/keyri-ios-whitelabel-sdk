@@ -11,6 +11,7 @@
 		12E420FC5A1A41BA818B33D201076210 /* keyri-pod-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C6536CC3086CD5B1D25B1152DC4A4DD6 /* keyri-pod-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		134D6CCF6AC3A701E58597C8F7166349 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE2AD31F00D0EF9C522211BDDBF6C3C /* UIKit.framework */; };
 		187C51FF8A76E13A6E9B16D48E0E1735 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCBABE7E1E28F5873C40D86CCC72BF8 /* UserService.swift */; };
+		20959EA929BF6FB100AFF130 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20959EA829BF6FB100AFF130 /* DeviceInfo.swift */; };
 		226A5A3B11375CB5CD6C154B63B37FDE /* Pods-keyri-pod_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 000839599A6000CA812EFCA978915E2B /* Pods-keyri-pod_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		244F4A02905D8B8672286B4BCC5B7480 /* Toaster-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 634B0E0473A0833DEBBAED7F2DA6C63A /* Toaster-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		255EE1EA4B407101A1B37659D01D9EC5 /* Toaster.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2AB2C9E55573CD8D62EE95011B3BC4 /* Toaster.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -95,6 +96,7 @@
 		16FEDAAFA144A09E5BD1997929F72441 /* Toaster.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Toaster.modulemap; sourceTree = "<group>"; };
 		1AB3D7D345C39A2E548783A6D282DAEB /* String+.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		2008AB2E7D38721DB5A61B90DBA94E9B /* Scanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
+		20959EA829BF6FB100AFF130 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		28F8AFF1A2D72CF0F7663B95B03C0DCA /* QRCodeScanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QRCodeScanner.swift; sourceTree = "<group>"; };
 		2B0B760F33EE44A140DAF39D5B3258A1 /* Pods-keyri-pod_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-keyri-pod_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		2B92BE29D654C2FE12862CE8990C45C1 /* UserParameters.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserParameters.swift; sourceTree = "<group>"; };
@@ -104,7 +106,7 @@
 		3954A5A11EFF9B0480531D3A5428D541 /* Pods-keyri-pod_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-keyri-pod_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		398EAD3853422FA751D4FB1DDA881E8F /* Pods-keyri-pod_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-keyri-pod_Example"; path = Pods_keyri_pod_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AEF77DB4F0CCDFEFD0B03EEAF918051 /* ConfirmationScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConfirmationScreen.swift; sourceTree = "<group>"; };
-		3FCC333C3A99F4408DE524EF71D495BE /* keyri-pod.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "keyri-pod.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		3FCC333C3A99F4408DE524EF71D495BE /* keyri-pod.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = "keyri-pod.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4B1530FBFAA1690D27A135E4CC85AA07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		4B9B48B38DF8F44F8EDD8D2654AB102D /* Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		590DD9577A1E90D03EC9D3F1D240C913 /* Keyri.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Keyri.swift; path = "keyri-pod/Classes/Keyri.swift"; sourceTree = "<group>"; };
@@ -127,14 +129,14 @@
 		9989522B5B0066C9BF0AE4DCF3FFA9F3 /* PostBody.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PostBody.swift; sourceTree = "<group>"; };
 		9A1E9116C1382844BB21598367F8EE75 /* KeyboardObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardObserver.swift; path = Sources/KeyboardObserver.swift; sourceTree = "<group>"; };
 		9A75C1461C6C8CA4C8BE1FD7A918BB45 /* UIViewController+.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F9FB039E5211A2137EFDE9D07570CEF /* keyri-pod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "keyri-pod.release.xcconfig"; sourceTree = "<group>"; };
 		9FE46B11FEBCBB7C689EB07A5E57BD38 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		A2E4C09380D500FA69A6515E74C4877C /* Pods-keyri-pod_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-keyri-pod_Example-Info.plist"; sourceTree = "<group>"; };
 		A65BEAF9583B41EB9B79935FABED612A /* Pods-keyri-pod_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-keyri-pod_Tests"; path = Pods_keyri_pod_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCBABE7E1E28F5873C40D86CCC72BF8 /* UserService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		B025EC872747CFE2D9A261CAE0CF2546 /* UIApplication+Load.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIApplication+Load.swift"; path = "Sources/UIApplication+Load.swift"; sourceTree = "<group>"; };
-		B0DE7F94A216FE95EC8882DBA369FC9C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		B0DE7F94A216FE95EC8882DBA369FC9C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B2B51140545B032489568F8D7304D776 /* Color+.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		BC2AB2C9E55573CD8D62EE95011B3BC4 /* Toaster.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Toaster.h; path = Sources/Toaster.h; sourceTree = "<group>"; };
 		BD810337F4A305D60D9250A197AA1EF1 /* Toaster */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Toaster; path = Toaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,7 +147,7 @@
 		C9CB5D65DDF256A065521EF41CAE4C9F /* ToastView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToastView.swift; path = Sources/ToastView.swift; sourceTree = "<group>"; };
 		CC68E543DBE6EE0BDC31E6595AA558B1 /* ConfirmationScreenUIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConfirmationScreenUIView.swift; sourceTree = "<group>"; };
 		D793A69CD8C5B8CF0CE4FC46BE53439F /* MobileTemplateResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MobileTemplateResponse.swift; sourceTree = "<group>"; };
-		D945EA3813046FEA28EA1C43D6F87E8A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		D945EA3813046FEA28EA1C43D6F87E8A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		DB0BC3478C9EF035FA0C5BC6A7F04D3E /* Pods-keyri-pod_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-keyri-pod_Example-frameworks.sh"; sourceTree = "<group>"; };
 		E0987E83575DEA40BC386F2D19E91DD6 /* Pods-keyri-pod_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-keyri-pod_Example-umbrella.h"; sourceTree = "<group>"; };
 		E0C9EAAB5F571DF954F946BB520A250F /* Toaster-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toaster-prefix.pch"; sourceTree = "<group>"; };
@@ -328,7 +330,6 @@
 				B025EC872747CFE2D9A261CAE0CF2546 /* UIApplication+Load.swift */,
 				ACB4C8950F1210F21FBC5DA45916F156 /* Support Files */,
 			);
-			name = Toaster;
 			path = Toaster;
 			sourceTree = "<group>";
 		};
@@ -343,6 +344,7 @@
 				4B9B48B38DF8F44F8EDD8D2654AB102D /* Errors.swift */,
 				1AB3D7D345C39A2E548783A6D282DAEB /* String+.swift */,
 				9A75C1461C6C8CA4C8BE1FD7A918BB45 /* UIViewController+.swift */,
+				20959EA829BF6FB100AFF130 /* DeviceInfo.swift */,
 			);
 			name = Utils;
 			path = "keyri-pod/Classes/Utils";
@@ -636,6 +638,7 @@
 				EE9643F482676DB2FE5DEDC831D7E330 /* EncryptionUtil.swift in Sources */,
 				5CBAE663E7AE23B1F6CF226993ADA3CD /* EPDUtil.swift in Sources */,
 				8AFC5CBEA764E66D6DBE93BA8A56701C /* Errors.swift in Sources */,
+				20959EA929BF6FB100AFF130 /* DeviceInfo.swift in Sources */,
 				7E4FF561F8E5A18575EDB8D181BA6DD2 /* GeoDataPair.swift in Sources */,
 				AE1376CEEA93545843895E9B8E92C921 /* Keychain.swift in Sources */,
 				81EFF729BE0C81DF76E703E603C01564 /* Keyri.swift in Sources */,
@@ -992,8 +995,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
