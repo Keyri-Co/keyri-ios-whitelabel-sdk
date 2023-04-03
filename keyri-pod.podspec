@@ -22,7 +22,4 @@ Pod::Spec.new do |s|
   s.swift_versions = '5.3'
 
   s.source_files = 'keyri-pod/Classes/**/*'
-
-  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 end
