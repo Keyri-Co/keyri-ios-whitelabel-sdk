@@ -11,11 +11,11 @@ public class KeyriObjC: NSObject {
     let keyri: Keyri
     
     @objc public override init() {
-        keyri = Keyri()
+        keyri = Keyri(appKey: "")
     }
     
-    @objc public func easyKeyriAuth(publicUserId: String, appKey: String, payload: String, completion: @escaping ((Bool, Error?) -> ())) {
-        keyri.easyKeyriAuth(publicUserId: publicUserId, appKey: appKey, payload: payload) { result in
+    @objc public func easyKeyriAuth(publicUserId: String, payload: String, completion: @escaping ((Bool, Error?) -> ())) {
+        keyri.easyKeyriAuth(publicUserId: publicUserId, payload: payload) { result in
             switch result {
             case .success(let bool):
                 completion(bool, nil)
@@ -37,7 +37,7 @@ public class KeyriObjC: NSObject {
     }
     
     @objc public func initiateQrSession(username: String?, sessionId: String, appKey: String, completion: @escaping ((Session?, Error?) -> ())) {
-        keyri.initiateQrSession(username: username, sessionId: sessionId, appKey: appKey) { result in
+        keyri.initiateQrSession(username: username, sessionId: sessionId) { result in
             switch result {
             case .success(let session):
                 completion(session, nil)

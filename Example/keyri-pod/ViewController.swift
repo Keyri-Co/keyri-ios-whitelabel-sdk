@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 import keyri_pod
-import Toaster
+//import Toaster
 
 class ViewController: UIViewController {
     @IBOutlet weak var statusLabel: UILabel!
@@ -20,8 +20,8 @@ class ViewController: UIViewController {
     var selectedAppKey = "IT7VrTQ0r4InzsvCNJpRCRpi1qzfgpaj"
     
     @IBAction func auth(_ sender: Any) {
-        let keyri = Keyri()
-        keyri.easyKeyriAuth(publicUserId: username.text ?? "", appKey: selectedAppKey, payload: message.text ?? "no message") { bool in
+        let keyri = Keyri(appKey: selectedAppKey)
+        keyri.easyKeyriAuth(publicUserId: username.text ?? "", payload: message.text ?? "no message") { bool in
             print(bool)
         }
         
@@ -36,10 +36,9 @@ class ViewController: UIViewController {
     func process(url: URL) {
         let sessionId = URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
         let payload = "Custom payload here"
-        let appKey = selectedAppKey // Get this value from the Keyri Developer Portal
-
-        let keyri = Keyri() // Be sure to import the SDK at the top of the file
-        let res = keyri.initiateQrSession(username: "lol", sessionId: sessionId, appKey: appKey) { result in
+        
+        let keyri = Keyri(appKey: selectedAppKey) // Be sure to import the SDK at the top of the file
+        let res = keyri.initiateQrSession(username: "lol", sessionId: sessionId) { result in
             switch result {
             case .success(let session):
                 DispatchQueue.main.async {

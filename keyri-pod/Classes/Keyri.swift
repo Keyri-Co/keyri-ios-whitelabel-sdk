@@ -3,10 +3,13 @@ import CryptoKit
 open class Keyri {
     
     var activeSession: Session?
+    var appKey: String
     
-    public init() {}
+    public init(appKey: String) {
+        self.appKey = appKey
+    }
     
-    public func initiateQrSession(username: String?, sessionId: String, appKey: String, completionHandler: @escaping (Result<Session, Error>) -> Void) {
+    public func initiateQrSession(username: String?, sessionId: String, completionHandler: @escaping (Result<Session, Error>) -> Void) {
         let usrSvc = UserService()
         let usr = username ?? "ANON"
         
@@ -30,7 +33,7 @@ open class Keyri {
                     do {
                         let session = try JSONDecoder().decode(Session.self, from: data)
                         session.userPublicKey = key.derRepresentation.base64EncodedString()
-                        session.appKey = appKey
+                        session.appKey = self.appKey
                         self.activeSession = session
                         completionHandler(.success(session))
                     } catch {
@@ -48,11 +51,11 @@ open class Keyri {
 
     }
     
-    public func easyKeyriAuth(publicUserId: String, appKey: String, payload: String, completion: @escaping ((Result<Bool, Error>) -> ())) {
+    public func easyKeyriAuth(publicUserId: String, payload: String, completion: @escaping ((Result<Bool, Error>) -> ())) {
         let scanner = Scanner()
         scanner.completion = { str in
             if let url = URL(string: str) {
-                self.processLink(url: url, publicUserId: publicUserId, appKey: appKey, payload: payload) { result in
+                self.processLink(url: url, publicUserId: publicUserId, appKey: self.appKey, payload: payload) { result in
                     completion(result)
                 }
             } else {
@@ -65,8 +68,8 @@ open class Keyri {
     public func processLink(url: URL, publicUserId: String, appKey: String, payload: String, completion: @escaping ((Result<Bool, Error>) -> ())) {
         let sessionId = URLComponents(url: url, resolvingAgainstBaseURL: true)?.queryItems?.first(where: { $0.name == "sessionId" })?.value ?? ""
 
-        let keyri = Keyri() // Be sure to import the SDK at the top of the file
-        keyri.initiateQrSession(username: publicUserId, sessionId: sessionId, appKey: appKey) { res in
+        // Be sure to import the SDK at the top of the file
+        initiateQrSession(username: publicUserId, sessionId: sessionId) { res in
             switch res {
             case .success(let session):
                 DispatchQueue.main.async {
@@ -130,15 +133,24 @@ open class Keyri {
         return list.filter({$0.key != "ANON"})
     }
     
-    public func createDeviceFingerprint(username: String, appKey: String) throws {
-        guard let deviceInfo = deviceInfo().getDeviceInfo(username: username) else { throw KeyriErrors.accountNotFoundError }
-        
-        print("calling it")
-        print(KeyriService().createDevice(appKey: appKey, dict: deviceInfo))
-    }
-    
-    public func sendEvent(appKey: String, username: String = "ANON", eventType: String = "Default", success: Bool = true) {
-        print("SUPPPPPPP")
-        KeyriService().sendEvent(appKey: appKey, username: username)
+    public func sendEvent(username: String = "ANON", eventType: String = "Default", success: Bool = true, completion: @escaping (Bool) -> ()) throws {
+        let keychain = Keychain(service: "com.keyri")
+        if let _ = keychain.load(key: "DeviceCreated") {
+            KeyriService().sendEvent(appKey: appKey, username: username, eventType: eventType, success: success) { res in
+                completion(res)
+            }
+        } else {
+            let service = KeyriService()
+            service.createDevice(appKey: appKey, dict: deviceInfo().getDeviceInfo(username: username) ?? [:]) { res in
+                do {
+                    try keychain.save(key: "DeviceCreated", value: "True")
+                    service.sendEvent(appKey: self.appKey, username: username, eventType: eventType, success: success) { res in
+                        completion(res)
+                    }
+                } catch {
+                    completion(false)
+                }
+            }
+        }
     }
 }

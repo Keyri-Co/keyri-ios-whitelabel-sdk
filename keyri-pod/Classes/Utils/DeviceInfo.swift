@@ -10,7 +10,7 @@ import Security
 
 class deviceInfo {
     func getDeviceInfo(username: String) -> [String: Any]? {
-        guard let associationKey = try? Keyri().getAssociationKey(username: username) else { return nil }
+        guard let associationKey = try? Keyri(appKey: "").getAssociationKey(username: username) else { return nil }
         
         let device = UIDevice.current
         let screenSize = UIScreen.main.bounds.size
@@ -51,7 +51,7 @@ class deviceInfo {
         
         return [
             "associationKey": associationKey.rawRepresentation.base64EncodedString(),
-            "associationKeysPresent": Keyri().listAssociactionKeys()?.count ?? 0,
+            "associationKeysPresent": Keyri(appKey: "").listAssociactionKeys()?.count ?? 0,
             "userId": username,
             "processorType": deviceType,
             //"deviceType": deviceType,

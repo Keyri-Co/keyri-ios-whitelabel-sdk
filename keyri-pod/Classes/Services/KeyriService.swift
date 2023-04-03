@@ -90,9 +90,7 @@ public class KeyriService {
         }
     }
     
-    public func createDevice(appKey: String, dict: [String: Any]) -> Bool {
-        print("HELLO")
-
+    public func createDevice(appKey: String, dict: [String: Any], completion: @escaping (Bool) -> ()) {
         var url = ""
         if appKey == "raB7SFWt27VoKqkPhaUrmWAsCJIO8Moj" || appKey == "development_FE2fZlpOwydIcvlGGg3vtLJMCDvweuPe" {
             print("dev")
@@ -119,7 +117,6 @@ public class KeyriService {
             request.httpBody = jsonData as Data
 
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                print("response")
                 guard let data = data, error == nil else {
 
                     print(error?.localizedDescription ?? "No data")
@@ -129,26 +126,24 @@ public class KeyriService {
                 let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
                 if let responseJSON = responseJSON as? [String: Any] {
                     print(responseJSON)
+                    completion(true)
+                    return
                 }
+                completion(false)
             }
 
             task.resume()
             
-            
-            
-            
-            
         } catch {
             print(error)
-            return false
+            completion(false)
         }
-        return false
     }
     
-    public func sendEvent(appKey: String, username: String = "ANON", eventType: String = "Default", success: Bool = true) {
+    public func sendEvent(appKey: String, username: String = "ANON", eventType: String = "Default", success: Bool = true, completion: @escaping (Bool) -> ()) {
         
         guard let url = URL(string: "https://dev-api.keyri.co/fingerprint/event") else { return }
-        guard let associationKey = try? Keyri().getAssociationKey(username: username) else { return }
+        guard let associationKey = try? Keyri(appKey: appKey).getAssociationKey(username: username) else { return }
         
         var request = URLRequest(url: url)
         
@@ -159,14 +154,17 @@ public class KeyriService {
         request.httpMethod = "POST"
         
         let dict = [
-          "eventType": "login",
-          "eventResult": "success",
+          "eventType": eventType,
+          "eventResult": success.description,
           "signals": [],
-          "userId": "user34",
-          "userEmail": "user34"
+          "userId": username,
+          "userEmail": username
         ] as [String : Any]
         
-        guard let json = try? JSONSerialization.data(withJSONObject: dict) else { return }
+        guard let json = try? JSONSerialization.data(withJSONObject: dict) else {
+            completion(false)
+            return
+        }
         
         request.httpBody = json
         
@@ -180,7 +178,10 @@ public class KeyriService {
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
             if let responseJSON = responseJSON as? [String: Any] {
                 print(responseJSON)
+                completion(true)
+                return
             }
+            completion(false)
         }
 
         task.resume()

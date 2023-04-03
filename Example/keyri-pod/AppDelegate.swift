@@ -19,11 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let keyri = Keyri()
+        let keyri = Keyri(appKey: "development_FE2fZlpOwydIcvlGGg3vtLJMCDvweuPe")
         let x = try? keyri.generateAssociationKey(username: "user34")
 
-        try? keyri.createDeviceFingerprint(username: "user34", appKey: "development_FE2fZlpOwydIcvlGGg3vtLJMCDvweuPe")
-        keyri.sendEvent(appKey: "development_FE2fZlpOwydIcvlGGg3vtLJMCDvweuPe", username: "user34")
+        //try? keyri.createDeviceFingerprint(username: "user34", appKey: "development_FE2fZlpOwydIcvlGGg3vtLJMCDvweuPe")
+        try? keyri.sendEvent(username: "user34") { res in
+            print(res)
+        }
         
         return true
     }
@@ -67,8 +69,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let payload = "Custom payload here"
         let appKey = "App key here" // Get this value from the Keyri Developer Portal
 
-        let keyri = Keyri() // Be sure to import the SDK at the top of the file
-        keyri.initiateQrSession(username: "TestUser", sessionId: sessionId, appKey: appKey) { res in
+        let keyri = Keyri(appKey: "development_FE2fZlpOwydIcvlGGg3vtLJMCDvweuPe") // Be sure to import the SDK at the top of the file
+        keyri.initiateQrSession(username: "TestUser", sessionId: sessionId) { res in
             switch res {
             case .success(let session):
                 // You can optionally create a custom screen and pass the session ID there. We recommend this approach for large enterprises

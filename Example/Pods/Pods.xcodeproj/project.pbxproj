@@ -7,72 +7,72 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0016E4652AD76F52F6F8549DFDB3B3BD /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141CE1DB3F7911DAFC38A6A887CE045E /* Config.swift */; };
-		12E420FC5A1A41BA818B33D201076210 /* keyri-pod-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C6536CC3086CD5B1D25B1152DC4A4DD6 /* keyri-pod-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		049A43D5586FEDAB3FB2D8A47D40CDCE /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE3E2A4CE603D4F35B38EA8A30BCCFF /* Keychain.swift */; };
+		0A7782A1D3D3754791EDD1AF3A5D655E /* KeyriService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11003C77DCF8D5E2F6217CA55CF11FA7 /* KeyriService.swift */; };
+		0B253F5F525FC9B24AF0755FC093AA1B /* EncryptionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C83DC7AB99ADD09FE0DD28E9AE4838 /* EncryptionUtil.swift */; };
+		0EB7D202AABE74CE6FE78DCF7117686C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DFD924C1E657B934F242B81389E5D4 /* Config.swift */; };
 		134D6CCF6AC3A701E58597C8F7166349 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CE2AD31F00D0EF9C522211BDDBF6C3C /* UIKit.framework */; };
-		187C51FF8A76E13A6E9B16D48E0E1735 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFCBABE7E1E28F5873C40D86CCC72BF8 /* UserService.swift */; };
-		20959EA929BF6FB100AFF130 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20959EA829BF6FB100AFF130 /* DeviceInfo.swift */; };
+		1AFD642717DFDF8357D25A64C0F352F0 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B885D9A49438CEEE5DF03E1EAE7F94E /* UserService.swift */; };
+		1BE4C09372456DC3E3D7E75C6B182A35 /* UserParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86A6844FBD264CD66A0B0B9F5181C3 /* UserParameters.swift */; };
+		2111B3A15F1D243A1D2542C8677DAED0 /* MobileTemplateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B57EBCB7024E7FB13D31E55AF3DE5E /* MobileTemplateResponse.swift */; };
 		226A5A3B11375CB5CD6C154B63B37FDE /* Pods-keyri-pod_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 000839599A6000CA812EFCA978915E2B /* Pods-keyri-pod_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		243697818A3F250D5BF36931817791D8 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0560E688B310CF37C8B21553A502C6B /* Errors.swift */; };
 		244F4A02905D8B8672286B4BCC5B7480 /* Toaster-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 634B0E0473A0833DEBBAED7F2DA6C63A /* Toaster-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		255EE1EA4B407101A1B37659D01D9EC5 /* Toaster.h in Headers */ = {isa = PBXBuildFile; fileRef = BC2AB2C9E55573CD8D62EE95011B3BC4 /* Toaster.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2FA16CD8EEDA2097FEFBD0D5CE1D7A6C /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BBB337AC75E4FB2D68B2FF4AD623CD /* LocationData.swift */; };
 		31F82636684655D2E9CE5E47ED123700 /* UIApplication+Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = B025EC872747CFE2D9A261CAE0CF2546 /* UIApplication+Load.swift */; };
+		33A757EF84E0463AB8252D28F229D58B /* ConfirmationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF484416ED45016FE6043F7BDC6B7E34 /* ConfirmationScreen.swift */; };
+		350B9D04FAD5C3D8E5A1ADE5C3C778CD /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBE3734CC5D4DDBB912A9DD877E305 /* String+.swift */; };
+		359EDE8BE703D633214E482381B81C3F /* EPDUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3B1BD02CDF46DE6363629CC2D52DB /* EPDUtil.swift */; };
 		360CFB886BA48A4DC456E88979BADDCA /* Pods-keyri-pod_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E0987E83575DEA40BC386F2D19E91DD6 /* Pods-keyri-pod_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		392923C1BC63B6879D4440AE73E6EA36 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1530FBFAA1690D27A135E4CC85AA07 /* Foundation.framework */; };
-		43659D6DBD932FC7AF737092506181A0 /* WidgetUserAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED5B3F94A436B29F7772672F9B26D8F /* WidgetUserAgent.swift */; };
-		4496C509AF3F218B3FF1B4D3CC5083AB /* ConfirmationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEF77DB4F0CCDFEFD0B03EEAF918051 /* ConfirmationScreen.swift */; };
-		44DDBD153766ECD67419B744D7B6E9DF /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD371DEC44ABBA80984AB3B8D9823F /* LocationData.swift */; };
-		457FEFAA099BB50C7EAA0F3658EA952E /* QRCodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F8AFF1A2D72CF0F7663B95B03C0DCA /* QRCodeScanner.swift */; };
+		40D00C46C35F344311B9DCC66A5410C7 /* KeyriObjC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69727ACB773580AC3DA104DD1E69D951 /* KeyriObjC.swift */; };
+		415B1B6C6B6FDC9E67AC4B5561AFC3B5 /* RiskAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A93A42217A3BB97A237D9A0CAECBEF3 /* RiskAnalytics.swift */; };
 		45866E76195932F9E331C9AA6214B50D /* Pods-keyri-pod_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F7357DABA6EC93FEEA98EA1CF049E /* Pods-keyri-pod_Example-dummy.m */; };
 		49F044CFFA63A11EEC121B5BF1B6463B /* ToastWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1418CF13AC9FA458933B3244DFD7979E /* ToastWindow.swift */; };
-		4D7496D1DA8E367074B958A983FDC0BE /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2008AB2E7D38721DB5A61B90DBA94E9B /* Scanner.swift */; };
 		4FBB681F30753274DB4B90BB49B20D78 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CB5D65DDF256A065521EF41CAE4C9F /* ToastView.swift */; };
-		50E5D985F2F881FEF0DDBC62770A456C /* KeyriService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA2408B9D68D3001C865340C1207BF0 /* KeyriService.swift */; };
 		5B1669A443DF76A2E4A8193D7ED3931D /* Toaster-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEE85B3501202EF6281A9030F27D409 /* Toaster-dummy.m */; };
-		5CBAE663E7AE23B1F6CF226993ADA3CD /* EPDUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332BD53282BAF60F9DE9A1385B80ECA6 /* EPDUtil.swift */; };
-		5FAE98F771C27A01D89B0D6929FB0E06 /* RiskAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14053CF7A09D463A14A1917A11BA4C41 /* RiskAnalytics.swift */; };
-		7AD7673F7AB880521AB061A684AEF33B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1530FBFAA1690D27A135E4CC85AA07 /* Foundation.framework */; };
+		5B581155F886A8B765E7B92247C0934B /* TelemetryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F41C9C6E7A415A8EBAF6ABB8B29AE3 /* TelemetryService.swift */; };
+		685380229781D6341EDA59758E34B856 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9A8F7FF23AC204B242B25E6AEF89B5 /* Color+.swift */; };
 		7BEB5DF6A9013A89225CFE379E3CF089 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FE46B11FEBCBB7C689EB07A5E57BD38 /* QuartzCore.framework */; };
-		7E4FF561F8E5A18575EDB8D181BA6DD2 /* GeoDataPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EFE12ECE9F668C10FA826E23F6E99D /* GeoDataPair.swift */; };
-		81EFF729BE0C81DF76E703E603C01564 /* Keyri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590DD9577A1E90D03EC9D3F1D240C913 /* Keyri.swift */; };
-		86A8510812A29F80F88B7143D0BC02E1 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A75C1461C6C8CA4C8BE1FD7A918BB45 /* UIViewController+.swift */; };
-		8AFC5CBEA764E66D6DBE93BA8A56701C /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9B48B38DF8F44F8EDD8D2654AB102D /* Errors.swift */; };
-		9360C31F3B0D0AAA8DD1CD4623654B2B /* MobileTemplateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D793A69CD8C5B8CF0CE4FC46BE53439F /* MobileTemplateResponse.swift */; };
+		7C31749DA21C9A5DF02111127415834E /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B2874162280A2F458253804246AC97 /* UIViewController+.swift */; };
+		7F72590AE5A3E920C32277AD731CAF11 /* GeoDataPair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C7503D5D0C9C61D5605CBE9A81E81D7 /* GeoDataPair.swift */; };
+		8573555B0A8691A40F736C25426CBDB0 /* QRCodeScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5BAB9276EAE185A445155F3821365DD /* QRCodeScanner.swift */; };
+		93BFE83CC7299C49B4253D63DCF7E3EB /* PostBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F196BB37F30B7693C50EDF21D8BD18D0 /* PostBody.swift */; };
 		9495D6DA43966022D607E6D0943C0ED4 /* ToastCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AEEF08EFC76ADFB3412EB38C750D19 /* ToastCenter.swift */; };
+		A0B74E8A5ECC6725004ED79CFAA8251E /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABA9C76B5D9CAF675CCB306A101376 /* Session.swift */; };
 		A682196864BF5EE4588D33F8C5677E08 /* KeyboardObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9116C1382844BB21598367F8EE75 /* KeyboardObserver.swift */; };
-		A6F049A18492510D5C1A187E9EDE6251 /* ConfirmationScreenUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC68E543DBE6EE0BDC31E6595AA558B1 /* ConfirmationScreenUIView.swift */; };
-		A6F23D58605A4EBFEC51950DD5E21B7B /* keyri-pod-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 017B268AD8F57BD125270E3086F79428 /* keyri-pod-dummy.m */; };
-		A9380F6DA84DDD5624549EB6C9379CD6 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B51140545B032489568F8D7304D776 /* Color+.swift */; };
-		AE1376CEEA93545843895E9B8E92C921 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29F3DB1AB7FC1929ABD605AEE75B9CE /* Keychain.swift */; };
+		A88F4512AC44A42FAAEB6A6C3126B286 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5C02234C43E378E966DBE451179947 /* Scanner.swift */; };
 		AEDBEB0DC3A137604504DD14BAF104B0 /* Pods-keyri-pod_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FB2CCDD42DACC5EF92E321203E13FC8 /* Pods-keyri-pod_Tests-dummy.m */; };
-		B6031930C0D42CE6682CD1ECD93963CE /* PostBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9989522B5B0066C9BF0AE4DCF3FFA9F3 /* PostBody.swift */; };
-		B86C8885B9A1B5F2F4B6C4A17AD94D55 /* KeyriObjC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8C6B3682C33B948535BF73CB66542E /* KeyriObjC.swift */; };
-		BC6922E11033DA6292F3A3F3739B8E8F /* TelemetryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F09EBB8F1D5FEFD4C8937DAE7B81720 /* TelemetryService.swift */; };
+		AFDD65DF45801582645899AA2FA2BC4D /* keyri-pod-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C32540FA5F6172B174AB60190F0A73 /* keyri-pod-dummy.m */; };
+		BB34EFD31C45DA91936D1657D3F226CD /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7B2CFDF22674FD01AE62A5CE0BFB3A /* DeviceInfo.swift */; };
+		BF53FC479259BECFA24E0F96F5958764 /* WidgetUserAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D28804EE6BD43023030DE5802EF0E6 /* WidgetUserAgent.swift */; };
 		C1999693D93F4DDC7F886C0BDA1C2264 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1530FBFAA1690D27A135E4CC85AA07 /* Foundation.framework */; };
 		D20446CCDD19D15DF96BAED0BC0DF45A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1530FBFAA1690D27A135E4CC85AA07 /* Foundation.framework */; };
-		D9F8705BEF1C3C6BCD00853EC0D7BCE2 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB3D7D345C39A2E548783A6D282DAEB /* String+.swift */; };
-		E559561A721F0025C6779474837191C4 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFB29BB292DE9181A06B4C44DF47E6FD /* Session.swift */; };
-		EE9643F482676DB2FE5DEDC831D7E330 /* EncryptionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768925697A76E3605CD4E9C4D04CDEB0 /* EncryptionUtil.swift */; };
-		FB72675FDC10F8E8C5F5E65939B7F0EE /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35CAF219994197B2B9FEA917C7D5002 /* SquareView.swift */; };
+		D94268E79B2595A17FEDAA3A754B7902 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1530FBFAA1690D27A135E4CC85AA07 /* Foundation.framework */; };
+		E022D574370D7B4884564A0E0904E105 /* keyri-pod-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EDBC14ED50170468958A1E54C1EF2BB5 /* keyri-pod-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E3865568CB9CF212C7CB7AF53C6FCF94 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477FC083A7060F6740DCBEC047614555 /* SquareView.swift */; };
+		F6F892C44F4B5BCBC977425E5713D1B7 /* Keyri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B5DDC01BE7AC065CB5A3BFB48C3609 /* Keyri.swift */; };
+		F992645E14AA3C0435683B57638BAC5F /* ConfirmationScreenUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C76551BCD5A9F9AA4A5588691AE6A /* ConfirmationScreenUIView.swift */; };
 		FC4D85911918337A91079AD27B7DBF86 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF8FE4E99744730CC977CFFB8A78AE /* Toast.swift */; };
-		FE056F412BEE048285032FBBDEC96CAF /* UserParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B92BE29D654C2FE12862CE8990C45C1 /* UserParameters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		35D20CAFB70FB77EA2850D55F0A89558 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B90AB98A7BC6A346D671B36DB990DAC2;
-			remoteInfo = Toaster;
-		};
-		3E1F1104A69C97282F600D166B8BB323 /* PBXContainerItemProxy */ = {
+		259C9020899C4C2CCA68223F40575365 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = D6F91558439DE4C1B4B746AA90F21BD3;
 			remoteInfo = "Pods-keyri-pod_Example";
 		};
-		AD8A77CDD4E97032BE6ACC0A9AC9A50E /* PBXContainerItemProxy */ = {
+		73AD1C2BE53D69EF5700030412FD7730 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B90AB98A7BC6A346D671B36DB990DAC2;
+			remoteInfo = Toaster;
+		};
+		B82FBBC5F045143BAA000B8DBF7FE1B7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -83,78 +83,78 @@
 
 /* Begin PBXFileReference section */
 		000839599A6000CA812EFCA978915E2B /* Pods-keyri-pod_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-keyri-pod_Tests-umbrella.h"; sourceTree = "<group>"; };
-		017B268AD8F57BD125270E3086F79428 /* keyri-pod-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "keyri-pod-dummy.m"; sourceTree = "<group>"; };
-		03DFBF13CEBE47C1CB9F77D36694CA16 /* keyri-pod.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "keyri-pod.modulemap"; sourceTree = "<group>"; };
-		0BA2408B9D68D3001C865340C1207BF0 /* KeyriService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeyriService.swift; sourceTree = "<group>"; };
+		03E3B1BD02CDF46DE6363629CC2D52DB /* EPDUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EPDUtil.swift; sourceTree = "<group>"; };
+		0B885D9A49438CEEE5DF03E1EAE7F94E /* UserService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		0C709AB35AF77C8086EF2F9A97B1B3D2 /* keyri-pod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "keyri-pod.release.xcconfig"; sourceTree = "<group>"; };
 		0C97E408EF942552C050CFD2BAD05172 /* Pods-keyri-pod_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-keyri-pod_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		0ED5B3F94A436B29F7772672F9B26D8F /* WidgetUserAgent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetUserAgent.swift; sourceTree = "<group>"; };
-		0F09EBB8F1D5FEFD4C8937DAE7B81720 /* TelemetryService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TelemetryService.swift; sourceTree = "<group>"; };
-		0F8C6B3682C33B948535BF73CB66542E /* KeyriObjC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyriObjC.swift; path = "keyri-pod/Classes/KeyriObjC.swift"; sourceTree = "<group>"; };
-		14053CF7A09D463A14A1917A11BA4C41 /* RiskAnalytics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RiskAnalytics.swift; sourceTree = "<group>"; };
+		11003C77DCF8D5E2F6217CA55CF11FA7 /* KeyriService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = KeyriService.swift; sourceTree = "<group>"; };
 		1418CF13AC9FA458933B3244DFD7979E /* ToastWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToastWindow.swift; path = Sources/ToastWindow.swift; sourceTree = "<group>"; };
-		141CE1DB3F7911DAFC38A6A887CE045E /* Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		16FEDAAFA144A09E5BD1997929F72441 /* Toaster.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Toaster.modulemap; sourceTree = "<group>"; };
-		1AB3D7D345C39A2E548783A6D282DAEB /* String+.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
-		2008AB2E7D38721DB5A61B90DBA94E9B /* Scanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
-		20959EA829BF6FB100AFF130 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
-		28F8AFF1A2D72CF0F7663B95B03C0DCA /* QRCodeScanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QRCodeScanner.swift; sourceTree = "<group>"; };
+		27B2874162280A2F458253804246AC97 /* UIViewController+.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		2B0B760F33EE44A140DAF39D5B3258A1 /* Pods-keyri-pod_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-keyri-pod_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		2B92BE29D654C2FE12862CE8990C45C1 /* UserParameters.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserParameters.swift; sourceTree = "<group>"; };
 		2C9243E9C3E1B45AF1991D1CDEFB43B2 /* Pods-keyri-pod_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-keyri-pod_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		2FB2CCDD42DACC5EF92E321203E13FC8 /* Pods-keyri-pod_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-keyri-pod_Tests-dummy.m"; sourceTree = "<group>"; };
-		332BD53282BAF60F9DE9A1385B80ECA6 /* EPDUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EPDUtil.swift; sourceTree = "<group>"; };
+		36B57EBCB7024E7FB13D31E55AF3DE5E /* MobileTemplateResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MobileTemplateResponse.swift; sourceTree = "<group>"; };
 		3954A5A11EFF9B0480531D3A5428D541 /* Pods-keyri-pod_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-keyri-pod_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		398EAD3853422FA751D4FB1DDA881E8F /* Pods-keyri-pod_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-keyri-pod_Example"; path = Pods_keyri_pod_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AEF77DB4F0CCDFEFD0B03EEAF918051 /* ConfirmationScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConfirmationScreen.swift; sourceTree = "<group>"; };
-		3FCC333C3A99F4408DE524EF71D495BE /* keyri-pod.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = "keyri-pod.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		3C7503D5D0C9C61D5605CBE9A81E81D7 /* GeoDataPair.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GeoDataPair.swift; sourceTree = "<group>"; };
+		477FC083A7060F6740DCBEC047614555 /* SquareView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		4B1530FBFAA1690D27A135E4CC85AA07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		4B9B48B38DF8F44F8EDD8D2654AB102D /* Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
-		590DD9577A1E90D03EC9D3F1D240C913 /* Keyri.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Keyri.swift; path = "keyri-pod/Classes/Keyri.swift"; sourceTree = "<group>"; };
+		52D28804EE6BD43023030DE5802EF0E6 /* WidgetUserAgent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WidgetUserAgent.swift; sourceTree = "<group>"; };
+		5AE3E2A4CE603D4F35B38EA8A30BCCFF /* Keychain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		5C3D1E2C8DE510AFCFE35FE88A1C40D4 /* keyri-pod.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "keyri-pod.modulemap"; sourceTree = "<group>"; };
 		634B0E0473A0833DEBBAED7F2DA6C63A /* Toaster-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toaster-umbrella.h"; sourceTree = "<group>"; };
-		66B5CC18F505BC69261016C9BF8CD294 /* keyri-pod-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "keyri-pod-prefix.pch"; sourceTree = "<group>"; };
+		67F41C9C6E7A415A8EBAF6ABB8B29AE3 /* TelemetryService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TelemetryService.swift; sourceTree = "<group>"; };
+		69727ACB773580AC3DA104DD1E69D951 /* KeyriObjC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyriObjC.swift; path = "keyri-pod/Classes/KeyriObjC.swift"; sourceTree = "<group>"; };
 		6E123AF4A6C40363098C6D501B867A9C /* Pods-keyri-pod_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-keyri-pod_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6EEE85B3501202EF6281A9030F27D409 /* Toaster-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Toaster-dummy.m"; sourceTree = "<group>"; };
-		768925697A76E3605CD4E9C4D04CDEB0 /* EncryptionUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EncryptionUtil.swift; sourceTree = "<group>"; };
+		74FCF067C009BDAD5E16680D74C3AD57 /* keyri-pod.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "keyri-pod.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		76CF8FE4E99744730CC977CFFB8A78AE /* Toast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Toast.swift; path = Sources/Toast.swift; sourceTree = "<group>"; };
+		77C83DC7AB99ADD09FE0DD28E9AE4838 /* EncryptionUtil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EncryptionUtil.swift; sourceTree = "<group>"; };
 		784BAF5A46E405BCD27575653EE82ABB /* Toaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Toaster.debug.xcconfig; sourceTree = "<group>"; };
+		7BBBE3734CC5D4DDBB912A9DD877E305 /* String+.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		7E9A8F7FF23AC204B242B25E6AEF89B5 /* Color+.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		83B5074A15A6E7924F5379235B178DC0 /* Pods-keyri-pod_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-keyri-pod_Tests.modulemap"; sourceTree = "<group>"; };
 		848F7357DABA6EC93FEEA98EA1CF049E /* Pods-keyri-pod_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-keyri-pod_Example-dummy.m"; sourceTree = "<group>"; };
 		8CE2AD31F00D0EF9C522211BDDBF6C3C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		8F1638E79C4159E20246573103532422 /* Toaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Toaster.release.xcconfig; sourceTree = "<group>"; };
 		8F8A8A4B3D42458C628BDEAC1C5DBB1F /* Pods-keyri-pod_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-keyri-pod_Example.modulemap"; sourceTree = "<group>"; };
-		9166FD3AD0DC0A20E32D62C92E8B50A5 /* keyri-pod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "keyri-pod.debug.xcconfig"; sourceTree = "<group>"; };
-		93EFE12ECE9F668C10FA826E23F6E99D /* GeoDataPair.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GeoDataPair.swift; sourceTree = "<group>"; };
-		96CD371DEC44ABBA80984AB3B8D9823F /* LocationData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
-		9892203855DA7BBA1EA1D33C49F870E3 /* keyri-pod-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "keyri-pod-Info.plist"; sourceTree = "<group>"; };
-		9989522B5B0066C9BF0AE4DCF3FFA9F3 /* PostBody.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PostBody.swift; sourceTree = "<group>"; };
+		91B5DDC01BE7AC065CB5A3BFB48C3609 /* Keyri.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Keyri.swift; path = "keyri-pod/Classes/Keyri.swift"; sourceTree = "<group>"; };
 		9A1E9116C1382844BB21598367F8EE75 /* KeyboardObserver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeyboardObserver.swift; path = Sources/KeyboardObserver.swift; sourceTree = "<group>"; };
-		9A75C1461C6C8CA4C8BE1FD7A918BB45 /* UIViewController+.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9F9FB039E5211A2137EFDE9D07570CEF /* keyri-pod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "keyri-pod.release.xcconfig"; sourceTree = "<group>"; };
+		9A93A42217A3BB97A237D9A0CAECBEF3 /* RiskAnalytics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RiskAnalytics.swift; sourceTree = "<group>"; };
+		9C6C76551BCD5A9F9AA4A5588691AE6A /* ConfirmationScreenUIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConfirmationScreenUIView.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FE46B11FEBCBB7C689EB07A5E57BD38 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		A0560E688B310CF37C8B21553A502C6B /* Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		A0DFD924C1E657B934F242B81389E5D4 /* Config.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		A2E4C09380D500FA69A6515E74C4877C /* Pods-keyri-pod_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-keyri-pod_Example-Info.plist"; sourceTree = "<group>"; };
 		A65BEAF9583B41EB9B79935FABED612A /* Pods-keyri-pod_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-keyri-pod_Tests"; path = Pods_keyri_pod_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AFCBABE7E1E28F5873C40D86CCC72BF8 /* UserService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		ACE3B6914CFEB1F704595F1EEC225372 /* keyri-pod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "keyri-pod.debug.xcconfig"; sourceTree = "<group>"; };
+		AE5C02234C43E378E966DBE451179947 /* Scanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
+		AF484416ED45016FE6043F7BDC6B7E34 /* ConfirmationScreen.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConfirmationScreen.swift; sourceTree = "<group>"; };
 		B025EC872747CFE2D9A261CAE0CF2546 /* UIApplication+Load.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIApplication+Load.swift"; path = "Sources/UIApplication+Load.swift"; sourceTree = "<group>"; };
-		B0DE7F94A216FE95EC8882DBA369FC9C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		B2B51140545B032489568F8D7304D776 /* Color+.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		B9667DDAAF539FB1269438AD09F7BB92 /* keyri-pod-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "keyri-pod-prefix.pch"; sourceTree = "<group>"; };
 		BC2AB2C9E55573CD8D62EE95011B3BC4 /* Toaster.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Toaster.h; path = Sources/Toaster.h; sourceTree = "<group>"; };
+		BD3EE6CCB79E0EDD59C1456D7BF69C81 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		BD810337F4A305D60D9250A197AA1EF1 /* Toaster */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Toaster; path = Toaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFB29BB292DE9181A06B4C44DF47E6FD /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		C29F3DB1AB7FC1929ABD605AEE75B9CE /* Keychain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
-		C35CAF219994197B2B9FEA917C7D5002 /* SquareView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
-		C6536CC3086CD5B1D25B1152DC4A4DD6 /* keyri-pod-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "keyri-pod-umbrella.h"; sourceTree = "<group>"; };
+		C0C32540FA5F6172B174AB60190F0A73 /* keyri-pod-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "keyri-pod-dummy.m"; sourceTree = "<group>"; };
+		C5BAB9276EAE185A445155F3821365DD /* QRCodeScanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = QRCodeScanner.swift; sourceTree = "<group>"; };
 		C9CB5D65DDF256A065521EF41CAE4C9F /* ToastView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToastView.swift; path = Sources/ToastView.swift; sourceTree = "<group>"; };
-		CC68E543DBE6EE0BDC31E6595AA558B1 /* ConfirmationScreenUIView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConfirmationScreenUIView.swift; sourceTree = "<group>"; };
-		D793A69CD8C5B8CF0CE4FC46BE53439F /* MobileTemplateResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MobileTemplateResponse.swift; sourceTree = "<group>"; };
-		D945EA3813046FEA28EA1C43D6F87E8A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		CE86A6844FBD264CD66A0B0B9F5181C3 /* UserParameters.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserParameters.swift; sourceTree = "<group>"; };
+		D0464B07BA10615173DD004053129534 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		DB0BC3478C9EF035FA0C5BC6A7F04D3E /* Pods-keyri-pod_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-keyri-pod_Example-frameworks.sh"; sourceTree = "<group>"; };
 		E0987E83575DEA40BC386F2D19E91DD6 /* Pods-keyri-pod_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-keyri-pod_Example-umbrella.h"; sourceTree = "<group>"; };
 		E0C9EAAB5F571DF954F946BB520A250F /* Toaster-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toaster-prefix.pch"; sourceTree = "<group>"; };
 		E207FD2195F0B8C09826046232A20E52 /* Pods-keyri-pod_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-keyri-pod_Tests-Info.plist"; sourceTree = "<group>"; };
+		E2ABA9C76B5D9CAF675CCB306A101376 /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		E3879CF9383A191905753A1025ECDD82 /* keyri-pod-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "keyri-pod-Info.plist"; sourceTree = "<group>"; };
 		E6C5C0F157CFD9D6C34E18E95318EECD /* Toaster-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Toaster-Info.plist"; sourceTree = "<group>"; };
 		E6DF08BDAD8F1FF68A59660070F67E47 /* Pods-keyri-pod_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-keyri-pod_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		E7BBB337AC75E4FB2D68B2FF4AD623CD /* LocationData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LocationData.swift; sourceTree = "<group>"; };
+		EDBC14ED50170468958A1E54C1EF2BB5 /* keyri-pod-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "keyri-pod-umbrella.h"; sourceTree = "<group>"; };
+		EE7B2CFDF22674FD01AE62A5CE0BFB3A /* DeviceInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		EF08AC321791F0C5C29E558C60377D8C /* Pods-keyri-pod_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-keyri-pod_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F196BB37F30B7693C50EDF21D8BD18D0 /* PostBody.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PostBody.swift; sourceTree = "<group>"; };
 		F1AEEF08EFC76ADFB3412EB38C750D19 /* ToastCenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToastCenter.swift; path = Sources/ToastCenter.swift; sourceTree = "<group>"; };
 		FC981CA86E2375FF766474B6014DDEDE /* Pods-keyri-pod_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-keyri-pod_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		FF3FA24D715BC48516279ADFA21C8B14 /* keyri-pod */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "keyri-pod"; path = keyri_pod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,19 +179,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		698AEDC80D318A26A0DC6227438FB686 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D94268E79B2595A17FEDAA3A754B7902 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		934E634177A11A682A0ACC5832F9A104 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D20446CCDD19D15DF96BAED0BC0DF45A /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EEB26790D4AEA828B7C78388A99B4DBE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7AD7673F7AB880521AB061A684AEF33B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,15 +206,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		0DE615ECC7ECD878651BA0C3C229CC4A /* Scanner */ = {
+		0698A8B7ED4139DD9BF3B438DE8C262A /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				28F8AFF1A2D72CF0F7663B95B03C0DCA /* QRCodeScanner.swift */,
-				2008AB2E7D38721DB5A61B90DBA94E9B /* Scanner.swift */,
-				C35CAF219994197B2B9FEA917C7D5002 /* SquareView.swift */,
+				11003C77DCF8D5E2F6217CA55CF11FA7 /* KeyriService.swift */,
+				67F41C9C6E7A415A8EBAF6ABB8B29AE3 /* TelemetryService.swift */,
+				0B885D9A49438CEEE5DF03E1EAE7F94E /* UserService.swift */,
 			);
-			name = Scanner;
-			path = "keyri-pod/Classes/Scanner";
+			name = Services;
+			path = "keyri-pod/Classes/Services";
+			sourceTree = "<group>";
+		};
+		1A7F367DE642EC3BA3AEBDF9C3400AC4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3C7503D5D0C9C61D5605CBE9A81E81D7 /* GeoDataPair.swift */,
+				E7BBB337AC75E4FB2D68B2FF4AD623CD /* LocationData.swift */,
+				36B57EBCB7024E7FB13D31E55AF3DE5E /* MobileTemplateResponse.swift */,
+				F196BB37F30B7693C50EDF21D8BD18D0 /* PostBody.swift */,
+				9A93A42217A3BB97A237D9A0CAECBEF3 /* RiskAnalytics.swift */,
+				E2ABA9C76B5D9CAF675CCB306A101376 /* Session.swift */,
+				CE86A6844FBD264CD66A0B0B9F5181C3 /* UserParameters.swift */,
+				52D28804EE6BD43023030DE5802EF0E6 /* WidgetUserAgent.swift */,
+			);
+			name = Models;
+			path = "keyri-pod/Classes/Models";
 			sourceTree = "<group>";
 		};
 		1CE08677D3012FB1F7A2776014F3F143 /* Targets Support Files */ = {
@@ -226,62 +242,49 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		304CE3BBE81388A5B3250081FF366E5F /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				3FCC333C3A99F4408DE524EF71D495BE /* keyri-pod.podspec */,
-				D945EA3813046FEA28EA1C43D6F87E8A /* LICENSE */,
-				B0DE7F94A216FE95EC8882DBA369FC9C /* README.md */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
 		3896D5829D87305A951E6F8B9BE55A20 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B36B04550E1D5F0EBC1710E09AE221AE /* keyri-pod */,
+				47E54333BA9D768C1D45E1D8777D7967 /* keyri-pod */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		5465D9E7EBF381867410FF919327360C /* Models */ = {
+		47E54333BA9D768C1D45E1D8777D7967 /* keyri-pod */ = {
 			isa = PBXGroup;
 			children = (
-				93EFE12ECE9F668C10FA826E23F6E99D /* GeoDataPair.swift */,
-				96CD371DEC44ABBA80984AB3B8D9823F /* LocationData.swift */,
-				D793A69CD8C5B8CF0CE4FC46BE53439F /* MobileTemplateResponse.swift */,
-				9989522B5B0066C9BF0AE4DCF3FFA9F3 /* PostBody.swift */,
-				14053CF7A09D463A14A1917A11BA4C41 /* RiskAnalytics.swift */,
-				BFB29BB292DE9181A06B4C44DF47E6FD /* Session.swift */,
-				2B92BE29D654C2FE12862CE8990C45C1 /* UserParameters.swift */,
-				0ED5B3F94A436B29F7772672F9B26D8F /* WidgetUserAgent.swift */,
+				91B5DDC01BE7AC065CB5A3BFB48C3609 /* Keyri.swift */,
+				69727ACB773580AC3DA104DD1E69D951 /* KeyriObjC.swift */,
+				4F380D4ACD7E8F0C358209777BB2D2AC /* Configs */,
+				70DB7BDE01839DA5D8F69BCFE4531A8E /* Keychain */,
+				1A7F367DE642EC3BA3AEBDF9C3400AC4 /* Models */,
+				57D8D33B9FCBAB656BA8417965EDE8C7 /* Pod */,
+				F695FEE20E5C84C96C699CD088180D5A /* Scanner */,
+				0698A8B7ED4139DD9BF3B438DE8C262A /* Services */,
+				D81E88DD31FEA1ACDF5904DC320C026A /* Support Files */,
+				A8246D278757B5748553D77DA8989216 /* Utils */,
 			);
-			name = Models;
-			path = "keyri-pod/Classes/Models";
+			name = "keyri-pod";
+			path = ../..;
 			sourceTree = "<group>";
 		};
-		5DE4D714DFDAA5BD0471F03B88500AEC /* Configs */ = {
+		4F380D4ACD7E8F0C358209777BB2D2AC /* Configs */ = {
 			isa = PBXGroup;
 			children = (
-				141CE1DB3F7911DAFC38A6A887CE045E /* Config.swift */,
+				A0DFD924C1E657B934F242B81389E5D4 /* Config.swift */,
 			);
 			name = Configs;
 			path = "keyri-pod/Classes/Configs";
 			sourceTree = "<group>";
 		};
-		5F3B672A5DF9E964D865018173D3A562 /* Support Files */ = {
+		57D8D33B9FCBAB656BA8417965EDE8C7 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				03DFBF13CEBE47C1CB9F77D36694CA16 /* keyri-pod.modulemap */,
-				017B268AD8F57BD125270E3086F79428 /* keyri-pod-dummy.m */,
-				9892203855DA7BBA1EA1D33C49F870E3 /* keyri-pod-Info.plist */,
-				66B5CC18F505BC69261016C9BF8CD294 /* keyri-pod-prefix.pch */,
-				C6536CC3086CD5B1D25B1152DC4A4DD6 /* keyri-pod-umbrella.h */,
-				9166FD3AD0DC0A20E32D62C92E8B50A5 /* keyri-pod.debug.xcconfig */,
-				9F9FB039E5211A2137EFDE9D07570CEF /* keyri-pod.release.xcconfig */,
+				74FCF067C009BDAD5E16680D74C3AD57 /* keyri-pod.podspec */,
+				BD3EE6CCB79E0EDD59C1456D7BF69C81 /* LICENSE */,
+				D0464B07BA10615173DD004053129534 /* README.md */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/keyri-pod";
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		664CDE497676A3A9D3D1CB77BFA01709 /* Pods */ = {
@@ -309,10 +312,10 @@
 			path = "Target Support Files/Pods-keyri-pod_Example";
 			sourceTree = "<group>";
 		};
-		8EB14BCEBEA1B04112E43560808FB1CB /* Keychain */ = {
+		70DB7BDE01839DA5D8F69BCFE4531A8E /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
-				C29F3DB1AB7FC1929ABD605AEE75B9CE /* Keychain.swift */,
+				5AE3E2A4CE603D4F35B38EA8A30BCCFF /* Keychain.swift */,
 			);
 			name = Keychain;
 			path = "keyri-pod/Classes/Keychain";
@@ -330,24 +333,8 @@
 				B025EC872747CFE2D9A261CAE0CF2546 /* UIApplication+Load.swift */,
 				ACB4C8950F1210F21FBC5DA45916F156 /* Support Files */,
 			);
+			name = Toaster;
 			path = Toaster;
-			sourceTree = "<group>";
-		};
-		97CF0B65F78021442FD0ACE1DE44F90B /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				B2B51140545B032489568F8D7304D776 /* Color+.swift */,
-				3AEF77DB4F0CCDFEFD0B03EEAF918051 /* ConfirmationScreen.swift */,
-				CC68E543DBE6EE0BDC31E6595AA558B1 /* ConfirmationScreenUIView.swift */,
-				768925697A76E3605CD4E9C4D04CDEB0 /* EncryptionUtil.swift */,
-				332BD53282BAF60F9DE9A1385B80ECA6 /* EPDUtil.swift */,
-				4B9B48B38DF8F44F8EDD8D2654AB102D /* Errors.swift */,
-				1AB3D7D345C39A2E548783A6D282DAEB /* String+.swift */,
-				9A75C1461C6C8CA4C8BE1FD7A918BB45 /* UIViewController+.swift */,
-				20959EA829BF6FB100AFF130 /* DeviceInfo.swift */,
-			);
-			name = Utils;
-			path = "keyri-pod/Classes/Utils";
 			sourceTree = "<group>";
 		};
 		9FDBDEF3FB1BE538E472BBBE3E3026B2 /* Pods-keyri-pod_Tests */ = {
@@ -366,6 +353,23 @@
 			path = "Target Support Files/Pods-keyri-pod_Tests";
 			sourceTree = "<group>";
 		};
+		A8246D278757B5748553D77DA8989216 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7E9A8F7FF23AC204B242B25E6AEF89B5 /* Color+.swift */,
+				AF484416ED45016FE6043F7BDC6B7E34 /* ConfirmationScreen.swift */,
+				9C6C76551BCD5A9F9AA4A5588691AE6A /* ConfirmationScreenUIView.swift */,
+				EE7B2CFDF22674FD01AE62A5CE0BFB3A /* DeviceInfo.swift */,
+				77C83DC7AB99ADD09FE0DD28E9AE4838 /* EncryptionUtil.swift */,
+				03E3B1BD02CDF46DE6363629CC2D52DB /* EPDUtil.swift */,
+				A0560E688B310CF37C8B21553A502C6B /* Errors.swift */,
+				7BBBE3734CC5D4DDBB912A9DD877E305 /* String+.swift */,
+				27B2874162280A2F458253804246AC97 /* UIViewController+.swift */,
+			);
+			name = Utils;
+			path = "keyri-pod/Classes/Utils";
+			sourceTree = "<group>";
+		};
 		ACB4C8950F1210F21FBC5DA45916F156 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,24 +383,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Toaster";
-			sourceTree = "<group>";
-		};
-		B36B04550E1D5F0EBC1710E09AE221AE /* keyri-pod */ = {
-			isa = PBXGroup;
-			children = (
-				590DD9577A1E90D03EC9D3F1D240C913 /* Keyri.swift */,
-				0F8C6B3682C33B948535BF73CB66542E /* KeyriObjC.swift */,
-				5DE4D714DFDAA5BD0471F03B88500AEC /* Configs */,
-				8EB14BCEBEA1B04112E43560808FB1CB /* Keychain */,
-				5465D9E7EBF381867410FF919327360C /* Models */,
-				304CE3BBE81388A5B3250081FF366E5F /* Pod */,
-				0DE615ECC7ECD878651BA0C3C229CC4A /* Scanner */,
-				D7234ED85728BAF765ED9E08C96E3BC2 /* Services */,
-				5F3B672A5DF9E964D865018173D3A562 /* Support Files */,
-				97CF0B65F78021442FD0ACE1DE44F90B /* Utils */,
-			);
-			name = "keyri-pod";
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		B5E1D7D256A785CB0D243C1529FD58A7 /* Products */ = {
@@ -422,15 +408,19 @@
 			);
 			sourceTree = "<group>";
 		};
-		D7234ED85728BAF765ED9E08C96E3BC2 /* Services */ = {
+		D81E88DD31FEA1ACDF5904DC320C026A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				0BA2408B9D68D3001C865340C1207BF0 /* KeyriService.swift */,
-				0F09EBB8F1D5FEFD4C8937DAE7B81720 /* TelemetryService.swift */,
-				AFCBABE7E1E28F5873C40D86CCC72BF8 /* UserService.swift */,
+				5C3D1E2C8DE510AFCFE35FE88A1C40D4 /* keyri-pod.modulemap */,
+				C0C32540FA5F6172B174AB60190F0A73 /* keyri-pod-dummy.m */,
+				E3879CF9383A191905753A1025ECDD82 /* keyri-pod-Info.plist */,
+				B9667DDAAF539FB1269438AD09F7BB92 /* keyri-pod-prefix.pch */,
+				EDBC14ED50170468958A1E54C1EF2BB5 /* keyri-pod-umbrella.h */,
+				ACE3B6914CFEB1F704595F1EEC225372 /* keyri-pod.debug.xcconfig */,
+				0C709AB35AF77C8086EF2F9A97B1B3D2 /* keyri-pod.release.xcconfig */,
 			);
-			name = Services;
-			path = "keyri-pod/Classes/Services";
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/keyri-pod";
 			sourceTree = "<group>";
 		};
 		F0A778C0229E9BF1FD97896B93F3272B /* iOS */ = {
@@ -441,6 +431,17 @@
 				8CE2AD31F00D0EF9C522211BDDBF6C3C /* UIKit.framework */,
 			);
 			name = iOS;
+			sourceTree = "<group>";
+		};
+		F695FEE20E5C84C96C699CD088180D5A /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				C5BAB9276EAE185A445155F3821365DD /* QRCodeScanner.swift */,
+				AE5C02234C43E378E966DBE451179947 /* Scanner.swift */,
+				477FC083A7060F6740DCBEC047614555 /* SquareView.swift */,
+			);
+			name = Scanner;
+			path = "keyri-pod/Classes/Scanner";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,11 +455,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7D6937B1F9C28546B4E707FB10BC0209 /* Headers */ = {
+		41F52B34FF1C90F532A390F14F0337BD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12E420FC5A1A41BA818B33D201076210 /* keyri-pod-umbrella.h in Headers */,
+				E022D574370D7B4884564A0E0904E105 /* keyri-pod-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,7 +513,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				2561671C4A530C279FDDF24699925FC0 /* PBXTargetDependency */,
+				6532AA7065F329F81894A9A815336018 /* PBXTargetDependency */,
 			);
 			name = "Pods-keyri-pod_Tests";
 			productName = Pods_keyri_pod_Tests;
@@ -521,12 +522,12 @@
 		};
 		C9E2369DC2E94FDA1D70D339F9F39A89 /* keyri-pod */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6AF7DDF39819A03A2CF2996505F2ADD5 /* Build configuration list for PBXNativeTarget "keyri-pod" */;
+			buildConfigurationList = F6309CE38F4FF03432A8AA3C2881BB48 /* Build configuration list for PBXNativeTarget "keyri-pod" */;
 			buildPhases = (
-				7D6937B1F9C28546B4E707FB10BC0209 /* Headers */,
-				5C950B64232CF8752C222230804D9595 /* Sources */,
-				EEB26790D4AEA828B7C78388A99B4DBE /* Frameworks */,
-				655EC1D49EEF6DFE0CAEA5DAB921944D /* Resources */,
+				41F52B34FF1C90F532A390F14F0337BD /* Headers */,
+				0E36FDBE839C73EB9CCEBD5932051759 /* Sources */,
+				698AEDC80D318A26A0DC6227438FB686 /* Frameworks */,
+				71DE02281F1B074B71B8EB6D4E780E6B /* Resources */,
 			);
 			buildRules = (
 			);
@@ -549,8 +550,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				3EC598BF75900CFA1E81C79F075475D3 /* PBXTargetDependency */,
-				87534164AC154C6C0C9BDE16CE170BF8 /* PBXTargetDependency */,
+				C36501CA92A1200E7D7F6C5DAEB445EA /* PBXTargetDependency */,
+				E812656ECB95B60EA364985A55769C6A /* PBXTargetDependency */,
 			);
 			name = "Pods-keyri-pod_Example";
 			productName = Pods_keyri_pod_Example;
@@ -595,13 +596,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		655EC1D49EEF6DFE0CAEA5DAB921944D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		705248AB653ED20256A16172AD6D9528 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -616,49 +610,56 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		71DE02281F1B074B71B8EB6D4E780E6B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0E36FDBE839C73EB9CCEBD5932051759 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				685380229781D6341EDA59758E34B856 /* Color+.swift in Sources */,
+				0EB7D202AABE74CE6FE78DCF7117686C /* Config.swift in Sources */,
+				33A757EF84E0463AB8252D28F229D58B /* ConfirmationScreen.swift in Sources */,
+				F992645E14AA3C0435683B57638BAC5F /* ConfirmationScreenUIView.swift in Sources */,
+				BB34EFD31C45DA91936D1657D3F226CD /* DeviceInfo.swift in Sources */,
+				0B253F5F525FC9B24AF0755FC093AA1B /* EncryptionUtil.swift in Sources */,
+				359EDE8BE703D633214E482381B81C3F /* EPDUtil.swift in Sources */,
+				243697818A3F250D5BF36931817791D8 /* Errors.swift in Sources */,
+				7F72590AE5A3E920C32277AD731CAF11 /* GeoDataPair.swift in Sources */,
+				049A43D5586FEDAB3FB2D8A47D40CDCE /* Keychain.swift in Sources */,
+				F6F892C44F4B5BCBC977425E5713D1B7 /* Keyri.swift in Sources */,
+				AFDD65DF45801582645899AA2FA2BC4D /* keyri-pod-dummy.m in Sources */,
+				40D00C46C35F344311B9DCC66A5410C7 /* KeyriObjC.swift in Sources */,
+				0A7782A1D3D3754791EDD1AF3A5D655E /* KeyriService.swift in Sources */,
+				2FA16CD8EEDA2097FEFBD0D5CE1D7A6C /* LocationData.swift in Sources */,
+				2111B3A15F1D243A1D2542C8677DAED0 /* MobileTemplateResponse.swift in Sources */,
+				93BFE83CC7299C49B4253D63DCF7E3EB /* PostBody.swift in Sources */,
+				8573555B0A8691A40F736C25426CBDB0 /* QRCodeScanner.swift in Sources */,
+				415B1B6C6B6FDC9E67AC4B5561AFC3B5 /* RiskAnalytics.swift in Sources */,
+				A88F4512AC44A42FAAEB6A6C3126B286 /* Scanner.swift in Sources */,
+				A0B74E8A5ECC6725004ED79CFAA8251E /* Session.swift in Sources */,
+				E3865568CB9CF212C7CB7AF53C6FCF94 /* SquareView.swift in Sources */,
+				350B9D04FAD5C3D8E5A1ADE5C3C778CD /* String+.swift in Sources */,
+				5B581155F886A8B765E7B92247C0934B /* TelemetryService.swift in Sources */,
+				7C31749DA21C9A5DF02111127415834E /* UIViewController+.swift in Sources */,
+				1BE4C09372456DC3E3D7E75C6B182A35 /* UserParameters.swift in Sources */,
+				1AFD642717DFDF8357D25A64C0F352F0 /* UserService.swift in Sources */,
+				BF53FC479259BECFA24E0F96F5958764 /* WidgetUserAgent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		484B78A03916EAF56138BE3113136C5E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				AEDBEB0DC3A137604504DD14BAF104B0 /* Pods-keyri-pod_Tests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5C950B64232CF8752C222230804D9595 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A9380F6DA84DDD5624549EB6C9379CD6 /* Color+.swift in Sources */,
-				0016E4652AD76F52F6F8549DFDB3B3BD /* Config.swift in Sources */,
-				4496C509AF3F218B3FF1B4D3CC5083AB /* ConfirmationScreen.swift in Sources */,
-				A6F049A18492510D5C1A187E9EDE6251 /* ConfirmationScreenUIView.swift in Sources */,
-				EE9643F482676DB2FE5DEDC831D7E330 /* EncryptionUtil.swift in Sources */,
-				5CBAE663E7AE23B1F6CF226993ADA3CD /* EPDUtil.swift in Sources */,
-				8AFC5CBEA764E66D6DBE93BA8A56701C /* Errors.swift in Sources */,
-				20959EA929BF6FB100AFF130 /* DeviceInfo.swift in Sources */,
-				7E4FF561F8E5A18575EDB8D181BA6DD2 /* GeoDataPair.swift in Sources */,
-				AE1376CEEA93545843895E9B8E92C921 /* Keychain.swift in Sources */,
-				81EFF729BE0C81DF76E703E603C01564 /* Keyri.swift in Sources */,
-				A6F23D58605A4EBFEC51950DD5E21B7B /* keyri-pod-dummy.m in Sources */,
-				B86C8885B9A1B5F2F4B6C4A17AD94D55 /* KeyriObjC.swift in Sources */,
-				50E5D985F2F881FEF0DDBC62770A456C /* KeyriService.swift in Sources */,
-				44DDBD153766ECD67419B744D7B6E9DF /* LocationData.swift in Sources */,
-				9360C31F3B0D0AAA8DD1CD4623654B2B /* MobileTemplateResponse.swift in Sources */,
-				B6031930C0D42CE6682CD1ECD93963CE /* PostBody.swift in Sources */,
-				457FEFAA099BB50C7EAA0F3658EA952E /* QRCodeScanner.swift in Sources */,
-				5FAE98F771C27A01D89B0D6929FB0E06 /* RiskAnalytics.swift in Sources */,
-				4D7496D1DA8E367074B958A983FDC0BE /* Scanner.swift in Sources */,
-				E559561A721F0025C6779474837191C4 /* Session.swift in Sources */,
-				FB72675FDC10F8E8C5F5E65939B7F0EE /* SquareView.swift in Sources */,
-				D9F8705BEF1C3C6BCD00853EC0D7BCE2 /* String+.swift in Sources */,
-				BC6922E11033DA6292F3A3F3739B8E8F /* TelemetryService.swift in Sources */,
-				86A8510812A29F80F88B7143D0BC02E1 /* UIViewController+.swift in Sources */,
-				FE056F412BEE048285032FBBDEC96CAF /* UserParameters.swift in Sources */,
-				187C51FF8A76E13A6E9B16D48E0E1735 /* UserService.swift in Sources */,
-				43659D6DBD932FC7AF737092506181A0 /* WidgetUserAgent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -687,23 +688,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2561671C4A530C279FDDF24699925FC0 /* PBXTargetDependency */ = {
+		6532AA7065F329F81894A9A815336018 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-keyri-pod_Example";
 			target = D6F91558439DE4C1B4B746AA90F21BD3 /* Pods-keyri-pod_Example */;
-			targetProxy = 3E1F1104A69C97282F600D166B8BB323 /* PBXContainerItemProxy */;
+			targetProxy = 259C9020899C4C2CCA68223F40575365 /* PBXContainerItemProxy */;
 		};
-		3EC598BF75900CFA1E81C79F075475D3 /* PBXTargetDependency */ = {
+		C36501CA92A1200E7D7F6C5DAEB445EA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Toaster;
 			target = B90AB98A7BC6A346D671B36DB990DAC2 /* Toaster */;
-			targetProxy = 35D20CAFB70FB77EA2850D55F0A89558 /* PBXContainerItemProxy */;
+			targetProxy = 73AD1C2BE53D69EF5700030412FD7730 /* PBXContainerItemProxy */;
 		};
-		87534164AC154C6C0C9BDE16CE170BF8 /* PBXTargetDependency */ = {
+		E812656ECB95B60EA364985A55769C6A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "keyri-pod";
 			target = C9E2369DC2E94FDA1D70D339F9F39A89 /* keyri-pod */;
-			targetProxy = AD8A77CDD4E97032BE6ACC0A9AC9A50E /* PBXContainerItemProxy */;
+			targetProxy = B82FBBC5F045143BAA000B8DBF7FE1B7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -842,9 +843,9 @@
 			};
 			name = Debug;
 		};
-		5BD168859FF3395A31B8B5531FC38B03 /* Debug */ = {
+		8821784E85004BF970B11545F37A36BD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9166FD3AD0DC0A20E32D62C92E8B50A5 /* keyri-pod.debug.xcconfig */;
+			baseConfigurationReference = ACE3B6914CFEB1F704595F1EEC225372 /* keyri-pod.debug.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -995,15 +996,16 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		9723F05BFBC350266C3139A0A7AB40BB /* Release */ = {
+		ABD851BEA04D92D5155E970B38B68867 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F9FB039E5211A2137EFDE9D07570CEF /* keyri-pod.release.xcconfig */;
+			baseConfigurationReference = 0C709AB35AF77C8086EF2F9A97B1B3D2 /* keyri-pod.release.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -1113,15 +1115,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6AF7DDF39819A03A2CF2996505F2ADD5 /* Build configuration list for PBXNativeTarget "keyri-pod" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5BD168859FF3395A31B8B5531FC38B03 /* Debug */,
-				9723F05BFBC350266C3139A0A7AB40BB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		7A4D04EABFCE7005DAC66B1C7927A799 /* Build configuration list for PBXNativeTarget "Toaster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1145,6 +1138,15 @@
 			buildConfigurations = (
 				138D61F4DB4E751790C9E54B79FDA889 /* Debug */,
 				ED35B388CAE442049088A8E813BDC690 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6309CE38F4FF03432A8AA3C2881BB48 /* Build configuration list for PBXNativeTarget "keyri-pod" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8821784E85004BF970B11545F37A36BD /* Debug */,
+				ABD851BEA04D92D5155E970B38B68867 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

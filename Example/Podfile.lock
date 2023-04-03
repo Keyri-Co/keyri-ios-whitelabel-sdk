@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  keyri-pod: acd0a5ab7b651b4fe1e0b6ed5d650fbd9a880727
+  keyri-pod: 0d72556a84751e7b048c3215275ef446d044a051
   Toaster: c3473963c78e8cabbf6ea6f11ad0fdaae6f54987
 
 PODFILE CHECKSUM: 9b108e7de1874c06e7eba1d735957543cfbc05aa
