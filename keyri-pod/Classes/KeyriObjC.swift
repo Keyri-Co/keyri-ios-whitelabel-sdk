@@ -8,10 +8,15 @@
 import Foundation
 
 public class KeyriObjC: NSObject {
-    let keyri: Keyri
+    var keyri: Keyri
     
     @objc public override init() {
         keyri = Keyri(appKey: "")
+    }
+    
+    public convenience init(appKey: String, publicAPIKey: String?) {
+        self.init()
+        keyri = Keyri(appKey: appKey, publicApiKey: publicAPIKey)
     }
     
     @objc public func easyKeyriAuth(publicUserId: String, payload: String, completion: @escaping ((Bool, Error?) -> ())) {
@@ -92,4 +97,12 @@ public class KeyriObjC: NSObject {
     @objc public func listUniqueAccounts() -> [String:String]? {
         return keyri.listUniqueAccounts()
     }
+    
+    public func sendEvent(username: String = "ANON", eventType: EventType = .visits, success: Bool = true, completion: @escaping (Result<FingerprintResponse, Error>) -> ()) throws {
+        return try keyri.sendEvent(username: username, eventType: eventType, success: success) { res in
+            completion(res)
+        }
+    }
+    
+    
 }
