@@ -157,7 +157,7 @@ public class KeyriService {
         
         let dict = [
             "eventType": eventType.rawValue,
-            "eventResult": "success",
+            "eventResult": success ? "success" : "fail",
             "signals": [],
             "userId": username,
             "userEmail": username
