@@ -9,8 +9,16 @@ import CryptoKit
 import Security
 
 class deviceInfo {
-    func getDeviceInfo(username: String) -> [String: Any]? {
-        guard let associationKey = try? Keyri(appKey: "").getAssociationKey(username: username) else { return nil }
+    func getDeviceInfo() -> [String: Any]? {
+        let usrSvc = UserService()
+        var key = try? usrSvc.verifyExistingUser(username: "ANON")
+        if key == nil {
+            print("SavingAnonKey")
+            key = try? usrSvc.saveKey(for: "ANON")
+        }
+        
+        
+        guard let associationKey = key else { return nil }
         
         let device = UIDevice.current
         let screenSize = UIScreen.main.bounds.size
@@ -25,10 +33,8 @@ class deviceInfo {
         let useragent = getUserAgent()
         let deviceName = device.name
         let deviceId = UIDevice.current.identifierForVendor?.uuidString ?? ""
-        var deviceHash = ""
-        deviceHash = String(SHA256.hash(data: associationKey.rawRepresentation).description.split(separator: " ")[2])
+        let deviceHash = String(SHA256.hash(data: associationKey.rawRepresentation).description.split(separator: " ")[2])
         let deviceType = UIDevice.current.localizedModel
-        let carrier = CTTelephonyNetworkInfo().subscriberCellularProvider?.carrierName
         let networkType = getNetworkType()
         let storageCapacity = FileManagerUility.getFileSize(for: .systemSize)
         let freeStorage = FileManagerUility.getFileSize(for: .systemFreeSize)
@@ -52,7 +58,7 @@ class deviceInfo {
         return [
             "associationKey": associationKey.rawRepresentation.base64EncodedString(),
             "associationKeysPresent": Keyri(appKey: "").listAssociactionKeys()?.count ?? 0,
-            "userId": username,
+            "userId": "ANON",
             "processorType": deviceType,
             //"deviceType": deviceType,
             "deviceName": deviceName,
@@ -67,7 +73,7 @@ class deviceInfo {
             "networkType": networkType,
             "sdkVersion": "2.5.0", // todo dont hardcode
             "maliciousPackages": "", // FIX
-            "carrier": carrier ?? "unknown",
+            //"carrier": carrier ?? "unknown",
             "storageCapacity": storageCapacity ?? 0,
             "freeStorage": freeStorage ?? 0,
             "wifiSSID": wifiSSID ?? "unknown",

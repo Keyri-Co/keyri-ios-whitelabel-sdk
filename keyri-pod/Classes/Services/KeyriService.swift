@@ -140,13 +140,15 @@ public class KeyriService {
         }
     }
     
-    public func sendEvent(appKey: String, username: String = "ANON", eventType: String = "Default", success: Bool = true, completion: @escaping (Bool) -> ()) {
-        
-        guard let url = URL(string: "https://dev-api.keyri.co/fingerprint/event") else { return }
-        guard let associationKey = try? Keyri(appKey: appKey).getAssociationKey(username: username) else { return }
+    public func sendEvent(appKey: String, username: String = "ANON", eventType: EventType, success: Bool = true, completion: @escaping (Result<FingerprintResponse, Error>) -> ()) {
+        guard let url = URL(string: "https://api.keyri.co/fingerprint/event") else { return }
+        guard let associationKey = try? Keyri(appKey: appKey).getAssociationKey(username: "ANON") else { return }
         
         var request = URLRequest(url: url)
         
+        print(String(SHA256.hash(data: associationKey.rawRepresentation).description.split(separator: " ")[2]))
+        print(associationKey.rawRepresentation.base64EncodedString())
+
         request.addValue(associationKey.rawRepresentation.base64EncodedString(), forHTTPHeaderField: "cryptocookie")
         request.addValue(String(SHA256.hash(data: associationKey.rawRepresentation).description.split(separator: " ")[2]), forHTTPHeaderField: "devicehash")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -154,15 +156,15 @@ public class KeyriService {
         request.httpMethod = "POST"
         
         let dict = [
-          "eventType": eventType,
-          "eventResult": success.description,
-          "signals": [],
-          "userId": username,
-          "userEmail": username
+            "eventType": eventType.rawValue,
+            "eventResult": "success",
+            "signals": [],
+            "userId": username,
+            "userEmail": username
         ] as [String : Any]
         
         guard let json = try? JSONSerialization.data(withJSONObject: dict) else {
-            completion(false)
+            completion(.failure(KeyriErrors.serverError))
             return
         }
         
@@ -175,13 +177,17 @@ public class KeyriService {
                 return
             }
             
-            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String: Any] {
-                print(responseJSON)
-                completion(true)
-                return
+            print(try! JSONSerialization.jsonObject(with: data))
+            
+            if let responseObject = try? JSONDecoder().decode(FingerprintResponse.self, from: data) {
+                if let _ = responseObject.data?.fingerprintId {
+                    completion(.success(responseObject))
+                } else {
+                    completion(.failure(KeyriErrors.serverError))
+                }
+            } else {
+                completion(.failure(KeyriErrors.keyriSdkError))
             }
-            completion(false)
         }
 
         task.resume()

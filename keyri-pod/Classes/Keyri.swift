@@ -4,9 +4,11 @@ open class Keyri {
     
     var activeSession: Session?
     var appKey: String
+    var publicApiKey: String?
     
-    public init(appKey: String) {
+    public init(appKey: String, publicApiKey: String? = nil) {
         self.appKey = appKey
+        self.publicApiKey = publicApiKey
     }
     
     public func initiateQrSession(username: String?, sessionId: String, completionHandler: @escaping (Result<Session, Error>) -> Void) {
@@ -133,24 +135,34 @@ open class Keyri {
         return list.filter({$0.key != "ANON"})
     }
     
-    public func sendEvent(username: String = "ANON", eventType: String = "Default", success: Bool = true, completion: @escaping (Bool) -> ()) throws {
+    public func sendEvent(username: String = "ANON", eventType: EventType = .visits, success: Bool = true, completion: @escaping (Result<FingerprintResponse, Error>) -> ()) throws {
+        guard let publicApiKey = publicApiKey else {
+            completion(.failure(KeyriErrors.apiKeyNotProvided))
+            return
+        }
+        
         let keychain = Keychain(service: "com.keyri")
         if let _ = keychain.load(key: "DeviceCreated") {
-            KeyriService().sendEvent(appKey: appKey, username: username, eventType: eventType, success: success) { res in
+            print("Existing Device")
+            KeyriService().sendEvent(appKey: publicApiKey, username: username, eventType: eventType, success: success) { res in
                 completion(res)
             }
+            
         } else {
             let service = KeyriService()
-            service.createDevice(appKey: appKey, dict: deviceInfo().getDeviceInfo(username: username) ?? [:]) { res in
+            service.createDevice(appKey: publicApiKey, dict: deviceInfo().getDeviceInfo() ?? [:]) { res in
                 do {
                     try keychain.save(key: "DeviceCreated", value: "True")
-                    service.sendEvent(appKey: self.appKey, username: username, eventType: eventType, success: success) { res in
+                    service.sendEvent(appKey: publicApiKey, username: username, eventType: eventType, success: success) { res in
                         completion(res)
                     }
                 } catch {
-                    completion(false)
+                    completion(.failure(KeyriErrors.keyriSdkError))
                 }
             }
         }
     }
 }
+
+
+

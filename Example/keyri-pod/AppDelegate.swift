@@ -19,11 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let keyri = Keyri(appKey: "development_FE2fZlpOwydIcvlGGg3vtLJMCDvweuPe")
-        let x = try? keyri.generateAssociationKey(username: "user34")
+        let keyri = Keyri(appKey: "...", publicApiKey: "development_FE2fZlpOwydIcvlGGg3vtLJMCDvweuPe")
+        //let x = try? keyri.generateAssociationKey(username: "user10")
 
         //try? keyri.createDeviceFingerprint(username: "user34", appKey: "development_FE2fZlpOwydIcvlGGg3vtLJMCDvweuPe")
-        try? keyri.sendEvent(username: "user34") { res in
+        try? keyri.sendEvent(username: "user10") { res in
             print(res)
         }
         
