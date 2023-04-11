@@ -90,6 +90,112 @@ public class KeyriService {
         }
     }
     
+    public func createDevice(appKey: String, dict: [String: Any], completion: @escaping (Bool) -> ()) {
+        var url = ""
+        if appKey == "raB7SFWt27VoKqkPhaUrmWAsCJIO8Moj" || appKey == "development_FE2fZlpOwydIcvlGGg3vtLJMCDvweuPe" {
+            print("dev")
+            url = "https://dev-api.keyri.co/fingerprint/new-device"
+        } else {
+            url = "https://api.keyri.co/fingerprint/new-device"
+        }
+        
+        print(dict)
+        
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: dict)
+            print(jsonData)
+            guard let url = URL(string: url) else {
+                throw KeyriErrors.keyriSdkError
+            }
+            
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.addValue(appKey, forHTTPHeaderField: "api-key")
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+            // insert json data to the request
+            request.httpBody = jsonData as Data
+
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                guard let data = data, error == nil else {
+
+                    print(error?.localizedDescription ?? "No data")
+                    return
+                }
+                
+                let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+                if let responseJSON = responseJSON as? [String: Any] {
+                    print(responseJSON)
+                    completion(true)
+                    return
+                }
+                completion(false)
+            }
+
+            task.resume()
+            
+        } catch {
+            print(error)
+            completion(false)
+        }
+    }
+    
+    public func sendEvent(appKey: String, username: String = "ANON", eventType: EventType, success: Bool = true, completion: @escaping (Result<FingerprintResponse, Error>) -> ()) {
+        guard let url = URL(string: "https://api.keyri.co/fingerprint/event") else { return }
+        guard let associationKey = try? Keyri(appKey: appKey).getAssociationKey(username: "ANON") else { return }
+        
+        var request = URLRequest(url: url)
+        
+        print(String(SHA256.hash(data: associationKey.rawRepresentation).description.split(separator: " ")[2]))
+        print(associationKey.rawRepresentation.base64EncodedString())
+
+        request.addValue(associationKey.rawRepresentation.base64EncodedString(), forHTTPHeaderField: "cryptocookie")
+        request.addValue(String(SHA256.hash(data: associationKey.rawRepresentation).description.split(separator: " ")[2]), forHTTPHeaderField: "devicehash")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(appKey, forHTTPHeaderField: "api-key")
+        request.httpMethod = "POST"
+        
+        let dict = [
+            "eventType": eventType.rawValue,
+            "eventResult": success ? "success" : "fail",
+            "signals": [],
+            "userId": username,
+            "userEmail": username
+        ] as [String : Any]
+        
+        guard let json = try? JSONSerialization.data(withJSONObject: dict) else {
+            completion(.failure(KeyriErrors.serverError))
+            return
+        }
+        
+        request.httpBody = json
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+
+                print(error?.localizedDescription ?? "No data")
+                return
+            }
+            
+            print(try! JSONSerialization.jsonObject(with: data))
+            
+            if let responseObject = try? JSONDecoder().decode(FingerprintResponse.self, from: data) {
+                if let _ = responseObject.data?.fingerprintId {
+                    completion(.success(responseObject))
+                } else {
+                    completion(.failure(KeyriErrors.serverError))
+                }
+            } else {
+                completion(.failure(KeyriErrors.keyriSdkError))
+            }
+        }
+
+        task.resume()
+        
+        
+        
+    }
+    
     private func urlPrefix(from appKey: String) -> String {
         guard let data = appKey.data(using: .utf8) else { return "prod" }
         let hash = SHA256.hash(data: data).hashValue

@@ -20,6 +20,7 @@ import Foundation
     case permissionsError
     case authorizationError
     case iOSInternalError
+    case apiKeyNotProvided
     
     var errorDescription: String? {
         switch self {
@@ -47,6 +48,8 @@ import Foundation
             return "Unable to authorize"
         case .iOSInternalError:
             return "iOS Error"
+        case .apiKeyNotProvided:
+            return "Api Key not provided"
         }
     }
 }
