@@ -126,13 +126,15 @@ open class Keyri {
     
     public func listAssociactionKeys() -> [String:String]? {
         let keychain = Keychain(service: "com.keyri")
-        return keychain.listKeys()
+        guard let list = keychain.listKeys() else { return nil }
+        
+        return list.filter({$0.key != "DeviceCreated"})
     }
     
     public func listUniqueAccounts() -> [String:String]? {
         guard let list = listAssociactionKeys() else { return nil }
         
-        return list.filter({$0.key != "ANON"})
+        return list.filter({($0.key != "ANON")})
     }
     
     public func sendEvent(username: String = "ANON", eventType: EventType = .visits, success: Bool = true, completion: @escaping (Result<FingerprintResponse, Error>) -> ()) throws {

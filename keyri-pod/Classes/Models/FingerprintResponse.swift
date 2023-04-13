@@ -8,9 +8,9 @@
 import Foundation
 
 public class FingerprintResponse: NSObject, Decodable {
-    @objc let data: Event?
-    @objc let result: Bool
-    @objc let error: FPError?
+    @objc public let data: Event?
+    @objc public let result: Bool
+    @objc public let error: FPError?
     
     private enum CodingKeys: String, CodingKey {
         case data

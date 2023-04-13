@@ -6,7 +6,7 @@
 //
 
 public class FPError: NSObject, Decodable {
-    @objc let message: String
+    @objc public let message: String
     
     private enum CodingKeys: String, CodingKey {
         case message

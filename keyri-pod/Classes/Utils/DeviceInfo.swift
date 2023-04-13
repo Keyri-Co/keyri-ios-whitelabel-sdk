@@ -30,7 +30,6 @@ class deviceInfo {
             language = Locale.current.language.languageCode?.identifier ?? ""
         }
         
-        let useragent = getUserAgent()
         let deviceName = device.name
         let deviceId = UIDevice.current.identifierForVendor?.uuidString ?? ""
         let deviceHash = String(SHA256.hash(data: associationKey.rawRepresentation).description.split(separator: " ")[2])
@@ -60,7 +59,6 @@ class deviceInfo {
             "associationKeysPresent": Keyri(appKey: "").listAssociactionKeys()?.count ?? 0,
             "userId": "ANON",
             "processorType": deviceType,
-            //"deviceType": deviceType,
             "deviceName": deviceName,
             "deviceId": deviceId,
             "deviceHash": deviceHash,
@@ -69,11 +67,9 @@ class deviceInfo {
             "timeZone": timeZone.description,
             "language": language,
             "platform": "iOS",
-            "userAgent": useragent,
             "networkType": networkType,
-            "sdkVersion": "2.5.0", // todo dont hardcode
-            "maliciousPackages": "", // FIX
-            //"carrier": carrier ?? "unknown",
+            "sdkVersion": "3.0.1",
+            "maliciousPackages": "",
             "storageCapacity": storageCapacity ?? 0,
             "freeStorage": freeStorage ?? 0,
             "wifiSSID": wifiSSID ?? "unknown",
@@ -89,10 +85,6 @@ class deviceInfo {
             "isDebuggable": isDebuggable,
             "appSignature": appSignature
         ]
-    }
-    
-    func getUserAgent() -> String {
-        return WKWebView().value(forKey: "userAgent") as? String ?? ""
     }
 
     func getNetworkType() -> String {
