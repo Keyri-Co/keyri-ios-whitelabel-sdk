@@ -7,25 +7,25 @@
 
 import Foundation
 public class MobileTemplateResponse: NSObject, Codable {
-    @objc var mobile: Mobile
-    @objc var widget: Widget
-    @objc var userAgent: UserAgent
+    @objc public var mobile: Mobile
+    @objc public var widget: Widget
+    @objc public var userAgent: UserAgent
     
-    @objc var title: String
-    @objc var message: String?
+    @objc public var title: String
+    @objc public var message: String?
 }
 
 public class Mobile: NSObject, Codable {
-    @objc var location: String
-    @objc var issue: String?
+    @objc public var location: String
+    @objc public var issue: String?
 }
 
 public class Widget: NSObject, Codable {
-    @objc var location: String
-    @objc var issue: String?
+    @objc public var location: String
+    @objc public var issue: String?
 }
 
 public class UserAgent: NSObject, Codable {
-    @objc var name: String
-    @objc var issue: String?
+    @objc public var name: String
+    @objc public var issue: String?
 }

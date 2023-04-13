@@ -8,6 +8,6 @@
 import Foundation
 
 public class WidgetUserAgent: NSObject, Codable {
-    @objc var os: String
-    @objc var browser: String
+    @objc public var os: String
+    @objc public var browser: String
 }

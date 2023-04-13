@@ -8,9 +8,8 @@
 import Foundation
 
 public class RiskAnalytics: NSObject, Codable {
-    //var riskAttributes: RiskAttributes
-    @objc var riskStatus: String?
-    @objc var riskFlagString: String?
-    @objc var geoData: GeoDataPair?
+    @objc public var riskStatus: String?
+    @objc public var riskFlagString: String?
+    @objc public var geoData: GeoDataPair?
 }
 

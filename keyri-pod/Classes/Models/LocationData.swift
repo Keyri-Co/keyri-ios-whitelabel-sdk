@@ -15,10 +15,10 @@ public class LocationData: NSObject, Codable {
         case regionCode = "region_code"
     }
     
-    @objc var countryCode: String?
-    @objc var city: String?
-    @objc var continentCode: String?
-    @objc var regionCode: String?
+    @objc public var countryCode: String?
+    @objc public var city: String?
+    @objc public var continentCode: String?
+    @objc public var regionCode: String?
     
     
 }

@@ -6,18 +6,18 @@
 //
 
 public class Event: NSObject, Decodable {
-    @objc let applicationId: String?
-    @objc let createdAt: String?
-    @objc let event: String?
-    @objc let fingerprintId: String?
-    @objc let id: String?
-    @objc let ip: String?
-    @objc let location: FPLocation?
-    @objc let result: String?
-    @objc let riskParams: String?
-    @objc let signals: [String]?
-    @objc let updatedAt: String?
-    @objc let userId: String?
+    @objc public let applicationId: String?
+    @objc public let createdAt: String?
+    @objc public let event: String?
+    @objc public let fingerprintId: String?
+    @objc public let id: String?
+    @objc public let ip: String?
+    @objc public let location: FPLocation?
+    @objc public let result: String?
+    @objc public let riskParams: String?
+    @objc public let signals: [String]?
+    @objc public let updatedAt: String?
+    @objc public let userId: String?
     
     private enum CodingKeys: String, CodingKey {
         case applicationId

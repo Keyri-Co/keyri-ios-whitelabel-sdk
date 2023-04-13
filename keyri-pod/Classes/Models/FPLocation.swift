@@ -6,16 +6,16 @@
 //
 
 public class FPLocation: NSObject, Decodable {
-    @objc let city: String
-    @objc let continentCode: String
-    @objc let continentName: String
-    @objc let country: String
-    @objc let countryCode: String
-    @objc let latitude: Double
-    @objc let longitude: Double
-    @objc let region: String
-    @objc let regionCode: String
-    @objc let regionType: String
+    @objc public let city: String
+    @objc public let continentCode: String
+    @objc public let continentName: String
+    @objc public let country: String
+    @objc public let countryCode: String
+    @objc public let latitude: Double
+    @objc public let longitude: Double
+    @objc public let region: String
+    @objc public let regionCode: String
+    @objc public let regionType: String
     
     private enum CodingKeys: String, CodingKey {
         case city

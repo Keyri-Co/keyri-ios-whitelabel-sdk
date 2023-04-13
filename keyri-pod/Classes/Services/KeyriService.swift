@@ -177,8 +177,6 @@ public class KeyriService {
                 return
             }
             
-            print(try! JSONSerialization.jsonObject(with: data))
-            
             if let responseObject = try? JSONDecoder().decode(FingerprintResponse.self, from: data) {
                 if let _ = responseObject.data?.fingerprintId {
                     completion(.success(responseObject))
