@@ -112,12 +112,12 @@ public class EncryptionUtil {
 public class KeyriService {
   public func getSessionInfo(appKey: Swift.String, sessionId: Swift.String, associationKey: CryptoKit.P256.Signing.PublicKey, completionHandler: @escaping (Swift.Result<Foundation.Data, any Swift.Error>) -> Swift.Void)
   public func postSuccessfulAuth(sessionId: Swift.String, sessionInfo: [Swift.String : Any], appKey: Swift.String) throws
-  public func sendEvent(apiKey: Swift.String, username: Swift.String = "ANON", eventType: Keyri.EventType, success: Swift.Bool = true, completion: @escaping (Swift.Result<Keyri.FingerprintResponse, any Swift.Error>) -> ())
+  public func sendEvent(apiKey: Swift.String, encKey: Swift.String, username: Swift.String = "ANON", eventType: Keyri.EventType, success: Swift.Bool = true, completion: @escaping (Swift.Result<Keyri.FingerprintResponse, any Swift.Error>) -> ())
   @objc deinit
 }
 @available(iOS 14.0, *)
 open class KeyriInterface {
-  public init(appKey: Swift.String, publicApiKey: Swift.String? = nil)
+  public init(appKey: Swift.String, publicApiKey: Swift.String? = nil, publicEncryptionKey: Swift.String? = nil)
   public func initiateQrSession(publicUserId: Swift.String?, sessionId: Swift.String, completionHandler: @escaping (Swift.Result<Keyri.Session, any Swift.Error>) -> Swift.Void)
   public func easyKeyriAuth(publicUserId: Swift.String, payload: Swift.String, completion: @escaping ((Swift.Result<Swift.Bool, any Swift.Error>) -> ()))
   public func initializeDefaultConfirmationScreen(session: Keyri.Session, payload: Swift.String, completion: @escaping (Swift.Bool) -> ())

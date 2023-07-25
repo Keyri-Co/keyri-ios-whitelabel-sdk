@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let keyri = KeyriInterface(appKey: "...", publicApiKey: "development_FE2fZlpOwydIcvlGGg3vtLJMCDvweuPe")
+        let keyri = KeyriInterface(appKey: "development_FE2fZlpOwydIcvlGGg3vtLJMCDvweuPe", publicApiKey: "W8CEKbUAc1leo8QXKb0K96fuOCCxpqGv", publicEncryptionKey: "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEjeOFPVtUdj144Y/z+/R9izTeOPAGgCPMLpRELHI865JStUN+KWPdmtWc0Tu9kOUqZAA+AeGCEeOrLlRoFSBKFw==")
         //let x = try? keyri.generateAssociationKey(username: "user10")
 
         //try? keyri.createDeviceFingerprint(username: "user34", appKey: "development_FE2fZlpOwydIcvlGGg3vtLJMCDvweuPe")
@@ -69,7 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let payload = "Custom payload here"
         let appKey = "App key here" // Get this value from the Keyri Developer Portal
 
-        let keyri = KeyriInterface(appKey: "development_FE2fZlpOwydIcvlGGg3vtLJMCDvweuPe") // Be sure to import the SDK at the top of the file
+        let keyri = KeyriInterface(appKey: "development_FE2fZlpOwydIcvlGGg3vtLJMCDvweuPe", publicApiKey: "W8CEKbUAc1leo8QXKb0K96fuOCCxpqGv", publicEncryptionKey: "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEjeOFPVtUdj144Y/z+/R9izTeOPAGgCPMLpRELHI865JStUN+KWPdmtWc0Tu9kOUqZAA+AeGCEeOrLlRoFSBKFw==") // Be sure to import the SDK at the top of the file
         keyri.initiateQrSession(publicUserId: "TestUser", sessionId: sessionId) { res in
             switch res {
             case .success(let session):
