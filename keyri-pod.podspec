@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'keyri-pod'
-  s.version          = '0.0.0'
+  s.version          = '1.0.0'
   s.summary          = 'QR/Passwordless auth with in built risk analytics'
 
   s.homepage         = 'https://github.com/Keyri-Co/keyri-ios-whitelabel-sdk'
@@ -21,5 +21,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '14.0'
   s.swift_versions = '5.3'
 
-  s.source_files = 'keyri-pod/Classes/**/*'
+  s.vendored_frameworks = 'keyri-pod/Framework/Keyri.xcframework'
 end

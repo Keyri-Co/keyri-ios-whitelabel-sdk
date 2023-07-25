@@ -1,6 +1,6 @@
 {
   "name": "keyri-pod",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "summary": "QR/Passwordless auth with in built risk analytics",
   "homepage": "https://github.com/Keyri-Co/keyri-ios-whitelabel-sdk",
   "license": {
@@ -12,12 +12,12 @@
   },
   "source": {
     "git": "https://github.com/Keyri-Co/keyri-ios-whitelabel-sdk.git",
-    "tag": "0.0.0"
+    "tag": "1.0.0"
   },
   "platforms": {
     "ios": "14.0"
   },
   "swift_versions": "5.3",
-  "source_files": "keyri-pod/Classes/**/*",
+  "vendored_frameworks": "keyri-pod/Framework/Keyri.xcframework",
   "swift_version": "5.3"
 }
