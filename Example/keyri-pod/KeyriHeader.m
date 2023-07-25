@@ -7,6 +7,6 @@
 //
 
 #import "KeyriHeader.h"
-#import "keyri_pod-Swift.h"
+
 #import <UIKit/UIKit.h>
 

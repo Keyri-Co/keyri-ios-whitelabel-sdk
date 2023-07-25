@@ -321,12 +321,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
-				"${BUILT_PRODUCTS_DIR}/keyri-pod/keyri_pod.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/keyri-pod/Keyri.framework/Keyri",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/keyri_pod.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Keyri.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
