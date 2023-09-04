@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     
     @IBAction func auth(_ sender: Any) {
         let keyri = KeyriInterface(appKey: selectedAppKey)
-        keyri.easyKeyriAuth(publicUserId: username.text ?? "", payload: message.text ?? "no message") { bool in
+        keyri.easyKeyriAuth(payload: message.text ?? "no message", publicUserId: username.text ?? "") { bool in
             print(bool)
         }
         
@@ -38,7 +38,8 @@ class ViewController: UIViewController {
         let payload = "Custom payload here"
         
         let keyri = KeyriInterface(appKey: selectedAppKey) // Be sure to import the SDK at the top of the file
-        let res = keyri.initiateQrSession(publicUserId: "lol", sessionId: sessionId) { result in
+        
+        keyri.initiateQrSession(sessionId: sessionId, publicUserId: "lol") { result in
             switch result {
             case .success(let session):
                 DispatchQueue.main.async {
@@ -49,12 +50,7 @@ class ViewController: UIViewController {
             case .failure(let error):
                 print(error.localizedDescription)
             }
-            
         }
-
-
-            
-        
     }
     
     override func viewDidLoad() {
@@ -64,7 +60,6 @@ class ViewController: UIViewController {
         
         self.appKeySelector.delegate = self
         self.appKeySelector.dataSource = self
-        
     }
     
     func showAlert(title: String, message: String) {
@@ -76,9 +71,7 @@ class ViewController: UIViewController {
     @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
         username.resignFirstResponder()
         message.resignFirstResponder()
-        
     }
-    
 }
 
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -99,9 +92,4 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         print("CHANGING APPKEY \n")
         print(self.selectedAppKey)
     }
-    
-    
-    
-    
-    
 }
