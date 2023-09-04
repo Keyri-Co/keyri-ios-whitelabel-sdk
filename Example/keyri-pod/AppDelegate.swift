@@ -19,11 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let keyri = KeyriInterface(appKey: "...", publicApiKey: "development_FE2fZlpOwydIcvlGGg3vtLJMCDvweuPe")
+        let appKey = "App key here" // Get this value from the Keyri Developer Portal
+        let publicApiKey = "Your publicApiKey here" // Optional, Get this value from the Keyri Developer Portal
+        
+        let keyri = KeyriInterface(appKey: appKey, publicApiKey: publicApiKey)
         //let x = try? keyri.generateAssociationKey(username: "user10")
 
         //try? keyri.createDeviceFingerprint(username: "user34", appKey: "development_FE2fZlpOwydIcvlGGg3vtLJMCDvweuPe")
-        try? keyri.sendEvent(publicUserId: "user10") { res in
+        keyri.sendEvent(publicUserId: "user10") { res in
             print(res)
         }
         
@@ -69,8 +72,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let payload = "Custom payload here"
         let appKey = "App key here" // Get this value from the Keyri Developer Portal
 
-        let keyri = KeyriInterface(appKey: "development_FE2fZlpOwydIcvlGGg3vtLJMCDvweuPe") // Be sure to import the SDK at the top of the file
-        keyri.initiateQrSession(publicUserId: "TestUser", sessionId: sessionId) { res in
+        let keyri = KeyriInterface(appKey: appKey) // Be sure to import the SDK at the top of the file
+        keyri.initiateQrSession(sessionId: sessionId, publicUserId: "TestUser") { res in
             switch res {
             case .success(let session):
                 // You can optionally create a custom screen and pass the session ID there. We recommend this approach for large enterprises
@@ -78,12 +81,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
                 // In a real world example you’d wait for user confirmation first
 
-                _ = session.confirm() // or session.deny()
+                session.confirm { res in
+                    
+                } // or session.deny()
 
             case .failure(let error):
                 print(error)
             }
-            
         }
     }
 }

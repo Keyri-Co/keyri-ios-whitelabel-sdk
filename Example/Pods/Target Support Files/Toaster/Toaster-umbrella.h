@@ -10,8 +10,7 @@
 #endif
 #endif
 
-#import "Toaster.h"
+#import <Toaster/Toaster.h>
 
 FOUNDATION_EXPORT double ToasterVersionNumber;
 FOUNDATION_EXPORT const unsigned char ToasterVersionString[];
-

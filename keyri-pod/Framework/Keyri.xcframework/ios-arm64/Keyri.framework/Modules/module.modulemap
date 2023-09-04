@@ -1,11 +1,4 @@
 framework module Keyri {
-  umbrella header "Keyri.h"
-
-  export *
-  module * { export * }
-}
-
-module Keyri.Swift {
   header "Keyri-Swift.h"
   requires objc
 }
