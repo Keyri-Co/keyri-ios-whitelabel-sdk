@@ -301,7 +301,7 @@ public class KeyriObjC : ObjectiveC.NSObject {
   @objc public func removeAssociationKey(publicUserId: Swift.String, completion: @escaping ((any Swift.Error)?) -> ())
   @objc public func listAssociactionKeys(completion: @escaping ([Swift.String : Swift.String]?, (any Swift.Error)?) -> ())
   @objc public func listUniqueAccounts(completion: @escaping ([Swift.String : Swift.String]?, (any Swift.Error)?) -> ())
-  public func sendEvent(publicUserId: Swift.String = KeyriInterface.Constants.ANON_USER, eventType: Keyri.EventType, success: Swift.Bool, completion: @escaping (Keyri.FingerprintResponse?, (any Swift.Error)?) -> ())
+  @objc public func sendEvent(publicUserId: Swift.String?, eventType: Swift.String, success: Swift.Bool, completion: @escaping (Keyri.FingerprintResponse?, (any Swift.Error)?) -> ())
   @objc deinit
 }
 @available(iOS 14.0, *)

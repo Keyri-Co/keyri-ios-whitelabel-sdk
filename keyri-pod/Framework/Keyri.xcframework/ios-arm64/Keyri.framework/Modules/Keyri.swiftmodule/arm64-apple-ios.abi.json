@@ -11431,16 +11431,23 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "hasDefaultArg": true,
-                "usr": "s:SS"
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
               },
               {
                 "kind": "TypeNominal",
-                "name": "EventType",
-                "printedName": "Keyri.EventType",
-                "usr": "s:5Keyri9EventTypeO"
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               },
               {
                 "kind": "TypeNominal",
@@ -11497,11 +11504,13 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:5Keyri0A4ObjCC9sendEvent12publicUserId9eventType7success10completionySS_AA0dI0OSbyAA19FingerprintResponseCSg_s5Error_pSgtctF",
-            "mangledName": "$s5Keyri0A4ObjCC9sendEvent12publicUserId9eventType7success10completionySS_AA0dI0OSbyAA19FingerprintResponseCSg_s5Error_pSgtctF",
+            "usr": "c:@M@Keyri@objc(cs)KeyriObjC(im)sendEventWithPublicUserId:eventType:success:completion:",
+            "mangledName": "$s5Keyri0A4ObjCC9sendEvent12publicUserId9eventType7success10completionySSSg_SSSbyAA19FingerprintResponseCSg_s5Error_pSgtctF",
             "moduleName": "Keyri",
+            "objc_name": "sendEventWithPublicUserId:eventType:success:completion:",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "ObjC"
             ],
             "funcSelfKind": "NonMutating"
           }

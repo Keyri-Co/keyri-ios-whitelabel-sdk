@@ -351,6 +351,7 @@ SWIFT_CLASS("_TtC5Keyri9KeyriObjC") SWIFT_AVAILABILITY(ios,introduced=14.0)
 - (void)removeAssociationKeyWithPublicUserId:(NSString * _Nonnull)publicUserId completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
 - (void)listAssociactionKeysWithCompletion:(void (^ _Nonnull)(NSDictionary<NSString *, NSString *> * _Nullable, NSError * _Nullable))completion;
 - (void)listUniqueAccountsWithCompletion:(void (^ _Nonnull)(NSDictionary<NSString *, NSString *> * _Nullable, NSError * _Nullable))completion;
+- (void)sendEventWithPublicUserId:(NSString * _Nullable)publicUserId eventType:(NSString * _Nonnull)eventType success:(BOOL)success completion:(void (^ _Nonnull)(FingerprintResponse * _Nullable, NSError * _Nullable))completion;
 @end
 
 
