@@ -231,14 +231,19 @@ public enum EventType : Swift.String {
     get
   }
 }
-@objc @available(iOS 14.0, *)
+@objc @_inheritsConvenienceInitializers @available(iOS 14.0, *)
 public class LocationData : ObjectiveC.NSObject, Swift.Codable {
   @objc public var countryCode: Swift.String?
   @objc public var city: Swift.String?
   @objc public var continentCode: Swift.String?
   @objc public var regionCode: Swift.String?
-  @objc public var latitude: Swift.Double
-  @objc public var longitude: Swift.Double
+  @objc public var latitude: Foundation.NSNumber? {
+    @objc get
+  }
+  @objc public var longitude: Foundation.NSNumber? {
+    @objc get
+  }
+  @objc override dynamic public init()
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
