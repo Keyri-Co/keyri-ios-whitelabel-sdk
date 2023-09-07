@@ -7885,21 +7885,27 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Double",
-                "printedName": "Swift.Double",
-                "usr": "s:Sd"
+                "name": "Optional",
+                "printedName": "Foundation.NSNumber?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
             "usr": "c:@M@Keyri@objc(cs)LocationData(py)latitude",
-            "mangledName": "$s5Keyri12LocationDataC8latitudeSdvp",
+            "mangledName": "$s5Keyri12LocationDataC8latitudeSo8NSNumberCSgvp",
             "moduleName": "Keyri",
             "declAttributes": [
-              "HasStorage",
               "AccessControl",
               "ObjC"
             ],
-            "hasStorage": true,
             "accessors": [
               {
                 "kind": "Accessor",
@@ -7908,65 +7914,27 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Double",
-                    "printedName": "Swift.Double",
-                    "usr": "s:Sd"
+                    "name": "Optional",
+                    "printedName": "Foundation.NSNumber?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSNumber",
+                        "printedName": "Foundation.NSNumber",
+                        "usr": "c:objc(cs)NSNumber"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
                 "usr": "c:@M@Keyri@objc(cs)LocationData(im)latitude",
-                "mangledName": "$s5Keyri12LocationDataC8latitudeSdvg",
+                "mangledName": "$s5Keyri12LocationDataC8latitudeSo8NSNumberCSgvg",
                 "moduleName": "Keyri",
-                "implicit": true,
                 "declAttributes": [
                   "ObjC"
                 ],
                 "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Double",
-                    "printedName": "Swift.Double",
-                    "usr": "s:Sd"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@Keyri@objc(cs)LocationData(im)setLatitude:",
-                "mangledName": "$s5Keyri12LocationDataC8latitudeSdvs",
-                "moduleName": "Keyri",
-                "implicit": true,
-                "declAttributes": [
-                  "ObjC"
-                ],
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:5Keyri12LocationDataC8latitudeSdvM",
-                "mangledName": "$s5Keyri12LocationDataC8latitudeSdvM",
-                "moduleName": "Keyri",
-                "implicit": true,
-                "accessorKind": "_modify"
               }
             ]
           },
@@ -7977,21 +7945,27 @@
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Double",
-                "printedName": "Swift.Double",
-                "usr": "s:Sd"
+                "name": "Optional",
+                "printedName": "Foundation.NSNumber?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
             "usr": "c:@M@Keyri@objc(cs)LocationData(py)longitude",
-            "mangledName": "$s5Keyri12LocationDataC9longitudeSdvp",
+            "mangledName": "$s5Keyri12LocationDataC9longitudeSo8NSNumberCSgvp",
             "moduleName": "Keyri",
             "declAttributes": [
-              "HasStorage",
               "AccessControl",
               "ObjC"
             ],
-            "hasStorage": true,
             "accessors": [
               {
                 "kind": "Accessor",
@@ -8000,67 +7974,55 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Double",
-                    "printedName": "Swift.Double",
-                    "usr": "s:Sd"
+                    "name": "Optional",
+                    "printedName": "Foundation.NSNumber?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSNumber",
+                        "printedName": "Foundation.NSNumber",
+                        "usr": "c:objc(cs)NSNumber"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
                 "usr": "c:@M@Keyri@objc(cs)LocationData(im)longitude",
-                "mangledName": "$s5Keyri12LocationDataC9longitudeSdvg",
+                "mangledName": "$s5Keyri12LocationDataC9longitudeSo8NSNumberCSgvg",
                 "moduleName": "Keyri",
-                "implicit": true,
                 "declAttributes": [
                   "ObjC"
                 ],
                 "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Double",
-                    "printedName": "Swift.Double",
-                    "usr": "s:Sd"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@Keyri@objc(cs)LocationData(im)setLongitude:",
-                "mangledName": "$s5Keyri12LocationDataC9longitudeSdvs",
-                "moduleName": "Keyri",
-                "implicit": true,
-                "declAttributes": [
-                  "ObjC"
-                ],
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:5Keyri12LocationDataC9longitudeSdvM",
-                "mangledName": "$s5Keyri12LocationDataC9longitudeSdvM",
-                "moduleName": "Keyri",
-                "implicit": true,
-                "accessorKind": "_modify"
               }
             ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "LocationData",
+                "printedName": "Keyri.LocationData",
+                "usr": "c:@M@Keyri@objc(cs)LocationData"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@Keyri@objc(cs)LocationData(im)init",
+            "mangledName": "$s5Keyri12LocationDataCACycfc",
+            "moduleName": "Keyri",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
           },
           {
             "kind": "Constructor",
@@ -8128,6 +8090,7 @@
           "ObjC"
         ],
         "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
         "superclassNames": [
           "ObjectiveC.NSObject"
         ],
@@ -17901,6 +17864,20 @@
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/LocationData.swift",
       "kind": "StringLiteral",
+      "offset": 396,
+      "length": 10,
+      "value": "\"latitude\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/LocationData.swift",
+      "kind": "StringLiteral",
+      "offset": 439,
+      "length": 11,
+      "value": "\"longitude\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/LocationData.swift",
+      "kind": "StringLiteral",
       "offset": 247,
       "length": 14,
       "value": "\"country_code\""
@@ -17918,6 +17895,20 @@
       "offset": 352,
       "length": 13,
       "value": "\"region_code\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/LocationData.swift",
+      "kind": "StringLiteral",
+      "offset": 396,
+      "length": 10,
+      "value": "\"latitude\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/LocationData.swift",
+      "kind": "StringLiteral",
+      "offset": 439,
+      "length": 11,
+      "value": "\"longitude\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",

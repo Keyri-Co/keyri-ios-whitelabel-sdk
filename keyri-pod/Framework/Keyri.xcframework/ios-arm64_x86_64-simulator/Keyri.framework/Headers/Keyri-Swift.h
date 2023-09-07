@@ -354,6 +354,7 @@ SWIFT_CLASS("_TtC5Keyri9KeyriObjC") SWIFT_AVAILABILITY(ios,introduced=14.0)
 - (void)sendEventWithPublicUserId:(NSString * _Nullable)publicUserId eventType:(NSString * _Nonnull)eventType success:(BOOL)success completion:(void (^ _Nonnull)(FingerprintResponse * _Nullable, NSError * _Nullable))completion;
 @end
 
+@class NSNumber;
 
 SWIFT_CLASS("_TtC5Keyri12LocationData") SWIFT_AVAILABILITY(ios,introduced=14.0)
 @interface LocationData : NSObject
@@ -361,8 +362,9 @@ SWIFT_CLASS("_TtC5Keyri12LocationData") SWIFT_AVAILABILITY(ios,introduced=14.0)
 @property (nonatomic, copy) NSString * _Nullable city;
 @property (nonatomic, copy) NSString * _Nullable continentCode;
 @property (nonatomic, copy) NSString * _Nullable regionCode;
-@property (nonatomic) double latitude;
-@property (nonatomic) double longitude;
+@property (nonatomic, readonly, strong) NSNumber * _Nullable latitude;
+@property (nonatomic, readonly, strong) NSNumber * _Nullable longitude;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class Template;
@@ -828,6 +830,7 @@ SWIFT_CLASS("_TtC5Keyri9KeyriObjC") SWIFT_AVAILABILITY(ios,introduced=14.0)
 - (void)sendEventWithPublicUserId:(NSString * _Nullable)publicUserId eventType:(NSString * _Nonnull)eventType success:(BOOL)success completion:(void (^ _Nonnull)(FingerprintResponse * _Nullable, NSError * _Nullable))completion;
 @end
 
+@class NSNumber;
 
 SWIFT_CLASS("_TtC5Keyri12LocationData") SWIFT_AVAILABILITY(ios,introduced=14.0)
 @interface LocationData : NSObject
@@ -835,8 +838,9 @@ SWIFT_CLASS("_TtC5Keyri12LocationData") SWIFT_AVAILABILITY(ios,introduced=14.0)
 @property (nonatomic, copy) NSString * _Nullable city;
 @property (nonatomic, copy) NSString * _Nullable continentCode;
 @property (nonatomic, copy) NSString * _Nullable regionCode;
-@property (nonatomic) double latitude;
-@property (nonatomic) double longitude;
+@property (nonatomic, readonly, strong) NSNumber * _Nullable latitude;
+@property (nonatomic, readonly, strong) NSNumber * _Nullable longitude;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class Template;
