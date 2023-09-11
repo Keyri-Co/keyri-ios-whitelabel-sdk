@@ -137,15 +137,8 @@ open class KeyriInterface {
 }
 @objc @available(iOS 14.0, *)
 public class WidgetUserAgent : ObjectiveC.NSObject, Swift.Codable {
-  @objc public var electronVersion: Swift.String
-  @objc public var isDesktop: Swift.Bool
   @objc public var os: Swift.String
   @objc public var browser: Swift.String
-  @objc public var isAuthoritative: Swift.Bool
-  @objc public var source: Swift.String
-  @objc public var version: Swift.String
-  @objc public var platform: Swift.String
-  @objc public var isChrome: Swift.Bool
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -237,12 +230,6 @@ public class LocationData : ObjectiveC.NSObject, Swift.Codable {
   @objc public var city: Swift.String?
   @objc public var continentCode: Swift.String?
   @objc public var regionCode: Swift.String?
-  @objc public var latitude: Foundation.NSNumber? {
-    @objc get
-  }
-  @objc public var longitude: Foundation.NSNumber? {
-    @objc get
-  }
   @objc override dynamic public init()
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws

@@ -354,7 +354,6 @@ SWIFT_CLASS("_TtC5Keyri9KeyriObjC") SWIFT_AVAILABILITY(ios,introduced=14.0)
 - (void)sendEventWithPublicUserId:(NSString * _Nullable)publicUserId eventType:(NSString * _Nonnull)eventType success:(BOOL)success completion:(void (^ _Nonnull)(FingerprintResponse * _Nullable, NSError * _Nullable))completion;
 @end
 
-@class NSNumber;
 
 SWIFT_CLASS("_TtC5Keyri12LocationData") SWIFT_AVAILABILITY(ios,introduced=14.0)
 @interface LocationData : NSObject
@@ -362,8 +361,6 @@ SWIFT_CLASS("_TtC5Keyri12LocationData") SWIFT_AVAILABILITY(ios,introduced=14.0)
 @property (nonatomic, copy) NSString * _Nullable city;
 @property (nonatomic, copy) NSString * _Nullable continentCode;
 @property (nonatomic, copy) NSString * _Nullable regionCode;
-@property (nonatomic, readonly, strong) NSNumber * _Nullable latitude;
-@property (nonatomic, readonly, strong) NSNumber * _Nullable longitude;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -455,15 +452,8 @@ SWIFT_CLASS("_TtC5Keyri14UserParameters") SWIFT_AVAILABILITY(ios,introduced=14.0
 
 SWIFT_CLASS("_TtC5Keyri15WidgetUserAgent") SWIFT_AVAILABILITY(ios,introduced=14.0)
 @interface WidgetUserAgent : NSObject
-@property (nonatomic, copy) NSString * _Nonnull electronVersion;
-@property (nonatomic) BOOL isDesktop;
 @property (nonatomic, copy) NSString * _Nonnull os;
 @property (nonatomic, copy) NSString * _Nonnull browser;
-@property (nonatomic) BOOL isAuthoritative;
-@property (nonatomic, copy) NSString * _Nonnull source;
-@property (nonatomic, copy) NSString * _Nonnull version;
-@property (nonatomic, copy) NSString * _Nonnull platform;
-@property (nonatomic) BOOL isChrome;
 @end
 
 #endif
