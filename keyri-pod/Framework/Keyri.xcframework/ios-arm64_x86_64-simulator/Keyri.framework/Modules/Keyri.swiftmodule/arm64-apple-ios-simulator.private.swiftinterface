@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
 // swift-module-flags: -target arm64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Keyri
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
@@ -19,6 +19,7 @@ import UIKit
 import WebKit
 import _Concurrency
 import _StringProcessing
+import _SwiftConcurrencyShims
 @_hasMissingDesignatedInitializers @available(iOS 14.0, *)
 public class TelemetryService {
   public static func sendEvent(status: Keyri.EventStatus, code: Keyri.EventCode, message: Swift.String, sessionId: Swift.String, appKey: Swift.String)
@@ -137,8 +138,15 @@ open class KeyriInterface {
 }
 @objc @available(iOS 14.0, *)
 public class WidgetUserAgent : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var electronVersion: Swift.String
+  @objc public var isDesktop: Swift.Bool
   @objc public var os: Swift.String
   @objc public var browser: Swift.String
+  @objc public var isAuthoritative: Swift.Bool
+  @objc public var source: Swift.String
+  @objc public var version: Swift.String
+  @objc public var platform: Swift.String
+  @objc public var isChrome: Swift.Bool
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -230,6 +238,12 @@ public class LocationData : ObjectiveC.NSObject, Swift.Codable {
   @objc public var city: Swift.String?
   @objc public var continentCode: Swift.String?
   @objc public var regionCode: Swift.String?
+  @objc public var latitude: Foundation.NSNumber? {
+    @objc get
+  }
+  @objc public var longitude: Foundation.NSNumber? {
+    @objc get
+  }
   @objc override dynamic public init()
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws

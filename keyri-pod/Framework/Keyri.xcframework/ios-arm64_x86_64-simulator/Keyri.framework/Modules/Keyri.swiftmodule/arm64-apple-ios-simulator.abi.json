@@ -1739,6 +1739,13 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           }
         ]
       },
@@ -1966,6 +1973,10 @@
                 "mangledName": "$s5Keyri7SessionC7payloadSSSgvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -2083,6 +2094,10 @@
                 "mangledName": "$s5Keyri7SessionC12publicUserIdSSSgvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -2200,6 +2215,10 @@
                 "mangledName": "$s5Keyri7SessionC6appKeySSSgvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -2292,6 +2311,10 @@
                 "mangledName": "$s5Keyri7SessionC9sessionIdSSvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -3937,6 +3960,198 @@
         "children": [
           {
             "kind": "Var",
+            "name": "electronVersion",
+            "printedName": "electronVersion",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Keyri@objc(cs)WidgetUserAgent(py)electronVersion",
+            "mangledName": "$s5Keyri15WidgetUserAgentC15electronVersionSSvp",
+            "moduleName": "Keyri",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Keyri@objc(cs)WidgetUserAgent(im)electronVersion",
+                "mangledName": "$s5Keyri15WidgetUserAgentC15electronVersionSSvg",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Keyri@objc(cs)WidgetUserAgent(im)setElectronVersion:",
+                "mangledName": "$s5Keyri15WidgetUserAgentC15electronVersionSSvs",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:5Keyri15WidgetUserAgentC15electronVersionSSvM",
+                "mangledName": "$s5Keyri15WidgetUserAgentC15electronVersionSSvM",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isDesktop",
+            "printedName": "isDesktop",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Keyri@objc(cs)WidgetUserAgent(py)isDesktop",
+            "mangledName": "$s5Keyri15WidgetUserAgentC9isDesktopSbvp",
+            "moduleName": "Keyri",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Keyri@objc(cs)WidgetUserAgent(im)isDesktop",
+                "mangledName": "$s5Keyri15WidgetUserAgentC9isDesktopSbvg",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Keyri@objc(cs)WidgetUserAgent(im)setIsDesktop:",
+                "mangledName": "$s5Keyri15WidgetUserAgentC9isDesktopSbvs",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:5Keyri15WidgetUserAgentC9isDesktopSbvM",
+                "mangledName": "$s5Keyri15WidgetUserAgentC9isDesktopSbvM",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "os",
             "printedName": "os",
             "children": [
@@ -4023,6 +4238,10 @@
                 "mangledName": "$s5Keyri15WidgetUserAgentC2osSSvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -4115,6 +4334,490 @@
                 "mangledName": "$s5Keyri15WidgetUserAgentC7browserSSvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isAuthoritative",
+            "printedName": "isAuthoritative",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Keyri@objc(cs)WidgetUserAgent(py)isAuthoritative",
+            "mangledName": "$s5Keyri15WidgetUserAgentC15isAuthoritativeSbvp",
+            "moduleName": "Keyri",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Keyri@objc(cs)WidgetUserAgent(im)isAuthoritative",
+                "mangledName": "$s5Keyri15WidgetUserAgentC15isAuthoritativeSbvg",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Keyri@objc(cs)WidgetUserAgent(im)setIsAuthoritative:",
+                "mangledName": "$s5Keyri15WidgetUserAgentC15isAuthoritativeSbvs",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:5Keyri15WidgetUserAgentC15isAuthoritativeSbvM",
+                "mangledName": "$s5Keyri15WidgetUserAgentC15isAuthoritativeSbvM",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "source",
+            "printedName": "source",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Keyri@objc(cs)WidgetUserAgent(py)source",
+            "mangledName": "$s5Keyri15WidgetUserAgentC6sourceSSvp",
+            "moduleName": "Keyri",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Keyri@objc(cs)WidgetUserAgent(im)source",
+                "mangledName": "$s5Keyri15WidgetUserAgentC6sourceSSvg",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Keyri@objc(cs)WidgetUserAgent(im)setSource:",
+                "mangledName": "$s5Keyri15WidgetUserAgentC6sourceSSvs",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:5Keyri15WidgetUserAgentC6sourceSSvM",
+                "mangledName": "$s5Keyri15WidgetUserAgentC6sourceSSvM",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "version",
+            "printedName": "version",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Keyri@objc(cs)WidgetUserAgent(py)version",
+            "mangledName": "$s5Keyri15WidgetUserAgentC7versionSSvp",
+            "moduleName": "Keyri",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Keyri@objc(cs)WidgetUserAgent(im)version",
+                "mangledName": "$s5Keyri15WidgetUserAgentC7versionSSvg",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Keyri@objc(cs)WidgetUserAgent(im)setVersion:",
+                "mangledName": "$s5Keyri15WidgetUserAgentC7versionSSvs",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:5Keyri15WidgetUserAgentC7versionSSvM",
+                "mangledName": "$s5Keyri15WidgetUserAgentC7versionSSvM",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "platform",
+            "printedName": "platform",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Keyri@objc(cs)WidgetUserAgent(py)platform",
+            "mangledName": "$s5Keyri15WidgetUserAgentC8platformSSvp",
+            "moduleName": "Keyri",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Keyri@objc(cs)WidgetUserAgent(im)platform",
+                "mangledName": "$s5Keyri15WidgetUserAgentC8platformSSvg",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Keyri@objc(cs)WidgetUserAgent(im)setPlatform:",
+                "mangledName": "$s5Keyri15WidgetUserAgentC8platformSSvs",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:5Keyri15WidgetUserAgentC8platformSSvM",
+                "mangledName": "$s5Keyri15WidgetUserAgentC8platformSSvM",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isChrome",
+            "printedName": "isChrome",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Keyri@objc(cs)WidgetUserAgent(py)isChrome",
+            "mangledName": "$s5Keyri15WidgetUserAgentC8isChromeSbvp",
+            "moduleName": "Keyri",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Keyri@objc(cs)WidgetUserAgent(im)isChrome",
+                "mangledName": "$s5Keyri15WidgetUserAgentC8isChromeSbvg",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Keyri@objc(cs)WidgetUserAgent(im)setIsChrome:",
+                "mangledName": "$s5Keyri15WidgetUserAgentC8isChromeSbvs",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:5Keyri15WidgetUserAgentC8isChromeSbvM",
+                "mangledName": "$s5Keyri15WidgetUserAgentC8isChromeSbvM",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -4891,6 +5594,10 @@
                 "mangledName": "$s5Keyri24ConfirmationScreenUIViewC2vc7SwiftUI19UIHostingControllerCyAA0bC0VGvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -5244,6 +5951,13 @@
             "printedName": "Sendable",
             "usr": "s:s8SendableP",
             "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "UITraitChangeObservable",
+            "printedName": "UITraitChangeObservable",
+            "usr": "s:5UIKit23UITraitChangeObservableP",
+            "mangledName": "$s5UIKit23UITraitChangeObservableP"
           },
           {
             "kind": "Conformance",
@@ -6879,6 +7593,10 @@
                 "mangledName": "$s5Keyri12LocationDataC11countryCodeSSSgvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -6996,6 +7714,10 @@
                 "mangledName": "$s5Keyri12LocationDataC4citySSSgvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -7113,6 +7835,10 @@
                 "mangledName": "$s5Keyri12LocationDataC13continentCodeSSSgvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -7230,7 +7956,131 @@
                 "mangledName": "$s5Keyri12LocationDataC10regionCodeSSSgvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "latitude",
+            "printedName": "latitude",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.NSNumber?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Keyri@objc(cs)LocationData(py)latitude",
+            "mangledName": "$s5Keyri12LocationDataC8latitudeSo8NSNumberCSgvp",
+            "moduleName": "Keyri",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.NSNumber?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSNumber",
+                        "printedName": "Foundation.NSNumber",
+                        "usr": "c:objc(cs)NSNumber"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Keyri@objc(cs)LocationData(im)latitude",
+                "mangledName": "$s5Keyri12LocationDataC8latitudeSo8NSNumberCSgvg",
+                "moduleName": "Keyri",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "longitude",
+            "printedName": "longitude",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.NSNumber?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSNumber",
+                    "printedName": "Foundation.NSNumber",
+                    "usr": "c:objc(cs)NSNumber"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Keyri@objc(cs)LocationData(py)longitude",
+            "mangledName": "$s5Keyri12LocationDataC9longitudeSo8NSNumberCSgvp",
+            "moduleName": "Keyri",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.NSNumber?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "NSNumber",
+                        "printedName": "Foundation.NSNumber",
+                        "usr": "c:objc(cs)NSNumber"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Keyri@objc(cs)LocationData(im)longitude",
+                "mangledName": "$s5Keyri12LocationDataC9longitudeSo8NSNumberCSgvg",
+                "moduleName": "Keyri",
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
               }
             ]
           },
@@ -7323,7 +8173,6 @@
         "declAttributes": [
           "AccessControl",
           "Available",
-          "RawDocComment",
           "ObjC"
         ],
         "superclassUsr": "c:objc(cs)NSObject",
@@ -7532,6 +8381,10 @@
                 "mangledName": "$s5Keyri14UserParametersC17base64EncodedDataSSSgvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -7889,6 +8742,10 @@
                 "mangledName": "$s5Keyri13RiskAnalyticsC10riskStatusSSSgvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -8006,6 +8863,10 @@
                 "mangledName": "$s5Keyri13RiskAnalyticsC14riskFlagStringSSSgvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -8123,6 +8984,10 @@
                 "mangledName": "$s5Keyri13RiskAnalyticsC7geoDataAA03GeoE4PairCSgvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -8417,6 +9282,10 @@
                 "mangledName": "$s5Keyri22MobileTemplateResponseC6mobileAA0C0CSgvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -8534,6 +9403,10 @@
                 "mangledName": "$s5Keyri22MobileTemplateResponseC6widgetAA0C0CSgvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -8651,6 +9524,10 @@
                 "mangledName": "$s5Keyri22MobileTemplateResponseC9userAgentAA04UserF0CSgvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -8743,6 +9620,10 @@
                 "mangledName": "$s5Keyri22MobileTemplateResponseC5titleSSvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -8860,6 +9741,10 @@
                 "mangledName": "$s5Keyri22MobileTemplateResponseC7messageSSSgvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -10905,6 +11790,10 @@
                 "mangledName": "$s5Keyri8PostBodyV6__hashSSvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -10990,6 +11879,10 @@
                 "mangledName": "$s5Keyri8PostBodyV6__saltSSvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -11075,6 +11968,10 @@
                 "mangledName": "$s5Keyri8PostBodyV5errorSSvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -11160,6 +12057,10 @@
                 "mangledName": "$s5Keyri8PostBodyV8errorMsgSSvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -11245,6 +12146,10 @@
                 "mangledName": "$s5Keyri8PostBodyV16dontTrustBrowserSbvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -11330,6 +12235,10 @@
                 "mangledName": "$s5Keyri8PostBodyV7apiDataAaDVvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -11415,6 +12324,10 @@
                 "mangledName": "$s5Keyri8PostBodyV11browserDataAaDVvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -12326,6 +13239,10 @@
                 "mangledName": "$s5Keyri18ConfirmationScreenV15dismissalActionySbcSgvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -12412,6 +13329,10 @@
                 "mangledName": "$s5Keyri18ConfirmationScreenV29shouldCallDismissOnDissappearSbvM",
                 "moduleName": "Keyri",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -17080,44 +18001,72 @@
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/LocationData.swift",
       "kind": "StringLiteral",
-      "offset": 269,
+      "offset": 247,
       "length": 14,
       "value": "\"country_code\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/LocationData.swift",
       "kind": "StringLiteral",
-      "offset": 331,
+      "offset": 309,
       "length": 16,
       "value": "\"continent_code\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/LocationData.swift",
       "kind": "StringLiteral",
-      "offset": 374,
+      "offset": 352,
       "length": 13,
       "value": "\"region_code\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/LocationData.swift",
       "kind": "StringLiteral",
-      "offset": 269,
+      "offset": 396,
+      "length": 10,
+      "value": "\"latitude\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/LocationData.swift",
+      "kind": "StringLiteral",
+      "offset": 439,
+      "length": 11,
+      "value": "\"longitude\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/LocationData.swift",
+      "kind": "StringLiteral",
+      "offset": 247,
       "length": 14,
       "value": "\"country_code\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/LocationData.swift",
       "kind": "StringLiteral",
-      "offset": 331,
+      "offset": 309,
       "length": 16,
       "value": "\"continent_code\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/LocationData.swift",
       "kind": "StringLiteral",
-      "offset": 374,
+      "offset": 352,
       "length": 13,
       "value": "\"region_code\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/LocationData.swift",
+      "kind": "StringLiteral",
+      "offset": 396,
+      "length": 10,
+      "value": "\"latitude\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/LocationData.swift",
+      "kind": "StringLiteral",
+      "offset": 439,
+      "length": 11,
+      "value": "\"longitude\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
