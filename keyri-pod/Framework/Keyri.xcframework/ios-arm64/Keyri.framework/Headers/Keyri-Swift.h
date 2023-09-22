@@ -277,11 +277,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
-@import AVFoundation;
-@import CoreFoundation;
 @import Foundation;
 @import ObjectiveC;
-@import UIKit;
 #endif
 
 #endif
@@ -302,12 +299,10 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
-@class Session;
 @class UIView;
 
-SWIFT_CLASS("_TtC5Keyri24ConfirmationScreenUIView") SWIFT_AVAILABILITY(ios,introduced=14.0)
+SWIFT_CLASS("_TtC5Keyri24ConfirmationScreenUIView")
 @interface ConfirmationScreenUIView : NSObject
-- (nonnull instancetype)initWithSession:(Session * _Nonnull)session dismissalDelegate:(void (^ _Nonnull)(BOOL))dismissalDelegate OBJC_DESIGNATED_INITIALIZER;
 @property (nonatomic, readonly, strong) UIView * _Nonnull view;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -315,13 +310,13 @@ SWIFT_CLASS("_TtC5Keyri24ConfirmationScreenUIView") SWIFT_AVAILABILITY(ios,intro
 
 @class NSString;
 
-SWIFT_CLASS("_TtC5Keyri7FPError") SWIFT_AVAILABILITY(ios,introduced=14.0)
+SWIFT_CLASS("_TtC5Keyri7FPError")
 @interface FPError : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull message;
 @end
 
 
-SWIFT_CLASS("_TtC5Keyri10FPLocation") SWIFT_AVAILABILITY(ios,introduced=14.0)
+SWIFT_CLASS("_TtC5Keyri10FPLocation")
 @interface FPLocation : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull city;
 @property (nonatomic, readonly, copy) NSString * _Nonnull continentCode;
@@ -346,22 +341,30 @@ SWIFT_CLASS("_TtC5Keyri19FingerprintResponse")
 @end
 
 
-SWIFT_CLASS("_TtC5Keyri11GeoDataPair") SWIFT_AVAILABILITY(ios,introduced=14.0)
+SWIFT_CLASS("_TtC5Keyri5Flags")
+@interface Flags : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC5Keyri11GeoDataPair")
 @interface GeoDataPair : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class NSURL;
+@class Session;
 @class NSData;
 
-SWIFT_CLASS("_TtC5Keyri9KeyriObjC") SWIFT_AVAILABILITY(ios,introduced=14.0)
+SWIFT_CLASS("_TtC5Keyri9KeyriObjC")
 @interface KeyriObjC : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 - (void)initializeKeyriWithAppKey:(NSString * _Nonnull)appKey publicAPIKey:(NSString * _Nullable)publicAPIKey serviceEncryptionKey:(NSString * _Nullable)serviceEncryptionKey;
 - (void)easyKeyriAuthWithPayload:(NSString * _Nonnull)payload publicUserId:(NSString * _Nonnull)publicUserId completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)processLinkWithUrl:(NSURL * _Nonnull)url payload:(NSString * _Nonnull)payload publicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)initiateQrSessionWithSessionId:(NSString * _Nonnull)sessionId publicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(Session * _Nullable, NSError * _Nullable))completion;
-- (void)initializeDefaultConfirmationScreenWithSession:(Session * _Nonnull)session payload:(NSString * _Nonnull)payload completion:(void (^ _Nonnull)(BOOL))completion;
+- (void)initializeDefaultConfirmationScreenWithSession:(Session * _Nonnull)session payload:(NSString * _Nonnull)payload completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)generateAssociationKeyWithPublicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable))completion;
 - (void)generateUserSignatureWithPublicUserId:(NSString * _Nullable)publicUserId data:(NSData * _Nonnull)data completion:(void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable))completion;
 - (void)getAssociationKeyWithPublicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable))completion;
@@ -371,54 +374,31 @@ SWIFT_CLASS("_TtC5Keyri9KeyriObjC") SWIFT_AVAILABILITY(ios,introduced=14.0)
 - (void)sendEventWithPublicUserId:(NSString * _Nullable)publicUserId eventType:(NSString * _Nonnull)eventType success:(BOOL)success completion:(void (^ _Nonnull)(FingerprintResponse * _Nullable, NSError * _Nullable))completion;
 @end
 
-@class NSNumber;
 
-SWIFT_CLASS("_TtC5Keyri12LocationData") SWIFT_AVAILABILITY(ios,introduced=14.0)
+SWIFT_CLASS("_TtC5Keyri12LocationData")
 @interface LocationData : NSObject
 @property (nonatomic, copy) NSString * _Nullable countryCode;
 @property (nonatomic, copy) NSString * _Nullable city;
 @property (nonatomic, copy) NSString * _Nullable continentCode;
 @property (nonatomic, copy) NSString * _Nullable regionCode;
-@property (nonatomic, readonly, strong) NSNumber * _Nullable latitude;
-@property (nonatomic, readonly, strong) NSNumber * _Nullable longitude;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 @class Template;
 @class UserAgent;
 
-SWIFT_CLASS("_TtC5Keyri22MobileTemplateResponse") SWIFT_AVAILABILITY(ios,introduced=14.0)
+SWIFT_CLASS("_TtC5Keyri22MobileTemplateResponse")
 @interface MobileTemplateResponse : NSObject
 @property (nonatomic, strong) Template * _Nullable mobile;
 @property (nonatomic, strong) Template * _Nullable widget;
 @property (nonatomic, strong) UserAgent * _Nullable userAgent;
+@property (nonatomic, strong) Flags * _Nullable flags;
 @property (nonatomic, copy) NSString * _Nonnull title;
 @property (nonatomic, copy) NSString * _Nullable message;
 @end
 
-@class NSBundle;
-@class NSCoder;
-@class AVCaptureMetadataOutput;
-@class AVMetadataObject;
-@class AVCaptureConnection;
 
-SWIFT_CLASS("_TtC5Keyri23QRCodeScannerController")
-@interface QRCodeScannerController : UIViewController <AVCaptureMetadataOutputObjectsDelegate, UIImagePickerControllerDelegate, UINavigationBarDelegate>
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)viewWillAppear:(BOOL)animated;
-- (void)captureOutput:(AVCaptureMetadataOutput * _Nonnull)output didOutputMetadataObjects:(NSArray<AVMetadataObject *> * _Nonnull)metadataObjects fromConnection:(AVCaptureConnection * _Nonnull)connection;
-@end
-
-
-@interface QRCodeScannerController (SWIFT_EXTENSION(Keyri))
-@property (nonatomic, readonly) BOOL shouldAutorotate;
-@property (nonatomic, readonly) UIInterfaceOrientationMask supportedInterfaceOrientations;
-@property (nonatomic, readonly) UIInterfaceOrientation preferredInterfaceOrientationForPresentation;
-@end
-
-
-SWIFT_CLASS("_TtC5Keyri13RiskAnalytics") SWIFT_AVAILABILITY(ios,introduced=14.0)
+SWIFT_CLASS("_TtC5Keyri13RiskAnalytics")
 @interface RiskAnalytics : NSObject
 @property (nonatomic, copy) NSString * _Nullable riskStatus;
 @property (nonatomic, copy) NSString * _Nullable riskFlagString;
@@ -427,23 +407,13 @@ SWIFT_CLASS("_TtC5Keyri13RiskAnalytics") SWIFT_AVAILABILITY(ios,introduced=14.0)
 @end
 
 
-SWIFT_CLASS("_TtC5Keyri7Session") SWIFT_AVAILABILITY(ios,introduced=14.0)
+SWIFT_CLASS("_TtC5Keyri7Session")
 @interface Session : NSObject
-@property (nonatomic, copy) NSString * _Nullable payload;
 @property (nonatomic, copy) NSString * _Nullable publicUserId;
 @property (nonatomic, copy) NSString * _Nullable appKey;
 @property (nonatomic, copy) NSString * _Nonnull sessionId;
-- (void)denyWithCompletion:(void (^ _Nonnull)(NSError * _Nullable))completion;
-- (void)confirmWithCompletion:(void (^ _Nonnull)(NSError * _Nullable))completion;
-- (BOOL)setNewUserIdWithUserId:(NSString * _Nonnull)userId SWIFT_WARN_UNUSED_RESULT;
-@end
-
-
-SWIFT_CLASS("_TtC5Keyri10SquareView")
-@interface SquareView : UIView
-- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-- (void)drawRect:(CGRect)rect;
+- (void)confirmWithPayload:(NSString * _Nonnull)payload trustNewBrowser:(BOOL)trustNewBrowser completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
+- (void)denyWithPayload:(NSString * _Nonnull)payload completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
 @end
 
 
@@ -463,24 +433,17 @@ SWIFT_CLASS("_TtC5Keyri9UserAgent")
 @end
 
 
-SWIFT_CLASS("_TtC5Keyri14UserParameters") SWIFT_AVAILABILITY(ios,introduced=14.0)
+SWIFT_CLASS("_TtC5Keyri14UserParameters")
 @interface UserParameters : NSObject
 @property (nonatomic, copy) NSString * _Nullable base64EncodedData;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
 
-SWIFT_CLASS("_TtC5Keyri15WidgetUserAgent") SWIFT_AVAILABILITY(ios,introduced=14.0)
+SWIFT_CLASS("_TtC5Keyri15WidgetUserAgent")
 @interface WidgetUserAgent : NSObject
-@property (nonatomic, copy) NSString * _Nonnull electronVersion;
-@property (nonatomic) BOOL isDesktop;
 @property (nonatomic, copy) NSString * _Nonnull os;
 @property (nonatomic, copy) NSString * _Nonnull browser;
-@property (nonatomic) BOOL isAuthoritative;
-@property (nonatomic, copy) NSString * _Nonnull source;
-@property (nonatomic, copy) NSString * _Nonnull version;
-@property (nonatomic, copy) NSString * _Nonnull platform;
-@property (nonatomic) BOOL isChrome;
 @end
 
 #endif

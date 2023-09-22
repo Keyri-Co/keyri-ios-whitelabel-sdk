@@ -164,7 +164,7 @@ func process(url: URL) {
         initializeDefaultScreen(session: session, payload: payload)
 
         // In a real world example you’d wait for user confirmation first
-        session.confirm() // or session.deny()
+        session.confirm(payload: payload, trustNewBrowser: true) // or session.deny(payload: payload)
     case .failure(let error):
         print(error)
     }
@@ -177,15 +177,15 @@ Keyri Enables mobile device fingerprinting that persists even when the applicati
 a simple example of how this can be leveraged, in this case limiting to 1 user per device
 
 ```swift
-func registerUser(username: String) throws {
+func registerUser(publicUserId: String) throws {
     let keyri = KeyriInterface(appKey, publicApiKey, serviceEncryptionKey)
 
-	if let list = keyri.listUniqueAccounts() {
-		if let existingUsername = list.keys.first {
+	  if let list = keyri.listUniqueAccounts() {
+		  if let existingUsername = list.keys.first {
 		    // Alert user that there is an existing user, and encourage them to sign in here
-		}
-	} else {
-		let key = try keyri.generateAssociationKey(publicUserId: username)
+		  }
+	  } else {
+		let key = try keyri.generateAssociationKey(publicUserId: publicUserId)
 		// Then run your regular registration process
 		// Optionally, do something else with the key that was just generated
 		// Keyri handles saving the key in the Secure Enclave for you
@@ -279,10 +279,8 @@ notice anything that seems wrong or strange on GitHub 🙂
 
 [Issues](https://github.com/Keyri-Co/keyri-android-whitelabel-sdk/issues)
 
-### License
-
-This library is available under paid and free licenses. See the [LICENSE](LICENSE) file for the full
-license text.
+This library is available under paid and free licenses. See the [LICENSE](LICENSE) file for the
+full license text.
 
 * Details of licensing (pricing, etc) are available
   at [https://keyri.com/pricing](https://keyri.com/pricing), or you can contact us
