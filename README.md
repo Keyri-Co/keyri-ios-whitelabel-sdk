@@ -105,7 +105,7 @@ func process(url: URL) {
     let publicApiKey = nil // Get this optional value from the Keyri Developer Portal
     let serviceEncryptionKey = nil // Get this optional value from the Keyri Developer Portal
 
-    let keyri = KeyriInterface(appKey, publicApiKey, serviceEncryptionKey) // Be sure to import the SDK at the top of the file
+    let keyri = KeyriInterface(appKey: appKey, publicApiKey: publicApiKey, serviceEncryptionKey: serviceEncryptionKey) // Be sure to import the SDK at the top of the file
     
     let res = keyri.initializeQrSession(sessionId: sessionId, publicUserId: publicUserId) { result in
         switch result {
@@ -137,7 +137,7 @@ in the QR code. All you need to do is convert to URL, and then you're free to pr
 above (notice the `process(url)` function is exactly the same in both cases)
 
 ```swift
-ptfunc handleDisplayingScanner() {
+func handleDisplayingScanner() {
     let scanner = Scanner()
     scanner.completion = { str in 
         guard let url = URL(string: str) else { return nil }
@@ -155,7 +155,7 @@ func process(url: URL) {
     let publicApiKey = nil // Get this optional value from the Keyri Developer Portal
     let serviceEncryptionKey = nil // Get this optional value from the Keyri Developer Portal
 
-    let keyri = KeyriInterface(appKey, publicApiKey, serviceEncryptionKey) // Be sure to import the SDK at the top of the file
+    let keyri = KeyriInterface(appKey: appKey, publicApiKey: publicApiKey, serviceEncryptionKey: serviceEncryptionKey) // Be sure to import the SDK at the top of the file
     let res = keyri.initializeQrSession(sessionId: sessionId, publicUserId: publicUserId)
 
     switch res {
@@ -178,7 +178,7 @@ a simple example of how this can be leveraged, in this case limiting to 1 user p
 
 ```swift
 func registerUser(publicUserId: String) throws {
-    let keyri = KeyriInterface(appKey, publicApiKey, serviceEncryptionKey)
+    let keyri = KeyriInterface(appKey: appKey, publicApiKey: publicApiKey, serviceEncryptionKey: serviceEncryptionKey)
 
 	  if let list = keyri.listUniqueAccounts() {
 		  if let existingUsername = list.keys.first {
