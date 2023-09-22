@@ -4,7 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db2adf85-b517-4a8d-8372-1f11873479ee" name="Changes" comment="Updated Docs for iOS" />
+    <list default="true" id="db2adf85-b517-4a8d-8372-1f11873479ee" name="Changes" comment="Updated Docs for iOS">
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Example/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Headers/Keyri-Swift.h" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Headers/Keyri-Swift.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Keyri" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Keyri" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios.abi.json" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios.abi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios.private.swiftinterface" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios.private.swiftinterface" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios.swiftinterface" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios.swiftinterface" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeDirectory" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeDirectory" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeRequirements-1" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeRequirements-1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeSignature" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeSignature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Headers/Keyri-Swift.h" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Headers/Keyri-Swift.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Keyri" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Keyri" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.abi.json" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.abi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.swiftinterface" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.swiftinterface" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.abi.json" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.abi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.swiftinterface" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.swiftinterface" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/_CodeSignature/CodeDirectory" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/_CodeSignature/CodeDirectory" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/_CodeSignature/CodeRequirements-1" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/_CodeSignature/CodeRequirements-1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/_CodeSignature/CodeResources" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,9 +45,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2VFWWryqh6j0zA9ndCYZ7m5rsoY" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -35,7 +59,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "releases/4.2.0",
     "last_opened_file_path": "/Users/andriikuliahin/IdeaProjects/Keyri iOS/keyri-ios-whitelabel-sdk",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -59,6 +83,7 @@
       <option name="presentableId" value="Default" />
       <updated>1694432342737</updated>
       <workItem from="1694432343757" duration="3760000" />
+      <workItem from="1695393980908" duration="324000" />
     </task>
     <task id="LOCAL-00001" summary="Updated Docs for iOS">
       <option name="closed" value="true" />

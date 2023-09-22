@@ -73,21 +73,20 @@ func process(url: URL) {
     let payload = "Custom payload here"
     let appKey = selectedAppKey // Get this value from the Keyri Developer Portal
 
-    let keyri = Keyri() // Be sure to import the SDK at the top of the file
-    let res = keyri.initializeQrSession(username: "lol", sessionId: sessionId, appKey: appKey) { result in
+    let keyri = KeyriInterface(appKey: appKey) // Be sure to import the SDK at the top of the file
+    let res = keyri.initiateQrSession(sessionId: sessionId, publicUserId: "lol") { result in
         switch result {
         case .success(let session):
             DispatchQueue.main.async {
-                session.payload = payload
-                keyri.initializeDefaultScreen(sessionId: session.sessionId) { bool in
+                keyri.initializeDefaultConfirmationScreen(session: session, payload: payload) { bool in
                     print(bool)
                 }
             }
         case .failure(let error):
             print(error.localizedDescription)
         }
-        
     }
+}
 ```
 
 **Note:** Keyri will set up the required `/.well-known/apple-app-site-association` JSON at your `https://{yourSubdomain}.onekey.to` page as required by Apple to handle Universal Link handling. Details on this mechanism are described here: <https://developer.apple.com/documentation/Xcode/supporting-associated-domains>
@@ -115,21 +114,19 @@ func process(url: URL) {
     let payload = "Custom payload here"
     let appKey = "App key here" // Get this value from the Keyri Developer Portal
 
-    let keyri = Keyri() // Be sure to import the SDK at the top of the file
-    let res = keyri.initializeQrSession(appKey: appKey, sessionId: sessionId, payload: payload)
+    let keyri = KeyriInterface(appKey: appKey) // Be sure to import the SDK at the top of the file
+    let res = keyri.initiateQrSession(sessionId: sessionId, publicUserId: publicUserId)
 
     switch res {
     case .success(let session):
         // You can optionally create a custom screen and pass the session ID there. We recommend this approach for large enterprises
-        initializeDefaultScreen(session)
+        initializeDefaultConfirmationScreen(session: session, payload: payload)
 
         // In a real world example you’d wait for user confirmation first
-        session.confirm() // or session.deny()
+        session.confirm(payload: payload, trustNewBrowser: true) // or session.deny(payload: payload)
     case .failure(let error):
         print(error)
     }
-        
-    
 }
 ```
 
@@ -138,50 +135,58 @@ Keyri Enables mobile device fingerprinting that persists even when the applicati
 
 Swift Code:
 
-	func registerUser(username: String) throws {
-		if let list = Keyri().listUniqueAccounts() {
-			if let existingUsername = list.keys.first {
-			    // Alert user that there is an existing user, and encourage them to sign in here
-			}
-
-		} else {
-			let key = try Keyri().generateAssociationKey(username: username)
-			// Then run your regular registration process
-			// Optionally, do something else with the key that was just generated
-			// Keyri handles saving the key in the Secure Enclave for you
-			// For example, you can later use this key pair to passwordlessly authenticate the user
+```swift
+func registerUser(publicUserId: String) throws {
+    let keyri = KeyriInterface(appKey: appKey)
+	if let list = keyri.listUniqueAccounts() {
+		if let existingUsername = list.keys.first {
+		    // Alert user that there is an existing user, and encourage them to sign in here
 		}
+	} else {
+		let key = try keyri.generateAssociationKey(publicUserId: publicUserId)
+		// Then run your regular registration process
+		// Optionally, do something else with the key that was just generated
+		// Keyri handles saving the key in the Secure Enclave for you
+		// For example, you can later use this key pair to passwordlessly authenticate the user
 	}
+}
+```
 
 ### **Interacting with the API**
 
 The following methods are available to interact with the Keyri SDK API, which can be used to craft your own custom flows and leverage the SDK in different ways:
 
-*   `func initiateQrSession(sessionId: String, appKey: String): Result<Session, Error>` - call after obtaining the sessionId from QR-code or deep link. Returns Session object with Risk attributes (needed to show confirmation screen) or Exception.
+- `func KeyriInterface.easyKeyriAuth(payload: String, publicUserId: String?, completion: @escaping (Result<Void, Error>) -> ())` - call to have Keyri drive you through the entire process - we display the scanner, scan the QR code, handle user confirmation and fire off the result to the browser - all with one line of code in your app 😀
 
-*   `func initializeDefaultConfirmationScreen(session: Session): Boolean` - to show Confirmation with default UI. Alternatively, you can implement a custom Confirmation Screen. The Default screen is built using SwiftUI, however the session object is designed to work seamlessly with UIKit as well should you prefer that route
+- `func KeyriInterface.initiateQrSession(sessionId: String, publicUserId: String?, completion: @escaping (Result<Session, Error>) -> Void)` - call after obtaining the sessionId from QR-code or deep link. Returns Session object with Risk attributes (needed to show confirmation screen) or Exception
 
-*   `func Session.confirm(publicUserId: String?, payload: String):Result<Bool, Error>` - call this function if user confirms the dialog. Returns authentication result.
+- `func KeyriInterface.initializeDefaultConfirmationScreen(session: Session, payload: String, completion: @escaping (Result<Void, Error>) -> ())` - to show Confirmation with default UI. Alternatively, you can implement a custom Confirmation Screen. The Default screen is built using SwiftUI, however the session object is designed to work seamlessly with UIKit as well should you prefer that route
 
-*   `func Session.deny(publicUserId: String?, payload: String): Result<Bool, Error> ` - call if the user denys the dialog. Returns authentication result.
+- `func KeyriInterface.processLink(url: URL, payload: String, publicUserId: String?, completion: @escaping (Result<Void, Error>) -> ())` - to process passed link and show Confirmation with default UI
 
-*   `func generateAssociationKey(publicUserId: String): String` - creates a persistent ECDSA keypair for the given public user ID (example: email address) and return public key.
+- `func Session.confirm(payload: String, trustNewBrowser: Bool = false, completion: @escaping (Error?) -> ())` - call this function if user confirms the dialog. Returns authentication result or error
 
-*   `func getUserSignature(publicUserId: String?, customSignedData: String?): String` - returns an ECDSA signature of the timestamp and optional customSignedData with the publicUserId's privateKey (or, if not provided, anonymous privateKey), customSignedData can be anything.
+- `func Session.deny(payload: String, completion: @escaping (Error?) -> ())` - call if the user denies the dialog. Returns denial result or error
 
-*   `func getAssociationKey(publicUserId: String): String` - returns Base64 public key for the specified publicUserId.
+- `func KeyriInterface.generateAssociationKey(publicUserId: String = Constants.ANON_USER, completion: @escaping (Result<P256.Signing.PublicKey, Error>) -> ())` - creates a persistent ECDSA keypair for the given public user ID (example: email address) and return public key
 
-*   `func removeAssociationKey(publicUserId: String)` - removes key for given user, deleting their record
+- `func KeyriInterface.generateUserSignature(publicUserId: String = Constants.ANON_USER, data: Data, completion: @escaping (Result<P256.Signing.ECDSASignature, Error>) -> ())` - returns an ECDSA signature of the timestamp and optional customSignedData with the publicUserId's privateKey (or, if not provided, anonymous privateKey), data can be anything
 
-*   `func listAssociationKeys(): [String: String]` - returns a map of username to association key, every such key on the device
+- `func KeyriInterface.getAssociationKey(publicUserId: String = Constants.ANON_USER, completion: @escaping (Result<P256.Signing.PublicKey?, Error>) -> ())` - returns Base64 public key for the specified publicUserId
 
-  `func listUniqueAccounts(): [String: String]` - returns a map of username to association key, every such key on the device, but without the annonymous account as is returned above
+- `func KeyriInterface.removeAssociationKey(publicUserId: String, completion: @escaping (Result<Void, Error>) -> ())` - removes association public key for the specified publicUserId
 
-`payload` can be anything (session token or a stringified JSON containing multiple items. Can include things like publicUserId, timestamp, customSignedData and ECDSA signature).
+- `func KeyriInterface.listAssociactionKeys(completion: @escaping (Result<[String:String]?, Error>) -> ())` - returns a dictionary of "association keys" and ECDSA Base64 public keys
+
+- `func KeyriInterface.listUniqueAccounts(completion: @escaping (Result<[String:String]?, Error>) -> ())` - returns a dictionary of unique "association keys" and ECDSA Base64 public keys
+
+- `func KeyriInterface.sendEvent(publicUserId: String = Constants.ANON_USER, eventType: EventType = .visits, success: Bool = true, completion: @escaping (Result<FingerprintResponse, Error>) -> ())` - sends fingerprint event and event result for specified publicUserId's
+
+`payload` can be anything (session token or a stringified JSON containing multiple items. Can include things like publicUserId, timestamp, customSignedData and ECDSA signature)
 
 ### **Session Object**
 
-The session object is returned on successful initalizeQrSession calls, and is used to handle presenting the situation to the end user and getting their confirmation to complete authentication. Below are some of the key properties and methods that can be triggered. If you are utilizing the built-in views, you are only responsible for calling the confirm/deny methods above
+The session object is returned on successful initiateQrSession calls, and is used to handle presenting the situation to the end user and getting their confirmation to complete authentication. Below are some of the key properties and methods that can be triggered. If you are utilizing the built-in views, you are only responsible for calling the confirm/deny methods above
 
 *   IPAddressMobile/Widget - the IP Address of both mobile device and web browser&#x20;
 
@@ -211,7 +216,7 @@ The session object is returned on successful initalizeQrSession calls, and is us
 
 ## License
 
-This library is available under paid and free licenses. See the [LICENSE](LICENSE.txt) file for the
+This library is available under paid and free licenses. See the [LICENSE](LICENSE) file for the
 full license text.
 
 * Details of licensing (pricing, etc) are available
