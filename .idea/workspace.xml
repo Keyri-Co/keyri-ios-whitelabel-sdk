@@ -4,19 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db2adf85-b517-4a8d-8372-1f11873479ee" name="Changes" comment="Updated framework and README.md for iOS">
+    <list default="true" id="db2adf85-b517-4a8d-8372-1f11873479ee" name="Changes" comment="Fixed sendEvent method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Example/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Example/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Example/Pods/Local Podspecs/keyri-pod.podspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Example/Pods/Local Podspecs/keyri-pod.podspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Example/Pods/Manifest.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Example/Pods/Manifest.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Example/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Example/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example-frameworks.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example-frameworks.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example.debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example.debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example.release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example.release.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Tests/Pods-keyri-pod_Tests.debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Tests/Pods-keyri-pod_Tests.debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Tests/Pods-keyri-pod_Tests.release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Tests/Pods-keyri-pod_Tests.release.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Toaster/Toaster-umbrella.h" beforeDir="false" afterPath="$PROJECT_DIR$/Example/Pods/Target Support Files/Toaster/Toaster-umbrella.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Example/keyri-pod.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Example/keyri-pod.xcodeproj/project.pbxproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +15,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/doc_update" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,7 +37,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;releases/4.2.0&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;4.2.1&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/andriikuliahin/IdeaProjects/Keyri iOS/keyri-ios-whitelabel-sdk&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -77,6 +66,8 @@
       <workItem from="1695396159931" duration="529000" />
       <workItem from="1695397739931" duration="55000" />
       <workItem from="1695644212564" duration="569000" />
+      <workItem from="1696505798857" duration="398000" />
+      <workItem from="1696509159972" duration="18000" />
     </task>
     <task id="LOCAL-00001" summary="Updated Docs for iOS">
       <option name="closed" value="true" />
@@ -94,7 +85,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695394789452</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fixed sendEvent method">
+      <option name="closed" value="true" />
+      <created>1696506001161</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696506001161</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -103,6 +102,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Updated Docs for iOS" />
     <MESSAGE value="Updated framework and README.md for iOS" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated framework and README.md for iOS" />
+    <MESSAGE value="Fixed sendEvent method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed sendEvent method" />
   </component>
 </project>
