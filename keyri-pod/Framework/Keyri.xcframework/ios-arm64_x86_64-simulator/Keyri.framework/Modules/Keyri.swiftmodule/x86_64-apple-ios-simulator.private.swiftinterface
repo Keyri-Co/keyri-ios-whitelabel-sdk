@@ -44,7 +44,7 @@ open class KeyriInterface {
   public func generateUserSignature(publicUserId: Swift.String = Constants.ANON_USER, data: Foundation.Data, completion: @escaping (Swift.Result<CryptoKit.P256.Signing.ECDSASignature, any Swift.Error>) -> ())
   public func getAssociationKey(publicUserId: Swift.String = Constants.ANON_USER, completion: @escaping (Swift.Result<CryptoKit.P256.Signing.PublicKey?, any Swift.Error>) -> ())
   public func removeAssociationKey(publicUserId: Swift.String, completion: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> ())
-  public func listAssociactionKeys(completion: @escaping (Swift.Result<[Swift.String : Swift.String]?, any Swift.Error>) -> ())
+  public func listAssociationKeys(completion: @escaping (Swift.Result<[Swift.String : Swift.String]?, any Swift.Error>) -> ())
   public func listUniqueAccounts(completion: @escaping (Swift.Result<[Swift.String : Swift.String]?, any Swift.Error>) -> ())
   public func sendEvent(publicUserId: Swift.String = Constants.ANON_USER, eventType: Keyri.EventType = .visits, success: Swift.Bool = true, completion: @escaping (Swift.Result<Keyri.FingerprintResponse, any Swift.Error>) -> ())
   @objc deinit
@@ -169,7 +169,7 @@ public enum EventType : Swift.String {
   @objc public func generateUserSignature(publicUserId: Swift.String?, data: Foundation.Data, completion: @escaping (Swift.String?, (any Swift.Error)?) -> ())
   @objc public func getAssociationKey(publicUserId: Swift.String?, completion: @escaping (Swift.String?, (any Swift.Error)?) -> ())
   @objc public func removeAssociationKey(publicUserId: Swift.String, completion: @escaping ((any Swift.Error)?) -> ())
-  @objc public func listAssociactionKeys(completion: @escaping ([Swift.String : Swift.String]?, (any Swift.Error)?) -> ())
+  @objc public func listAssociationKeys(completion: @escaping ([Swift.String : Swift.String]?, (any Swift.Error)?) -> ())
   @objc public func listUniqueAccounts(completion: @escaping ([Swift.String : Swift.String]?, (any Swift.Error)?) -> ())
   @objc public func sendEvent(publicUserId: Swift.String?, eventType: Swift.String, success: Swift.Bool, completion: @escaping (Keyri.FingerprintResponse?, (any Swift.Error)?) -> ())
   @objc deinit
