@@ -4679,6 +4679,13 @@
       },
       {
         "kind": "Import",
+        "name": "CommonCrypto",
+        "printedName": "CommonCrypto",
+        "declKind": "Import",
+        "moduleName": "Keyri"
+      },
+      {
+        "kind": "Import",
         "name": "SystemConfiguration.CaptiveNetwork",
         "printedName": "SystemConfiguration.CaptiveNetwork",
         "declKind": "Import",
@@ -7704,8 +7711,8 @@
           },
           {
             "kind": "Function",
-            "name": "listAssociationKeys",
-            "printedName": "listAssociationKeys(completion:)",
+            "name": "listAssociactionKeys",
+            "printedName": "listAssociactionKeys(completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -7775,10 +7782,10 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@Keyri@objc(cs)KeyriObjC(im)listAssociationKeysWithCompletion:",
-            "mangledName": "$s5Keyri0A4ObjCC19listAssociationKeys10completionyySDyS2SGSg_s5Error_pSgtc_tF",
+            "usr": "c:@M@Keyri@objc(cs)KeyriObjC(im)listAssociactionKeysWithCompletion:",
+            "mangledName": "$s5Keyri0A4ObjCC20listAssociactionKeys10completionyySDyS2SGSg_s5Error_pSgtc_tF",
             "moduleName": "Keyri",
-            "objc_name": "listAssociationKeysWithCompletion:",
+            "objc_name": "listAssociactionKeysWithCompletion:",
             "declAttributes": [
               "AccessControl",
               "ObjC"
@@ -8221,92 +8228,6 @@
                 "declKind": "Accessor",
                 "usr": "s:5Keyri18ConfirmationScreenV15dismissalActionySbcSgvM",
                 "mangledName": "$s5Keyri18ConfirmationScreenV15dismissalActionySbcSgvM",
-                "moduleName": "Keyri",
-                "implicit": true,
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "shouldCallDismissOnDissappear",
-            "printedName": "shouldCallDismissOnDissappear",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "usr": "s:Sb"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:5Keyri18ConfirmationScreenV29shouldCallDismissOnDissappearSbvp",
-            "mangledName": "$s5Keyri18ConfirmationScreenV29shouldCallDismissOnDissappearSbvp",
-            "moduleName": "Keyri",
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "AccessControl"
-            ],
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:5Keyri18ConfirmationScreenV29shouldCallDismissOnDissappearSbvg",
-                "mangledName": "$s5Keyri18ConfirmationScreenV29shouldCallDismissOnDissappearSbvg",
-                "moduleName": "Keyri",
-                "implicit": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Bool",
-                    "printedName": "Swift.Bool",
-                    "usr": "s:Sb"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:5Keyri18ConfirmationScreenV29shouldCallDismissOnDissappearSbvs",
-                "mangledName": "$s5Keyri18ConfirmationScreenV29shouldCallDismissOnDissappearSbvs",
-                "moduleName": "Keyri",
-                "implicit": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:5Keyri18ConfirmationScreenV29shouldCallDismissOnDissappearSbvM",
-                "mangledName": "$s5Keyri18ConfirmationScreenV29shouldCallDismissOnDissappearSbvM",
                 "moduleName": "Keyri",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -11204,84 +11125,84 @@
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRCodeScanner.swift",
       "kind": "StringLiteral",
-      "offset": 7662,
+      "offset": 7745,
       "length": 21,
       "value": "\"Failed to add Input\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRCodeScanner.swift",
       "kind": "BooleanLiteral",
-      "offset": 7728,
+      "offset": 7811,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRCodeScanner.swift",
       "kind": "StringLiteral",
-      "offset": 8116,
+      "offset": 8199,
       "length": 21,
       "value": "\"Failed to add Input\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRCodeScanner.swift",
       "kind": "BooleanLiteral",
-      "offset": 8182,
+      "offset": 8265,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRCodeScanner.swift",
       "kind": "StringLiteral",
-      "offset": 8365,
+      "offset": 8448,
       "length": 12,
       "value": "\"Do nothing\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRCodeScanner.swift",
       "kind": "StringLiteral",
-      "offset": 8508,
+      "offset": 8591,
       "length": 22,
       "value": "\"Failed to add Output\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRCodeScanner.swift",
       "kind": "BooleanLiteral",
-      "offset": 8567,
+      "offset": 8650,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRCodeScanner.swift",
       "kind": "IntegerLiteral",
-      "offset": 9154,
+      "offset": 9237,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRCodeScanner.swift",
       "kind": "IntegerLiteral",
-      "offset": 9692,
+      "offset": 9775,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRCodeScanner.swift",
       "kind": "StringLiteral",
-      "offset": 10016,
+      "offset": 10099,
       "length": 20,
       "value": "\"Empty string found\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRCodeScanner.swift",
       "kind": "BooleanLiteral",
-      "offset": 10164,
+      "offset": 10247,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRCodeScanner.swift",
       "kind": "BooleanLiteral",
-      "offset": 10367,
+      "offset": 10450,
       "length": 5,
       "value": "false"
     },
@@ -11996,127 +11917,141 @@
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
       "offset": 490,
-      "length": 17,
+      "length": 22,
       "value": "12"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
-      "offset": 517,
-      "length": 26,
+      "offset": 522,
+      "length": 31,
       "value": "13"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
-      "offset": 553,
-      "length": 21,
+      "offset": 563,
+      "length": 26,
       "value": "14"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
+      "kind": "IntegerLiteral",
+      "offset": 599,
+      "length": 11,
+      "value": "15"
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 686,
+      "offset": 722,
       "length": 17,
       "value": "\"Basic SDK Error\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 751,
+      "offset": 787,
       "length": 24,
       "value": "\"No internet connection\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 833,
+      "offset": 869,
       "length": 23,
       "value": "\"Server is unreachable\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 911,
+      "offset": 947,
       "length": 23,
       "value": "\"Internal server error\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 981,
+      "offset": 1017,
       "length": 47,
       "value": "\"Internal server error. Service is unreachable\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 1083,
+      "offset": 1119,
       "length": 30,
       "value": "\"Keyri SDK is not initialized\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 1165,
+      "offset": 1201,
       "length": 43,
       "value": "\"New service id doesn't match with current\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 1264,
+      "offset": 1300,
       "length": 48,
       "value": "\"The account that makes the login was not found\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 1379,
+      "offset": 1415,
       "length": 31,
       "value": "\"Multiple accounts not allowed\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 1462,
+      "offset": 1498,
       "length": 29,
       "value": "\"Permissions are not granted\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 1545,
+      "offset": 1581,
       "length": 21,
       "value": "\"Unable to authorize\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 1618,
+      "offset": 1654,
       "length": 11,
       "value": "\"iOS Error\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 1682,
+      "offset": 1723,
       "length": 22,
       "value": "\"Api Key not provided\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 1766,
+      "offset": 1812,
       "length": 31,
       "value": "\"Can't find rootViewController\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 1854,
+      "offset": 1905,
       "length": 26,
       "value": "\"Can't find UIWindowScene\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
+      "kind": "StringLiteral",
+      "offset": 1978,
+      "length": 16,
+      "value": "\"Denied by user\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
@@ -12199,22 +12134,29 @@
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
       "offset": 490,
-      "length": 17,
+      "length": 22,
       "value": "12"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
-      "offset": 517,
-      "length": 26,
+      "offset": 522,
+      "length": 31,
       "value": "13"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
-      "offset": 553,
-      "length": 21,
+      "offset": 563,
+      "length": 26,
       "value": "14"
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
+      "kind": "IntegerLiteral",
+      "offset": 599,
+      "length": 11,
+      "value": "15"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
@@ -12632,247 +12574,219 @@
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 4565,
+      "offset": 4573,
       "length": 90,
       "value": "\"O6aCXxDctj+urHBGTGQgfJ9I9euUIPtkLYMfloUqz1m\/zUMIY26Ojz97C\/o72DtcXh0xEi6gD\/W\/jIMvaUJEgw==\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "IntegerLiteral",
-      "offset": 5146,
+      "offset": 5154,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "IntegerLiteral",
-      "offset": 5150,
+      "offset": 5158,
       "length": 4,
       "value": "9999"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "IntegerLiteral",
-      "offset": 5436,
+      "offset": 5444,
       "length": 2,
       "value": "32"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
-      "kind": "StringLiteral",
-      "offset": 6216,
-      "length": 14,
-      "value": "\"isDebuggable\""
+      "kind": "BooleanLiteral",
+      "offset": 5992,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 6641,
+      "offset": 6399,
       "length": 8,
       "value": "\"apiKey\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 6681,
+      "offset": 6439,
       "length": 11,
       "value": "\"eventType\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 6730,
+      "offset": 6488,
       "length": 9,
       "value": "\"success\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 6766,
+      "offset": 6524,
       "length": 8,
       "value": "\"userId\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 6806,
+      "offset": 6564,
       "length": 11,
       "value": "\"timestamp\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 6846,
+      "offset": 6604,
       "length": 12,
       "value": "\"deviceHash\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 6936,
+      "offset": 6712,
       "length": 20,
       "value": "\"timestampSignature\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 7025,
+      "offset": 6801,
       "length": 14,
       "value": "\"cryptoCookie\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 7117,
+      "offset": 6893,
       "length": 22,
       "value": "\"serviceEncryptionKey\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 7165,
+      "offset": 6941,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 7185,
+      "offset": 6961,
       "length": 12,
       "value": "\"deviceInfo\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 7409,
+      "offset": 7185,
       "length": 14,
       "value": "\"isDebuggable\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 8166,
+      "offset": 7942,
       "length": 21,
       "value": "\"clientEncryptionKey\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 8265,
+      "offset": 8041,
       "length": 18,
       "value": "\"encryptedPayload\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "IntegerLiteral",
-      "offset": 8315,
+      "offset": 8091,
       "length": 2,
       "value": "12"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 8358,
+      "offset": 8134,
       "length": 6,
       "value": "\"salt\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 8414,
+      "offset": 8190,
       "length": 4,
       "value": "\"iv\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 8686,
+      "offset": 8462,
       "length": 18,
       "value": "\"application\/json\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 8726,
+      "offset": 8502,
       "length": 14,
       "value": "\"Content-Type\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 8775,
+      "offset": 8551,
       "length": 6,
       "value": "\"POST\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 8949,
+      "offset": 8725,
       "length": 12,
       "value": "\"c=Callback\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 9207,
+      "offset": 8983,
       "length": 13,
       "value": "\"Status code\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 9397,
+      "offset": 9173,
       "length": 13,
       "value": "\"No response\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 9605,
+      "offset": 9381,
       "length": 28,
       "value": "\"Failed to convert response\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 9836,
+      "offset": 9612,
       "length": 9,
       "value": "\"Decrypt\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 10069,
+      "offset": 9845,
       "length": 9,
       "value": "\"Calling\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
-      "kind": "StringLiteral",
-      "offset": 10286,
-      "length": 29,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
-      "kind": "BooleanLiteral",
-      "offset": 10308,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
-      "kind": "StringLiteral",
-      "offset": 10314,
-      "length": 11,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
-      "kind": "BooleanLiteral",
-      "offset": 10320,
-      "length": 5,
-      "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
@@ -12940,98 +12854,98 @@
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "BooleanLiteral",
-      "offset": 4440,
+      "offset": 4450,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "StringLiteral",
-      "offset": 4485,
+      "offset": 4495,
       "length": 11,
       "value": "\"sessionId\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "StringLiteral",
-      "offset": 4510,
+      "offset": 4520,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "BooleanLiteral",
-      "offset": 7645,
+      "offset": 7655,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Scanner.swift",
       "kind": "BooleanLiteral",
-      "offset": 853,
+      "offset": 1120,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Scanner.swift",
       "kind": "StringLiteral",
-      "offset": 936,
+      "offset": 1203,
       "length": 18,
       "value": "\"Powered by Keyri\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Scanner.swift",
       "kind": "BooleanLiteral",
-      "offset": 1132,
+      "offset": 1399,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Scanner.swift",
       "kind": "IntegerLiteral",
-      "offset": 1222,
+      "offset": 1489,
       "length": 4,
       "value": "-100"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Scanner.swift",
       "kind": "BooleanLiteral",
-      "offset": 1239,
+      "offset": 1506,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Scanner.swift",
       "kind": "BooleanLiteral",
-      "offset": 1331,
+      "offset": 1598,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Scanner.swift",
       "kind": "BooleanLiteral",
-      "offset": 1567,
+      "offset": 1834,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Scanner.swift",
       "kind": "BooleanLiteral",
-      "offset": 1737,
+      "offset": 2004,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Scanner.swift",
       "kind": "BooleanLiteral",
-      "offset": 1894,
+      "offset": 2161,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreenUIView.swift",
       "kind": "BooleanLiteral",
-      "offset": 765,
+      "offset": 734,
       "length": 4,
       "value": "true"
     },
@@ -13241,413 +13155,385 @@
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 436,
-      "length": 15,
-      "value": "\"SavingAnonKey\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
-      "kind": "StringLiteral",
-      "offset": 744,
-      "length": 52,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
-      "kind": "StringLiteral",
-      "offset": 769,
-      "length": 1,
-      "value": "\"x\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
-      "kind": "StringLiteral",
-      "offset": 795,
-      "length": 1,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
-      "kind": "StringLiteral",
-      "offset": 905,
+      "offset": 602,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 1018,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
-      "kind": "StringLiteral",
-      "offset": 1152,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
-      "kind": "StringLiteral",
-      "offset": 1268,
+      "offset": 754,
       "length": 3,
       "value": "\" \""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 1273,
+      "offset": 759,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 1641,
+      "offset": 902,
+      "length": 52,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 927,
+      "length": 1,
+      "value": "\"x\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 953,
+      "length": 1,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 1063,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 1887,
+      "offset": 1176,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 1310,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 1686,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 1932,
       "length": 9,
       "value": "\"Unknown\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2097,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2208,
+      "offset": 2142,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2236,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2419,
+      "offset": 2208,
       "length": 16,
       "value": "\"associationKey\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2505,
-      "length": 24,
-      "value": "\"associationKeysPresent\""
+      "offset": 2285,
+      "length": 2,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2554,
-      "length": 8,
-      "value": "\"userId\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
-      "kind": "StringLiteral",
-      "offset": 2564,
-      "length": 6,
-      "value": "\"ANON\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
-      "kind": "StringLiteral",
-      "offset": 2584,
+      "offset": 2301,
       "length": 15,
       "value": "\"processorType\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2625,
+      "offset": 2342,
       "length": 12,
       "value": "\"deviceName\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2663,
+      "offset": 2380,
       "length": 10,
       "value": "\"deviceId\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2697,
+      "offset": 2414,
       "length": 12,
       "value": "\"deviceHash\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2735,
+      "offset": 2452,
       "length": 18,
       "value": "\"screenResolution\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2785,
+      "offset": 2502,
       "length": 11,
       "value": "\"osVersion\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2821,
+      "offset": 2538,
       "length": 10,
       "value": "\"timeZone\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2867,
+      "offset": 2584,
       "length": 10,
       "value": "\"language\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2901,
+      "offset": 2618,
       "length": 10,
       "value": "\"platform\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2913,
+      "offset": 2630,
       "length": 5,
       "value": "\"iOS\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2932,
+      "offset": 2649,
       "length": 13,
       "value": "\"networkType\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 2972,
-      "length": 12,
-      "value": "\"sdkVersion\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
-      "kind": "StringLiteral",
-      "offset": 2986,
-      "length": 7,
-      "value": "\"4.0.1\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
-      "kind": "StringLiteral",
-      "offset": 3007,
+      "offset": 2689,
       "length": 19,
       "value": "\"maliciousPackages\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 3028,
+      "offset": 2710,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 3044,
+      "offset": 2726,
       "length": 17,
       "value": "\"storageCapacity\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 3082,
+      "offset": 2764,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 3097,
+      "offset": 2779,
       "length": 13,
       "value": "\"freeStorage\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "IntegerLiteral",
-      "offset": 3127,
+      "offset": 2809,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 3142,
+      "offset": 2824,
       "length": 10,
       "value": "\"wifiSSID\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 3166,
+      "offset": 2848,
       "length": 9,
       "value": "\"unknown\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 3189,
+      "offset": 2871,
       "length": 13,
       "value": "\"packageName\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 3229,
+      "offset": 2911,
       "length": 16,
       "value": "\"appInfoVersion\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 3275,
+      "offset": 2957,
       "length": 28,
       "value": "\"CFBundleShortVersionString\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 3319,
+      "offset": 3001,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 3335,
+      "offset": 3017,
       "length": 18,
       "value": "\"keyboardLanguage\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 3375,
+      "offset": 3057,
       "length": 9,
       "value": "\"unknown\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 3398,
+      "offset": 3080,
       "length": 13,
       "value": "\"iCloudToken\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 3428,
+      "offset": 3110,
       "length": 9,
       "value": "\"unknown\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 3451,
+      "offset": 3133,
       "length": 13,
       "value": "\"audioOutput\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 3491,
+      "offset": 3173,
       "length": 8,
       "value": "\"volume\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 3521,
+      "offset": 3203,
       "length": 7,
       "value": "\"isEPD\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 3559,
+      "offset": 3241,
       "length": 18,
       "value": "\"screenBrightness\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 3609,
+      "offset": 3291,
       "length": 19,
       "value": "\"deviceOrientation\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 3670,
-      "length": 14,
-      "value": "\"isDebuggable\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
-      "kind": "StringLiteral",
-      "offset": 3712,
+      "offset": 3352,
       "length": 14,
       "value": "\"appSignature\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 3868,
+      "offset": 3629,
+      "length": 8,
+      "value": "\"%02hhx\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3747,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
+      "kind": "Array",
+      "offset": 4104,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
+      "kind": "StringLiteral",
+      "offset": 4225,
       "length": 16,
       "value": "\"www.google.com\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 4052,
+      "offset": 4409,
       "length": 10,
       "value": "\"cellular\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "StringLiteral",
-      "offset": 4099,
+      "offset": 4456,
       "length": 6,
       "value": "\"wifi\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "BooleanLiteral",
-      "offset": 4982,
+      "offset": 5339,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
       "kind": "BooleanLiteral",
-      "offset": 5626,
+      "offset": 5983,
       "length": 5,
       "value": "false"
     },
@@ -13731,21 +13617,21 @@
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriObjC.swift",
       "kind": "BooleanLiteral",
-      "offset": 2399,
+      "offset": 2400,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriObjC.swift",
       "kind": "BooleanLiteral",
-      "offset": 2629,
+      "offset": 2630,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriObjC.swift",
       "kind": "BooleanLiteral",
-      "offset": 2705,
+      "offset": 2706,
       "length": 5,
       "value": "false"
     },
@@ -13807,890 +13693,883 @@
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
-      "kind": "BooleanLiteral",
-      "offset": 410,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 863,
+      "offset": 806,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "BooleanLiteral",
-      "offset": 947,
+      "offset": 890,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 982,
+      "offset": 925,
       "length": 6,
       "value": "\"deny\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 1083,
+      "offset": 1026,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 1138,
+      "offset": 1081,
       "length": 8,
       "value": "\"595959\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 1161,
+      "offset": 1104,
       "length": 8,
       "value": "\"F5F5F5\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 1191,
+      "offset": 1134,
       "length": 2,
       "value": "24"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 1210,
+      "offset": 1153,
       "length": 2,
       "value": "50"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 1321,
+      "offset": 1264,
       "length": 2,
       "value": "12"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 1376,
+      "offset": 1319,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 1431,
+      "offset": 1374,
       "length": 8,
       "value": "\"595959\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 1454,
+      "offset": 1397,
       "length": 8,
       "value": "\"F5F5F5\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 1484,
+      "offset": 1427,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 1684,
+      "offset": 1627,
       "length": 31,
       "value": "\"laptopcomputer.and.arrow.down\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 1775,
+      "offset": 1718,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 1827,
+      "offset": 1770,
       "length": 3,
       "value": "-20"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 1916,
+      "offset": 1859,
       "length": 31,
       "value": "\"laptopcomputer.and.arrow.down\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 2007,
+      "offset": 1950,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 2025,
+      "offset": 1968,
       "length": 3,
       "value": "-20"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 2211,
+      "offset": 2154,
       "length": 8,
       "value": "\"iphone\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 2279,
+      "offset": 2222,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 2401,
+      "offset": 2344,
       "length": 8,
       "value": "\"iphone\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 2469,
+      "offset": 2412,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 2657,
+      "offset": 2600,
       "length": 16,
       "value": "\"laptopcomputer\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 2732,
+      "offset": 2675,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 2827,
+      "offset": 2770,
       "length": 16,
       "value": "\"laptopcomputer\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 2902,
+      "offset": 2845,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 2968,
+      "offset": 2911,
       "length": 2,
       "value": "40"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 2990,
+      "offset": 2933,
       "length": 2,
       "value": "15"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 3013,
+      "offset": 2956,
       "length": 2,
       "value": "15"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 3034,
+      "offset": 2977,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 3227,
+      "offset": 3170,
       "length": 31,
       "value": "\"laptopcomputer.and.arrow.down\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 3318,
+      "offset": 3261,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 3370,
+      "offset": 3313,
       "length": 3,
       "value": "-20"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 3433,
+      "offset": 3376,
       "length": 31,
       "value": "\"laptopcomputer.and.arrow.down\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 3524,
+      "offset": 3467,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 3542,
+      "offset": 3485,
       "length": 3,
       "value": "-20"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 3702,
+      "offset": 3645,
       "length": 8,
       "value": "\"iphone\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 3770,
+      "offset": 3713,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 3866,
+      "offset": 3809,
       "length": 8,
       "value": "\"iphone\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 3934,
+      "offset": 3877,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 4096,
+      "offset": 4039,
       "length": 16,
       "value": "\"laptopcomputer\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 4171,
+      "offset": 4114,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 4266,
+      "offset": 4209,
       "length": 16,
       "value": "\"laptopcomputer\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 4341,
+      "offset": 4284,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 4409,
+      "offset": 4352,
       "length": 2,
       "value": "40"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 4431,
+      "offset": 4374,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 4551,
+      "offset": 4494,
       "length": 37,
       "value": "\"Trust new browser for future logins\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 4636,
+      "offset": 4579,
       "length": 2,
       "value": "40"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 4661,
+      "offset": 4604,
       "length": 2,
       "value": "25"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 4682,
+      "offset": 4625,
       "length": 2,
       "value": "15"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "BooleanLiteral",
-      "offset": 5126,
+      "offset": 5069,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "BooleanLiteral",
-      "offset": 5172,
+      "offset": 5115,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 5300,
+      "offset": 5243,
       "length": 7,
       "value": "\"xmark\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 5336,
+      "offset": 5279,
       "length": 8,
       "value": "\"EF4D52\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 5376,
+      "offset": 5319,
       "length": 4,
       "value": "\"No\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 5409,
+      "offset": 5352,
       "length": 8,
       "value": "\"EF4D52\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 5524,
+      "offset": 5467,
       "length": 8,
       "value": "\"FCDADB\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 5621,
+      "offset": 5564,
       "length": 1,
       "value": "6"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 5671,
+      "offset": 5614,
       "length": 8,
       "value": "\"EF4D52\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 5693,
+      "offset": 5636,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "BooleanLiteral",
-      "offset": 6132,
+      "offset": 6075,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "BooleanLiteral",
-      "offset": 6178,
+      "offset": 6121,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 6305,
+      "offset": 6248,
       "length": 11,
       "value": "\"checkmark\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 6345,
+      "offset": 6288,
       "length": 8,
       "value": "\"03A564\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 6385,
+      "offset": 6328,
       "length": 5,
       "value": "\"Yes\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 6419,
+      "offset": 6362,
       "length": 8,
       "value": "\"03A564\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 6530,
+      "offset": 6473,
       "length": 8,
       "value": "\"D2EFE3\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 6619,
+      "offset": 6562,
       "length": 1,
       "value": "6"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 6665,
+      "offset": 6608,
       "length": 8,
       "value": "\"03A564\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 6687,
+      "offset": 6630,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "BooleanLiteral",
-      "offset": 6885,
+      "offset": 6828,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "BooleanLiteral",
-      "offset": 6927,
+      "offset": 6870,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 7039,
+      "offset": 6982,
       "length": 7,
       "value": "\"xmark\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 7099,
+      "offset": 7042,
       "length": 8,
       "value": "\"595959\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 7122,
+      "offset": 7065,
       "length": 8,
       "value": "\"F5F5F5\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 7158,
+      "offset": 7101,
       "length": 7,
       "value": "\"Close\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 7218,
+      "offset": 7161,
       "length": 8,
       "value": "\"595959\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 7241,
+      "offset": 7184,
       "length": 8,
       "value": "\"F5F5F5\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 7373,
+      "offset": 7316,
       "length": 8,
       "value": "\"1C1C1E\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "BooleanLiteral",
-      "offset": 7394,
+      "offset": 7337,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 7478,
+      "offset": 7421,
       "length": 1,
       "value": "6"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 7548,
+      "offset": 7491,
       "length": 8,
       "value": "\"595959\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 7571,
+      "offset": 7514,
       "length": 8,
       "value": "\"F5F5F5\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 7593,
+      "offset": 7536,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 7637,
+      "offset": 7580,
       "length": 18,
       "value": "\"Powered by Keyri\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 7709,
+      "offset": 7652,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 7778,
+      "offset": 7721,
       "length": 8,
       "value": "\"595959\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 7801,
+      "offset": 7744,
       "length": 8,
       "value": "\"F5F5F5\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "BooleanLiteral",
-      "offset": 7910,
+      "offset": 7853,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 8168,
+      "offset": 8111,
       "length": 2,
       "value": "18"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 8180,
+      "offset": 8123,
       "length": 2,
       "value": "18"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 8255,
+      "offset": 8198,
       "length": 8,
       "value": "\"595959\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 8278,
+      "offset": 8221,
       "length": 8,
       "value": "\"F5F5F5\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 8363,
+      "offset": 8306,
       "length": 8,
       "value": "\"595959\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 8386,
+      "offset": 8329,
       "length": 8,
       "value": "\"F5F5F5\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 8434,
+      "offset": 8377,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 8464,
+      "offset": 8407,
       "length": 2,
       "value": "65"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 8750,
+      "offset": 8693,
       "length": 2,
       "value": "18"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 8762,
+      "offset": 8705,
       "length": 2,
       "value": "18"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 8824,
+      "offset": 8767,
       "length": 8,
       "value": "\"EF4D52\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 8835,
+      "offset": 8778,
       "length": 8,
       "value": "\"F5704C\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 8874,
+      "offset": 8817,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 8944,
+      "offset": 8887,
       "length": 8,
       "value": "\"EF4D52\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 8955,
+      "offset": 8898,
       "length": 8,
       "value": "\"F5704C\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 9051,
+      "offset": 8994,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 9088,
+      "offset": 9031,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 9163,
+      "offset": 9106,
       "length": 8,
       "value": "\"F59598\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 9174,
+      "offset": 9117,
       "length": 8,
       "value": "\"FF9A73\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "BooleanLiteral",
-      "offset": 9207,
+      "offset": 9150,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "BooleanLiteral",
-      "offset": 9223,
+      "offset": 9166,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 9267,
+      "offset": 9210,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 9338,
+      "offset": 9281,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 9381,
+      "offset": 9324,
       "length": 29,
       "value": "\"exclamationmark.circle.fill\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 9425,
+      "offset": 9368,
       "length": 2,
       "value": "18"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 9437,
+      "offset": 9380,
       "length": 2,
       "value": "18"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 9500,
+      "offset": 9443,
       "length": 8,
       "value": "\"F59598\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "StringLiteral",
-      "offset": 9511,
+      "offset": 9454,
       "length": 8,
       "value": "\"FF9A73\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 9674,
+      "offset": 9617,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 9701,
+      "offset": 9644,
       "length": 2,
       "value": "65"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "BooleanLiteral",
-      "offset": 9844,
+      "offset": 9787,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 9922,
+      "offset": 9865,
       "length": 3,
       "value": "320"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 9963,
+      "offset": 9906,
       "length": 3,
       "value": "142"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 10136,
+      "offset": 10079,
       "length": 3,
       "value": "400"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 10182,
+      "offset": 10125,
       "length": 2,
       "value": "51"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "IntegerLiteral",
-      "offset": 10299,
+      "offset": 10242,
       "length": 1,
       "value": "6"
     },
