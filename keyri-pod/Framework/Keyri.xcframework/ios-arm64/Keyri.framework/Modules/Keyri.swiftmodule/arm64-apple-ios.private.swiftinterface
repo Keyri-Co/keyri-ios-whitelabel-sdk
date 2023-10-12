@@ -169,14 +169,13 @@ public enum EventType : Swift.String {
   @objc public func generateUserSignature(publicUserId: Swift.String?, data: Foundation.Data, completion: @escaping (Swift.String?, (any Swift.Error)?) -> ())
   @objc public func getAssociationKey(publicUserId: Swift.String?, completion: @escaping (Swift.String?, (any Swift.Error)?) -> ())
   @objc public func removeAssociationKey(publicUserId: Swift.String, completion: @escaping ((any Swift.Error)?) -> ())
-  @objc public func listAssociationKeys(completion: @escaping ([Swift.String : Swift.String]?, (any Swift.Error)?) -> ())
+  @objc public func listAssociactionKeys(completion: @escaping ([Swift.String : Swift.String]?, (any Swift.Error)?) -> ())
   @objc public func listUniqueAccounts(completion: @escaping ([Swift.String : Swift.String]?, (any Swift.Error)?) -> ())
   @objc public func sendEvent(publicUserId: Swift.String?, eventType: Swift.String, success: Swift.Bool, completion: @escaping (Keyri.FingerprintResponse?, (any Swift.Error)?) -> ())
   @objc deinit
 }
 public struct ConfirmationScreen : SwiftUI.View {
   public var dismissalAction: ((Swift.Bool) -> ())?
-  public var shouldCallDismissOnDissappear: Swift.Bool
   public init(session: Keyri.Session, payload: Swift.String)
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get

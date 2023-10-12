@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/Keyri-Swift.h</key>
 		<data>
-		kh4alVsUbi8Y6zNdDbnlPlRqPZs=
+		F1KKoFu4cfEGCHlUD7etnMEUMbQ=
 		</data>
 		<key>Headers/KeyriInterface.h</key>
 		<data>
@@ -18,11 +18,11 @@
 		</data>
 		<key>Modules/Keyri.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		DdKdBcTffEyRrXmqW9j6gtXot54=
+		kZdyemSaCRuc49Lw58yKoKjTlQQ=
 		</data>
 		<key>Modules/Keyri.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		olVvStR0PkDzXFCEeLbv7rEFin0=
+		ktvZtiRL870onZtH7RvSuDwFecE=
 		</data>
 		<key>Modules/Keyri.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Modules/Keyri.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		olVvStR0PkDzXFCEeLbv7rEFin0=
+		ktvZtiRL870onZtH7RvSuDwFecE=
 		</data>
 		<key>Modules/Keyri.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		aV5E4zwWcXIdH5tydr9VCB1PHgs=
+		pp4yjpczqGqmqB7WI+64KHS27pw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -47,11 +47,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			kh4alVsUbi8Y6zNdDbnlPlRqPZs=
+			F1KKoFu4cfEGCHlUD7etnMEUMbQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			nU4IXtE6Qv4xjVKhP3pXTmTJu6p7iOI9BQtloieL7Bg=
+			rkJaLdigeYEkED6eZ0ZKeSyvzT/5H/Xht64Td6ejN0A=
 			</data>
 		</dict>
 		<key>Headers/KeyriInterface.h</key>
@@ -69,22 +69,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DdKdBcTffEyRrXmqW9j6gtXot54=
+			kZdyemSaCRuc49Lw58yKoKjTlQQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			WFI+/52vt+BKTijaaUFN93umb6bZTxqHTUFLxg+QiIQ=
+			wmi67STy+lnlbuPpxOvJS9oR/GeaZyjRMWg4tLBtWIg=
 			</data>
 		</dict>
 		<key>Modules/Keyri.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			olVvStR0PkDzXFCEeLbv7rEFin0=
+			ktvZtiRL870onZtH7RvSuDwFecE=
 			</data>
 			<key>hash2</key>
 			<data>
-			FyOw0DdZTP7WCr9AQW4xsj/s7C4Pe205YH/UDQgRD7s=
+			n3Y1VmdANk4f2uDFXZIsxQ+P9w3q2g/uZLcgFBCdjLA=
 			</data>
 		</dict>
 		<key>Modules/Keyri.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -102,22 +102,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			olVvStR0PkDzXFCEeLbv7rEFin0=
+			ktvZtiRL870onZtH7RvSuDwFecE=
 			</data>
 			<key>hash2</key>
 			<data>
-			FyOw0DdZTP7WCr9AQW4xsj/s7C4Pe205YH/UDQgRD7s=
+			n3Y1VmdANk4f2uDFXZIsxQ+P9w3q2g/uZLcgFBCdjLA=
 			</data>
 		</dict>
 		<key>Modules/Keyri.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			aV5E4zwWcXIdH5tydr9VCB1PHgs=
+			pp4yjpczqGqmqB7WI+64KHS27pw=
 			</data>
 			<key>hash2</key>
 			<data>
-			HZA/fSumhiHMTXRxWD55gFyzxx7d5oMe79MIrKrD0HM=
+			r7MOft4gaB3I5jyexfI8FxTmJiwkinY1toVOfgqjM9k=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
