@@ -369,7 +369,7 @@ SWIFT_CLASS("_TtC5Keyri9KeyriObjC")
 - (void)generateUserSignatureWithPublicUserId:(NSString * _Nullable)publicUserId data:(NSData * _Nonnull)data completion:(void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable))completion;
 - (void)getAssociationKeyWithPublicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable))completion;
 - (void)removeAssociationKeyWithPublicUserId:(NSString * _Nonnull)publicUserId completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
-- (void)listAssociactionKeysWithCompletion:(void (^ _Nonnull)(NSDictionary<NSString *, NSString *> * _Nullable, NSError * _Nullable))completion;
+- (void)listAssociationKeysWithCompletion:(void (^ _Nonnull)(NSDictionary<NSString *, NSString *> * _Nullable, NSError * _Nullable))completion;
 - (void)listUniqueAccountsWithCompletion:(void (^ _Nonnull)(NSDictionary<NSString *, NSString *> * _Nullable, NSError * _Nullable))completion;
 - (void)sendEventWithPublicUserId:(NSString * _Nullable)publicUserId eventType:(NSString * _Nonnull)eventType success:(BOOL)success completion:(void (^ _Nonnull)(FingerprintResponse * _Nullable, NSError * _Nullable))completion;
 @end

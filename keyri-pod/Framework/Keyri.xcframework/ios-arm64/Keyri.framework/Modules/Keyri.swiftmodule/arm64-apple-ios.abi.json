@@ -7711,8 +7711,8 @@
           },
           {
             "kind": "Function",
-            "name": "listAssociactionKeys",
-            "printedName": "listAssociactionKeys(completion:)",
+            "name": "listAssociationKeys",
+            "printedName": "listAssociationKeys(completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -7782,10 +7782,10 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@Keyri@objc(cs)KeyriObjC(im)listAssociactionKeysWithCompletion:",
-            "mangledName": "$s5Keyri0A4ObjCC20listAssociactionKeys10completionyySDyS2SGSg_s5Error_pSgtc_tF",
+            "usr": "c:@M@Keyri@objc(cs)KeyriObjC(im)listAssociationKeysWithCompletion:",
+            "mangledName": "$s5Keyri0A4ObjCC19listAssociationKeys10completionyySDyS2SGSg_s5Error_pSgtc_tF",
             "moduleName": "Keyri",
-            "objc_name": "listAssociactionKeysWithCompletion:",
+            "objc_name": "listAssociationKeysWithCompletion:",
             "declAttributes": [
               "AccessControl",
               "ObjC"
@@ -13617,21 +13617,21 @@
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriObjC.swift",
       "kind": "BooleanLiteral",
-      "offset": 2400,
+      "offset": 2399,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriObjC.swift",
       "kind": "BooleanLiteral",
-      "offset": 2630,
+      "offset": 2629,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriObjC.swift",
       "kind": "BooleanLiteral",
-      "offset": 2706,
+      "offset": 2705,
       "length": 5,
       "value": "false"
     },
