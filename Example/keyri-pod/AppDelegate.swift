@@ -15,13 +15,14 @@ import LocalAuthentication
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+// TODO: Need to refactor this example
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+
         let appKey = "App key here" // Get this value from the Keyri Developer Portal
         let publicApiKey = "Your publicApiKey here" // Optional, Get this value from the Keyri Developer Portal
-        
+
         let keyri = KeyriInterface(appKey: appKey, publicApiKey: publicApiKey)
         //let x = try? keyri.generateAssociationKey(username: "user10")
 
@@ -29,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         keyri.sendEvent(publicUserId: "user10") { res in
             print(res)
         }
-        
+
         return true
     }
 
@@ -54,16 +55,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
+
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         guard userActivity.activityType == NSUserActivityTypeBrowsingWeb,
             let incomingURL = userActivity.webpageURL
         else {
             return false
         }
-        
+
         process(url: incomingURL)
-        
+
         return true
     }
 
@@ -82,7 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // In a real world example you’d wait for user confirmation first
 
                 session.confirm { res in
-                    
+
                 } // or session.deny()
 
             case .failure(let error):
