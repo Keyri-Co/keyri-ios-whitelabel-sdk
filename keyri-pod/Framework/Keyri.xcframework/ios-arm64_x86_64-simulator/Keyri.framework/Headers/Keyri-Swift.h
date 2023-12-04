@@ -310,12 +310,6 @@ SWIFT_CLASS("_TtC5Keyri24ConfirmationScreenUIView")
 
 @class NSString;
 
-SWIFT_CLASS("_TtC5Keyri7FPError")
-@interface FPError : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nonnull message;
-@end
-
-
 SWIFT_CLASS("_TtC5Keyri10FPLocation")
 @interface FPLocation : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull city;
@@ -353,25 +347,29 @@ SWIFT_CLASS("_TtC5Keyri11GeoDataPair")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSURL;
-@class Session;
 @class NSData;
+@class Session;
+@class LoginObject;
+@class RegisterObject;
+@class NSURL;
 
 SWIFT_CLASS("_TtC5Keyri9KeyriObjC")
 @interface KeyriObjC : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (void)initializeKeyriWithAppKey:(NSString * _Nonnull)appKey publicAPIKey:(NSString * _Nullable)publicAPIKey serviceEncryptionKey:(NSString * _Nullable)serviceEncryptionKey;
+- (void)initializeKeyriWithAppKey:(NSString * _Nonnull)appKey publicApiKey:(NSString * _Nullable)publicApiKey serviceEncryptionKey:(NSString * _Nullable)serviceEncryptionKey blockEmulatorDetection:(BOOL)blockEmulatorDetection;
 - (void)easyKeyriAuthWithPayload:(NSString * _Nonnull)payload publicUserId:(NSString * _Nonnull)publicUserId completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
-- (void)processLinkWithUrl:(NSURL * _Nonnull)url payload:(NSString * _Nonnull)payload publicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
-- (void)initiateQrSessionWithSessionId:(NSString * _Nonnull)sessionId publicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(Session * _Nullable, NSError * _Nullable))completion;
-- (void)initializeDefaultConfirmationScreenWithSession:(Session * _Nonnull)session payload:(NSString * _Nonnull)payload completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)generateAssociationKeyWithPublicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable))completion;
 - (void)generateUserSignatureWithPublicUserId:(NSString * _Nullable)publicUserId data:(NSData * _Nonnull)data completion:(void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable))completion;
+- (void)listAssociationKeysWithCompletion:(void (^ _Nonnull)(NSDictionary<NSString *, NSString *> * _Nullable, NSError * _Nullable))completion;
+- (void)listUniqueAccountsWithCompletion:(void (^ _Nonnull)(NSDictionary<NSString *, NSString *> * _Nullable, NSError * _Nullable))completion;
 - (void)getAssociationKeyWithPublicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable))completion;
 - (void)removeAssociationKeyWithPublicUserId:(NSString * _Nonnull)publicUserId completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
-- (void)listAssociactionKeysWithCompletion:(void (^ _Nonnull)(NSDictionary<NSString *, NSString *> * _Nullable, NSError * _Nullable))completion;
-- (void)listUniqueAccountsWithCompletion:(void (^ _Nonnull)(NSDictionary<NSString *, NSString *> * _Nullable, NSError * _Nullable))completion;
 - (void)sendEventWithPublicUserId:(NSString * _Nullable)publicUserId eventType:(NSString * _Nonnull)eventType success:(BOOL)success completion:(void (^ _Nonnull)(FingerprintResponse * _Nullable, NSError * _Nullable))completion;
+- (void)initiateQrSessionWithSessionId:(NSString * _Nonnull)sessionId publicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(Session * _Nullable, NSError * _Nullable))completion;
+- (void)loginWithPublicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(LoginObject * _Nullable, NSError * _Nullable))completion;
+- (void)registerWithPublicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(RegisterObject * _Nullable, NSError * _Nullable))completion;
+- (void)initializeDefaultConfirmationScreenWithSession:(Session * _Nonnull)session payload:(NSString * _Nonnull)payload completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
+- (void)processLinkWithUrl:(NSURL * _Nonnull)url payload:(NSString * _Nonnull)payload publicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 @end
 
 
@@ -382,6 +380,17 @@ SWIFT_CLASS("_TtC5Keyri12LocationData")
 @property (nonatomic, copy) NSString * _Nullable continentCode;
 @property (nonatomic, copy) NSString * _Nullable regionCode;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC5Keyri11LoginObject")
+@interface LoginObject : NSObject
+@property (nonatomic, copy) NSString * _Nonnull timestampNonce;
+@property (nonatomic, copy) NSString * _Nonnull signature;
+@property (nonatomic, copy) NSString * _Nonnull publicKey;
+@property (nonatomic, copy) NSString * _Nonnull userId;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 @class Template;
@@ -395,6 +404,15 @@ SWIFT_CLASS("_TtC5Keyri22MobileTemplateResponse")
 @property (nonatomic, strong) Flags * _Nullable flags;
 @property (nonatomic, copy) NSString * _Nonnull title;
 @property (nonatomic, copy) NSString * _Nullable message;
+@end
+
+
+SWIFT_CLASS("_TtC5Keyri14RegisterObject")
+@interface RegisterObject : NSObject
+@property (nonatomic, copy) NSString * _Nonnull publicKey;
+@property (nonatomic, copy) NSString * _Nonnull userId;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
@@ -766,12 +784,6 @@ SWIFT_CLASS("_TtC5Keyri24ConfirmationScreenUIView")
 
 @class NSString;
 
-SWIFT_CLASS("_TtC5Keyri7FPError")
-@interface FPError : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nonnull message;
-@end
-
-
 SWIFT_CLASS("_TtC5Keyri10FPLocation")
 @interface FPLocation : NSObject
 @property (nonatomic, readonly, copy) NSString * _Nonnull city;
@@ -809,25 +821,29 @@ SWIFT_CLASS("_TtC5Keyri11GeoDataPair")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSURL;
-@class Session;
 @class NSData;
+@class Session;
+@class LoginObject;
+@class RegisterObject;
+@class NSURL;
 
 SWIFT_CLASS("_TtC5Keyri9KeyriObjC")
 @interface KeyriObjC : NSObject
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
-- (void)initializeKeyriWithAppKey:(NSString * _Nonnull)appKey publicAPIKey:(NSString * _Nullable)publicAPIKey serviceEncryptionKey:(NSString * _Nullable)serviceEncryptionKey;
+- (void)initializeKeyriWithAppKey:(NSString * _Nonnull)appKey publicApiKey:(NSString * _Nullable)publicApiKey serviceEncryptionKey:(NSString * _Nullable)serviceEncryptionKey blockEmulatorDetection:(BOOL)blockEmulatorDetection;
 - (void)easyKeyriAuthWithPayload:(NSString * _Nonnull)payload publicUserId:(NSString * _Nonnull)publicUserId completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
-- (void)processLinkWithUrl:(NSURL * _Nonnull)url payload:(NSString * _Nonnull)payload publicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
-- (void)initiateQrSessionWithSessionId:(NSString * _Nonnull)sessionId publicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(Session * _Nullable, NSError * _Nullable))completion;
-- (void)initializeDefaultConfirmationScreenWithSession:(Session * _Nonnull)session payload:(NSString * _Nonnull)payload completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)generateAssociationKeyWithPublicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable))completion;
 - (void)generateUserSignatureWithPublicUserId:(NSString * _Nullable)publicUserId data:(NSData * _Nonnull)data completion:(void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable))completion;
+- (void)listAssociationKeysWithCompletion:(void (^ _Nonnull)(NSDictionary<NSString *, NSString *> * _Nullable, NSError * _Nullable))completion;
+- (void)listUniqueAccountsWithCompletion:(void (^ _Nonnull)(NSDictionary<NSString *, NSString *> * _Nullable, NSError * _Nullable))completion;
 - (void)getAssociationKeyWithPublicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable))completion;
 - (void)removeAssociationKeyWithPublicUserId:(NSString * _Nonnull)publicUserId completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
-- (void)listAssociactionKeysWithCompletion:(void (^ _Nonnull)(NSDictionary<NSString *, NSString *> * _Nullable, NSError * _Nullable))completion;
-- (void)listUniqueAccountsWithCompletion:(void (^ _Nonnull)(NSDictionary<NSString *, NSString *> * _Nullable, NSError * _Nullable))completion;
 - (void)sendEventWithPublicUserId:(NSString * _Nullable)publicUserId eventType:(NSString * _Nonnull)eventType success:(BOOL)success completion:(void (^ _Nonnull)(FingerprintResponse * _Nullable, NSError * _Nullable))completion;
+- (void)initiateQrSessionWithSessionId:(NSString * _Nonnull)sessionId publicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(Session * _Nullable, NSError * _Nullable))completion;
+- (void)loginWithPublicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(LoginObject * _Nullable, NSError * _Nullable))completion;
+- (void)registerWithPublicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(RegisterObject * _Nullable, NSError * _Nullable))completion;
+- (void)initializeDefaultConfirmationScreenWithSession:(Session * _Nonnull)session payload:(NSString * _Nonnull)payload completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
+- (void)processLinkWithUrl:(NSURL * _Nonnull)url payload:(NSString * _Nonnull)payload publicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 @end
 
 
@@ -838,6 +854,17 @@ SWIFT_CLASS("_TtC5Keyri12LocationData")
 @property (nonatomic, copy) NSString * _Nullable continentCode;
 @property (nonatomic, copy) NSString * _Nullable regionCode;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC5Keyri11LoginObject")
+@interface LoginObject : NSObject
+@property (nonatomic, copy) NSString * _Nonnull timestampNonce;
+@property (nonatomic, copy) NSString * _Nonnull signature;
+@property (nonatomic, copy) NSString * _Nonnull publicKey;
+@property (nonatomic, copy) NSString * _Nonnull userId;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 @class Template;
@@ -851,6 +878,15 @@ SWIFT_CLASS("_TtC5Keyri22MobileTemplateResponse")
 @property (nonatomic, strong) Flags * _Nullable flags;
 @property (nonatomic, copy) NSString * _Nonnull title;
 @property (nonatomic, copy) NSString * _Nullable message;
+@end
+
+
+SWIFT_CLASS("_TtC5Keyri14RegisterObject")
+@interface RegisterObject : NSObject
+@property (nonatomic, copy) NSString * _Nonnull publicKey;
+@property (nonatomic, copy) NSString * _Nonnull userId;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
