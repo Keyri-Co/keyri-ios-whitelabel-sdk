@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db2adf85-b517-4a8d-8372-1f11873479ee" name="Changes" comment="" />
+    <list default="true" id="db2adf85-b517-4a8d-8372-1f11873479ee" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +15,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="releases/4.3.3" />
+        <entry key="$PROJECT_DIR$" value="releases/4.3.4" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,7 +51,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "releases/4.3.4",
+    "git-widget-placeholder": "releases/4.4.0",
+    "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/andriikuliahin/IdeaProjects/Keyri iOS/keyri-ios-whitelabel-sdk",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -85,6 +88,7 @@
       <workItem from="1701706390205" duration="5000" />
       <workItem from="1701786320549" duration="286000" />
       <workItem from="1701857183333" duration="342000" />
+      <workItem from="1703605681314" duration="783000" />
     </task>
     <task id="LOCAL-00001" summary="Updated Docs for iOS">
       <option name="closed" value="true" />
@@ -166,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701857270618</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Updated Framework 4.4.0, added Login and Register objects, completely refactored Scanner, updated logging">
+      <option name="closed" value="true" />
+      <created>1703605927071</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1703605927071</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,6 +206,7 @@
     <MESSAGE value="Updated version, added new Framework files" />
     <MESSAGE value="Updated podspec file" />
     <MESSAGE value="Updated Framework 4.3.4, added new TelemetryEvent logs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Framework 4.3.4, added new TelemetryEvent logs" />
+    <MESSAGE value="Updated Framework 4.4.0, added Login and Register objects, completely refactored Scanner, updated logging" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Framework 4.4.0, added Login and Register objects, completely refactored Scanner, updated logging" />
   </component>
 </project>

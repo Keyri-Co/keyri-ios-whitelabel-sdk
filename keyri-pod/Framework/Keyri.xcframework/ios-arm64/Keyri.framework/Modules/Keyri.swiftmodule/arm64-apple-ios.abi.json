@@ -13552,266 +13552,266 @@
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "BooleanLiteral",
-      "offset": 2918,
+      "offset": 2808,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3117,
+      "offset": 3007,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3288,
+      "offset": 3178,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3360,
+      "offset": 3250,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "StringLiteral",
-      "offset": 3643,
+      "offset": 3533,
       "length": 6,
       "value": "\"\n\n\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4102,
+      "offset": 3992,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "FloatLiteral",
-      "offset": 4198,
+      "offset": 4088,
       "length": 3,
       "value": "2.0"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4263,
+      "offset": 4153,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4641,
+      "offset": 4531,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "StringLiteral",
-      "offset": 4692,
+      "offset": 4582,
       "length": 9,
       "value": "\"#595959\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "BooleanLiteral",
-      "offset": 4917,
+      "offset": 4807,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "IntegerLiteral",
-      "offset": 4984,
+      "offset": 4874,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "StringLiteral",
-      "offset": 5023,
+      "offset": 4913,
       "length": 18,
       "value": "\"Powered by Keyri\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "StringLiteral",
-      "offset": 5101,
+      "offset": 4991,
       "length": 9,
       "value": "\"#595959\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "FloatLiteral",
-      "offset": 5435,
+      "offset": 5325,
       "length": 4,
       "value": "20.0"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "IntegerLiteral",
-      "offset": 5481,
+      "offset": 5371,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "StringLiteral",
-      "offset": 5551,
+      "offset": 5441,
       "length": 9,
       "value": "\"#8C8C8C\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "IntegerLiteral",
-      "offset": 5689,
+      "offset": 5579,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "IntegerLiteral",
-      "offset": 5701,
+      "offset": 5591,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "IntegerLiteral",
-      "offset": 5712,
+      "offset": 5602,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "IntegerLiteral",
-      "offset": 5725,
+      "offset": 5615,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "FloatLiteral",
-      "offset": 5849,
+      "offset": 5739,
       "length": 4,
       "value": "20.0"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "FloatLiteral",
-      "offset": 5891,
+      "offset": 5781,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "StringLiteral",
-      "offset": 5943,
+      "offset": 5833,
       "length": 9,
       "value": "\"#D9D9D9\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "BooleanLiteral",
-      "offset": 6032,
+      "offset": 5922,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "IntegerLiteral",
-      "offset": 6189,
+      "offset": 6079,
       "length": 2,
       "value": "40"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "IntegerLiteral",
-      "offset": 6350,
+      "offset": 6171,
       "length": 3,
       "value": "-16"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "IntegerLiteral",
-      "offset": 6453,
+      "offset": 6274,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "BooleanLiteral",
-      "offset": 6682,
+      "offset": 6503,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "IntegerLiteral",
-      "offset": 6783,
+      "offset": 6604,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "IntegerLiteral",
-      "offset": 6789,
+      "offset": 6610,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "FloatLiteral",
-      "offset": 6845,
+      "offset": 6666,
       "length": 4,
       "value": "0.28"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "StringLiteral",
-      "offset": 6902,
+      "offset": 6723,
       "length": 11,
       "value": "\"#00FFFFFF\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "Array",
-      "offset": 6982,
+      "offset": 6803,
       "length": 10,
       "value": "[0.0, 1.0]"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "FloatLiteral",
-      "offset": 7493,
+      "offset": 7314,
       "length": 4,
       "value": "0.28"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "IntegerLiteral",
-      "offset": 7793,
+      "offset": 7614,
       "length": 3,
       "value": "-12"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "IntegerLiteral",
-      "offset": 8001,
+      "offset": 7822,
       "length": 3,
       "value": "-36"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/QRScannerController.swift",
       "kind": "BooleanLiteral",
-      "offset": 8967,
+      "offset": 8788,
       "length": 4,
       "value": "true"
     },
