@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name             = 'keyri-pod'
-  spec.version          = '4.4.0'
+  spec.version          = '4.4.1'
   spec.license          = { :type => 'MIT', :file => 'LICENSE' }
   spec.homepage         = 'https://github.com/Keyri-Co/keyri-ios-whitelabel-sdk'
   spec.authors          = { 'AndrewKuliahin96' => 'kulagin.andrew38@gmail.com' }
