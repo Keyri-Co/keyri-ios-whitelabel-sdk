@@ -1155,9 +1155,9 @@
               },
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "name": "EventType",
+                "printedName": "Keyri.EventType",
+                "usr": "c:@M@Keyri@objc(cs)EventType"
               },
               {
                 "kind": "TypeNominal",
@@ -1215,9 +1215,78 @@
             ],
             "declKind": "Func",
             "usr": "c:@M@Keyri@objc(cs)KeyriObjC(im)sendEventWithPublicUserId:eventType:success:completion:",
-            "mangledName": "$s5Keyri0A4ObjCC9sendEvent12publicUserId9eventType7success10completionySSSg_SSSbyAA19FingerprintResponseCSg_s5Error_pSgtctF",
+            "mangledName": "$s5Keyri0A4ObjCC9sendEvent12publicUserId9eventType7success10completionySSSg_AA0dI0CSbyAA19FingerprintResponseCSg_s5Error_pSgtctF",
             "moduleName": "Keyri",
             "objc_name": "sendEventWithPublicUserId:eventType:success:completion:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "createFingerprint",
+            "printedName": "createFingerprint(completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Keyri.FingerprintRequest?, Swift.Error?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(Keyri.FingerprintRequest?, Swift.Error?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Keyri.FingerprintRequest?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "FingerprintRequest",
+                            "printedName": "Keyri.FingerprintRequest",
+                            "usr": "c:@M@Keyri@objc(cs)FingerprintRequest"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.Error?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "Swift.Error",
+                            "usr": "s:s5ErrorP"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Keyri@objc(cs)KeyriObjC(im)createFingerprintWithCompletion:",
+            "mangledName": "$s5Keyri0A4ObjCC17createFingerprint10completionyyAA0D7RequestCSg_s5Error_pSgtc_tF",
+            "moduleName": "Keyri",
+            "objc_name": "createFingerprintWithCompletion:",
             "declAttributes": [
               "AccessControl",
               "ObjC"
@@ -4082,7 +4151,7 @@
                 "name": "EventType",
                 "printedName": "Keyri.EventType",
                 "hasDefaultArg": true,
-                "usr": "s:5Keyri9EventTypeO"
+                "usr": "c:@M@Keyri@objc(cs)EventType"
               },
               {
                 "kind": "TypeNominal",
@@ -4125,8 +4194,60 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:5Keyri0A9InterfaceC9sendEvent12publicUserId9eventType7success10completionySS_AA0dI0OSbys6ResultOyAA19FingerprintResponseCs5Error_pGctF",
-            "mangledName": "$s5Keyri0A9InterfaceC9sendEvent12publicUserId9eventType7success10completionySS_AA0dI0OSbys6ResultOyAA19FingerprintResponseCs5Error_pGctF",
+            "usr": "s:5Keyri0A9InterfaceC9sendEvent12publicUserId9eventType7success10completionySS_AA0dI0CSbys6ResultOyAA19FingerprintResponseCs5Error_pGctF",
+            "mangledName": "$s5Keyri0A9InterfaceC9sendEvent12publicUserId9eventType7success10completionySS_AA0dI0CSbys6ResultOyAA19FingerprintResponseCs5Error_pGctF",
+            "moduleName": "Keyri",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "createFingerprint",
+            "printedName": "createFingerprint(completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<Keyri.FingerprintRequest, Swift.Error>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<Keyri.FingerprintRequest, Swift.Error>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "FingerprintRequest",
+                        "printedName": "Keyri.FingerprintRequest",
+                        "usr": "c:@M@Keyri@objc(cs)FingerprintRequest"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Error",
+                        "printedName": "Swift.Error",
+                        "usr": "s:s5ErrorP"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5Keyri0A9InterfaceC17createFingerprint10completionyys6ResultOyAA0D7RequestCs5Error_pGc_tF",
+            "mangledName": "$s5Keyri0A9InterfaceC17createFingerprint10completionyys6ResultOyAA0D7RequestCs5Error_pGc_tF",
             "moduleName": "Keyri",
             "declAttributes": [
               "AccessControl"
@@ -4486,30 +4607,6 @@
         "declAttributes": [
           "AccessControl"
         ]
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "Keyri",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "AVFoundation",
-        "printedName": "AVFoundation",
-        "declKind": "Import",
-        "moduleName": "Keyri"
-      },
-      {
-        "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "Keyri"
       },
       {
         "kind": "Import",
@@ -6959,6 +7056,30 @@
       },
       {
         "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Keyri",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "AVFoundation",
+        "printedName": "AVFoundation",
+        "declKind": "Import",
+        "moduleName": "Keyri"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "Keyri"
+      },
+      {
+        "kind": "Import",
         "name": "SwiftUI",
         "printedName": "SwiftUI",
         "declKind": "Import",
@@ -9010,8 +9131,8 @@
       },
       {
         "kind": "Import",
-        "name": "ObjectiveC",
-        "printedName": "ObjectiveC",
+        "name": "Foundation",
+        "printedName": "Foundation",
         "declKind": "Import",
         "moduleName": "Keyri",
         "declAttributes": [
@@ -9027,38 +9148,18 @@
       },
       {
         "kind": "TypeDecl",
-        "name": "FPLocation",
-        "printedName": "FPLocation",
+        "name": "FingerprintRequest",
+        "printedName": "FingerprintRequest",
         "children": [
           {
             "kind": "Var",
-            "name": "city",
-            "printedName": "city",
+            "name": "clientEncryptionKey",
+            "printedName": "clientEncryptionKey",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@Keyri@objc(cs)FPLocation(py)city",
-            "mangledName": "$s5Keyri10FPLocationC4citySSvp",
-            "moduleName": "Keyri",
-            "declAttributes": [
-              "Final",
-              "HasStorage",
-              "AccessControl",
-              "ObjC"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
+                "name": "Optional",
+                "printedName": "Swift.String?",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -9067,34 +9168,12 @@
                     "usr": "s:SS"
                   }
                 ],
-                "declKind": "Accessor",
-                "usr": "c:@M@Keyri@objc(cs)FPLocation(im)city",
-                "mangledName": "$s5Keyri10FPLocationC4citySSvg",
-                "moduleName": "Keyri",
-                "implicit": true,
-                "declAttributes": [
-                  "Final",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "continentCode",
-            "printedName": "continentCode",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "c:@M@Keyri@objc(cs)FPLocation(py)continentCode",
-            "mangledName": "$s5Keyri10FPLocationC13continentCodeSSvp",
+            "usr": "c:@M@Keyri@objc(cs)FingerprintRequest(py)clientEncryptionKey",
+            "mangledName": "$s5Keyri18FingerprintRequestC19clientEncryptionKeySSSgvp",
             "moduleName": "Keyri",
             "declAttributes": [
               "Final",
@@ -9109,6 +9188,44 @@
                 "kind": "Accessor",
                 "name": "Get",
                 "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Keyri@objc(cs)FingerprintRequest(im)clientEncryptionKey",
+                "mangledName": "$s5Keyri18FingerprintRequestC19clientEncryptionKeySSSgvg",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "encryptedPayload",
+            "printedName": "encryptedPayload",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -9117,34 +9234,12 @@
                     "usr": "s:SS"
                   }
                 ],
-                "declKind": "Accessor",
-                "usr": "c:@M@Keyri@objc(cs)FPLocation(im)continentCode",
-                "mangledName": "$s5Keyri10FPLocationC13continentCodeSSvg",
-                "moduleName": "Keyri",
-                "implicit": true,
-                "declAttributes": [
-                  "Final",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "continentName",
-            "printedName": "continentName",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "c:@M@Keyri@objc(cs)FPLocation(py)continentName",
-            "mangledName": "$s5Keyri10FPLocationC13continentNameSSvp",
+            "usr": "c:@M@Keyri@objc(cs)FingerprintRequest(py)encryptedPayload",
+            "mangledName": "$s5Keyri18FingerprintRequestC16encryptedPayloadSSSgvp",
             "moduleName": "Keyri",
             "declAttributes": [
               "Final",
@@ -9159,6 +9254,44 @@
                 "kind": "Accessor",
                 "name": "Get",
                 "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Keyri@objc(cs)FingerprintRequest(im)encryptedPayload",
+                "mangledName": "$s5Keyri18FingerprintRequestC16encryptedPayloadSSSgvg",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "salt",
+            "printedName": "salt",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -9167,34 +9300,12 @@
                     "usr": "s:SS"
                   }
                 ],
-                "declKind": "Accessor",
-                "usr": "c:@M@Keyri@objc(cs)FPLocation(im)continentName",
-                "mangledName": "$s5Keyri10FPLocationC13continentNameSSvg",
-                "moduleName": "Keyri",
-                "implicit": true,
-                "declAttributes": [
-                  "Final",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "country",
-            "printedName": "country",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "c:@M@Keyri@objc(cs)FPLocation(py)country",
-            "mangledName": "$s5Keyri10FPLocationC7countrySSvp",
+            "usr": "c:@M@Keyri@objc(cs)FingerprintRequest(py)salt",
+            "mangledName": "$s5Keyri18FingerprintRequestC4saltSSSgvp",
             "moduleName": "Keyri",
             "declAttributes": [
               "Final",
@@ -9209,6 +9320,44 @@
                 "kind": "Accessor",
                 "name": "Get",
                 "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Keyri@objc(cs)FingerprintRequest(im)salt",
+                "mangledName": "$s5Keyri18FingerprintRequestC4saltSSSgvg",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "iv",
+            "printedName": "iv",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -9217,34 +9366,12 @@
                     "usr": "s:SS"
                   }
                 ],
-                "declKind": "Accessor",
-                "usr": "c:@M@Keyri@objc(cs)FPLocation(im)country",
-                "mangledName": "$s5Keyri10FPLocationC7countrySSvg",
-                "moduleName": "Keyri",
-                "implicit": true,
-                "declAttributes": [
-                  "Final",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "countryCode",
-            "printedName": "countryCode",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Var",
-            "usr": "c:@M@Keyri@objc(cs)FPLocation(py)countryCode",
-            "mangledName": "$s5Keyri10FPLocationC11countryCodeSSvp",
+            "usr": "c:@M@Keyri@objc(cs)FingerprintRequest(py)iv",
+            "mangledName": "$s5Keyri18FingerprintRequestC2ivSSSgvp",
             "moduleName": "Keyri",
             "declAttributes": [
               "Final",
@@ -9262,264 +9389,22 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "c:@M@Keyri@objc(cs)FPLocation(im)countryCode",
-                "mangledName": "$s5Keyri10FPLocationC11countryCodeSSvg",
-                "moduleName": "Keyri",
-                "implicit": true,
-                "declAttributes": [
-                  "Final",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "latitude",
-            "printedName": "latitude",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Double",
-                "printedName": "Swift.Double",
-                "usr": "s:Sd"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@Keyri@objc(cs)FPLocation(py)latitude",
-            "mangledName": "$s5Keyri10FPLocationC8latitudeSdvp",
-            "moduleName": "Keyri",
-            "declAttributes": [
-              "Final",
-              "HasStorage",
-              "AccessControl",
-              "ObjC"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Double",
-                    "printedName": "Swift.Double",
-                    "usr": "s:Sd"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@Keyri@objc(cs)FPLocation(im)latitude",
-                "mangledName": "$s5Keyri10FPLocationC8latitudeSdvg",
-                "moduleName": "Keyri",
-                "implicit": true,
-                "declAttributes": [
-                  "Final",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "longitude",
-            "printedName": "longitude",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Double",
-                "printedName": "Swift.Double",
-                "usr": "s:Sd"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@Keyri@objc(cs)FPLocation(py)longitude",
-            "mangledName": "$s5Keyri10FPLocationC9longitudeSdvp",
-            "moduleName": "Keyri",
-            "declAttributes": [
-              "Final",
-              "HasStorage",
-              "AccessControl",
-              "ObjC"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Double",
-                    "printedName": "Swift.Double",
-                    "usr": "s:Sd"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@Keyri@objc(cs)FPLocation(im)longitude",
-                "mangledName": "$s5Keyri10FPLocationC9longitudeSdvg",
-                "moduleName": "Keyri",
-                "implicit": true,
-                "declAttributes": [
-                  "Final",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "region",
-            "printedName": "region",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@Keyri@objc(cs)FPLocation(py)region",
-            "mangledName": "$s5Keyri10FPLocationC6regionSSvp",
-            "moduleName": "Keyri",
-            "declAttributes": [
-              "Final",
-              "HasStorage",
-              "AccessControl",
-              "ObjC"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@Keyri@objc(cs)FPLocation(im)region",
-                "mangledName": "$s5Keyri10FPLocationC6regionSSvg",
-                "moduleName": "Keyri",
-                "implicit": true,
-                "declAttributes": [
-                  "Final",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "regionCode",
-            "printedName": "regionCode",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@Keyri@objc(cs)FPLocation(py)regionCode",
-            "mangledName": "$s5Keyri10FPLocationC10regionCodeSSvp",
-            "moduleName": "Keyri",
-            "declAttributes": [
-              "Final",
-              "HasStorage",
-              "AccessControl",
-              "ObjC"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@Keyri@objc(cs)FPLocation(im)regionCode",
-                "mangledName": "$s5Keyri10FPLocationC10regionCodeSSvg",
-                "moduleName": "Keyri",
-                "implicit": true,
-                "declAttributes": [
-                  "Final",
-                  "ObjC"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "regionType",
-            "printedName": "regionType",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "c:@M@Keyri@objc(cs)FPLocation(py)regionType",
-            "mangledName": "$s5Keyri10FPLocationC10regionTypeSSvp",
-            "moduleName": "Keyri",
-            "declAttributes": [
-              "Final",
-              "HasStorage",
-              "AccessControl",
-              "ObjC"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "c:@M@Keyri@objc(cs)FPLocation(im)regionType",
-                "mangledName": "$s5Keyri10FPLocationC10regionTypeSSvg",
+                "usr": "c:@M@Keyri@objc(cs)FingerprintRequest(im)iv",
+                "mangledName": "$s5Keyri18FingerprintRequestC2ivSSSgvg",
                 "moduleName": "Keyri",
                 "implicit": true,
                 "declAttributes": [
@@ -9533,13 +9418,39 @@
           {
             "kind": "Constructor",
             "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FingerprintRequest",
+                "printedName": "Keyri.FingerprintRequest",
+                "usr": "c:@M@Keyri@objc(cs)FingerprintRequest"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@Keyri@objc(cs)FingerprintRequest(im)init",
+            "mangledName": "$s5Keyri18FingerprintRequestCACycfc",
+            "moduleName": "Keyri",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
             "printedName": "init(from:)",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "FPLocation",
-                "printedName": "Keyri.FPLocation",
-                "usr": "c:@M@Keyri@objc(cs)FPLocation"
+                "name": "FingerprintRequest",
+                "printedName": "Keyri.FingerprintRequest",
+                "usr": "c:@M@Keyri@objc(cs)FingerprintRequest"
               },
               {
                 "kind": "TypeNominal",
@@ -9549,8 +9460,8 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:5Keyri10FPLocationC4fromACs7Decoder_p_tKcfc",
-            "mangledName": "$s5Keyri10FPLocationC4fromACs7Decoder_p_tKcfc",
+            "usr": "s:5Keyri18FingerprintRequestC4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s5Keyri18FingerprintRequestC4fromACs7Decoder_p_tKcfc",
             "moduleName": "Keyri",
             "implicit": true,
             "declAttributes": [
@@ -9558,17 +9469,43 @@
             ],
             "throwing": true,
             "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5Keyri18FingerprintRequestC6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s5Keyri18FingerprintRequestC6encode2toys7Encoder_p_tKF",
+            "moduleName": "Keyri",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
-        "usr": "c:@M@Keyri@objc(cs)FPLocation",
-        "mangledName": "$s5Keyri10FPLocationC",
+        "usr": "c:@M@Keyri@objc(cs)FingerprintRequest",
+        "mangledName": "$s5Keyri18FingerprintRequestC",
         "moduleName": "Keyri",
         "declAttributes": [
           "AccessControl",
           "ObjC"
         ],
         "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
         "superclassNames": [
           "ObjectiveC.NSObject"
         ],
@@ -9579,6 +9516,13 @@
             "printedName": "Decodable",
             "usr": "s:Se",
             "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
           },
           {
             "kind": "Conformance",
@@ -9632,398 +9576,260 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Keyri",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "EventType",
         "printedName": "EventType",
         "children": [
           {
-            "kind": "Var",
+            "kind": "Function",
             "name": "visits",
-            "printedName": "visits",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(Keyri.EventType.Type) -> Keyri.EventType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "EventType",
-                    "printedName": "Keyri.EventType",
-                    "usr": "s:5Keyri9EventTypeO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "Keyri.EventType.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "EventType",
-                        "printedName": "Keyri.EventType",
-                        "usr": "s:5Keyri9EventTypeO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:5Keyri9EventTypeO6visitsyA2CmF",
-            "mangledName": "$s5Keyri9EventTypeO6visitsyA2CmF",
-            "moduleName": "Keyri"
-          },
-          {
-            "kind": "Var",
-            "name": "login",
-            "printedName": "login",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(Keyri.EventType.Type) -> Keyri.EventType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "EventType",
-                    "printedName": "Keyri.EventType",
-                    "usr": "s:5Keyri9EventTypeO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "Keyri.EventType.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "EventType",
-                        "printedName": "Keyri.EventType",
-                        "usr": "s:5Keyri9EventTypeO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:5Keyri9EventTypeO5loginyA2CmF",
-            "mangledName": "$s5Keyri9EventTypeO5loginyA2CmF",
-            "moduleName": "Keyri"
-          },
-          {
-            "kind": "Var",
-            "name": "signup",
-            "printedName": "signup",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(Keyri.EventType.Type) -> Keyri.EventType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "EventType",
-                    "printedName": "Keyri.EventType",
-                    "usr": "s:5Keyri9EventTypeO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "Keyri.EventType.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "EventType",
-                        "printedName": "Keyri.EventType",
-                        "usr": "s:5Keyri9EventTypeO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:5Keyri9EventTypeO6signupyA2CmF",
-            "mangledName": "$s5Keyri9EventTypeO6signupyA2CmF",
-            "moduleName": "Keyri"
-          },
-          {
-            "kind": "Var",
-            "name": "attach_new_device",
-            "printedName": "attach_new_device",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(Keyri.EventType.Type) -> Keyri.EventType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "EventType",
-                    "printedName": "Keyri.EventType",
-                    "usr": "s:5Keyri9EventTypeO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "Keyri.EventType.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "EventType",
-                        "printedName": "Keyri.EventType",
-                        "usr": "s:5Keyri9EventTypeO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:5Keyri9EventTypeO17attach_new_deviceyA2CmF",
-            "mangledName": "$s5Keyri9EventTypeO17attach_new_deviceyA2CmF",
-            "moduleName": "Keyri"
-          },
-          {
-            "kind": "Var",
-            "name": "email_change",
-            "printedName": "email_change",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(Keyri.EventType.Type) -> Keyri.EventType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "EventType",
-                    "printedName": "Keyri.EventType",
-                    "usr": "s:5Keyri9EventTypeO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "Keyri.EventType.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "EventType",
-                        "printedName": "Keyri.EventType",
-                        "usr": "s:5Keyri9EventTypeO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:5Keyri9EventTypeO12email_changeyA2CmF",
-            "mangledName": "$s5Keyri9EventTypeO12email_changeyA2CmF",
-            "moduleName": "Keyri"
-          },
-          {
-            "kind": "Var",
-            "name": "profile_update",
-            "printedName": "profile_update",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(Keyri.EventType.Type) -> Keyri.EventType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "EventType",
-                    "printedName": "Keyri.EventType",
-                    "usr": "s:5Keyri9EventTypeO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "Keyri.EventType.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "EventType",
-                        "printedName": "Keyri.EventType",
-                        "usr": "s:5Keyri9EventTypeO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:5Keyri9EventTypeO14profile_updateyA2CmF",
-            "mangledName": "$s5Keyri9EventTypeO14profile_updateyA2CmF",
-            "moduleName": "Keyri"
-          },
-          {
-            "kind": "Var",
-            "name": "password_reset",
-            "printedName": "password_reset",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(Keyri.EventType.Type) -> Keyri.EventType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "EventType",
-                    "printedName": "Keyri.EventType",
-                    "usr": "s:5Keyri9EventTypeO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "Keyri.EventType.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "EventType",
-                        "printedName": "Keyri.EventType",
-                        "usr": "s:5Keyri9EventTypeO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:5Keyri9EventTypeO14password_resetyA2CmF",
-            "mangledName": "$s5Keyri9EventTypeO14password_resetyA2CmF",
-            "moduleName": "Keyri"
-          },
-          {
-            "kind": "Var",
-            "name": "withdrawal",
-            "printedName": "withdrawal",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(Keyri.EventType.Type) -> Keyri.EventType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "EventType",
-                    "printedName": "Keyri.EventType",
-                    "usr": "s:5Keyri9EventTypeO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "Keyri.EventType.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "EventType",
-                        "printedName": "Keyri.EventType",
-                        "usr": "s:5Keyri9EventTypeO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:5Keyri9EventTypeO10withdrawalyA2CmF",
-            "mangledName": "$s5Keyri9EventTypeO10withdrawalyA2CmF",
-            "moduleName": "Keyri"
-          },
-          {
-            "kind": "Var",
-            "name": "deposit",
-            "printedName": "deposit",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(Keyri.EventType.Type) -> Keyri.EventType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "EventType",
-                    "printedName": "Keyri.EventType",
-                    "usr": "s:5Keyri9EventTypeO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "Keyri.EventType.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "EventType",
-                        "printedName": "Keyri.EventType",
-                        "usr": "s:5Keyri9EventTypeO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:5Keyri9EventTypeO7deposityA2CmF",
-            "mangledName": "$s5Keyri9EventTypeO7deposityA2CmF",
-            "moduleName": "Keyri"
-          },
-          {
-            "kind": "Var",
-            "name": "purchase",
-            "printedName": "purchase",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(Keyri.EventType.Type) -> Keyri.EventType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "EventType",
-                    "printedName": "Keyri.EventType",
-                    "usr": "s:5Keyri9EventTypeO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "Keyri.EventType.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "EventType",
-                        "printedName": "Keyri.EventType",
-                        "usr": "s:5Keyri9EventTypeO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:5Keyri9EventTypeO8purchaseyA2CmF",
-            "mangledName": "$s5Keyri9EventTypeO8purchaseyA2CmF",
-            "moduleName": "Keyri"
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init(rawValue:)",
+            "printedName": "visits()",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Keyri.EventType?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "EventType",
-                    "printedName": "Keyri.EventType",
-                    "usr": "s:5Keyri9EventTypeO"
-                  }
-                ],
-                "usr": "s:Sq"
+                "name": "VisitsEvent",
+                "printedName": "Keyri.VisitsEvent",
+                "usr": "c:@M@Keyri@objc(cs)VisitsEvent"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5Keyri9EventTypeC6visitsAA06VisitsB0CyFZ",
+            "mangledName": "$s5Keyri9EventTypeC6visitsAA06VisitsB0CyFZ",
+            "moduleName": "Keyri",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "login",
+            "printedName": "login()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "LoginEvent",
+                "printedName": "Keyri.LoginEvent",
+                "usr": "c:@M@Keyri@objc(cs)LoginEvent"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5Keyri9EventTypeC5loginAA05LoginB0CyFZ",
+            "mangledName": "$s5Keyri9EventTypeC5loginAA05LoginB0CyFZ",
+            "moduleName": "Keyri",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "signup",
+            "printedName": "signup()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SignupEvent",
+                "printedName": "Keyri.SignupEvent",
+                "usr": "c:@M@Keyri@objc(cs)SignupEvent"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5Keyri9EventTypeC6signupAA06SignupB0CyFZ",
+            "mangledName": "$s5Keyri9EventTypeC6signupAA06SignupB0CyFZ",
+            "moduleName": "Keyri",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "attachNewDevice",
+            "printedName": "attachNewDevice()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "AttachNewDevice",
+                "printedName": "Keyri.AttachNewDevice",
+                "usr": "c:@M@Keyri@objc(cs)AttachNewDevice"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5Keyri9EventTypeC15attachNewDeviceAA06AttacheF0CyFZ",
+            "mangledName": "$s5Keyri9EventTypeC15attachNewDeviceAA06AttacheF0CyFZ",
+            "moduleName": "Keyri",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "emailChange",
+            "printedName": "emailChange()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "EmailChangeEvent",
+                "printedName": "Keyri.EmailChangeEvent",
+                "usr": "c:@M@Keyri@objc(cs)EmailChangeEvent"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5Keyri9EventTypeC11emailChangeAA05EmaileB0CyFZ",
+            "mangledName": "$s5Keyri9EventTypeC11emailChangeAA05EmaileB0CyFZ",
+            "moduleName": "Keyri",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "profileUpdate",
+            "printedName": "profileUpdate()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ProfileUpdateEvent",
+                "printedName": "Keyri.ProfileUpdateEvent",
+                "usr": "c:@M@Keyri@objc(cs)ProfileUpdateEvent"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5Keyri9EventTypeC13profileUpdateAA07ProfileeB0CyFZ",
+            "mangledName": "$s5Keyri9EventTypeC13profileUpdateAA07ProfileeB0CyFZ",
+            "moduleName": "Keyri",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "passwordReset",
+            "printedName": "passwordReset()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PasswordResetEvent",
+                "printedName": "Keyri.PasswordResetEvent",
+                "usr": "c:@M@Keyri@objc(cs)PasswordResetEvent"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5Keyri9EventTypeC13passwordResetAA08PasswordeB0CyFZ",
+            "mangledName": "$s5Keyri9EventTypeC13passwordResetAA08PasswordeB0CyFZ",
+            "moduleName": "Keyri",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "withdrawal",
+            "printedName": "withdrawal()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WithdrawalEvent",
+                "printedName": "Keyri.WithdrawalEvent",
+                "usr": "c:@M@Keyri@objc(cs)WithdrawalEvent"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5Keyri9EventTypeC10withdrawalAA010WithdrawalB0CyFZ",
+            "mangledName": "$s5Keyri9EventTypeC10withdrawalAA010WithdrawalB0CyFZ",
+            "moduleName": "Keyri",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "deposit",
+            "printedName": "deposit()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "DepositEvent",
+                "printedName": "Keyri.DepositEvent",
+                "usr": "c:@M@Keyri@objc(cs)DepositEvent"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5Keyri9EventTypeC7depositAA07DepositB0CyFZ",
+            "mangledName": "$s5Keyri9EventTypeC7depositAA07DepositB0CyFZ",
+            "moduleName": "Keyri",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "purchase",
+            "printedName": "purchase()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PurchaseEvent",
+                "printedName": "Keyri.PurchaseEvent",
+                "usr": "c:@M@Keyri@objc(cs)PurchaseEvent"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5Keyri9EventTypeC8purchaseAA08PurchaseB0CyFZ",
+            "mangledName": "$s5Keyri9EventTypeC8purchaseAA08PurchaseB0CyFZ",
+            "moduleName": "Keyri",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "custom",
+            "printedName": "custom(name:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CustomEvent",
+                "printedName": "Keyri.CustomEvent",
+                "usr": "c:@M@Keyri@objc(cs)CustomEvent"
               },
               {
                 "kind": "TypeNominal",
@@ -10032,62 +9838,89 @@
                 "usr": "s:SS"
               }
             ],
-            "declKind": "Constructor",
-            "usr": "s:5Keyri9EventTypeO8rawValueACSgSS_tcfc",
-            "mangledName": "$s5Keyri9EventTypeO8rawValueACSgSS_tcfc",
+            "declKind": "Func",
+            "usr": "s:5Keyri9EventTypeC6custom4nameAA06CustomB0CSS_tFZ",
+            "mangledName": "$s5Keyri9EventTypeC6custom4nameAA06CustomB0CSS_tFZ",
             "moduleName": "Keyri",
-            "implicit": true,
-            "init_kind": "Designated"
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
           },
           {
-            "kind": "Var",
-            "name": "rawValue",
-            "printedName": "rawValue",
+            "kind": "Function",
+            "name": "getByName",
+            "printedName": "getByName(eventName:metadata:)",
             "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "EventType",
+                "printedName": "Keyri.EventType",
+                "usr": "c:@M@Keyri@objc(cs)EventType"
+              },
               {
                 "kind": "TypeNominal",
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:5Keyri9EventTypeO8rawValueSSvp",
-            "mangledName": "$s5Keyri9EventTypeO8rawValueSSvp",
-            "moduleName": "Keyri",
-            "implicit": true,
-            "accessors": [
+              },
               {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
                   }
                 ],
-                "declKind": "Accessor",
-                "usr": "s:5Keyri9EventTypeO8rawValueSSvg",
-                "mangledName": "$s5Keyri9EventTypeO8rawValueSSvg",
-                "moduleName": "Keyri",
-                "implicit": true,
-                "accessorKind": "get"
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
-            ]
+            ],
+            "declKind": "Func",
+            "usr": "s:5Keyri9EventTypeC9getByName05eventF08metadataACSS_SDySSypGSgtFZ",
+            "mangledName": "$s5Keyri9EventTypeC9getByName05eventF08metadataACSS_SDySSypGSgtFZ",
+            "moduleName": "Keyri",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
-        "declKind": "Enum",
-        "usr": "s:5Keyri9EventTypeO",
-        "mangledName": "$s5Keyri9EventTypeO",
+        "declKind": "Class",
+        "usr": "c:@M@Keyri@objc(cs)EventType",
+        "mangledName": "$s5Keyri9EventTypeC",
         "moduleName": "Keyri",
         "declAttributes": [
           "AccessControl",
-          "RawDocComment"
+          "ObjC"
         ],
-        "enumRawTypeName": "String",
+        "superclassUsr": "c:objc(cs)NSObject",
+        "hasMissingDesignatedInitializers": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
         "conformances": [
           {
             "kind": "Conformance",
@@ -10105,25 +9938,818 @@
           },
           {
             "kind": "Conformance",
-            "name": "RawRepresentable",
-            "printedName": "RawRepresentable",
-            "children": [
-              {
-                "kind": "TypeWitness",
-                "name": "RawValue",
-                "printedName": "RawValue",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ]
-              }
-            ],
-            "usr": "s:SY",
-            "mangledName": "$sSY"
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "VisitsEvent",
+        "printedName": "VisitsEvent",
+        "declKind": "Class",
+        "usr": "c:@M@Keyri@objc(cs)VisitsEvent",
+        "mangledName": "$s5Keyri11VisitsEventC",
+        "moduleName": "Keyri",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:@M@Keyri@objc(cs)EventType",
+        "hasMissingDesignatedInitializers": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "Keyri.EventType",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LoginEvent",
+        "printedName": "LoginEvent",
+        "declKind": "Class",
+        "usr": "c:@M@Keyri@objc(cs)LoginEvent",
+        "mangledName": "$s5Keyri10LoginEventC",
+        "moduleName": "Keyri",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:@M@Keyri@objc(cs)EventType",
+        "hasMissingDesignatedInitializers": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "Keyri.EventType",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SignupEvent",
+        "printedName": "SignupEvent",
+        "declKind": "Class",
+        "usr": "c:@M@Keyri@objc(cs)SignupEvent",
+        "mangledName": "$s5Keyri11SignupEventC",
+        "moduleName": "Keyri",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:@M@Keyri@objc(cs)EventType",
+        "hasMissingDesignatedInitializers": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "Keyri.EventType",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "AttachNewDevice",
+        "printedName": "AttachNewDevice",
+        "declKind": "Class",
+        "usr": "c:@M@Keyri@objc(cs)AttachNewDevice",
+        "mangledName": "$s5Keyri15AttachNewDeviceC",
+        "moduleName": "Keyri",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:@M@Keyri@objc(cs)EventType",
+        "hasMissingDesignatedInitializers": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "Keyri.EventType",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "EmailChangeEvent",
+        "printedName": "EmailChangeEvent",
+        "declKind": "Class",
+        "usr": "c:@M@Keyri@objc(cs)EmailChangeEvent",
+        "mangledName": "$s5Keyri16EmailChangeEventC",
+        "moduleName": "Keyri",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:@M@Keyri@objc(cs)EventType",
+        "hasMissingDesignatedInitializers": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "Keyri.EventType",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ProfileUpdateEvent",
+        "printedName": "ProfileUpdateEvent",
+        "declKind": "Class",
+        "usr": "c:@M@Keyri@objc(cs)ProfileUpdateEvent",
+        "mangledName": "$s5Keyri18ProfileUpdateEventC",
+        "moduleName": "Keyri",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:@M@Keyri@objc(cs)EventType",
+        "hasMissingDesignatedInitializers": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "Keyri.EventType",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PasswordResetEvent",
+        "printedName": "PasswordResetEvent",
+        "declKind": "Class",
+        "usr": "c:@M@Keyri@objc(cs)PasswordResetEvent",
+        "mangledName": "$s5Keyri18PasswordResetEventC",
+        "moduleName": "Keyri",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:@M@Keyri@objc(cs)EventType",
+        "hasMissingDesignatedInitializers": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "Keyri.EventType",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "WithdrawalEvent",
+        "printedName": "WithdrawalEvent",
+        "declKind": "Class",
+        "usr": "c:@M@Keyri@objc(cs)WithdrawalEvent",
+        "mangledName": "$s5Keyri15WithdrawalEventC",
+        "moduleName": "Keyri",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:@M@Keyri@objc(cs)EventType",
+        "hasMissingDesignatedInitializers": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "Keyri.EventType",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "DepositEvent",
+        "printedName": "DepositEvent",
+        "declKind": "Class",
+        "usr": "c:@M@Keyri@objc(cs)DepositEvent",
+        "mangledName": "$s5Keyri12DepositEventC",
+        "moduleName": "Keyri",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:@M@Keyri@objc(cs)EventType",
+        "hasMissingDesignatedInitializers": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "Keyri.EventType",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "PurchaseEvent",
+        "printedName": "PurchaseEvent",
+        "declKind": "Class",
+        "usr": "c:@M@Keyri@objc(cs)PurchaseEvent",
+        "mangledName": "$s5Keyri13PurchaseEventC",
+        "moduleName": "Keyri",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:@M@Keyri@objc(cs)EventType",
+        "hasMissingDesignatedInitializers": true,
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "Keyri.EventType",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CustomEvent",
+        "printedName": "CustomEvent",
+        "declKind": "Class",
+        "usr": "c:@M@Keyri@objc(cs)CustomEvent",
+        "mangledName": "$s5Keyri11CustomEventC",
+        "moduleName": "Keyri",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:@M@Keyri@objc(cs)EventType",
+        "hasMissingDesignatedInitializers": true,
+        "superclassNames": [
+          "Keyri.EventType",
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
           }
         ]
       },
@@ -11181,16 +11807,6 @@
       },
       {
         "kind": "Import",
-        "name": "UIKit",
-        "printedName": "UIKit",
-        "declKind": "Import",
-        "moduleName": "Keyri",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
         "declKind": "Import",
@@ -11816,47 +12432,6 @@
         "printedName": "UIKit",
         "declKind": "Import",
         "moduleName": "Keyri"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "Keyri",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "SwiftUI",
-        "printedName": "SwiftUI",
-        "declKind": "Import",
-        "moduleName": "Keyri"
-      },
-      {
-        "kind": "Import",
-        "name": "Foundation",
-        "printedName": "Foundation",
-        "declKind": "Import",
-        "moduleName": "Keyri",
-        "declAttributes": [
-          "RawDocComment"
-        ]
-      },
-      {
-        "kind": "Import",
-        "name": "AVFoundation",
-        "printedName": "AVFoundation",
-        "declKind": "Import",
-        "moduleName": "Keyri"
-      },
-      {
-        "kind": "Import",
-        "name": "SwiftUI",
-        "printedName": "SwiftUI",
-        "declKind": "Import",
-        "moduleName": "Keyri"
       }
     ],
     "json_format_version": 8
@@ -11886,42 +12461,42 @@
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriObjC.swift",
       "kind": "BooleanLiteral",
-      "offset": 9117,
+      "offset": 9498,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriObjC.swift",
       "kind": "BooleanLiteral",
-      "offset": 9351,
+      "offset": 9732,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriObjC.swift",
       "kind": "BooleanLiteral",
-      "offset": 9434,
+      "offset": 9815,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriObjC.swift",
       "kind": "BooleanLiteral",
-      "offset": 9844,
+      "offset": 10225,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriObjC.swift",
       "kind": "BooleanLiteral",
-      "offset": 10074,
+      "offset": 10455,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriObjC.swift",
       "kind": "BooleanLiteral",
-      "offset": 10157,
+      "offset": 10538,
       "length": 5,
       "value": "false"
     },
@@ -11984,217 +12559,168 @@
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "BooleanLiteral",
-      "offset": 508,
+      "offset": 557,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "BooleanLiteral",
-      "offset": 707,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
-      "kind": "StringLiteral",
-      "offset": 810,
-      "length": 29,
-      "value": "\"Your device was compromised\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
-      "kind": "StringLiteral",
-      "offset": 984,
-      "length": 6,
-      "value": "\"\n\n\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1167,
-      "length": 3,
-      "value": "110"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1175,
-      "length": 2,
-      "value": "35"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1186,
-      "length": 2,
-      "value": "50"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1198,
-      "length": 2,
-      "value": "50"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1263,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1761,
+      "offset": 756,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "FloatLiteral",
-      "offset": 1857,
+      "offset": 923,
       "length": 3,
-      "value": "2.0"
+      "value": "0.1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "BooleanLiteral",
-      "offset": 1925,
+      "offset": 1015,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "StringLiteral",
-      "offset": 2332,
+      "offset": 1106,
       "length": 24,
       "value": "\"Sending init telemetry\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "StringLiteral",
-      "offset": 3333,
+      "offset": 2572,
       "length": 16,
       "value": "\"Scanner closed\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "StringLiteral",
-      "offset": 3819,
+      "offset": 3058,
       "length": 18,
       "value": "\"Scanner launched\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "BooleanLiteral",
-      "offset": 7691,
+      "offset": 6945,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "StringLiteral",
-      "offset": 10479,
+      "offset": 10386,
       "length": 31,
       "value": "\"Session \""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "StringLiteral",
-      "offset": 10500,
+      "offset": 10407,
       "length": 8,
       "value": "\" received\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 12228,
-      "length": 1,
-      "value": "0"
+      "offset": 12135,
+      "length": 4,
+      "value": "1000"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "IntegerLiteral",
-      "offset": 12232,
+      "offset": 12142,
       "length": 4,
       "value": "9999"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "StringLiteral",
-      "offset": 12340,
+      "offset": 12250,
       "length": 3,
       "value": "\"_\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "BooleanLiteral",
-      "offset": 15447,
+      "offset": 15372,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "StringLiteral",
-      "offset": 16668,
+      "offset": 16593,
       "length": 25,
       "value": "\"Processing link: \""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "StringLiteral",
-      "offset": 16692,
+      "offset": 16617,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "BooleanLiteral",
-      "offset": 16783,
+      "offset": 16708,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "StringLiteral",
-      "offset": 16828,
+      "offset": 16753,
       "length": 11,
       "value": "\"sessionId\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "StringLiteral",
-      "offset": 17907,
+      "offset": 17832,
       "length": 29,
       "value": "\"Failed to save key for ANON\""
     },
     {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Scanner.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1279,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Scanner.swift",
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "StringLiteral",
-      "offset": 1324,
-      "length": 11,
-      "value": "\"sessionId\""
+      "offset": 17990,
+      "length": 29,
+      "value": "\"Your device was compromised\""
     },
     {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Scanner.swift",
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
+      "kind": "StringLiteral",
+      "offset": 18152,
+      "length": 6,
+      "value": "\"\n\n\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "BooleanLiteral",
-      "offset": 1969,
+      "offset": 18360,
       "length": 4,
       "value": "true"
     },
     {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Scanner.swift",
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
+      "kind": "FloatLiteral",
+      "offset": 18537,
+      "length": 3,
+      "value": "2.0"
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "BooleanLiteral",
-      "offset": 2405,
+      "offset": 18593,
       "length": 4,
       "value": "true"
     },
@@ -12307,265 +12833,251 @@
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
       "offset": 606,
-      "length": 19,
+      "length": 20,
       "value": "16"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
-      "offset": 635,
-      "length": 20,
+      "offset": 636,
+      "length": 30,
       "value": "17"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
-      "offset": 665,
-      "length": 30,
+      "offset": 676,
+      "length": 29,
       "value": "18"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
-      "offset": 705,
-      "length": 29,
+      "offset": 715,
+      "length": 34,
       "value": "19"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
-      "offset": 744,
-      "length": 34,
+      "offset": 759,
+      "length": 30,
       "value": "20"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
-      "offset": 788,
-      "length": 30,
+      "offset": 799,
+      "length": 32,
       "value": "21"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
-      "offset": 828,
+      "offset": 841,
       "length": 32,
       "value": "22"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
-      "offset": 870,
-      "length": 32,
+      "offset": 883,
+      "length": 27,
       "value": "23"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
-      "offset": 912,
-      "length": 27,
+      "offset": 920,
+      "length": 22,
       "value": "24"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
-      "offset": 949,
-      "length": 22,
+      "offset": 952,
+      "length": 28,
       "value": "25"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
-      "kind": "IntegerLiteral",
-      "offset": 981,
-      "length": 28,
-      "value": "26"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 1123,
+      "offset": 1094,
       "length": 17,
       "value": "\"Can't parse URL\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 1188,
+      "offset": 1159,
       "length": 23,
       "value": "\"Network error occured\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 1265,
+      "offset": 1236,
       "length": 22,
       "value": "\"Request failed error\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 1343,
+      "offset": 1314,
       "length": 24,
       "value": "\"Invalid response error\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 1422,
+      "offset": 1393,
       "length": 26,
       "value": "\"Response decoding failed\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 1503,
+      "offset": 1474,
       "length": 30,
       "value": "\"Keyri SDK is not initialized\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 1589,
+      "offset": 1560,
       "length": 73,
       "value": "\"Public key was not found. Call generateAssociationKey() to generate it.\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 1714,
+      "offset": 1685,
       "length": 29,
       "value": "\"Permissions are not granted\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 1795,
+      "offset": 1766,
       "length": 11,
       "value": "\"iOS Error\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 1864,
+      "offset": 1835,
       "length": 22,
       "value": "\"Api Key not provided\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 1953,
+      "offset": 1924,
       "length": 31,
       "value": "\"Can't find rootViewController\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 2046,
+      "offset": 2017,
       "length": 26,
       "value": "\"Can't find UIWindowScene\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 2122,
+      "offset": 2093,
       "length": 34,
       "value": "\"Failed to derive encryption keys\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 2205,
+      "offset": 2176,
       "length": 38,
       "value": "\"Failed to perform keychain operation\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 2290,
+      "offset": 2261,
       "length": 16,
       "value": "\"Denied by user\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 2359,
+      "offset": 2330,
       "length": 19,
       "value": "\"Cancelled by user\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 2433,
-      "length": 18,
-      "value": "\"Wrong event type\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
-      "kind": "StringLiteral",
-      "offset": 2507,
+      "offset": 2405,
       "length": 30,
       "value": "\"Failed to process serviceKey\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 2603,
+      "offset": 2501,
       "length": 31,
       "value": "\"Failed to get encryption salt\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 2699,
+      "offset": 2597,
       "length": 30,
       "value": "\"Failed to get timestamp data\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 2799,
+      "offset": 2697,
       "length": 35,
       "value": "\"Failed to get timestamp signature\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 2900,
+      "offset": 2798,
       "length": 36,
       "value": "\"Failed to get anon association key\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 3004,
+      "offset": 2902,
       "length": 34,
       "value": "\"Failed to get event json payload\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 3106,
+      "offset": 3004,
       "length": 33,
       "value": "\"Failed to get encrypted payload\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 3202,
+      "offset": 3100,
       "length": 26,
       "value": "\"PublicKey already exists\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 3286,
+      "offset": 3184,
       "length": 29,
       "value": "\"Your device was compromised\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "StringLiteral",
-      "offset": 3379,
+      "offset": 3277,
       "length": 33,
       "value": "\"Failed to get the camera device\""
     },
@@ -12678,78 +13190,71 @@
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
       "offset": 606,
-      "length": 19,
+      "length": 20,
       "value": "16"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
-      "offset": 635,
-      "length": 20,
+      "offset": 636,
+      "length": 30,
       "value": "17"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
-      "offset": 665,
-      "length": 30,
+      "offset": 676,
+      "length": 29,
       "value": "18"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
-      "offset": 705,
-      "length": 29,
+      "offset": 715,
+      "length": 34,
       "value": "19"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
-      "offset": 744,
-      "length": 34,
+      "offset": 759,
+      "length": 30,
       "value": "20"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
-      "offset": 788,
-      "length": 30,
+      "offset": 799,
+      "length": 32,
       "value": "21"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
-      "offset": 828,
+      "offset": 841,
       "length": 32,
       "value": "22"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
-      "offset": 870,
-      "length": 32,
+      "offset": 883,
+      "length": 27,
       "value": "23"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
-      "offset": 912,
-      "length": 27,
+      "offset": 920,
+      "length": 22,
       "value": "24"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
       "kind": "IntegerLiteral",
-      "offset": 949,
-      "length": 22,
-      "value": "25"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Errors.swift",
-      "kind": "IntegerLiteral",
-      "offset": 981,
+      "offset": 952,
       "length": 28,
-      "value": "26"
+      "value": "25"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/DeviceInfo.swift",
@@ -13161,174 +13666,174 @@
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "IntegerLiteral",
       "offset": 2293,
-      "length": 1,
-      "value": "0"
+      "length": 4,
+      "value": "1000"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "IntegerLiteral",
-      "offset": 2297,
+      "offset": 2300,
       "length": 4,
       "value": "9999"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "StringLiteral",
-      "offset": 2428,
-      "length": 19,
-      "value": "\"Payload encrypted\""
+      "offset": 2431,
+      "length": 24,
+      "value": "\"POST Payload encrypted\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "IntegerLiteral",
-      "offset": 2635,
+      "offset": 2652,
       "length": 2,
       "value": "12"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "StringLiteral",
-      "offset": 2766,
+      "offset": 2783,
       "length": 8,
       "value": "\"__salt\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "StringLiteral",
-      "offset": 2796,
+      "offset": 2813,
       "length": 8,
       "value": "\"__hash\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "StringLiteral",
-      "offset": 2826,
+      "offset": 2843,
       "length": 8,
       "value": "\"errors\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "StringLiteral",
-      "offset": 2856,
+      "offset": 2873,
       "length": 18,
       "value": "\"dontTrustBrowser\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "StringLiteral",
-      "offset": 2906,
+      "offset": 2923,
       "length": 10,
       "value": "\"errorMsg\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "StringLiteral",
-      "offset": 2918,
+      "offset": 2935,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "StringLiteral",
-      "offset": 2934,
+      "offset": 2951,
       "length": 9,
       "value": "\"apiData\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "StringLiteral",
-      "offset": 2963,
+      "offset": 2980,
       "length": 14,
       "value": "\"publicUserId\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "StringLiteral",
-      "offset": 3047,
+      "offset": 3064,
       "length": 16,
       "value": "\"associationKey\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "StringLiteral",
-      "offset": 3096,
+      "offset": 3113,
       "length": 13,
       "value": "\"x-mobile-id\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "StringLiteral",
-      "offset": 3152,
+      "offset": 3169,
       "length": 13,
       "value": "\"browserData\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "StringLiteral",
-      "offset": 3185,
+      "offset": 3202,
       "length": 11,
       "value": "\"publicKey\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "StringLiteral",
-      "offset": 3222,
+      "offset": 3239,
       "length": 12,
       "value": "\"ciphertext\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "StringLiteral",
-      "offset": 3292,
+      "offset": 3309,
       "length": 6,
       "value": "\"salt\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "StringLiteral",
-      "offset": 3364,
+      "offset": 3381,
       "length": 4,
       "value": "\"iv\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "StringLiteral",
-      "offset": 3517,
+      "offset": 3534,
       "length": 56,
       "value": "\"https:\/\/prod.api.keyri.com\/api\/v1\/session\/\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "StringLiteral",
-      "offset": 3572,
+      "offset": 3589,
       "length": 116,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "Dictionary",
-      "offset": 3649,
+      "offset": 3666,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "StringLiteral",
-      "offset": 3845,
+      "offset": 3862,
       "length": 14,
       "value": "\"POST success\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "StringLiteral",
-      "offset": 4039,
+      "offset": 4056,
       "length": 16,
       "value": "\"Failed to POST\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "StringLiteral",
-      "offset": 4207,
+      "offset": 4224,
       "length": 11,
       "value": "\"Sent POST\""
     },
@@ -13391,119 +13896,126 @@
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/TelemetryService.swift",
       "kind": "StringLiteral",
-      "offset": 496,
+      "offset": 571,
       "length": 4,
       "value": "\"OS\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/TelemetryService.swift",
       "kind": "StringLiteral",
-      "offset": 624,
+      "offset": 699,
       "length": 7,
       "value": "\"appId\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/TelemetryService.swift",
       "kind": "StringLiteral",
-      "offset": 665,
+      "offset": 740,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/TelemetryService.swift",
       "kind": "StringLiteral",
-      "offset": 685,
+      "offset": 760,
       "length": 10,
       "value": "\"deviceID\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/TelemetryService.swift",
       "kind": "StringLiteral",
-      "offset": 750,
+      "offset": 825,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/TelemetryService.swift",
       "kind": "StringLiteral",
-      "offset": 770,
+      "offset": 845,
       "length": 8,
       "value": "\"status\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/TelemetryService.swift",
       "kind": "StringLiteral",
-      "offset": 813,
+      "offset": 888,
       "length": 11,
       "value": "\"eventCode\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/TelemetryService.swift",
       "kind": "StringLiteral",
-      "offset": 862,
+      "offset": 937,
       "length": 9,
       "value": "\"message\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/TelemetryService.swift",
       "kind": "StringLiteral",
-      "offset": 898,
+      "offset": 973,
       "length": 8,
       "value": "\"appKey\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/TelemetryService.swift",
       "kind": "StringLiteral",
-      "offset": 918,
+      "offset": 993,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/TelemetryService.swift",
       "kind": "StringLiteral",
-      "offset": 1030,
+      "offset": 1013,
+      "length": 11,
+      "value": "\"timestamp\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/TelemetryService.swift",
+      "kind": "StringLiteral",
+      "offset": 1153,
       "length": 14,
       "value": "\"x-session-id\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/TelemetryService.swift",
       "kind": "StringLiteral",
-      "offset": 1063,
+      "offset": 1186,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/TelemetryService.swift",
       "kind": "StringLiteral",
-      "offset": 1126,
+      "offset": 1249,
       "length": 48,
       "value": "\"https:\/\/prod.api.keyri.com\/api\/logs\/iOS\/events\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/TelemetryService.swift",
       "kind": "StringLiteral",
-      "offset": 1390,
+      "offset": 1513,
       "length": 45,
       "value": "\"Telemetry event sent: \""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/TelemetryService.swift",
       "kind": "StringLiteral",
-      "offset": 1434,
+      "offset": 1557,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/TelemetryService.swift",
       "kind": "StringLiteral",
-      "offset": 1505,
+      "offset": 1628,
       "length": 63,
       "value": "\"Failed to send Telemetry event: \""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/TelemetryService.swift",
       "kind": "StringLiteral",
-      "offset": 1567,
+      "offset": 1690,
       "length": 2,
       "value": "\"\""
     },
@@ -13824,633 +14336,598 @@
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
+      "kind": "BooleanLiteral",
+      "offset": 509,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 715,
+      "offset": 741,
       "length": 10,
       "value": "\"sileo:\/\/\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "BooleanLiteral",
-      "offset": 753,
+      "offset": 779,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 950,
+      "offset": 976,
       "length": 10,
       "value": "\"cydia:\/\/\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "BooleanLiteral",
-      "offset": 988,
+      "offset": 1014,
       "length": 5,
       "value": "false"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
-      "kind": "StringLiteral",
-      "offset": 1161,
-      "length": 13,
-      "value": "\"12f3ab4cd5e\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
-      "kind": "StringLiteral",
-      "offset": 1203,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1233,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1492,
-      "length": 1,
-      "value": "2"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "Array",
-      "offset": 1580,
-      "length": 44,
-      "value": "[\"ef6gh7i\", \"jk8lm9n\", \"opqr1st\", \"uvw2xyz\"]"
+      "offset": 1212,
+      "length": 752,
+      "value": "[\"\/Library\/MobileSubstrate\/DynamicLibraries\/LiveClock.plist\", \"\/Library\/MobileSubstrate\/DynamicLibraries\/Veency.plist\", \"\/private\/var\/lib\/apt\", \"\/private\/var\/lib\/apt\/\", \"\/private\/var\/lib\/cydia\", \"\/private\/var\/mobile\/Library\/SBSettings\/Themes\", \"\/private\/var\/stash\", \"\/private\/var\/tmp\/cydia.log\", \"\/System\/Library\/LaunchDaemons\/com.ikey.bbot.plist\", \"\/System\/Library\/LaunchDaemons\/com.saurik.Cydia.Startup.plist\", \"\/usr\/bin\/sshd\", \"\/usr\/libexec\/sftp-server\", \"\/usr\/sbin\/sshd\", \"\/etc\/apt\", \"\/bin\/bash\", \"\/Library\/MobileSubstrate\/MobileSubstrate.dylib\"]"
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
+      "kind": "Array",
+      "offset": 2008,
+      "length": 3784,
+      "value": "[\"com.loot.rcastle.fight.battle\", \"com.run.bridge.race\", \"com.shinning.gun.ios\", \"com.racing.legend.like\", \"com.rope.runner.family\", \"com.wood.sculptor.cutter\", \"com.fire.wall.poptit\", \"wger.ninjacriticalhit.ios\", \"com.TonyRuns.game\", \"com.asuper.man.playmilk\", \"com.arrow.coins.funny\", \"com.ekfnv.docjfltc.parking.master\", \"com.lady.dress.run.sexylady\", \"com.magic.brush.gamesly\", \"com.shake.earn.sheep.causalgame\", \"com.yigegame.jyfsmnq.gg\", \"com.physicswingsstudio.JackpotScratchers\", \"com.scratchers.jackpot.luckypiggy\", \"com.pocky.ztime\", \"com.free.tickets.scratchers.Billionaire\", \"com.free.scratchers.luckywings\", \"com.free.tickets.scratchers.LuckyLotto\", \"com.ldle.merge.free.coinspiggy\", \"com.ldle.merge.lucky.moneytree\", \"com.tap.run.and.dance\", \"com.lotto.bingo.lucky.scratchcard\", \"com.pull.bugs.worm\", \"com.crowd.battle.goamy\", \"com.shoot.dummy.fast.speed.linger\", \"com.different.ten.spotgames\", \"com.find.five.subtle.differences.spot.new\", \"com.huluwagames.dinosaur.legend.play\", \"com.one.line.drawing.stroke.yuxi\", \"com.shooter.master.bullet.puzzle.huahong\", \"com.talent.trap.stop.all\", \"com.bullet.shoot.fight.gtommm.tom\", \"com.chop.slice.flake2020\", \"com.five.star.slice\", \"com.sand.drawing.newfight\", \"com.topggame.facego.finger.crazy.dino\", \"com.track3d.sliding.new\", \"com.beat.kicker.two.game\", \"com.cube.fill.color.paint.turn.fei\", \"com.draw.live.milipop\", \"com.draw.one.line.stroke.xipi\", \"com.fidget.cubes.feel.like\", \"com.girls.fight.fly\", \"com.knifeninja.assassin.dltc\", \"com.my.bullet.shooting.man.hunter.youxi\", \"com.pul.parkour.bbroller\", \"com.slice.chop.superslice3d\", \"com.weapon.fantasy.games\", \"com.balloon.shooter.play\", \"com.ltcmusical.fun2021\", \"com.lvdiao.chop.slices.chef\", \"com.slice.masked.games\", \"com.work.now.slack\", \"com.bottle.jump.flip.challenge.fun\", \"com.corn.scraper.cut.pipe.siling\", \"com.idle.wood.maker.gametwo\", \"com.pop.girls.schooler\", \"com.romy.rushrun\", \"com.spear.super.man.hero\", \"com.dig.road.balls.play.games.ygygame\", \"com.boostar.boo.popstar\", \"com.darwa.completea.ltca\", \"com.rushcube.puzzle.block\", \"com.magicvcam.hdmeet.cam008\", \"com.stac.amper.qweaf\", \"com.find.five.differences.lvye.xsl\", \"com.mufc.zwxfb\", \"com.roll.turn.song.wusi.pt\", \"com.hiding.drawltc.games\", \"com.ltc.peter.shoot.tslgame\", \"com.ltcdesign.nroad\", \"com.ltcdraw.complete.fly\", \"com.ltcking.thief.game.tsl\", \"com.downhill.race.redbull\", \"com.draw.war.army\", \"com.rescue.master.gear.mechanics.wushi\", \"come.letter.roll.race\", \"com.helicopter.attack.shoot.sanba\", \"com.crush.car.fly.delivery.lingjiu\", \"com.tycmrelx.cash\", \"com.painting.war.inpaper\", \"com.bike.extreme.raceing.bikegames\", \"com.player.spiral.maker.d3\", \"com.blocks.tile.matching\", \"com.cube.merge.shooter\"]"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "BooleanLiteral",
-      "offset": 1651,
+      "offset": 5938,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
+      "kind": "StringLiteral",
+      "offset": 6066,
+      "length": 49,
+      "value": "\"\/System\/Library\/LaunchDaemons\/\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
+      "kind": "StringLiteral",
+      "offset": 6108,
+      "length": 1,
+      "value": "\".plist\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6142,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
+      "kind": "StringLiteral",
+      "offset": 6228,
+      "length": 57,
+      "value": "\"\/System\/Library\/LaunchDaemons\/\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
+      "kind": "StringLiteral",
+      "offset": 6270,
+      "length": 1,
+      "value": "\".Startup.plist\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6312,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
+      "kind": "StringLiteral",
+      "offset": 6398,
+      "length": 61,
+      "value": "\"\/Library\/MobileSubstrate\/DynamicLibraries\/\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
+      "kind": "StringLiteral",
+      "offset": 6452,
+      "length": 1,
+      "value": "\".plist\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6486,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6539,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1781,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2010,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2317,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 2401,
-      "length": 3,
-      "value": "\",\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2453,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2501,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2545,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
-      "kind": "StringLiteral",
-      "offset": 2604,
-      "length": 5,
-      "value": "\"abc\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
-      "kind": "StringLiteral",
-      "offset": 2631,
-      "length": 5,
-      "value": "\"123\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
-      "kind": "BooleanLiteral",
-      "offset": 2674,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2965,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3029,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3066,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3107,
-      "length": 1,
-      "value": "1"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3143,
-      "length": 1,
-      "value": "3"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3148,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
-      "kind": "BooleanLiteral",
-      "offset": 3182,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
-      "kind": "StringLiteral",
-      "offset": 3318,
+      "offset": 6616,
       "length": 25,
       "value": "\"\/Applications\/Cydia.app\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 3354,
+      "offset": 6652,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 3367,
+      "offset": 6665,
       "length": 29,
       "value": "\"\/Applications\/blackra1n.app\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 3407,
+      "offset": 6705,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 3420,
+      "offset": 6718,
       "length": 31,
       "value": "\"\/Applications\/FakeCarrier.app\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 3462,
+      "offset": 6760,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 3475,
+      "offset": 6773,
       "length": 23,
       "value": "\"\/Applications\/Icy.app\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 3509,
+      "offset": 6807,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 3522,
+      "offset": 6820,
       "length": 33,
       "value": "\"\/Applications\/IntelliScreen.app\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 3566,
+      "offset": 6864,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 3579,
+      "offset": 6877,
       "length": 26,
       "value": "\"\/Applications\/MxTube.app\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 3616,
+      "offset": 6914,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 3629,
+      "offset": 6927,
       "length": 27,
       "value": "\"\/Applications\/RockApp.app\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 3667,
+      "offset": 6965,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 3680,
+      "offset": 6978,
       "length": 30,
       "value": "\"\/Applications\/SBSettings.app\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 3721,
+      "offset": 7019,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 3734,
+      "offset": 7032,
       "length": 31,
       "value": "\"\/Applications\/WinterBoard.app\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 3776,
+      "offset": 7074,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 3789,
+      "offset": 7087,
       "length": 48,
       "value": "\"\/Library\/MobileSubstrate\/MobileSubstrate.dylib\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 3848,
+      "offset": 7146,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 3861,
+      "offset": 7159,
       "length": 59,
       "value": "\"\/Library\/MobileSubstrate\/DynamicLibraries\/LiveClock.plist\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 3931,
+      "offset": 7229,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 3944,
+      "offset": 7242,
       "length": 56,
       "value": "\"\/Library\/MobileSubstrate\/DynamicLibraries\/Veency.plist\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 4011,
+      "offset": 7309,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 4024,
+      "offset": 7322,
       "length": 22,
       "value": "\"\/private\/var\/lib\/apt\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 4057,
+      "offset": 7355,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 4070,
+      "offset": 7368,
       "length": 24,
       "value": "\"\/private\/var\/lib\/cydia\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 4105,
+      "offset": 7403,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 4118,
+      "offset": 7416,
       "length": 47,
       "value": "\"\/private\/var\/mobile\/Library\/SBSettings\/Themes\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 4176,
+      "offset": 7474,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 4189,
+      "offset": 7487,
       "length": 20,
       "value": "\"\/private\/var\/stash\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 4220,
+      "offset": 7518,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 4233,
+      "offset": 7531,
       "length": 28,
       "value": "\"\/private\/var\/tmp\/cydia.log\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 4272,
+      "offset": 7570,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 4285,
+      "offset": 7583,
       "length": 51,
       "value": "\"\/System\/Library\/LaunchDaemons\/com.ikey.bbot.plist\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 4347,
+      "offset": 7645,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 4360,
+      "offset": 7658,
       "length": 62,
       "value": "\"\/System\/Library\/LaunchDaemons\/com.saurik.Cydia.Startup.plist\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 4433,
+      "offset": 7731,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 4446,
+      "offset": 7744,
       "length": 15,
       "value": "\"\/usr\/bin\/sshd\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 4472,
+      "offset": 7770,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 4485,
+      "offset": 7783,
       "length": 26,
       "value": "\"\/usr\/libexec\/sftp-server\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 4522,
+      "offset": 7820,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 4535,
+      "offset": 7833,
       "length": 16,
       "value": "\"\/usr\/sbin\/sshd\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 4562,
+      "offset": 7860,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 4575,
+      "offset": 7873,
       "length": 11,
       "value": "\"\/bin\/bash\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 4597,
+      "offset": 7895,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 4610,
+      "offset": 7908,
       "length": 10,
       "value": "\"\/etc\/apt\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "IntegerLiteral",
-      "offset": 4631,
+      "offset": 7929,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "BooleanLiteral",
-      "offset": 4655,
+      "offset": 7953,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "BooleanLiteral",
-      "offset": 4694,
+      "offset": 7992,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 4817,
-      "length": 12,
-      "value": "\"helloWorld\""
+      "offset": 8083,
+      "length": 11,
+      "value": "\"testwrite\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 4900,
+      "offset": 8165,
       "length": 20,
       "value": "\"\/private\/test1.txt\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "BooleanLiteral",
-      "offset": 4934,
+      "offset": 8199,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "BooleanLiteral",
-      "offset": 5039,
+      "offset": 8254,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 5179,
+      "offset": 8395,
       "length": 20,
       "value": "\"\/private\/test1.txt\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "BooleanLiteral",
-      "offset": 5271,
+      "offset": 8485,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 5359,
+      "offset": 8583,
       "length": 21,
       "value": "\"private\/var\/lib\/apt\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 5382,
+      "offset": 8606,
       "length": 3,
       "value": "\"r\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "BooleanLiteral",
-      "offset": 5415,
+      "offset": 8639,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 5456,
+      "offset": 8680,
       "length": 20,
       "value": "\"\/private\/var\/stash\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "StringLiteral",
-      "offset": 5478,
+      "offset": 8702,
       "length": 3,
       "value": "\"r\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "BooleanLiteral",
-      "offset": 5511,
+      "offset": 8735,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EPDUtil.swift",
       "kind": "BooleanLiteral",
-      "offset": 5550,
+      "offset": 8774,
       "length": 5,
       "value": "false"
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Scanner.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1279,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Scanner.swift",
+      "kind": "StringLiteral",
+      "offset": 1324,
+      "length": 11,
+      "value": "\"sessionId\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Scanner.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1969,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Scanner.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2405,
+      "length": 4,
+      "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
@@ -15419,74 +15896,165 @@
       "value": "\"\""
     },
     {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/FPLocation.swift",
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/FingerprintRequest.swift",
       "kind": "StringLiteral",
-      "offset": 663,
-      "length": 16,
-      "value": "\"continent_code\""
+      "offset": 151,
+      "length": 18,
+      "value": "\"Keyri.FingerprintRequest\""
     },
     {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/FPLocation.swift",
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
       "kind": "StringLiteral",
-      "offset": 709,
-      "length": 16,
-      "value": "\"continent_name\""
+      "offset": 199,
+      "length": 2,
+      "value": "\"\""
     },
     {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/FPLocation.swift",
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
       "kind": "StringLiteral",
-      "offset": 774,
+      "offset": 1517,
+      "length": 8,
+      "value": "\"visits\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
+      "kind": "StringLiteral",
+      "offset": 1562,
+      "length": 7,
+      "value": "\"login\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
+      "kind": "StringLiteral",
+      "offset": 1606,
+      "length": 8,
+      "value": "\"signup\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
+      "kind": "StringLiteral",
+      "offset": 1652,
+      "length": 17,
+      "value": "\"attachNewDevice\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
+      "kind": "StringLiteral",
+      "offset": 1711,
       "length": 13,
-      "value": "\"countryCode\""
+      "value": "\"emailChange\""
     },
     {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/FPLocation.swift",
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
       "kind": "StringLiteral",
-      "offset": 879,
+      "offset": 1767,
+      "length": 15,
+      "value": "\"profileUpdate\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
+      "kind": "StringLiteral",
+      "offset": 1827,
+      "length": 15,
+      "value": "\"passwordReset\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
+      "kind": "StringLiteral",
+      "offset": 1887,
       "length": 12,
-      "value": "\"regionCode\""
+      "value": "\"withdrawal\""
     },
     {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/FPLocation.swift",
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
       "kind": "StringLiteral",
-      "offset": 918,
-      "length": 12,
-      "value": "\"regionType\""
+      "offset": 1941,
+      "length": 9,
+      "value": "\"deposit\""
     },
     {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/FPLocation.swift",
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
       "kind": "StringLiteral",
-      "offset": 663,
-      "length": 16,
-      "value": "\"continent_code\""
+      "offset": 1989,
+      "length": 10,
+      "value": "\"purchase\""
     },
     {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/FPLocation.swift",
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
       "kind": "StringLiteral",
-      "offset": 709,
-      "length": 16,
-      "value": "\"continent_name\""
+      "offset": 2275,
+      "length": 8,
+      "value": "\"visits\""
     },
     {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/FPLocation.swift",
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
       "kind": "StringLiteral",
-      "offset": 774,
+      "offset": 2395,
+      "length": 7,
+      "value": "\"login\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
+      "kind": "StringLiteral",
+      "offset": 2509,
+      "length": 8,
+      "value": "\"signup\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
+      "kind": "StringLiteral",
+      "offset": 2628,
+      "length": 17,
+      "value": "\"attachNewDevice\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
+      "kind": "StringLiteral",
+      "offset": 2757,
       "length": 13,
-      "value": "\"countryCode\""
+      "value": "\"emailChange\""
     },
     {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/FPLocation.swift",
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
       "kind": "StringLiteral",
-      "offset": 879,
-      "length": 12,
-      "value": "\"regionCode\""
+      "offset": 2884,
+      "length": 15,
+      "value": "\"profileUpdate\""
     },
     {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/FPLocation.swift",
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
       "kind": "StringLiteral",
-      "offset": 918,
+      "offset": 3013,
+      "length": 15,
+      "value": "\"passwordReset\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
+      "kind": "StringLiteral",
+      "offset": 3139,
       "length": 12,
-      "value": "\"regionType\""
+      "value": "\"withdrawal\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
+      "kind": "StringLiteral",
+      "offset": 3259,
+      "length": 9,
+      "value": "\"deposit\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
+      "kind": "StringLiteral",
+      "offset": 3382,
+      "length": 10,
+      "value": "\"purchase\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
+      "kind": "StringLiteral",
+      "offset": 3415,
+      "length": 11,
+      "value": "\"Keyri.CustomEvent\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ApiHelper.swift",
@@ -15725,90 +16293,6 @@
       "offset": 3644,
       "length": 6,
       "value": "\"POST\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/SquareView.swift",
-      "kind": "FloatLiteral",
-      "offset": 194,
-      "length": 3,
-      "value": "0.1"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/SquareView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 283,
-      "length": 1,
-      "value": "2"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/SquareView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1037,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/SquareView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1043,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/SquareView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1139,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/SquareView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1372,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/SquareView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 1453,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/SquareView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2362,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/SquareView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2444,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/SquareView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2693,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/SquareView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2790,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/SquareView.swift",
-      "kind": "IntegerLiteral",
-      "offset": 2796,
-      "length": 1,
-      "value": "0"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/LoginObject.swift",
@@ -16071,220 +16555,227 @@
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
-      "kind": "BooleanLiteral",
-      "offset": 1249,
-      "length": 4,
-      "value": "true"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 1593,
+      "offset": 1614,
       "length": 17,
       "value": "\"Saving Anon Key\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 1807,
+      "offset": 1811,
       "length": 90,
       "value": "\"O6aCXxDctj+urHBGTGQgfJ9I9euUIPtkLYMfloUqz1m\/zUMIY26Ojz97C\/o72DtcXh0xEi6gD\/W\/jIMvaUJEgw==\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "IntegerLiteral",
-      "offset": 2548,
-      "length": 1,
-      "value": "0"
+      "offset": 2326,
+      "length": 4,
+      "value": "1000"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "IntegerLiteral",
-      "offset": 2552,
+      "offset": 2333,
       "length": 4,
       "value": "9999"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "IntegerLiteral",
-      "offset": 3038,
+      "offset": 2587,
       "length": 2,
       "value": "32"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "BooleanLiteral",
-      "offset": 3999,
+      "offset": 3059,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 4689,
+      "offset": 3526,
       "length": 8,
       "value": "\"apiKey\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 4729,
+      "offset": 3562,
       "length": 11,
       "value": "\"eventType\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 4778,
+      "offset": 3604,
+      "length": 15,
+      "value": "\"eventMetadata\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
+      "kind": "StringLiteral",
+      "offset": 3654,
       "length": 9,
       "value": "\"success\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 4814,
+      "offset": 3697,
       "length": 8,
       "value": "\"userId\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 4854,
+      "offset": 3733,
       "length": 11,
       "value": "\"timestamp\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 4894,
+      "offset": 3769,
       "length": 12,
       "value": "\"deviceHash\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 5002,
+      "offset": 3873,
       "length": 20,
       "value": "\"timestampSignature\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 5091,
+      "offset": 3958,
       "length": 14,
       "value": "\"cryptoCookie\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 5183,
+      "offset": 4046,
       "length": 22,
       "value": "\"serviceEncryptionKey\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 5231,
+      "offset": 4094,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 5251,
+      "offset": 4110,
       "length": 12,
       "value": "\"deviceInfo\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 5334,
+      "offset": 4142,
+      "length": 12,
+      "value": "\"rootStatus\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
+      "kind": "StringLiteral",
+      "offset": 4179,
       "length": 19,
       "value": "\"emulatorDetection\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 5475,
+      "offset": 4223,
+      "length": 18,
+      "value": "\"swizzleDetection\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
+      "kind": "StringLiteral",
+      "offset": 4313,
       "length": 14,
       "value": "\"isDebuggable\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
+      "kind": "StringLiteral",
+      "offset": 4359,
+      "length": 15,
+      "value": "\"dangerousApps\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
+      "kind": "StringLiteral",
+      "offset": 4397,
+      "length": 19,
+      "value": "\"maliciousPackages\""
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "IntegerLiteral",
-      "offset": 6258,
+      "offset": 4823,
       "length": 2,
       "value": "12"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5404,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 6648,
+      "offset": 5843,
       "length": 21,
       "value": "\"clientEncryptionKey\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 6747,
+      "offset": 5922,
       "length": 18,
       "value": "\"encryptedPayload\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 6801,
+      "offset": 5995,
       "length": 6,
       "value": "\"salt\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 6863,
+      "offset": 6044,
       "length": 4,
       "value": "\"iv\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "StringLiteral",
-      "offset": 7015,
+      "offset": 6144,
       "length": 32,
       "value": "\"https:\/\/fp.keyri.com\/v1\/client\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "Dictionary",
-      "offset": 7123,
+      "offset": 6283,
       "length": 3,
       "value": "[]"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Coordinator.swift",
-      "kind": "IntegerLiteral",
-      "offset": 634,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Coordinator.swift",
-      "kind": "StringLiteral",
-      "offset": 663,
-      "length": 21,
-      "value": "\"No QR code detected\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Coordinator.swift",
-      "kind": "IntegerLiteral",
-      "offset": 793,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Coordinator.swift",
-      "kind": "StringLiteral",
-      "offset": 168,
-      "length": 11,
-      "value": "\"Keyri.Coordinator\""
     }
   ]
 }

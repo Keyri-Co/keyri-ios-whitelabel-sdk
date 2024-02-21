@@ -300,26 +300,50 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #if defined(__OBJC__)
 
+SWIFT_CLASS("_TtC5Keyri9EventType")
+@interface EventType : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC5Keyri15AttachNewDevice")
+@interface AttachNewDevice : EventType
+@end
+
+
 SWIFT_CLASS("_TtC5Keyri24ConfirmationScreenUIView")
 @interface ConfirmationScreenUIView : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+
+SWIFT_CLASS("_TtC5Keyri11CustomEvent")
+@interface CustomEvent : EventType
+@end
+
+
+SWIFT_CLASS("_TtC5Keyri12DepositEvent")
+@interface DepositEvent : EventType
+@end
+
+
+SWIFT_CLASS("_TtC5Keyri16EmailChangeEvent")
+@interface EmailChangeEvent : EventType
+@end
+
+
 @class NSString;
 
-SWIFT_CLASS("_TtC5Keyri10FPLocation")
-@interface FPLocation : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nonnull city;
-@property (nonatomic, readonly, copy) NSString * _Nonnull continentCode;
-@property (nonatomic, readonly, copy) NSString * _Nonnull continentName;
-@property (nonatomic, readonly, copy) NSString * _Nonnull country;
-@property (nonatomic, readonly, copy) NSString * _Nonnull countryCode;
-@property (nonatomic, readonly) double latitude;
-@property (nonatomic, readonly) double longitude;
-@property (nonatomic, readonly, copy) NSString * _Nonnull region;
-@property (nonatomic, readonly, copy) NSString * _Nonnull regionCode;
-@property (nonatomic, readonly, copy) NSString * _Nonnull regionType;
+SWIFT_CLASS("_TtC5Keyri18FingerprintRequest")
+@interface FingerprintRequest : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nullable clientEncryptionKey;
+@property (nonatomic, readonly, copy) NSString * _Nullable encryptedPayload;
+@property (nonatomic, readonly, copy) NSString * _Nullable salt;
+@property (nonatomic, readonly, copy) NSString * _Nullable iv;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
@@ -362,7 +386,8 @@ SWIFT_CLASS("_TtC5Keyri9KeyriObjC")
 - (void)listUniqueAccountsWithCompletion:(void (^ _Nonnull)(NSDictionary<NSString *, NSString *> * _Nullable, NSError * _Nullable))completion;
 - (void)getAssociationKeyWithPublicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(NSString * _Nullable, NSError * _Nullable))completion;
 - (void)removeAssociationKeyWithPublicUserId:(NSString * _Nonnull)publicUserId completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
-- (void)sendEventWithPublicUserId:(NSString * _Nullable)publicUserId eventType:(NSString * _Nonnull)eventType success:(BOOL)success completion:(void (^ _Nonnull)(FingerprintResponse * _Nullable, NSError * _Nullable))completion;
+- (void)sendEventWithPublicUserId:(NSString * _Nullable)publicUserId eventType:(EventType * _Nonnull)eventType success:(BOOL)success completion:(void (^ _Nonnull)(FingerprintResponse * _Nullable, NSError * _Nullable))completion;
+- (void)createFingerprintWithCompletion:(void (^ _Nonnull)(FingerprintRequest * _Nullable, NSError * _Nullable))completion;
 - (void)initiateQrSessionWithSessionId:(NSString * _Nonnull)sessionId publicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(Session * _Nullable, NSError * _Nullable))completion;
 - (void)loginWithPublicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(LoginObject * _Nullable, NSError * _Nullable))completion;
 - (void)registerWithPublicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(RegisterObject * _Nullable, NSError * _Nullable))completion;
@@ -378,6 +403,11 @@ SWIFT_CLASS("_TtC5Keyri12LocationData")
 @property (nonatomic, copy) NSString * _Nullable continentCode;
 @property (nonatomic, copy) NSString * _Nullable regionCode;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC5Keyri10LoginEvent")
+@interface LoginEvent : EventType
 @end
 
 
@@ -402,6 +432,21 @@ SWIFT_CLASS("_TtC5Keyri22MobileTemplateResponse")
 @property (nonatomic, strong) Flags * _Nullable flags;
 @property (nonatomic, copy) NSString * _Nonnull title;
 @property (nonatomic, copy) NSString * _Nullable message;
+@end
+
+
+SWIFT_CLASS("_TtC5Keyri18PasswordResetEvent")
+@interface PasswordResetEvent : EventType
+@end
+
+
+SWIFT_CLASS("_TtC5Keyri18ProfileUpdateEvent")
+@interface ProfileUpdateEvent : EventType
+@end
+
+
+SWIFT_CLASS("_TtC5Keyri13PurchaseEvent")
+@interface PurchaseEvent : EventType
 @end
 
 
@@ -433,6 +478,11 @@ SWIFT_CLASS("_TtC5Keyri7Session")
 @end
 
 
+SWIFT_CLASS("_TtC5Keyri11SignupEvent")
+@interface SignupEvent : EventType
+@end
+
+
 SWIFT_CLASS("_TtC5Keyri8Template")
 @interface Template : NSObject
 @property (nonatomic, copy) NSString * _Nullable location;
@@ -456,10 +506,20 @@ SWIFT_CLASS("_TtC5Keyri14UserParameters")
 @end
 
 
+SWIFT_CLASS("_TtC5Keyri11VisitsEvent")
+@interface VisitsEvent : EventType
+@end
+
+
 SWIFT_CLASS("_TtC5Keyri15WidgetUserAgent")
 @interface WidgetUserAgent : NSObject
 @property (nonatomic, copy) NSString * _Nonnull os;
 @property (nonatomic, copy) NSString * _Nonnull browser;
+@end
+
+
+SWIFT_CLASS("_TtC5Keyri15WithdrawalEvent")
+@interface WithdrawalEvent : EventType
 @end
 
 #endif

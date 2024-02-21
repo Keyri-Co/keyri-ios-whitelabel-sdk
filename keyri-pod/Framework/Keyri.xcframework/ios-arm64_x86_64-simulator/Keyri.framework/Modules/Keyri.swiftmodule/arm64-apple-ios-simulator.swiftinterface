@@ -42,7 +42,8 @@ import _SwiftConcurrencyShims
   @objc public func listUniqueAccounts(completion: @escaping ([Swift.String : Swift.String]?, (any Swift.Error)?) -> ())
   @objc public func getAssociationKey(publicUserId: Swift.String?, completion: @escaping (Swift.String?, (any Swift.Error)?) -> ())
   @objc public func removeAssociationKey(publicUserId: Swift.String, completion: @escaping ((any Swift.Error)?) -> ())
-  @objc public func sendEvent(publicUserId: Swift.String?, eventType: Swift.String, success: Swift.Bool, completion: @escaping (Keyri.FingerprintResponse?, (any Swift.Error)?) -> ())
+  @objc public func sendEvent(publicUserId: Swift.String?, eventType: Keyri.EventType, success: Swift.Bool, completion: @escaping (Keyri.FingerprintResponse?, (any Swift.Error)?) -> ())
+  @objc public func createFingerprint(completion: @escaping (Keyri.FingerprintRequest?, (any Swift.Error)?) -> ())
   @objc public func initiateQrSession(sessionId: Swift.String, publicUserId: Swift.String?, completion: @escaping (Keyri.Session?, (any Swift.Error)?) -> ())
   @objc public func login(publicUserId: Swift.String?, completion: @escaping (Keyri.LoginObject?, (any Swift.Error)?) -> ())
   @objc public func register(publicUserId: Swift.String?, completion: @escaping (Keyri.RegisterObject?, (any Swift.Error)?) -> ())
@@ -93,7 +94,8 @@ open class KeyriInterface {
   public func listUniqueAccounts(completion: @escaping (Swift.Result<[Swift.String : Swift.String]?, any Swift.Error>) -> ())
   public func getAssociationKey(publicUserId: Swift.String = Constants.ANON_USER, completion: @escaping (Swift.Result<CryptoKit.P256.Signing.PublicKey?, any Swift.Error>) -> ())
   public func removeAssociationKey(publicUserId: Swift.String, completion: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> ())
-  public func sendEvent(publicUserId: Swift.String = Constants.ANON_USER, eventType: Keyri.EventType = .visits, success: Swift.Bool = true, completion: @escaping (Swift.Result<Keyri.FingerprintResponse, any Swift.Error>) -> ())
+  public func sendEvent(publicUserId: Swift.String = Constants.ANON_USER, eventType: Keyri.EventType = EventType.visits(), success: Swift.Bool = true, completion: @escaping (Swift.Result<Keyri.FingerprintResponse, any Swift.Error>) -> ())
+  public func createFingerprint(completion: @escaping (Swift.Result<Keyri.FingerprintRequest, any Swift.Error>) -> ())
   public func initiateQrSession(sessionId: Swift.String, publicUserId: Swift.String?, completion: @escaping (Swift.Result<Keyri.Session, any Swift.Error>) -> Swift.Void)
   public func login(publicUserId: Swift.String?, completion: @escaping (Swift.Result<Keyri.LoginObject, any Swift.Error>) -> ())
   public func register(publicUserId: Swift.String?, completion: @escaping (Swift.Result<Keyri.RegisterObject, any Swift.Error>) -> ())
@@ -149,36 +151,62 @@ public struct ConfirmationScreen : SwiftUI.View {
   }
   public typealias Body = @_opaqueReturnTypeOf("$s5Keyri18ConfirmationScreenV4bodyQrvp", 0) __
 }
-@objc public class FPLocation : ObjectiveC.NSObject, Swift.Decodable {
-  @objc final public let city: Swift.String
-  @objc final public let continentCode: Swift.String
-  @objc final public let continentName: Swift.String
-  @objc final public let country: Swift.String
-  @objc final public let countryCode: Swift.String
-  @objc final public let latitude: Swift.Double
-  @objc final public let longitude: Swift.Double
-  @objc final public let region: Swift.String
-  @objc final public let regionCode: Swift.String
-  @objc final public let regionType: Swift.String
+@objc @_hasMissingDesignatedInitializers public class FingerprintRequest : ObjectiveC.NSObject, Swift.Decodable, Swift.Encodable {
+  @objc final public let clientEncryptionKey: Swift.String?
+  @objc final public let encryptedPayload: Swift.String?
+  @objc final public let salt: Swift.String?
+  @objc final public let iv: Swift.String?
   @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
-public enum EventType : Swift.String {
-  case visits
-  case login
-  case signup
-  case attach_new_device
-  case email_change
-  case profile_update
-  case password_reset
-  case withdrawal
-  case deposit
-  case purchase
-  public init?(rawValue: Swift.String)
-  public typealias RawValue = Swift.String
-  public var rawValue: Swift.String {
-    get
-  }
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class EventType : ObjectiveC.NSObject {
+  public static func visits() -> Keyri.VisitsEvent
+  public static func login() -> Keyri.LoginEvent
+  public static func signup() -> Keyri.SignupEvent
+  public static func attachNewDevice() -> Keyri.AttachNewDevice
+  public static func emailChange() -> Keyri.EmailChangeEvent
+  public static func profileUpdate() -> Keyri.ProfileUpdateEvent
+  public static func passwordReset() -> Keyri.PasswordResetEvent
+  public static func withdrawal() -> Keyri.WithdrawalEvent
+  public static func deposit() -> Keyri.DepositEvent
+  public static func purchase() -> Keyri.PurchaseEvent
+  public static func custom(name: Swift.String) -> Keyri.CustomEvent
+  public static func getByName(eventName: Swift.String, metadata: [Swift.String : Any]? = nil) -> Keyri.EventType
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class VisitsEvent : Keyri.EventType {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class LoginEvent : Keyri.EventType {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class SignupEvent : Keyri.EventType {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class AttachNewDevice : Keyri.EventType {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class EmailChangeEvent : Keyri.EventType {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ProfileUpdateEvent : Keyri.EventType {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class PasswordResetEvent : Keyri.EventType {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class WithdrawalEvent : Keyri.EventType {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DepositEvent : Keyri.EventType {
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class PurchaseEvent : Keyri.EventType {
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class CustomEvent : Keyri.EventType {
+  @objc deinit
 }
 @objc public class FingerprintResponse : ObjectiveC.NSObject, Swift.Decodable, Swift.Encodable {
   @objc final public let apiCiphertextSignature: Swift.String?
@@ -209,6 +237,3 @@ public enum EventType : Swift.String {
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
-extension Keyri.EventType : Swift.Equatable {}
-extension Keyri.EventType : Swift.Hashable {}
-extension Keyri.EventType : Swift.RawRepresentable {}
