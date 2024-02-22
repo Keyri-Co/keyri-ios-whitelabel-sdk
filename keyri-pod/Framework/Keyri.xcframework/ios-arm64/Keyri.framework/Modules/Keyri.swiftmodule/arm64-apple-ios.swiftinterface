@@ -160,52 +160,20 @@ public struct ConfirmationScreen : SwiftUI.View {
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class EventType : ObjectiveC.NSObject {
-  public static func visits() -> Keyri.VisitsEvent
-  public static func login() -> Keyri.LoginEvent
-  public static func signup() -> Keyri.SignupEvent
-  public static func attachNewDevice() -> Keyri.AttachNewDevice
-  public static func emailChange() -> Keyri.EmailChangeEvent
-  public static func profileUpdate() -> Keyri.ProfileUpdateEvent
-  public static func passwordReset() -> Keyri.PasswordResetEvent
-  public static func withdrawal() -> Keyri.WithdrawalEvent
-  public static func deposit() -> Keyri.DepositEvent
-  public static func purchase() -> Keyri.PurchaseEvent
-  public static func custom(name: Swift.String) -> Keyri.CustomEvent
-  public static func getByName(eventName: Swift.String, metadata: [Swift.String : Any]? = nil) -> Keyri.EventType
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class VisitsEvent : Keyri.EventType {
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class LoginEvent : Keyri.EventType {
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class SignupEvent : Keyri.EventType {
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class AttachNewDevice : Keyri.EventType {
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class EmailChangeEvent : Keyri.EventType {
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class ProfileUpdateEvent : Keyri.EventType {
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class PasswordResetEvent : Keyri.EventType {
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class WithdrawalEvent : Keyri.EventType {
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class DepositEvent : Keyri.EventType {
-  @objc deinit
-}
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class PurchaseEvent : Keyri.EventType {
-  @objc deinit
-}
-@objc @_hasMissingDesignatedInitializers public class CustomEvent : Keyri.EventType {
+@objc @_hasMissingDesignatedInitializers public class EventType : ObjectiveC.NSObject {
+  @objc final public let name: Swift.String
+  @objc public var metadata: [Swift.String : Any]?
+  @objc public static func visits(metadata: [Swift.String : Any]? = nil) -> Keyri.EventType
+  @objc public static func login(metadata: [Swift.String : Any]? = nil) -> Keyri.EventType
+  @objc public static func signup(metadata: [Swift.String : Any]? = nil) -> Keyri.EventType
+  @objc public static func attachNewDevice(metadata: [Swift.String : Any]? = nil) -> Keyri.EventType
+  @objc public static func emailChange(metadata: [Swift.String : Any]? = nil) -> Keyri.EventType
+  @objc public static func profileUpdate(metadata: [Swift.String : Any]? = nil) -> Keyri.EventType
+  @objc public static func passwordReset(metadata: [Swift.String : Any]? = nil) -> Keyri.EventType
+  @objc public static func withdrawal(metadata: [Swift.String : Any]? = nil) -> Keyri.EventType
+  @objc public static func deposit(metadata: [Swift.String : Any]? = nil) -> Keyri.EventType
+  @objc public static func purchase(metadata: [Swift.String : Any]? = nil) -> Keyri.EventType
+  @objc public static func custom(name: Swift.String, metadata: [Swift.String : Any]? = nil) -> Keyri.EventType
   @objc deinit
 }
 @objc public class FingerprintResponse : ObjectiveC.NSObject, Swift.Decodable, Swift.Encodable {

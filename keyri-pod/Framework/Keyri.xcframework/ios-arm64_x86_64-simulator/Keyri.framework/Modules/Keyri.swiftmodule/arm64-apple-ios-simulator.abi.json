@@ -9591,246 +9591,10 @@
         "printedName": "EventType",
         "children": [
           {
-            "kind": "Function",
-            "name": "visits",
-            "printedName": "visits()",
+            "kind": "Var",
+            "name": "name",
+            "printedName": "name",
             "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "VisitsEvent",
-                "printedName": "Keyri.VisitsEvent",
-                "usr": "c:@M@Keyri@objc(cs)VisitsEvent"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:5Keyri9EventTypeC6visitsAA06VisitsB0CyFZ",
-            "mangledName": "$s5Keyri9EventTypeC6visitsAA06VisitsB0CyFZ",
-            "moduleName": "Keyri",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "login",
-            "printedName": "login()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "LoginEvent",
-                "printedName": "Keyri.LoginEvent",
-                "usr": "c:@M@Keyri@objc(cs)LoginEvent"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:5Keyri9EventTypeC5loginAA05LoginB0CyFZ",
-            "mangledName": "$s5Keyri9EventTypeC5loginAA05LoginB0CyFZ",
-            "moduleName": "Keyri",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "signup",
-            "printedName": "signup()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "SignupEvent",
-                "printedName": "Keyri.SignupEvent",
-                "usr": "c:@M@Keyri@objc(cs)SignupEvent"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:5Keyri9EventTypeC6signupAA06SignupB0CyFZ",
-            "mangledName": "$s5Keyri9EventTypeC6signupAA06SignupB0CyFZ",
-            "moduleName": "Keyri",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "attachNewDevice",
-            "printedName": "attachNewDevice()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "AttachNewDevice",
-                "printedName": "Keyri.AttachNewDevice",
-                "usr": "c:@M@Keyri@objc(cs)AttachNewDevice"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:5Keyri9EventTypeC15attachNewDeviceAA06AttacheF0CyFZ",
-            "mangledName": "$s5Keyri9EventTypeC15attachNewDeviceAA06AttacheF0CyFZ",
-            "moduleName": "Keyri",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "emailChange",
-            "printedName": "emailChange()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "EmailChangeEvent",
-                "printedName": "Keyri.EmailChangeEvent",
-                "usr": "c:@M@Keyri@objc(cs)EmailChangeEvent"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:5Keyri9EventTypeC11emailChangeAA05EmaileB0CyFZ",
-            "mangledName": "$s5Keyri9EventTypeC11emailChangeAA05EmaileB0CyFZ",
-            "moduleName": "Keyri",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "profileUpdate",
-            "printedName": "profileUpdate()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "ProfileUpdateEvent",
-                "printedName": "Keyri.ProfileUpdateEvent",
-                "usr": "c:@M@Keyri@objc(cs)ProfileUpdateEvent"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:5Keyri9EventTypeC13profileUpdateAA07ProfileeB0CyFZ",
-            "mangledName": "$s5Keyri9EventTypeC13profileUpdateAA07ProfileeB0CyFZ",
-            "moduleName": "Keyri",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "passwordReset",
-            "printedName": "passwordReset()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "PasswordResetEvent",
-                "printedName": "Keyri.PasswordResetEvent",
-                "usr": "c:@M@Keyri@objc(cs)PasswordResetEvent"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:5Keyri9EventTypeC13passwordResetAA08PasswordeB0CyFZ",
-            "mangledName": "$s5Keyri9EventTypeC13passwordResetAA08PasswordeB0CyFZ",
-            "moduleName": "Keyri",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "withdrawal",
-            "printedName": "withdrawal()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "WithdrawalEvent",
-                "printedName": "Keyri.WithdrawalEvent",
-                "usr": "c:@M@Keyri@objc(cs)WithdrawalEvent"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:5Keyri9EventTypeC10withdrawalAA010WithdrawalB0CyFZ",
-            "mangledName": "$s5Keyri9EventTypeC10withdrawalAA010WithdrawalB0CyFZ",
-            "moduleName": "Keyri",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "deposit",
-            "printedName": "deposit()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "DepositEvent",
-                "printedName": "Keyri.DepositEvent",
-                "usr": "c:@M@Keyri@objc(cs)DepositEvent"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:5Keyri9EventTypeC7depositAA07DepositB0CyFZ",
-            "mangledName": "$s5Keyri9EventTypeC7depositAA07DepositB0CyFZ",
-            "moduleName": "Keyri",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "purchase",
-            "printedName": "purchase()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "PurchaseEvent",
-                "printedName": "Keyri.PurchaseEvent",
-                "usr": "c:@M@Keyri@objc(cs)PurchaseEvent"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:5Keyri9EventTypeC8purchaseAA08PurchaseB0CyFZ",
-            "mangledName": "$s5Keyri9EventTypeC8purchaseAA08PurchaseB0CyFZ",
-            "moduleName": "Keyri",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "custom",
-            "printedName": "custom(name:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "CustomEvent",
-                "printedName": "Keyri.CustomEvent",
-                "usr": "c:@M@Keyri@objc(cs)CustomEvent"
-              },
               {
                 "kind": "TypeNominal",
                 "name": "String",
@@ -9838,21 +9602,734 @@
                 "usr": "s:SS"
               }
             ],
-            "declKind": "Func",
-            "usr": "s:5Keyri9EventTypeC6custom4nameAA06CustomB0CSS_tFZ",
-            "mangledName": "$s5Keyri9EventTypeC6custom4nameAA06CustomB0CSS_tFZ",
+            "declKind": "Var",
+            "usr": "c:@M@Keyri@objc(cs)EventType(py)name",
+            "mangledName": "$s5Keyri9EventTypeC4nameSSvp",
             "moduleName": "Keyri",
-            "static": true,
             "declAttributes": [
               "Final",
-              "AccessControl"
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Keyri@objc(cs)EventType(im)name",
+                "mangledName": "$s5Keyri9EventTypeC4nameSSvg",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "metadata",
+            "printedName": "metadata",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@Keyri@objc(cs)EventType(py)metadata",
+            "mangledName": "$s5Keyri9EventTypeC8metadataSDySSypGSgvp",
+            "moduleName": "Keyri",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Swift.String : Any]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.String : Any]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ProtocolComposition",
+                            "printedName": "Any"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Keyri@objc(cs)EventType(im)metadata",
+                "mangledName": "$s5Keyri9EventTypeC8metadataSDySSypGSgvg",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Swift.String : Any]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.String : Any]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ProtocolComposition",
+                            "printedName": "Any"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@Keyri@objc(cs)EventType(im)setMetadata:",
+                "mangledName": "$s5Keyri9EventTypeC8metadataSDySSypGSgvs",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "declAttributes": [
+                  "ObjC"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:5Keyri9EventTypeC8metadataSDySSypGSgvM",
+                "mangledName": "$s5Keyri9EventTypeC8metadataSDySSypGSgvM",
+                "moduleName": "Keyri",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "visits",
+            "printedName": "visits(metadata:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "EventType",
+                "printedName": "Keyri.EventType",
+                "usr": "c:@M@Keyri@objc(cs)EventType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Keyri@objc(cs)EventType(cm)visitsWithMetadata:",
+            "mangledName": "$s5Keyri9EventTypeC6visits8metadataACSDySSypGSg_tFZ",
+            "moduleName": "Keyri",
+            "static": true,
+            "objc_name": "visitsWithMetadata:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
             ],
             "funcSelfKind": "NonMutating"
           },
           {
             "kind": "Function",
-            "name": "getByName",
-            "printedName": "getByName(eventName:metadata:)",
+            "name": "login",
+            "printedName": "login(metadata:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "EventType",
+                "printedName": "Keyri.EventType",
+                "usr": "c:@M@Keyri@objc(cs)EventType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Keyri@objc(cs)EventType(cm)loginWithMetadata:",
+            "mangledName": "$s5Keyri9EventTypeC5login8metadataACSDySSypGSg_tFZ",
+            "moduleName": "Keyri",
+            "static": true,
+            "objc_name": "loginWithMetadata:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "signup",
+            "printedName": "signup(metadata:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "EventType",
+                "printedName": "Keyri.EventType",
+                "usr": "c:@M@Keyri@objc(cs)EventType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Keyri@objc(cs)EventType(cm)signupWithMetadata:",
+            "mangledName": "$s5Keyri9EventTypeC6signup8metadataACSDySSypGSg_tFZ",
+            "moduleName": "Keyri",
+            "static": true,
+            "objc_name": "signupWithMetadata:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "attachNewDevice",
+            "printedName": "attachNewDevice(metadata:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "EventType",
+                "printedName": "Keyri.EventType",
+                "usr": "c:@M@Keyri@objc(cs)EventType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Keyri@objc(cs)EventType(cm)attachNewDeviceWithMetadata:",
+            "mangledName": "$s5Keyri9EventTypeC15attachNewDevice8metadataACSDySSypGSg_tFZ",
+            "moduleName": "Keyri",
+            "static": true,
+            "objc_name": "attachNewDeviceWithMetadata:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "emailChange",
+            "printedName": "emailChange(metadata:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "EventType",
+                "printedName": "Keyri.EventType",
+                "usr": "c:@M@Keyri@objc(cs)EventType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Keyri@objc(cs)EventType(cm)emailChangeWithMetadata:",
+            "mangledName": "$s5Keyri9EventTypeC11emailChange8metadataACSDySSypGSg_tFZ",
+            "moduleName": "Keyri",
+            "static": true,
+            "objc_name": "emailChangeWithMetadata:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "profileUpdate",
+            "printedName": "profileUpdate(metadata:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "EventType",
+                "printedName": "Keyri.EventType",
+                "usr": "c:@M@Keyri@objc(cs)EventType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Keyri@objc(cs)EventType(cm)profileUpdateWithMetadata:",
+            "mangledName": "$s5Keyri9EventTypeC13profileUpdate8metadataACSDySSypGSg_tFZ",
+            "moduleName": "Keyri",
+            "static": true,
+            "objc_name": "profileUpdateWithMetadata:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "passwordReset",
+            "printedName": "passwordReset(metadata:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "EventType",
+                "printedName": "Keyri.EventType",
+                "usr": "c:@M@Keyri@objc(cs)EventType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Keyri@objc(cs)EventType(cm)passwordResetWithMetadata:",
+            "mangledName": "$s5Keyri9EventTypeC13passwordReset8metadataACSDySSypGSg_tFZ",
+            "moduleName": "Keyri",
+            "static": true,
+            "objc_name": "passwordResetWithMetadata:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "withdrawal",
+            "printedName": "withdrawal(metadata:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "EventType",
+                "printedName": "Keyri.EventType",
+                "usr": "c:@M@Keyri@objc(cs)EventType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Keyri@objc(cs)EventType(cm)withdrawalWithMetadata:",
+            "mangledName": "$s5Keyri9EventTypeC10withdrawal8metadataACSDySSypGSg_tFZ",
+            "moduleName": "Keyri",
+            "static": true,
+            "objc_name": "withdrawalWithMetadata:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "deposit",
+            "printedName": "deposit(metadata:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "EventType",
+                "printedName": "Keyri.EventType",
+                "usr": "c:@M@Keyri@objc(cs)EventType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Keyri@objc(cs)EventType(cm)depositWithMetadata:",
+            "mangledName": "$s5Keyri9EventTypeC7deposit8metadataACSDySSypGSg_tFZ",
+            "moduleName": "Keyri",
+            "static": true,
+            "objc_name": "depositWithMetadata:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "purchase",
+            "printedName": "purchase(metadata:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "EventType",
+                "printedName": "Keyri.EventType",
+                "usr": "c:@M@Keyri@objc(cs)EventType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[Swift.String : Any]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Keyri@objc(cs)EventType(cm)purchaseWithMetadata:",
+            "mangledName": "$s5Keyri9EventTypeC8purchase8metadataACSDySSypGSg_tFZ",
+            "moduleName": "Keyri",
+            "static": true,
+            "objc_name": "purchaseWithMetadata:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "custom",
+            "printedName": "custom(name:metadata:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -9896,15 +10373,43 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:5Keyri9EventTypeC9getByName05eventF08metadataACSS_SDySSypGSgtFZ",
-            "mangledName": "$s5Keyri9EventTypeC9getByName05eventF08metadataACSS_SDySSypGSgtFZ",
+            "usr": "c:@M@Keyri@objc(cs)EventType(cm)customWithName:metadata:",
+            "mangledName": "$s5Keyri9EventTypeC6custom4name8metadataACSS_SDySSypGSgtFZ",
             "moduleName": "Keyri",
             "static": true,
+            "objc_name": "customWithName:metadata:",
             "declAttributes": [
               "Final",
-              "AccessControl"
+              "AccessControl",
+              "ObjC"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "EventType",
+                "printedName": "Keyri.EventType",
+                "usr": "c:@M@Keyri@objc(cs)EventType"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@Keyri@objc(cs)EventType(im)init",
+            "mangledName": "$s5Keyri9EventTypeCACycfc",
+            "moduleName": "Keyri",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
           }
         ],
         "declKind": "Class",
@@ -9917,788 +10422,7 @@
         ],
         "superclassUsr": "c:objc(cs)NSObject",
         "hasMissingDesignatedInitializers": true,
-        "inheritsConvenienceInitializers": true,
         "superclassNames": [
-          "ObjectiveC.NSObject"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObservingPublishing",
-            "printedName": "_KeyValueCodingAndObservingPublishing",
-            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
-            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObserving",
-            "printedName": "_KeyValueCodingAndObserving",
-            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
-            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
-          }
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "VisitsEvent",
-        "printedName": "VisitsEvent",
-        "declKind": "Class",
-        "usr": "c:@M@Keyri@objc(cs)VisitsEvent",
-        "mangledName": "$s5Keyri11VisitsEventC",
-        "moduleName": "Keyri",
-        "declAttributes": [
-          "AccessControl",
-          "ObjC"
-        ],
-        "superclassUsr": "c:@M@Keyri@objc(cs)EventType",
-        "hasMissingDesignatedInitializers": true,
-        "inheritsConvenienceInitializers": true,
-        "superclassNames": [
-          "Keyri.EventType",
-          "ObjectiveC.NSObject"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObservingPublishing",
-            "printedName": "_KeyValueCodingAndObservingPublishing",
-            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
-            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObserving",
-            "printedName": "_KeyValueCodingAndObserving",
-            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
-            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
-          }
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "LoginEvent",
-        "printedName": "LoginEvent",
-        "declKind": "Class",
-        "usr": "c:@M@Keyri@objc(cs)LoginEvent",
-        "mangledName": "$s5Keyri10LoginEventC",
-        "moduleName": "Keyri",
-        "declAttributes": [
-          "AccessControl",
-          "ObjC"
-        ],
-        "superclassUsr": "c:@M@Keyri@objc(cs)EventType",
-        "hasMissingDesignatedInitializers": true,
-        "inheritsConvenienceInitializers": true,
-        "superclassNames": [
-          "Keyri.EventType",
-          "ObjectiveC.NSObject"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObservingPublishing",
-            "printedName": "_KeyValueCodingAndObservingPublishing",
-            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
-            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObserving",
-            "printedName": "_KeyValueCodingAndObserving",
-            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
-            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
-          }
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "SignupEvent",
-        "printedName": "SignupEvent",
-        "declKind": "Class",
-        "usr": "c:@M@Keyri@objc(cs)SignupEvent",
-        "mangledName": "$s5Keyri11SignupEventC",
-        "moduleName": "Keyri",
-        "declAttributes": [
-          "AccessControl",
-          "ObjC"
-        ],
-        "superclassUsr": "c:@M@Keyri@objc(cs)EventType",
-        "hasMissingDesignatedInitializers": true,
-        "inheritsConvenienceInitializers": true,
-        "superclassNames": [
-          "Keyri.EventType",
-          "ObjectiveC.NSObject"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObservingPublishing",
-            "printedName": "_KeyValueCodingAndObservingPublishing",
-            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
-            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObserving",
-            "printedName": "_KeyValueCodingAndObserving",
-            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
-            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
-          }
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "AttachNewDevice",
-        "printedName": "AttachNewDevice",
-        "declKind": "Class",
-        "usr": "c:@M@Keyri@objc(cs)AttachNewDevice",
-        "mangledName": "$s5Keyri15AttachNewDeviceC",
-        "moduleName": "Keyri",
-        "declAttributes": [
-          "AccessControl",
-          "ObjC"
-        ],
-        "superclassUsr": "c:@M@Keyri@objc(cs)EventType",
-        "hasMissingDesignatedInitializers": true,
-        "inheritsConvenienceInitializers": true,
-        "superclassNames": [
-          "Keyri.EventType",
-          "ObjectiveC.NSObject"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObservingPublishing",
-            "printedName": "_KeyValueCodingAndObservingPublishing",
-            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
-            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObserving",
-            "printedName": "_KeyValueCodingAndObserving",
-            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
-            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
-          }
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "EmailChangeEvent",
-        "printedName": "EmailChangeEvent",
-        "declKind": "Class",
-        "usr": "c:@M@Keyri@objc(cs)EmailChangeEvent",
-        "mangledName": "$s5Keyri16EmailChangeEventC",
-        "moduleName": "Keyri",
-        "declAttributes": [
-          "AccessControl",
-          "ObjC"
-        ],
-        "superclassUsr": "c:@M@Keyri@objc(cs)EventType",
-        "hasMissingDesignatedInitializers": true,
-        "inheritsConvenienceInitializers": true,
-        "superclassNames": [
-          "Keyri.EventType",
-          "ObjectiveC.NSObject"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObservingPublishing",
-            "printedName": "_KeyValueCodingAndObservingPublishing",
-            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
-            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObserving",
-            "printedName": "_KeyValueCodingAndObserving",
-            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
-            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
-          }
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "ProfileUpdateEvent",
-        "printedName": "ProfileUpdateEvent",
-        "declKind": "Class",
-        "usr": "c:@M@Keyri@objc(cs)ProfileUpdateEvent",
-        "mangledName": "$s5Keyri18ProfileUpdateEventC",
-        "moduleName": "Keyri",
-        "declAttributes": [
-          "AccessControl",
-          "ObjC"
-        ],
-        "superclassUsr": "c:@M@Keyri@objc(cs)EventType",
-        "hasMissingDesignatedInitializers": true,
-        "inheritsConvenienceInitializers": true,
-        "superclassNames": [
-          "Keyri.EventType",
-          "ObjectiveC.NSObject"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObservingPublishing",
-            "printedName": "_KeyValueCodingAndObservingPublishing",
-            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
-            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObserving",
-            "printedName": "_KeyValueCodingAndObserving",
-            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
-            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
-          }
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "PasswordResetEvent",
-        "printedName": "PasswordResetEvent",
-        "declKind": "Class",
-        "usr": "c:@M@Keyri@objc(cs)PasswordResetEvent",
-        "mangledName": "$s5Keyri18PasswordResetEventC",
-        "moduleName": "Keyri",
-        "declAttributes": [
-          "AccessControl",
-          "ObjC"
-        ],
-        "superclassUsr": "c:@M@Keyri@objc(cs)EventType",
-        "hasMissingDesignatedInitializers": true,
-        "inheritsConvenienceInitializers": true,
-        "superclassNames": [
-          "Keyri.EventType",
-          "ObjectiveC.NSObject"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObservingPublishing",
-            "printedName": "_KeyValueCodingAndObservingPublishing",
-            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
-            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObserving",
-            "printedName": "_KeyValueCodingAndObserving",
-            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
-            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
-          }
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "WithdrawalEvent",
-        "printedName": "WithdrawalEvent",
-        "declKind": "Class",
-        "usr": "c:@M@Keyri@objc(cs)WithdrawalEvent",
-        "mangledName": "$s5Keyri15WithdrawalEventC",
-        "moduleName": "Keyri",
-        "declAttributes": [
-          "AccessControl",
-          "ObjC"
-        ],
-        "superclassUsr": "c:@M@Keyri@objc(cs)EventType",
-        "hasMissingDesignatedInitializers": true,
-        "inheritsConvenienceInitializers": true,
-        "superclassNames": [
-          "Keyri.EventType",
-          "ObjectiveC.NSObject"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObservingPublishing",
-            "printedName": "_KeyValueCodingAndObservingPublishing",
-            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
-            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObserving",
-            "printedName": "_KeyValueCodingAndObserving",
-            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
-            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
-          }
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "DepositEvent",
-        "printedName": "DepositEvent",
-        "declKind": "Class",
-        "usr": "c:@M@Keyri@objc(cs)DepositEvent",
-        "mangledName": "$s5Keyri12DepositEventC",
-        "moduleName": "Keyri",
-        "declAttributes": [
-          "AccessControl",
-          "ObjC"
-        ],
-        "superclassUsr": "c:@M@Keyri@objc(cs)EventType",
-        "hasMissingDesignatedInitializers": true,
-        "inheritsConvenienceInitializers": true,
-        "superclassNames": [
-          "Keyri.EventType",
-          "ObjectiveC.NSObject"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObservingPublishing",
-            "printedName": "_KeyValueCodingAndObservingPublishing",
-            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
-            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObserving",
-            "printedName": "_KeyValueCodingAndObserving",
-            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
-            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
-          }
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "PurchaseEvent",
-        "printedName": "PurchaseEvent",
-        "declKind": "Class",
-        "usr": "c:@M@Keyri@objc(cs)PurchaseEvent",
-        "mangledName": "$s5Keyri13PurchaseEventC",
-        "moduleName": "Keyri",
-        "declAttributes": [
-          "AccessControl",
-          "ObjC"
-        ],
-        "superclassUsr": "c:@M@Keyri@objc(cs)EventType",
-        "hasMissingDesignatedInitializers": true,
-        "inheritsConvenienceInitializers": true,
-        "superclassNames": [
-          "Keyri.EventType",
-          "ObjectiveC.NSObject"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CVarArg",
-            "printedName": "CVarArg",
-            "usr": "s:s7CVarArgP",
-            "mangledName": "$ss7CVarArgP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObservingPublishing",
-            "printedName": "_KeyValueCodingAndObservingPublishing",
-            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
-            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "_KeyValueCodingAndObserving",
-            "printedName": "_KeyValueCodingAndObserving",
-            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
-            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
-          }
-        ]
-      },
-      {
-        "kind": "TypeDecl",
-        "name": "CustomEvent",
-        "printedName": "CustomEvent",
-        "declKind": "Class",
-        "usr": "c:@M@Keyri@objc(cs)CustomEvent",
-        "mangledName": "$s5Keyri11CustomEventC",
-        "moduleName": "Keyri",
-        "declAttributes": [
-          "AccessControl",
-          "ObjC"
-        ],
-        "superclassUsr": "c:@M@Keyri@objc(cs)EventType",
-        "hasMissingDesignatedInitializers": true,
-        "superclassNames": [
-          "Keyri.EventType",
           "ObjectiveC.NSObject"
         ],
         "conformances": [
@@ -15912,156 +15636,79 @@
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
       "kind": "StringLiteral",
-      "offset": 199,
-      "length": 2,
-      "value": "\"\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
-      "kind": "StringLiteral",
-      "offset": 1517,
+      "offset": 483,
       "length": 8,
       "value": "\"visits\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
       "kind": "StringLiteral",
-      "offset": 1562,
+      "offset": 638,
       "length": 7,
       "value": "\"login\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
       "kind": "StringLiteral",
-      "offset": 1606,
+      "offset": 793,
       "length": 8,
       "value": "\"signup\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
       "kind": "StringLiteral",
-      "offset": 1652,
-      "length": 17,
-      "value": "\"attachNewDevice\""
+      "offset": 958,
+      "length": 19,
+      "value": "\"attach_new_device\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
       "kind": "StringLiteral",
-      "offset": 1711,
-      "length": 13,
-      "value": "\"emailChange\""
+      "offset": 1130,
+      "length": 14,
+      "value": "\"email_change\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
       "kind": "StringLiteral",
-      "offset": 1767,
-      "length": 15,
-      "value": "\"profileUpdate\""
+      "offset": 1299,
+      "length": 16,
+      "value": "\"profile_update\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
       "kind": "StringLiteral",
-      "offset": 1827,
-      "length": 15,
-      "value": "\"passwordReset\""
+      "offset": 1470,
+      "length": 16,
+      "value": "\"password_reset\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
       "kind": "StringLiteral",
-      "offset": 1887,
+      "offset": 1638,
       "length": 12,
       "value": "\"withdrawal\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
       "kind": "StringLiteral",
-      "offset": 1941,
+      "offset": 1799,
       "length": 9,
       "value": "\"deposit\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
       "kind": "StringLiteral",
-      "offset": 1989,
+      "offset": 1958,
       "length": 10,
       "value": "\"purchase\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
       "kind": "StringLiteral",
-      "offset": 2275,
-      "length": 8,
-      "value": "\"visits\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
-      "kind": "StringLiteral",
-      "offset": 2395,
-      "length": 7,
-      "value": "\"login\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
-      "kind": "StringLiteral",
-      "offset": 2509,
-      "length": 8,
-      "value": "\"signup\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
-      "kind": "StringLiteral",
-      "offset": 2628,
-      "length": 17,
-      "value": "\"attachNewDevice\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
-      "kind": "StringLiteral",
-      "offset": 2757,
-      "length": 13,
-      "value": "\"emailChange\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
-      "kind": "StringLiteral",
-      "offset": 2884,
-      "length": 15,
-      "value": "\"profileUpdate\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
-      "kind": "StringLiteral",
-      "offset": 3013,
-      "length": 15,
-      "value": "\"passwordReset\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
-      "kind": "StringLiteral",
-      "offset": 3139,
-      "length": 12,
-      "value": "\"withdrawal\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
-      "kind": "StringLiteral",
-      "offset": 3259,
+      "offset": 117,
       "length": 9,
-      "value": "\"deposit\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
-      "kind": "StringLiteral",
-      "offset": 3382,
-      "length": 10,
-      "value": "\"purchase\""
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/EventType.swift",
-      "kind": "StringLiteral",
-      "offset": 3415,
-      "length": 11,
-      "value": "\"Keyri.CustomEvent\""
+      "value": "\"Keyri.EventType\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ApiHelper.swift",

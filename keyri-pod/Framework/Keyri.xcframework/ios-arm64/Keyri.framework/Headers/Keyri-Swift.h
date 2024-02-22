@@ -300,41 +300,33 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #if defined(__OBJC__)
 
-SWIFT_CLASS("_TtC5Keyri9EventType")
-@interface EventType : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-SWIFT_CLASS("_TtC5Keyri15AttachNewDevice")
-@interface AttachNewDevice : EventType
-@end
-
-
 SWIFT_CLASS("_TtC5Keyri24ConfirmationScreenUIView")
 @interface ConfirmationScreenUIView : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-
-SWIFT_CLASS("_TtC5Keyri11CustomEvent")
-@interface CustomEvent : EventType
-@end
-
-
-SWIFT_CLASS("_TtC5Keyri12DepositEvent")
-@interface DepositEvent : EventType
-@end
-
-
-SWIFT_CLASS("_TtC5Keyri16EmailChangeEvent")
-@interface EmailChangeEvent : EventType
-@end
-
-
 @class NSString;
+
+SWIFT_CLASS("_TtC5Keyri9EventType")
+@interface EventType : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull name;
+@property (nonatomic, copy) NSDictionary<NSString *, id> * _Nullable metadata;
++ (EventType * _Nonnull)visitsWithMetadata:(NSDictionary<NSString *, id> * _Nullable)metadata SWIFT_WARN_UNUSED_RESULT;
++ (EventType * _Nonnull)loginWithMetadata:(NSDictionary<NSString *, id> * _Nullable)metadata SWIFT_WARN_UNUSED_RESULT;
++ (EventType * _Nonnull)signupWithMetadata:(NSDictionary<NSString *, id> * _Nullable)metadata SWIFT_WARN_UNUSED_RESULT;
++ (EventType * _Nonnull)attachNewDeviceWithMetadata:(NSDictionary<NSString *, id> * _Nullable)metadata SWIFT_WARN_UNUSED_RESULT;
++ (EventType * _Nonnull)emailChangeWithMetadata:(NSDictionary<NSString *, id> * _Nullable)metadata SWIFT_WARN_UNUSED_RESULT;
++ (EventType * _Nonnull)profileUpdateWithMetadata:(NSDictionary<NSString *, id> * _Nullable)metadata SWIFT_WARN_UNUSED_RESULT;
++ (EventType * _Nonnull)passwordResetWithMetadata:(NSDictionary<NSString *, id> * _Nullable)metadata SWIFT_WARN_UNUSED_RESULT;
++ (EventType * _Nonnull)withdrawalWithMetadata:(NSDictionary<NSString *, id> * _Nullable)metadata SWIFT_WARN_UNUSED_RESULT;
++ (EventType * _Nonnull)depositWithMetadata:(NSDictionary<NSString *, id> * _Nullable)metadata SWIFT_WARN_UNUSED_RESULT;
++ (EventType * _Nonnull)purchaseWithMetadata:(NSDictionary<NSString *, id> * _Nullable)metadata SWIFT_WARN_UNUSED_RESULT;
++ (EventType * _Nonnull)customWithName:(NSString * _Nonnull)name metadata:(NSDictionary<NSString *, id> * _Nullable)metadata SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 
 SWIFT_CLASS("_TtC5Keyri18FingerprintRequest")
 @interface FingerprintRequest : NSObject
@@ -406,11 +398,6 @@ SWIFT_CLASS("_TtC5Keyri12LocationData")
 @end
 
 
-SWIFT_CLASS("_TtC5Keyri10LoginEvent")
-@interface LoginEvent : EventType
-@end
-
-
 SWIFT_CLASS("_TtC5Keyri11LoginObject")
 @interface LoginObject : NSObject
 @property (nonatomic, copy) NSString * _Nonnull timestampNonce;
@@ -432,21 +419,6 @@ SWIFT_CLASS("_TtC5Keyri22MobileTemplateResponse")
 @property (nonatomic, strong) Flags * _Nullable flags;
 @property (nonatomic, copy) NSString * _Nonnull title;
 @property (nonatomic, copy) NSString * _Nullable message;
-@end
-
-
-SWIFT_CLASS("_TtC5Keyri18PasswordResetEvent")
-@interface PasswordResetEvent : EventType
-@end
-
-
-SWIFT_CLASS("_TtC5Keyri18ProfileUpdateEvent")
-@interface ProfileUpdateEvent : EventType
-@end
-
-
-SWIFT_CLASS("_TtC5Keyri13PurchaseEvent")
-@interface PurchaseEvent : EventType
 @end
 
 
@@ -478,11 +450,6 @@ SWIFT_CLASS("_TtC5Keyri7Session")
 @end
 
 
-SWIFT_CLASS("_TtC5Keyri11SignupEvent")
-@interface SignupEvent : EventType
-@end
-
-
 SWIFT_CLASS("_TtC5Keyri8Template")
 @interface Template : NSObject
 @property (nonatomic, copy) NSString * _Nullable location;
@@ -506,20 +473,10 @@ SWIFT_CLASS("_TtC5Keyri14UserParameters")
 @end
 
 
-SWIFT_CLASS("_TtC5Keyri11VisitsEvent")
-@interface VisitsEvent : EventType
-@end
-
-
 SWIFT_CLASS("_TtC5Keyri15WidgetUserAgent")
 @interface WidgetUserAgent : NSObject
 @property (nonatomic, copy) NSString * _Nonnull os;
 @property (nonatomic, copy) NSString * _Nonnull browser;
-@end
-
-
-SWIFT_CLASS("_TtC5Keyri15WithdrawalEvent")
-@interface WithdrawalEvent : EventType
 @end
 
 #endif

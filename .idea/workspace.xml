@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db2adf85-b517-4a8d-8372-1f11873479ee" name="Changes" comment="Updated Framework to 4.4.1">
+    <list default="true" id="db2adf85-b517-4a8d-8372-1f11873479ee" name="Changes" comment="Updated Framework to 4.5.0">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,7 +15,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="releases/4.4.0" />
+        <entry key="$PROJECT_DIR$" value="releases/4.4.1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -51,7 +51,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;releases/4.4.1&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;releases/4.5.0&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/andriikuliahin/IdeaProjects/Keyri iOS/keyri-ios-whitelabel-sdk&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -91,6 +91,8 @@
       <workItem from="1703605681314" duration="783000" />
       <workItem from="1703677105169" duration="310000" />
       <workItem from="1703755468716" duration="26000" />
+      <workItem from="1708507713548" duration="728000" />
+      <workItem from="1708508452102" duration="259000" />
     </task>
     <task id="LOCAL-00001" summary="Updated Docs for iOS">
       <option name="closed" value="true" />
@@ -196,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703677159324</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Updated Framework to 4.5.0">
+      <option name="closed" value="true" />
+      <created>1708507868863</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1708507868863</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +236,7 @@
     <MESSAGE value="Updated Framework 4.3.4, added new TelemetryEvent logs" />
     <MESSAGE value="Updated Framework 4.4.0, added Login and Register objects, completely refactored Scanner, updated logging" />
     <MESSAGE value="Updated Framework to 4.4.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Framework to 4.4.1" />
+    <MESSAGE value="Updated Framework to 4.5.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Framework to 4.5.0" />
   </component>
 </project>
