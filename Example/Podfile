@@ -4,11 +4,4 @@ platform :ios, '15.0'
 
 target 'keyri-pod_Example' do
   pod 'keyri-pod', :path => '../'
-  pod 'Toaster'
-
-  target 'keyri-pod_Tests' do
-    inherit! :search_paths
-
-    
-  end
 end

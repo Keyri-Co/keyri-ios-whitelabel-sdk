@@ -1,6 +1,0 @@
-framework module Pods_keyri_pod_Example {
-  umbrella header "Pods-keyri-pod_Example-umbrella.h"
-
-  export *
-  module * { export * }
-}

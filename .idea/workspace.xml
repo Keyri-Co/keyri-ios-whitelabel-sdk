@@ -4,8 +4,92 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db2adf85-b517-4a8d-8372-1f11873479ee" name="Changes" comment="Updated Framework to 4.5.0">
+    <list default="true" id="db2adf85-b517-4a8d-8372-1f11873479ee" name="Changes" comment="Updated Framework to 4.5.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/Example/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Example/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Local Podspecs/keyri-pod.podspec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Manifest.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Pods.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Pods.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example-Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example-acknowledgements.markdown" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example-acknowledgements.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example-frameworks.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example.debug.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Example/Pods-keyri-pod_Example.release.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Tests/Pods-keyri-pod_Tests-Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Tests/Pods-keyri-pod_Tests-acknowledgements.markdown" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Tests/Pods-keyri-pod_Tests-acknowledgements.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Tests/Pods-keyri-pod_Tests-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Tests/Pods-keyri-pod_Tests-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Tests/Pods-keyri-pod_Tests.debug.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Tests/Pods-keyri-pod_Tests.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Pods-keyri-pod_Tests/Pods-keyri-pod_Tests.release.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Toaster/Toaster-Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Toaster/Toaster-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Toaster/Toaster-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Toaster/Toaster-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Toaster/Toaster.debug.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Toaster/Toaster.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/Toaster/Toaster.release.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/keyri-pod/ResourceBundle-keyri-pod-keyri-pod-Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/keyri-pod/keyri-pod-Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/keyri-pod/keyri-pod-dummy.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/keyri-pod/keyri-pod-prefix.pch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/keyri-pod/keyri-pod-umbrella.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/keyri-pod/keyri-pod-xcframeworks.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/keyri-pod/keyri-pod.debug.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/keyri-pod/keyri-pod.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Target Support Files/keyri-pod/keyri-pod.release.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Toaster/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Toaster/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Toaster/Sources/KeyboardObserver.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Toaster/Sources/Toast.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Toaster/Sources/ToastCenter.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Toaster/Sources/ToastView.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Toaster/Sources/ToastWindow.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Toaster/Sources/Toaster.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Pods/Toaster/Sources/UIApplication+Load.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Tests/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/Tests/Tests.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Example/keyri-pod/ViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Example/keyri-pod/ViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/GeoDataPair.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/LocationData.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/RiskAnalytics.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Session.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/WidgetUserAgent.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod.podspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Headers/Keyri-Swift.h" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Headers/Keyri-Swift.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Keyri" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Keyri" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios.abi.json" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios.abi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios.private.swiftinterface" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios.private.swiftinterface" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios.swiftdoc" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios.swiftdoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios.swiftinterface" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios.swiftinterface" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeDirectory" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeDirectory" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeRequirements-1" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeRequirements-1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeResources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeSignature" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeSignature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Headers/Keyri-Swift.h" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Headers/Keyri-Swift.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Keyri" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Keyri" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.abi.json" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.abi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.swiftdoc" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.swiftdoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.swiftinterface" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.swiftinterface" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.abi.json" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.abi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.swiftdoc" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.swiftdoc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.swiftinterface" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.swiftinterface" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/_CodeSignature/CodeDirectory" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/_CodeSignature/CodeDirectory" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/_CodeSignature/CodeRequirements-1" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/_CodeSignature/CodeRequirements-1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/_CodeSignature/CodeResources" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +99,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="releases/4.4.1" />
+        <entry key="$PROJECT_DIR$" value="releases/4.5.1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -51,7 +135,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;releases/4.5.0&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;releases/4.6.0-alpha01&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/andriikuliahin/IdeaProjects/Keyri iOS/keyri-ios-whitelabel-sdk&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -93,6 +177,11 @@
       <workItem from="1703755468716" duration="26000" />
       <workItem from="1708507713548" duration="728000" />
       <workItem from="1708508452102" duration="259000" />
+      <workItem from="1708619533234" duration="394000" />
+      <workItem from="1708620927456" duration="11000" />
+      <workItem from="1710951858716" duration="4000" />
+      <workItem from="1711027347149" duration="468000" />
+      <workItem from="1711028048204" duration="377000" />
     </task>
     <task id="LOCAL-00001" summary="Updated Docs for iOS">
       <option name="closed" value="true" />
@@ -206,7 +295,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708507868863</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Updated Framework to 4.5.1">
+      <option name="closed" value="true" />
+      <created>1708619796422</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1708619796422</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +334,7 @@
     <MESSAGE value="Updated Framework 4.4.0, added Login and Register objects, completely refactored Scanner, updated logging" />
     <MESSAGE value="Updated Framework to 4.4.1" />
     <MESSAGE value="Updated Framework to 4.5.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Framework to 4.5.0" />
+    <MESSAGE value="Updated Framework to 4.5.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Framework to 4.5.1" />
   </component>
 </project>
