@@ -9954,11 +9954,13 @@
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:5Keyri0A16DetectionsConfigC22blockEmulatorDetection0d4RootF00d13DangerousAppsF00d6TamperF00d7SwizzleF0ACSb_S4btcfc",
+            "usr": "c:@M@Keyri@objc(cs)KeyriDetectionsConfig(im)initWithBlockEmulatorDetection:blockRootDetection:blockDangerousAppsDetection:blockTamperDetection:blockSwizzleDetection:",
             "mangledName": "$s5Keyri0A16DetectionsConfigC22blockEmulatorDetection0d4RootF00d13DangerousAppsF00d6TamperF00d7SwizzleF0ACSb_S4btcfc",
             "moduleName": "Keyri",
+            "objc_name": "initWithBlockEmulatorDetection:blockRootDetection:blockDangerousAppsDetection:blockTamperDetection:blockSwizzleDetection:",
             "declAttributes": [
-              "AccessControl"
+              "AccessControl",
+              "ObjC"
             ],
             "init_kind": "Designated"
           },
@@ -11346,35 +11348,35 @@
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriDetectionsConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 470,
+      "offset": 480,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriDetectionsConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 503,
+      "offset": 513,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriDetectionsConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 546,
+      "offset": 556,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriDetectionsConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 582,
+      "offset": 592,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriDetectionsConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 619,
+      "offset": 629,
       "length": 5,
       "value": "false"
     },

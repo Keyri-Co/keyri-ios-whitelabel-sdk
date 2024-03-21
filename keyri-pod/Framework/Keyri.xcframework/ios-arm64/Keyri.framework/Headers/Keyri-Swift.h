@@ -364,6 +364,7 @@ SWIFT_CLASS("_TtC5Keyri11GeoDataPair")
 
 SWIFT_CLASS("_TtC5Keyri21KeyriDetectionsConfig")
 @interface KeyriDetectionsConfig : NSObject
+- (nonnull instancetype)initWithBlockEmulatorDetection:(BOOL)blockEmulatorDetection blockRootDetection:(BOOL)blockRootDetection blockDangerousAppsDetection:(BOOL)blockDangerousAppsDetection blockTamperDetection:(BOOL)blockTamperDetection blockSwizzleDetection:(BOOL)blockSwizzleDetection OBJC_DESIGNATED_INITIALIZER;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

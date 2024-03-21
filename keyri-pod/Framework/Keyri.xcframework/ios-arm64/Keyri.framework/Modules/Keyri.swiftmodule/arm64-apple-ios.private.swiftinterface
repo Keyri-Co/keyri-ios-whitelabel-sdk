@@ -200,7 +200,7 @@ public struct ConfirmationScreen : SwiftUI.View {
   required public init(from decoder: any Swift.Decoder) throws
 }
 @objc public class KeyriDetectionsConfig : ObjectiveC.NSObject {
-  public init(blockEmulatorDetection: Swift.Bool = true, blockRootDetection: Swift.Bool = false, blockDangerousAppsDetection: Swift.Bool = false, blockTamperDetection: Swift.Bool = false, blockSwizzleDetection: Swift.Bool = false)
+  @objc public init(blockEmulatorDetection: Swift.Bool = true, blockRootDetection: Swift.Bool = false, blockDangerousAppsDetection: Swift.Bool = false, blockTamperDetection: Swift.Bool = false, blockSwizzleDetection: Swift.Bool = false)
   @objc deinit
 }
 @objc public class LoginObject : ObjectiveC.NSObject, Swift.Decodable, Swift.Encodable {
