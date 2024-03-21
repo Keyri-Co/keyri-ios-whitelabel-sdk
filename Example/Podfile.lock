@@ -1,23 +1,16 @@
 PODS:
-  - keyri-pod (4.2.1)
-  - Toaster (2.3.0)
+  - keyri-pod (4.6.0-alpha01)
 
 DEPENDENCIES:
   - keyri-pod (from `../`)
-  - Toaster
-
-SPEC REPOS:
-  trunk:
-    - Toaster
 
 EXTERNAL SOURCES:
   keyri-pod:
     :path: "../"
 
 SPEC CHECKSUMS:
-  keyri-pod: 6cb52c2a54f9fbbc245c5441063a0d6bee119d09
-  Toaster: c3473963c78e8cabbf6ea6f11ad0fdaae6f54987
+  keyri-pod: 006be699c8dea788180c188321cb50bf83f9cda4
 
-PODFILE CHECKSUM: 9b108e7de1874c06e7eba1d735957543cfbc05aa
+PODFILE CHECKSUM: 56505e45fe6ba73e9253aa3346d26740667ae27f
 
-COCOAPODS: 1.12.1
+COCOAPODS: 1.15.2
