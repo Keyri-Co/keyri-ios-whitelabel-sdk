@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db2adf85-b517-4a8d-8372-1f11873479ee" name="Changes" comment="" />
+    <list default="true" id="db2adf85-b517-4a8d-8372-1f11873479ee" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +15,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="releases/4.5.1" />
+        <entry key="$PROJECT_DIR$" value="releases/4.6.0-alpha01" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,7 +51,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;releases/4.6.0-alpha01&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;releases/4.6.0-alpha02&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/andriikuliahin/IdeaProjects/Keyri iOS/keyri-ios-whitelabel-sdk&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -96,6 +98,7 @@
       <workItem from="1710951858716" duration="4000" />
       <workItem from="1711027347149" duration="468000" />
       <workItem from="1711028048204" duration="814000" />
+      <workItem from="1711039335607" duration="162000" />
     </task>
     <task id="LOCAL-00001" summary="Updated Docs for iOS">
       <option name="closed" value="true" />
@@ -225,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711028640040</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Exposed KeyriDetectionsConfig init block to Obj-C">
+      <option name="closed" value="true" />
+      <created>1711039391210</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1711039391210</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,6 +269,7 @@
     <MESSAGE value="Updated Framework to 4.5.0" />
     <MESSAGE value="Updated Framework to 4.5.1" />
     <MESSAGE value="Updated Framework to 4.6.0-alpha01, fixed example" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Framework to 4.6.0-alpha01, fixed example" />
+    <MESSAGE value="Exposed KeyriDetectionsConfig init block to Obj-C" />
+    <option name="LAST_COMMIT_MESSAGE" value="Exposed KeyriDetectionsConfig init block to Obj-C" />
   </component>
 </project>

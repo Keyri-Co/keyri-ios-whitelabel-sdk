@@ -4588,6 +4588,44 @@
           },
           {
             "kind": "Function",
+            "name": "getCorrectedTimestampSeconds",
+            "printedName": "getCorrectedTimestampSeconds(completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Double) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5Keyri0A9InterfaceC28getCorrectedTimestampSeconds10completionyySdc_tF",
+            "mangledName": "$s5Keyri0A9InterfaceC28getCorrectedTimestampSeconds10completionyySdc_tF",
+            "moduleName": "Keyri",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "initializeDefaultConfirmationScreen",
             "printedName": "initializeDefaultConfirmationScreen(session:payload:completion:)",
             "children": [
@@ -6439,6 +6477,23 @@
             "mangledName": "$ss28CustomDebugStringConvertibleP"
           }
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "Keyri",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Network",
+        "printedName": "Network",
+        "declKind": "Import",
+        "moduleName": "Keyri"
       },
       {
         "kind": "Import",
@@ -11192,6 +11247,48 @@
       "value": "\"Keyri.RegisterObject\""
     },
     {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/NTPUtil.swift",
+      "kind": "IntegerLiteral",
+      "offset": 213,
+      "length": 3,
+      "value": "123"
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/NTPUtil.swift",
+      "kind": "IntegerLiteral",
+      "offset": 256,
+      "length": 2,
+      "value": "48"
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/NTPUtil.swift",
+      "kind": "IntegerLiteral",
+      "offset": 304,
+      "length": 2,
+      "value": "40"
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/NTPUtil.swift",
+      "kind": "IntegerLiteral",
+      "offset": 351,
+      "length": 2,
+      "value": "40"
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/NTPUtil.swift",
+      "kind": "IntegerLiteral",
+      "offset": 399,
+      "length": 10,
+      "value": "2208988800"
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/NTPUtil.swift",
+      "kind": "StringLiteral",
+      "offset": 850,
+      "length": 17,
+      "value": "\"time.google.com\""
+    },
+    {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/TelemetryService.swift",
       "kind": "StringLiteral",
       "offset": 369,
@@ -11397,7 +11494,7 @@
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "BooleanLiteral",
-      "offset": 5468,
+      "offset": 6292,
       "length": 4,
       "value": "true"
     }
