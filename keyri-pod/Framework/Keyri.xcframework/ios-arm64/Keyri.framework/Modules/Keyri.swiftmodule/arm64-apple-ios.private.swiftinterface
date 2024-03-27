@@ -8,6 +8,7 @@ import CoreTelephony
 import CryptoKit
 import Foundation
 import LocalAuthentication
+import Network
 import ObjectiveC
 import Security
 import Swift
@@ -103,6 +104,7 @@ open class KeyriInterface {
   public func initiateQrSession(sessionId: Swift.String, publicUserId: Swift.String?, completion: @escaping (Swift.Result<Keyri.Session, any Swift.Error>) -> Swift.Void)
   public func login(publicUserId: Swift.String?, completion: @escaping (Swift.Result<Keyri.LoginObject, any Swift.Error>) -> ())
   public func register(publicUserId: Swift.String?, completion: @escaping (Swift.Result<Keyri.RegisterObject, any Swift.Error>) -> ())
+  public func getCorrectedTimestampSeconds(completion: @escaping (Foundation.TimeInterval) -> ())
   public func initializeDefaultConfirmationScreen(session: Keyri.Session, payload: Swift.String, completion: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> ())
   public func processLink(url: Foundation.URL, payload: Swift.String, publicUserId: Swift.String?, completion: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> ())
   @objc deinit
