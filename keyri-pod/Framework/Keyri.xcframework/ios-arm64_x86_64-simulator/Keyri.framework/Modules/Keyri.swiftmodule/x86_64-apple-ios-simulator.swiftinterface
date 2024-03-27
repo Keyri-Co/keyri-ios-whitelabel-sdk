@@ -50,6 +50,7 @@ import _SwiftConcurrencyShims
   @objc public func initiateQrSession(sessionId: Swift.String, publicUserId: Swift.String?, completion: @escaping (Keyri.Session?, (any Swift.Error)?) -> ())
   @objc public func login(publicUserId: Swift.String?, completion: @escaping (Keyri.LoginObject?, (any Swift.Error)?) -> ())
   @objc public func register(publicUserId: Swift.String?, completion: @escaping (Keyri.RegisterObject?, (any Swift.Error)?) -> ())
+  @objc public func getCorrectedTimestampSeconds(pubUserd: Swift.String?, completion: @escaping (Swift.Double) -> ())
   @objc public func initializeDefaultConfirmationScreen(session: Keyri.Session, payload: Swift.String, completion: @escaping (Swift.Bool, (any Swift.Error)?) -> ())
   @objc public func processLink(url: Foundation.URL, payload: Swift.String, publicUserId: Swift.String? = nil, completion: @escaping (Swift.Bool, (any Swift.Error)?) -> ())
   @objc deinit

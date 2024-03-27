@@ -1619,6 +1619,60 @@
           },
           {
             "kind": "Function",
+            "name": "getCorrectedTimestampSeconds",
+            "printedName": "getCorrectedTimestampSeconds(pubUserd:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Double) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@Keyri@objc(cs)KeyriObjC(im)getCorrectedTimestampSecondsWithPubUserd:completion:",
+            "mangledName": "$s5Keyri0A4ObjCC28getCorrectedTimestampSeconds8pubUserd10completionySSSg_ySdctF",
+            "moduleName": "Keyri",
+            "objc_name": "getCorrectedTimestampSecondsWithPubUserd:completion:",
+            "declAttributes": [
+              "AccessControl",
+              "ObjC"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "initializeDefaultConfirmationScreen",
             "printedName": "initializeDefaultConfirmationScreen(session:payload:completion:)",
             "children": [

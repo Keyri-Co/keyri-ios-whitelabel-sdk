@@ -392,6 +392,7 @@ SWIFT_CLASS("_TtC5Keyri9KeyriObjC")
 - (void)initiateQrSessionWithSessionId:(NSString * _Nonnull)sessionId publicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(Session * _Nullable, NSError * _Nullable))completion;
 - (void)loginWithPublicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(LoginObject * _Nullable, NSError * _Nullable))completion;
 - (void)registerWithPublicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(RegisterObject * _Nullable, NSError * _Nullable))completion;
+- (void)getCorrectedTimestampSecondsWithPubUserd:(NSString * _Nullable)pubUserd completion:(void (^ _Nonnull)(double))completion;
 - (void)initializeDefaultConfirmationScreenWithSession:(Session * _Nonnull)session payload:(NSString * _Nonnull)payload completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 - (void)processLinkWithUrl:(NSURL * _Nonnull)url payload:(NSString * _Nonnull)payload publicUserId:(NSString * _Nullable)publicUserId completion:(void (^ _Nonnull)(BOOL, NSError * _Nullable))completion;
 @end
