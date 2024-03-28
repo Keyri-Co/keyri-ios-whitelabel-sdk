@@ -1620,7 +1620,7 @@
           {
             "kind": "Function",
             "name": "getCorrectedTimestampSeconds",
-            "printedName": "getCorrectedTimestampSeconds(pubUserd:completion:)",
+            "printedName": "getCorrectedTimestampSeconds(completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -1628,23 +1628,9 @@
                 "printedName": "()"
               },
               {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "usr": "s:Sq"
-              },
-              {
                 "kind": "TypeFunc",
                 "name": "Function",
-                "printedName": "(Swift.Double) -> ()",
+                "printedName": "(Swift.Int) -> ()",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -1653,18 +1639,18 @@
                   },
                   {
                     "kind": "TypeNominal",
-                    "name": "Double",
-                    "printedName": "Swift.Double",
-                    "usr": "s:Sd"
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
                   }
                 ]
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@Keyri@objc(cs)KeyriObjC(im)getCorrectedTimestampSecondsWithPubUserd:completion:",
-            "mangledName": "$s5Keyri0A4ObjCC28getCorrectedTimestampSeconds8pubUserd10completionySSSg_ySdctF",
+            "usr": "c:@M@Keyri@objc(cs)KeyriObjC(im)getCorrectedTimestampSecondsWithCompletion:",
+            "mangledName": "$s5Keyri0A4ObjCC28getCorrectedTimestampSeconds10completionyySic_tF",
             "moduleName": "Keyri",
-            "objc_name": "getCorrectedTimestampSecondsWithPubUserd:completion:",
+            "objc_name": "getCorrectedTimestampSecondsWithCompletion:",
             "declAttributes": [
               "AccessControl",
               "ObjC"
@@ -4653,7 +4639,7 @@
               {
                 "kind": "TypeFunc",
                 "name": "Function",
-                "printedName": "(Swift.Double) -> ()",
+                "printedName": "(Swift.Int) -> ()",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -4662,16 +4648,16 @@
                   },
                   {
                     "kind": "TypeNominal",
-                    "name": "Double",
-                    "printedName": "Swift.Double",
-                    "usr": "s:Sd"
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
                   }
                 ]
               }
             ],
             "declKind": "Func",
-            "usr": "s:5Keyri0A9InterfaceC28getCorrectedTimestampSeconds10completionyySdc_tF",
-            "mangledName": "$s5Keyri0A9InterfaceC28getCorrectedTimestampSeconds10completionyySdc_tF",
+            "usr": "s:5Keyri0A9InterfaceC28getCorrectedTimestampSeconds10completionyySic_tF",
+            "mangledName": "$s5Keyri0A9InterfaceC28getCorrectedTimestampSeconds10completionyySic_tF",
             "moduleName": "Keyri",
             "declAttributes": [
               "AccessControl"
@@ -10834,28 +10820,28 @@
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "StringLiteral",
-      "offset": 132,
+      "offset": 128,
       "length": 6,
       "value": "\"ANON\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "StringLiteral",
-      "offset": 183,
+      "offset": 179,
       "length": 11,
       "value": "\"com.keyri\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "BooleanLiteral",
-      "offset": 1665,
+      "offset": 1613,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "BooleanLiteral",
-      "offset": 7484,
+      "offset": 7112,
       "length": 4,
       "value": "true"
     },
@@ -11338,14 +11324,14 @@
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/NTPUtil.swift",
       "kind": "StringLiteral",
-      "offset": 850,
+      "offset": 851,
       "length": 17,
       "value": "\"time.google.com\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/TelemetryService.swift",
       "kind": "StringLiteral",
-      "offset": 369,
+      "offset": 365,
       "length": 2,
       "value": "\"\""
     },
@@ -11548,7 +11534,7 @@
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "BooleanLiteral",
-      "offset": 6292,
+      "offset": 6483,
       "length": 4,
       "value": "true"
     }

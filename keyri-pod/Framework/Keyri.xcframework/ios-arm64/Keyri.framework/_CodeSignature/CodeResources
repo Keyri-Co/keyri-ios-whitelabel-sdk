@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/Keyri-Swift.h</key>
 		<data>
-		NowW5UM2pN45GQih9i9pVixokAI=
+		sMdaIVaxr9VlM7xbohg5WsrdccI=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -14,11 +14,11 @@
 		</data>
 		<key>Modules/Keyri.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		IQf+AkMZ6EUsktY9s4TzEeNCoX8=
+		OZqSlO5QOk77/oET3C08Zodn718=
 		</data>
 		<key>Modules/Keyri.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		Jk+txnBTVl9YDaizH4gRf6wAI8E=
+		TFbohGrgQ2CTwi7rpDNQ60ybxNs=
 		</data>
 		<key>Modules/Keyri.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -26,11 +26,11 @@
 		</data>
 		<key>Modules/Keyri.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		Jk+txnBTVl9YDaizH4gRf6wAI8E=
+		TFbohGrgQ2CTwi7rpDNQ60ybxNs=
 		</data>
 		<key>Modules/Keyri.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		aCTfAHzsYkVaAToOs2QZ8rlE2yo=
+		y3bJjIyz29JvLze4pk2byLJJ9kI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -43,33 +43,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NowW5UM2pN45GQih9i9pVixokAI=
+			sMdaIVaxr9VlM7xbohg5WsrdccI=
 			</data>
 			<key>hash2</key>
 			<data>
-			ycp5/yPpDT0dbzoP23qdhihlJClVdVStV2leOd/e94U=
+			Xwf/GdrlHDHZnRIbZgb9AiPa5/iFZ6EdJv2j+oM8+mY=
 			</data>
 		</dict>
 		<key>Modules/Keyri.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			IQf+AkMZ6EUsktY9s4TzEeNCoX8=
+			OZqSlO5QOk77/oET3C08Zodn718=
 			</data>
 			<key>hash2</key>
 			<data>
-			qd8Negi7ot5Ux03ajBPUr1mPdBXp7pZElE78rQYVX9c=
+			3sN8pc3dHR4wqbJZmpp82o26KjHSOch+A9+dXrn2JMY=
 			</data>
 		</dict>
 		<key>Modules/Keyri.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Jk+txnBTVl9YDaizH4gRf6wAI8E=
+			TFbohGrgQ2CTwi7rpDNQ60ybxNs=
 			</data>
 			<key>hash2</key>
 			<data>
-			RqyuY2Cbw6ut8ZLR1jDAWTFvGDp979zUYbEfbROrwsc=
+			A3sof+haUJsxMetxektCFbhZr8uGz8VjUmPqGylGS5w=
 			</data>
 		</dict>
 		<key>Modules/Keyri.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -87,22 +87,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Jk+txnBTVl9YDaizH4gRf6wAI8E=
+			TFbohGrgQ2CTwi7rpDNQ60ybxNs=
 			</data>
 			<key>hash2</key>
 			<data>
-			RqyuY2Cbw6ut8ZLR1jDAWTFvGDp979zUYbEfbROrwsc=
+			A3sof+haUJsxMetxektCFbhZr8uGz8VjUmPqGylGS5w=
 			</data>
 		</dict>
 		<key>Modules/Keyri.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			aCTfAHzsYkVaAToOs2QZ8rlE2yo=
+			y3bJjIyz29JvLze4pk2byLJJ9kI=
 			</data>
 			<key>hash2</key>
 			<data>
-			y4ofgpg01HDyAxnuMmFnsBxKfztt4vgV7GDae2on6XM=
+			+Yubo39KgM4B+QKwMJz5ZLjdlwJ8nUu/jXVJk59QSHw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
