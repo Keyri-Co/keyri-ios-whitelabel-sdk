@@ -4,30 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db2adf85-b517-4a8d-8372-1f11873479ee" name="Changes" comment="Fixed sendEvent, updated getCorrectedTimestampSeconds return type">
+    <list default="true" id="db2adf85-b517-4a8d-8372-1f11873479ee" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyri-pod.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod.podspec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Headers/Keyri-Swift.h" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Headers/Keyri-Swift.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Keyri" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Keyri" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios.abi.json" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios.abi.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios.private.swiftinterface" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios.private.swiftinterface" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios.swiftinterface" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios.swiftinterface" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeDirectory" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeDirectory" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeRequirements-1" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeRequirements-1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeResources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeSignature" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64/Keyri.framework/_CodeSignature/CodeSignature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Headers/Keyri-Swift.h" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Headers/Keyri-Swift.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Keyri" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Keyri" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.abi.json" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.abi.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.swiftinterface" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.swiftinterface" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.abi.json" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.abi.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.swiftinterface" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.swiftinterface" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/_CodeSignature/CodeDirectory" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/_CodeSignature/CodeDirectory" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/_CodeSignature/CodeRequirements-1" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/_CodeSignature/CodeRequirements-1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/_CodeSignature/CodeResources" beforeDir="false" afterPath="$PROJECT_DIR$/keyri-pod/Framework/Keyri.xcframework/ios-arm64_x86_64-simulator/Keyri.framework/_CodeSignature/CodeResources" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +105,7 @@
       <workItem from="1711638487916" duration="5000" />
       <workItem from="1711640537308" duration="464000" />
       <workItem from="1711641114608" duration="3000" />
-      <workItem from="1711641143365" duration="641000" />
+      <workItem from="1711641143365" duration="897000" />
     </task>
     <task id="LOCAL-00001" summary="Updated Docs for iOS">
       <option name="closed" value="true" />
@@ -281,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711557397778</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Fixed sendEvent, updated getCorrectedTimestampSeconds return type">
+      <option name="closed" value="true" />
+      <created>1711642674906</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1711642674906</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
