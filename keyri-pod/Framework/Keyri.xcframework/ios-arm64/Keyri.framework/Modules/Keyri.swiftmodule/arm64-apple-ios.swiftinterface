@@ -38,21 +38,21 @@ import _SwiftConcurrencyShims
   @objc public init(appKey: Swift.String, publicApiKey: Swift.String?, serviceEncryptionKey: Swift.String?, detectionsConfig: Keyri.KeyriDetectionsConfig = KeyriDetectionsConfig())
   @available(*, deprecated, message: "Use init with detectionsConfig argument instead")
   @objc public func initializeKeyri(appKey: Swift.String, publicApiKey: Swift.String?, serviceEncryptionKey: Swift.String?, blockEmulatorDetection: Swift.Bool = true)
-  @objc public func easyKeyriAuth(payload: Swift.String, publicUserId: Swift.String, completion: @escaping (Swift.Bool, (any Swift.Error)?) -> ())
-  @objc public func generateAssociationKey(publicUserId: Swift.String?, completion: @escaping (Swift.String?, (any Swift.Error)?) -> ())
-  @objc public func generateUserSignature(publicUserId: Swift.String?, data: Foundation.Data, completion: @escaping (Swift.String?, (any Swift.Error)?) -> ())
-  @objc public func listAssociationKeys(completion: @escaping ([Swift.String : Swift.String]?, (any Swift.Error)?) -> ())
-  @objc public func listUniqueAccounts(completion: @escaping ([Swift.String : Swift.String]?, (any Swift.Error)?) -> ())
-  @objc public func getAssociationKey(publicUserId: Swift.String?, completion: @escaping (Swift.String?, (any Swift.Error)?) -> ())
-  @objc public func removeAssociationKey(publicUserId: Swift.String, completion: @escaping ((any Swift.Error)?) -> ())
-  @objc public func sendEvent(publicUserId: Swift.String?, eventType: Keyri.EventType, success: Swift.Bool, completion: @escaping (Keyri.FingerprintResponse?, (any Swift.Error)?) -> ())
-  @objc public func createFingerprint(completion: @escaping (Keyri.FingerprintRequest?, (any Swift.Error)?) -> ())
-  @objc public func initiateQrSession(sessionId: Swift.String, publicUserId: Swift.String?, completion: @escaping (Keyri.Session?, (any Swift.Error)?) -> ())
-  @objc public func login(publicUserId: Swift.String?, completion: @escaping (Keyri.LoginObject?, (any Swift.Error)?) -> ())
-  @objc public func register(publicUserId: Swift.String?, completion: @escaping (Keyri.RegisterObject?, (any Swift.Error)?) -> ())
-  @objc public func getCorrectedTimestampSeconds(completion: @escaping (ObjectiveC.NSInteger) -> ())
-  @objc public func initializeDefaultConfirmationScreen(session: Keyri.Session, payload: Swift.String, completion: @escaping (Swift.Bool, (any Swift.Error)?) -> ())
-  @objc public func processLink(url: Foundation.URL, payload: Swift.String, publicUserId: Swift.String? = nil, completion: @escaping (Swift.Bool, (any Swift.Error)?) -> ())
+  @objc public func easyKeyriAuth(payload: Swift.String, publicUserId: Swift.String, completion: @escaping (Swift.Bool, (any Swift.Error)?) -> Swift.Void)
+  @objc public func generateAssociationKey(publicUserId: Swift.String?, completion: @escaping (Swift.String?, (any Swift.Error)?) -> Swift.Void)
+  @objc public func generateUserSignature(publicUserId: Swift.String?, data: Foundation.Data, completion: @escaping (Swift.String?, (any Swift.Error)?) -> Swift.Void)
+  @objc public func listAssociationKeys(completion: @escaping ([Swift.String : Swift.String]?, (any Swift.Error)?) -> Swift.Void)
+  @objc public func listUniqueAccounts(completion: @escaping ([Swift.String : Swift.String]?, (any Swift.Error)?) -> Swift.Void)
+  @objc public func getAssociationKey(publicUserId: Swift.String?, completion: @escaping (Swift.String?, (any Swift.Error)?) -> Swift.Void)
+  @objc public func removeAssociationKey(publicUserId: Swift.String, completion: @escaping ((any Swift.Error)?) -> Swift.Void)
+  @objc public func sendEvent(publicUserId: Swift.String?, eventType: Keyri.EventType, success: Swift.Bool, completion: @escaping (Keyri.FingerprintResponse?, (any Swift.Error)?) -> Swift.Void)
+  @objc public func createFingerprint(completion: @escaping (Keyri.FingerprintRequest?, (any Swift.Error)?) -> Swift.Void)
+  @objc public func initiateQrSession(sessionId: Swift.String, publicUserId: Swift.String?, completion: @escaping (Keyri.Session?, (any Swift.Error)?) -> Swift.Void)
+  @objc public func login(publicUserId: Swift.String?, completion: @escaping (Keyri.LoginObject?, (any Swift.Error)?) -> Swift.Void)
+  @objc public func register(publicUserId: Swift.String?, completion: @escaping (Keyri.RegisterObject?, (any Swift.Error)?) -> Swift.Void)
+  @objc public func getCorrectedTimestampSeconds(completion: @escaping (ObjectiveC.NSInteger) -> Swift.Void)
+  @objc public func initializeDefaultConfirmationScreen(session: Keyri.Session, payload: Swift.String, completion: @escaping (Swift.Bool, (any Swift.Error)?) -> Swift.Void)
+  @objc public func processLink(url: Foundation.URL, payload: Swift.String, publicUserId: Swift.String? = nil, completion: @escaping (Swift.Bool, (any Swift.Error)?) -> Swift.Void)
   @objc deinit
 }
 @objc public class MobileTemplateResponse : ObjectiveC.NSObject, Swift.Codable {
@@ -93,29 +93,49 @@ open class KeyriInterface {
   public init(appKey: Swift.String, publicApiKey: Swift.String? = nil, serviceEncryptionKey: Swift.String? = nil, detectionsConfig: Keyri.KeyriDetectionsConfig = KeyriDetectionsConfig())
   @available(*, deprecated, message: "Use constructor with detectionsConfig param instead")
   convenience public init(appKey: Swift.String, publicApiKey: Swift.String? = nil, serviceEncryptionKey: Swift.String? = nil, blockEmulatorDetection: Swift.Bool = true)
-  public func easyKeyriAuth(payload: Swift.String, publicUserId: Swift.String?, completion: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> ())
-  public func generateAssociationKey(publicUserId: Swift.String = Constants.ANON_USER, completion: @escaping (Swift.Result<CryptoKit.P256.Signing.PublicKey, any Swift.Error>) -> ())
-  public func generateUserSignature(publicUserId: Swift.String = Constants.ANON_USER, data: Foundation.Data, completion: @escaping (Swift.Result<CryptoKit.P256.Signing.ECDSASignature, any Swift.Error>) -> ())
-  public func listAssociationKeys(completion: @escaping (Swift.Result<[Swift.String : Swift.String]?, any Swift.Error>) -> ())
-  public func listUniqueAccounts(completion: @escaping (Swift.Result<[Swift.String : Swift.String]?, any Swift.Error>) -> ())
-  public func getAssociationKey(publicUserId: Swift.String = Constants.ANON_USER, completion: @escaping (Swift.Result<CryptoKit.P256.Signing.PublicKey?, any Swift.Error>) -> ())
-  public func removeAssociationKey(publicUserId: Swift.String, completion: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> ())
-  public func sendEvent(publicUserId: Swift.String = Constants.ANON_USER, eventType: Keyri.EventType = EventType.visits(), success: Swift.Bool = true, completion: @escaping (Swift.Result<Keyri.FingerprintResponse, any Swift.Error>) -> ())
-  public func createFingerprint(completion: @escaping (Swift.Result<Keyri.FingerprintRequest, any Swift.Error>) -> ())
+  public func easyKeyriAuth(payload: Swift.String, publicUserId: Swift.String?, completion: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> Swift.Void)
+  public func generateAssociationKey(publicUserId: Swift.String = Constants.ANON_USER, completion: @escaping (Swift.Result<CryptoKit.P256.Signing.PublicKey, any Swift.Error>) -> Swift.Void)
+  public func generateUserSignature(publicUserId: Swift.String = Constants.ANON_USER, data: Foundation.Data, completion: @escaping (Swift.Result<CryptoKit.P256.Signing.ECDSASignature, any Swift.Error>) -> Swift.Void)
+  public func listAssociationKeys(completion: @escaping (Swift.Result<[Swift.String : Swift.String]?, any Swift.Error>) -> Swift.Void)
+  public func listUniqueAccounts(completion: @escaping (Swift.Result<[Swift.String : Swift.String]?, any Swift.Error>) -> Swift.Void)
+  public func getAssociationKey(publicUserId: Swift.String = Constants.ANON_USER, completion: @escaping (Swift.Result<CryptoKit.P256.Signing.PublicKey?, any Swift.Error>) -> Swift.Void)
+  public func removeAssociationKey(publicUserId: Swift.String, completion: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> Swift.Void)
+  public func sendEvent(publicUserId: Swift.String = Constants.ANON_USER, eventType: Keyri.EventType = EventType.visits(), success: Swift.Bool = true, completion: @escaping (Swift.Result<Keyri.FingerprintResponse, any Swift.Error>) -> Swift.Void)
+  #if compiler(>=5.3) && $AsyncAwait
+  public func sendEvent(publicUserId: Swift.String = Constants.ANON_USER, eventType: Keyri.EventType = EventType.visits(), success: Swift.Bool = true) async throws -> Keyri.FingerprintResponse
+  #endif
+  public func createFingerprint(completion: @escaping (Swift.Result<Keyri.FingerprintRequest, any Swift.Error>) -> Swift.Void)
+  #if compiler(>=5.3) && $AsyncAwait
+  public func createFingerprint() async throws -> Keyri.FingerprintRequest
+  #endif
   public func initiateQrSession(sessionId: Swift.String, publicUserId: Swift.String?, completion: @escaping (Swift.Result<Keyri.Session, any Swift.Error>) -> Swift.Void)
-  public func login(publicUserId: Swift.String?, completion: @escaping (Swift.Result<Keyri.LoginObject, any Swift.Error>) -> ())
-  public func register(publicUserId: Swift.String?, completion: @escaping (Swift.Result<Keyri.RegisterObject, any Swift.Error>) -> ())
-  public func getCorrectedTimestampSeconds(completion: @escaping (Swift.Int) -> ())
-  public func initializeDefaultConfirmationScreen(session: Keyri.Session, payload: Swift.String, completion: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> ())
-  public func processLink(url: Foundation.URL, payload: Swift.String, publicUserId: Swift.String?, completion: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> ())
+  #if compiler(>=5.3) && $AsyncAwait
+  public func initiateQrSession(sessionId: Swift.String, publicUserId: Swift.String?) async throws -> Keyri.Session
+  #endif
+  public func login(publicUserId: Swift.String?, completion: @escaping (Swift.Result<Keyri.LoginObject, any Swift.Error>) -> Swift.Void)
+  #if compiler(>=5.3) && $AsyncAwait
+  public func login(publicUserId: Swift.String?) async throws -> Keyri.LoginObject
+  #endif
+  public func register(publicUserId: Swift.String?, completion: @escaping (Swift.Result<Keyri.RegisterObject, any Swift.Error>) -> Swift.Void)
+  public func register(publicUserId: Swift.String?) throws -> Keyri.RegisterObject
+  public func getCorrectedTimestampSeconds(completion: @escaping (Swift.Int) -> Swift.Void)
+  #if compiler(>=5.3) && $AsyncAwait
+  public func getCorrectedTimestampSeconds() async -> Swift.Int
+  #endif
+  public func initializeDefaultConfirmationScreen(session: Keyri.Session, payload: Swift.String, completion: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> Swift.Void)
+  public func processLink(url: Foundation.URL, payload: Swift.String, publicUserId: Swift.String?, completion: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> Swift.Void)
   @objc deinit
 }
 @objc public class Session : ObjectiveC.NSObject, Swift.Codable {
   @objc public var publicUserId: Swift.String?
   @objc public var appKey: Swift.String?
   @objc public var sessionId: Swift.String
-  @objc public func confirm(payload: Swift.String, trustNewBrowser: Swift.Bool = false, completion: @escaping ((any Swift.Error)?) -> ())
-  @objc public func deny(payload: Swift.String, completion: @escaping ((any Swift.Error)?) -> ())
+  #if compiler(>=5.3) && $AsyncAwait
+  @objc public func confirm(payload: Swift.String, trustNewBrowser: Swift.Bool = false, completion: @escaping ((any Swift.Error)?) -> Swift.Void) async
+  #endif
+  #if compiler(>=5.3) && $AsyncAwait
+  @objc public func deny(payload: Swift.String, completion: @escaping ((any Swift.Error)?) -> Swift.Void) async
+  #endif
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -129,7 +149,7 @@ open class KeyriInterface {
 }
 @objc @objcMembers open class ConfirmationScreenUIView : ObjectiveC.NSObject {
   public var vc: SwiftUI.UIHostingController<Keyri.ConfirmationScreen>
-  public init(session: Keyri.Session, payload: Swift.String, completion: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> ())
+  public init(session: Keyri.Session, payload: Swift.String, completion: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> Swift.Void)
   @objc deinit
 }
 @objc public class RegisterObject : ObjectiveC.NSObject, Swift.Decodable, Swift.Encodable {
@@ -151,7 +171,7 @@ open class KeyriInterface {
   required public init(from decoder: any Swift.Decoder) throws
 }
 public struct ConfirmationScreen : SwiftUI.View {
-  public var dismissalAction: ((Swift.Bool) -> ())?
+  public var dismissalAction: ((Swift.Bool) -> Swift.Void)?
   public init(session: Keyri.Session, payload: Swift.String)
   @_Concurrency.MainActor(unsafe) public var body: some SwiftUI.View {
     get
@@ -203,7 +223,7 @@ public struct ConfirmationScreen : SwiftUI.View {
   required public init(from decoder: any Swift.Decoder) throws
 }
 @objc public class KeyriDetectionsConfig : ObjectiveC.NSObject {
-  @objc public init(blockEmulatorDetection: Swift.Bool = true, blockRootDetection: Swift.Bool = false, blockDangerousAppsDetection: Swift.Bool = false, blockTamperDetection: Swift.Bool = false, blockSwizzleDetection: Swift.Bool = false)
+  @objc public init(blockEmulatorDetection: Swift.Bool = true, blockRootDetection: Swift.Bool = false, blockDangerousAppsDetection: Swift.Bool = false, blockTamperDetection: Swift.Bool = true, blockSwizzleDetection: Swift.Bool = false)
   @objc deinit
 }
 @objc public class LoginObject : ObjectiveC.NSObject, Swift.Decodable, Swift.Encodable {

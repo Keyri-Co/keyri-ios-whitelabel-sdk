@@ -455,8 +455,8 @@ SWIFT_CLASS("_TtC5Keyri7Session")
 @property (nonatomic, copy) NSString * _Nullable publicUserId;
 @property (nonatomic, copy) NSString * _Nullable appKey;
 @property (nonatomic, copy) NSString * _Nonnull sessionId;
-- (void)confirmWithPayload:(NSString * _Nonnull)payload trustNewBrowser:(BOOL)trustNewBrowser completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
-- (void)denyWithPayload:(NSString * _Nonnull)payload completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
+- (void)confirmWithPayload:(NSString * _Nonnull)payload trustNewBrowser:(BOOL)trustNewBrowser completion:(void (^ _Nonnull)(NSError * _Nullable))completion completionHandler:(void (^ _Nonnull)(void))completionHandler;
+- (void)denyWithPayload:(NSString * _Nonnull)payload completion:(void (^ _Nonnull)(NSError * _Nullable))completion completionHandler:(void (^ _Nonnull)(void))completionHandler;
 @end
 
 
@@ -954,8 +954,8 @@ SWIFT_CLASS("_TtC5Keyri7Session")
 @property (nonatomic, copy) NSString * _Nullable publicUserId;
 @property (nonatomic, copy) NSString * _Nullable appKey;
 @property (nonatomic, copy) NSString * _Nonnull sessionId;
-- (void)confirmWithPayload:(NSString * _Nonnull)payload trustNewBrowser:(BOOL)trustNewBrowser completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
-- (void)denyWithPayload:(NSString * _Nonnull)payload completion:(void (^ _Nonnull)(NSError * _Nullable))completion;
+- (void)confirmWithPayload:(NSString * _Nonnull)payload trustNewBrowser:(BOOL)trustNewBrowser completion:(void (^ _Nonnull)(NSError * _Nullable))completion completionHandler:(void (^ _Nonnull)(void))completionHandler;
+- (void)denyWithPayload:(NSString * _Nonnull)payload completion:(void (^ _Nonnull)(NSError * _Nullable))completion completionHandler:(void (^ _Nonnull)(void))completionHandler;
 @end
 
 

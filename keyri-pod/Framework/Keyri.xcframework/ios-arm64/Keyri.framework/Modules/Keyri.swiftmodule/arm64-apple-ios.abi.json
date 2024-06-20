@@ -4372,6 +4372,49 @@
           },
           {
             "kind": "Function",
+            "name": "sendEvent",
+            "printedName": "sendEvent(publicUserId:eventType:success:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FingerprintResponse",
+                "printedName": "Keyri.FingerprintResponse",
+                "usr": "c:@M@Keyri@objc(cs)FingerprintResponse"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "EventType",
+                "printedName": "Keyri.EventType",
+                "hasDefaultArg": true,
+                "usr": "c:@M@Keyri@objc(cs)EventType"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5Keyri0A9InterfaceC9sendEvent12publicUserId9eventType7successAA19FingerprintResponseCSS_AA0dI0CSbtYaKF",
+            "mangledName": "$s5Keyri0A9InterfaceC9sendEvent12publicUserId9eventType7successAA19FingerprintResponseCSS_AA0dI0CSbtYaKF",
+            "moduleName": "Keyri",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "createFingerprint",
             "printedName": "createFingerprint(completion:)",
             "children": [
@@ -4420,6 +4463,28 @@
             "declAttributes": [
               "AccessControl"
             ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "createFingerprint",
+            "printedName": "createFingerprint()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FingerprintRequest",
+                "printedName": "Keyri.FingerprintRequest",
+                "usr": "c:@M@Keyri@objc(cs)FingerprintRequest"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5Keyri0A9InterfaceC17createFingerprintAA0D7RequestCyYaKF",
+            "mangledName": "$s5Keyri0A9InterfaceC17createFingerprintAA0D7RequestCyYaKF",
+            "moduleName": "Keyri",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
             "funcSelfKind": "NonMutating"
           },
           {
@@ -4496,6 +4561,48 @@
           },
           {
             "kind": "Function",
+            "name": "initiateQrSession",
+            "printedName": "initiateQrSession(sessionId:publicUserId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Session",
+                "printedName": "Keyri.Session",
+                "usr": "c:@M@Keyri@objc(cs)Session"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5Keyri0A9InterfaceC17initiateQrSession9sessionId010publicUserG0AA0E0CSS_SSSgtYaKF",
+            "mangledName": "$s5Keyri0A9InterfaceC17initiateQrSession9sessionId010publicUserG0AA0E0CSS_SSSgtYaKF",
+            "moduleName": "Keyri",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "login",
             "printedName": "login(publicUserId:completion:)",
             "children": [
@@ -4558,6 +4665,42 @@
             "declAttributes": [
               "AccessControl"
             ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "login",
+            "printedName": "login(publicUserId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "LoginObject",
+                "printedName": "Keyri.LoginObject",
+                "usr": "c:@M@Keyri@objc(cs)LoginObject"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5Keyri0A9InterfaceC5login12publicUserIdAA11LoginObjectCSSSg_tYaKF",
+            "mangledName": "$s5Keyri0A9InterfaceC5login12publicUserIdAA11LoginObjectCSSSg_tYaKF",
+            "moduleName": "Keyri",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
             "funcSelfKind": "NonMutating"
           },
           {
@@ -4628,6 +4771,42 @@
           },
           {
             "kind": "Function",
+            "name": "register",
+            "printedName": "register(publicUserId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "RegisterObject",
+                "printedName": "Keyri.RegisterObject",
+                "usr": "c:@M@Keyri@objc(cs)RegisterObject"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5Keyri0A9InterfaceC8register12publicUserIdAA14RegisterObjectCSSSg_tKF",
+            "mangledName": "$s5Keyri0A9InterfaceC8register12publicUserIdAA14RegisterObjectCSSSg_tKF",
+            "moduleName": "Keyri",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "getCorrectedTimestampSeconds",
             "printedName": "getCorrectedTimestampSeconds(completion:)",
             "children": [
@@ -4658,6 +4837,27 @@
             "declKind": "Func",
             "usr": "s:5Keyri0A9InterfaceC28getCorrectedTimestampSeconds10completionyySic_tF",
             "mangledName": "$s5Keyri0A9InterfaceC28getCorrectedTimestampSeconds10completionyySic_tF",
+            "moduleName": "Keyri",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getCorrectedTimestampSeconds",
+            "printedName": "getCorrectedTimestampSeconds()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:5Keyri0A9InterfaceC28getCorrectedTimestampSecondsSiyYaF",
+            "mangledName": "$s5Keyri0A9InterfaceC28getCorrectedTimestampSecondsSiyYaF",
             "moduleName": "Keyri",
             "declAttributes": [
               "AccessControl"
@@ -5293,10 +5493,10 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@Keyri@objc(cs)Session(im)confirmWithPayload:trustNewBrowser:completion:",
-            "mangledName": "$s5Keyri7SessionC7confirm7payload15trustNewBrowser10completionySS_Sbys5Error_pSgctF",
+            "usr": "c:@M@Keyri@objc(cs)Session(im)confirmWithPayload:trustNewBrowser:completion:completionHandler:",
+            "mangledName": "$s5Keyri7SessionC7confirm7payload15trustNewBrowser10completionySS_Sbys5Error_pSgctYaF",
             "moduleName": "Keyri",
-            "objc_name": "confirmWithPayload:trustNewBrowser:completion:",
+            "objc_name": "confirmWithPayload:trustNewBrowser:completion:completionHandler:",
             "declAttributes": [
               "AccessControl",
               "ObjC"
@@ -5347,10 +5547,10 @@
               }
             ],
             "declKind": "Func",
-            "usr": "c:@M@Keyri@objc(cs)Session(im)denyWithPayload:completion:",
-            "mangledName": "$s5Keyri7SessionC4deny7payload10completionySS_ys5Error_pSgctF",
+            "usr": "c:@M@Keyri@objc(cs)Session(im)denyWithPayload:completion:completionHandler:",
+            "mangledName": "$s5Keyri7SessionC4deny7payload10completionySS_ys5Error_pSgctYaF",
             "moduleName": "Keyri",
-            "objc_name": "denyWithPayload:completion:",
+            "objc_name": "denyWithPayload:completion:completionHandler:",
             "declAttributes": [
               "AccessControl",
               "ObjC"
@@ -7274,6 +7474,30 @@
         "kind": "Import",
         "name": "UIKit",
         "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "Keyri"
+      },
+      {
+        "kind": "Import",
+        "name": "CryptoKit",
+        "printedName": "CryptoKit",
+        "declKind": "Import",
+        "moduleName": "Keyri",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "CommonCrypto",
+        "printedName": "CommonCrypto",
+        "declKind": "Import",
+        "moduleName": "Keyri"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
         "declKind": "Import",
         "moduleName": "Keyri"
       },
@@ -10820,28 +11044,35 @@
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "StringLiteral",
-      "offset": 128,
+      "offset": 132,
       "length": 6,
       "value": "\"ANON\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "StringLiteral",
-      "offset": 179,
+      "offset": 183,
       "length": 11,
       "value": "\"com.keyri\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "BooleanLiteral",
-      "offset": 1613,
+      "offset": 1842,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
       "kind": "BooleanLiteral",
-      "offset": 7112,
+      "offset": 7536,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriInterface.swift",
+      "kind": "BooleanLiteral",
+      "offset": 8223,
       "length": 4,
       "value": "true"
     },
@@ -11268,7 +11499,7 @@
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/Session.swift",
       "kind": "BooleanLiteral",
-      "offset": 1753,
+      "offset": 1781,
       "length": 5,
       "value": "false"
     },
@@ -11322,16 +11553,9 @@
       "value": "2208988800"
     },
     {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/NTPUtil.swift",
-      "kind": "StringLiteral",
-      "offset": 930,
-      "length": 17,
-      "value": "\"time.google.com\""
-    },
-    {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/TelemetryService.swift",
       "kind": "StringLiteral",
-      "offset": 365,
+      "offset": 373,
       "length": 2,
       "value": "\"\""
     },
@@ -11436,7 +11660,7 @@
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ConfirmationScreen.swift",
       "kind": "BooleanLiteral",
-      "offset": 9787,
+      "offset": 9939,
       "length": 5,
       "value": "false"
     },
@@ -11457,28 +11681,28 @@
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ApiHelper.swift",
       "kind": "StringLiteral",
-      "offset": 3559,
+      "offset": 3615,
       "length": 5,
       "value": "\"GET\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ApiHelper.swift",
       "kind": "StringLiteral",
-      "offset": 3581,
+      "offset": 3637,
       "length": 6,
       "value": "\"POST\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ApiHelper.swift",
       "kind": "StringLiteral",
-      "offset": 3559,
+      "offset": 3615,
       "length": 5,
       "value": "\"GET\""
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/ApiHelper.swift",
       "kind": "StringLiteral",
-      "offset": 3581,
+      "offset": 3637,
       "length": 6,
       "value": "\"POST\""
     },
@@ -11507,13 +11731,13 @@
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriDetectionsConfig.swift",
       "kind": "BooleanLiteral",
       "offset": 592,
-      "length": 5,
-      "value": "false"
+      "length": 4,
+      "value": "true"
     },
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriDetectionsConfig.swift",
       "kind": "BooleanLiteral",
-      "offset": 629,
+      "offset": 628,
       "length": 5,
       "value": "false"
     },
@@ -11534,7 +11758,7 @@
     {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/KeyriService.swift",
       "kind": "BooleanLiteral",
-      "offset": 6483,
+      "offset": 5779,
       "length": 4,
       "value": "true"
     }

@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db2adf85-b517-4a8d-8372-1f11873479ee" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="db2adf85-b517-4a8d-8372-1f11873479ee" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +13,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="releases/4.6.0-alpha04" />
+        <entry key="$PROJECT_DIR$" value="releases/4.6.0-alpha05" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -26,14 +24,12 @@
     &quot;assignee&quot;: &quot;AndrewKuliahin96&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="c63f62d5-15b2-468e-937d-bd2fdad89fa5" />
-        <option name="url" value="https://github.com/Keyri-Co/keyri-ios-whitelabel-sdk" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Keyri-Co/keyri-ios-whitelabel-sdk",
+    "accountId": "c63f62d5-15b2-468e-937d-bd2fdad89fa5"
+  }
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -51,7 +47,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "releases/4.6.0-alpha05",
+    "git-widget-placeholder": "releases/4.6.0-alpha06",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/andriikuliahin/IdeaProjects/Keyri iOS/keyri-ios-whitelabel-sdk",
     "node.js.detected.package.eslint": "true",
@@ -63,6 +59,14 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SwiftWorkspaceSettings">
     <option name="detectedToolchain" value="true" />
@@ -106,6 +110,7 @@
       <workItem from="1711640537308" duration="464000" />
       <workItem from="1711641114608" duration="3000" />
       <workItem from="1711641143365" duration="897000" />
+      <workItem from="1712818543393" duration="221000" />
     </task>
     <task id="LOCAL-00001" summary="Updated Docs for iOS">
       <option name="closed" value="true" />
@@ -267,7 +272,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711642674906</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Fixed getCorrectedTimestampSeconds timeout">
+      <option name="closed" value="true" />
+      <created>1712818613561</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1712818613561</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,6 +317,7 @@
     <MESSAGE value="Fixed timestamps in Keyri, added getCorrectedTimestampSeconds function" />
     <MESSAGE value="Added Obj-C implementation for getCorrectedTimestampSeconds function" />
     <MESSAGE value="Fixed sendEvent, updated getCorrectedTimestampSeconds return type" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed sendEvent, updated getCorrectedTimestampSeconds return type" />
+    <MESSAGE value="Fixed getCorrectedTimestampSeconds timeout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed getCorrectedTimestampSeconds timeout" />
   </component>
 </project>
