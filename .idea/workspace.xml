@@ -13,7 +13,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="releases/4.6.0-alpha05" />
+        <entry key="$PROJECT_DIR$" value="releases/4.6.0-alpha06" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -24,12 +24,12 @@
     &quot;assignee&quot;: &quot;AndrewKuliahin96&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Keyri-Co/keyri-ios-whitelabel-sdk",
-    "accountId": "c63f62d5-15b2-468e-937d-bd2fdad89fa5"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Keyri-Co/keyri-ios-whitelabel-sdk&quot;,
+    &quot;accountId&quot;: &quot;c63f62d5-15b2-468e-937d-bd2fdad89fa5&quot;
   }
-}]]></component>
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -47,7 +47,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "releases/4.6.0-alpha06",
+    "git-widget-placeholder": "releases/4.6.0",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/andriikuliahin/IdeaProjects/Keyri iOS/keyri-ios-whitelabel-sdk",
     "node.js.detected.package.eslint": "true",
@@ -111,6 +111,7 @@
       <workItem from="1711641114608" duration="3000" />
       <workItem from="1711641143365" duration="897000" />
       <workItem from="1712818543393" duration="221000" />
+      <workItem from="1718882310580" duration="230000" />
     </task>
     <task id="LOCAL-00001" summary="Updated Docs for iOS">
       <option name="closed" value="true" />
@@ -280,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712818613561</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Added async to session functions, added os field to event payload">
+      <option name="closed" value="true" />
+      <created>1718882414513</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1718882414513</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,6 +327,7 @@
     <MESSAGE value="Added Obj-C implementation for getCorrectedTimestampSeconds function" />
     <MESSAGE value="Fixed sendEvent, updated getCorrectedTimestampSeconds return type" />
     <MESSAGE value="Fixed getCorrectedTimestampSeconds timeout" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed getCorrectedTimestampSeconds timeout" />
+    <MESSAGE value="Added async to session functions, added os field to event payload" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added async to session functions, added os field to event payload" />
   </component>
 </project>
