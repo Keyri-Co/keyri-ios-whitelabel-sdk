@@ -10,11 +10,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		7WksAM0M+soM7qxVrBWSpVQAvno=
+		J20qDG/c9xSsc3lapfCOB/GcKrA=
 		</data>
 		<key>Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		yquZvRDswbgYZIPsMAv0RTMpFvg=
+		UBXxAq+784NKqYDNtx6C+wFm0Yw=
 		</data>
 		<key>Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -30,11 +30,11 @@
 		</data>
 		<key>Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		pKEN09Lj2qCdlnD9rvnQqzRmehE=
+		kFpauJp8fe41YqIqIzI85f40Gks=
 		</data>
 		<key>Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		yquZvRDswbgYZIPsMAv0RTMpFvg=
+		UBXxAq+784NKqYDNtx6C+wFm0Yw=
 		</data>
 		<key>Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		UZBP88kERKT9NdneN/Xp4hopwtA=
+		iOAzrzgJNbjRYZ6JEriMILnbtAk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -74,11 +74,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			yquZvRDswbgYZIPsMAv0RTMpFvg=
+			UBXxAq+784NKqYDNtx6C+wFm0Yw=
 			</data>
 			<key>hash2</key>
 			<data>
-			IuCne90P5xJ79OgIH5+ZGcfQkdlETD9RjtHBhT49ltI=
+			Jcn0uq40bSrBbr9Nu7CVkCf9zV0bHrBpxY4UJ5NyuqY=
 			</data>
 		</dict>
 		<key>Modules/Keyri.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -118,22 +118,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pKEN09Lj2qCdlnD9rvnQqzRmehE=
+			kFpauJp8fe41YqIqIzI85f40Gks=
 			</data>
 			<key>hash2</key>
 			<data>
-			b0rIM09Cky+sXS2jqnc6E62+XVDJs7uV8cokHW7rSDE=
+			/WBxL8DG+xUmWt/2SARiAaJO3jzcSuuA+PU2nxVxJE4=
 			</data>
 		</dict>
 		<key>Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			yquZvRDswbgYZIPsMAv0RTMpFvg=
+			UBXxAq+784NKqYDNtx6C+wFm0Yw=
 			</data>
 			<key>hash2</key>
 			<data>
-			IuCne90P5xJ79OgIH5+ZGcfQkdlETD9RjtHBhT49ltI=
+			Jcn0uq40bSrBbr9Nu7CVkCf9zV0bHrBpxY4UJ5NyuqY=
 			</data>
 		</dict>
 		<key>Modules/Keyri.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -173,11 +173,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			UZBP88kERKT9NdneN/Xp4hopwtA=
+			iOAzrzgJNbjRYZ6JEriMILnbtAk=
 			</data>
 			<key>hash2</key>
 			<data>
-			GIKPOfJMyvmqIYJFVDD/up1RFNtMSyD6kKtfx+PknRs=
+			fHvXpCZys+190rUQv4P0G8KxtnMQcCe/1tINka0mTvk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -11518,41 +11518,6 @@
       "value": "\"Keyri.RegisterObject\""
     },
     {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/NTPUtil.swift",
-      "kind": "IntegerLiteral",
-      "offset": 213,
-      "length": 3,
-      "value": "123"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/NTPUtil.swift",
-      "kind": "IntegerLiteral",
-      "offset": 256,
-      "length": 2,
-      "value": "48"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/NTPUtil.swift",
-      "kind": "IntegerLiteral",
-      "offset": 304,
-      "length": 2,
-      "value": "40"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/NTPUtil.swift",
-      "kind": "IntegerLiteral",
-      "offset": 351,
-      "length": 2,
-      "value": "40"
-    },
-    {
-      "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/NTPUtil.swift",
-      "kind": "IntegerLiteral",
-      "offset": 399,
-      "length": 10,
-      "value": "2208988800"
-    },
-    {
       "filePath": "\/Users\/andriikuliahin\/IdeaProjects\/Keyri iOS\/keyri-ios-source\/Keyri\/Keyri\/TelemetryService.swift",
       "kind": "StringLiteral",
       "offset": 373,
